@@ -6,6 +6,7 @@
 		"ms-vscode.csharp",
         "donjayamanne.githistory",
         "ms-vscode.Theme-MarkdownKit",
-        "DavidAnson.vscode-markdownlint" 
-	] 
+        "DavidAnson.vscode-markdownlint",
+        "robertohuertasm.vscode-icons"
+	]
 }
