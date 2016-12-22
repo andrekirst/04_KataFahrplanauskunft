@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft", "Fahrplanauskunft\Fahrplanauskunft.csproj", "{59333DC7-72E0-43CE-8915-5F7E3C79192E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.Test", "Fahrplanauskunft.Test\Fahrplanauskunft.Test.csproj", "{F1D6AF57-90C8-4311-8B2B-9439BED2230F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59333DC7-72E0-43CE-8915-5F7E3C79192E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59333DC7-72E0-43CE-8915-5F7E3C79192E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59333DC7-72E0-43CE-8915-5F7E3C79192E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59333DC7-72E0-43CE-8915-5F7E3C79192E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D6AF57-90C8-4311-8B2B-9439BED2230F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D6AF57-90C8-4311-8B2B-9439BED2230F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D6AF57-90C8-4311-8B2B-9439BED2230F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D6AF57-90C8-4311-8B2B-9439BED2230F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
