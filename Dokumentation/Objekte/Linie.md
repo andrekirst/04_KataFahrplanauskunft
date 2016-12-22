@@ -2,7 +2,9 @@
 
 ## Beschreibung
 
-*TODO*
+Eine Linie ist eine Sammlung von Haltestellen, die das jeweilige Transportsystem, wie eine Linie, abfährt.
+
+Eine Linie kann mit dem Namen öfters vorkommen, aber dafür muss der Ident unterschiedlich sein.
 
 ## Attribute
 
