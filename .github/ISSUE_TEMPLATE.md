@@ -4,8 +4,8 @@ Detaillierte Beschreibung
 
 ## Betroffene Komponenten
 
-* [ ] Fahrtenbuch
-* [ ] Fahrtenbuch.Test
+* [ ] Fahrplanauskunft
+* [ ] Fahrplanauskunft.Test
 
 ## Dokumentationsanpassungen
 
