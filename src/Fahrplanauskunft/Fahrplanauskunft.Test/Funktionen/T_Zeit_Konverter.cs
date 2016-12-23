@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Fahrplanauskunft.Test
+namespace Fahrplanauskunft.Test.Funktionen
 {
     [TestClass]
     public class T_Zeit_Konverter
@@ -16,7 +16,7 @@ namespace Fahrplanauskunft.Test
 
             string expected = "02:00";
 
-            string actual = Fahrplanauskunft.Zeit_Konverter.ZuUhrzeitText(zeit);
+            string actual = Fahrplanauskunft.Funktionen.Zeit_Konverter.ZuUhrzeitText(zeit);
 
             Assert.AreEqual(expected, actual);
        }
@@ -31,7 +31,7 @@ namespace Fahrplanauskunft.Test
 
             string expected = "12:06";
 
-            string actual = Fahrplanauskunft.Zeit_Konverter.ZuUhrzeitText(zeit);
+            string actual = Fahrplanauskunft.Funktionen.Zeit_Konverter.ZuUhrzeitText(zeit);
 
             Assert.AreEqual(expected, actual);
         }
@@ -46,7 +46,7 @@ namespace Fahrplanauskunft.Test
 
             int expected = 120;
 
-            int actual = Fahrplanauskunft.Zeit_Konverter.ZuUhrzeitZahl(zeit);
+            int actual = Fahrplanauskunft.Funktionen.Zeit_Konverter.ZuUhrzeitZahl(zeit);
 
             Assert.AreEqual(expected, actual);
         }
@@ -61,7 +61,7 @@ namespace Fahrplanauskunft.Test
 
             int expected = 726;
 
-            int actual = Fahrplanauskunft.Zeit_Konverter.ZuUhrzeitZahl(zeit);
+            int actual = Fahrplanauskunft.Funktionen.Zeit_Konverter.ZuUhrzeitZahl(zeit);
 
             Assert.AreEqual(expected, actual);
         }

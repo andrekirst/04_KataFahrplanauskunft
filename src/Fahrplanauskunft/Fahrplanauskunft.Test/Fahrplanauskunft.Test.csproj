@@ -51,7 +51,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="T_Zeit_Konverter.cs" />
+    <Compile Include="Funktionen\T_Zeit_Konverter.cs" />
     <Compile Include="T_Linie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
