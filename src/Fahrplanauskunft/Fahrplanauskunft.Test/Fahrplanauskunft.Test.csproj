@@ -51,8 +51,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="T_Linie.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fahrplanauskunft\Fahrplanauskunft.csproj">
+      <Project>{59333dc7-72e0-43ce-8915-5f7e3c79192e}</Project>
+      <Name>Fahrplanauskunft</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
