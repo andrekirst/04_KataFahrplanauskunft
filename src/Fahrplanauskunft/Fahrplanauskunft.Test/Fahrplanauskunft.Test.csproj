@@ -51,6 +51,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Objekte\T_Haltestelle.cs" />
     <Compile Include="T_Linie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
