@@ -3,6 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Funktionen
 {
+    /// <summary>
+    /// Testklasse für Zeit_Konverter
+    /// </summary>
     [TestClass]
     public class T_Zeit_Konverter
     {
