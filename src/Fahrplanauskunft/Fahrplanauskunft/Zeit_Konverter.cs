@@ -12,5 +12,11 @@ namespace Fahrplanauskunft
         {
              return DateTime.MinValue.AddMinutes(minuten).ToString("hh:mm");
        }
+
+        internal static int ZuUhrzeitZahl(string zeit)
+        {
+            string[] zeitWerte =zeit.Split(new Char[] { ':' });
+            return Convert.ToInt32(zeitWerte[0]) * 60 + Convert.ToInt32(zeitWerte[1]);
+        }
     }
 }
