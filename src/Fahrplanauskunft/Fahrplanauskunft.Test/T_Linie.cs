@@ -4,6 +4,9 @@ using Fahrplanauskunft.Objekte;
 
 namespace Fahrplanauskunft.Test
 {
+    /// <summary>
+    /// Test-Klasse für das Objekt Linie
+    /// </summary>
     [TestClass]
     public class T_Linie
     {
