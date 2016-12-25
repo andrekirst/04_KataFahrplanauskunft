@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Fahrplanauskunft.Objekte;
 
-namespace Fahrplanauskunft.Test
+namespace Fahrplanauskunft.Test.Objekte
 {
     /// <summary>
     /// Test-Klasse für das Objekt Linie
