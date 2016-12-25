@@ -46,13 +46,16 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
     <Compile Include="Objekte\T_Haltestelle.cs" />
     <Compile Include="Funktionen\T_Zeit_Konverter.cs" />
+    <Compile Include="Objekte\T_HaltestelleFahrplanEintrag.cs" />
     <Compile Include="T_Linie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
