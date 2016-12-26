@@ -14,8 +14,8 @@ Eine Linie mit 5 Haltestellen. Hier soll getestet werden, dass der Ein- bzw. Aus
 
 ## Streckenabschnitte
 
-| Start | Ende | Linien | Dauer |
-| - | - | - | - |
+| Start | Ziel | Linien | Dauer |
+|---|---|---|---|
 | Südtangente | Am roten Rathaus | S1 | 1 |
 | Am roten Rathaus | Amselweg | S1 | 1 |
 | Amselweg | Birkenweg | S1 | 1 |
@@ -34,7 +34,7 @@ Eine Linie mit 5 Haltestellen. Hier soll getestet werden, dass der Ein- bzw. Aus
 #### Linie S1 - Richtung "Südtangente"
 
 | Stunde | Minute |
-| - | - |
+|---|---|
 | 0...23 | 05 15 25 35 45 45 55 |
 
 ### Haltestelle Am roten Rathaus
@@ -42,5 +42,5 @@ Eine Linie mit 5 Haltestellen. Hier soll getestet werden, dass der Ein- bzw. Aus
 #### Linie S1 - Richtung "Am Nordteich"
 
 | Stunde | Minute |
-| - | - |
+|---|---|
 | 0...23 | 05 15 25 35 45 45 55 |
