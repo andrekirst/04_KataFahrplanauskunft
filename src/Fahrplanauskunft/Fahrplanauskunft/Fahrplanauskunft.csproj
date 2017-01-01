@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objekte\FahrplanauskunftSpeicher.cs" />
     <Compile Include="Objekte\Haltestelle.cs" />
     <Compile Include="Objekte\HaltestelleFahrplanEintrag.cs" />
     <Compile Include="Objekte\Linie.cs" />
