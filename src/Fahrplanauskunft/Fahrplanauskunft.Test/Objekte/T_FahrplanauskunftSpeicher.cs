@@ -18,11 +18,40 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_Konstruktor_OrdnerPfad()
         {
-            string ordnerPfad = "./TestData/TestData1";
+            string ordnerPfad = "TestDaten\\TestSatz1";
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
 
-            Assert.AreEqual("./TestData/TestData1", fahrplanauskunftSpeicher.OrdnerPfad);
+            Assert.AreEqual("TestDaten\\TestSatz1", fahrplanauskunftSpeicher.OrdnerPfad);
+        }
+
+
+        /// <summary>
+        /// Test, dass Haltestellen geladen werden und eine Haltestelle als Quelle und im Ziel vorhanden sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_LadeHaltestellen_1()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz1";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            Assert.AreEqual(1, fahrplanauskunftSpeicher.Haltestellen.Count());
+        }
+
+        /// <summary>
+        /// Test, dass Haltestellen geladen werden und 10 Haltestellen als Quelle und im Ziel vorhanden sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_LadeHaltestellen_10()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz2";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            Assert.AreEqual(10, fahrplanauskunftSpeicher.Haltestellen.Count());
         }
     }
 }

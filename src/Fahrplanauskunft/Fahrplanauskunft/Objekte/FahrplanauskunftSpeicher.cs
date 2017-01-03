@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +26,23 @@ namespace Fahrplanauskunft.Objekte
             OrdnerPfad = ordnerPfad;
         }
 
+        public void Laden()
+        {
+            LadeHaltestellen();
+        }
+
+        private void LadeHaltestellen()
+        {
+            string file = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellen.json");
+
+            if(!File.Exists(file))
+            {
+                throw new FileNotFoundException("Haltestellen-Datei nicht gefunden", "haltestellen.json");
+            }
+
+            Haltestellen = JsonConvert.DeserializeObject<List<Haltestelle>>(File.ReadAllText(file));
+        }
+
         /// <summary>
         /// Gibt oder setzt den Pfad, in dem sich die Fahrplanauskunfts-Dateien befinden
         /// </summary>
@@ -31,6 +50,14 @@ namespace Fahrplanauskunft.Objekte
         {
             get;
             set;
+        }
+
+        /// <summary>
+        /// Die Liste von Haltestellen
+        /// </summary>
+        public List<Haltestelle> Haltestellen
+        {
+            get; set;
         }
     }
 }
