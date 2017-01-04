@@ -23,5 +23,18 @@ namespace Fahrplanauskunft.Test.Objekte
             Assert.AreEqual("Test", linie.Name);
             Assert.AreEqual("TEST", linie.Ident);
         }
+
+        /// <summary>
+        /// Test der Equals-Methode, dass zwei Linien gleich sind. Name: "Test", Ident: "TEST"
+        /// </summary>
+        [TestMethod]
+        public void Haltestelle_Equals_Name_Test_Ident_TEST()
+        {
+            Linie actual = new Linie(name: "Test", ident: "TEST");
+            
+            Linie expected = new Linie(name: "Test", ident: "TEST");
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
