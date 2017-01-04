@@ -51,7 +51,7 @@ namespace Fahrplanauskunft.Test.Objekte
             };
             #endregion
 
-            Equalidator.AreEqual(expected, fahrplanauskunftSpeicher.Haltestellen);
+            CollectionAssert.AreEqual(expected, fahrplanauskunftSpeicher.Haltestellen);
         }
 
         /// <summary>
