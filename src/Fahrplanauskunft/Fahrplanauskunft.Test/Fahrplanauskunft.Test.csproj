@@ -56,6 +56,7 @@
     <Compile Include="Objekte\T_Haltestelle.cs" />
     <Compile Include="Funktionen\T_Zeit_Konverter.cs" />
     <Compile Include="Objekte\T_HaltestelleFahrplanEintrag.cs" />
+    <Compile Include="Objekte\T_FahrplanauskunftSpeicher.cs" />
     <Compile Include="Objekte\T_Verbindungsanfrage.cs" />
     <Compile Include="Objekte\T_Streckenabschnitt.cs" />
     <Compile Include="Objekte\T_Linie.cs" />
@@ -66,6 +67,14 @@
       <Project>{59333dc7-72e0-43ce-8915-5f7e3c79192e}</Project>
       <Name>Fahrplanauskunft</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestDaten\TestSatz1\haltestellen.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDaten\TestSatz2\haltestellen.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
