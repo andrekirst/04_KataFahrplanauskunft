@@ -60,7 +60,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return Name.GetHashCode() * 2 + Ident.GetHashCode();
         }
     }
 }

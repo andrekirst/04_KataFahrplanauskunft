@@ -27,7 +27,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test der Equals-Methode, dass zwei Linien gleich sind. Name: "Test", Ident: "TEST"
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Equals_Name_Test_Ident_TEST()
         {
             Linie actual = new Linie(name: "Test", ident: "TEST");

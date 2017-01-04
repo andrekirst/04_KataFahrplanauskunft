@@ -14,7 +14,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test einer Haltestelle mit dem Namen "Test" und keinen Linien
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Name_Test_Linien_0()
         {
             string name = "Test";
@@ -27,7 +27,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test einer Haltestelle mit dem Namen "Test" und einer Linie (Name: "U1", Ident: "U1_NORD")
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Name_Test_Linien_1()
         {
             string name = "Test";
@@ -49,7 +49,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test der Equals-Methode, dass zwei Haltestellen gleich sind. Name: "Test"
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Equals_Name_Test()
         {
             string name = "Test";

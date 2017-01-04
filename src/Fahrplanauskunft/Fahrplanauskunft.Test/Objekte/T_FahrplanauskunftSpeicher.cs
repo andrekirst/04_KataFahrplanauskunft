@@ -1,9 +1,6 @@
-﻿using System;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Fahrplanauskunft.Objekte;
 using System.Collections.Generic;
-using equalidator;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
