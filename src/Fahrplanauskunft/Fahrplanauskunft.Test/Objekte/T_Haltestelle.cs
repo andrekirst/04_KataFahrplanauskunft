@@ -14,7 +14,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test einer Haltestelle mit dem Namen "Test" und keinen Linien
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Name_Test_Linien_0()
         {
             string name = "Test";
@@ -27,7 +27,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test einer Haltestelle mit dem Namen "Test" und einer Linie (Name: "U1", Ident: "U1_NORD")
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Name_Test_Linien_1()
         {
             string name = "Test";
@@ -44,6 +44,21 @@ namespace Fahrplanauskunft.Test.Objekte
             Assert.AreEqual(1, haltestelle.Linien.Count());
             Assert.AreEqual("U1", haltestelle.Linien[0].Name);
             Assert.AreEqual("U1_NORD", haltestelle.Linien[0].Ident);
+        }
+
+        /// <summary>
+        /// Test der Equals-Methode, dass zwei Haltestellen gleich sind. Name: "Test"
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Haltestelle_Equals_Name_Test()
+        {
+            string name = "Test";
+            Haltestelle actual = new Haltestelle(name);
+
+            string name2 = "Test";
+            Haltestelle expected = new Haltestelle(name2);
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }
