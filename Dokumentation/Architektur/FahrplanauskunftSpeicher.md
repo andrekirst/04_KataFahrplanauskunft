@@ -11,3 +11,7 @@ Die Dateien sind im json-Format abgespeichert und werden mit dem NuGet-Package *
 ### Haltestellen
 
 Es gibt eine Datei mit allen Haltestellen. Diese Datei ist `haltestellen.json`
+
+### Linien
+
+Es gibt eine Datei mit allen Linien. Diese Datei ist `linien.json`

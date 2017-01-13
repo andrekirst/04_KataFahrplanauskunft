@@ -33,7 +33,7 @@ namespace Fahrplanauskunft.Test.Objekte
             string ordnerPfad = "TestDaten\\TestSatz1";
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
-            fahrplanauskunftSpeicher.Laden();
+            fahrplanauskunftSpeicher.LadeHaltestellen();
 
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
@@ -60,7 +60,7 @@ namespace Fahrplanauskunft.Test.Objekte
             string ordnerPfad = "TestDaten\\TestSatz2";
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
-            fahrplanauskunftSpeicher.Laden();
+            fahrplanauskunftSpeicher.LadeHaltestellen();
 
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
@@ -87,6 +87,65 @@ namespace Fahrplanauskunft.Test.Objekte
             List<Haltestelle> actual = fahrplanauskunftSpeicher.Haltestellen;
 
             List<Haltestelle> expected = haltestellen;
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test, dass Linien geladen werden und eine Linie als Quelle und im Ziel vorhanden sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_LadeLinien_1()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz3";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeLinien();
+
+            #region Erstellung des zu erwartendem Wertes
+            List<Linie> linien = new List<Linie>()
+            {
+                new Linie(name: "U1", ident: "U1_NORD")
+            };
+            #endregion
+
+            List<Linie> actual = fahrplanauskunftSpeicher.Linien;
+
+            List<Linie> expected = linien;
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test, dass Linien geladen werden und 10 Linien als Quelle und im Ziel vorhanden sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_LadeLinien_10()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz4";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeLinien();
+
+            #region Erstellung des zu erwartendem Wertes
+            List<Linie> linien = new List<Linie>()
+            {
+                new Linie(name: "U1", ident: "U1_NORD"),
+                new Linie(name: "U1", ident: "U1_SUED"),
+                new Linie(name: "U2", ident: "U2_A"),
+                new Linie(name: "U2", ident: "U2_B"),
+                new Linie(name: "U3", ident: "U3_A"),
+                new Linie(name: "U3", ident: "U3_B"),
+                new Linie(name: "U4", ident: "U4_A"),
+                new Linie(name: "U4", ident: "U4_B"),
+                new Linie(name: "U5", ident: "U5_A"),
+                new Linie(name: "U5", ident: "U5_B")
+            };
+            #endregion
+
+            List<Linie> actual = fahrplanauskunftSpeicher.Linien;
+
+            List<Linie> expected = linien;
 
             CollectionAssert.AreEqual(expected, actual);
         }

@@ -29,9 +29,28 @@ namespace Fahrplanauskunft.Objekte
         public void Laden()
         {
             LadeHaltestellen();
+            LadeLinien();
         }
 
-        private void LadeHaltestellen()
+        /// <summary>
+        /// Methode für das Laden von Linien aus dem Ordner
+        /// </summary>
+        public void LadeLinien()
+        {
+            string file = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\linien.json");
+
+            if(!File.Exists(file))
+            {
+                throw new FileNotFoundException("Linien-Datei nicht gefunden", "linien.json");
+            }
+
+            Linien = JsonConvert.DeserializeObject<List<Linie>>(File.ReadAllText(file));
+        }
+
+        /// <summary>
+        /// Methode für das Laden von Haltestellen
+        /// </summary>
+        public void LadeHaltestellen()
         {
             string file = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellen.json");
 
@@ -58,6 +77,15 @@ namespace Fahrplanauskunft.Objekte
         public List<Haltestelle> Haltestellen
         {
             get; set;
+        }
+
+        /// <summary>
+        /// Die Liste von Linien
+        /// </summary>
+        public List<Linie> Linien
+        {
+            get;
+            set;
         }
     }
 }
