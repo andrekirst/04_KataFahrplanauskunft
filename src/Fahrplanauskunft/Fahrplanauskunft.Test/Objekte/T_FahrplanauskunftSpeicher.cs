@@ -149,5 +149,43 @@ namespace Fahrplanauskunft.Test.Objekte
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Test, dass Streckenabschnitte geladen werden und ein Streckenabschnitt als Quelle und im Ziel vorhanden sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_LadeStreckenabschnitte_1()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz5";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeStreckenabschnitte();
+
+            #region Erstellung des zu erwartendem Wertes
+            List<Linie> linien = new List<Linie>()
+            {
+                new Linie(name: "U1", ident: "U1_NORD"),
+                new Linie(name: "U1", ident: "U1_SUED")
+            };
+
+            List<Haltestelle> haltestellen = new List<Haltestelle>()
+            {
+                new Haltestelle(name: "H1") { Linien = linien },
+                new Haltestelle(name: "H2") { Linien = linien }
+            };
+
+            List<Streckenabschnitt> streckenabschnitte = new List<Streckenabschnitt>()
+            {
+                new Streckenabschnitt(1, haltestellen[0], haltestellen[1], linien)
+            };
+
+        #endregion
+
+            List<Streckenabschnitt> actual = fahrplanauskunftSpeicher.Streckenabschnitte;
+
+            List<Streckenabschnitt> expected = streckenabschnitte;
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }

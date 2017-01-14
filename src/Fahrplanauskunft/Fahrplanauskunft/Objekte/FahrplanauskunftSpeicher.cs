@@ -33,6 +33,21 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Methode für das Laden der Streckenabschnitte aus dem Order
+        /// </summary>
+        internal void LadeStreckenabschnitte()
+        {
+            string file = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\streckenabschnitte.json");
+
+            if(!File.Exists(file))
+            {
+                throw new FileNotFoundException("Streckenabschnitte-Datei nicht gefunden", "streckenabschnitte.json");
+            }
+
+            Streckenabschnitte = JsonConvert.DeserializeObject<List<Streckenabschnitt>>(File.ReadAllText(file));
+        }
+
+        /// <summary>
         /// Methode für das Laden von Linien aus dem Ordner
         /// </summary>
         public void LadeLinien()
@@ -83,6 +98,15 @@ namespace Fahrplanauskunft.Objekte
         /// Die Liste von Linien
         /// </summary>
         public List<Linie> Linien
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Die Liste der Streckenabschnitte
+        /// </summary>
+        public List<Streckenabschnitt> Streckenabschnitte
         {
             get;
             set;

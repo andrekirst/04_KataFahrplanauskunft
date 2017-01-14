@@ -65,5 +65,25 @@ namespace Fahrplanauskunft.Objekte
             get;
             set;
         }
+
+        /// <summary>
+        /// Vergleicht den Streckenabschnitt mit einem anderen Objekt
+        /// </summary>
+        /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public override bool Equals(object obj)
+        {
+            if(obj == null)
+            {
+                throw new NullReferenceException();
+            }
+
+            Streckenabschnitt other = obj as Streckenabschnitt;
+
+            return
+                this.Dauer == other.Dauer &&
+                this.StartHaltestelle.Equals(other.StartHaltestelle) &&
+                this.ZielHaltestelle.Equals(other.ZielHaltestelle);
+        }
     }
 }
