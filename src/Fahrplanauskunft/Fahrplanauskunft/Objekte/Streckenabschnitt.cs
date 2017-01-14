@@ -81,9 +81,9 @@ namespace Fahrplanauskunft.Objekte
             Streckenabschnitt other = obj as Streckenabschnitt;
 
             return
-                this.Dauer == other.Dauer &&
-                this.StartHaltestelle.Equals(other.StartHaltestelle) &&
-                this.ZielHaltestelle.Equals(other.ZielHaltestelle);
+                Dauer == other.Dauer &&
+                StartHaltestelle.Equals(other.StartHaltestelle) &&
+                ZielHaltestelle.Equals(other.ZielHaltestelle);
         }
     }
 }
