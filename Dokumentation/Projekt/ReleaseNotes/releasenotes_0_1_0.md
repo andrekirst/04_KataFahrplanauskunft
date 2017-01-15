@@ -10,5 +10,6 @@
 * #26 - Objekt Verbindungsanfrage aus dem Brainstorming in der C#-Solution erstellen `feature`
 * #28 - Erstellung eines Lademechanismus für das Objekt Haltestelle `feature`
 * #34 - Erstellung eines Lademechanismus für das Objekt Linie `feature`
+* #36 - Erstellung eines Lademechanismus für das Objekt Streckenabschnitt `feature`
 
 ## Bugfixes
