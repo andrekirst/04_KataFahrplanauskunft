@@ -15,3 +15,7 @@ Es gibt eine Datei mit allen Haltestellen. Diese Datei ist `haltestellen.json`
 ### Linien
 
 Es gibt eine Datei mit allen Linien. Diese Datei ist `linien.json`
+
+### Streckenabschnitte
+
+Es gibt eine Datei mit alle Streckenabschnitte. Diese Datei ist `streckenabschnitte.json`

@@ -1,0 +1,1 @@
+[{"Dauer":1,"Linien":[{"Name":"U1","Ident":"U1_NORD"},{"Name":"U1","Ident":"U1_SUED"}],"StartHaltestelle":{"Name":"H1","Linien":[{"Name":"U1","Ident":"U1_NORD"},{"Name":"U1","Ident":"U1_SUED"}]},"ZielHaltestelle":{"Name":"H2","Linien":[{"Name":"U1","Ident":"U1_NORD"},{"Name":"U1","Ident":"U1_SUED"}]}}]

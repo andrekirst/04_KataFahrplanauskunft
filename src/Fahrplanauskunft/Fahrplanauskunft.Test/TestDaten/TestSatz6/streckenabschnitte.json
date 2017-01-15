@@ -1,0 +1,392 @@
+[
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H1",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H2",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  },
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H2",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H3",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  },
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H3",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H4",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  },
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H4",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H5",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  },
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H5",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H6",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  },
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H6",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H7",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  },
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H7",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H8",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  },
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H8",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H9",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  },
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H9",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H10",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  },
+  {
+    "Dauer": 1,
+    "Linien": [
+      {
+        "Name": "U1",
+        "Ident": "U1_NORD"
+      },
+      {
+        "Name": "U1",
+        "Ident": "U1_SUED"
+      }
+    ],
+    "StartHaltestelle": {
+      "Name": "H10",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    },
+    "ZielHaltestelle": {
+      "Name": "H11",
+      "Linien": [
+        {
+          "Name": "U1",
+          "Ident": "U1_NORD"
+        },
+        {
+          "Name": "U1",
+          "Ident": "U1_SUED"
+        }
+      ]
+    }
+  }
+]
