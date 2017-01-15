@@ -84,6 +84,9 @@
     <None Include="TestDaten\TestSatz5\streckenabschnitte.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDaten\TestSatz6\streckenabschnitte.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Choose>
