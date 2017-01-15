@@ -35,3 +35,15 @@ Test, dass Linien geladen werden und eine Linie als Quelle und im Ziel vorhanden
 #### Beschreibung
 
 Test, dass Linien geladen werden und 10 Linien als Quelle und im Ziel vorhanden sind
+
+### FahrplanauskunftSpeicher_LadeStreckenabschnitte_1
+
+#### Beschreibung
+
+Test, dass Streckenabschnitte geladen werden und ein Streckenabschnitt als Quelle und im Ziel vorhanden sind
+
+### FahrplanauskunftSpeicher_LadeStreckenabschnitte_10
+
+#### Beschreibung
+
+Test, dass Streckenabschnitte geladen werden und 10 Streckenabschnitte als Quelle und im Ziel vorhanden sind
