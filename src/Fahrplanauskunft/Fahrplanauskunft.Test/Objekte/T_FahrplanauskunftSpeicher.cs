@@ -243,5 +243,41 @@ namespace Fahrplanauskunft.Test.Objekte
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Test, dass Haltestellenfahrplaneintraege geladen werden und ein Haltestellenfahrplaneintrag als Quelle und im Ziel vorhanden sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_1()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz7";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
+
+            #region Erstellung des zu erwartendem Wertes
+            List<Linie> linien = new List<Linie>()
+            {
+                new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            List<Haltestelle> haltestellen = new List<Haltestelle>()
+            {
+                new Haltestelle(name: "H1") { Linien = linien }
+            };
+
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
+            {
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0])
+            };
+
+            #endregion
+
+            List<HaltestelleFahrplanEintrag> actual = fahrplanauskunftSpeicher.Haltestellenfahrplaneintraege;
+
+            List<HaltestelleFahrplanEintrag> expected = haltestellenfahrplaneintraege;
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }
