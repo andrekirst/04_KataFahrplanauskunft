@@ -48,14 +48,6 @@ Test, dass Streckenabschnitte geladen werden und ein Streckenabschnitt als Quell
 
 Test, dass Streckenabschnitte geladen werden und 10 Streckenabschnitte als Quelle und im Ziel vorhanden sind
 
-
-
-
-
-
-
-
-
 ### FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_1
 
 #### Beschreibung
