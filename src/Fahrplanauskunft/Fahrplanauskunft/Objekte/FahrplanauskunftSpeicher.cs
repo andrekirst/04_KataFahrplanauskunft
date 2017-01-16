@@ -78,6 +78,21 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Methode für das Laden von Haltestellenfahrplaneinträgen
+        /// </summary>
+        internal void LadeHaltestellenfahrplaneintraege()
+        {
+            string file = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellenfahrplaneintraege.json");
+
+            if (!File.Exists(file))
+            {
+                throw new FileNotFoundException("Haltestellenfahrplaneinträge-Datei nicht gefunden", "haltestellenfahrplaneintraege.json");
+            }
+
+            Haltestellenfahrplaneintraege = JsonConvert.DeserializeObject<List<HaltestelleFahrplanEintrag>>(File.ReadAllText(file));
+        }
+
+        /// <summary>
         /// Gibt oder setzt den Pfad, in dem sich die Fahrplanauskunfts-Dateien befinden
         /// </summary>
         public string OrdnerPfad
@@ -107,6 +122,15 @@ namespace Fahrplanauskunft.Objekte
         /// Die Liste der Streckenabschnitte
         /// </summary>
         public List<Streckenabschnitt> Streckenabschnitte
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Die Liste der Haltestellenfahrplaneinträge
+        /// </summary>
+        public List<HaltestelleFahrplanEintrag> Haltestellenfahrplaneintraege
         {
             get;
             set;

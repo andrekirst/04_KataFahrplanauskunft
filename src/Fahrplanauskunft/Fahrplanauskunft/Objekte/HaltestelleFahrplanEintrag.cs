@@ -34,7 +34,16 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Gibt die Haltestelle zurück, welche die Linie abfährt
         /// </summary>
-        public object Haltestelle
+        public Haltestelle Haltestelle
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Die Linie für welche die Uhrzeit gilt
+        /// </summary>
+        public Linie Linie
         {
             get;
             set;
@@ -43,19 +52,27 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Die Uhrzeit, wann abgefahren wird
         /// </summary>
-        public object Linie
+        public int Uhrzeit
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Die Linie, die an der Haltestelle fährt
+        /// Vergleicht den Haltestellenfahrplaneintrag mit einem anderen Objekt
         /// </summary>
-        public int Uhrzeit
+        /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public override bool Equals(object obj)
         {
-            get;
-            set;
+            if (obj == null)
+            {
+                throw new NullReferenceException();
+            }
+            HaltestelleFahrplanEintrag other = obj as HaltestelleFahrplanEintrag;
+            return Uhrzeit == other.Uhrzeit &&
+                Linie.Equals(other.Linie) &&
+                Haltestelle.Equals(other.Haltestelle);
         }
     }
 }
