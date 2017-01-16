@@ -41,7 +41,7 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Die Linie
+        /// Die Linie für welche die Uhrzeit gilt
         /// </summary>
         public Linie Linie
         {
@@ -50,7 +50,7 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Die Linie, die an der Haltestelle fährt
+        /// Die Uhrzeit, wann abgefahren wird
         /// </summary>
         public int Uhrzeit
         {
