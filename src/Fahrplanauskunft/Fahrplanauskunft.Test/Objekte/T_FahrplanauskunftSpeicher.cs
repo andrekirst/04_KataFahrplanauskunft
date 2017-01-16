@@ -279,5 +279,143 @@ namespace Fahrplanauskunft.Test.Objekte
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Test, dass Haltestellenfahrplaneintraege geladen werden und 10 Haltestellenfahrplaneintraege als Quelle und im Ziel vorhanden sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_10()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz8";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
+
+            #region Erstellung des zu erwartendem Wertes
+            List<Linie> linien = new List<Linie>()
+            {
+                new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            List<Haltestelle> haltestellen = new List<Haltestelle>()
+            {
+                new Haltestelle(name: "H1") { Linien = linien }
+            };
+
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
+            {
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 730, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 740, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 750, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 760, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 770, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 780, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 790, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 800, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 810, linie: linien[0])
+            };
+
+            #endregion
+
+            List<HaltestelleFahrplanEintrag> actual = fahrplanauskunftSpeicher.Haltestellenfahrplaneintraege;
+
+            List<HaltestelleFahrplanEintrag> expected = haltestellenfahrplaneintraege;
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test, dass Haltestellenfahrplaneintraege geladen werden und 10 Haltestellenfahrplaneintraege mit 2 verschiedenen Haltestellen als Quelle und im Ziel vorhanden sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_10_Verschiedene_Haltestellen_2()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz9";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
+
+            #region Erstellung des zu erwartendem Wertes
+            List<Linie> linien = new List<Linie>()
+            {
+                new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            List<Haltestelle> haltestellen = new List<Haltestelle>()
+            {
+                new Haltestelle(name: "H1") { Linien = linien },
+                new Haltestelle(name: "H2") { Linien = linien }
+            };
+
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
+            {
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 730, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 740, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 750, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 760, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 725, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 735, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 745, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 755, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 805, linie: linien[0])
+            };
+
+            #endregion
+
+            List<HaltestelleFahrplanEintrag> actual = fahrplanauskunftSpeicher.Haltestellenfahrplaneintraege;
+
+            List<HaltestelleFahrplanEintrag> expected = haltestellenfahrplaneintraege;
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test, dass Haltestellenfahrplaneintraege geladen werden und 10 Haltestellenfahrplaneintraege mit 2 verschiedenen Haltestellen und 2 verschiedenen Linien als Quelle und im Ziel vorhanden sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_10_Verschiedene_Haltestellen_2_Linien_2()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz10";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
+
+            #region Erstellung des zu erwartendem Wertes
+            List<Linie> linien = new List<Linie>()
+            {
+                new Linie(name: "U1", ident: "U1_NORD"),
+                new Linie(name: "U1", ident: "U1_SUED")
+            };
+
+            List<Haltestelle> haltestellen = new List<Haltestelle>()
+            {
+                new Haltestelle(name: "H1") { Linien = linien },
+                new Haltestelle(name: "H2") { Linien = linien }
+            };
+
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
+            {
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 730, linie: linien[1]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 740, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 750, linie: linien[1]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 760, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 725, linie: linien[1]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 735, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 745, linie: linien[1]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 755, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 805, linie: linien[1])
+            };
+
+            #endregion
+
+            List<HaltestelleFahrplanEintrag> actual = fahrplanauskunftSpeicher.Haltestellenfahrplaneintraege;
+
+            List<HaltestelleFahrplanEintrag> expected = haltestellenfahrplaneintraege;
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }
