@@ -47,3 +47,35 @@ Test, dass Streckenabschnitte geladen werden und ein Streckenabschnitt als Quell
 #### Beschreibung
 
 Test, dass Streckenabschnitte geladen werden und 10 Streckenabschnitte als Quelle und im Ziel vorhanden sind
+
+
+
+
+
+
+
+
+
+### FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_1
+
+#### Beschreibung
+
+Test, dass Haltestellenfahrplaneintraege geladen werden und ein Haltestellenfahrplaneintrag als Quelle und im Ziel vorhanden sind
+
+### FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_10
+
+#### Beschreibung
+
+Test, dass Haltestellenfahrplaneintraege geladen werden und 10 Haltestellenfahrplaneintraege als Quelle und im Ziel vorhanden sind
+
+### FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_10_Verschiedene_Haltestellen_2
+
+#### Beschreibung
+
+Test, dass Haltestellenfahrplaneintraege geladen werden und 10 Haltestellenfahrplaneintraege mit 2 verschiedenen Haltestellen als Quelle und im Ziel vorhanden sind
+
+### FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_10_Verschiedene_Haltestellen_2_Linien_2
+
+#### Beschreibung
+
+Test, dass Haltestellenfahrplaneintraege geladen werden und 10 Haltestellenfahrplaneintraege mit 2 verschiedenen Haltestellen und 2 verschiedenen Linien als Quelle und im Ziel vorhanden sind
