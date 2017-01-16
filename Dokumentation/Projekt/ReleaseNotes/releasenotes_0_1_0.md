@@ -11,5 +11,6 @@
 * #28 - Erstellung eines Lademechanismus für das Objekt Haltestelle `feature`
 * #34 - Erstellung eines Lademechanismus für das Objekt Linie `feature`
 * #36 - Erstellung eines Lademechanismus für das Objekt Streckenabschnitt `feature`
+* #39 - Erstellung eines Lademechanismus für das Objekt HaltestelleFahrplanEintrag `feature`
 
 ## Bugfixes
