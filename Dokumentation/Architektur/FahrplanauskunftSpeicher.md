@@ -18,8 +18,8 @@ Es gibt eine Datei mit allen Linien. Diese Datei ist `linien.json`
 
 ### Streckenabschnitte
 
-Es gibt eine Datei mit alle Streckenabschnitte. Diese Datei ist `streckenabschnitte.json`
+Es gibt eine Datei mit allen Streckenabschnitten. Diese Datei ist `streckenabschnitte.json`
 
 ### Haltestellenfahrplaneinträge
 
-Es gibt eine Datei mit alle Streckenabschnitte. Diese Datei ist `haltestellenfahrplaneintraege.json`
+Es gibt eine Datei mit allen Haltestellenfahrplaneinträgen. Diese Datei ist `haltestellenfahrplaneintraege.json`
