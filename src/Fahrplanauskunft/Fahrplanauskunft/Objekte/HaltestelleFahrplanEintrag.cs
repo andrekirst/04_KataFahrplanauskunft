@@ -58,6 +58,11 @@ namespace Fahrplanauskunft.Objekte
             set;
         }
 
+        /// <summary>
+        /// Vergleicht den Haltestellenfahrplaneintrag mit einem anderen Objekt
+        /// </summary>
+        /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
             if (obj == null)
