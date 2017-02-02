@@ -211,3 +211,11 @@ Ziel = Ziel-Haltestelle
 | Stunde | Minuten |
 | --- | --- |
 | 00..23 | 32 |
+
+### Haltestelle H9
+
+#### Haltestelle H9 - Linie B22
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 50 |
