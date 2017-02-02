@@ -31,6 +31,19 @@ Es existieren 16 Haltestellen und 10 Linien:
 | H15 | B41, B42 |
 | H16 | B41, B42 |
 
+### Linien
+
+| Name | Ident |
+| --- | --- |
+| B11 | B11_SUED |
+| B12 | B11_NORD |
+| B21 | B11_OST |
+| B22 | B11_WEST |
+| B31 | B11_SUED |
+| B32 | B11_NORD |
+| B41 | B11_SUED |
+| B42 | B11_NORD |
+
 ## Streckenabschnitte
 
 Start = Start-Haltestelle
