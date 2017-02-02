@@ -12,7 +12,7 @@ Die Daten wurden anhand des [Brainstorming vom 02.01.2017](/Dokumentation/Brains
 
 Es existieren 16 Haltestellen und 10 Linien:
 
-| Haltestelle | Linie |
+| Haltestelle | Linien |
 | --- | --- |
 | H1 | B11, B12 |
 | H2 | B11, B12, B31, B32 |
@@ -32,5 +32,27 @@ Es existieren 16 Haltestellen und 10 Linien:
 | H16 | B41, B42 |
 
 ## Streckenabschnitte
+
+Start = Start-Haltestelle
+Ziel = Ziel-Haltestelle
+
+| Start | Ziel | Dauer in Minuten |
+| --- | --- | --- |
+| H1 | H2 | 2 |
+| H2 | H3 | 2 |
+| H3 | H4 | 2 |
+| H4 | H5 | 2 |
+| H6 | H4 | 1 |
+| H4 | H7 | 2 |
+| H7 | H8 | 1 |
+| H8 | H9 | 2 |
+| H10 | H2 | 1 |
+| H2 | H8 | 1 |
+| H8 | H11 | 1 |
+| H12 | H13 | 2 |
+| H13 | H14 | 2 |
+| H14 | H8 | 3 |
+| H8 | H15 | 3 |
+| H15 | H16 | 2 |
 
 ## Haltestellenfahrplaneinträge
