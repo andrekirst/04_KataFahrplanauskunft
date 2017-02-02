@@ -159,3 +159,17 @@ Ziel = Ziel-Haltestelle
 | Stunde | Minuten |
 | --- | --- |
 | 00..23 | 13 |
+
+### Haltestelle H7
+
+#### Haltestelle H7 - Linie B21
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 18 |
+
+#### Haltestelle H7 - Linie B22
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 50 |
