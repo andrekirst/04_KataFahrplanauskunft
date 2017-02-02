@@ -1,4 +1,4 @@
-# Fahrplann TestSatzBrainstorming
+# Fahrplan TestSatzBrainstorming
 
 ## Beschreibung
 
@@ -10,7 +10,20 @@ Die Daten wurden anhand des [Brainstorming vom 02.01.2017](/Dokumentation/Brains
 
 ## Haltestellen und Linien
 
-Es existieren 16 Haltestellen und 10 Linien:
+### Linien
+
+| Name | Ident |
+| --- | --- |
+| B11 | B11_SUED |
+| B12 | B11_NORD |
+| B21 | B11_OST |
+| B22 | B11_WEST |
+| B31 | B11_SUED |
+| B32 | B11_NORD |
+| B41 | B11_SUED |
+| B42 | B11_NORD |
+
+### Haltestellen mit den Linien
 
 | Haltestelle | Linien |
 | --- | --- |
@@ -31,23 +44,10 @@ Es existieren 16 Haltestellen und 10 Linien:
 | H15 | B41, B42 |
 | H16 | B41, B42 |
 
-### Linien
-
-| Name | Ident |
-| --- | --- |
-| B11 | B11_SUED |
-| B12 | B11_NORD |
-| B21 | B11_OST |
-| B22 | B11_WEST |
-| B31 | B11_SUED |
-| B32 | B11_NORD |
-| B41 | B11_SUED |
-| B42 | B11_NORD |
-
 ## Streckenabschnitte
 
-Start = Start-Haltestelle
-Ziel = Ziel-Haltestelle
+* Start = Start-Haltestelle
+* Ziel = Ziel-Haltestelle
 
 | Start | Ziel | Dauer in Minuten |
 | --- | --- | --- |
