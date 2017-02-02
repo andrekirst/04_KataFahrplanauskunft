@@ -146,8 +146,16 @@ Ziel = Ziel-Haltestelle
 
 ### Haltestelle H5
 
-### Haltestelle H5 - Linie B12
+#### Haltestelle H5 - Linie B12
 
 | Stunde | Minuten |
 | --- | --- |
 | 00..23 | 05 |
+
+### Haltestelle H6
+
+#### Haltestelle H6 - Linie B21
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 13 |
