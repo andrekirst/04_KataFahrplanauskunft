@@ -219,3 +219,11 @@ Ziel = Ziel-Haltestelle
 | Stunde | Minuten |
 | --- | --- |
 | 00..23 | 50 |
+
+### Haltestelle H10
+
+#### Haltestelle H10 - Linie B31
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 36 |
