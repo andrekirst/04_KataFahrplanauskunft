@@ -99,6 +99,18 @@
     <None Include="TestDaten\TestSatz9\haltestellenfahrplaneintraege.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDaten\TestSatzBrainstorming\haltestellen.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDaten\TestSatzBrainstorming\haltestellenfahrplaneintraege.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDaten\TestSatzBrainstorming\linien.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDaten\TestSatzBrainstorming\streckenabschnitte.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Choose>
