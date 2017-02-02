@@ -227,3 +227,11 @@ Ziel = Ziel-Haltestelle
 | Stunde | Minuten |
 | --- | --- |
 | 00..23 | 36 |
+
+### Haltestelle H11
+
+#### Haltestelle H11 - Linie B32
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 10 |
