@@ -72,8 +72,82 @@ Ziel = Ziel-Haltestelle
 
 ### Haltestelle H1
 
-#### Linie B11
+#### Haltestelle H1 - Linie B11
 
 | Stunde | Minuten |
 | --- | --- |
-| 0...23 | 00 |
+| 00..23 | 00 |
+
+### Haltestelle H2
+
+#### Haltestelle H2 - Linie B11
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 03 |
+
+#### Haltestelle H2 - Linie B12
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 14 |
+
+#### Haltestelle H2 - Linie B31
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 36 |
+
+#### Haltestelle H2 - Linie B32
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 14 |
+
+### Haltestelle H3
+
+#### Haltestelle H3 - Linie B11
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 06 |
+
+#### Haltestelle H3 - Linie B12
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 11 |
+
+### Haltestelle H4
+
+#### Haltestelle H4 - Linie B11
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 09 |
+
+#### Haltestelle H4 - Linie B12
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 08 |
+
+#### Haltestelle H4 - Linie B21
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 15 |
+
+#### Haltestelle H4 - Linie B22
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 53 |
+
+### Haltestelle H5
+
+### Haltestelle H5 - Linie B12
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 05 |
