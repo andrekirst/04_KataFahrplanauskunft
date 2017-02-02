@@ -235,3 +235,61 @@ Ziel = Ziel-Haltestelle
 | Stunde | Minuten |
 | --- | --- |
 | 00..23 | 10 |
+
+### Haltestelle H12
+
+#### Haltestelle H12 - Linie B41
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 39 |
+
+### Haltestelle H13
+
+#### Haltestelle H13 - Linie B41
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 42 |
+
+#### Haltestelle H13 - Linie B42
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 39 |
+
+### Haltestelle H14
+
+#### Haltestelle H14 - Linie B41
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 45 |
+
+#### Haltestelle H14 - Linie B42
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 36 |
+
+### Haltestelle H15
+
+#### Haltestelle H15 - Linie B41
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 53 |
+
+#### Haltestelle H15 - Linie B42
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 28 |
+
+### Haltestelle H16
+
+#### Haltestelle H16 - Linie B42
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 25 |
