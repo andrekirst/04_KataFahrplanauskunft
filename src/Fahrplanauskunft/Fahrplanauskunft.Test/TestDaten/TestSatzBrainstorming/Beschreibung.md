@@ -173,3 +173,41 @@ Ziel = Ziel-Haltestelle
 | Stunde | Minuten |
 | --- | --- |
 | 00..23 | 50 |
+
+### Haltestelle H8
+
+#### Haltestelle H8 - Linie B21
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 20 |
+
+#### Haltestelle H8 - Linie B22
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 48 |
+
+#### Haltestelle H8 - Linie B31
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 40 |
+
+#### Haltestelle H8 - Linie B32
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 12 |
+
+#### Haltestelle H8 - Linie B41
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 49 |
+
+#### Haltestelle H8 - Linie B42
+
+| Stunde | Minuten |
+| --- | --- |
+| 00..23 | 32 |
