@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Fahrplanauskunft.Funktionen;
 using Fahrplanauskunft.Objekte;
+using System.Linq;
 
 namespace Fahrplanauskunft.Test.Funktionen
 {
@@ -13,6 +14,15 @@ namespace Fahrplanauskunft.Test.Funktionen
     [TestClass]
     public class T_Logik
     {
+        private List<Haltestelle> Lade_Test_Haltestellen()
+        {
+            string ordnerPfad = "TestDaten\\TestSatz2";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellen();
+
+            return fahrplanauskunftSpeicher.Haltestellen;
+        }
         /// <summary>
         /// Haltestelle Linie B11 Starthaltestelle hat eine Linie B11
         /// </summary>
@@ -61,13 +71,16 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "Up1" }
                                                                       ,new Umstiegspunkt { Name = "Up2" }
                                                                     };
-
+            var c = expected.Cast<Haltestelle>().ToList();
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             List<Umstiegspunkt> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
                                                                                     {
                                                                                         Ident = "B11"
                                                                                        , Name = "B11"
-                                                                                    });
-                                                                
+                                                                                    }, haltestellen);
+         
+
+
 
             CollectionAssert.AreEqual(expected, actual);
         }
@@ -82,11 +95,12 @@ namespace Fahrplanauskunft.Test.Funktionen
                                                                       ,new Umstiegspunkt { Name = "Up3" }
                                                                     };
 
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             List<Umstiegspunkt> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
                                                                                 {
-                                                                                        Ident = "B31"
+                                                                                     Ident = "B31"
                                                                                     , Name = "B31"
-                                                                                });
+                                                                                }, haltestellen);
 
             CollectionAssert.AreEqual(expected, actual);
         }
@@ -100,11 +114,12 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "Up3" }
                                                                       };
 
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             List<Umstiegspunkt> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
                                                                                 {
                                                                                     Ident = "B41"
                                                                                     , Name = "B41"
-                                                                                });
+                                                                                }, haltestellen);
 
             CollectionAssert.AreEqual(expected, actual);
         }
@@ -118,7 +133,6 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "Up1" }
                                                                       ,new Umstiegspunkt {Name = "Up3" }
                                                                     };
-
             List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umsteigepunkte(new List<Umstiegspunkt>()
                                                                       { new Umstiegspunkt { Name = "Up1" }
                                                                       , new Umstiegspunkt { Name = "Up3" } });
