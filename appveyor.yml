@@ -33,7 +33,7 @@ platform: Any CPU
 configuration: Release
 
 before_build:
-  - nuget restore -verbosity detailed -SolutionDirectory 'C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\'
+  - nuget restore -verbosity detailed -SolutionDirectory C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\
 
 build:
     parallel: false
