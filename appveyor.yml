@@ -1,0 +1,30 @@
+# Erweiterte Dokumentation: https://www.appveyor.com/docs/appveyor-yml/
+
+# Version festlegen
+version: 1.0.{build}
+
+# Auch Pull Request erstellen
+skip_branch_with_pr: false
+
+# VM-Template für Visual Studio 2015
+image: Visual Studio 2015
+
+cache:
+  - '%LocalAppData%\NuGet\Cache'
+  - packages -> **\packages.config
+
+platform: Any CPU
+configuration: Release
+
+build:
+    parallel: false
+    project: src/Fahrplanauskunft/Fahrplanauskunft.sln
+    include_nuget_references: true
+    verbosity: normal
+
+test:
+    assemblies:
+      - Fahrplanauskunft.Test.dll
+
+artifacts:
+    - path: BuildOutput.zip
