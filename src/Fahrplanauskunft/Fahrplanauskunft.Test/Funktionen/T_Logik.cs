@@ -68,17 +68,18 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Umsteigepunkte_von_Linie_B11_sind_H2_H4()
         {
-            List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H2" }
-                                                                      ,new Umstiegspunkt { Name = "H4" }
-                                                                    };
-            var c = expected.Cast<Haltestelle>().ToList();
+            List<string> expected = new List<Umstiegspunkt>() { new Umstiegspunkt (new Haltestelle() { Name = "H2" })
+                                                               ,new Umstiegspunkt (new Haltestelle() { Name = "H4" })
+                                                               }.Select(x => x.Name).ToList();
+           
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<Umstiegspunkt> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
+            List<string> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
                                                                                     {
-                                                                                        Ident = "B11_SUED"
-                                                                                       , Name = "B11"
-                                                                                    }, haltestellen);
-         
+                                                                                        Ident = "B11"
+                                                                                       , Name = "B1"
+                                                                                    }, haltestellen)
+                                                                                    .Select(x => x.Name).ToList();
+
 
 
 
@@ -91,16 +92,17 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Umsteigepunkte_von_Linie_B31_sind_H2_H8()
         {
-            List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H2" }
-                                                                      ,new Umstiegspunkt { Name = "H8" }
-                                                                    };
+            List<string> expected = new List<Umstiegspunkt>() { new Umstiegspunkt (new Haltestelle() { Name = "H2" })
+                                                               ,new Umstiegspunkt (new Haltestelle() { Name = "H8" })
+                                                              }.Select(x => x.Name).ToList();
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<Umstiegspunkt> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
+            List<string> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
                                                                                 {
-                                                                                     Ident = "B31_SUED"
-                                                                                    , Name = "B31"
-                                                                                }, haltestellen);
+                                                                                     Ident = "B31"
+                                                                                    , Name = "B3"
+                                                                                }, haltestellen)
+                                                                                .Select(x => x.Name).ToList();
 
             CollectionAssert.AreEqual(expected, actual);
         }
@@ -111,17 +113,20 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Umsteigepunkte_von_Linie_B41_ist_H8()
         {
-            List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H8" }
-                                                                      };
+            List<string> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H8" }
+                                                                      }.Select(x => x.Name).ToList();
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<Umstiegspunkt> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
+            
+            List<string> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
                                                                                 {
                                                                                     Ident = "B41"
-                                                                                    , Name = "B41_SUED"
-                                                                                }, haltestellen);
+                                                                                    , Name = "B4"
+                                                                                }, haltestellen)
+                                                                                .Select(x => x.Name).ToList();
 
             CollectionAssert.AreEqual(expected, actual);
+            
         }
 
         /// <summary>
