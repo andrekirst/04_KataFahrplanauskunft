@@ -1,0 +1,49 @@
+# Erweiterte Dokumentation: https://www.appveyor.com/docs/appveyor-yml/
+
+# Version festlegen
+version: 1.0.{build}
+
+clone_folder: c:\projects\04_katafahrplanauskunft
+
+# Branches eingrenzen
+branches:
+  only:
+    - master
+    - develop
+
+# Auch Pull Request erstellen
+skip_branch_with_pr: false
+
+# VM-Template für Visual Studio 2015
+image: Visual Studio 2015
+
+cache:
+  - '%LocalAppData%\NuGet\Cache'
+  - packages -> **\packages.config
+
+# AssemblyInfo-Dateien mit den Versionen versehen
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "1.0.{build}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+
+platform: Any CPU
+configuration: Release
+
+matrix:
+  fast_finish: true
+
+before_build:
+  - nuget restore C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
+
+build:
+    parallel: false
+    project: src/Fahrplanauskunft/Fahrplanauskunft.sln
+    include_nuget_references: true
+    verbosity: normal
+
+test:
+    assemblies:
+      - Fahrplanauskunft.Test.dll
