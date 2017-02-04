@@ -16,7 +16,7 @@ namespace Fahrplanauskunft.Test.Funktionen
     {
         private List<Haltestelle> Lade_Test_Haltestellen()
         {
-            string ordnerPfad = "TestDaten\\TestSatz2";
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeHaltestellen();
@@ -68,14 +68,14 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Umsteigepunkte_von_Linie_B11_sind_Up1_Up2()
         {
-            List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "Up1" }
-                                                                      ,new Umstiegspunkt { Name = "Up2" }
+            List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H2" }
+                                                                      ,new Umstiegspunkt { Name = "H4" }
                                                                     };
             var c = expected.Cast<Haltestelle>().ToList();
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             List<Umstiegspunkt> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
                                                                                     {
-                                                                                        Ident = "B11"
+                                                                                        Ident = "B11_SUED"
                                                                                        , Name = "B11"
                                                                                     }, haltestellen);
          
@@ -91,8 +91,8 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Umsteigepunkte_von_Linie_B31_sind_Up1_Up3()
         {
-            List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "Up1" }
-                                                                      ,new Umstiegspunkt { Name = "Up3" }
+            List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H2" }
+                                                                      ,new Umstiegspunkt { Name = "H8" }
                                                                     };
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
