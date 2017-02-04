@@ -63,10 +63,10 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Linien B11 hat 2 Umstiegspunkte Up1 und Up2
+        /// Linien B11 hat 2 Umstiegspunkte H2 und H4
         /// </summary>
         [TestMethod]
-        public void Umsteigepunkte_von_Linie_B11_sind_Up1_Up2()
+        public void Umsteigepunkte_von_Linie_B11_sind_H2_H4()
         {
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H2" }
                                                                       ,new Umstiegspunkt { Name = "H4" }
@@ -86,10 +86,10 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Linien B31 hat 2 Umstiegspunkte Up1 und Up3
+        /// Linien B31 hat 2 Umstiegspunkte H2 und H8
         /// </summary>
         [TestMethod]
-        public void Umsteigepunkte_von_Linie_B31_sind_Up1_Up3()
+        public void Umsteigepunkte_von_Linie_B31_sind_H2_H8()
         {
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H2" }
                                                                       ,new Umstiegspunkt { Name = "H8" }
@@ -98,7 +98,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             List<Umstiegspunkt> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
                                                                                 {
-                                                                                     Ident = "B31"
+                                                                                     Ident = "B31_SUED"
                                                                                     , Name = "B31"
                                                                                 }, haltestellen);
 
@@ -106,19 +106,19 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Linien B41 hat 1 Umstiegspunkte Up3
+        /// Linien B41 hat 1 Umstiegspunkte H8
         /// </summary>
         [TestMethod]
-        public void Umsteigepunkte_von_Linie_B41_ist_Up3()
+        public void Umsteigepunkte_von_Linie_B41_ist_H8()
         {
-            List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "Up3" }
+            List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H8" }
                                                                       };
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             List<Umstiegspunkt> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
                                                                                 {
                                                                                     Ident = "B41"
-                                                                                    , Name = "B41"
+                                                                                    , Name = "B41_SUED"
                                                                                 }, haltestellen);
 
             CollectionAssert.AreEqual(expected, actual);

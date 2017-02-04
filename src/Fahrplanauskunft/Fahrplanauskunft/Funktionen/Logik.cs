@@ -20,7 +20,7 @@ namespace Fahrplanauskunft.Funktionen
             List<Haltestelle> haltestellenDerLinie = Liefere_Haltestelle_einer_Linie(linie, haltestellen);
             // davon alle Haltestellen mit Umsteigepunkt (also mit mindestens 2 Linien)
             List<Umstiegspunkt> haltestellenMitUmsteigepunkt = haltestellenDerLinie
-                .Where(x => x.Linien.Count() > 2)
+                .Where(x => x.Linien.Count() > 1)
                 .Select(y => new Umstiegspunkt()
                 {
                     Name = y.Name
