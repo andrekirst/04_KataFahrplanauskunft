@@ -1,34 +1,34 @@
 [
     {
-        "Ident": "B11_SUED",
-        "Name": "B11"
+        "Ident": "B11",
+        "Name": "B1"
     },
     {
-        "Ident": "B12_NORD",
-        "Name": "B12"
+        "Ident": "B12",
+        "Name": "B1"
     },
     {
-        "Ident": "B21_OST",
-        "Name": "B21"
+        "Ident": "B21",
+        "Name": "B2"
     },
     {
-        "Ident": "B22_WEST",
-        "Name": "B22"
+        "Ident": "B22",
+        "Name": "B2"
     },
     {
-        "Ident": "B31_SUED",
-        "Name": "B31"
+        "Ident": "B31",
+        "Name": "B3"
     },
     {
-        "Ident": "B32_NORD",
-        "Name": "B32"
+        "Ident": "B32",
+        "Name": "B3"
     },
     {
-        "Ident": "B41_SUED",
-        "Name": "B41"
+        "Ident": "B41",
+        "Name": "B4"
     },
     {
-        "Ident": "B42_NORD",
-        "Name": "B42"
+        "Ident": "B42",
+        "Name": "B4"
     }
 ]
