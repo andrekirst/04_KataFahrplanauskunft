@@ -31,7 +31,7 @@ platform: Any CPU
 configuration: Release
 
 before_build:
-  - nuget restore C:\projects\04-katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft
+  - nuget restore -PackagesDirectory C:\projects\04-katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft
 
 build:
     parallel: false
