@@ -14,14 +14,14 @@ Die Daten wurden anhand des [Brainstorming vom 02.01.2017](/Dokumentation/Brains
 
 | Name | Ident |
 | --- | --- |
-| B11 | B11_SUED |
-| B12 | B12_NORD |
-| B21 | B21_OST |
-| B22 | B22_WEST |
-| B31 | B31_SUED |
-| B32 | B32_NORD |
-| B41 | B41_SUED |
-| B42 | B42_NORD |
+| B1 | B11 |
+| B1 | B12 |
+| B2 | B21 |
+| B2 | B22 |
+| B3 | B31 |
+| B3 | B32 |
+| B4 | B41 |
+| B4 | B42 |
 
 ### Haltestellen mit den Linien
 

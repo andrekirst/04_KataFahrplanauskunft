@@ -21,8 +21,8 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Konstruktor für die Angabe von Name und Ident
         /// </summary>
-        /// <param name="name">Der Name der Linie</param>
-        /// <param name="ident">Der Identifizierer der Linie</param>
+        /// <param name="name">Der Name der Linie (für Hin- und Gegenrichtung)</param>
+        /// <param name="ident">Der Identifizierer der Linie (nur eine Richtung)</param>
         public Linie(string name, string ident)
         {
             this.Name = name;
@@ -38,6 +38,7 @@ namespace Fahrplanauskunft.Objekte
         /// Gibt den Namen der Linie zurück, oder setzt ihn.
         /// </summary>
         public string Name { get; set; }
+
 
         /// <summary>
         /// Vergleicht die Linie mit einem anderen Objekt
