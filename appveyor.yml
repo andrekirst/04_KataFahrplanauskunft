@@ -32,6 +32,9 @@ assembly_info:
 platform: Any CPU
 configuration: Release
 
+matrix:
+  fast_finish: true
+
 before_build:
   - nuget restore C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
 
@@ -44,6 +47,3 @@ build:
 test:
     assemblies:
       - Fahrplanauskunft.Test.dll
-
-artifacts:
-    - path: BuildOutput.zip
