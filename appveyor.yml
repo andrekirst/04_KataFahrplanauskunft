@@ -3,6 +3,12 @@
 # Version festlegen
 version: 1.0.{build}
 
+# Branches eingrenzen
+branches:
+  only:
+    - master
+    - develop
+
 # Auch Pull Request erstellen
 skip_branch_with_pr: false
 
