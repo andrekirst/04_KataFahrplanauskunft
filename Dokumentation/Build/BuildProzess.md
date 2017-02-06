@@ -14,7 +14,6 @@ Konfiguriert wird der Prozess mit der Datei [appveyor.yml](/appveyor.yml).
 
 | Attribut | Wert | Beschreibung |
 |---|---|---|
-
 | **assembly:patch** | *true* | |
 | **assembly:file** | *AssemblyInfo.** | Filtert auf *AssemblyInfo.** |
 | **assembly:assembly_version** | *"1.0.{build}"* | Setzt die Version auf 1.0 und die von AppVeyor gesetzte Buildnummer |
