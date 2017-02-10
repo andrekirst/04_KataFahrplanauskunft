@@ -123,10 +123,50 @@ namespace Fahrplanauskunft.Test.Funktionen
             CollectionAssert.AreEquivalent(expected, actual);
         }
 
+        /// <summary>
+        /// Linie mit dem Name B1 hat diese Haltestellen H1,H2, H3, H4 und H5
+        /// </summary>
+        [TestMethod]
+        public void Haltestellen_von_Linien_Name_B1_sind_H1_H2_H3_H4_H5()
+        {
+            List<string> expected = new List<Haltestelle>() { new Haltestelle() { Name = "H1" }
+                                                             ,new Haltestelle() { Name = "H2" }
+                                                             ,new Haltestelle() { Name = "H3" }
+                                                             ,new Haltestelle() { Name = "H4" }
+                                                             ,new Haltestelle() { Name = "H5" }
+                                                               }.Select(x => x.Name).ToList();
 
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<string> actual = Logik.Liefere_Haltestellen_einer_Linie("B1", haltestellen)
+                                                                        .Select(x => x.Name).ToList();
+
+            // Sortierung wird ignoriert
+            CollectionAssert.AreEquivalent(expected, actual);
+        }
 
         /// <summary>
-        /// Linien B1 hat 2 Umstiegspunkte H2 und H4
+        /// Linie mit dem Name B2 hat diese Haltestellen H6,H4, H7, H8 und H9
+        /// </summary>
+        [TestMethod]
+        public void Haltestellen_von_Linien_Name_B2_sind_H6_H4_H7_H8_H9()
+        {
+            List<string> expected = new List<Haltestelle>() { new Haltestelle() { Name = "H6" }
+                                                             ,new Haltestelle() { Name = "H4" }
+                                                             ,new Haltestelle() { Name = "H7" }
+                                                             ,new Haltestelle() { Name = "H8" }
+                                                             ,new Haltestelle() { Name = "H9" }
+                                                               }.Select(x => x.Name).ToList();
+
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<string> actual = Logik.Liefere_Haltestellen_einer_Linie("B2"
+            , haltestellen)
+                                                                        .Select(x => x.Name).ToList();
+            // Sortierung wird ignoriert
+            CollectionAssert.AreEquivalent(expected, actual);
+        }
+
+        /// <summary>
+        /// Linie B1 hat 2 Umstiegspunkte H2 und H4
         /// </summary>
         [TestMethod]
         public void Umsteigepunkte_von_Linie_B1_sind_H2_H4()
