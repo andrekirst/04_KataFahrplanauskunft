@@ -287,33 +287,5 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             CollectionAssert.AreEqual(expected, actual);
         }
-
-
-        /// <summary>
-        /// Der nächste mögliche Umsteigepunkt von Haltestelle H1 ist H2
-        /// </summary>
-        [TestMethod]
-        public void Naechste_Umsteigepunkte_von_Haltestelle_H1_ist_H2()
-        {
-            Assert.Fail();
-        }
-
-        /// <summary>
-        /// Der nächste mögliche Umsteigepunkt von Haltestelle H2 sind H4 und H8
-        /// </summary>
-        [TestMethod]
-        public void Naechste_Umsteigepunkte_von_Haltestelle_H2_sind_H4_H8()
-        {
-            Assert.Fail();
-        }
-
-        /// <summary>
-        /// Der nächste mögliche Umsteigepunkt von Haltestelle H16 ist H8
-        /// </summary>
-        [TestMethod]
-        public void Naechste_Umsteigepunkte_von_Haltestelle_H16_ist_H8()
-        {
-            Assert.Fail();
-        }
     }
 }
