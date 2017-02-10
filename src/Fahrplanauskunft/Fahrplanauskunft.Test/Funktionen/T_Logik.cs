@@ -23,7 +23,19 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             return fahrplanauskunftSpeicher.Haltestellen;
         }
-        /// <summary>
+/*
+        private List<Haltestelle> Lade_Test_Haltestellen()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellen();
+
+            return fahrplanauskunftSpeicher.Haltestellen;
+        }
+        */
+
+        ///<summary>
         /// Haltestelle Linie B11 Starthaltestelle hat eine Linie B11
         /// </summary>
         [TestMethod]
@@ -63,10 +75,61 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Linien B11 hat 2 Umstiegspunkte H2 und H4
+        /// Linien B1 hat diese Haltestellen H1,H2, H3, H4 und H5
         /// </summary>
         [TestMethod]
-        public void Umsteigepunkte_von_Linie_B11_sind_H2_H4()
+        public void Haltestellen_von_Linie_B1_sind_H1_H2_H3_H4_H5()
+        {
+            List<string> expected = new List<Haltestelle>() { new Haltestelle() { Name = "H1" }
+                                                             ,new Haltestelle() { Name = "H2" }
+                                                             ,new Haltestelle() { Name = "H3" }
+                                                             ,new Haltestelle() { Name = "H4" }
+                                                             ,new Haltestelle() { Name = "H5" }
+                                                               }.Select(x => x.Name).ToList();
+
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<string> actual = Logik.Liefere_Haltestellen_einer_Linie(new Linie()
+                                                                        {
+                                                                            Ident = "B11"
+                                                                            ,Name = "B1"
+                                                                        }, haltestellen)
+                                                                        .Select(x => x.Name).ToList();
+
+            // Sortierung wird ignoriert
+            CollectionAssert.AreEquivalent(expected, actual);
+        }
+
+        /// <summary>
+        /// Linien B1 hat diese Haltestellen H6,H4, H7, H8 und H9
+        /// </summary>
+        [TestMethod]
+        public void Haltestellen_von_Linie_B2_sind_H6_H4_H7_H8_H9()
+        {
+            List<string> expected = new List<Haltestelle>() { new Haltestelle() { Name = "H6" }
+                                                             ,new Haltestelle() { Name = "H4" }
+                                                             ,new Haltestelle() { Name = "H7" }
+                                                             ,new Haltestelle() { Name = "H8" }
+                                                             ,new Haltestelle() { Name = "H9" }
+                                                               }.Select(x => x.Name).ToList();
+
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<string> actual = Logik.Liefere_Haltestellen_einer_Linie(new Linie()
+            {
+                Ident = "B21"
+               ,Name = "B2"
+            }, haltestellen)
+                                                                        .Select(x => x.Name).ToList();
+            // Sortierung wird ignoriert
+            CollectionAssert.AreEquivalent(expected, actual);
+        }
+
+
+
+        /// <summary>
+        /// Linien B1 hat 2 Umstiegspunkte H2 und H4
+        /// </summary>
+        [TestMethod]
+        public void Umsteigepunkte_von_Linie_B1_sind_H2_H4()
         {
             List<string> expected = new List<Umstiegspunkt>() { new Umstiegspunkt (new Haltestelle() { Name = "H2" })
                                                                ,new Umstiegspunkt (new Haltestelle() { Name = "H4" })
@@ -87,10 +150,10 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Linien B31 hat 2 Umstiegspunkte H2 und H8
+        /// Linien B3 hat 2 Umstiegspunkte H2 und H8
         /// </summary>
         [TestMethod]
-        public void Umsteigepunkte_von_Linie_B31_sind_H2_H8()
+        public void Umsteigepunkte_von_Linie_B3_sind_H2_H8()
         {
             List<string> expected = new List<Umstiegspunkt>() { new Umstiegspunkt (new Haltestelle() { Name = "H2" })
                                                                ,new Umstiegspunkt (new Haltestelle() { Name = "H8" })
@@ -111,7 +174,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Linien B41 hat 1 Umstiegspunkte H8
         /// </summary>
         [TestMethod]
-        public void Umsteigepunkte_von_Linie_B41_ist_H8()
+        public void Umsteigepunkte_von_Linie_B4_ist_H8()
         {
             List<string> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H8" }
                                                                       }.Select(x => x.Name).ToList();
@@ -187,28 +250,28 @@ namespace Fahrplanauskunft.Test.Funktionen
 
 
         /// <summary>
-        /// Linie B11 Starthaltestelle hat auf der Linie 2 Umstiegspunkte
+        /// Der nächste mögliche Umsteigepunkt von Haltestelle H1 ist H2
         /// </summary>
         [TestMethod]
-        public void Naechste_Umsteigepunkte_von_Haltestelle_B11_Start_hat_Up1_Up2()
+        public void Naechste_Umsteigepunkte_von_Haltestelle_H1_ist_H2()
         {
             Assert.Fail();
         }
 
         /// <summary>
-        /// Haltestelle an Up1 hat auf den Linien 2 Umstiegspunkte
+        /// Der nächste mögliche Umsteigepunkt von Haltestelle H2 sind H4 und H8
         /// </summary>
         [TestMethod]
-        public void Naechste_Umsteigepunkte_von_Haltestelle_UP1_hat_Up2_Up3()
+        public void Naechste_Umsteigepunkte_von_Haltestelle_H2_sind_H4_H8()
         {
             Assert.Fail();
         }
 
         /// <summary>
-        /// Linie B42 Starthaltestelle hat auf der Linie 1 Umstiegspunkt
+        /// Der nächste mögliche Umsteigepunkt von Haltestelle H16 ist H8
         /// </summary>
         [TestMethod]
-        public void Naechste_Umsteigepunkte_von_Haltestelle_B42_Start_hat_Up3()
+        public void Naechste_Umsteigepunkte_von_Haltestelle_H16_ist_H8()
         {
             Assert.Fail();
         }

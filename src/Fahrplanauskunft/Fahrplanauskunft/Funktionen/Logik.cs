@@ -17,7 +17,7 @@ namespace Fahrplanauskunft.Funktionen
         internal static List<Umstiegspunkt> Liefere_Umsteigepunkte_fuer_Linie(Linie linie, List<Haltestelle> haltestellen)
         {
             //anhand der Liste von Haltestellen, alle Haltestelle meiner Linie
-            List<Haltestelle> haltestellenDerLinie = Liefere_Haltestelle_einer_Linie(linie, haltestellen);
+            List<Haltestelle> haltestellenDerLinie = Liefere_Haltestellen_einer_Linie(linie, haltestellen);
             // davon alle Haltestellen mit Umsteigepunkt (also mit mindestens 2 Linien)
             List<Umstiegspunkt> haltestellenMitUmsteigepunkt = haltestellenDerLinie
                 .Where(x => x.Linien.GroupBy(l => l.Name).Count() > 1)
@@ -27,7 +27,13 @@ namespace Fahrplanauskunft.Funktionen
             return haltestellenMitUmsteigepunkt;
         }
 
-        internal static List<Haltestelle> Liefere_Haltestelle_einer_Linie(Linie linie, List<Haltestelle> haltestellen)
+        internal static List<Haltestelle> Liefere_Haltestellen_einer_Linie(string linien_name, List<Haltestelle> haltestellen)
+        {
+            return haltestellen.Where(x => x.Linien.Any(y => y.Name == linien_name)).ToList();
+        }
+
+
+        internal static List<Haltestelle> Liefere_Haltestellen_einer_Linie(Linie linie, List<Haltestelle> haltestellen)
         {
             return haltestellen.Where(x => x.Linien.Contains(linie)).ToList();
         }
