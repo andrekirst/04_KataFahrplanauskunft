@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Objekte
 {
+    /// <summary>
+    /// Ein Umstiegspunkt ist eine Haltestelle mit mindensten 2 verschiedenen Linien
+    /// </summary>
     public class Umstiegspunkt
     {
+        /// <summary>
+        /// Standardkonstruktor
+        /// </summary>
         public Umstiegspunkt()
         {
         }
+        /// <summary>
+        /// Standardkonstruktor mit einer Haltestelle
+        /// </summary>
+        /// <param name="haltestelle">ein Haltestelleobjekt</param>
         public Umstiegspunkt(Haltestelle haltestelle)
         {
             Haltestelle = haltestelle;

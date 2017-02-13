@@ -14,6 +14,10 @@ namespace Fahrplanauskunft.Test.Funktionen
     [TestClass]
     public class T_Logik
     {
+        /// <summary>
+        /// Liefert Testdaten, für den Test
+        /// </summary>
+        /// <returns></returns>
         private List<Haltestelle> Lade_Test_Haltestellen()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
@@ -23,17 +27,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             return fahrplanauskunftSpeicher.Haltestellen;
         }
-/*
-        private List<Haltestelle> Lade_Test_Haltestellen()
-        {
-            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
 
-            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
-            fahrplanauskunftSpeicher.LadeHaltestellen();
-
-            return fahrplanauskunftSpeicher.Haltestellen;
-        }
-        */
 
         ///<summary>
         /// Haltestelle Linie B11 Starthaltestelle hat eine Linie B11
