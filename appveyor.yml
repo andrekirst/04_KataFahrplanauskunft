@@ -40,9 +40,9 @@ before_build:
 
 build_script:
     - choco install "msbuild-sonarqube-runner" -y
-    - MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8"
+    - MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$(SonarToken)" /v:"1.0.{build}"
     - msbuild C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln
-    - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8"
+    - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$(SonarToken)"
 
 test:
     assemblies:
