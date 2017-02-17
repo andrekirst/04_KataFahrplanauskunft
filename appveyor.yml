@@ -1,10 +1,10 @@
 # Erweiterte Dokumentation: https://www.appveyor.com/docs/appveyor-yml/
 
 environment:
-  - github_auth_token:
-      secure: S3PdGSBqLPbBhOrs/fx4YMIa7Z+gzyiNygixyOGsAYd7Q+Hw4K7gvKk8ZEDaYKIa
-  - sonar_token:
-      secure: sFo2TCruCWRcpHbTVAyLc4DZCDBxiGzRpLkv1Cq2oquDiKjo1yuCh73IN8ceKZ65
+  github_auth_token:
+    secure: S3PdGSBqLPbBhOrs/fx4YMIa7Z+gzyiNygixyOGsAYd7Q+Hw4K7gvKk8ZEDaYKIa
+  sonar_token:
+    secure: sFo2TCruCWRcpHbTVAyLc4DZCDBxiGzRpLkv1Cq2oquDiKjo1yuCh73IN8ceKZ65
 
 # Version festlegen
 version: 1.0.{build}
