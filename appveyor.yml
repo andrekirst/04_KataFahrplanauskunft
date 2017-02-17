@@ -1,5 +1,11 @@
 # Erweiterte Dokumentation: https://www.appveyor.com/docs/appveyor-yml/
 
+environment:
+  - github_auth_token:
+      secure: S3PdGSBqLPbBhOrs/fx4YMIa7Z+gzyiNygixyOGsAYd7Q+Hw4K7gvKk8ZEDaYKIa
+  - sonar_token:
+      secure: sFo2TCruCWRcpHbTVAyLc4DZCDBxiGzRpLkv1Cq2oquDiKjo1yuCh73IN8ceKZ65
+
 # Version festlegen
 version: 1.0.{build}
 
@@ -40,9 +46,10 @@ before_build:
 
 build_script:
     - choco install "msbuild-sonarqube-runner" -y
-    - MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8" /v:"{version}"
+    - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$env:sonar_token" /d:"sonar.analysis.mode=preview" /d:"sonar.github.pullRequest=$env:APPVEYOR_PULL_REQUEST_NUMBER" /d:"sonar.github.repository=https://github.com/andrekirst/04_KataFahrplanauskunft" /d:"sonar.github.oauth=$env:github_auth_token" }
+    - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$env:sonar_token" }
     - msbuild C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln
-    - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8"
+    - ps: MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$env:sonar_token"
 
 test:
     assemblies:
