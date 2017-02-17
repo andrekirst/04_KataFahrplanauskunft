@@ -1,8 +1,5 @@
 # Erweiterte Dokumentation: https://www.appveyor.com/docs/appveyor-yml/
 
-environment:
-  sonar_token: f546e36450cfe11ff44dc87f1bb25c6767361dc8
-
 # Version festlegen
 version: 1.0.{build}
 
