@@ -20,10 +20,6 @@ Konfiguriert wird der Prozess mit der Datei [appveyor.yml](/appveyor.yml).
 | **assembly:assembly_file_version** | *"{version}"* | Setzt die Assembly-Dateiversion auf die AppVeyor gesetzte Version |
 | **assembly:assembly_informational_version** | *"{version}"* | Setzt die Assembly-Dateiversion auf die AppVeyor gesetzte Version |
 | **branches:only** | *master*, *develop* | Es werden nur Builds erzeugt, wenn der Branch *master* oder *develop* ist |
-| **build:parallel** | *false* | MSBuild kompiliert die Projekte sequentiell |
-| **build:project** | *src/Fahrplanauskunft/Fahrplanauskunft.sln* | Die Solution-Datei, die MSBuild verwendet |
-| **build:include_nuget_references** | *true* | |
-| **build:verbosity** | *normal* | Loggt MSBuild-Ausgaben mit dem *normal*-Level |
 | **cache** | *...* | Speichert die angegebenen Ordner im Cache. Pfadangaben in der Konfigurationsdatei |
 | **clone_folder** | *c:\projects\04_katafahrplanauskunft* | Der Ablageort, in dem der Aufurf `git clone` das Repository ablegt |
 | **configuration** | *Release* | Es wird die Konfiguration für MSBuild *Release* gewählt |
@@ -33,3 +29,16 @@ Konfiguriert wird der Prozess mit der Datei [appveyor.yml](/appveyor.yml).
 | **skip_branch_with_pr** | *false* | Es werden Builds erzeugt, wenn es sich um einen Pull Request handelt |
 | **test:assemblies** | *Fahrplanauskunft.Test.dll* | Testet die Bibliothek `Fahrplanauskunft.Test.dll` |
 | **version** | *1.0.{build}* | Die Version entspricht 1.0 und der Buildnummer, die von AppVeyor gesetzt wird |
+
+### SonarQube
+
+SonarQube wird zum analysieren des Quellcodes genutzt.
+
+#### SonarQube-Konfiguration
+
+Damit SonarQube das Projekt übernehmen kann, muss ein Token erstellt werden. Dieser heißt "04_KataFahrplanauskunft". Dieser genertierte Token muss in AppVeyor unter "Settings/Environment" unter "Add variable" eingerichtet werden. Name: "SonarToken". Wert: "abc...". Dieser Wert muss dann mit dem Schloss-Symbol verschlüsselt werden.
+
+#### SonarQube im Build
+
+Damit SonarQube angewendet werden kann, wird mittels `choco install "msbuild-sonarqube-runner" -y` das Paket für den SonarQube-Runner für MSBuild installiert.
+In den nächsten Schritten, wird das Build für SonarQube vorbereitet, das Build selber durchgeführt und der Abschluss von SonarQube angewandt. Diese Informationen befinden sich im Abschnitt `build_script`.
