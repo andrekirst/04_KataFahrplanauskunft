@@ -83,14 +83,14 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Linie B1 hat 2 Umstiegspunkte H2 und H4
         /// </summary>
         [TestMethod]
-        public void Umsteigepunkte_von_Linie_B1_sind_H2_H4()
+        public void Umstiegspunkte_von_Linie_B1_sind_H2_H4()
         {
             List<string> expected = new List<Umstiegspunkt>() { new Umstiegspunkt (new Haltestelle() { Name = "H2" })
                                                                ,new Umstiegspunkt (new Haltestelle() { Name = "H4" })
                                                                }.Select(x => x.Name).ToList();
            
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<string> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
+            List<string> actual = Logik.Liefere_Umstiegspunkte_fuer_Linie(new Linie()
                                                                                     {
                                                                                         Ident = "B11"
                                                                                        , Name = "B1"
@@ -103,14 +103,14 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Linien B3 hat 2 Umstiegspunkte H2 und H8
         /// </summary>
         [TestMethod]
-        public void Umsteigepunkte_von_Linie_B3_sind_H2_H8()
+        public void Umstiegspunkte_von_Linie_B3_sind_H2_H8()
         {
             List<string> expected = new List<Umstiegspunkt>() { new Umstiegspunkt (new Haltestelle() { Name = "H2" })
                                                                ,new Umstiegspunkt (new Haltestelle() { Name = "H8" })
                                                               }.Select(x => x.Name).ToList();
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<string> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
+            List<string> actual = Logik.Liefere_Umstiegspunkte_fuer_Linie(new Linie()
                                                                                 {
                                                                                      Ident = "B31"
                                                                                     , Name = "B3"
@@ -124,14 +124,14 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Linien B41 hat 1 Umstiegspunkte H8
         /// </summary>
         [TestMethod]
-        public void Umsteigepunkte_von_Linie_B4_ist_H8()
+        public void Umstiegspunkte_von_Linie_B4_ist_H8()
         {
             List<string> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "H8" }
                                                                       }.Select(x => x.Name).ToList();
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             
-            List<string> actual = Logik.Liefere_Umsteigepunkte_fuer_Linie(new Linie()
+            List<string> actual = Logik.Liefere_Umstiegspunkte_fuer_Linie(new Linie()
                                                                                 {
                                                                                     Ident = "B41"
                                                                                     , Name = "B4"
@@ -146,12 +146,12 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// 2 Umstiegspunkte Up1 und Up3 sind 2 Umstiegspunkte Up1 und Up3
         /// </summary>
         [TestMethod]
-        public void Eindeutige_Umsteigepunkte_von_Up1_Up3_sind_Up1_Up3()
+        public void Eindeutige_Umstiegspunkte_von_Up1_Up3_sind_Up1_Up3()
         {
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "Up1" }
                                                                       ,new Umstiegspunkt {Name = "Up3" }
                                                                     };
-            List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umsteigepunkte(new List<Umstiegspunkt>()
+            List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umstiegspunkte(new List<Umstiegspunkt>()
                                                                       { new Umstiegspunkt { Name = "Up1" }
                                                                       , new Umstiegspunkt { Name = "Up3" } });
 
@@ -163,13 +163,13 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// 3 Umstiegspunkte Up1, Up3 und Up3 sind 2 Umstiegspunkte Up1 und Up3
         /// </summary>
         [TestMethod]
-        public void Eindeutige_Umsteigepunkte_von_Up1_Up3_Up3_sind_Up1_Up3()
+        public void Eindeutige_Umstiegspunkte_von_Up1_Up3_Up3_sind_Up1_Up3()
         {
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "Up1" }
                                                                       ,new Umstiegspunkt { Name = "Up3" }
                                                                     };
 
-            List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umsteigepunkte(new List<Umstiegspunkt>()
+            List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umstiegspunkte(new List<Umstiegspunkt>()
                                                                       { new Umstiegspunkt { Name = "Up1" }
                                                                        ,new Umstiegspunkt { Name = "Up3" }
                                                                       , new Umstiegspunkt { Name = "Up3" } });
@@ -181,14 +181,14 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// 4 Umstiegspunkte Up1, Up2, Up3 und Up3 sind 3 Umstiegspunkte Up1, Up2 und Up3
         /// </summary>
         [TestMethod]
-        public void Eindeutige_Umsteigepunkte_von_Up1_Up2_Up3_Up3_sind_Up1_Up_2_Up3()
+        public void Eindeutige_Umstiegspunkte_von_Up1_Up2_Up3_Up3_sind_Up1_Up_2_Up3()
         {
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>() { new Umstiegspunkt { Name = "Up1" }
                                                                       ,new Umstiegspunkt { Name = "Up2" }
                                                                       ,new Umstiegspunkt { Name = "Up3" }
                                                                     };
 
-            List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umsteigepunkte(new List<Umstiegspunkt>()
+            List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umstiegspunkte(new List<Umstiegspunkt>()
                                                                       { new Umstiegspunkt { Name = "Up1" }
                                                                        ,new Umstiegspunkt { Name = "Up2" }
                                                                        ,new Umstiegspunkt { Name = "Up3" }

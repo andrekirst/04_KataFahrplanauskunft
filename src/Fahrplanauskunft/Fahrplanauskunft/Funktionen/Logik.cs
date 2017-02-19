@@ -17,7 +17,7 @@ namespace Fahrplanauskunft.Funktionen
         /// </summary>
         /// <param name="umstiegspunkte">Liste der Umstiegspunkte</param>
         /// <returns>eindeutige Liste der Umstiegspunkte</returns>
-        internal static List<Umstiegspunkt> Liefere_eindeutige_Umsteigepunkte(List<Umstiegspunkt> umstiegspunkte)
+        internal static List<Umstiegspunkt> Liefere_eindeutige_Umstiegspunkte(List<Umstiegspunkt> umstiegspunkte)
         {
             return umstiegspunkte.Distinct().ToList();
         }
@@ -28,17 +28,17 @@ namespace Fahrplanauskunft.Funktionen
         /// <param name="linie">Für diese Linie</param>
         /// <param name="haltestellen">Liste von Haltestellen</param>
         /// <returns>Liste der Umstiegspunkte</returns>
-        internal static List<Umstiegspunkt> Liefere_Umsteigepunkte_fuer_Linie(Linie linie, List<Haltestelle> haltestellen)
+        internal static List<Umstiegspunkt> Liefere_Umstiegspunkte_fuer_Linie(Linie linie, List<Haltestelle> haltestellen)
         {
             //anhand der Liste von Haltestellen, alle Haltestelle meiner Linie
             List<Haltestelle> haltestellenDerLinie = Liefere_Haltestellen_einer_Linie(linie, haltestellen);
             // davon alle Haltestellen mit Umsteigepunkt (also mit mindestens 2 Linien)
-            List<Umstiegspunkt> haltestellenMitUmsteigepunkt = haltestellenDerLinie
+            List<Umstiegspunkt> haltestellenMitUmstiegspunkt = haltestellenDerLinie
                 .Where(x => x.Linien.GroupBy(l => l.Name).Count() > 1)
                 .Select(y => new Umstiegspunkt(y)
                ).ToList();
             
-            return haltestellenMitUmsteigepunkt;
+            return haltestellenMitUmstiegspunkt;
         }
 
         /// <summary>
