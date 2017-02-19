@@ -44,17 +44,6 @@ namespace Fahrplanauskunft.Funktionen
         /// <summary>
         /// Ermittelt die Haltestellen für eine Linie 
         /// </summary>
-        /// <param name="linien_name">Name der Linie</param>
-        /// <param name="haltestellen">Liste von Haltestellen</param>
-        /// <returns>Liste der Haltestellen</returns>
-        internal static List<Haltestelle> Liefere_Haltestellen_einer_Linie(string linien_name, List<Haltestelle> haltestellen)
-        {
-            return haltestellen.Where(x => x.Linien.Any(y => y.Name == linien_name)).ToList();
-        }
-
-        /// <summary>
-        /// Ermittelt die Haltestellen für eine Linie 
-        /// </summary>
         /// <param name="linie">Für dies Linie</param>
         /// <param name="haltestellen">Liste von Haltestellen</param>
         /// <returns>Liste der Haltestellen</returns>

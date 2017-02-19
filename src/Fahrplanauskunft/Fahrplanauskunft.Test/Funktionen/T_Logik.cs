@@ -28,45 +28,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             return fahrplanauskunftSpeicher.Haltestellen;
         }
 
-
-        ///<summary>
-        /// Haltestelle Linie B11 Starthaltestelle hat eine Linie B11
-        /// </summary>
-        [TestMethod]
-        public void Linien_von_Haltestelle_B11_Start_ist_B11()
-        {
-            List<Linie> expected = new List<Linie>() { new Linie() { Ident = "B11", Name = "B11" }
-                                                     , new Linie() { Ident = "B12", Name = "B12" }};
-
-            Haltestelle h = new Haltestelle("B11_Start");
-            h.Linien = new List<Linie>() { new Linie() { Ident = "B11", Name = "B11" }
-                                         , new Linie() { Ident = "B12", Name = "B12" } };
-            List<Linie> actual = h.Linien;
-
-            CollectionAssert.AreEqual(expected, actual);
-
-        }
-
-        /// <summary>
-        /// Haltestelle am Umstiegspunkt Up1 hat vier Linien (B11, B12, B31, B32)
-        /// </summary>
-        [TestMethod]
-        public void Linien_von_Haltestelle_Up1_sind_B11_B12_B31_B32()
-        {
-            List<Linie> expected = new List<Linie>() { new Linie() { Ident = "B11", Name = "B11" }
-                                                     , new Linie() { Ident = "B12", Name = "B12" }
-                                                     , new Linie() { Ident = "B31", Name = "B31" }
-                                                     , new Linie() { Ident = "B32", Name = "B32" }};
-            Haltestelle h = new Haltestelle("Up1");
-            h.Linien = new List<Linie>()  { new Linie() { Ident = "B11", Name = "B11" }
-                                                     , new Linie() { Ident = "B12", Name = "B12" }
-                                                     , new Linie() { Ident = "B31", Name = "B31" }
-                                                     , new Linie() { Ident = "B32", Name = "B32" }};
-            List<Linie> actual = h.Linien;
-
-            CollectionAssert.AreEqual(expected, actual);
-
-        }
+ 
 
         /// <summary>
         /// Linien B1 hat diese Haltestellen H1,H2, H3, H4 und H5
@@ -94,7 +56,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Linien B1 hat diese Haltestellen H6,H4, H7, H8 und H9
+        /// Linien B2 hat diese Haltestellen H6,H4, H7, H8 und H9
         /// </summary>
         [TestMethod]
         public void Haltestellen_von_Linie_B2_sind_H6_H4_H7_H8_H9()
@@ -116,49 +78,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             // Sortierung wird ignoriert
             CollectionAssert.AreEquivalent(expected, actual);
         }
-
-        /// <summary>
-        /// Linie mit dem Name B1 hat diese Haltestellen H1,H2, H3, H4 und H5
-        /// </summary>
-        [TestMethod]
-        public void Haltestellen_von_Linien_Name_B1_sind_H1_H2_H3_H4_H5()
-        {
-            List<string> expected = new List<Haltestelle>() { new Haltestelle() { Name = "H1" }
-                                                             ,new Haltestelle() { Name = "H2" }
-                                                             ,new Haltestelle() { Name = "H3" }
-                                                             ,new Haltestelle() { Name = "H4" }
-                                                             ,new Haltestelle() { Name = "H5" }
-                                                               }.Select(x => x.Name).ToList();
-
-            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<string> actual = Logik.Liefere_Haltestellen_einer_Linie("B1", haltestellen)
-                                                                        .Select(x => x.Name).ToList();
-
-            // Sortierung wird ignoriert
-            CollectionAssert.AreEquivalent(expected, actual);
-        }
-
-        /// <summary>
-        /// Linie mit dem Name B2 hat diese Haltestellen H6,H4, H7, H8 und H9
-        /// </summary>
-        [TestMethod]
-        public void Haltestellen_von_Linien_Name_B2_sind_H6_H4_H7_H8_H9()
-        {
-            List<string> expected = new List<Haltestelle>() { new Haltestelle() { Name = "H6" }
-                                                             ,new Haltestelle() { Name = "H4" }
-                                                             ,new Haltestelle() { Name = "H7" }
-                                                             ,new Haltestelle() { Name = "H8" }
-                                                             ,new Haltestelle() { Name = "H9" }
-                                                               }.Select(x => x.Name).ToList();
-
-            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<string> actual = Logik.Liefere_Haltestellen_einer_Linie("B2"
-            , haltestellen)
-                                                                        .Select(x => x.Name).ToList();
-            // Sortierung wird ignoriert
-            CollectionAssert.AreEquivalent(expected, actual);
-        }
-
+        
         /// <summary>
         /// Linie B1 hat 2 Umstiegspunkte H2 und H4
         /// </summary>
@@ -176,10 +96,6 @@ namespace Fahrplanauskunft.Test.Funktionen
                                                                                        , Name = "B1"
                                                                                     }, haltestellen)
                                                                                     .Select(x => x.Name).ToList();
-
-
-
-
             CollectionAssert.AreEqual(expected, actual);
         }
 
