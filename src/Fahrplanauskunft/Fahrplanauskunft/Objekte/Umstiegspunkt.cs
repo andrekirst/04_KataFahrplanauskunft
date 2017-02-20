@@ -7,52 +7,49 @@ using System.Threading.Tasks;
 namespace Fahrplanauskunft.Objekte
 {
     /// <summary>
-    /// Eine Linie ist eine Sammlung von Haltestellen, die das jeweilige Transportsystem, wie eine Linie, abfährt.
+    /// Ein Umstiegspunkt ist eine Haltestelle mit mindensten 2 verschiedenen Linien
     /// </summary>
-    public class Linie
+    public class Umstiegspunkt
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
-        public Linie()
+        public Umstiegspunkt()
         {
+        }
+        /// <summary>
+        /// Standardkonstruktor mit einer Haltestelle
+        /// </summary>
+        /// <param name="haltestelle">ein Haltestelleobjekt</param>
+        public Umstiegspunkt(Haltestelle haltestelle)
+        {
+            Haltestelle = haltestelle;
+            Name = haltestelle.Name;
         }
 
         /// <summary>
-        /// Konstruktor für die Angabe von Name und Ident
+        /// Gibt die Haltestelle zurück
         /// </summary>
-        /// <param name="name">Der Name der Linie (für Hin- und Gegenrichtung)</param>
-        /// <param name="ident">Der Identifizierer der Linie (nur eine Richtung)</param>
-        public Linie(string name, string ident)
-        {
-            this.Name = name;
-            this.Ident = ident;
-        }
+        public Haltestelle Haltestelle { get; private set; }
 
         /// <summary>
-        /// Gibt den Ident der Linie zurück, oder setzt ihn.
-        /// </summary>
-        public string Ident { get; set; }
-
-        /// <summary>
-        /// Gibt den Namen der Linie zurück, oder setzt ihn.
+        /// Name des Umstiegspunkt
         /// </summary>
         public string Name { get; set; }
 
-
         /// <summary>
-        /// Vergleicht die Linie mit einem anderen Objekt
+        /// Vergleicht die Haltestelle mit einem anderen Objekt
         /// </summary>
         /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            if(obj == null)
+            if (obj == null)
             {
                 throw new NullReferenceException();
             }
-            Linie other = obj as Linie;
-            return this.Name == other.Name && this.Ident == other.Ident;
+            Umstiegspunkt other = obj as Umstiegspunkt;
+            return this.Name == other.Name;
         }
 
         /// <summary>
@@ -61,7 +58,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return Name.GetHashCode() * 2 + Ident.GetHashCode();
+            return Name.GetHashCode();
         }
     }
 }
