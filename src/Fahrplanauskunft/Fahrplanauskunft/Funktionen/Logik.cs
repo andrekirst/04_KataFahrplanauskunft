@@ -51,5 +51,17 @@ namespace Fahrplanauskunft.Funktionen
         {
             return haltestellen.Where(x => x.Linien.Contains(linie)).ToList();
         }
+
+        /// <summary>
+        /// Liefert zu einer Haltestelle die Umstiegspunkte, entfernt aber die Umstiegspunkte anhand der Liste der <paramref name="bereitsgeweseneUmstiegspunkte"/>
+        /// </summary>
+        /// <param name="meinHaltestelle"></param>
+        /// <param name="bereitsgeweseneUmstiegspunkte"></param>
+        /// <param name="haltestellenNetz"></param>
+        /// <returns>Liste der Umstiegspunkte</returns>
+        internal static List<Umstiegspunkt> Liefere_Naechste_Umstiegspunkte_von_Haltestelle(Haltestelle meinHaltestelle, List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte, List<Haltestelle> haltestellenNetz)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
