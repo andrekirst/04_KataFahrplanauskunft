@@ -61,7 +61,24 @@ namespace Fahrplanauskunft.Funktionen
         /// <returns>Liste der Umstiegspunkte</returns>
         internal static List<Umstiegspunkt> Liefere_Naechste_Umstiegspunkte_von_Haltestelle(Haltestelle meinHaltestelle, List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte, List<Haltestelle> haltestellenNetz)
         {
-            throw new NotImplementedException();
+            // 1. hole alle Linie zu einer Haltestelle
+            List<Umstiegspunkt> umstiegspunkte = new List<Umstiegspunkt>();
+            meinHaltestelle.Linien.ForEach(delegate (Linie linie)
+            {
+                // 2. hole zu den Linie jeweils die Umstiegspunkte
+                umstiegspunkte.AddRange(Liefere_Umstiegspunkte_fuer_Linie(linie, haltestellenNetz));
+            });
+
+            // 3. Distinkte Menge der Umstiegspunkte bilden
+            umstiegspunkte = Liefere_eindeutige_Umstiegspunkte(umstiegspunkte);
+
+            // 4. Entfernen der bereitsgewesenen Umstiegspunkte
+            umstiegspunkte = umstiegspunkte.Except(bereitsgeweseneUmstiegspunkte).ToList();
+
+            // 5. Entfernen meinHaltestelle, wenn dieser ein Umstiegspunkt ist
+            umstiegspunkte.RemoveAll(x => x.Haltestelle == meinHaltestelle);
+
+            return umstiegspunkte;
         }
     }
 }

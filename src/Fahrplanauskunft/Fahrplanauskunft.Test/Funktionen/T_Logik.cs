@@ -209,10 +209,13 @@ namespace Fahrplanauskunft.Test.Funktionen
                                                                }.Select(x => x.Name).ToList();
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(new Haltestelle() { Name = "H1" }
-                , new List<Umstiegspunkt>()
-                ,haltestellen) 
-                .Select(x => x.Name).ToList();
+
+            Haltestelle aktuelleHaltestelle = haltestellen.Where(x => x.Name == "H1").First();
+
+            List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(aktuelleHaltestelle
+                                                                                        ,new List<Umstiegspunkt>()
+                                                                                        ,haltestellen) 
+                                                                                      .Select(x => x.Name).ToList();
 
             CollectionAssert.AreEqual(expected, actual);
         }
@@ -228,10 +231,12 @@ namespace Fahrplanauskunft.Test.Funktionen
                                                                }.Select(x => x.Name).ToList();
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(new Haltestelle() { Name = "H2" }
-                , new List<Umstiegspunkt>()
-                , haltestellen)
-                .Select(x => x.Name).ToList();
+
+            Haltestelle aktuelleHaltestelle = haltestellen.Where(x => x.Name == "H2").First();
+            List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(aktuelleHaltestelle
+                                                                                        ,new List<Umstiegspunkt>()
+                                                                                        ,haltestellen)
+                                                                                      .Select(x => x.Name).ToList();
 
             CollectionAssert.AreEqual(expected, actual); ;
         }
@@ -248,14 +253,17 @@ namespace Fahrplanauskunft.Test.Funktionen
 
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>{
+
+            Haltestelle aktuelleHaltestelle = haltestellen.Where(x => x.Name == "H2").First();
+
+            List<Umstiegspunkt> bereitsgewesenenUmstiegspunkte = new List<Umstiegspunkt>{
                                                                     new Umstiegspunkt (new Haltestelle() { Name = "H4" })
                                                                   };
-
-            List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(new Haltestelle() { Name = "H2" }
-                , new List<Umstiegspunkt>()
-                , haltestellen)
-                .Select(x => x.Name).ToList();
+            
+            List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(aktuelleHaltestelle
+                                                                                        ,bereitsgewesenenUmstiegspunkte
+                                                                                        ,haltestellen)
+                                                                                      .Select(x => x.Name).ToList();
 
             CollectionAssert.AreEqual(expected, actual);
         }
@@ -273,15 +281,18 @@ namespace Fahrplanauskunft.Test.Funktionen
 
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
+            Haltestelle aktuelleHaltestelle = haltestellen.Where(x => x.Name == "H8").First();
+
             List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
                                                                  
 
-            List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(new Haltestelle() { Name = "H8" }
-                , new List<Umstiegspunkt>()
-                , haltestellen)
-                .Select(x => x.Name).ToList();
+            List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(aktuelleHaltestelle
+                                                                                        ,new List<Umstiegspunkt>()
+                                                                                        ,haltestellen)
+                                                                                      .Select(x => x.Name).ToList();
 
-            CollectionAssert.AreEqual(expected, actual);
+            CollectionAssert.AreEquivalent(expected, actual);
         }
 
 
