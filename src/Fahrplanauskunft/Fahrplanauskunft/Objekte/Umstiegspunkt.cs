@@ -30,12 +30,18 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Gibt die Haltestelle zurück
         /// </summary>
-        public Haltestelle Haltestelle { get; private set; }
+        public Haltestelle Haltestelle
+        {
+            get; set;
+        }
 
         /// <summary>
         /// Name des Umstiegspunkt
         /// </summary>
-        public string Name { get; set; }
+        public string Name
+        {
+            get; set;
+        }
 
         /// <summary>
         /// Vergleicht die Haltestelle mit einem anderen Objekt
@@ -44,12 +50,12 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            if (obj == null)
+            if(obj == null)
             {
                 throw new NullReferenceException();
             }
             Umstiegspunkt other = obj as Umstiegspunkt;
-            return this.Name == other.Name;
+            return Name == other.Name && Haltestelle.Equals(other.Haltestelle);
         }
 
         /// <summary>
