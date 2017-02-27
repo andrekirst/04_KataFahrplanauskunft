@@ -43,8 +43,23 @@ Es soll die Funktion Liefere_Haltestellen_einer_Linie mit dem Wert Linie B2 aufg
 #### Beschreibung
 
 Es soll die Funktion Liefere_eindeutige_Umstiegspunkte mit eine Liste von Umstiegspunkten aufgerufen werden und die Ausgabe soll eine eindeutige Liste von Umstiegspunkten zurückgeben.  
-Testdaten:  
+
+#### Testdaten:
+  
 2 Umstiegspunkte Up1 und Up3 sind 2 Umstiegspunkte Up1 und Up3  
 3 Umstiegspunkte Up1, Up3 und Up3 sind 2 Umstiegspunkte Up1 und Up3  
-4 Umstiegspunkte Up1, Up2, Up3 und Up3 sind 3 Umstiegspunkte Up1, Up2 und Up3  
+4 Umstiegspunkte Up1, Up2, Up3 und Up3 sind 3 Umstiegspunkte Up1, Up2 und Up3 
+
+###  Funktion: Liefere_Haltestellen_einer_Linie
+
+#### Beschreibung
+
+Liefere die nächsten möglichen Umstiegspunkte einer Haltestelle und ignoriere schon bereits ermittelte Umstiegspunkte
+
+#### Testdaten:
+  
+Beginnend von Haltestelle H1 gibt es 2 nächste Umstiegspunkte H2 und H4  
+Beginnend von Haltestelle H2 gibt es 2 nächste Umstiegspunkte H4 und H8  
+Kommend von Haltestelle H1, gibt es an Haltestelle H2 einen nächsten Umstiegspunkt H8  
+Kommend von Haltestelle H12, gibt es an Haltestelle H8 zwei nächste Umstiegspunkte H2 und H4  
 
