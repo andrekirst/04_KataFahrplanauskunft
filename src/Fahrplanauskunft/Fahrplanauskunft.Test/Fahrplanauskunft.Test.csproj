@@ -59,6 +59,7 @@
     <Compile Include="Funktionen\T_Zeit_Konverter.cs" />
     <Compile Include="Objekte\T_HaltestelleFahrplanEintrag.cs" />
     <Compile Include="Objekte\T_FahrplanauskunftSpeicher.cs" />
+    <Compile Include="Objekte\T_TreeItem.cs" />
     <Compile Include="Objekte\T_Verbindungsanfrage.cs" />
     <Compile Include="Objekte\T_Streckenabschnitt.cs" />
     <Compile Include="Objekte\T_Linie.cs" />

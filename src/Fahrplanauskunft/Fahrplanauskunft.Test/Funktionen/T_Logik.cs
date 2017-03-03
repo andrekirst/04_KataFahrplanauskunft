@@ -304,7 +304,59 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             CollectionAssert.AreEquivalent(expected, actual);
         }
+/*
+        /// <summary>
+        /// Erstelle Hierarchie möglichen Route von Haltestelle H1
+        /// </summary>
+        [TestMethod]
+        public void Hierarchie_Route_von_H1()
+        {
+            #region Vorbereitung
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
+            // root:       H1
+            //            /  \
+            // 1. Ebene:H2 # H4
+            //          |    |
+            // 2. Ebene:H8 # H8
+
+            // 2. Ebene
+            TreeItem ti_2_h8_l = new TreeItem(haltestellen.First(h => h.Name == "H8"));
+            TreeItem ti_2_h8_r = new TreeItem(haltestellen.First(h => h.Name == "H8"));
+
+            // 1. Ebene
+            TreeItem ti_1_h2_l = new TreeItem(haltestellen.First(h => h.Name == "H2"));
+            TreeItem ti_1_h4_r = new TreeItem(haltestellen.First(h => h.Name == "H4"));
+
+            // Root
+            TreeItem ti_root_Haltestelle  = new TreeItem(haltestellen.First(h => h.Name == "H1"));
+
+            // 1. Ebene --> Root
+            ti_root_Haltestelle.Childs.Add(ti_1_h2_l);
+            ti_root_Haltestelle.Childs.Add(ti_1_h4_r);
+
+            // 2. Ebene --> 1. Ebene
+            ti_1_h2_l.Childs.Add(ti_2_h8_l);
+            ti_2_h8_r.Childs.Add(ti_2_h8_r);
+            #endregion
+
+            TreeItem expected = ti_root_Haltestelle;
 
 
+
+
+
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H8");
+
+            List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
+
+            List<Umstiegspunkt> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(aktuelleHaltestelle
+                                                                                        , bereitsgeweseneUmstiegspunkte
+                                                                                        , haltestellen);
+
+            CollectionAssert.AreEquivalent(expected, actual);
+        }
+
+    */
     }
 }
