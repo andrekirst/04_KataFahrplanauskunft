@@ -305,6 +305,58 @@ namespace Fahrplanauskunft.Test.Funktionen
             CollectionAssert.AreEquivalent(expected, actual);
         }
 
+        /// <summary>
+        /// Sortierung einer Liste von Haltestellen für die Linie B31, bei der die Start-Haltestelle H10 ist und die Ziel-Haltestelle H11
+        /// </summary>
+        [TestMethod]
+        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B31_von_H10_nach_H11()
+        {
+            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B31_von_H10_nach_H11), "{0} nicht implementiert"));
+        }
 
+        /// <summary>
+        /// Sortierung einer Liste von Haltestellen für die Linie B32, bei der die Start-Haltestelle H11 ist und die Ziel-Haltestelle H12 ist
+        /// </summary>
+        [TestMethod]
+        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B32_von_H11_nach_H10()
+        {
+            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B32_von_H11_nach_H10), "{0} nicht implementiert"));
+        }
+
+        /// <summary>
+        /// Sortierung einer Liste von Haltestellen für die Linie B41, bei der die Start-Haltestelle H14 ist und die Ziel-Haltestelle H15 ist
+        /// </summary>
+        [TestMethod]
+        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B41_von_H14_nach_H15()
+        {
+            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B41_von_H14_nach_H15), "{0} nicht implementiert"));
+        }
+
+        /// <summary>
+        /// Sortierung einer Liste von Haltestellen für die Linie B42, bei der die Start-Haltestelle H15 ist und die Ziel-Haltestelle H14 ist
+        /// </summary>
+        [TestMethod]
+        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B42_von_H15_nach_H14()
+        {
+            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B42_von_H15_nach_H14), "{0} nicht implementiert"));
+        }
+
+        /// <summary>
+        /// Negativ-Test - Sortierung einer Liste von Haltestellen für die Linie B11, bei der die Start-Haltestelle H1 ist und die Ziel-Haltestelle H12 ist. Hier muss der Fehler kommen, dass die Ziel-Haltestelle H12 nicht zur Linie B11 gehört.
+        /// </summary>
+        [TestMethod]
+        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B11_von_H1_nach_H12_Fehler_Nicht_gleiche_Linie()
+        {
+            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B11_von_H1_nach_H12_Fehler_Nicht_gleiche_Linie), "{0} nicht implementiert"));
+        }
+
+        /// <summary>
+        /// Negativ-Test - Sortierung einer Liste von Haltestellen für die Linie B41, bei der die Start-Haltestelle H1 ist und die Ziel-Haltestelle H12 ist. Hier muss der Fehler kommen, dass die Start-Haltestelle H1 nicht zur Linie B41 gehört.
+        /// </summary>
+        [TestMethod]
+        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B41_von_H1_nach_H12_Fehler_Nicht_gleiche_Linie()
+        {
+            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B41_von_H1_nach_H12_Fehler_Nicht_gleiche_Linie), "{0} nicht implementiert"));
+        }
     }
 }
