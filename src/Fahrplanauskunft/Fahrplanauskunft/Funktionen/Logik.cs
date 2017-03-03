@@ -80,5 +80,31 @@ namespace Fahrplanauskunft.Funktionen
 
             return umstiegspunkte;
         }
+
+        /// <summary>
+        /// Gibt die sortierte Liste von Haltestellen für eine Linie zurück. Sortiert wird sie von der Start- zur Ziel-Haltestelle
+        /// </summary>
+        /// <param name="linie">Die Linie, für die sortierung ausgeführt werden soll</param>
+        /// <param name="startHaltestelle">Die Start-Haltestelle, bei der die Sortierung beginnen soll</param>
+        /// <param name="zielHaltestelle">Die Ziel-Haltestelle, bei der die Sortierung enden soll</param>
+        /// <param name="haltenstellen">Das gesamte Haltestellennetz</param>
+        /// <param name="streckenabschnitte">Alle verfügbaren Streckenabschnitte</param>
+        /// <returns></returns>
+        internal static List<Haltestelle> Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Haltestelle> haltenstellen, List<Streckenabschnitt> streckenabschnitte)
+        {
+            /*
+                1. Überprüfung, ob die Start-Haltestelle zur Linie gehört
+                2. Überprüfung, ob die Ziel-Haltestelle zur Linie gehört
+                3. Haltestellen auf die Haltestellen reduzieren, die zur Linie gehören
+                4. Streckenabschnitte auf die Streckenabschnitte reduzieren, die zur Linie gehören
+                5. Liste für die sortierten Haltestellen erstellen
+                6. Start-Haltestelle zur Liste der sortierten Haltestellen hinzufügen
+                7. Solange durch eine Liste gehen, bis die ziel-Haltestelle erreicht ist
+                7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
+                7.2. vom Schritt zuvor ermittelten Streckenabschnitt aus der zur Verfügung stehenden Streckenabschnitte entfernen
+                8. Ergebnis zurückgeben
+            */
+            throw new NotImplementedException();
+        }
     }
 }

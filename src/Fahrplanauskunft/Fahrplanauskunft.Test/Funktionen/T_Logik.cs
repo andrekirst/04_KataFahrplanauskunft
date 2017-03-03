@@ -28,7 +28,33 @@ namespace Fahrplanauskunft.Test.Funktionen
             return fahrplanauskunftSpeicher.Haltestellen;
         }
 
+        /// <summary>
+        /// Liefert Testdaten an Linien für die Tests
+        /// </summary>
+        /// <returns></returns>
+        private List<Linie> Lade_Test_Linien()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
 
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeLinien();
+
+            return fahrplanauskunftSpeicher.Linien;
+        }
+
+        /// <summary>
+        /// Liefert Testdaten an Streckenabschnitten für die Tests
+        /// </summary>
+        /// <returns></returns>
+        private List<Streckenabschnitt> Lade_Test_Streckenabschnitte()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeStreckenabschnitte();
+
+            return fahrplanauskunftSpeicher.Streckenabschnitte;
+        }
 
         /// <summary>
         /// Linien B1 hat diese Haltestellen H1,H2, H3, H4 und H5
@@ -311,7 +337,34 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B31_von_H10_nach_H11()
         {
-            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B31_von_H10_nach_H11), "{0} nicht implementiert"));
+            #region Testdaten vorbereiten
+            List<Haltestelle> haltenstellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            List<Haltestelle> expected = new List<Haltestelle>()
+            {
+                haltenstellen.First(h => h.Name == "H10"),
+                haltenstellen.First(h => h.Name == "H2"),
+                haltenstellen.First(h => h.Name == "H8"),
+                haltenstellen.First(h => h.Name == "H11")
+            };
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+                    linie: linien.First(l => l.Name == "B31"),
+                    startHaltestelle: haltenstellen.First(h => h.Name == "H10"),
+                    zielHaltestelle: haltenstellen.First(h => h.Name == "H11"),
+                    haltenstellen: haltenstellen,
+                    streckenabschnitte: streckenabschnitte);
+            #endregion
+
+            #region Assert ausführen
+            Assert.AreEqual(expected, actual);
+            #endregion
         }
 
         /// <summary>
