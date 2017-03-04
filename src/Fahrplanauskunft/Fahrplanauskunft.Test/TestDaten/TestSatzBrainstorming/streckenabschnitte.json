@@ -5,6 +5,10 @@
             {
                 "Name": "B1",
                 "Ident": "B11"
+            },
+            {
+                "Name": "B1",
+                "Ident": "B12"
             }
         ],
         "StartHaltestelle": {
@@ -48,6 +52,10 @@
             {
                 "Name": "B1",
                 "Ident": "B11"
+            },
+            {
+                "Name": "B1",
+                "Ident": "B12"
             }
         ],
         "StartHaltestelle": {
@@ -91,6 +99,10 @@
             {
                 "Name": "B1",
                 "Ident": "B11"
+            },
+            {
+                "Name": "B1",
+                "Ident": "B12"
             }
         ],
         "StartHaltestelle": {
@@ -129,11 +141,15 @@
         }
     },
     {
-        "Dauer": 3,
+        "Dauer": 2,
         "Linien": [
             {
                 "Name": "B1",
                 "Ident": "B11"
+            },
+            {
+                "Name": "B1",
+                "Ident": "B12"
             }
         ],
         "StartHaltestelle": {
@@ -177,6 +193,10 @@
             {
                 "Name": "B2",
                 "Ident": "B21"
+            },
+            {
+                "Name": "B2",
+                "Ident": "B22"
             }
         ],
         "StartHaltestelle": {
@@ -220,6 +240,10 @@
             {
                 "Name": "B2",
                 "Ident": "B21"
+            },
+            {
+                "Name": "B2",
+                "Ident": "B22"
             }
         ],
         "StartHaltestelle": {
@@ -263,6 +287,10 @@
             {
                 "Name": "B2",
                 "Ident": "B21"
+            },
+            {
+                "Name": "B2",
+                "Ident": "B22"
             }
         ],
         "StartHaltestelle": {
@@ -314,6 +342,10 @@
             {
                 "Name": "B2",
                 "Ident": "B21"
+            },
+            {
+                "Name": "B2",
+                "Ident": "B22"
             }
         ],
         "StartHaltestelle": {
@@ -365,6 +397,10 @@
             {
                 "Name": "B3",
                 "Ident": "B31"
+            },
+            {
+                "Name": "B3",
+                "Ident": "B32"
             }
         ],
         "StartHaltestelle": {
@@ -408,6 +444,10 @@
             {
                 "Name": "B3",
                 "Ident": "B31"
+            },
+            {
+                "Name": "B3",
+                "Ident": "B32"
             }
         ],
         "StartHaltestelle": {
@@ -467,6 +507,10 @@
             {
                 "Name": "B3",
                 "Ident": "B31"
+            },
+            {
+                "Name": "B3",
+                "Ident": "B32"
             }
         ],
         "StartHaltestelle": {
@@ -518,6 +562,10 @@
             {
                 "Name": "B4",
                 "Ident": "B41"
+            },
+            {
+                "Name": "B4",
+                "Ident": "B42"
             }
         ],
         "StartHaltestelle": {
@@ -553,6 +601,10 @@
             {
                 "Name": "B4",
                 "Ident": "B41"
+            },
+            {
+                "Name": "B4",
+                "Ident": "B42"
             }
         ],
         "StartHaltestelle": {
@@ -588,6 +640,10 @@
             {
                 "Name": "B4",
                 "Ident": "B41"
+            },
+            {
+                "Name": "B4",
+                "Ident": "B42"
             }
         ],
         "StartHaltestelle": {
@@ -639,6 +695,10 @@
             {
                 "Name": "B4",
                 "Ident": "B41"
+            },
+            {
+                "Name": "B4",
+                "Ident": "B42"
             }
         ],
         "StartHaltestelle": {
@@ -690,6 +750,10 @@
             {
                 "Name": "B4",
                 "Ident": "B41"
+            },
+            {
+                "Name": "B4",
+                "Ident": "B42"
             }
         ],
         "StartHaltestelle": {
