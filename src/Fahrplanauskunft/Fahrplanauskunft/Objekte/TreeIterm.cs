@@ -21,13 +21,13 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Die Buechersaetze unterhalb des aktuellen
         /// </summary>
-        internal List<TreeItem> Childs { get; set; }
+        public List<TreeItem> Childs { get; set; }
 
-        internal Haltestelle Haltestelle { get; private set; }
+        public Haltestelle Haltestelle { get; private set; }
 
 
         /// <summary>
-        /// Vergleicht die Haltestelle mit einem anderen Objekt
+        /// Vergleicht das TreeItem mit einem anderen Objekt
         /// </summary>
         /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
@@ -38,7 +38,21 @@ namespace Fahrplanauskunft.Objekte
                 throw new NullReferenceException();
             }
             TreeItem other = obj as TreeItem;
-            return this.Haltestelle.Equals(other.Haltestelle);
+
+            bool equal = true;
+
+            equal = equal == this.Haltestelle.Equals(other.Haltestelle);
+            if (this.Childs.Count == 0 && other.Childs.Count == 0)
+            {
+                equal = equal == true;
+            }
+            else
+            {
+                // Reihefolge spielt keine Rolle, wir sortieren vorher
+                equal = equal == this.Childs.OrderBy(x => x.Haltestelle.Name).SequenceEqual(other.Childs.OrderBy(x => x.Haltestelle.Name));
+            }
+
+            return equal;
         }
 
         /// <summary>
