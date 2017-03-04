@@ -411,5 +411,59 @@ namespace Fahrplanauskunft.Test.Funktionen
         {
             Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B41_von_H1_nach_H12_Fehler_Nicht_gleiche_Linie), "{0} nicht implementiert"));
         }
+
+        /// <summary>
+        /// Test, ob die Linie B11 an der Haltestelle H1 ist
+        /// </summary>
+        [TestMethod]
+        public void Ist_Linie_An_Haltestelle_Linie_B11_Haltestelle_H1()
+        {
+            #region Testdaten vorbereiten
+            List<Haltestelle> haltenstellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            bool expected = true;
+            #endregion
+
+            #region Das Ergebnis auswerten
+            bool actual = Logik.Ist_Linie_An_Haltestelle(
+                linie: linien.First(l => l.Ident == "B11"),
+                haltestelle: haltenstellen.First(h => h.Name == "H1"));
+            #endregion
+
+            #region Assert ausführen
+            Assert.AreEqual(expected, actual);
+            #endregion
+        }
+
+        /// <summary>
+        /// Negativ-Test - Test, dass die Linie B41 nicht an der Haltestelle H1 ist
+        /// </summary>
+        [TestMethod]
+        public void Ist_Linie_An_Haltestelle_Negativ_Linie_B41_Haltestelle_H1()
+        {
+            #region Testdaten vorbereiten
+            List<Haltestelle> haltenstellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            bool expected = false;
+            #endregion
+
+            #region Das Ergebnis auswerten
+            bool actual = Logik.Ist_Linie_An_Haltestelle(
+                linie: linien.First(l => l.Ident == "B41"),
+                haltestelle: haltenstellen.First(h => h.Name == "H1"));
+            #endregion
+
+            #region Assert ausführen
+            Assert.AreEqual(expected, actual);
+            #endregion
+        }
     }
 }

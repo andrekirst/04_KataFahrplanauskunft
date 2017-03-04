@@ -106,5 +106,16 @@ namespace Fahrplanauskunft.Funktionen
             */
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Wertet aus, ob die angegebene Linie an der Haltestelle ist
+        /// </summary>
+        /// <param name="linie">Die Linie</param>
+        /// <param name="haltestelle">Die Haltestelle</param>
+        /// <returns></returns>
+        internal static bool Ist_Linie_An_Haltestelle(Linie linie, Haltestelle haltestelle)
+        {
+            return haltestelle.Linien.Contains(linie);
+        }
     }
 }
