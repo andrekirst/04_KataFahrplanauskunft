@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Fahrplanauskunft.Funktionen;
 using Fahrplanauskunft.Objekte;
 using System.Linq;
+using Fahrplanauskunft.Exceptions;
 
 namespace Fahrplanauskunft.Test.Funktionen
 {
@@ -355,7 +356,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
-                    linie: linien.First(l => l.Name == "B31"),
+                    linie: linien.First(l => l.Ident == "B31"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H10"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H11"),
                     haltenstellen: haltenstellen,
@@ -363,7 +364,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             #endregion
 
             #region Assert ausführen
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, actual);
             #endregion
         }
 
@@ -373,7 +374,34 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B32_von_H11_nach_H10()
         {
-            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B32_von_H11_nach_H10), "{0} nicht implementiert"));
+            #region Testdaten vorbereiten
+            List<Haltestelle> haltenstellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            List<Haltestelle> expected = new List<Haltestelle>()
+            {
+                haltenstellen.First(h => h.Name == "H11"),
+                haltenstellen.First(h => h.Name == "H8"),
+                haltenstellen.First(h => h.Name == "H2"),
+                haltenstellen.First(h => h.Name == "H10")
+            };
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+                    linie: linien.First(l => l.Ident == "B32"),
+                    startHaltestelle: haltenstellen.First(h => h.Name == "H11"),
+                    zielHaltestelle: haltenstellen.First(h => h.Name == "H10"),
+                    haltenstellen: haltenstellen,
+                    streckenabschnitte: streckenabschnitte);
+            #endregion
+
+            #region Assert ausführen
+            CollectionAssert.AreEqual(expected, actual);
+            #endregion
         }
 
         /// <summary>
@@ -382,7 +410,33 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B41_von_H14_nach_H15()
         {
-            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B41_von_H14_nach_H15), "{0} nicht implementiert"));
+            #region Testdaten vorbereiten
+            List<Haltestelle> haltenstellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            List<Haltestelle> expected = new List<Haltestelle>()
+            {
+                haltenstellen.First(h => h.Name == "H14"),
+                haltenstellen.First(h => h.Name == "H8"),
+                haltenstellen.First(h => h.Name == "H15")
+            };
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+                    linie: linien.First(l => l.Ident == "B41"),
+                    startHaltestelle: haltenstellen.First(h => h.Name == "H14"),
+                    zielHaltestelle: haltenstellen.First(h => h.Name == "H15"),
+                    haltenstellen: haltenstellen,
+                    streckenabschnitte: streckenabschnitte);
+            #endregion
+
+            #region Assert ausführen
+            CollectionAssert.AreEqual(expected, actual);
+            #endregion
         }
 
         /// <summary>
@@ -391,25 +445,89 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B42_von_H15_nach_H14()
         {
-            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B42_von_H15_nach_H14), "{0} nicht implementiert"));
+            #region Testdaten vorbereiten
+            List<Haltestelle> haltenstellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            List<Haltestelle> expected = new List<Haltestelle>()
+            {
+                haltenstellen.First(h => h.Name == "H15"),
+                haltenstellen.First(h => h.Name == "H8"),
+                haltenstellen.First(h => h.Name == "H14")
+            };
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+                    linie: linien.First(l => l.Ident == "B42"),
+                    startHaltestelle: haltenstellen.First(h => h.Name == "H15"),
+                    zielHaltestelle: haltenstellen.First(h => h.Name == "H14"),
+                    haltenstellen: haltenstellen,
+                    streckenabschnitte: streckenabschnitte);
+            #endregion
+
+            #region Assert ausführen
+            CollectionAssert.AreEqual(expected, actual);
+            #endregion
         }
 
         /// <summary>
         /// Negativ-Test - Sortierung einer Liste von Haltestellen für die Linie B11, bei der die Start-Haltestelle H1 ist und die Ziel-Haltestelle H12 ist. Hier muss der Fehler kommen, dass die Ziel-Haltestelle H12 nicht zur Linie B11 gehört.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(LinieIstNichtAnHaltestelleException))]
         public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B11_von_H1_nach_H12_Fehler_Nicht_gleiche_Linie()
         {
-            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B11_von_H1_nach_H12_Fehler_Nicht_gleiche_Linie), "{0} nicht implementiert"));
+            #region Testdaten vorbereiten
+            List<Haltestelle> haltenstellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+                    linie: linien.First(l => l.Ident == "B11"),
+                    startHaltestelle: haltenstellen.First(h => h.Name == "H1"),
+                    zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),
+                    haltenstellen: haltenstellen,
+                    streckenabschnitte: streckenabschnitte);
+            // Hier wird eine Exception geworfen, die vom UnitTest als erwartet ausgewertet wird
+            #endregion
         }
 
         /// <summary>
         /// Negativ-Test - Sortierung einer Liste von Haltestellen für die Linie B41, bei der die Start-Haltestelle H1 ist und die Ziel-Haltestelle H12 ist. Hier muss der Fehler kommen, dass die Start-Haltestelle H1 nicht zur Linie B41 gehört.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(LinieIstNichtAnHaltestelleException))]
         public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B41_von_H1_nach_H12_Fehler_Nicht_gleiche_Linie()
         {
-            Assert.Fail(String.Format(nameof(Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B41_von_H1_nach_H12_Fehler_Nicht_gleiche_Linie), "{0} nicht implementiert"));
+            #region Testdaten vorbereiten
+            List<Haltestelle> haltenstellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+                    linie: linien.First(l => l.Ident == "B41"),
+                    startHaltestelle: haltenstellen.First(h => h.Name == "H1"),
+                    zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),
+                    haltenstellen: haltenstellen,
+                    streckenabschnitte: streckenabschnitte);
+            // Hier wird eine Exception geworfen, die vom UnitTest als erwartet ausgewertet wird
+            #endregion
         }
 
         /// <summary>
@@ -463,6 +581,104 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Assert ausführen
             Assert.AreEqual(expected, actual);
+            #endregion
+        }
+
+        /// <summary>
+        /// Test, das nur Streckenabschnitte geliefert werden, an der sich auch die Linie B11 befindet
+        /// </summary>
+        [TestMethod]
+        public void Liefere_Streckenabschnitte_einer_Linie_Linie_B11()
+        {
+            #region Testdaten vorbereiten
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            List<Linie> linien = Lade_Test_Linien();
+
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            List<Streckenabschnitt> expected = new List<Streckenabschnitt>()
+            {
+                streckenabschnitte.First(s => s.StartHaltestelle.Name == "H1" && s.ZielHaltestelle.Name == "H2"),
+                streckenabschnitte.First(s => s.StartHaltestelle.Name == "H2" && s.ZielHaltestelle.Name == "H3"),
+                streckenabschnitte.First(s => s.StartHaltestelle.Name == "H3" && s.ZielHaltestelle.Name == "H4"),
+                streckenabschnitte.First(s => s.StartHaltestelle.Name == "H4" && s.ZielHaltestelle.Name == "H5")
+            };
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Streckenabschnitt> actual = Logik.Liefere_Streckenabschnitte_einer_Linie(
+                linie: linien.First(l => l.Ident == "B11"),
+                streckenabschnitte: streckenabschnitte);
+            #endregion
+
+            #region Assert ausführen
+            CollectionAssert.AreEqual(expected, actual);
+            #endregion
+        }
+
+        /// <summary>
+        /// Test, dass an der Haltstelle H1 für die Linie B11 ein Streckenabschnitt zurückgegeben wird
+        /// </summary>
+        [TestMethod]
+        public void Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie_Haltestelle_H1_Linie_B11()
+        {
+            #region Testdaten vorbereiten
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            List<Streckenabschnitt> expected = new List<Streckenabschnitt>()
+            {
+                streckenabschnitte.First(s => s.StartHaltestelle.Name == "H1" && s.ZielHaltestelle.Name == "H2")
+            };
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Streckenabschnitt> actual = Logik.Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(
+                linie: linien.First(l => l.Ident == "B11"),
+                haltestelle: haltestellen.First(h => h.Name == "H1"),
+                streckenabschnitte: streckenabschnitte);
+            #endregion
+
+            #region Assert ausführen
+            CollectionAssert.AreEqual(expected, actual);
+            #endregion
+        }
+
+        /// <summary>
+        /// Test, dass an der Haltstelle H1 für die Linie B11 zwei Streckenabschnitte zurückgegeben werden
+        /// </summary>
+        [TestMethod]
+        public void Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie_Haltestelle_H2_Linie_B11()
+        {
+            #region Testdaten vorbereiten
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            List<Streckenabschnitt> expected = new List<Streckenabschnitt>()
+            {
+                streckenabschnitte.First(s => s.StartHaltestelle.Name == "H1" && s.ZielHaltestelle.Name == "H2"),
+                streckenabschnitte.First(s => s.StartHaltestelle.Name == "H2" && s.ZielHaltestelle.Name == "H3")
+            };
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Streckenabschnitt> actual = Logik.Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(
+                linie: linien.First(l => l.Ident == "B11"),
+                haltestelle: haltestellen.First(h => h.Name == "H2"),
+                streckenabschnitte: streckenabschnitte);
+            #endregion
+
+            #region Assert ausführen
+            CollectionAssert.AreEqual(expected, actual);
             #endregion
         }
     }

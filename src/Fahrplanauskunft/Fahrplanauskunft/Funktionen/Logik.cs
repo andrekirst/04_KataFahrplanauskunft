@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Fahrplanauskunft.Objekte;
+using Fahrplanauskunft.Exceptions;
 
 namespace Fahrplanauskunft.Funktionen
 {
@@ -92,19 +93,87 @@ namespace Fahrplanauskunft.Funktionen
         /// <returns></returns>
         internal static List<Haltestelle> Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Haltestelle> haltenstellen, List<Streckenabschnitt> streckenabschnitte)
         {
+            // 1. Überprüfung, ob die Start-Haltestelle zur Linie gehört 
+            if(!Ist_Linie_An_Haltestelle(linie: linie, haltestelle: startHaltestelle))
+            {
+                throw new LinieIstNichtAnHaltestelleException();
+            }
+
+            // 2. Überprüfung, ob die Ziel-Haltestelle zur Linie gehört
+            if(!Ist_Linie_An_Haltestelle(linie: linie, haltestelle: zielHaltestelle))
+            {
+                throw new LinieIstNichtAnHaltestelleException();
+            }
+
+            // 3. Haltestellen auf die Haltestellen reduzieren, die zur Linie gehören
+            List<Haltestelle> haltestellenDerLinie = Liefere_Haltestellen_einer_Linie(linie: linie, haltestellen: haltenstellen);
+
+            // 4. Streckenabschnitte auf die Streckenabschnitte reduzieren, die zur Linie gehören
+            List<Streckenabschnitt> streckenabschnitteDerLinie = Liefere_Streckenabschnitte_einer_Linie(linie: linie, streckenabschnitte: streckenabschnitte);
+
+            // 5. Liste für die sortierten Haltestellen erstellen
+            List<Haltestelle> sortierteListe = new List<Haltestelle>();
+
+            // 6. Start-Haltestelle zur Liste der sortierten Haltestellen hinzufügen
+            sortierteListe.Add(item: startHaltestelle);
+
+            // 6.1 Start-Haltestelle aus der Liste der verfügbaren Linien entfernen
+            haltestellenDerLinie.Remove(item: startHaltestelle);
+
+            // 7.Solange durch eine Liste gehen, bis die ziel-Haltestelle erreicht ist oder die Liste verfügbarer Haltestellen leer ist
+            while(!sortierteListe.Last().Equals(zielHaltestelle) || haltestellenDerLinie.Count() > 0)
+            {
+                List<Streckenabschnitt> gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListe.Last(), streckenabschnitte: streckenabschnitteDerLinie);
+                if(gefundeneStreckenabschnitte.Count() == 1)
+                {
+                    Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte[0];
+                    Haltestelle gefundeneHaltestelle = gefundenerStreckenabschnitt.StartHaltestelle.Equals(sortierteListe.Last()) ? gefundenerStreckenabschnitt.ZielHaltestelle : gefundenerStreckenabschnitt.StartHaltestelle;
+                    if(gefundeneHaltestelle != null)
+                    {
+                        sortierteListe.Add(gefundeneHaltestelle);
+                        haltestellenDerLinie.Remove(gefundeneHaltestelle);
+                        streckenabschnitteDerLinie.Remove(gefundenerStreckenabschnitt);
+                    }
+                }
+                else
+                {
+                    // TODO: Break, damit es keine Endlosschleife gibt
+                    break;
+                }
+            }
             /*
-                1. Überprüfung, ob die Start-Haltestelle zur Linie gehört
-                2. Überprüfung, ob die Ziel-Haltestelle zur Linie gehört
-                3. Haltestellen auf die Haltestellen reduzieren, die zur Linie gehören
-                4. Streckenabschnitte auf die Streckenabschnitte reduzieren, die zur Linie gehören
-                5. Liste für die sortierten Haltestellen erstellen
-                6. Start-Haltestelle zur Liste der sortierten Haltestellen hinzufügen
-                7. Solange durch eine Liste gehen, bis die ziel-Haltestelle erreicht ist
+                
                 7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
                 7.2. vom Schritt zuvor ermittelten Streckenabschnitt aus der zur Verfügung stehenden Streckenabschnitte entfernen
                 8. Ergebnis zurückgeben
             */
-            throw new NotImplementedException();
+            return sortierteListe;
+        }
+
+        /// <summary>
+        /// Liefert die Streckenabschnitte, die an einer Haltestelle dran liegen für eine Linie
+        /// </summary>
+        /// <param name="linie"></param>
+        /// <param name="haltestelle"></param>
+        /// <param name="streckenabschnitte"></param>
+        /// <returns></returns>
+        internal static List<Streckenabschnitt> Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(Linie linie, Haltestelle haltestelle, List<Streckenabschnitt> streckenabschnitte)
+        {
+            return streckenabschnitte.Where(s =>
+                s.Linien.Contains(linie) &&
+                    ( s.StartHaltestelle.Equals(haltestelle) || s.ZielHaltestelle.Equals(haltestelle) )
+                ).ToList();
+        }
+
+        /// <summary>
+        /// Liefert die Streckenabschnitte, die einer Linie zugeordnet sind
+        /// </summary>
+        /// <param name="linie">Die Linie</param>
+        /// <param name="streckenabschnitte">Die Streckenabschnitte</param>
+        /// <returns></returns>
+        internal static List<Streckenabschnitt> Liefere_Streckenabschnitte_einer_Linie(Linie linie, List<Streckenabschnitt> streckenabschnitte)
+        {
+            return streckenabschnitte.Where(s => s.Linien.Contains(linie)).ToList();
         }
 
         /// <summary>
