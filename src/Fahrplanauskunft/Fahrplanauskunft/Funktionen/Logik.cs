@@ -123,6 +123,7 @@ namespace Fahrplanauskunft.Funktionen
             // 7.Solange durch eine Liste gehen, bis die ziel-Haltestelle erreicht ist oder die Liste verfügbarer Haltestellen leer ist
             while(!sortierteListe.Last().Equals(zielHaltestelle) || haltestellenDerLinie.Count() > 0)
             {
+                // 7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
                 List<Streckenabschnitt> gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListe.Last(), streckenabschnitte: streckenabschnitteDerLinie);
                 if(gefundeneStreckenabschnitte.Count() == 1)
                 {
@@ -132,6 +133,7 @@ namespace Fahrplanauskunft.Funktionen
                     {
                         sortierteListe.Add(gefundeneHaltestelle);
                         haltestellenDerLinie.Remove(gefundeneHaltestelle);
+                        // 7.2.vom Schritt zuvor ermittelten Streckenabschnitt aus der zur Verfügung stehenden Streckenabschnitte entfernen
                         streckenabschnitteDerLinie.Remove(gefundenerStreckenabschnitt);
                     }
                 }
@@ -141,12 +143,7 @@ namespace Fahrplanauskunft.Funktionen
                     break;
                 }
             }
-            /*
-                
-                7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
-                7.2. vom Schritt zuvor ermittelten Streckenabschnitt aus der zur Verfügung stehenden Streckenabschnitte entfernen
-                8. Ergebnis zurückgeben
-            */
+            // 8. Ergebnis zurückgeben
             return sortierteListe;
         }
 
