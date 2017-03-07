@@ -62,7 +62,7 @@ namespace Fahrplanauskunft.Test.Objekte
         }
 
         /// <summary>
-        /// Test, dass die Rückgabe Name: H4 ist, wenn der Name der Haltestelle H4 ist. Benutzt wird der TestSatz TestSatzBrainstorming
+        /// Test, dass die Rückgabe Name: H4 ist, wenn der Name der Haltestelle H4 ist.
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_ToString()

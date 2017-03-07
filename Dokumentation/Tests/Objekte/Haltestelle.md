@@ -28,4 +28,4 @@ Test der Equals-Methode, dass zwei Haltestellen gleich sind. Name: "Test"
 
 #### Beschreibung
 
-Test, dass die Rückgabe **Name: H4** ist, wenn der Name der `Haltestelle` **H4** ist. Benutzt wird der TestSatz **TestSatzBrainstorming**
+Test, dass die Rückgabe **Name: H4** ist, wenn der Name der `Haltestelle` **H4** ist.
