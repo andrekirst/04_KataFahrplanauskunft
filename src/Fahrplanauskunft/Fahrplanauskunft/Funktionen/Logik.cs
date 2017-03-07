@@ -111,22 +111,27 @@ namespace Fahrplanauskunft.Funktionen
             // 4. Streckenabschnitte auf die Streckenabschnitte reduzieren, die zur Linie gehören
             List<Streckenabschnitt> streckenabschnitteDerLinie = Liefere_Streckenabschnitte_einer_Linie(linie: linie, streckenabschnitte: streckenabschnitte);
 
-            // 5. Liste für die sortierten Haltestellen erstellen
-            List<Haltestelle> sortierteListe = new List<Haltestelle>();
-
-            // 6. Start-Haltestelle zur Liste der sortierten Haltestellen hinzufügen
-            sortierteListe.Add(item: startHaltestelle);
-
-            // 6.1 Start-Haltestelle aus der Liste der verfügbaren Linien entfernen
-            haltestellenDerLinie.Remove(item: startHaltestelle);
-
-            // 7.Solange durch eine Liste gehen, bis die ziel-Haltestelle erreicht ist oder die Liste verfügbarer Haltestellen leer ist
-            while(!sortierteListe.Last().Equals(zielHaltestelle) || haltestellenDerLinie.Count() > 0)
+            
+            // Herausfinden, wieviele initiale Streckenabschnitte man erhält
+            List<Streckenabschnitt> gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: startHaltestelle, streckenabschnitte: streckenabschnitteDerLinie);
+            
+            // Wenn an einem Start oder Ende die Fahrt beginnt
+            if(gefundeneStreckenabschnitte.Count() == 1)
             {
-                // 7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
-                List<Streckenabschnitt> gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListe.Last(), streckenabschnitte: streckenabschnitteDerLinie);
-                if(gefundeneStreckenabschnitte.Count() == 1)
+                // 5. Liste für die sortierten Haltestellen erstellen
+                List<Haltestelle> sortierteListe = new List<Haltestelle>();
+
+                // 6. Start-Haltestelle zur Liste der sortierten Haltestellen hinzufügen
+                sortierteListe.Add(item: startHaltestelle);
+
+                // 6.1 Start-Haltestelle aus der Liste der verfügbaren Linien entfernen
+                haltestellenDerLinie.Remove(item: startHaltestelle);
+
+                // 7.Solange durch eine Liste gehen, bis die ziel-Haltestelle erreicht ist oder die Liste verfügbarer Haltestellen leer ist
+                while(!sortierteListe.Last().Equals(zielHaltestelle) || haltestellenDerLinie.Count() > 0)
                 {
+                    gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListe.Last(), streckenabschnitte: streckenabschnitteDerLinie);
+                    // 7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
                     Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte[0];
                     Haltestelle gefundeneHaltestelle = gefundenerStreckenabschnitt.StartHaltestelle.Equals(sortierteListe.Last()) ? gefundenerStreckenabschnitt.ZielHaltestelle : gefundenerStreckenabschnitt.StartHaltestelle;
                     if(gefundeneHaltestelle != null)
@@ -137,14 +142,28 @@ namespace Fahrplanauskunft.Funktionen
                         streckenabschnitteDerLinie.Remove(gefundenerStreckenabschnitt);
                     }
                 }
-                else
-                {
-                    // TODO: Break, damit es keine Endlosschleife gibt
-                    break;
-                }
+
+                return sortierteListe;
             }
+            else
+            {
+                Dictionary<string, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<string, List<Objekte.Haltestelle>>();
+                sortierteListeTempAlsDictionary.Add("1", new List<Haltestelle>() { startHaltestelle });
+                sortierteListeTempAlsDictionary.Add("2", new List<Haltestelle>() { startHaltestelle });
+
+                // Wenn man nicht am Start oder Ende eine Linie ist
+                Streckenabschnitt sab1 = gefundeneStreckenabschnitte[0];
+                sortierteListeTempAlsDictionary["1"].Add(sab1.StartHaltestelle == sortierteListeTempAlsDictionary["1"].Last() ? sab1.ZielHaltestelle : sab1.StartHaltestelle);
+
+                Streckenabschnitt sab2 = gefundeneStreckenabschnitte[1];
+                sortierteListeTempAlsDictionary["2"].Add(sab2.StartHaltestelle == sortierteListeTempAlsDictionary["2"].Last() ? sab2.ZielHaltestelle : sab2.StartHaltestelle);
+            }
+
+
+
+            
             // 8. Ergebnis zurückgeben
-            return sortierteListe;
+            return null;
         }
 
         /// <summary>
