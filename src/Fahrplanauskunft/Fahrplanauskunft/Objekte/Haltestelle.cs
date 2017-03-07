@@ -61,9 +61,9 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Gibt die überschrieben ToString-Methode zurück. Bsp.: "Name: H4"
+        /// Gibt die überschriebene ToString-Methode zurück. Bsp.: "Name: H4"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Bsp.: "Name: H4"</returns>
         public override string ToString()
         {
             return String.Format("Name: {0}", Name);
