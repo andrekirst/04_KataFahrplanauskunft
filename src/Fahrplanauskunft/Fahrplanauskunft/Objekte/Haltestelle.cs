@@ -59,5 +59,10 @@ namespace Fahrplanauskunft.Objekte
         {
             return Name.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return String.Format("Name: {0}", Name);
+        }
     }
 }

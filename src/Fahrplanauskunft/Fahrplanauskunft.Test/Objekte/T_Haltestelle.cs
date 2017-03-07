@@ -60,5 +60,20 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Test, dass die Rückgabe Name: H4 ist, wenn der Name der Haltestelle H4 ist. Benutzt wird der TestSatz TestSatzBrainstorming
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Haltestelle_ToString()
+        {
+            Haltestelle haltestelle = new Haltestelle(name: "H4");
+
+            string expected = "Name: H4";
+
+            string actual = haltestelle.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

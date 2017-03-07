@@ -23,3 +23,9 @@ Test einer Haltestelle mit dem Namen "Test" und einer Linie (Name: "U1", Ident: 
 #### Beschreibung
 
 Test der Equals-Methode, dass zwei Haltestellen gleich sind. Name: "Test"
+
+### Haltestelle_ToString
+
+#### Beschreibung
+
+Test, dass die Rückgabe **Name: H4** ist, wenn der Name der `Haltestelle` **H4** ist. Benutzt wird der TestSatz **TestSatzBrainstorming**
