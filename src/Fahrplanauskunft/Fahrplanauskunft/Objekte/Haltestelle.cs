@@ -60,6 +60,10 @@ namespace Fahrplanauskunft.Objekte
             return Name.GetHashCode();
         }
 
+        /// <summary>
+        /// Gibt die überschrieben ToString-Methode zurück. Bsp.: "Name: H4"
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return String.Format("Name: {0}", Name);
