@@ -681,5 +681,40 @@ namespace Fahrplanauskunft.Test.Funktionen
             CollectionAssert.AreEqual(expected, actual);
             #endregion
         }
+
+        /// <summary>
+        /// Sortierung einer Liste von Haltestellen für die Linie B31, bei der die Start-Haltestelle H10 ist und die Ziel-Haltestelle H8
+        /// </summary>
+        [TestMethod]
+        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B31_von_H10_nach_H8()
+        {
+            #region Testdaten vorbereiten
+            List<Haltestelle> haltenstellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            #endregion
+
+            #region Erwarteten Wert vorbereiten
+            List<Haltestelle> expected = new List<Haltestelle>()
+            {
+                haltenstellen.First(h => h.Name == "H10"),
+                haltenstellen.First(h => h.Name == "H2"),
+                haltenstellen.First(h => h.Name == "H8")
+            };
+            #endregion
+
+            #region Das Ergebnis auswerten
+            List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+                    linie: linien.First(l => l.Ident == "B31"),
+                    startHaltestelle: haltenstellen.First(h => h.Name == "H10"),
+                    zielHaltestelle: haltenstellen.First(h => h.Name == "H8"),
+                    haltenstellen: haltenstellen,
+                    streckenabschnitte: streckenabschnitte);
+            #endregion
+
+            #region Assert ausführen
+            CollectionAssert.AreEqual(expected, actual);
+            #endregion
+        }
     }
 }

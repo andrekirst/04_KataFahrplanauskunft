@@ -38,7 +38,7 @@ namespace Fahrplanauskunft.Funktionen
                 .Where(x => x.Linien.GroupBy(l => l.Name).Count() > 1)
                 .Select(y => new Umstiegspunkt(y)
                ).ToList();
-            
+
             return haltestellenMitUmstiegspunkt;
         }
 
@@ -111,10 +111,10 @@ namespace Fahrplanauskunft.Funktionen
             // 4. Streckenabschnitte auf die Streckenabschnitte reduzieren, die zur Linie gehören
             List<Streckenabschnitt> streckenabschnitteDerLinie = Liefere_Streckenabschnitte_einer_Linie(linie: linie, streckenabschnitte: streckenabschnitte);
 
-            
+
             // Herausfinden, wieviele initiale Streckenabschnitte man erhält
             List<Streckenabschnitt> gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: startHaltestelle, streckenabschnitte: streckenabschnitteDerLinie);
-            
+
             // Wenn an einem Start oder Ende die Fahrt beginnt
             if(gefundeneStreckenabschnitte.Count() == 1)
             {
@@ -128,7 +128,7 @@ namespace Fahrplanauskunft.Funktionen
                 haltestellenDerLinie.Remove(item: startHaltestelle);
 
                 // 7.Solange durch eine Liste gehen, bis die ziel-Haltestelle erreicht ist oder die Liste verfügbarer Haltestellen leer ist
-                while(!sortierteListe.Last().Equals(zielHaltestelle) || haltestellenDerLinie.Count() > 0)
+                while(!sortierteListe.Last().Equals(zielHaltestelle))
                 {
                     gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListe.Last(), streckenabschnitte: streckenabschnitteDerLinie);
                     // 7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
@@ -147,21 +147,52 @@ namespace Fahrplanauskunft.Funktionen
             }
             else
             {
-                Dictionary<string, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<string, List<Objekte.Haltestelle>>();
-                sortierteListeTempAlsDictionary.Add("1", new List<Haltestelle>() { startHaltestelle });
-                sortierteListeTempAlsDictionary.Add("2", new List<Haltestelle>() { startHaltestelle });
+                Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Objekte.Haltestelle>>();
+                for(int i = 0; i < gefundeneStreckenabschnitte.Count(); i++)
+                {
+                    sortierteListeTempAlsDictionary.Add(i, new List<Haltestelle>() { startHaltestelle });
+                }
 
-                // Wenn man nicht am Start oder Ende eine Linie ist
-                Streckenabschnitt sab1 = gefundeneStreckenabschnitte[0];
-                sortierteListeTempAlsDictionary["1"].Add(sab1.StartHaltestelle == sortierteListeTempAlsDictionary["1"].Last() ? sab1.ZielHaltestelle : sab1.StartHaltestelle);
+                for(int i = 0; i < gefundeneStreckenabschnitte.Count(); i++)
+                {
+                    Streckenabschnitt sab1 = gefundeneStreckenabschnitte[i];
+                    sortierteListeTempAlsDictionary[i].Add(sab1.StartHaltestelle.Equals(sortierteListeTempAlsDictionary[i].Last()) ? sab1.ZielHaltestelle : sab1.StartHaltestelle);
+                    haltestellenDerLinie.Remove(sortierteListeTempAlsDictionary[i].Last());
+                    streckenabschnitteDerLinie.Remove(sab1);
+                }
 
-                Streckenabschnitt sab2 = gefundeneStreckenabschnitte[1];
-                sortierteListeTempAlsDictionary["2"].Add(sab2.StartHaltestelle == sortierteListeTempAlsDictionary["2"].Last() ? sab2.ZielHaltestelle : sab2.StartHaltestelle);
+                foreach(int route in sortierteListeTempAlsDictionary.Keys)
+                {
+                    while(!sortierteListeTempAlsDictionary[route].Last().Equals(zielHaltestelle))
+                    {
+                        gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListeTempAlsDictionary[route].Last(), streckenabschnitte: streckenabschnitteDerLinie);
+                        // 7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
+                        if(gefundeneStreckenabschnitte.Count() == 0)
+                        {
+                            break;
+                        }
+                        Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte[0];
+
+                        Haltestelle gefundeneHaltestelle = gefundenerStreckenabschnitt.StartHaltestelle.Equals(sortierteListeTempAlsDictionary[route].Last()) ? gefundenerStreckenabschnitt.ZielHaltestelle : gefundenerStreckenabschnitt.StartHaltestelle;
+                        if(gefundeneHaltestelle != null)
+                        {
+                            sortierteListeTempAlsDictionary[route].Add(gefundeneHaltestelle);
+                            haltestellenDerLinie.Remove(gefundeneHaltestelle);
+                            // 7.2.vom Schritt zuvor ermittelten Streckenabschnitt aus der zur Verfügung stehenden Streckenabschnitte entfernen
+                            streckenabschnitteDerLinie.Remove(gefundenerStreckenabschnitt);
+                        }
+                    }
+                }
+
+                foreach(int route in sortierteListeTempAlsDictionary.Keys)
+                {
+                    if(sortierteListeTempAlsDictionary[route].Contains(zielHaltestelle))
+                    {
+                        return sortierteListeTempAlsDictionary[route];
+                    }
+                }
             }
 
-
-
-            
             // 8. Ergebnis zurückgeben
             return null;
         }
@@ -177,7 +208,7 @@ namespace Fahrplanauskunft.Funktionen
         {
             return streckenabschnitte.Where(s =>
                 s.Linien.Contains(linie) &&
-                    ( s.StartHaltestelle.Equals(haltestelle) || s.ZielHaltestelle.Equals(haltestelle) )
+                    (s.StartHaltestelle.Equals(haltestelle) || s.ZielHaltestelle.Equals(haltestelle))
                 ).ToList();
         }
 
