@@ -304,7 +304,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             CollectionAssert.AreEquivalent(expected, actual);
         }
-/*
+
         /// <summary>
         /// Erstelle Hierarchie möglichen Route von Haltestelle H1
         /// </summary>
@@ -342,21 +342,19 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             TreeItem expected = ti_root_Haltestelle;
 
-
-
-
-
-            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H8");
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H1");
 
             List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
 
-            List<Umstiegspunkt> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(aktuelleHaltestelle
-                                                                                        , bereitsgeweseneUmstiegspunkte
-                                                                                        , haltestellen);
 
-            CollectionAssert.AreEquivalent(expected, actual);
+
+            TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
+                                                                             , ref bereitsgeweseneUmstiegspunkte
+                                                                             , haltestellen);
+
+            Assert.AreEqual(expected, actual);
         }
 
-    */
+    
     }
 }
