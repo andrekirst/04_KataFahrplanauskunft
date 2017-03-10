@@ -16,6 +16,17 @@ Der Branch **develop** spiegelt den lauffähigen Entwicklungsstand dar.
 
 Ein Branch für eine neues Feature wird immer von **develop** erzeugt.
 
-#### Anleitung
+## Anleitungen
+
+### Anleitung für das erstellen eines neuen Feature-Branch (lokal)
 
 1. `git checkout develop`
+1. `git fetch`
+1. `git rebase`
+1. `git branch features/issue_<Nummer des Issue>`
+1. `git checkout features/issue_<Nummer des Issue>`
+
+### Anleitung für das aktualisieren von **develop** in einen Feature-Branch
+
+1. `git checkout develop`
+1. `git s`
