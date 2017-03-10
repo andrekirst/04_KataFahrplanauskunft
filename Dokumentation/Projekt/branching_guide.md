@@ -15,7 +15,7 @@ Der Branch **develop** spiegelt den lauffähigen Entwicklungsstand dar.
 ### Branch für ein neues Feature
 
 Ein Branch für eine neues Feature wird immer von **develop** erzeugt. Siehe [Anleitung](branching_guide.md/#anleitung-f%C3%BCr-das-erstellen-eines-neuen-feature-branch).
-Desweiteren wird ein Feature-Branch nur erzeugt, wenn es dazu einen [Issue](https://github.com/andrekirst/04_KataFahrplanauskunft/issues) gibt. Aufgrund dessen, ist ein Feature-Branch folgendermaßen zu benennen: `features/issue_<Nummer des Issue>`.
+Desweiteren wird ein Feature-Branch nur erzeugt, wenn es dazu einen [Issue](https://github.com/andrekirst/04_KataFahrplanauskunft/issues) gibt. Aufgrund dessen, ist ein Feature-Branch folgendermaßen zu benennen: `features/issue_<Nummer des Issue>`. Beispiel: `features/issue_62`
 
 ## Kommentare
 
