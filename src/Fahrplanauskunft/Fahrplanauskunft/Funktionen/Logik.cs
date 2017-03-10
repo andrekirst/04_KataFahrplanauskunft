@@ -86,28 +86,43 @@ namespace Fahrplanauskunft.Funktionen
         /// Liefert eine Hierarchie mit möglichen Umstiegspunkten von einer Haltestelle 
         /// </summary>
         /// <param name="aktuelleHaltestelle">Aktuelle Haltestelle, Wurzel der Hierarchie</param>
-        /// <param name="bereitsGeweseneUmstiegspunkte">Referenz auf die Liste von Umstiegspunkten, an denen man bereits gewesen ist</param>
+        /// <param name="bereitsGeweseneUmstiegspunkte">Die Liste von Umstiegspunkten, an denen man bereits gewesen ist</param>
         /// <param name="haltestellen">Liste von Haltestellen</param>
         /// <returns></returns>
-        internal static TreeItem Liefere_Hierarchie_Route_von_Haltestelle(Haltestelle aktuelleHaltestelle, ref List<Umstiegspunkt> bereitsGeweseneUmstiegspunkte, List<Haltestelle> haltestellen)
+        internal static TreeItem Liefere_Hierarchie_Route_von_Haltestelle(Haltestelle aktuelleHaltestelle, List<Umstiegspunkt> bereitsGeweseneUmstiegspunkte, List<Haltestelle> haltestellen)
         {
             // 1. aktuelle Haltestelle ist mein Root
             TreeItem ti_root_Haltestelle = new TreeItem(aktuelleHaltestelle);
 
-            
+            // 2. mache die aktuelle Haltestelle zum Umstiegspunkt(auch die eventuelle Start- oder Endhaltestelle)
+            Umstiegspunkt up = new Umstiegspunkt(aktuelleHaltestelle);
+            if (!bereitsGeweseneUmstiegspunkte.Contains(up))
+            {
+                bereitsGeweseneUmstiegspunkte.Add(up);
+            };
 
-            // 2. Liefere zu einer Haltestelle, die nächsten Umstiegspunkte
+            // 3. Liefere zu einer Haltestelle, die nächsten Umstiegspunkte
             List<Umstiegspunkt> ups = Liefere_Naechste_Umstiegspunkte_von_Haltestelle(ti_root_Haltestelle.Haltestelle
                                                                                         , bereitsGeweseneUmstiegspunkte
                                                                                         , haltestellen);
-            // merken der gefundenen Umstiegspunkte als schon da gewesene
-            bereitsGeweseneUmstiegspunkte.AddRange(ups);
-
+            // 4. merken der gefundenen Umstiegspunkte als schon da gewesene
             foreach (Umstiegspunkt umstiegspunkt in ups)
             {
+                if (!bereitsGeweseneUmstiegspunkte.Contains(umstiegspunkt))
+                {
+                    bereitsGeweseneUmstiegspunkte.Add(umstiegspunkt);
+                };
+            }
+           
+
+            // 5. Suche Rekursiv
+            foreach (Umstiegspunkt umstiegspunkt in ups)
+            {
+                List<Umstiegspunkt> neuBereitsGeweseneUmstiegspunkte = new List<Umstiegspunkt>();
+                neuBereitsGeweseneUmstiegspunkte.AddRange(bereitsGeweseneUmstiegspunkte);
 
                 TreeItem ti_child = Liefere_Hierarchie_Route_von_Haltestelle(umstiegspunkt.Haltestelle
-                                                                            , ref bereitsGeweseneUmstiegspunkte
+                                                                            , neuBereitsGeweseneUmstiegspunkte
                                                                             , haltestellen);
                 ti_root_Haltestelle.Childs.Add(ti_child);
             }

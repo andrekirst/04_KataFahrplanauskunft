@@ -347,7 +347,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
             
             TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
-                                                                             , ref bereitsgeweseneUmstiegspunkte
+                                                                             , bereitsgeweseneUmstiegspunkte
                                                                              , haltestellen);
 
             Assert.AreEqual(expected, actual);
@@ -386,7 +386,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
 
             TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
-                                                                             , ref bereitsgeweseneUmstiegspunkte
+                                                                             , bereitsgeweseneUmstiegspunkte
                                                                              , haltestellen);
 
             Assert.AreEqual(expected, actual);
@@ -432,7 +432,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
             
             TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
-                                                                             , ref bereitsgeweseneUmstiegspunkte
+                                                                             , bereitsgeweseneUmstiegspunkte
                                                                              , haltestellen);
 
             Assert.AreEqual(expected, actual);
