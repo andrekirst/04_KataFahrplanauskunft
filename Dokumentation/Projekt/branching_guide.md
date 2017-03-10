@@ -14,7 +14,7 @@ Der Branch **develop** spiegelt den lauffähigen Entwicklungsstand dar.
 
 ### Branch für ein neues Feature
 
-Ein Branch für eine neues Feature wird immer von **develop** erzeugt. Siehe ![Anleitung](#)
+Ein Branch für eine neues Feature wird immer von **develop** erzeugt. Siehe ![Anleitung](#anleitung-f%C3%BCr-das-erstellen-eines-neuen-feature-branch)
 
 ## Anleitungen
 
