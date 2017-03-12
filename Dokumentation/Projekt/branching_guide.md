@@ -24,9 +24,13 @@ Dieser Guide dient dazu, einen Überblick zu schaffen, wofür welche Branches da
 
 Der Branch **master** spiegelt den produktiven Stand des Quellcodes dar.
 
+**Wichtig**: Es wird **niemals** direkt auf diesem Branch ein Commit erstellt. Nur über Pull requests, wird Code diesem Branch hinzugefügt.
+
 ### Branch develop
 
 Der Branch **develop** spiegelt den lauffähigen Entwicklungsstand dar.
+
+**Wichtig**: Es wird **niemals** direkt auf diesem Branch ein Commit erstellt. Nur über Pull requests, wird Code diesem Branch hinzugefügt.
 
 ### Branch für ein neues Feature
 
