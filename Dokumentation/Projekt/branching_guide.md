@@ -79,4 +79,17 @@ Beispiel: `#62 - Anpassung Link`
 
 #### Branch in Visual Studio aktualisieren
 
-TODO
+1. Auswahl des Fensters *Team Explorer* (Ansicht -> Team Explorer)
+1. Button *Branches* drücken
+1. Doppelklick auf den Branch **develop**, um in diesen zu wechseln
+1. Startseite des *Team Explorer* öffnen. Z.B. über das Haus-Symbol
+1. Button *Sync* drücken
+1. Drücken des oberen Links *Fetch*
+1. Wenn Commits in *Incoming Commits* vorhanden sind, diese mit dem Link *Pull* unterhalb von *Incoming Commits* vom Remote holen
+1. Button *Branches* drücken
+1. In den Branch wechseln, in den von **develop** gemerged werden soll.
+1. Rechte Maustaste auf den Branch **develop** und Klick auf *Merge From...*
+1. Im darauffolgenden Menü kontrollieren, ob in *Merge from branch* **develop** steht und in *Into current branch* der Branch, in dem **develop** gemerged werden soll. Beispiel: `features/issue_<Nummer des Issue>`
+1. Klick auf *Merge*, um die Dateien zu mergen
+1. Button *Sync* drücken
+1. Wenn bei *Outgoing Commits* Commits vorhanden sind, diese mit dem unteren Link *Push* zum remote laden
