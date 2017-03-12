@@ -146,6 +146,7 @@ Beispiel: `#62 - Anpassung Link`
 **Information**: Solange der Pull request offen ist, können immer wieder neue Commits in den Branch, aus dem der Pull request entstanden ist, hochgeladen werden. Der letzte Commit löst das Ereignis aus, dass z.B. integrierte Builds neu erstellt werden.
 
 [*Offizielle Hilfe für das erstellen eines Pull request in Github*](https://help.github.com/articles/creating-a-pull-request/)
+
 [*Offizielle Hilfe für das reviewen eines Pull request auf GitHub*](https://help.github.com/articles/reviewing-changes-in-pull-requests/)
 
 ## Pull request mergen
