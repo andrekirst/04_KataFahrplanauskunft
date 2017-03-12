@@ -30,7 +30,7 @@ Der Branch **develop** spiegelt den lauffähigen Entwicklungsstand dar.
 
 ### Branch für ein neues Feature
 
-Ein Branch für eine neues Feature wird immer von **develop** erzeugt. Siehe [Anleitung](branching_guide.md/#anleitung-f%C3%BCr-das-erstellen-eines-neuen-feature-branch).
+Ein Branch für eine neues Feature wird immer von **develop** erzeugt. Siehe [*Anleitung*](branching_guide.md/#anleitung-f%C3%BCr-das-erstellen-eines-neuen-feature-branch).
 Desweiteren wird ein Feature-Branch nur erzeugt, wenn es dazu einen [Issue](https://github.com/andrekirst/04_KataFahrplanauskunft/issues) gibt. Aufgrund dessen, ist ein Feature-Branch folgendermaßen zu benennen: `features/issue_<Nummer des Issue>`. Beispiel: `features/issue_62`
 
 ## Kommentare
@@ -158,6 +158,6 @@ Beispiel: `#62 - Anpassung Link`
 1. Die Beschreibung kann leer bleiben
 1. Klick auf *Confirm squash and merge*, um den Pull request-Vorgang abuischließen
 
-**Wichtiger Hinweis**: Wenn der Pull request geschlossen und der dazugehörige Branch in GitHub gelöscht ist, diesen auch lokal löschen. **Nicht erneut pushen**. Siehe [Lokalen Branch und Remote nach einem Pull request löschen](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen).
+**Wichtiger Hinweis**: Wenn der Pull request geschlossen und der dazugehörige Branch in GitHub gelöscht ist, diesen auch lokal löschen. **Nicht erneut pushen**. Siehe [*Lokalen Branch und Remote nach einem Pull request löschen*](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen).
 
 [*Offizielle Hilfe für das mergen eines Pull request in GitHub*](https://help.github.com/articles/merging-a-pull-request/)
