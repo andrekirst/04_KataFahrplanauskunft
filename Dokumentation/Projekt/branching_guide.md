@@ -112,4 +112,16 @@ TODO
 
 ## Pull request erstellen
 
-TODO
+1. Auswählen des Reiters [*Pull requrst*](https://github.com/andrekirst/04_KataFahrplanauskunft/pulls)
+1. Klick auf *New pull request*
+1. Auswahlen des *base* (Standardmäßig **develop**), in dem die Änderungen eingespielt werden sollen
+1. Auswählen des *compare*, aus dem die Änderungen kommen
+1. Nachdem beide ausgewählt wurden, analysiert GitHub beide Stände und gibt die Commits und veränderten Dateien aus
+1. Klick auf *Create pull request* führt dazu, dass weitere Informationen zum pull request angegeben werden können
+1. Titel des Pull request festlegen. Dort nach folgendem Schema den Titel vergeben: `Pull request für #<Nummer des Issue> - <Titel des Issue>`
+1. Beschreibung des Pull request festlegen. Dort nach folgendem Schema die Beschreibung vergeben: `Pull request für #<Nummer des Issue> - <Titel des Issue>`
+1. Festlegen eines *Reviewers*, der den Pull request analysieren und bewertet
+1. Den Pull request jemanden bei *Asignee* zuweisen
+1. Bei *Labels* ein *Label* zuordnen. Hier werden die Labels zugeordnet, dem auch dem Issue zugeordnet sind
+1. Bei *Milestone* einen Meilenstein zuordnen
+1. Klick auf *Create pull request*, um den Pull request zu erstellen
