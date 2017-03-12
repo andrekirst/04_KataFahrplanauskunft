@@ -50,6 +50,20 @@ Beispiel: `#62 - Anpassung Link`
 #### Branch in Visual Studio erzeugen
 
 1. Auswahl des Fensters *Team Explorer* (Ansicht -> Team Explorer)
+1. Button *Branches* drücken
+1. Doppelklick auf den Branch **develop**, um in diesen zu wechseln
+1. Startseite des *Team Explorer* öffnen. Z.B. über das Haus-Symbol
+1. Button *Sync* drücken
+1. Drücken des oberen Links *Fetch*
+1. Wenn Commits in *Incoming Commits* vorhanden sind, diese mit dem Link *Pull* unterhalb von *Incoming Commits* vom Remote holen
+1. Startseite des *Team Explorer* öffnen. Z.B. über das Haus-Symbol
+1. Button *Branches* drücken
+1. Rechte Maustaste auf den Branch **develop** und den Menüeintrag *New Local Branch From...* drücken
+1. Im darauffolgenden Menü den Namen des Branch vergeben. Beispiel: `features/issue_<Nummer des Issue>`
+1. Mit Klick auf den Button *Create Branch* den Branch erzeugen
+1. Startseite des *Team Explorer* öffnen. Z.B. über das Haus-Symbol
+1. Button *Sync* drücken
+1. Den Link *Publish* unterhalb von *Outgoing Commits* drücken
 
 ### Anleitung für das aktualisieren von **develop** in einen Feature-Branch
 
