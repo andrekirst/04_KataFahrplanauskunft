@@ -2,6 +2,18 @@
 
 Dieser Guide dient dazu, einen Überblick zu schaffen, wofür welche Branches da sind und wie der Umgang mit diesen ist.
 
+* [System-Branches](branching_guide.md/#system-branches)
+* [Kommentare](branching_guide.md/#kommentare)
+* [Anleitungen](branching_guide.md/#anleitungen)
+  * [Anleitung für das erstellen eines neuen Feature-Branch](branching_guide.md/#anleitung-f%C3%BCr-das-erstellen-eines-neuen-feature-branch)
+    * [Lokalen Branch erzeugen](branching_guide.md#lokalen-branch-in-der-git-bash-erzeugen)
+    * [Branch in GitHub erzeugen](branching_guide.md#branch-in-github-erzeugen)
+    * [Branch in Visual Studio erzeugen](branching_guide.md#branch-in-visual-studio-erzeugen)
+  * [Anleitung für das aktualisieren von **develop** in einen Feature-Branch](branching_guide.md/##anleitung-f%C3%BCr-das-aktualisieren-von-develop-in-einen-feature-branch)
+    * [Branch in der Git Bash aktualisieren](branching_guide.md#branch-in-der-git-bash-aktualisieren)
+    * [Branch in Visual Studio aktualisieren](branching_guide.md#branch-in-visual-studio-aktualisieren)
+* [Pull request erstellen](branching_guide.md/#)
+
 ## System-Branches
 
 ### Branch master
@@ -29,9 +41,8 @@ Beispiel: `#62 - Anpassung Link`
 
 ### Anleitung für das erstellen eines neuen Feature-Branch
 
-#### Lokalen Branch erzeugen
+#### Lokalen Branch in der Git Bash erzeugen
 
-1. Öffnen der Git Bash
 1. `git checkout develop`
 1. `git fetch`
 1. `git rebase`
@@ -41,7 +52,7 @@ Beispiel: `#62 - Anpassung Link`
 
 #### Branch in GitHub erzeugen
 
-1. Den Reiter *Code* auswählen
+1. Den Reiter [*Code*](https://github.com/andrekirst/04_KataFahrplanauskunft) auswählen
 1. Branch **develop** auswählen. Da der Branch **develop** der Standard-Branch ist, ist dies meist nicht notwändig
 1. DropDown-Button für den Branch drücken
 1. In die Textbox den Branchnamen eingeben. Beispiel: `features/issue_<Nummer des Issue>`
@@ -92,4 +103,8 @@ Beispiel: `#62 - Anpassung Link`
 1. Im darauffolgenden Menü kontrollieren, ob in *Merge from branch* **develop** steht und in *Into current branch* der Branch, in dem **develop** gemerged werden soll. Beispiel: `features/issue_<Nummer des Issue>`
 1. Klick auf *Merge*, um die Dateien zu mergen
 1. Button *Sync* drücken
-1. Wenn bei *Outgoing Commits* Commits vorhanden sind, diese mit dem unteren Link *Push* zum remote laden
+1. Wenn bei *Outgoing Commits* Commits vorhanden sind, diese mit dem unteren Link *Push* zum Remote laden
+
+## Pull request erstellen
+
+TODO
