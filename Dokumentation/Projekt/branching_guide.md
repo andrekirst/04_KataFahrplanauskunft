@@ -158,6 +158,6 @@ Beispiel: `#62 - Anpassung Link`
 1. Die Beschreibung kann leer bleiben
 1. Klick auf *Confirm squash and merge*, um den Pull request-Vorgang abuischließen
 
-**Wichtiger Hinweis**: Wenn der Pull request geschlossen und der dazugehörige Branch in GitHub gelöscht ist, diesen auch lokal löschen. Siehe [Lokalen Branch und Remote nach einem Pull request löschen](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen).
+**Wichtiger Hinweis**: Wenn der Pull request geschlossen und der dazugehörige Branch in GitHub gelöscht ist, diesen auch lokal löschen. **Nicht erneut pushen**. Siehe [Lokalen Branch und Remote nach einem Pull request löschen](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen).
 
 [*Offizielle Hilfe für das mergen eines Pull request in GitHub*](https://help.github.com/articles/merging-a-pull-request/)
