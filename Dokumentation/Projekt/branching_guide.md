@@ -6,13 +6,14 @@ Dieser Guide dient dazu, einen Überblick zu schaffen, wofür welche Branches da
 * [Kommentare](branching_guide.md/#kommentare)
 * [Anleitungen](branching_guide.md/#anleitungen)
   * [Anleitung für das erstellen eines neuen Feature-Branch](branching_guide.md/#anleitung-f%C3%BCr-das-erstellen-eines-neuen-feature-branch)
-    * [Lokalen Branch erzeugen](branching_guide.md#lokalen-branch-in-der-git-bash-erzeugen)
+    * [Lokalen Branch in der Git Bash erzeugen](branching_guide.md#lokalen-branch-in-der-git-bash-erzeugen)
     * [Branch in GitHub erzeugen](branching_guide.md#branch-in-github-erzeugen)
     * [Branch in Visual Studio erzeugen](branching_guide.md#branch-in-visual-studio-erzeugen)
-  * [Anleitung für das aktualisieren von **develop** in einen Feature-Branch](branching_guide.md/##anleitung-f%C3%BCr-das-aktualisieren-von-develop-in-einen-feature-branch)
+  * [Anleitung für das aktualisieren von **develop** in einen Feature-Branch](branching_guide.md/#anleitung-f%C3%BCr-das-aktualisieren-von-develop-in-einen-feature-branch)
     * [Branch in der Git Bash aktualisieren](branching_guide.md#branch-in-der-git-bash-aktualisieren)
     * [Branch in Visual Studio aktualisieren](branching_guide.md#branch-in-visual-studio-aktualisieren)
-* [Pull request erstellen](branching_guide.md/#)
+  * [Lokalen Branch und Remote nach einem Pull request löschen](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen)
+* [Pull request erstellen](branching_guide.md/#pull-request-erstellen)
 
 ## System-Branches
 
@@ -104,6 +105,10 @@ Beispiel: `#62 - Anpassung Link`
 1. Klick auf *Merge*, um die Dateien zu mergen
 1. Button *Sync* drücken
 1. Wenn bei *Outgoing Commits* Commits vorhanden sind, diese mit dem unteren Link *Push* zum Remote laden
+
+### Lokalen Branch und Remote nach einem Pull request löschen
+
+TODO
 
 ## Pull request erstellen
 
