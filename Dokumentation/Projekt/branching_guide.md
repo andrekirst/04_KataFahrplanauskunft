@@ -13,7 +13,10 @@ Dieser Guide dient dazu, einen Überblick zu schaffen, wofür welche Branches da
     * [Branch in der Git Bash aktualisieren](branching_guide.md#branch-in-der-git-bash-aktualisieren)
     * [Branch in Visual Studio aktualisieren](branching_guide.md#branch-in-visual-studio-aktualisieren)
   * [Lokalen Branch und Remote nach einem Pull request löschen](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen)
+    * [Lokalen Branch und Remote nach einem Pull request in der Git Bash löschen](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-in-der-git-Bash-löschen)
+    * [Lokalen Branch und Remote nach einem Pull request in Visual Studio löschen](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-in-visual-studio-löschen)
 * [Pull request erstellen](branching_guide.md/#pull-request-erstellen)
+* [Pull request mergen](branching_guide.md/#pull-request-mergen)
 
 ## System-Branches
 
@@ -108,6 +111,12 @@ Beispiel: `#62 - Anpassung Link`
 
 ### Lokalen Branch und Remote nach einem Pull request löschen
 
+#### Lokalen Branch und Remote nach einem Pull request in der Git Bash löschen
+
+TODO
+
+#### Lokalen Branch und Remote nach einem Pull request in Visual Studio löschen
+
 TODO
 
 ## Pull request erstellen
@@ -125,3 +134,14 @@ TODO
 1. Bei *Labels* ein *Label* zuordnen. Hier werden die Labels zugeordnet, dem auch dem Issue zugeordnet sind
 1. Bei *Milestone* einen Meilenstein zuordnen
 1. Klick auf *Create pull request*, um den Pull request zu erstellen
+
+**Information**: Solange der Pull request offen ist, können immer wieder neue Commits in den Branch, aus dem der Pull request entstanden ist, hochgeladen werden. Der letzte Commit löst das Ereignis aus, dass z.B. integrierte Builds neu erstellt werden.
+
+## Pull request mergen
+
+1. Pull request auswählen
+1. Klick auf *Squash and merge* - Dies beduetet, dass alle Commits in einen Commit zusammengefasst werden und auf den *base*, z.B. **develop**, gesetzt wird
+1. Es erscheint ein Titel und Beschreibungsfeld.
+1. Den Titel folgendermaßen beschreiben: `Merge features/issue_<Nummer des Issue> in **develop** mit Pull request #<Nummer des Pull request>`. Beispiel: `Merge features/issue_62 in **develop** mit Pull request #64`
+1. Die Beschreibung kann leer bleiben
+1. Klick auf *Confirm squash and merge*, um den Pull request-Vorgang abuischließen
