@@ -49,7 +49,7 @@ Beispiel: `#62 - Anpassung Link`
 
 #### Branch in Visual Studio erzeugen
 
-TODO
+1. Auswahl des Fensters *Team Explorer* (Ansicht -> Team Explorer)
 
 ### Anleitung für das aktualisieren von **develop** in einen Feature-Branch
 
