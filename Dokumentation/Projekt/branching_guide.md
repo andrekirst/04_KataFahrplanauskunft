@@ -62,6 +62,8 @@ Beispiel: `#62 - Anpassung Link`
 1. In die Textbox den Branchnamen eingeben. Beispiel: `features/issue_<Nummer des Issue>`
 1. Enter drücken, um den Branch zu erzeugen
 
+[*Offizielle Hilfe für das Erstellen eines Branch in GitHub*](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/#creating-a-branch)
+
 #### Branch in Visual Studio erzeugen
 
 1. Auswahl des Fensters *Team Explorer* (Ansicht -> Team Explorer)
@@ -113,11 +115,17 @@ Beispiel: `#62 - Anpassung Link`
 
 #### Lokalen Branch und Remote nach einem Pull request in der Git Bash löschen
 
-TODO
+1. `git checkout develop`
+1. `git branch -d <Names des Branches, der gelöscht werden soll>`
+1. `git branch -d -r origin/<Names des Branches, der gelöscht werden soll>`
 
 #### Lokalen Branch und Remote nach einem Pull request in Visual Studio löschen
 
-TODO
+1. Auswahl des Fensters *Team Explorer* (Ansicht -> Team Explorer)
+1. Button *Branches* drücken
+1. Doppelklick auf den Branch **develop**, um in diesen zu wechseln
+1. Branch im angezeigten Baum löschen
+1. Remote im Baum unterhalb von `remotes/origin` löschen
 
 ## Pull request erstellen
 
@@ -137,6 +145,8 @@ TODO
 
 **Information**: Solange der Pull request offen ist, können immer wieder neue Commits in den Branch, aus dem der Pull request entstanden ist, hochgeladen werden. Der letzte Commit löst das Ereignis aus, dass z.B. integrierte Builds neu erstellt werden.
 
+[*Offizielle Hilfe für das erstellen eines Pull request in Github*](https://help.github.com/articles/creating-a-pull-request/)
+
 ## Pull request mergen
 
 1. Pull request auswählen
@@ -145,3 +155,7 @@ TODO
 1. Den Titel folgendermaßen beschreiben: `Merge features/issue_<Nummer des Issue> in **develop** mit Pull request #<Nummer des Pull request>`. Beispiel: `Merge features/issue_62 in **develop** mit Pull request #64`
 1. Die Beschreibung kann leer bleiben
 1. Klick auf *Confirm squash and merge*, um den Pull request-Vorgang abuischließen
+
+**Wichtiger Hinweis**: Wenn der Pull request geschlossen und der dazugehörige Branch in GitHub gelöscht ist, diesen auch lokal löschen. Siehe [Lokalen Branch und Remote nach einem Pull request löschen](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen).
+
+[*Offizielle Hilfe für das mergen eines Pull request in GitHub*](https://help.github.com/articles/merging-a-pull-request/)
