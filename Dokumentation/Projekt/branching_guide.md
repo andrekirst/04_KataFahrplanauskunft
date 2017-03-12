@@ -41,7 +41,11 @@ Beispiel: `#62 - Anpassung Link`
 
 #### Branch in GitHub erzeugen
 
-TODO
+1. Den Reiter *Code* auswählen
+1. Branch **develop** auswählen. Da der Branch **develop** der Standard-Branch ist, ist dies meist nicht notwändig
+1. DropDown-Button für den Branch drücken
+1. In die Textbox den Branchnamen eingeben. Beispiel: `features/issue_<Nummer des Issue>`
+1. Enter drücken, um den Branch zu erzeugen
 
 #### Branch in Visual Studio erzeugen
 
