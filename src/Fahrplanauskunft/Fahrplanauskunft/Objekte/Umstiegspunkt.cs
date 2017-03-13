@@ -1,40 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Objekte
 {
     /// <summary>
-    /// Eine Haltestelle ist ein Punkt, an denen ein- und ausgestiegen werden kann.
+    /// Ein Umstiegspunkt ist eine Haltestelle mit mindensten 2 verschiedenen Linien
     /// </summary>
-    public class Haltestelle
+    public class Umstiegspunkt
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
-        public Haltestelle()
+        public Umstiegspunkt()
         {
-            Linien = new List<Linie>();
+        }
+        /// <summary>
+        /// Standardkonstruktor mit einer Haltestelle
+        /// </summary>
+        /// <param name="haltestelle">ein Haltestelleobjekt</param>
+        public Umstiegspunkt(Haltestelle haltestelle)
+        {
+            Haltestelle = haltestelle;
+            Name = haltestelle.Name;
         }
 
         /// <summary>
-        /// Konstruktor mit dem Namen der Haltestelle
+        /// Gibt die Haltestelle zurück
         /// </summary>
-        /// <param name="name">Der Name der Haltestelle</param>
-        public Haltestelle(string name)
-            : this()
+        public Haltestelle Haltestelle
         {
-            Name = name;
+            get; set;
         }
 
         /// <summary>
-        /// Die Linien, die der Haltestelle zugeordnet sind
+        /// Name des Umstiegspunkt
         /// </summary>
-        public List<Linie> Linien { get; set; }
-
-        /// <summary>
-        /// Gibt den Namen der Haltestelle zurück, oder setzt ihn
-        /// </summary>
-        public string Name { get; set; }
+        public string Name
+        {
+            get; set;
+        }
 
         /// <summary>
         /// Vergleicht die Haltestelle mit einem anderen Objekt
@@ -47,8 +54,8 @@ namespace Fahrplanauskunft.Objekte
             {
                 throw new NullReferenceException();
             }
-            Haltestelle other = obj as Haltestelle;
-            return this.Name == other.Name;
+            Umstiegspunkt other = obj as Umstiegspunkt;
+            return Name == other.Name && Haltestelle.Equals(other.Haltestelle);
         }
 
         /// <summary>

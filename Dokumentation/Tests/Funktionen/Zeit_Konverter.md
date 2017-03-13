@@ -18,14 +18,14 @@ Es soll die Funktion ZuUhrzeitText mit dem Wert 120 aufgerufen werden und die Au
 
 Es soll die Funktion ZuUhrzeitText mit dem Wert 726 aufgerufen werden und die Ausgabe soll "12:06" betragen.
 
-### ZuUhrzeitText_Ganzzahl_726_Text_1206
-
-#### Beschreibung
-
-Es soll die Funktion ZuUhrzeitText mit dem Wert 726 aufgerufen werden und die Ausgabe soll "12:06" betragen.
-
 ### ZuUhrzeitZahl_Text_0200_Ganzzahl_120
 
 #### Beschreibung
 
 Es soll die Funktion ZuUhrzeitZahl mit dem Wert 02:00 aufgerufen werden und die Ausgabe soll 120 betragen.
+
+### ZuUhrzeitZahl_Text_1206_Ganzzahl_726
+
+#### Beschreibung
+
+Es soll die Funktion ZuUhrzeitZahl mit dem Wert 12:06 aufgerufen werden und die Ausgabe soll 726 betragen
