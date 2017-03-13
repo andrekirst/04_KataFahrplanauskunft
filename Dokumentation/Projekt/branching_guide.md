@@ -5,7 +5,7 @@ Dieser Guide dient dazu, einen Überblick zu schaffen, wofür welche Branches da
 * [System-Branches](branching_guide.md/#system-branches)
 * [Kommentare](branching_guide.md/#kommentare)
 * [Anleitungen](branching_guide.md/#anleitungen)
-  * [Anleitung für das erstellen eines neuen Feature-Branch](branching_guide.md/#anleitung-f%C3%BCr-das-erstellen-eines-neuen-feature-branch)
+  * [Anleitung für das Erstellen eines neuen Feature-Branch](branching_guide.md/#anleitung-f%C3%BCr-das-erstellen-eines-neuen-feature-branch)
     * [Lokalen Branch in der Git Bash erzeugen](branching_guide.md#lokalen-branch-in-der-git-bash-erzeugen)
     * [Branch in GitHub erzeugen](branching_guide.md#branch-in-github-erzeugen)
     * [Branch in Visual Studio erzeugen](branching_guide.md#branch-in-visual-studio-erzeugen)
@@ -47,7 +47,7 @@ Beispiel: `#62 - Anpassung Link`
 
 ## Anleitungen
 
-### Anleitung für das erstellen eines neuen Feature-Branch
+### Anleitung für das Erstellen eines neuen Feature-Branch
 
 #### Lokalen Branch in der Git Bash erzeugen
 
@@ -149,9 +149,9 @@ Beispiel: `#62 - Anpassung Link`
 
 **Information**: Solange der Pull request offen ist, können immer wieder neue Commits in den Branch, aus dem der Pull request entstanden ist, hochgeladen werden. Der letzte Commit löst das Ereignis aus, dass z.B. integrierte Builds neu erstellt werden.
 
-[*Offizielle Hilfe für das erstellen eines Pull request in Github*](https://help.github.com/articles/creating-a-pull-request/)
+[*Offizielle Hilfe für das Erstellen eines Pull request in Github*](https://help.github.com/articles/creating-a-pull-request/)
 
-[*Offizielle Hilfe für das reviewen eines Pull request auf GitHub*](https://help.github.com/articles/reviewing-changes-in-pull-requests/)
+[*Offizielle Hilfe für das Reviewen eines Pull request auf GitHub*](https://help.github.com/articles/reviewing-changes-in-pull-requests/)
 
 ## Pull request mergen
 
@@ -164,4 +164,4 @@ Beispiel: `#62 - Anpassung Link`
 
 **Wichtiger Hinweis**: Wenn der Pull request geschlossen und der dazugehörige Branch in GitHub gelöscht ist, diesen auch lokal löschen. **Nicht erneut pushen**. Siehe [*Lokalen Branch und Remote nach einem Pull request löschen*](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen).
 
-[*Offizielle Hilfe für das mergen eines Pull request in GitHub*](https://help.github.com/articles/merging-a-pull-request/)
+[*Offizielle Hilfe für das Mergen eines Pull request in GitHub*](https://help.github.com/articles/merging-a-pull-request/)
