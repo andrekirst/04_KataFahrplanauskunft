@@ -116,7 +116,7 @@ namespace Fahrplanauskunft.Funktionen
             List<Streckenabschnitt> gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: startHaltestelle, streckenabschnitte: streckenabschnitteDerLinie);
 
             // Wenn an einem Start oder Ende die Fahrt beginnt
-            if(gefundeneStreckenabschnitte.Count() == 1)
+            if(gefundeneStreckenabschnitte.Count == 1)
             {
                 // 5. Liste für die sortierten Haltestellen erstellen
                 List<Haltestelle> sortierteListe = new List<Haltestelle>();
@@ -150,7 +150,7 @@ namespace Fahrplanauskunft.Funktionen
                 // Ein Dictionary für die sortierten Listen von Haltestellen (Routen)
                 Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Haltestelle>>();
                 // Das Dictionary wird mit der Anzahl gefundenener Streckenabschnitte erstellt
-                for(int i = 0; i < gefundeneStreckenabschnitte.Count(); i++)
+                for(int i = 0; i < gefundeneStreckenabschnitte.Count; i++)
                 {
                     // Die sortierte Liste bekommt als erste Haltestelle die Start-Haltestelle
                     sortierteListeTempAlsDictionary.Add(i, new List<Haltestelle>() { startHaltestelle });
