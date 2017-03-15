@@ -132,68 +132,67 @@ namespace Fahrplanauskunft.Funktionen
                 {
                     gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListe.Last(), streckenabschnitte: streckenabschnitteDerLinie);
                     // 7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
-                    Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte[0];
+                    Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte.First();
                     Haltestelle gefundeneHaltestelle = gefundenerStreckenabschnitt.StartHaltestelle.Equals(sortierteListe.Last()) ? gefundenerStreckenabschnitt.ZielHaltestelle : gefundenerStreckenabschnitt.StartHaltestelle;
                     if(gefundeneHaltestelle != null)
                     {
                         sortierteListe.Add(gefundeneHaltestelle);
                         haltestellenDerLinie.Remove(gefundeneHaltestelle);
-                        // 7.2.vom Schritt zuvor ermittelten Streckenabschnitt aus der zur Verfügung stehenden Streckenabschnitte entfernen
                         streckenabschnitteDerLinie.Remove(gefundenerStreckenabschnitt);
                     }
                 }
 
+                // 8. Ergebnis zurückgeben
                 return sortierteListe;
             }
             else
             {
-                Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Objekte.Haltestelle>>();
+                // Ein Dictionary für die sortierten Listen von Haltestellen (Routen)
+                Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Haltestelle>>();
+                // Das Dictionary wird mit der Anzahl gefundenener Streckenabschnitte erstellt
                 for(int i = 0; i < gefundeneStreckenabschnitte.Count(); i++)
                 {
+                    // Die sortierte Liste bekommt als erste Haltestelle die Start-Haltestelle
                     sortierteListeTempAlsDictionary.Add(i, new List<Haltestelle>() { startHaltestelle });
                 }
 
-                for(int i = 0; i < gefundeneStreckenabschnitte.Count(); i++)
-                {
-                    Streckenabschnitt sab1 = gefundeneStreckenabschnitte[i];
-                    sortierteListeTempAlsDictionary[i].Add(sab1.StartHaltestelle.Equals(sortierteListeTempAlsDictionary[i].Last()) ? sab1.ZielHaltestelle : sab1.StartHaltestelle);
-                    haltestellenDerLinie.Remove(sortierteListeTempAlsDictionary[i].Last());
-                    streckenabschnitteDerLinie.Remove(sab1);
-                }
-
+                // Durch jede Route gehen
                 foreach(int route in sortierteListeTempAlsDictionary.Keys)
                 {
+                    // solange, bis die zuletzt hinzugefügte Haltestelle nicht die Ziel-Haltestelle ist
                     while(!sortierteListeTempAlsDictionary[route].Last().Equals(zielHaltestelle))
                     {
                         gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListeTempAlsDictionary[route].Last(), streckenabschnitte: streckenabschnitteDerLinie);
-                        // 7.1. Ermittlung nächster Haltestelle anhand des Streckenabschnittes, welche als letzte zur sortieren Liste der Haltestellen hinzugefügt wurde
+
                         if(gefundeneStreckenabschnitte.Count() == 0)
                         {
                             break;
                         }
-                        Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte[0];
+                        Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte.First();
 
                         Haltestelle gefundeneHaltestelle = gefundenerStreckenabschnitt.StartHaltestelle.Equals(sortierteListeTempAlsDictionary[route].Last()) ? gefundenerStreckenabschnitt.ZielHaltestelle : gefundenerStreckenabschnitt.StartHaltestelle;
                         if(gefundeneHaltestelle != null)
                         {
+                            // Gefundene Objekte aus den Listen entfernen
                             sortierteListeTempAlsDictionary[route].Add(gefundeneHaltestelle);
                             haltestellenDerLinie.Remove(gefundeneHaltestelle);
-                            // 7.2.vom Schritt zuvor ermittelten Streckenabschnitt aus der zur Verfügung stehenden Streckenabschnitte entfernen
                             streckenabschnitteDerLinie.Remove(gefundenerStreckenabschnitt);
                         }
                     }
                 }
 
+                // Durch alle Routen gehen und herausfinden, welche die Ziel-Haltestelle besitzen
                 foreach(int route in sortierteListeTempAlsDictionary.Keys)
                 {
                     if(sortierteListeTempAlsDictionary[route].Contains(zielHaltestelle))
                     {
+                        // 8. Ergebnis zurückgeben
                         return sortierteListeTempAlsDictionary[route];
                     }
                 }
             }
 
-            // 8. Ergebnis zurückgeben
+            // Null zurückgeben
             return null;
         }
 
