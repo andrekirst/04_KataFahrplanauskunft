@@ -164,7 +164,7 @@ namespace Fahrplanauskunft.Funktionen
                     {
                         gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListeTempAlsDictionary[route].Last(), streckenabschnitte: streckenabschnitteDerLinie);
 
-                        if(gefundeneStreckenabschnitte.Count() == 0)
+                        if(!gefundeneStreckenabschnitte.Any())
                         {
                             break;
                         }
