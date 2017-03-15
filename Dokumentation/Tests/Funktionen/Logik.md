@@ -6,7 +6,7 @@ Test-Klasse: `T_Logik`
 
 Test-Daten: `TestSatzBrainstorming`
 
-## Testf�lle
+## Testfälle
 
 ### Umstiegspunkte_von_Linie_B1_sind_H2_H4
 
@@ -45,7 +45,7 @@ Es soll die Funktion Liefere_Haltestellen_einer_Linie mit dem Wert Linie B2 aufg
 Es soll die Funktion Liefere_eindeutige_Umstiegspunkte mit eine Liste von Umstiegspunkten aufgerufen werden und die Ausgabe soll eine eindeutige Liste von Umstiegspunkten zurückgeben.
 
 #### Testdaten:
-  
+
 2 Umstiegspunkte Up1 und Up3 sind 2 Umstiegspunkte Up1 und Up3
 3 Umstiegspunkte Up1, Up3 und Up3 sind 2 Umstiegspunkte Up1 und Up3
 4 Umstiegspunkte Up1, Up2, Up3 und Up3 sind 3 Umstiegspunkte Up1, Up2 und Up3
@@ -57,7 +57,7 @@ Es soll die Funktion Liefere_eindeutige_Umstiegspunkte mit eine Liste von Umstie
 Liefere die nächsten möglichen Umstiegspunkte einer Haltestelle und ignoriere schon bereits ermittelte Umstiegspunkte
 
 #### Testdaten:
-  
+
 Beginnend von Haltestelle H1 gibt es 2 nächste Umstiegspunkte H2 und H4
 Beginnend von Haltestelle H2 gibt es 2 nächste Umstiegspunkte H4 und H8
 Kommend von Haltestelle H1, gibt es an Haltestelle H2 einen nächsten Umstiegspunkt H8
