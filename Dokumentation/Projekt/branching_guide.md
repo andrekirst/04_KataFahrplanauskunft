@@ -147,7 +147,7 @@ Beispiel: `#62 - Anpassung Link`
 1. Bei *Milestone* einen Meilenstein zuordnen
 1. Klick auf *Create pull request*, um den Pull request zu erstellen
 
-**Information**: Solange der Pull request offen ist, können immer wieder neue Commits in den Branch, aus dem der Pull request entstanden ist, hochgeladen werden. Der letzte Commit löst das Ereignis aus, das z.B. integrierte Builds neu erstellt werden.
+**Information**: Solange der Pull request offen ist, können immer wieder neue Commits in den Branch, aus dem der Pull request entstanden ist, hochgeladen werden. Der letzte Commit löst das Ereignis aus, das z.B. integrierte Builds neu erstellt werden
 
 [*Offizielle Hilfe für das Erstellen eines Pull request in Github*](https://help.github.com/articles/creating-a-pull-request/)
 
@@ -156,12 +156,12 @@ Beispiel: `#62 - Anpassung Link`
 ## Pull request mergen
 
 1. Pull request auswählen
-1. Klick auf *Squash and merge* - Dies beduetet, dass alle Commits in einen Commit zusammengefasst werden und auf den *base*, z.B. **develop**, gesetzt wird
-1. Es erscheint ein Titel und Beschreibungsfeld.
+1. Klick auf *Merge pull request* - Dies bedeutet, dass ein Merge Commit auf dem *base*, z.B. **develop**, erstellt wird
+1. Es erscheint ein Titel und Beschreibungsfeld
 1. Den Titel folgendermaßen beschreiben: `Merge features/issue_<Nummer des Issues> in **develop** mit Pull request #<Nummer des Pull request>`. Beispiel: `Merge features/issue_62 in **develop** mit Pull request #64`
 1. Die Beschreibung kann leer bleiben
-1. Klick auf *Confirm squash and merge*, um den Pull request-Vorgang abzuschließen
+1. Klick auf *Confirm merge*, um den Pull request-Vorgang abzuschließen
 
-**Wichtiger Hinweis**: Wenn der Pull request geschlossen und der dazugehörige Branch in GitHub gelöscht ist, diesen auch lokal löschen. **Nicht erneut pushen**. Siehe [*Lokalen Branch und Remote nach einem Pull request löschen*](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen).
+**Wichtiger Hinweis**: Wenn der Pull request geschlossen und der dazugehörige Branch in GitHub gelöscht ist, diesen auch lokal löschen. **Nicht erneut pushen**. Siehe [*Lokalen Branch und Remote nach einem Pull request löschen*](branching_guide.md#lokalen-branch-und-remote-nach-einem-pull-request-löschen)
 
 [*Offizielle Hilfe für das Mergen eines Pull request in GitHub*](https://help.github.com/articles/merging-a-pull-request/)
