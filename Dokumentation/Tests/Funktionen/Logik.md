@@ -131,6 +131,6 @@ Test, dass an der Haltstelle H1 für die Linie B11 zwei Streckenabschnitte zurü
 
 ### Funktion: Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Linie_B31_von_H10_nach_H8
 
-#### Beschriebung
+#### Beschreibung
 
 Sortierung einer Liste von Haltestellen für die Linie B31, bei der die Start-Haltestelle H10 ist und die Ziel-Haltestelle H8
