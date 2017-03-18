@@ -20,6 +20,9 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod]
         public void TreeItem_Equal_1()
         {
+            // expected             actual
+            // root:       H1       root:       H1
+
             TreeItem expected = new TreeItem(new Haltestelle() { Name = "H1" });
 
             TreeItem actual = new TreeItem(new Haltestelle() { Name = "H1" });
@@ -33,6 +36,9 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod]
         public void TreeItem_Not_Equal_1()
         {
+            // expected             actual
+            // root:       H1       root:       H2
+
             TreeItem expected = new TreeItem(new Haltestelle() { Name = "H1" });
 
             TreeItem actual = new TreeItem(new Haltestelle() { Name = "H2" });
@@ -46,6 +52,11 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod]
         public void TreeItem_Equal_2()
         {
+            // expected             actual
+            // root:       H1       root:       H1
+            //            /  \                 /  \
+            // 1. Ebene:H4 # H2     1. Ebene:H2 # H4
+
             TreeItem expected = new TreeItem(new Haltestelle() { Name = "H1" });
             expected.Childs.Add(new TreeItem(new Haltestelle() { Name = "H4" }));
             expected.Childs.Add(new TreeItem(new Haltestelle() { Name = "H2" }));
@@ -63,6 +74,11 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod]
         public void TreeItem_Not_Equal_2()
         {
+            // expected             actual
+            // root:       H1       root:       H1
+            //            /  \                 /  \
+            // 1. Ebene:H2 # H4     1. Ebene:H2 # H5
+
             TreeItem expected = new TreeItem(new Haltestelle() { Name = "H1" });
             expected.Childs.Add(new TreeItem(new Haltestelle() { Name = "H2" }));
             expected.Childs.Add(new TreeItem(new Haltestelle() { Name = "H4" }));
@@ -81,11 +97,12 @@ namespace Fahrplanauskunft.Test.Objekte
         public void TreeItem_Equal_3()
         {
             #region Vorbereitung
-            // root:       H1
-            //            /  \
-            // 1. Ebene:H2 # H4
-            //          |    |
-            // 2. Ebene:H8 # H8
+            // expected           actual
+            // root:       H1     root:        H1
+            //            /  \                /  \
+            // 1. Ebene:H2 # H4   1. Ebene: H2 # H4
+            //          |    |              |    |
+            // 2. Ebene:H8 # H8   2. Ebene: H8 # H8
 
             // 2. Ebene
             TreeItem ti_2_h8_l = new TreeItem(new Haltestelle() { Name = "H8" });
@@ -114,7 +131,7 @@ namespace Fahrplanauskunft.Test.Objekte
         }
 
         /// <summary>
-        /// /// Test der Equals-Methode, dass zwei TreeItem mit einer Haltestelle Name: "H1" , Childs "H2","H4" und einmal ein weiteres Grandchildren "H8"  sowie einmal ein weiteres Grandchildren "H10" sind nicht gleich
+        /// Test der Equals-Methode, dass zwei TreeItem mit einer Haltestelle Name: "H1" , Childs "H2","H4" und einmal ein weiteres Grandchildren "H8"  sowie einmal ein weiteres Grandchildren "H10" sind nicht gleich
         /// </summary>
         [TestMethod]
         public void TreeItem_Not_Equal_3()
@@ -173,38 +190,5 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreNotEqual(expected, actual);
         }
-
-
-
-        //#region Vorbereitung
-        //List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-
-        //// root:       H1
-        ////            /  \
-        //// 1. Ebene:H2 # H4
-        ////          |    |
-        //// 2. Ebene:H8 # H8
-
-        //// 2. Ebene
-        //TreeItem ti_2_h8_l = new TreeItem(haltestellen.First(h => h.Name == "H8"));
-        //TreeItem ti_2_h8_r = new TreeItem(haltestellen.First(h => h.Name == "H8"));
-
-        //// 1. Ebene
-        //TreeItem ti_1_h2_l = new TreeItem(haltestellen.First(h => h.Name == "H2"));
-        //TreeItem ti_1_h4_r = new TreeItem(haltestellen.First(h => h.Name == "H4"));
-
-        //// Root
-        //TreeItem ti_root_Haltestelle = new TreeItem(haltestellen.First(h => h.Name == "H1"));
-
-        //// 1. Ebene --> Root
-        //ti_root_Haltestelle.Childs.Add(ti_1_h2_l);
-        //    ti_root_Haltestelle.Childs.Add(ti_1_h4_r);
-
-        //    // 2. Ebene --> 1. Ebene
-        //    ti_1_h2_l.Childs.Add(ti_2_h8_l);
-        //    ti_2_h8_r.Childs.Add(ti_2_h8_r);
-        //    #endregion
-
-        //    TreeItem expected = ti_root_Haltestelle;
     }
 }
