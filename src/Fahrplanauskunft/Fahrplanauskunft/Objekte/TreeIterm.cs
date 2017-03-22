@@ -6,23 +6,36 @@ using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Objekte
 {
+    /// <summary>
+    /// Hierarchische Struktur von möglichen Umstiegspunkten von einer Haltestelle
+    /// </summary>
     internal class TreeItem
     {
+        /// <summary>
+        /// Konstruktor für die Angabe der Haltstelle
+        /// </summary>
+        /// <param name="haltestelle">Haltestelle</param>
         public TreeItem(Haltestelle haltestelle) : this()
         {
             this.Haltestelle = haltestelle;
         }
 
+        /// <summary>
+        /// Standardkonstruktor
+        /// </summary>
         private TreeItem()
         {
             Childs = new List<TreeItem>();
         }
 
         /// <summary>
-        /// Die Buechersaetze unterhalb des aktuellen
+        /// Die TreeItems unterhalb des aktuellen
         /// </summary>
         public List<TreeItem> Childs { get; set; }
 
+        /// <summary>
+        /// Verweis auf die Hallstelle (Wurzel)
+        /// </summary>
         public Haltestelle Haltestelle { get; private set; }
 
 
