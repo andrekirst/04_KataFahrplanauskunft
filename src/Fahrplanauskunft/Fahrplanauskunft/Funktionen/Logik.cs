@@ -65,10 +65,11 @@ namespace Fahrplanauskunft.Funktionen
             // 1. hole alle Linie zu einer Haltestelle
             List<Umstiegspunkt> umstiegspunkte = new List<Umstiegspunkt>();
             meinHaltestelle.Linien.ForEach(delegate (Linie linie)
-            {
-                // 2. hole zu den Linie jeweils die Umstiegspunkte
-                umstiegspunkte.AddRange(Liefere_Umstiegspunkte_fuer_Linie(linie, haltestellen));
-            });
+                {
+                    // 2. hole zu den Linie jeweils die Umstiegspunkte
+                    umstiegspunkte.AddRange(Liefere_Umstiegspunkte_fuer_Linie(linie, haltestellen));
+                }
+            );
 
             // 3. Distinkte Menge der Umstiegspunkte bilden
             umstiegspunkte = Liefere_eindeutige_Umstiegspunkte(umstiegspunkte);
@@ -229,6 +230,62 @@ namespace Fahrplanauskunft.Funktionen
         internal static bool Ist_Linie_An_Haltestelle(Linie linie, Haltestelle haltestelle)
         {
             return haltestelle.Linien.Contains(linie);
+        }
+
+        /// <summary>
+        /// Liefert eine Hierarchie mit möglichen Umstiegspunkten von einer Haltestelle 
+        /// </summary>
+        /// <param name="aktuelleHaltestelle">Aktuelle Haltestelle, Wurzel der Hierarchie</param>
+        /// <param name="bereitsGeweseneUmstiegspunkte">Die Liste von Umstiegspunkten, an denen man bereits gewesen ist</param>
+        /// <param name="haltestellen">Liste von Haltestellen</param>
+        /// <param name="max_tiefe">Maximale Tiefe bei der Rekursion = maximale Anzahl deer möglichen Umstiegspunkte</param>
+        /// <returns></returns>
+        internal static TreeItem Liefere_Hierarchie_Route_von_Haltestelle(Haltestelle aktuelleHaltestelle, List<Umstiegspunkt> bereitsGeweseneUmstiegspunkte, List<Haltestelle> haltestellen, int max_tiefe)
+        {
+            // 1. aktuelle Haltestelle ist mein Root
+            TreeItem ti_root_Haltestelle = new TreeItem(aktuelleHaltestelle);
+
+            // 2. mache die aktuelle Haltestelle zum Umstiegspunkt(auch die eventuelle Start- oder Endhaltestelle)
+            Umstiegspunkt up = new Umstiegspunkt(aktuelleHaltestelle);
+            if (!bereitsGeweseneUmstiegspunkte.Contains(up))
+            {
+                bereitsGeweseneUmstiegspunkte.Add(up);
+            };
+
+            
+            if (max_tiefe > 0)
+            {
+                max_tiefe--;
+
+                // 3. Liefere zu einer Haltestelle, die nächsten Umstiegspunkte
+                List<Umstiegspunkt> ups = Liefere_Naechste_Umstiegspunkte_von_Haltestelle(ti_root_Haltestelle.Haltestelle
+                                                                                            , bereitsGeweseneUmstiegspunkte
+                                                                                            , haltestellen);
+                // 4. merken der gefundenen Umstiegspunkte als schon da gewesene
+                foreach (Umstiegspunkt umstiegspunkt in ups)
+                {
+                    if (!bereitsGeweseneUmstiegspunkte.Contains(umstiegspunkt))
+                    {
+                        bereitsGeweseneUmstiegspunkte.Add(umstiegspunkt);
+                    };
+                }
+
+
+                // 5. Suche Rekursiv
+                foreach (Umstiegspunkt umstiegspunkt in ups)
+                {
+                    List<Umstiegspunkt> neuBereitsGeweseneUmstiegspunkte = new List<Umstiegspunkt>();
+                    neuBereitsGeweseneUmstiegspunkte.AddRange(bereitsGeweseneUmstiegspunkte);
+
+                    TreeItem ti_child = Liefere_Hierarchie_Route_von_Haltestelle(umstiegspunkt.Haltestelle
+                                                                                , neuBereitsGeweseneUmstiegspunkte
+                                                                                , haltestellen
+                                                                                , max_tiefe);
+                    ti_root_Haltestelle.Childs.Add(ti_child);
+                }
+            }
+
+            return ti_root_Haltestelle;
         }
     }
 }

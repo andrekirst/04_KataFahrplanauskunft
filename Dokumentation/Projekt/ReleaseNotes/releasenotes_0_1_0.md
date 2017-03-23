@@ -13,6 +13,7 @@
 * #36 - Erstellung eines Lademechanismus für das Objekt Streckenabschnitt `feature`
 * #39 - Erstellung eines Lademechanismus für das Objekt HaltestelleFahrplanEintrag `feature`
 * #60 - ToString-Methode für Haltestelle implementieren `feature`
+* #56 - Objekt Hierarchie-Objekt erstellt sowie liefere die Hierarchie von Umstiegspunkten für eine Haltestelle `feature`
 * #57 - Sortierung einer Liste von einer Haltestelle zu einer anderen Haltestelle `feature`
 
 ## Bugfixes

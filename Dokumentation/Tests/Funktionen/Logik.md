@@ -50,7 +50,7 @@ Es soll die Funktion Liefere_eindeutige_Umstiegspunkte mit eine Liste von Umstie
 3 Umstiegspunkte Up1, Up3 und Up3 sind 2 Umstiegspunkte Up1 und Up3
 4 Umstiegspunkte Up1, Up2, Up3 und Up3 sind 3 Umstiegspunkte Up1, Up2 und Up3
 
-### Funktion: Liefere_Haltestellen_einer_Linie
+###  Funktion: Liefere_Naechste_Umstiegspunkte_von_Haltestelle
 
 #### Beschreibung
 
@@ -134,3 +134,14 @@ Test, dass an der Haltstelle H1 für die Linie B11 zwei Streckenabschnitte zurü
 #### Beschreibung
 
 Sortierung einer Liste von Haltestellen für die Linie B31, bei der die Start-Haltestelle H10 ist und die Ziel-Haltestelle H8
+###  Funktion: Liefere_Hierarchie_Route_von_Haltestelle  
+
+#### Beschreibung  
+
+Liefert eine Hierarchie mit möglichen Umstiegspunkten von einer Haltestelle
+
+#### Testdaten:
+
+Hierarchie möglichen Route von Haltestelle H1  
+Hierarchie möglichen Route von Haltestelle H2  
+Hierarchie möglichen Route von Haltestelle H12
