@@ -54,6 +54,7 @@
     <Compile Include="Objekte\HaltestelleFahrplanEintrag.cs" />
     <Compile Include="Objekte\Linie.cs" />
     <Compile Include="Objekte\Streckenabschnitt.cs" />
+    <Compile Include="Objekte\TreeItem.cs" />
     <Compile Include="Objekte\Umstiegspunkt.cs" />
     <Compile Include="Objekte\Verbindungsanfrage.cs" />
     <Compile Include="Program.cs" />

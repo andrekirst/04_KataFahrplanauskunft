@@ -305,6 +305,271 @@ namespace Fahrplanauskunft.Test.Funktionen
             CollectionAssert.AreEquivalent(expected, actual);
         }
 
+        /// <summary>
+        /// Erstelle Hierarchie möglichen Route von Haltestelle H1
+        /// </summary>
+        [TestMethod]
+        public void Hierarchie_Route_von_H1()
+        {
+            #region Vorbereitung
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
 
+            // root:       H1
+            //            /  \
+            // 1. Ebene:H2 # H4
+            //          |    |
+            // 2. Ebene:H8 # H8
+
+            // 2. Ebene
+            TreeItem ti_2_h8_l = new TreeItem(haltestellen.First(h => h.Name == "H8"));
+            TreeItem ti_2_h8_r = new TreeItem(haltestellen.First(h => h.Name == "H8"));
+
+            // 1. Ebene
+            TreeItem ti_1_h2_l = new TreeItem(haltestellen.First(h => h.Name == "H2"));
+            TreeItem ti_1_h4_r = new TreeItem(haltestellen.First(h => h.Name == "H4"));
+
+            // Root
+            TreeItem ti_root_Haltestelle  = new TreeItem(haltestellen.First(h => h.Name == "H1"));
+
+            // 1. Ebene --> Root
+            ti_root_Haltestelle.Childs.Add(ti_1_h2_l);
+            ti_root_Haltestelle.Childs.Add(ti_1_h4_r);
+
+            // 2. Ebene --> 1. Ebene
+            ti_1_h2_l.Childs.Add(ti_2_h8_l);
+            ti_1_h4_r.Childs.Add(ti_2_h8_r);
+            #endregion
+
+            TreeItem expected = ti_root_Haltestelle;
+
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H1");
+
+            List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
+
+            int max_tiefe = 5;
+
+            TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
+                                                                             , bereitsgeweseneUmstiegspunkte
+                                                                             , haltestellen
+                                                                             , max_tiefe);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Erstelle Hierarchie möglichen Route von Haltestelle H2
+        /// </summary>
+        [TestMethod]
+        public void Hierarchie_Route_von_H2()
+        {
+            #region Vorbereitung
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
+            // root:       H2
+            //            /  \
+            // 1. Ebene:H4 # H8
+            
+            // 1. Ebene
+            TreeItem ti_1_h4_l = new TreeItem(haltestellen.First(h => h.Name == "H4"));
+            TreeItem ti_1_h8_r = new TreeItem(haltestellen.First(h => h.Name == "H8"));
+
+            // Root
+            TreeItem ti_root_Haltestelle = new TreeItem(haltestellen.First(h => h.Name == "H2"));
+
+            // 1. Ebene --> Root
+            ti_root_Haltestelle.Childs.Add(ti_1_h4_l);
+            ti_root_Haltestelle.Childs.Add(ti_1_h8_r);
+
+            #endregion
+
+            TreeItem expected = ti_root_Haltestelle;
+
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H2");
+
+            List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
+
+            int max_tiefe = 5;
+
+            TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
+                                                                             , bereitsgeweseneUmstiegspunkte
+                                                                             , haltestellen
+                                                                             , max_tiefe);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Erstelle Hierarchie möglichen Route von Haltestelle H12
+        /// </summary>
+        [TestMethod]
+        public void Hierarchie_Route_von_H12()
+        {
+            #region Vorbereitung
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
+            // root:      H12
+            //            |
+            // 1. Ebene:  H8
+            //           /  \
+            // 2. Ebene:H2 # H4
+
+            // 2. Ebene
+            TreeItem ti_2_h2_l = new TreeItem(haltestellen.First(h => h.Name == "H2"));
+            TreeItem ti_2_h4_r = new TreeItem(haltestellen.First(h => h.Name == "H4"));
+
+            // 1. Ebene
+            TreeItem ti_1_h8 = new TreeItem(haltestellen.First(h => h.Name == "H8"));
+           
+            // Root
+            TreeItem ti_root_Haltestelle = new TreeItem(haltestellen.First(h => h.Name == "H12"));
+
+            // 1. Ebene --> Root
+            ti_root_Haltestelle.Childs.Add(ti_1_h8);
+            
+            // 2. Ebene --> 1. Ebene
+            ti_1_h8.Childs.Add(ti_2_h2_l);
+            ti_1_h8.Childs.Add(ti_2_h4_r);
+            #endregion
+
+            TreeItem expected = ti_root_Haltestelle;
+
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H12");
+
+            List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
+
+            int max_tiefe = 5;
+
+            TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
+                                                                             , bereitsgeweseneUmstiegspunkte
+                                                                             , haltestellen
+                                                                             , max_tiefe);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Erstelle Hierarchie möglichen Route von Haltestelle H1 mit einer maximalen Tiefe von 1
+        /// </summary>
+        [TestMethod]
+        public void Hierarchie_Route_von_H1_mit_Tiefe_1()
+        {
+            #region Vorbereitung
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
+            // root:       H1
+            //            /  \
+            // 1. Ebene:H2 # H4
+                        
+
+            // 1. Ebene
+            TreeItem ti_1_h2_l = new TreeItem(haltestellen.First(h => h.Name == "H2"));
+            TreeItem ti_1_h4_r = new TreeItem(haltestellen.First(h => h.Name == "H4"));
+
+            // Root
+            TreeItem ti_root_Haltestelle = new TreeItem(haltestellen.First(h => h.Name == "H1"));
+
+            // 1. Ebene --> Root
+            ti_root_Haltestelle.Childs.Add(ti_1_h2_l);
+            ti_root_Haltestelle.Childs.Add(ti_1_h4_r);
+
+            #endregion
+
+            TreeItem expected = ti_root_Haltestelle;
+
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H1");
+
+            List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
+
+            int max_tiefe = 1;
+
+            TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
+                                                                             , bereitsgeweseneUmstiegspunkte
+                                                                             , haltestellen
+                                                                             , max_tiefe);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Erstelle Hierarchie möglichen Route von Haltestelle H2 mit einer maximalen Tiefe von 1
+        /// </summary>
+        [TestMethod]
+        public void Hierarchie_Route_von_H2_mit_Tiefe_1()
+        {
+            #region Vorbereitung
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
+            // root:       H2
+            //            /  \
+            // 1. Ebene:H4 # H8
+
+            // 1. Ebene
+            TreeItem ti_1_h4_l = new TreeItem(haltestellen.First(h => h.Name == "H4"));
+            TreeItem ti_1_h8_r = new TreeItem(haltestellen.First(h => h.Name == "H8"));
+
+            // Root
+            TreeItem ti_root_Haltestelle = new TreeItem(haltestellen.First(h => h.Name == "H2"));
+
+            // 1. Ebene --> Root
+            ti_root_Haltestelle.Childs.Add(ti_1_h4_l);
+            ti_root_Haltestelle.Childs.Add(ti_1_h8_r);
+
+            #endregion
+
+            TreeItem expected = ti_root_Haltestelle;
+
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H2");
+
+            List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
+
+            int max_tiefe = 1;
+
+            TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
+                                                                             , bereitsgeweseneUmstiegspunkte
+                                                                             , haltestellen
+                                                                             , max_tiefe);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Erstelle Hierarchie möglichen Route von Haltestelle H12 mit einer maximalen Tiefe von 1
+        /// </summary>
+        [TestMethod]
+        public void Hierarchie_Route_von_H12_mit_Tiefe_1()
+        {
+            #region Vorbereitung
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
+            // root:      H12
+            //            |
+            // 1. Ebene:  H8
+            
+            // 1. Ebene
+            TreeItem ti_1_h8 = new TreeItem(haltestellen.First(h => h.Name == "H8"));
+
+            // Root
+            TreeItem ti_root_Haltestelle = new TreeItem(haltestellen.First(h => h.Name == "H12"));
+
+            // 1. Ebene --> Root
+            ti_root_Haltestelle.Childs.Add(ti_1_h8);
+            
+            #endregion
+
+            TreeItem expected = ti_root_Haltestelle;
+
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H12");
+
+            List<Umstiegspunkt> bereitsgeweseneUmstiegspunkte = new List<Umstiegspunkt>();
+
+            int max_tiefe = 1;
+
+            TreeItem actual = Logik.Liefere_Hierarchie_Route_von_Haltestelle(aktuelleHaltestelle
+                                                                             , bereitsgeweseneUmstiegspunkte
+                                                                             , haltestellen
+                                                                             , max_tiefe);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
