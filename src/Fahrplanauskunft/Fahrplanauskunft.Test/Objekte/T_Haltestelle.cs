@@ -75,5 +75,19 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Testet die Methode Equals mit einem anderen Vergleichsobjekt. In diesem Fall eine Linie
+        /// </summary>
+        [TestMethod]
+        public void Haltestelle_Equals_Anderes_Vergleichsobjekt_Linie()
+        {
+            string name = "Test";
+            Haltestelle haltestelle = new Haltestelle(name);
+
+            Linie linie = new Linie("Test", "TEST");
+
+            Assert.AreNotEqual(haltestelle, linie);
+        }
     }
 }
