@@ -48,9 +48,13 @@ namespace Fahrplanauskunft.Objekte
         {
             if (obj == null)
             {
-                throw new NullReferenceException();
+                return false;
             }
             TreeItem other = obj as TreeItem;
+            if (other == null)
+            {
+                return false;
+            }
 
             bool equal = true;
 

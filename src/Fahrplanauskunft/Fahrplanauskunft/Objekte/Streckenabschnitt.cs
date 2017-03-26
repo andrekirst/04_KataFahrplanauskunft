@@ -75,10 +75,14 @@ namespace Fahrplanauskunft.Objekte
         {
             if(obj == null)
             {
-                throw new NullReferenceException();
+                return false;
             }
 
             Streckenabschnitt other = obj as Streckenabschnitt;
+            if (other == null)
+            {
+                return false;
+            }
 
             return
                 Dauer == other.Dauer &&

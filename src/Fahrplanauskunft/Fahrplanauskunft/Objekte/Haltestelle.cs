@@ -45,9 +45,13 @@ namespace Fahrplanauskunft.Objekte
         {
             if(obj == null)
             {
-                throw new NullReferenceException();
+                return false;
             }
             Haltestelle other = obj as Haltestelle;
+            if(other == null)
+            {
+                return false;
+            }
             return this.Name == other.Name;
         }
 

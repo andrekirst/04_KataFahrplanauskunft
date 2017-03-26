@@ -14,5 +14,6 @@
 * #39 - Erstellung eines Lademechanismus für das Objekt HaltestelleFahrplanEintrag `feature`
 * #60 - ToString-Methode für Haltestelle implementieren `feature`
 * #56 - Objekt Hierarchie-Objekt erstellt sowie liefere die Hierarchie von Umstiegspunkten für eine Haltestelle `feature`
+* #67 - Fehler in Haltestelle.Equals, wenn das Vergleichsobjekt nicht Haltestelle ist `bug`
 
 ## Bugfixes

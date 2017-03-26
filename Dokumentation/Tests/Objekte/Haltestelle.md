@@ -29,3 +29,9 @@ Test der Equals-Methode, dass zwei Haltestellen gleich sind. Name: "Test"
 #### Beschreibung
 
 Test, dass die Rückgabe **Name: H4** ist, wenn der Name der `Haltestelle` **H4** ist.
+
+### Haltestelle_Equals_Anderes_Vergleichsobjekt_Linie
+
+#### Beschreibung
+
+Testet die Methode Equals mit einem anderen Vergleichsobjekt. In diesem Fall eine Linie
