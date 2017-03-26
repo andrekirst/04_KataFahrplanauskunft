@@ -52,9 +52,13 @@ namespace Fahrplanauskunft.Objekte
         {
             if(obj == null)
             {
-                throw new NullReferenceException();
+                return false;
             }
             Umstiegspunkt other = obj as Umstiegspunkt;
+            if (other == null)
+            {
+                return false;
+            }
             return Name == other.Name && Haltestelle.Equals(other.Haltestelle);
         }
 
