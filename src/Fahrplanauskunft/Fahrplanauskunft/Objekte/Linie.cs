@@ -49,9 +49,13 @@ namespace Fahrplanauskunft.Objekte
         {
             if(obj == null)
             {
-                throw new NullReferenceException();
+                return false;
             }
             Linie other = obj as Linie;
+            if (other == null)
+            {
+                return false;
+            }
             return this.Name == other.Name && this.Ident == other.Ident;
         }
 
