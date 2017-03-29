@@ -134,14 +134,39 @@ Test, dass an der Haltstelle H1 für die Linie B11 zwei Streckenabschnitte zurü
 #### Beschreibung
 
 Sortierung einer Liste von Haltestellen für die Linie B31, bei der die Start-Haltestelle H10 ist und die Ziel-Haltestelle H8
-###  Funktion: Liefere_Hierarchie_Route_von_Haltestelle  
 
-#### Beschreibung  
+###  Funktion: Liefere_Hierarchie_Route_von_Haltestelle
+
+#### Beschreibung
 
 Liefert eine Hierarchie mit möglichen Umstiegspunkten von einer Haltestelle
 
 #### Testdaten:
 
-Hierarchie möglichen Route von Haltestelle H1  
-Hierarchie möglichen Route von Haltestelle H2  
+Hierarchie möglichen Route von Haltestelle H1
+Hierarchie möglichen Route von Haltestelle H2
 Hierarchie möglichen Route von Haltestelle H12
+
+### Funktion: Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle_H1
+
+#### Beschreibung
+
+Test für das Initialisieren der Start-Haltestellen in das sortierte Dictionary
+
+### Funktion: Ueberpruefe_Ist_Linie_An_Haltestelle_B11_H1
+
+#### Beschreibung
+
+Test, ob die Linie B11 an der Haltetelle H1 ist
+
+### Funktion: Ueberpruefe_Ist_Linie_An_Haltestelle_LinieIstNichtAnHaltestelleException
+
+#### Beschriebung
+
+Test, ob die Exception LinieIstNichtAnHaltestelleException geworfen wird
+
+### Funktion: Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte_1
+
+#### Beschreibung
+
+Test, ob das Hinzufügen und Entfernen aus Listen für das Sortieren einer Liste von Haltestellen funktioniert

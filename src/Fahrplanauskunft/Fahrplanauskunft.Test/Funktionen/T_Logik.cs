@@ -488,7 +488,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             #endregion
 
             #region Erwarteten Wert vorbereiten
-            
+
             #endregion
 
             #region Das Ergebnis auswerten
@@ -716,10 +716,10 @@ namespace Fahrplanauskunft.Test.Funktionen
             CollectionAssert.AreEqual(expected, actual);
             #endregion
         }
-        
+
         /// <summary>
-         /// Erstelle Hierarchie möglichen Route von Haltestelle H1
-         /// </summary>
+        /// Erstelle Hierarchie möglichen Route von Haltestelle H1
+        /// </summary>
         [TestMethod]
         public void Hierarchie_Route_von_H1()
         {
@@ -982,6 +982,114 @@ namespace Fahrplanauskunft.Test.Funktionen
                                                                              , max_tiefe);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test ür das Initialisieren der Start-Haltestellen in das sortierte Dictionary
+        /// </summary>
+        [TestMethod]
+        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle_H1()
+        {
+            #region Prepare
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H1");
+            List<Streckenabschnitt> gefundeneStreckenabschnitte = Lade_Test_Streckenabschnitte().Where(sab => sab.StartHaltestelle.Equals(haltestellen.First(h => h.Name == "H1")) && sab.ZielHaltestelle.Equals(haltestellen.First(h2 => h2.Name == "H2"))).ToList();
+            Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Haltestelle>>();
+            #endregion
+
+            #region Logik ausführen
+            Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle(startHaltestelle, gefundeneStreckenabschnitte, sortierteListeTempAlsDictionary);
+            #endregion
+
+            #region Actual und Expected
+            Dictionary<int, List<Haltestelle>> actual = sortierteListeTempAlsDictionary;
+            Dictionary<int, List<Haltestelle>> expected = new Dictionary<int, List<Haltestelle>>()
+            {
+                { 0, new List<Haltestelle>() { haltestellen.First(h => h.Name == "H1") } }
+            };
+            #endregion
+
+            equalidator.Equalidator.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test, ob die Linie B11 an der Haltetelle H1 ist
+        /// </summary>
+        [TestMethod]
+        public void Ueberpruefe_Ist_Linie_An_Haltestelle_B11_H1()
+        {
+            List<Linie> linien = Lade_Test_Linien();
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
+            try
+            {
+                Logik.Ueberpruefe_Ist_Linie_An_Haltestelle(linien.First(l => l.Ident == "B11"), haltestellen.First(h => h.Name == "H1"));
+            }
+            catch(Exception)
+            {
+                Assert.Fail("Test fehlgeschlagen");
+            }
+        }
+
+        /// <summary>
+        /// Test, ob die Exception LinieIstNichtAnHaltestelleException geworfen wird
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(LinieIstNichtAnHaltestelleException))]
+        public void Ueberpruefe_Ist_Linie_An_Haltestelle_LinieIstNichtAnHaltestelleException()
+        {
+            List<Linie> linien = Lade_Test_Linien();
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
+            Logik.Ueberpruefe_Ist_Linie_An_Haltestelle(linien.First(l => l.Ident == "B12"), haltestellen.First(h => h.Name == "H12"));
+        }
+
+        /// <summary>
+        /// Test, ob das Hinzufügen und Entfernen aus Listen für das Sortieren einer Liste von Haltestellen funktioniert
+        /// </summary>
+        [TestMethod]
+        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte_1()
+        {
+            #region Prepare
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            List<Linie> linien = Lade_Test_Linien();
+
+            List<Haltestelle> haltestellenDerLinie = new List<Haltestelle>()
+            {
+                haltestellen.First(h => h.Name == "H2"),
+                haltestellen.First(h => h.Name == "H3"),
+                haltestellen.First(h => h.Name == "H4"),
+                haltestellen.First(h => h.Name == "H5")
+            };
+
+            List<Streckenabschnitt> streckenabschnitteDerLinie = streckenabschnitte.Where(sab => sab.Linien.Contains(linien.First(l => l.Ident == "B11"))).ToList();
+
+            List<Haltestelle> sortierteListe = new List<Haltestelle>() { haltestellen.First(h => h.Name == "H1") };
+
+            Streckenabschnitt gefundenerStreckenabschnitt = streckenabschnitte.First(sab => sab.StartHaltestelle.Equals(haltestellen.First(h => h.Name == "H1")) && sab.ZielHaltestelle.Equals(haltestellen.First(h2 => h2.Name == "H2")));
+
+            Haltestelle gefundeneHaltestelle = haltestellen.First(h => h.Name == "H2"); 
+            #endregion
+
+            Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte(haltestellenDerLinie, streckenabschnitteDerLinie, sortierteListe, gefundenerStreckenabschnitt, gefundeneHaltestelle);
+
+            #region Expected
+            List<Haltestelle> sortierteListeExpected = new List<Haltestelle>() { haltestellen.First(h => h.Name == "H1"), haltestellen.First(h => h.Name == "H2") };
+
+            List<Haltestelle> haltestellenDerLinieExpected = new List<Haltestelle>()
+            {
+                haltestellen.First(h => h.Name == "H3"),
+                haltestellen.First(h => h.Name == "H4"),
+                haltestellen.First(h => h.Name == "H5")
+            };
+
+            List<Streckenabschnitt> streckenabschnitteDerLinieExpected = streckenabschnitte.Where(sab => sab.Linien.Contains(linien.First(l => l.Ident == "B11"))).Where(sab => !sab.StartHaltestelle.Equals(haltestellen.First(h => h.Name == "H1"))).ToList(); 
+            #endregion
+
+            CollectionAssert.AreEqual(sortierteListeExpected, sortierteListe);
+            CollectionAssert.AreEqual(haltestellenDerLinieExpected, haltestellenDerLinie);
+            CollectionAssert.AreEqual(streckenabschnitteDerLinieExpected, streckenabschnitteDerLinie);
         }
     }
 }
