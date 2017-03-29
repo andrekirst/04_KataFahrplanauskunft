@@ -985,7 +985,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Test ür das Initialisieren der Start-Haltestellen in das sortierte Dictionary
+        /// Test für das Initialisieren der Start-Haltestellen in das sortierte Dictionary
         /// </summary>
         [TestMethod]
         public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle_H1()
