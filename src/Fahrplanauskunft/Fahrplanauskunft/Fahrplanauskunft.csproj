@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\LinieIstNichtAnHaltestelleException.cs" />
     <Compile Include="Funktionen\Logik.cs" />
     <Compile Include="Objekte\FahrplanauskunftSpeicher.cs" />
     <Compile Include="Objekte\Haltestelle.cs" />
