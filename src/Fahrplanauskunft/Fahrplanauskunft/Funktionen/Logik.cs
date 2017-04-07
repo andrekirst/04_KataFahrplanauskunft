@@ -298,6 +298,8 @@ namespace Fahrplanauskunft.Funktionen
                 streckenabschnitte: streckenabschnitte
                 );
 
+            List<Streckenabschnitt> streckenabschnitteDerLinie = Liefere_Streckenabschnitte_einer_Linie(linie: linie, streckenabschnitte: streckenabschnitte);
+
             throw new NotImplementedException();
         }
     }
