@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fahrplanauskunft.Funktionen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,16 +51,10 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            if(obj == null)
+            return EqualsHelper.EqualBase<Umstiegspunkt>(obj, (other) =>
             {
-                return false;
-            }
-            Umstiegspunkt other = obj as Umstiegspunkt;
-            if (other == null)
-            {
-                return false;
-            }
-            return Name == other.Name && Haltestelle.Equals(other.Haltestelle);
+                return Name == other.Name && Haltestelle.Equals(other.Haltestelle);
+            });
         }
 
         /// <summary>

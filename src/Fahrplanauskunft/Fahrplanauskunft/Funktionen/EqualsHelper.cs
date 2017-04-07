@@ -1,0 +1,38 @@
+﻿using System;
+
+namespace Fahrplanauskunft.Funktionen
+{
+    /// <summary>
+    /// Diese Klasse ist eine Hilfsklasse für die Equals-Methode
+    /// </summary>
+    public static class EqualsHelper
+    {
+        /// <summary>
+        /// Die Hilfsmethode für die Equals-Implementierung
+        /// </summary>
+        /// <typeparam name="T">Der Typ, für wen die Equals-Methode gilt</typeparam>
+        /// <param name="obj">Die Objektreferenz, die der Equals-Methode übergeben wird</param>
+        /// <param name="custom">Eine funktion, die bool zurückgibt und ein Objekt vom Typ T erwartet. Dieses spiegelt das gecastete Objekt wieder</param>
+        /// <returns>gibt true zurück, wenn die Funktion custom true zurück gibt, ansonsten false.</returns>
+        public static bool EqualBase<T>(object obj, Func<T, bool> custom)
+            where T : class
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            T other = obj as T;
+            if (other == null)
+            {
+                return false;
+            }
+
+            if (custom != null)
+            {
+                Func<T, bool> func = custom;
+                return func(other);
+            }
+            return false;
+        }
+    }
+}
