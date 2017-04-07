@@ -1108,7 +1108,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = linien.First(l => l.Ident == "B11");
 
             int expected = 2;
-            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte);
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
 
             Assert.AreEqual(expected, actual);
         }
