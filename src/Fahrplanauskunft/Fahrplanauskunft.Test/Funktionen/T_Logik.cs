@@ -1091,5 +1091,44 @@ namespace Fahrplanauskunft.Test.Funktionen
             CollectionAssert.AreEqual(haltestellenDerLinieExpected, haltestellenDerLinie);
             CollectionAssert.AreEqual(streckenabschnitteDerLinieExpected, streckenabschnitteDerLinie);
         }
+
+        /// <summary>
+        /// Berechnung der Fahrtdauer von der Haltestelle H1 zu H2. Die erwartete Fahrtdauer beträgt 2
+        /// </summary>
+        [TestMethod]
+        public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H1_zu_H2_Ergebnis_2()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+
+            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H1");
+            Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H2");
+
+            Linie linie = linien.First(l => l.Ident == "B11");
+
+            int expected = 2;
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H1_zu_H4_Ergebnis_6()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+
+            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H1");
+            Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H4");
+
+            Linie linie = linien.First(l => l.Ident == "B11");
+
+            int expected = 6;
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

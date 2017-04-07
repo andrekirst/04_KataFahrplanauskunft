@@ -287,5 +287,18 @@ namespace Fahrplanauskunft.Funktionen
 
             return ti_root_Haltestelle;
         }
+
+        internal static int Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Streckenabschnitt> streckenabschnitte, List<Haltestelle> haltestellen)
+        {
+            List<Haltestelle> sortierteListeDerHaltestellen = Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+                linie: linie,
+                startHaltestelle: startHaltestelle,
+                zielHaltestelle: zielHaltestelle,
+                haltenstellen: haltestellen,
+                streckenabschnitte: streckenabschnitte
+                );
+
+            throw new NotImplementedException();
+        }
     }
 }
