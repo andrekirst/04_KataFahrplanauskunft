@@ -39,7 +39,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Test, ob der Parameter custom Null ist. Wenn ja, wird false zurückgegeben
+        /// Test, wenn der Paramater custom Null ist, dass die Methode false zurückgeben muss
         /// </summary>
         [TestMethod]
         public void EqualsHelper_Paramter_custom_Ist_Null()
