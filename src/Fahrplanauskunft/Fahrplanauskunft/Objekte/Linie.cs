@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fahrplanauskunft.Funktionen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,7 +40,6 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         public string Name { get; set; }
 
-
         /// <summary>
         /// Vergleicht die Linie mit einem anderen Objekt
         /// </summary>
@@ -47,16 +47,10 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            if(obj == null)
+            return EqualsHelper.EqualBase<Linie>(obj, (other) =>
             {
-                return false;
-            }
-            Linie other = obj as Linie;
-            if (other == null)
-            {
-                return false;
-            }
-            return this.Name == other.Name && this.Ident == other.Ident;
+                return this.Name == other.Name && this.Ident == other.Ident;
+            });
         }
 
         /// <summary>
