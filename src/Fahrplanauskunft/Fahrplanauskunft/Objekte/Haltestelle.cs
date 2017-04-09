@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fahrplanauskunft.Funktionen;
+using System;
 using System.Collections.Generic;
 
 namespace Fahrplanauskunft.Objekte
@@ -43,16 +44,10 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            if(obj == null)
+            return EqualsHelper.EqualBase<Haltestelle>(obj, (other) =>
             {
-                return false;
-            }
-            Haltestelle other = obj as Haltestelle;
-            if(other == null)
-            {
-                return false;
-            }
-            return this.Name == other.Name;
+                return this.Name == other.Name;
+            });
         }
 
         /// <summary>

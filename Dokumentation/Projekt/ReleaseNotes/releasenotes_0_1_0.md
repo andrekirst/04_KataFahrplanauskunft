@@ -16,6 +16,7 @@
 * #56 - Objekt Hierarchie-Objekt erstellt sowie liefere die Hierarchie von Umstiegspunkten für eine Haltestelle `feature`
 * #57 - Sortierung einer Liste von einer Haltestelle zu einer anderen Haltestelle `feature`
 * #67 - Fehler in Haltestelle.Equals, wenn das Vergleichsobjekt nicht Haltestelle ist `bug`
+* #69 - Vereinheitlichung von Equals `feature`
 * #55 - Berechnung der Gesamtfahrtdauer von einer Haltestelle zu einer anderen Haltestelle `feature`
 
 ## Bugfixes
