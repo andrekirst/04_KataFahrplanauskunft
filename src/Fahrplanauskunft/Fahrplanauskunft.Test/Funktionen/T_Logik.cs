@@ -1093,7 +1093,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Berechnung der Fahrtdauer von der Haltestelle H1 zu H2. Die erwartete Fahrtdauer beträgt 2
+        /// Berechnung der Fahrtdauer von der Haltestelle H1 zu H2. Die erwartete Fahrtdauer beträgt 2 Minuten
         /// </summary>
         [TestMethod]
         public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H1_zu_H2_Ergebnis_2()
@@ -1113,6 +1113,9 @@ namespace Fahrplanauskunft.Test.Funktionen
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Berechnung der Fahrtdauer von der Haltestelle H1 zu H4. Die erwartete Fahrtdauer beträgt 6 Minuten
+        /// </summary>
         [TestMethod]
         public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H1_zu_H4_Ergebnis_6()
         {
@@ -1126,6 +1129,48 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = linien.First(l => l.Ident == "B11");
 
             int expected = 6;
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Berechnung der Fahrtdauer von der Haltestelle H12 zu H16. Die erwartete Fahrtdauer beträgt 12 Minuten
+        /// </summary>
+        [TestMethod]
+        public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H12_zu_H16_Ergebnis_12()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+
+            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H12");
+            Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H16");
+
+            Linie linie = linien.First(l => l.Ident == "B41");
+
+            int expected = 12;
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Berechnung der Fahrtdauer von der Haltestelle H16 zu H12. Die erwartete Fahrtdauer beträgt 12 Minuten
+        /// </summary>
+        [TestMethod]
+        public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H16_zu_H12_Ergebnis_12()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+
+            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H16");
+            Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H12");
+
+            Linie linie = linien.First(l => l.Ident == "B42");
+
+            int expected = 12;
             int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
 
             Assert.AreEqual(expected, actual);
