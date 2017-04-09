@@ -12,7 +12,7 @@ namespace Fahrplanauskunft.Test.Funktionen
     public class T_EqualsHelper
     {
         /// <summary>
-        /// Test, wenn der Parameter obj den Wert Null hat, die Methode false zurückgeben muss
+        /// Wenn der Parameter obj den Wert Null hat, muss die Methode den Wert false zurückgeben
         /// </summary>
         [TestMethod, TestCategory("EqualsHelper")]
         public void EqualsHelper_Parameter_obj_Ist_Null()
@@ -24,9 +24,9 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Test, wenn der Parameter obj einen anderen Typ hat, als der Typ T vorgibt, muss false zurückgegeben werden
+        /// Wenn der Parameter obj einen anderen Typ hat, als es der Typ T vorgibt, muss die Methode false zurückgegeben
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("EqualsHelper")]
         public void EqualsHelper_Paramter_obj_falscher_Typ()
         {
             Haltestelle haltestelle = new Haltestelle();
@@ -39,9 +39,9 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Test, wenn der Paramater custom Null ist, dass die Methode false zurückgeben muss
+        /// Wenn der Paramater custom Null ist, muss die Methode false zurückgeben
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("EqualsHelper")]
         public void EqualsHelper_Paramter_custom_Ist_Null()
         {
             Linie linie = new Linie(); ;

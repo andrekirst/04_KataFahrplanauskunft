@@ -12,8 +12,8 @@ namespace Fahrplanauskunft.Funktionen
         /// </summary>
         /// <typeparam name="T">Der Typ, für wen die Equals-Methode gilt</typeparam>
         /// <param name="obj">Die Objektreferenz, die der Equals-Methode übergeben wird</param>
-        /// <param name="custom">Eine funktion, die bool zurückgibt und ein Objekt vom Typ T erwartet. Dieses spiegelt das gecastete Objekt wieder</param>
-        /// <returns>gibt true zurück, wenn die Funktion custom true zurück gibt, ansonsten false.</returns>
+        /// <param name="custom">Die Funktion, die bool zurückgibt und ein Objekt vom Typ T erwartet. Dieses spiegelt das gecastete Objekt wieder</param>
+        /// <returns>Gibt true zurück, wenn die Funktion custom true zurückgibt, ansonsten false.</returns>
         public static bool EqualBase<T>(object obj, Func<T, bool> custom)
             where T : class
         {

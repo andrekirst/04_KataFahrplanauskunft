@@ -10,16 +10,16 @@ Test-Klasse: `T_EqualsHelper`
 
 #### Beschreibung
 
-Test, wenn der Parameter obj den Wert Null hat, die Methode false zurückgeben muss
+Wenn der Parameter obj den Wert Null hat, muss die Methode den Wert false zurückgeben
 
 ### EqualsHelper_Paramter_obj_falscher_Typ
 
 #### Beschreibung
 
-Test, wenn der Parameter obj einen anderen Typ hat, als der Typ T vorgibt, muss false zurückgegeben werden
+Wenn der Parameter obj einen anderen Typ hat, als es der Typ T vorgibt, muss die Methode false zurückgegeben
 
 ### EqualsHelper_Paramter_custom_Ist_Null
 
 #### Beschreibung
 
-Test, wenn der Paramater custom Null ist, dass die Methode false zurückgeben muss
+Wenn der Paramater custom Null ist, muss die Methode false zurückgeben
