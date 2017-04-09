@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fahrplanauskunft.Funktionen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,30 +47,23 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            if (obj == null)
+            return EqualsHelper.EqualBase<TreeItem>(obj, (other) =>
             {
-                return false;
-            }
-            TreeItem other = obj as TreeItem;
-            if (other == null)
-            {
-                return false;
-            }
+                bool equal = true;
 
-            bool equal = true;
+                equal = equal == this.Haltestelle.Equals(other.Haltestelle);
+                if (this.Childs.Count == 0 && other.Childs.Count == 0)
+                {
+                    equal = equal == true;
+                }
+                else
+                {
+                    // Reihefolge spielt keine Rolle, wir sortieren vorher
+                    equal = equal == this.Childs.OrderBy(x => x.Haltestelle.Name).SequenceEqual(other.Childs.OrderBy(x => x.Haltestelle.Name));
+                }
 
-            equal = equal == this.Haltestelle.Equals(other.Haltestelle);
-            if (this.Childs.Count == 0 && other.Childs.Count == 0)
-            {
-                equal = equal == true;
-            }
-            else
-            {
-                // Reihefolge spielt keine Rolle, wir sortieren vorher
-                equal = equal == this.Childs.OrderBy(x => x.Haltestelle.Name).SequenceEqual(other.Childs.OrderBy(x => x.Haltestelle.Name));
-            }
-
-            return equal;
+                return equal;
+            });
         }
 
         /// <summary>
