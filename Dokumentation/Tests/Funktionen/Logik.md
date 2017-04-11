@@ -170,3 +170,27 @@ Test, ob die Exception LinieIstNichtAnHaltestelleException geworfen wird
 #### Beschreibung
 
 Test, ob das Hinzufügen und Entfernen aus Listen für das Sortieren einer Liste von Haltestellen funktioniert
+
+### Funktion: Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H1_zu_H2_Ergebnis_2
+
+#### Beschreibung
+
+Berechnung der Fahrtdauer von der Haltestelle H1 zu H2. Die erwartete Fahrtdauer beträgt 2 Minuten
+
+### Funktion: Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H1_zu_H4_Ergebnis_6
+
+#### Beschreibung
+
+Berechnung der Fahrtdauer von der Haltestelle H1 zu H4. Die erwartete Fahrtdauer beträgt 6 Minuten
+
+### Funktion: Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H12_zu_H16_Ergebnis_12
+
+#### Beschreibung
+
+Berechnung der Fahrtdauer von der Haltestelle H12 zu H16. Die erwartete Fahrtdauer beträgt 12 Minuten
+
+### Funktion: Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H16_zu_H12_Ergebnis_12
+
+#### Beschreibung
+
+Berechnung der Fahrtdauer von der Haltestelle H16 zu H12. Die erwartete Fahrtdauer beträgt 12 Minuten
