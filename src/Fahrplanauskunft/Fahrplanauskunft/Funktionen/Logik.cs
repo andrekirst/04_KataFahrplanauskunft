@@ -287,5 +287,40 @@ namespace Fahrplanauskunft.Funktionen
 
             return ti_root_Haltestelle;
         }
+
+        /// <summary>
+        /// Berechnen der Fahrtdauer von einer Haltestelle zu einer anderen Haltestlle auf einer Linie
+        /// </summary>
+        /// <param name="linie">Die Linie</param>
+        /// <param name="startHaltestelle">Die Start-Haltestelle</param>
+        /// <param name="zielHaltestelle">Die Ziel-Haltestelle</param>
+        /// <param name="streckenabschnitte">Die Streckenabschnitte</param>
+        /// <param name="haltestellen">Liste von Haltestellen</param>
+        /// <returns>Gibt die Dauer in Minuten zurück, die von der Start-Haltestelle zur Ziel-Haltestelle benötigt werden</returns>
+        internal static int Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Streckenabschnitt> streckenabschnitte, List<Haltestelle> haltestellen)
+        {
+            int dauer = 0;
+
+            List<Haltestelle> sortierteListeDerHaltestellen = Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+                linie: linie,
+                startHaltestelle: startHaltestelle,
+                zielHaltestelle: zielHaltestelle,
+                haltenstellen: haltestellen,
+                streckenabschnitte: streckenabschnitte
+                );
+
+            List<Streckenabschnitt> streckenabschnitteDerLinie = Liefere_Streckenabschnitte_einer_Linie(linie: linie, streckenabschnitte: streckenabschnitte);
+
+            for(int i = 0; i < sortierteListeDerHaltestellen.Count -1; i++)
+            {
+                Haltestelle h1 = sortierteListeDerHaltestellen[i];
+                Haltestelle h2 = sortierteListeDerHaltestellen[i + 1];
+
+                Streckenabschnitt sab = streckenabschnitteDerLinie.First(s => s.Linien.Contains(linie) && ((s.StartHaltestelle.Equals(h1) && s.ZielHaltestelle.Equals(h2)) || (s.StartHaltestelle.Equals(h2) && s.ZielHaltestelle.Equals(h1))));
+                dauer += sab.Dauer;
+            }
+
+            return dauer;
+        }
     }
 }
