@@ -61,7 +61,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Berechnung der Fahrtdauer von der Haltestelle H16 zu H12. Die erwartete Fahrtdauer beträgt 12 Minuten
         /// </summary>
         [TestMethod]
-        public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_Leutewitz_zu_Prohlis_Ergebnis_47()
+        public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_Leutewitz_zu_Prohlis_Linie1_PROHLIS_Ergebnis_47()
         {
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             List<Linie> linien = Lade_Test_Linien();
@@ -73,6 +73,27 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = linien.First(l => l.Ident == "1_PROHLIS");
 
             int expected = 47;
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Berechnung der Fahrtdauer von der Haltestelle H16 zu H12. Die erwartete Fahrtdauer beträgt 12 Minuten
+        /// </summary>
+        [TestMethod]
+        public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_Freystrasse_zu_Postplatz_Linie2_Ergebnis_30()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+
+            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "Freystraße");
+            Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "Postplatz");
+
+            Linie linie = linien.First(l => l.Ident == "2_BETRIEBSHOF_GORBITZ");
+
+            int expected = 30;
             int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
 
             Assert.AreEqual(expected, actual);
