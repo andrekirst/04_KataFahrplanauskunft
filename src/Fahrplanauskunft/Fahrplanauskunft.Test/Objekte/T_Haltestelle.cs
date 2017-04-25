@@ -89,5 +89,29 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreNotEqual(haltestelle, linie);
         }
+
+        /// <summary>
+        /// Test des Gleichheitsoperators mit zwei Haltestellen mit den gleichen Namen
+        /// </summary>
+        [TestMethod]
+        public void Haltestelle_Gleichheitsoperator_Gleicher_Haltestellenname()
+        {
+            Haltestelle h1 = new Haltestelle(name: "H1");
+            Haltestelle h2 = new Haltestelle(name: "H1");
+
+            Assert.IsTrue(h1 == h2);
+        }
+
+        /// <summary>
+        /// Test des Gleichheitsoperators mit zwei Haltestellen mit verschiedenen Namen
+        /// </summary>
+        [TestMethod]
+        public void Haltestelle_Gleichheitsoperator_Verschiedene_Haltestellenname()
+        {
+            Haltestelle h1 = new Haltestelle(name: "H1");
+            Haltestelle h2 = new Haltestelle(name: "H2");
+
+            Assert.IsFalse(h1 == h2);
+        }
     }
 }
