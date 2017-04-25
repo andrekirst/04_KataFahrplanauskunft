@@ -53,7 +53,7 @@ namespace Fahrplanauskunft.Objekte
         {
             return EqualsHelper.EqualBase<Umstiegspunkt>(obj, (other) =>
             {
-                return Name == other.Name && Haltestelle.Equals(other.Haltestelle);
+                return Name == other.Name && Haltestelle == other.Haltestelle;
             });
         }
 

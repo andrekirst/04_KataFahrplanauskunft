@@ -67,5 +67,15 @@ namespace Fahrplanauskunft.Objekte
         {
             return String.Format("Name: {0}", Name);
         }
+
+        public static bool operator ==(Haltestelle a, Haltestelle b)
+        {
+            return EqualsOperatorHelper.EqualOperatorBase<Haltestelle>(a, b);
+        }
+
+        public static bool operator !=(Haltestelle a, Haltestelle b)
+        {
+            return !(a == b);
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace Fahrplanauskunft.Test.Objekte
                 Linie = new Linie(name: "U1", ident: "U1_NORD")
             };
 
-            Assert.IsTrue(hfe1.Equals(hfe2));
+            Assert.IsTrue(hfe1 == hfe2);
         }
     }
 }

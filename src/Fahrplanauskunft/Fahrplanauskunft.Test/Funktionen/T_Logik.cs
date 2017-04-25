@@ -993,7 +993,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             #region Prepare
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H1");
-            List<Streckenabschnitt> gefundeneStreckenabschnitte = Lade_Test_Streckenabschnitte().Where(sab => sab.StartHaltestelle.Equals(haltestellen.First(h => h.Name == "H1")) && sab.ZielHaltestelle.Equals(haltestellen.First(h2 => h2.Name == "H2"))).ToList();
+            List<Streckenabschnitt> gefundeneStreckenabschnitte = Lade_Test_Streckenabschnitte().Where(sab => sab.StartHaltestelle == haltestellen.First(h => h.Name == "H1") && sab.ZielHaltestelle == haltestellen.First(h2 => h2.Name == "H2")).ToList();
             Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Haltestelle>>();
             #endregion
 
@@ -1067,7 +1067,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             List<Haltestelle> sortierteListe = new List<Haltestelle>() { haltestellen.First(h => h.Name == "H1") };
 
-            Streckenabschnitt gefundenerStreckenabschnitt = streckenabschnitte.First(sab => sab.StartHaltestelle.Equals(haltestellen.First(h => h.Name == "H1")) && sab.ZielHaltestelle.Equals(haltestellen.First(h2 => h2.Name == "H2")));
+            Streckenabschnitt gefundenerStreckenabschnitt = streckenabschnitte.First(sab => sab.StartHaltestelle == haltestellen.First(h => h.Name == "H1") && sab.ZielHaltestelle == haltestellen.First(h2 => h2.Name == "H2"));
 
             Haltestelle gefundeneHaltestelle = haltestellen.First(h => h.Name == "H2"); 
             #endregion
@@ -1084,7 +1084,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                 haltestellen.First(h => h.Name == "H5")
             };
 
-            List<Streckenabschnitt> streckenabschnitteDerLinieExpected = streckenabschnitte.Where(sab => sab.Linien.Contains(linien.First(l => l.Ident == "B11"))).Where(sab => !sab.StartHaltestelle.Equals(haltestellen.First(h => h.Name == "H1"))).ToList(); 
+            List<Streckenabschnitt> streckenabschnitteDerLinieExpected = streckenabschnitte.Where(sab => sab.Linien.Contains(linien.First(l => l.Ident == "B11"))).Where(sab => sab.StartHaltestelle != haltestellen.First(h => h.Name == "H1")).ToList();
             #endregion
 
             CollectionAssert.AreEqual(sortierteListeExpected, sortierteListe);

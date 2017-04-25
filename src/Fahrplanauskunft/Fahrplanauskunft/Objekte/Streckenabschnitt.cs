@@ -77,8 +77,8 @@ namespace Fahrplanauskunft.Objekte
             return EqualsHelper.EqualBase<Streckenabschnitt>(obj, (other) =>
             {
                 return Dauer == other.Dauer &&
-                StartHaltestelle.Equals(other.StartHaltestelle) &&
-                ZielHaltestelle.Equals(other.ZielHaltestelle);
+                StartHaltestelle == other.StartHaltestelle &&
+                ZielHaltestelle == other.ZielHaltestelle;
             });
         }
     }

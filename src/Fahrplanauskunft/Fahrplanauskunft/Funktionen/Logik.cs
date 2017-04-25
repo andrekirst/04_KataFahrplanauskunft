@@ -120,7 +120,7 @@ namespace Fahrplanauskunft.Funktionen
             foreach(int route in sortierteListeTempAlsDictionary.Keys)
             {
                 // solange, bis die zuletzt hinzugefügte Haltestelle nicht die Ziel-Haltestelle ist
-                while(!sortierteListeTempAlsDictionary[route].Last().Equals(zielHaltestelle))
+                while(!(sortierteListeTempAlsDictionary[route].Last() == zielHaltestelle))
                 {
                     gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListeTempAlsDictionary[route].Last(), streckenabschnitte: streckenabschnitteDerLinie);
 
@@ -130,7 +130,7 @@ namespace Fahrplanauskunft.Funktionen
                     }
                     Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte.First();
 
-                    Haltestelle gefundeneHaltestelle = gefundenerStreckenabschnitt.StartHaltestelle.Equals(sortierteListeTempAlsDictionary[route].Last()) ? gefundenerStreckenabschnitt.ZielHaltestelle : gefundenerStreckenabschnitt.StartHaltestelle;
+                    Haltestelle gefundeneHaltestelle = gefundenerStreckenabschnitt.StartHaltestelle == sortierteListeTempAlsDictionary[route].Last() ? gefundenerStreckenabschnitt.ZielHaltestelle : gefundenerStreckenabschnitt.StartHaltestelle;
                     Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte(haltestellenDerLinie, streckenabschnitteDerLinie, sortierteListeTempAlsDictionary[route], gefundenerStreckenabschnitt, gefundeneHaltestelle);
                 }
             }
@@ -206,7 +206,7 @@ namespace Fahrplanauskunft.Funktionen
         {
             return streckenabschnitte.Where(s =>
                 s.Linien.Contains(linie) &&
-                    (s.StartHaltestelle.Equals(haltestelle) || s.ZielHaltestelle.Equals(haltestelle))
+                    (s.StartHaltestelle == haltestelle || s.ZielHaltestelle == haltestelle)
                 ).ToList();
         }
 
@@ -316,7 +316,7 @@ namespace Fahrplanauskunft.Funktionen
                 Haltestelle h1 = sortierteListeDerHaltestellen[i];
                 Haltestelle h2 = sortierteListeDerHaltestellen[i + 1];
 
-                Streckenabschnitt sab = streckenabschnitteDerLinie.First(s => s.Linien.Contains(linie) && ((s.StartHaltestelle.Equals(h1) && s.ZielHaltestelle.Equals(h2)) || (s.StartHaltestelle.Equals(h2) && s.ZielHaltestelle.Equals(h1))));
+                Streckenabschnitt sab = streckenabschnitteDerLinie.First(s => s.Linien.Contains(linie) && ((s.StartHaltestelle == h1 && s.ZielHaltestelle == h2) || (s.StartHaltestelle == h2 && s.ZielHaltestelle == h1)));
                 dauer += sab.Dauer;
             }
 

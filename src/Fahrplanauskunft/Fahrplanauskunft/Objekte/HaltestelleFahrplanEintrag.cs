@@ -69,8 +69,8 @@ namespace Fahrplanauskunft.Objekte
             return EqualsHelper.EqualBase<HaltestelleFahrplanEintrag>(obj, (other) =>
             {
                 return Uhrzeit == other.Uhrzeit &&
-                Linie.Equals(other.Linie) &&
-                Haltestelle.Equals(other.Haltestelle);
+                Linie == other.Linie &&
+                Haltestelle == other.Haltestelle;
             });
         }
     }

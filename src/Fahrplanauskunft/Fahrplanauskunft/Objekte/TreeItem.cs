@@ -51,7 +51,7 @@ namespace Fahrplanauskunft.Objekte
             {
                 bool equal = true;
 
-                equal = equal == this.Haltestelle.Equals(other.Haltestelle);
+                equal = equal == (this.Haltestelle == other.Haltestelle);
                 if (this.Childs.Count == 0 && other.Childs.Count == 0)
                 {
                     equal = equal == true;
