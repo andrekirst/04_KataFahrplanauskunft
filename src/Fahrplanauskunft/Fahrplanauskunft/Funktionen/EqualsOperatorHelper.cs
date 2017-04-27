@@ -8,7 +8,7 @@ namespace Fahrplanauskunft.Funktionen
 {
     public static class EqualsOperatorHelper
     {
-        public static bool EqualOperatorBase<T>(T a, T b)
+        public static bool EqualsOperatorBase<T>(T a, T b)
             where T : class
         {
             if (System.Object.ReferenceEquals(a, b))

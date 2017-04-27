@@ -18,7 +18,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         public void EqualsOperatorHelper_Parameters_Null()
         {
             bool expected = true;
-            bool actual = EqualsOperatorHelper.EqualOperatorBase<Linie>(null, null);
+            bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(null, null);
 
             Assert.AreEqual(expected, actual);
         }
@@ -32,7 +32,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = new Linie(name: "Linie 1", ident: "L1");
 
             bool expected = false;
-            bool actual = EqualsOperatorHelper.EqualOperatorBase<Linie>(linie, null);
+            bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(linie, null);
 
             Assert.AreEqual(expected, actual);
         }
@@ -46,7 +46,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = new Linie(name: "Linie 1", ident: "L1");
 
             bool expected = false;
-            bool actual = EqualsOperatorHelper.EqualOperatorBase<Linie>(null, linie);
+            bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(null, linie);
 
             Assert.AreEqual(expected, actual);
         }
@@ -60,7 +60,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = new Linie(name: "Linie 1", ident: "L1");
 
             bool expected = true;
-            bool actual = EqualsOperatorHelper.EqualOperatorBase<Linie>(linie, linie);
+            bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(linie, linie);
 
             Assert.AreEqual(expected, actual);
         }
@@ -75,7 +75,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie2 = new Linie(name: "Linie 2", ident: "L2");
 
             bool expected = false;
-            bool actual = EqualsOperatorHelper.EqualOperatorBase<Linie>(linie1, linie2);
+            bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(linie1, linie2);
 
             Assert.AreEqual(expected, actual);
         }
@@ -90,7 +90,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie2 = new Linie(name: "Linie 1", ident: "L1");
 
             bool expected = true;
-            bool actual = EqualsOperatorHelper.EqualOperatorBase<Linie>(linie1, linie2);
+            bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(linie1, linie2);
 
             Assert.AreEqual(expected, actual);
         }

@@ -70,7 +70,7 @@ namespace Fahrplanauskunft.Objekte
 
         public static bool operator ==(Haltestelle a, Haltestelle b)
         {
-            return EqualsOperatorHelper.EqualOperatorBase<Haltestelle>(a, b);
+            return EqualsOperatorHelper.EqualsOperatorBase<Haltestelle>(a, b);
         }
 
         public static bool operator !=(Haltestelle a, Haltestelle b)
