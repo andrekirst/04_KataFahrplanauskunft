@@ -79,7 +79,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Testet die Methode Equals mit einem anderen Vergleichsobjekt. In diesem Fall eine Linie
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Equals_Anderes_Vergleichsobjekt_Linie()
         {
             string name = "Test";
@@ -93,7 +93,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test des Gleichheitsoperators mit zwei Haltestellen mit den gleichen Namen
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Gleichheitsoperator_Gleicher_Haltestellenname()
         {
             Haltestelle h1 = new Haltestelle(name: "H1");
@@ -105,7 +105,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test des Gleichheitsoperators mit zwei Haltestellen mit verschiedenen Namen
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Gleichheitsoperator_Verschiedene_Haltestellenname()
         {
             Haltestelle h1 = new Haltestelle(name: "H1");
@@ -117,7 +117,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test des Ungleichheitsoperators mit zwei Haltestellen mit den gleichen Namen
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Ungleichheitsoperator_Gleicher_Haltestellenname()
         {
             Haltestelle h1 = new Haltestelle(name: "H1");
@@ -129,7 +129,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// <summary>
         /// Test des Ungleichheitsoperators mit zwei Haltestellen mit verschiedenen Namen
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Ungleichheitsoperator_Verschiedene_Haltestellenname()
         {
             Haltestelle h1 = new Haltestelle(name: "H1");

@@ -81,5 +81,27 @@ namespace Fahrplanauskunft.Objekte
                 ZielHaltestelle == other.ZielHaltestelle;
             });
         }
+
+        /// <summary>
+        /// Gleichheitsoperator für Streckenabschnitt
+        /// </summary>
+        /// <param name="a">Wert vom Typ Streckenabschnitt für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Streckenabschnitt für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Streckenabschnitte gleich sind</returns>
+        public static bool operator ==(Streckenabschnitt a, Streckenabschnitt b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<Streckenabschnitt>(a, b);
+        }
+
+        /// <summary>
+        /// Ungleichheitsoperator für Streckenabschnitt
+        /// </summary>
+        /// <param name="a">Wert vom Typ Streckenabschnitt für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Streckenabschnitt für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Streckenabschnitte ungleich sind</returns>
+        public static bool operator !=(Streckenabschnitt a, Streckenabschnitt b)
+        {
+            return !(a == b);
+        }
     }
 }

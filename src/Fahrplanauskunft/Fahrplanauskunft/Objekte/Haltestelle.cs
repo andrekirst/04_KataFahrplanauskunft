@@ -68,11 +68,23 @@ namespace Fahrplanauskunft.Objekte
             return String.Format("Name: {0}", Name);
         }
 
+        /// <summary>
+        /// Gleichheitsoperator für Haltestelle
+        /// </summary>
+        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellen gleich sind</returns>
         public static bool operator ==(Haltestelle a, Haltestelle b)
         {
             return EqualsOperatorHelper.EqualsOperatorBase<Haltestelle>(a, b);
         }
 
+        /// <summary>
+        /// Ungleichheitsoperator für Haltestelle
+        /// </summary>
+        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellen ungleich sind</returns>
         public static bool operator !=(Haltestelle a, Haltestelle b)
         {
             return !(a == b);
