@@ -11,3 +11,33 @@ Test-Klasse: `T_Streckenabschnitt`
 #### Beschreibung
 
 Test, ob der Streckenabschnitt die Dauer von 1 hat, eine Start- und ZielHaltestelle hat, sowie dass eine Linie auf dem Streckebschnitt fährt.
+
+### Streckenabschnitt_Equals_Name_Test_Ident_TEST
+
+#### Beschreibung
+
+Test der Equals-Methode, dass zwei gleiche Streckenabschnitte vergleicht
+
+### Streckenabschnitt_Gleichheitsoperator_Gleicher_Streckenabschnitt
+
+#### Beschreibung
+
+Test des Gleichheitsoperators mit zwei gleichen Streckenabschnitten
+
+### Streckenabschnitt_Gleichheitsoperator_Verschiedene_Streckenabschnitte
+
+#### Beschreibung
+
+Test des Gleichheitsoperators mit zwei verschiedenen Streckenabschnitten
+
+### Streckenabschnitt_Ungleichheitsoperator_Gleicher_Streckenabschnitt
+
+#### Beschreibung
+
+Test des Ungleichheitsoperators mit zwei gleichen Streckenabschnitten
+
+### Streckenabschnitt_Ungleichheitsoperator_Verschiedene_Streckenabschnitte
+
+#### Beschreibung
+
+Test des Ungleichheitsoperators mit zwei ungleichen Streckenabschnitten

@@ -41,13 +41,6 @@ namespace Fahrplanauskunft.Test.Objekte
             Assert.AreEqual(expected, actual);
         }
 
-
-
-
-
-
-
-
         /// <summary>
         /// Test des Gleichheitsoperators mit zwei gleichen Umstiegspunkten
         /// </summary>

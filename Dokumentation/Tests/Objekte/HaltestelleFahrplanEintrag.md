@@ -17,3 +17,27 @@ Test, ob die Haltestelle nicht NULL ist, dass die Uhrzeit den Wert "750" hat und
 #### Beschreibung
 
 Test, dass die Equals-Methode zwei Haltestellenfahrplaneinträge verschiedener Instanzen mit jeweils der Uhrzeit von 720, Linie U1 und Haltestelle H1 als den gleichen Haltestellenfahrplaneintrag identifiziert
+
+### HaltestellenFahrplanEintrag_Gleichheitsoperator_Gleiches_Objekt
+
+#### Beschreibung
+
+Test des Gleichheitsoperators mit zwei gleichen Haltestellenfahrplaneinträge
+
+### HaltestellenFahrplanEintrag_Gleichheitsoperator_Ungleiches_Objekt
+
+#### Beschreibung
+
+Test des Gleichheitsoperators mit zwei ungleichen Haltestellenfahrplaneinträge
+
+### HaltestellenFahrplanEintrag_Ungleichheitsoperator_Gleiches_Objekt
+
+#### Beschreibung
+
+Test des Ungleichheitsoperators mit zwei gleichen Haltestellenfahrplaneinträgen
+
+### HaltestellenFahrplanEintrage_Ungleichheitsoperator_Verschiedene_Haltestellenname
+
+#### Beschreibung
+
+Test des Ungleichheitsoperators mit zwei ungleichen Haltestellenfahrplaneinträgen

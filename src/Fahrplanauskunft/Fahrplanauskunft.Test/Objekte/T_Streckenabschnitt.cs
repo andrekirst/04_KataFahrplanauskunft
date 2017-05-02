@@ -69,7 +69,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test des Gleichheitsoperators mit zwei gleichen Streckenabschnitten
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Streckenabschnitt_Gleichheitsoperator_Gleicher_Linienname()
+        public void Streckenabschnitt_Gleichheitsoperator_Gleicher_Streckenabschnitt()
         {
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
@@ -99,7 +99,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test des Gleichheitsoperators mit zwei verschiedenen Streckenabschnitten
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Streckenabschnitt_Gleichheitsoperator_Verschiedene_Linienname()
+        public void Streckenabschnitt_Gleichheitsoperator_Verschiedene_Streckenabschnitte()
         {
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
@@ -129,7 +129,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test des Ungleichheitsoperators mit zwei gleichen Streckenabschnitten
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Streckenabschnitt_Ungleichheitsoperator_Gleicher_Linienname()
+        public void Streckenabschnitt_Ungleichheitsoperator_Gleicher_Streckenabschnitt()
         {
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
@@ -159,7 +159,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test des Ungleichheitsoperators mit zwei ungleichen Streckenabschnitten
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Streckenabschnitt_Ungleichheitsoperator_Verschiedene_Linienname()
+        public void Streckenabschnitt_Ungleichheitsoperator_Verschiedene_Streckenabschnitte()
         {
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
