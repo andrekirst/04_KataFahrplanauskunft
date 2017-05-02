@@ -76,8 +76,8 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Ungleichheitsoperator für Linie
         /// </summary>
-        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
+        /// <param name="a">Wert vom Typ Linie für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Linie für den rechten Vergleich</param>
         /// <returns>Gibt true zurück, wenn die Linien ungleich sind</returns>
         public static bool operator !=(Linie a, Linie b)
         {
