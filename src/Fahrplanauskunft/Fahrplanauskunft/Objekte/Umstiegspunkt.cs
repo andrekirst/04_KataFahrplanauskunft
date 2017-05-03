@@ -10,7 +10,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein Umstiegspunkt ist eine Haltestelle mit mindensten 2 verschiedenen Linien
     /// </summary>
-    public class Umstiegspunkt
+    public class Umstiegspunkt : IEquatable<Umstiegspunkt>
     {
         /// <summary>
         /// Standardkonstruktor
@@ -45,16 +45,26 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Vergleicht die Haltestelle mit einem anderen Umstiegspunkt
+        /// </summary>
+        /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public bool Equals(Umstiegspunkt other)
+        {
+            return EqualsHelper.EqualBase<Umstiegspunkt>(other, () =>
+            {
+                return Name == other.Name && Haltestelle == other.Haltestelle;
+            });
+        }
+
+        /// <summary>
         /// Vergleicht die Haltestelle mit einem anderen Objekt
         /// </summary>
         /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return EqualsHelper.EqualBase<Umstiegspunkt>(obj, (other) =>
-            {
-                return Name == other.Name && Haltestelle == other.Haltestelle;
-            });
+            return this.Equals(obj as Umstiegspunkt);
         }
 
         /// <summary>

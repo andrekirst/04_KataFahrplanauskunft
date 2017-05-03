@@ -10,7 +10,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein HaltestelleFahrplanEintrag beinhaltet die Information, wann, wo und mit welche Linie abfährt
     /// </summary>
-    public class HaltestelleFahrplanEintrag
+    public class HaltestelleFahrplanEintrag : IEquatable<HaltestelleFahrplanEintrag>
     {
         /// <summary>
         /// Standardkonstruktor
@@ -60,18 +60,28 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Vergleicht den Haltestellenfahrplaneintrag mit einem anderen Haltestellenfahrplaneintrag
+        /// </summary>
+        /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public bool Equals(HaltestelleFahrplanEintrag other)
+        {
+            return EqualsHelper.EqualBase<HaltestelleFahrplanEintrag>(other, () =>
+            {
+                return Uhrzeit == other.Uhrzeit &&
+                Linie == other.Linie &&
+                Haltestelle == other.Haltestelle;
+            });
+        }
+
+        /// <summary>
         /// Vergleicht den Haltestellenfahrplaneintrag mit einem anderen Objekt
         /// </summary>
         /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return EqualsHelper.EqualBase<HaltestelleFahrplanEintrag>(obj, (other) =>
-            {
-                return Uhrzeit == other.Uhrzeit &&
-                Linie == other.Linie &&
-                Haltestelle == other.Haltestelle;
-            });
+            return this.Equals(obj as HaltestelleFahrplanEintrag);
         }
 
         /// <summary>

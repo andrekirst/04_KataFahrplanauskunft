@@ -10,7 +10,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Hierarchische Struktur von möglichen Umstiegspunkten von einer Haltestelle
     /// </summary>
-    internal class TreeItem
+    internal class TreeItem : IEquatable<TreeItem>
     {
         /// <summary>
         /// Konstruktor für die Angabe der Haltstelle
@@ -39,20 +39,19 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         public Haltestelle Haltestelle { get; private set; }
 
-
         /// <summary>
-        /// Vergleicht das TreeItem mit einem anderen Objekt
+        /// Vergleicht das TreeItem mit einem anderen TreeItem
         /// </summary>
-        /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
-        public override bool Equals(object obj)
+        public bool Equals(TreeItem other)
         {
-            return EqualsHelper.EqualBase<TreeItem>(obj, (other) =>
+            return EqualsHelper.EqualBase<TreeItem>(other, () =>
             {
                 bool equal = true;
 
                 equal = equal == (this.Haltestelle == other.Haltestelle);
-                if (this.Childs.Count == 0 && other.Childs.Count == 0)
+                if(this.Childs.Count == 0 && other.Childs.Count == 0)
                 {
                     equal = equal == true;
                 }
@@ -64,6 +63,16 @@ namespace Fahrplanauskunft.Objekte
 
                 return equal;
             });
+        }
+
+        /// <summary>
+        /// Vergleicht das TreeItem mit einem anderen Objekt
+        /// </summary>
+        /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as TreeItem);
         }
 
         /// <summary>

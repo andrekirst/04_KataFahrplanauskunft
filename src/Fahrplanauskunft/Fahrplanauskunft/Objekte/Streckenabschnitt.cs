@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Objekte
 {
-    public class Streckenabschnitt
+    public class Streckenabschnitt : IEquatable<Streckenabschnitt>
     {
         /// <summary>
         /// Standardkonstruktor
@@ -68,18 +68,28 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Vergleicht den Streckenabschnitt mit einem anderen Streckenabschnitt
+        /// </summary>
+        /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public bool Equals(Streckenabschnitt other)
+        {
+            return EqualsHelper.EqualBase<Streckenabschnitt>(other, () =>
+            {
+                return Dauer == other.Dauer &&
+                StartHaltestelle == other.StartHaltestelle &&
+                ZielHaltestelle == other.ZielHaltestelle;
+            });
+        }
+
+        /// <summary>
         /// Vergleicht den Streckenabschnitt mit einem anderen Objekt
         /// </summary>
         /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return EqualsHelper.EqualBase<Streckenabschnitt>(obj, (other) =>
-            {
-                return Dauer == other.Dauer &&
-                StartHaltestelle == other.StartHaltestelle &&
-                ZielHaltestelle == other.ZielHaltestelle;
-            });
+            return this.Equals(obj as Streckenabschnitt);
         }
 
         /// <summary>
