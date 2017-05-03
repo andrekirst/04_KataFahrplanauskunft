@@ -36,14 +36,15 @@ matrix:
   fast_finish: true
 
 environment:
-  sonarqubeprefix: "f-"
+  sonarqubeprefix: ""
 
 before_build:
   - nuget restore C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
 
 build_script:
     - choco install "msbuild-sonarqube-runner" -y
-    - ps: MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)"
+    - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /v:"pr-$($env:appveyor_build_version)" /d:"sonar.analysis.mode=preview" /d:"sonar.github.pullRequest=$env:APPVEYOR_PULL_REQUEST_NUMBER" }
+    - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
     - msbuild C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln
     - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8"
 
