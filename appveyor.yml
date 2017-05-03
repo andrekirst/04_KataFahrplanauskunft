@@ -38,9 +38,12 @@ matrix:
 before_build:
   - nuget restore C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
 
+environment:
+  ver: {version}
+
 build_script:
     - choco install "msbuild-sonarqube-runner" -y
-    - MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /v:"$(version)"
+    - ps: MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /v:ver
     - msbuild C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln
     - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8"
 
