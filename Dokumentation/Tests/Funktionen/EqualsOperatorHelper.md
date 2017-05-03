@@ -10,7 +10,7 @@ Test-Klasse: `T_EqualsHelper`
 
 #### Beschreibung
 
-Wenn beid Objekte Null sind, dann true zurückgeben
+Wenn beide Objekte Null sind, dann true zurückgeben
 
 ### EqualsOperatorHelper_Parameter_a_Ist_Null_b_Nicht_Null
 

@@ -12,7 +12,7 @@ namespace Fahrplanauskunft.Test.Funktionen
     public class T_EqualsOperatorHelper
     {
         /// <summary>
-        /// Wenn beid Objekte Null sind, dann true zurückgeben
+        /// Wenn beide Objekte Null sind, dann true zurückgeben
         /// </summary>
         [TestMethod, TestCategory("EqualsOperatorHelper")]
         public void EqualsOperatorHelper_Parameters_Null()
