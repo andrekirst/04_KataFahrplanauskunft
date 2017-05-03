@@ -83,6 +83,27 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Gibt den Hashcode zurück
+        /// </summary>
+        /// <returns>Der Hashcode</returns>
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 17;
+                // Suitable nullity checks etc, of course :)
+                hash = hash * 23 + Dauer.GetHashCode();
+                hash = hash * 23 + StartHaltestelle.GetHashCode();
+                hash = hash * 23 + ZielHaltestelle.GetHashCode();
+                foreach(Linie linie in Linien)
+                {
+                    hash = hash * 23 + linie.GetHashCode();
+                }
+                return hash;
+            }
+        }
+
+        /// <summary>
         /// Gleichheitsoperator für Streckenabschnitt
         /// </summary>
         /// <param name="a">Wert vom Typ Streckenabschnitt für den linken Vergleich</param>

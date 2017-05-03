@@ -75,6 +75,23 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Gibt den Hashcode zurück
+        /// </summary>
+        /// <returns>Der Hashcode</returns>
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 17;
+                // Suitable nullity checks etc, of course :)
+                hash = hash * 23 + Uhrzeit.GetHashCode();
+                hash = hash * 23 + Linie.GetHashCode();
+                hash = hash * 23 + Haltestelle.GetHashCode();
+                return hash;
+            }
+        }
+
+        /// <summary>
         /// Gleichheitsoperator für Haltestellenfahrplaneintrag
         /// </summary>
         /// <param name="a">Wert vom Typ HaltestelleFahrplanEintrag für den linken Vergleich</param>

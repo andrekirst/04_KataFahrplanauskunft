@@ -142,5 +142,23 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(hfe1 != hfe2);
         }
+
+        /// <summary>
+        /// Testet den Hashcode, der durch die Uhrzeit, die Linie und die Haltestelle erzeugt wird
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void HaltestellenFahrplanEintrage_GetHashCode()
+        {
+            HaltestelleFahrplanEintrag hfe1 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H1"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            int actual = hfe1.GetHashCode();
+            int expected = -245967416;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

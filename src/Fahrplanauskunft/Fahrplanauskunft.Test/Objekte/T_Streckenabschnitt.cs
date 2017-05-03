@@ -184,5 +184,27 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(streckenabschnitt1 != streckenabschnitt2);
         }
+
+        /// <summary>
+        /// Testet den Hashcode, der durch die Dauer, die zwei Haltestellen und die Linien erzeugt wird
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Streckenabschnitt_GetHashCode()
+        {
+            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
+            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
+
+            List<Linie> linien1 = new List<Linie>()
+            {
+                new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linien: linien1);
+
+            int actual = streckenabschnitt1.GetHashCode();
+
+            int expected = -1109444853;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
