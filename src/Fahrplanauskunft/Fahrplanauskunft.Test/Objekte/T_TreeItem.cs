@@ -190,5 +190,53 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreNotEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Test des Gleichheitsoperators mit zwei gleichen TreeItems
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void TreeItem_Gleichheitsoperator_Gleiches_TreeItem()
+        {
+            TreeItem treeItem1 = new TreeItem(new Haltestelle("H1"));
+            TreeItem treeItem2 = new TreeItem(new Haltestelle("H1"));
+
+            Assert.IsTrue(treeItem1 == treeItem2);
+        }
+
+        /// <summary>
+        /// Test des Gleichheitsoperators mit zwei verschiedenen TreeItems
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void TreeItem_Gleichheitsoperator_Verschiedene_TreeItem()
+        {
+            TreeItem treeItem1 = new TreeItem(new Haltestelle("H1"));
+            TreeItem treeItem2 = new TreeItem(new Haltestelle("H2"));
+
+            Assert.IsFalse(treeItem1 == treeItem2);
+        }
+
+        /// <summary>
+        /// Test des Ungleichheitsoperators mit zwei gleichen TreeItems
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void TreeItem_Ungleichheitsoperator_Gleiches_TreeItem()
+        {
+            TreeItem treeItem1 = new TreeItem(new Haltestelle("H1"));
+            TreeItem treeItem2 = new TreeItem(new Haltestelle("H1"));
+
+            Assert.IsFalse(treeItem1 != treeItem2);
+        }
+
+        /// <summary>
+        /// Test des Ungleichheitsoperators mit zwei ungleichen TreeItems
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void TreeItem_Ungleichheitsoperator_Verschiedene_TreeItem()
+        {
+            TreeItem treeItem1 = new TreeItem(new Haltestelle("H1"));
+            TreeItem treeItem2 = new TreeItem(new Haltestelle("H2"));
+
+            Assert.IsTrue(treeItem1 != treeItem2);
+        }
     }
 }

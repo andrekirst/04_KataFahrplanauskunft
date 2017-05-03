@@ -35,3 +35,27 @@ Test, dass die Rückgabe **Name: H4** ist, wenn der Name der `Haltestelle` **H4*
 #### Beschreibung
 
 Testet die Methode Equals mit einem anderen Vergleichsobjekt. In diesem Fall eine Linie
+
+### Haltestelle_Gleichheitsoperator_Gleicher_Haltestellenname
+
+#### Beschreibung
+
+Test des Gleichheitsoperators mit zwei Haltestellen mit den gleichen Namen
+
+### Haltestelle_Gleichheitsoperator_Verschiedene_Haltestellenname
+
+#### Beschreibung
+
+Test des Gleichheitsoperators mit zwei Haltestellen mit verschiedenen Namen
+
+### Haltestelle_Ungleichheitsoperator_Gleicher_Haltestellenname
+
+#### Beschreibung
+
+Test des Ungleichheitsoperators mit zwei Haltestellen mit den gleichen Namen
+
+### Haltestelle_Ungleichheitsoperator_Verschiedene_Haltestellenname
+
+#### Beschreibung
+
+Test des Ungleichheitsoperators mit zwei Haltestellen mit verschiedenen Namen

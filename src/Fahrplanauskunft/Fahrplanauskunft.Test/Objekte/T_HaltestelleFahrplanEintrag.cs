@@ -50,5 +50,97 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(hfe1.Equals(hfe2));
         }
+
+        /// <summary>
+        /// Test des Gleichheitsoperators mit zwei gleichen Haltestellenfahrplaneinträge
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void HaltestellenFahrplanEintrag_Gleichheitsoperator_Gleiches_Objekt()
+        {
+            HaltestelleFahrplanEintrag hfe1 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H1"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            HaltestelleFahrplanEintrag hfe2 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H1"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            Assert.IsTrue(hfe1 == hfe2);
+        }
+
+        /// <summary>
+        /// Test des Gleichheitsoperators mit zwei ungleichen Haltestellenfahrplaneinträge
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void HaltestellenFahrplanEintrag_Gleichheitsoperator_Ungleiches_Objekt()
+        {
+            HaltestelleFahrplanEintrag hfe1 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H1"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            HaltestelleFahrplanEintrag hfe2 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H2"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            Assert.IsFalse(hfe1 == hfe2);
+        }
+
+        /// <summary>
+        /// Test des Ungleichheitsoperators mit zwei gleichen Haltestellenfahrplaneinträgen
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void HaltestellenFahrplanEintrag_Ungleichheitsoperator_Gleiches_Objekt()
+        {
+            HaltestelleFahrplanEintrag hfe1 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H1"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            HaltestelleFahrplanEintrag hfe2 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H1"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            Assert.IsFalse(hfe1 != hfe2);
+        }
+
+        /// <summary>
+        /// Test des Ungleichheitsoperators mit zwei ungleichen Haltestellenfahrplaneinträgen
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void HaltestellenFahrplanEintrage_Ungleichheitsoperator_Verschiedene_Haltestellenname()
+        {
+            HaltestelleFahrplanEintrag hfe1 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H1"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            HaltestelleFahrplanEintrag hfe2 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H2"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD")
+            };
+
+            Assert.IsTrue(hfe1 != hfe2);
+        }
     }
 }

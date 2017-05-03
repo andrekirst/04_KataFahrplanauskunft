@@ -53,7 +53,7 @@ namespace Fahrplanauskunft.Objekte
         {
             return EqualsHelper.EqualBase<Umstiegspunkt>(obj, (other) =>
             {
-                return Name == other.Name && Haltestelle.Equals(other.Haltestelle);
+                return Name == other.Name && Haltestelle == other.Haltestelle;
             });
         }
 
@@ -73,6 +73,28 @@ namespace Fahrplanauskunft.Objekte
         public override string ToString()
         {
             return String.Format("Name: {0}", Name);
+        }
+
+        /// <summary>
+        /// Gleichheitsoperator für Umstiegspunkt
+        /// </summary>
+        /// <param name="a">Wert vom Typ Umstiegspunkt für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Umstiegspunkt für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Umstiegspunkte gleich sind</returns>
+        public static bool operator ==(Umstiegspunkt a, Umstiegspunkt b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<Umstiegspunkt>(a, b);
+        }
+
+        /// <summary>
+        /// Ungleichheitsoperator für Umstiegspunkt
+        /// </summary>
+        /// <param name="a">Wert vom Typ Umstiegspunkt für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Umstiegspunkt für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Umstiegspunkte ungleich sind</returns>
+        public static bool operator !=(Umstiegspunkt a, Umstiegspunkt b)
+        {
+            return !(a == b);
         }
     }
 }
