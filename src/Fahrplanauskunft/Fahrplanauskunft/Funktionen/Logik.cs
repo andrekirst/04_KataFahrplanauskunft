@@ -109,8 +109,6 @@ namespace Fahrplanauskunft.Funktionen
             // Herausfinden, wieviele initiale Streckenabschnitte man erhält
             List<Streckenabschnitt> gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: startHaltestelle, streckenabschnitte: streckenabschnitteDerLinie);
 
-            List<Haltestelle> sortierteListe = new List<Haltestelle>();
-
             // Ein Dictionary für die sortierten Listen von Haltestellen (Routen)
             Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Haltestelle>>();
             // Das Dictionary wird mit der Anzahl gefundenener Streckenabschnitte erstellt

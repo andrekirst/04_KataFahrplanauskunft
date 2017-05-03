@@ -51,11 +51,7 @@ namespace Fahrplanauskunft.Objekte
                 bool equal = true;
 
                 equal = equal == (this.Haltestelle == other.Haltestelle);
-                if(this.Childs.Count == 0 && other.Childs.Count == 0)
-                {
-                    equal = equal == true;
-                }
-                else
+                if(this.Childs.Count != 0 || other.Childs.Count != 0)
                 {
                     // Reihefolge spielt keine Rolle, wir sortieren vorher
                     equal = equal == this.Childs.OrderBy(x => x.Haltestelle.Name).SequenceEqual(other.Childs.OrderBy(x => x.Haltestelle.Name));
