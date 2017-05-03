@@ -69,9 +69,31 @@ namespace Fahrplanauskunft.Objekte
             return EqualsHelper.EqualBase<HaltestelleFahrplanEintrag>(obj, (other) =>
             {
                 return Uhrzeit == other.Uhrzeit &&
-                Linie.Equals(other.Linie) &&
-                Haltestelle.Equals(other.Haltestelle);
+                Linie == other.Linie &&
+                Haltestelle == other.Haltestelle;
             });
+        }
+
+        /// <summary>
+        /// Gleichheitsoperator für Haltestellenfahrplaneintrag
+        /// </summary>
+        /// <param name="a">Wert vom Typ HaltestelleFahrplanEintrag für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ HaltestelleFahrplanEintrag für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
+        public static bool operator ==(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<HaltestelleFahrplanEintrag>(a, b);
+        }
+
+        /// <summary>
+        /// Ungleichheitsoperator für Haltestellenfahrplaneintrag
+        /// </summary>
+        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
+        public static bool operator !=(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
+        {
+            return !(a == b);
         }
     }
 }

@@ -57,6 +57,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Funktionen\T_EqualsOperatorHelper.cs" />
     <Compile Include="Funktionen\T_EqualsHelper.cs" />
     <Compile Include="Funktionen\T_Logik_TestSatzDresden20170318.cs" />
     <Compile Include="Funktionen\T_Logik.cs" />

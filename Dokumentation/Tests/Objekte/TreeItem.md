@@ -41,3 +41,27 @@ Test der Equals-Methode, dass zwei TreeItem mit jeweils einer Haltestelle Name: 
 #### Beschreibung
 
 Test der Equals-Methode, dass zwei TreeItem mit einer Haltestelle Name: "H1" , Childs "H2","H4" und einmal ein weiteres Grandchildren "H8"  sowie einmal ein weiteres Grandchildren "H10" sind nicht gleich.
+
+### TreeItem_Gleichheitsoperator_Gleiches_TreeItem
+
+#### Beschreibung
+
+Test des Gleichheitsoperators mit zwei gleichen TreeItems
+
+### TreeItem_Gleichheitsoperator_Verschiedene_TreeItem
+
+#### Beschreibung
+
+Test des Gleichheitsoperators mit zwei verschiedenen TreeItems
+
+### TreeItem_Ungleichheitsoperator_Gleiches_TreeItem
+
+#### Beschreibung
+
+Test des Ungleichheitsoperators mit zwei gleichen TreeItems
+
+### TreeItem_Ungleichheitsoperator_Verschiedene_TreeItem
+
+#### Beschreibung
+
+Test des Ungleichheitsoperators mit zwei ungleichen TreeItems

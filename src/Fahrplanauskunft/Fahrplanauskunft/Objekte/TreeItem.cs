@@ -51,7 +51,7 @@ namespace Fahrplanauskunft.Objekte
             {
                 bool equal = true;
 
-                equal = equal == this.Haltestelle.Equals(other.Haltestelle);
+                equal = equal == (this.Haltestelle == other.Haltestelle);
                 if (this.Childs.Count == 0 && other.Childs.Count == 0)
                 {
                     equal = equal == true;
@@ -75,5 +75,26 @@ namespace Fahrplanauskunft.Objekte
             return Haltestelle.GetHashCode();
         }
 
+        /// <summary>
+        /// Gleichheitsoperator für TreeItem
+        /// </summary>
+        /// <param name="a">Wert vom Typ TreeItem für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ TreeItem für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die TreeItems gleich sind</returns>
+        public static bool operator ==(TreeItem a, TreeItem b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<TreeItem>(a, b);
+        }
+
+        /// <summary>
+        /// Ungleichheitsoperator für TreeItem
+        /// </summary>
+        /// <param name="a">Wert vom Typ TreeItem für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ TreeItem für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die TreeItems ungleich sind</returns>
+        public static bool operator !=(TreeItem a, TreeItem b)
+        {
+            return !(a == b);
+        }
     }
 }

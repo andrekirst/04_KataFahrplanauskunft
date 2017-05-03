@@ -40,5 +40,54 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Test des Gleichheitsoperators mit zwei gleichen Umstiegspunkten
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Umstiegspunkt_Gleichheitsoperator_Gleiche_Umstiegspunkte()
+        {
+            Umstiegspunkt umstiegspunkt1 = new Umstiegspunkt(new Haltestelle("H1"));
+            Umstiegspunkt umstiegspunkt2 = new Umstiegspunkt(new Haltestelle("H1"));
+
+            Assert.IsTrue(umstiegspunkt1 == umstiegspunkt2);
+        }
+
+        /// <summary>
+        /// Test des Gleichheitsoperators mit zwei verschiedenen Umstiegspunkten
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Umstiegspunkt_Gleichheitsoperator_Verschiedene_Umstiegspunkte()
+        {
+            Umstiegspunkt umstiegspunkt1 = new Umstiegspunkt(new Haltestelle("H1"));
+            Umstiegspunkt umstiegspunkt2 = new Umstiegspunkt(new Haltestelle("H2"));
+
+            Assert.IsFalse(umstiegspunkt1 == umstiegspunkt2);
+        }
+
+        /// <summary>
+        /// Test des Ungleichheitsoperators mit zwei gleichen Umstiegspunkten
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Umstiegspunkt_Ungleichheitsoperator_Gleiche_Umstiegspunkte()
+        {
+            Umstiegspunkt umstiegspunkt1 = new Umstiegspunkt(new Haltestelle("H1"));
+            Umstiegspunkt umstiegspunkt2 = new Umstiegspunkt(new Haltestelle("H1"));
+
+            Assert.IsFalse(umstiegspunkt1 != umstiegspunkt2);
+        }
+
+        /// <summary>
+        /// Test des Ungleichheitsoperators mit zwei ungleichen Umstiegspunkten
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Umstiegspunkt_Ungleichheitsoperator_Verschiedene_Umstiegspunkte()
+        {
+            Umstiegspunkt umstiegspunkt1 = new Umstiegspunkt(new Haltestelle("H1"));
+            Umstiegspunkt umstiegspunkt2 = new Umstiegspunkt(new Haltestelle("H2"));
+
+            Assert.IsTrue(umstiegspunkt1 != umstiegspunkt2);
+        }
+
     }
 }

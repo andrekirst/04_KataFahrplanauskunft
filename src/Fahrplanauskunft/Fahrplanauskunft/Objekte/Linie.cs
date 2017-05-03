@@ -61,5 +61,27 @@ namespace Fahrplanauskunft.Objekte
         {
             return Name.GetHashCode() * 2 + Ident.GetHashCode();
         }
+
+        /// <summary>
+        /// Gleichheitsoperator für Linie
+        /// </summary>
+        /// <param name="a">Wert vom Typ Linie für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Linie für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Linien gleich sind</returns>
+        public static bool operator ==(Linie a, Linie b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<Linie>(a, b);
+        }
+
+        /// <summary>
+        /// Ungleichheitsoperator für Linie
+        /// </summary>
+        /// <param name="a">Wert vom Typ Linie für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Linie für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Linien ungleich sind</returns>
+        public static bool operator !=(Linie a, Linie b)
+        {
+            return !(a == b);
+        }
     }
 }
