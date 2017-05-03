@@ -42,3 +42,11 @@ Damit SonarQube das Projekt übernehmen kann, muss ein Token erstellt werden. Di
 
 Damit SonarQube angewendet werden kann, wird mittels `choco install "msbuild-sonarqube-runner" -y` das Paket für den SonarQube-Runner für MSBuild installiert.
 In den nächsten Schritten, wird das Build für SonarQube vorbereitet, das Build selber durchgeführt und der Abschluss von SonarQube angewandt. Diese Informationen befinden sich im Abschnitt `build_script`.
+
+Die Versionen in Sonarqube werden folgendermaßen gebildet:
+
+| Branch | Beispiel | Beschreibung |
+|---|---|---|
+| master | 1.0.101 | Ist nach einem Pull request nach **master** erstellt |
+| develop | dev-1.0.101 | Ist nach einem Pull request nach **develop** erstellt |
+| *Pull request* | pr-1.0.101-#55 | Wenn ein Pull request erstellt ist. Als Suffix die Nummer des Pull request mit einer Raute (`#`) davor |
