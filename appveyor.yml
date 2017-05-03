@@ -39,7 +39,7 @@ before_build:
   - nuget restore C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
 
 environment:
-  ver: {version}
+  ver: "{version}"
 
 build_script:
     - choco install "msbuild-sonarqube-runner" -y
