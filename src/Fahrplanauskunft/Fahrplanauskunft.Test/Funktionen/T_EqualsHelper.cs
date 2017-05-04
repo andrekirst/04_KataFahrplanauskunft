@@ -39,7 +39,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Wenn der Paramater custom Null ist, muss die Methode false zurückgeben
+        /// Wenn der Parameter custom Null ist, muss die Methode false zurückgeben
         /// </summary>
         [TestMethod, TestCategory("EqualsHelper")]
         public void EqualsHelper_Paramter_custom_Ist_Null()
@@ -81,7 +81,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Wenn der Paramater custom Null ist, muss die Methode false zurückgeben
+        /// Wenn der Parameter custom Null ist, muss die Methode false zurückgeben
         /// </summary>
         [TestMethod, TestCategory("EqualsHelper")]
         public void EqualsHelper_Equatable_Paramter_custom_Ist_Null()

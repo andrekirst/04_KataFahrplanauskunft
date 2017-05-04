@@ -22,7 +22,7 @@ Wenn der Parameter obj einen anderen Typ hat, als es der Typ T vorgibt, muss die
 
 #### Beschreibung
 
-Wenn der Paramater custom Null ist, muss die Methode false zurückgeben
+Wenn der Parameter custom Null ist, muss die Methode false zurückgeben
 
 ### EqualsHelper_Equatable_Parameter_obj_Ist_Null
 
@@ -40,7 +40,7 @@ Wenn der Parameter obj einen anderen Typ hat, als es der Typ T vorgibt, muss die
 
 #### Beschreibung
 
-Wenn der Paramater custom Null ist, muss die Methode false zurückgeben
+Wenn der Parameter custom Null ist, muss die Methode false zurückgeben
 
 ### EqualsHelper_Equatable_Ungleich
 
