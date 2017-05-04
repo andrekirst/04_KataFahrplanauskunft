@@ -7,7 +7,7 @@ namespace Fahrplanauskunft.Test.Funktionen
     /// Testklasse für Zeit_Konverter
     /// </summary>
     [TestClass]
-    public class T_Zeit_Konverter
+    public class T_ZeitKonverter
     {
         /// <summary>
         /// Es soll die Funktion ZuUhrzeitText mit dem Wert 120 aufgerufen werden und die Ausgabe soll "02:00" betragen.
@@ -19,7 +19,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             string expected = "02:00";
 
-            string actual = Fahrplanauskunft.Funktionen.Zeit_Konverter.ZuUhrzeitText(zeit);
+            string actual = Fahrplanauskunft.Funktionen.ZeitKonverter.ZuUhrzeitText(zeit);
 
             Assert.AreEqual(expected, actual);
        }
@@ -34,7 +34,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             string expected = "12:06";
 
-            string actual = Fahrplanauskunft.Funktionen.Zeit_Konverter.ZuUhrzeitText(zeit);
+            string actual = Fahrplanauskunft.Funktionen.ZeitKonverter.ZuUhrzeitText(zeit);
 
             Assert.AreEqual(expected, actual);
         }
@@ -49,7 +49,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             int expected = 120;
 
-            int actual = Fahrplanauskunft.Funktionen.Zeit_Konverter.ZuUhrzeitZahl(zeit);
+            int actual = Fahrplanauskunft.Funktionen.ZeitKonverter.ZuUhrzeitZahl(zeit);
 
             Assert.AreEqual(expected, actual);
         }
@@ -64,7 +64,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             int expected = 726;
 
-            int actual = Fahrplanauskunft.Funktionen.Zeit_Konverter.ZuUhrzeitZahl(zeit);
+            int actual = Fahrplanauskunft.Funktionen.ZeitKonverter.ZuUhrzeitZahl(zeit);
 
             Assert.AreEqual(expected, actual);
         }

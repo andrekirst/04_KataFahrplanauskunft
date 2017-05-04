@@ -41,3 +41,9 @@ Test des Ungleichheitsoperators mit zwei gleichen Haltestellenfahrplaneinträgen
 #### Beschreibung
 
 Test des Ungleichheitsoperators mit zwei ungleichen Haltestellenfahrplaneinträgen
+
+### HaltestellenFahrplanEintrage_GetHashCode
+
+#### Beschreibung
+
+Testet den Hashcode, der durch die Uhrzeit, die Linie und die Haltestelle erzeugt wird

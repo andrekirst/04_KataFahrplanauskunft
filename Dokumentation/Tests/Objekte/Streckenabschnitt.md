@@ -41,3 +41,9 @@ Test des Ungleichheitsoperators mit zwei gleichen Streckenabschnitten
 #### Beschreibung
 
 Test des Ungleichheitsoperators mit zwei ungleichen Streckenabschnitten
+
+### Streckenabschnitt_GetHashCode
+
+#### Beschreibung
+
+Testet den Hashcode, der durch die Dauer, die zwei Haltestellen und die Linien erzeugt wird

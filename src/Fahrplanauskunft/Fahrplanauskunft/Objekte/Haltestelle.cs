@@ -7,7 +7,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Eine Haltestelle ist ein Punkt, an denen ein- und ausgestiegen werden kann.
     /// </summary>
-    public class Haltestelle
+    public class Haltestelle : IEquatable<Haltestelle>
     {
         /// <summary>
         /// Standardkonstruktor
@@ -38,16 +38,26 @@ namespace Fahrplanauskunft.Objekte
         public string Name { get; set; }
 
         /// <summary>
+        /// Vergleicht die Haltestelle mit einer anderen Haltestelle
+        /// </summary>
+        /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public bool Equals(Haltestelle other)
+        {
+            return EqualsHelper.EqualBase<Haltestelle>(other, () =>
+            {
+                return this.Name == other.Name;
+            });
+        }
+
+        /// <summary>
         /// Vergleicht die Haltestelle mit einem anderen Objekt
         /// </summary>
         /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return EqualsHelper.EqualBase<Haltestelle>(obj, (other) =>
-            {
-                return this.Name == other.Name;
-            });
+            return this.Equals(obj as Haltestelle);
         }
 
         /// <summary>

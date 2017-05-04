@@ -1,4 +1,4 @@
-# Beschreibung:
+# Beschreibung
 
 Detaillierte Beschreibung
 
@@ -22,5 +22,15 @@ Detaillierte Beschreibung
 ## Testfälle
 
 * [ ] **Komponente 1**
-  * [ ] *Testfall 1* - *Testfallbeschreibung*
-  * [ ] *Testfall 2* - *Testfallbeschreibung*
+  * [ ] *Testfall 1* - Testfallbeschreibung
+  * [ ] *Testfall 2* - Testfallbeschreibung
+
+## Ablauf beim Entwickeln und Code Review
+
+* [ ] Branch erstellt
+* [ ] Dem Issue das Label `branch erstellt` vergeben
+* [ ] Entwicklungsarbeit
+* [ ] Pull Request erstellt
+* [ ] Dem Issue das Label `pr erstellt` vergeben
+* [ ] Pull Request-Ersteller behebt in der Entwicklung entstandene SonarQube-Einträge *([https://sonarqube.com/dashboard/index/04_KataFahrplanauskunft](https://sonarqube.com/dashboard/index/04_KataFahrplanauskunft))*
+* [ ] Pull Request-Ersteller behebt die vom Code Reviewer bemängelten Stellen bzw. bespricht diese
