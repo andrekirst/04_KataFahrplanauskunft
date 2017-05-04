@@ -10,7 +10,7 @@ namespace Fahrplanauskunft.Funktionen
     /// <summary>
     /// Funktionalität für das Konvertieren einer Uhrzeit als Ganzzahl in Text sowie anders herum 
     /// </summary>
-    internal class Zeit_Konverter
+    public static class ZeitKonverter
     {
         /// <summary>
         /// Konvertiert ganzahlige Minuten in das Format "hh:mm"

@@ -10,7 +10,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Eine Linie ist eine Sammlung von Haltestellen, die das jeweilige Transportsystem, wie eine Linie, abfährt.
     /// </summary>
-    public class Linie
+    public class Linie : IEquatable<Linie>
     {
         /// <summary>
         /// Standardkonstruktor
@@ -41,16 +41,26 @@ namespace Fahrplanauskunft.Objekte
         public string Name { get; set; }
 
         /// <summary>
+        /// Vergleicht die Linie mit einer anderen Linie
+        /// </summary>
+        /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public bool Equals(Linie other)
+        {
+            return EqualsHelper.EqualBase<Linie>(other, () =>
+            {
+                return this.Name == other.Name && this.Ident == other.Ident;
+            });
+        }
+
+        /// <summary>
         /// Vergleicht die Linie mit einem anderen Objekt
         /// </summary>
         /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return EqualsHelper.EqualBase<Linie>(obj, (other) =>
-            {
-                return this.Name == other.Name && this.Ident == other.Ident;
-            });
+            return this.Equals(obj as Linie);
         }
 
         /// <summary>

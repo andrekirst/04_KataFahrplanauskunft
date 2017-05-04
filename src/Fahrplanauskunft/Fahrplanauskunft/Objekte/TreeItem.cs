@@ -10,7 +10,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Hierarchische Struktur von möglichen Umstiegspunkten von einer Haltestelle
     /// </summary>
-    internal class TreeItem
+    internal class TreeItem : IEquatable<TreeItem>
     {
         /// <summary>
         /// Konstruktor für die Angabe der Haltstelle
@@ -39,6 +39,27 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         public Haltestelle Haltestelle { get; private set; }
 
+        /// <summary>
+        /// Vergleicht das TreeItem mit einem anderen TreeItem
+        /// </summary>
+        /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public bool Equals(TreeItem other)
+        {
+            return EqualsHelper.EqualBase<TreeItem>(other, () =>
+            {
+                bool equal = true;
+
+                equal = equal == (this.Haltestelle == other.Haltestelle);
+                if(this.Childs.Count != 0 || other.Childs.Count != 0)
+                {
+                    // Reihefolge spielt keine Rolle, wir sortieren vorher
+                    equal = equal == this.Childs.OrderBy(x => x.Haltestelle.Name).SequenceEqual(other.Childs.OrderBy(x => x.Haltestelle.Name));
+                }
+
+                return equal;
+            });
+        }
 
         /// <summary>
         /// Vergleicht das TreeItem mit einem anderen Objekt
@@ -47,23 +68,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return EqualsHelper.EqualBase<TreeItem>(obj, (other) =>
-            {
-                bool equal = true;
-
-                equal = equal == (this.Haltestelle == other.Haltestelle);
-                if (this.Childs.Count == 0 && other.Childs.Count == 0)
-                {
-                    equal = equal == true;
-                }
-                else
-                {
-                    // Reihefolge spielt keine Rolle, wir sortieren vorher
-                    equal = equal == this.Childs.OrderBy(x => x.Haltestelle.Name).SequenceEqual(other.Childs.OrderBy(x => x.Haltestelle.Name));
-                }
-
-                return equal;
-            });
+            return this.Equals(obj as TreeItem);
         }
 
         /// <summary>

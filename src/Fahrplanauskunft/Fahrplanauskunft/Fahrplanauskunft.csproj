@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{59333DC7-72E0-43CE-8915-5F7E3C79192E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Fahrplanauskunft</RootNamespace>
     <AssemblyName>Fahrplanauskunft</AssemblyName>
@@ -32,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -60,9 +63,8 @@
     <Compile Include="Objekte\TreeItem.cs" />
     <Compile Include="Objekte\Umstiegspunkt.cs" />
     <Compile Include="Objekte\Verbindungsanfrage.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Funktionen\Zeit_Konverter.cs" />
+    <Compile Include="Funktionen\ZeitKonverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
