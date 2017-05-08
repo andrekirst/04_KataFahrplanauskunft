@@ -54,7 +54,7 @@ build_script:
 test_script:
     - vstest.console /logger:Appveyor "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\%CONFIGURATION%\Fahrplanauskunft.Test.dll"
     - ps: >-
-        C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:vstest.console.exe "-targetargs:""C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\%CONFIGURATION%\Fahrplanauskunft.Test.dll"" /noshadow" -output:opencoverCoverage.xml
+        C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:vstest.console.exe "-targetargs:""C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\%CONFIGURATION%\Fahrplanauskunft.Test.dll""" -output:opencoverCoverage.xml
 
         $coveralls = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\coveralls.net.*\tools\csmacnz.Coveralls.exe").ToString()
 
