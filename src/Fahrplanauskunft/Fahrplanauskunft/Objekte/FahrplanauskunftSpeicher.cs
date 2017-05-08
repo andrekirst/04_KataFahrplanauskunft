@@ -22,10 +22,15 @@ namespace Fahrplanauskunft.Objekte
             OrdnerPfad = ordnerPfad;
         }
 
+        /// <summary>
+        /// Lädt Haltestellen, Linien, Streckenabschnitte und Haltestellenfahrplaneinträge
+        /// </summary>
         public void Laden()
         {
             LadeHaltestellen();
             LadeLinien();
+            LadeStreckenabschnitte();
+            LadeHaltestellenfahrplaneintraege();
         }
 
         /// <summary>

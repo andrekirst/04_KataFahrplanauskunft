@@ -417,5 +417,81 @@ namespace Fahrplanauskunft.Test.Objekte
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Testet die Methode Laden mit der Überprüfung von Haltestellen
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_Laden_Haltestellen_Anzahl_16()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            List<Haltestelle> haltestellen = fahrplanauskunftSpeicher.Haltestellen;
+
+            int expected = 16;
+            int actual = haltestellen.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testet die Methode Laden mit der Überprüfung von Linien
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_Laden_Linien_Anzahl_8()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            List<Linie> linien = fahrplanauskunftSpeicher.Linien;
+
+            int expected = 8;
+            int actual = linien.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testet die Methode Laden mit der Überprüfung von Streckenabschnitten
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_Laden_Streckenabschnitte_Anzahl_16()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            List<Streckenabschnitt> streckenabschnitte = fahrplanauskunftSpeicher.Streckenabschnitte;
+
+            int expected = 16;
+            int actual = streckenabschnitte.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testet die Methode Laden mit der Überprüfung von Haltestellenfahrplaneinträgen
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_Laden_Haltestellenfahrplaneintraege_Anzahl_16()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = fahrplanauskunftSpeicher.Haltestellenfahrplaneintraege;
+
+            int expected = 768;
+            int actual = haltestellenfahrplaneintraege.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
