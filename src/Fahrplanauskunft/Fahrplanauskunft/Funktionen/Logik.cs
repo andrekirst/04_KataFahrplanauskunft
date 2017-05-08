@@ -133,18 +133,22 @@ namespace Fahrplanauskunft.Funktionen
                 }
             }
 
+            // Die sortierte Liste der Haltestellen, die zurückgegeben werden soll
+            List<Haltestelle> sortierteListe = null;
+
             // Durch alle Routen gehen und herausfinden, welche die Ziel-Haltestelle besitzen
-            foreach(int route in sortierteListeTempAlsDictionary.Keys)
+            foreach (int route in sortierteListeTempAlsDictionary.Keys)
             {
                 if(sortierteListeTempAlsDictionary[route].Contains(zielHaltestelle))
                 {
                     // 8. Ergebnis zurückgeben
-                    return sortierteListeTempAlsDictionary[route];
+                    sortierteListe = sortierteListeTempAlsDictionary[route];
+                    break;
                 }
             }
 
             // Null zurückgeben, wenn keine Route gefunden werden konnte
-            return null;
+            return sortierteListe;
         }
 
         /// <summary>

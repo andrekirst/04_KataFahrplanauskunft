@@ -8,15 +8,11 @@ using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Objekte
 {
+    /// <summary>
+    /// Der FahrplanauskunftSpeicher ist der zentrale Speicher für die Haltestellen, Linien, etc.
+    /// </summary>
     public class FahrplanauskunftSpeicher
     {
-        /// <summary>
-        /// Standardkonstruktor
-        /// </summary>
-        public FahrplanauskunftSpeicher()
-        {
-        }
-
         /// <summary>
         /// Konstruktor mit dem Ordner-Pfad, in dem sich die Fahrplanauskunfts-Dateien befinden
         /// </summary>
