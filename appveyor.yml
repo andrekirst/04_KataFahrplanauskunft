@@ -53,7 +53,7 @@ build_script:
     - ps: >-
         $opencoverexe = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\OpenCover.*\tools\OpenCover.Console.exe").ToString()
 
-        & $opencoverexe -register:user -target:vstest.console.exe "-targetargs:""C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll""" -output:./opencovertests.xml
+        & $opencoverexe -register:user -filter:"+[*]* -[*Fahrplanauskunft.Test*]*" -target:vstest.console.exe "-targetargs:""C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll""" -output:./opencovertests.xml
 
         $coveralls = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\coveralls.net.*\tools\csmacnz.Coveralls.exe").ToString()
 
