@@ -11,21 +11,6 @@ namespace Fahrplanauskunft.Exceptions
     public class LinieIstNichtAnHaltestelleException : Exception
     {
         /// <summary>
-        /// Standardkonstruktor
-        /// </summary>
-        public LinieIstNichtAnHaltestelleException()
-        {
-        }
-
-        /// <summary>
-        /// Exception mit der Angabe einer Nachricht
-        /// </summary>
-        /// <param name="message"></param>
-        public LinieIstNichtAnHaltestelleException(string message) : base(message)
-        {
-        }
-
-        /// <summary>
         /// Konstruktor mit der Linie und Haltestelle
         /// </summary>
         /// <param name="linie"></param>
