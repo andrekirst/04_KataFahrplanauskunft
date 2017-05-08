@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Fahrplanauskunft.Objekte;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
@@ -492,6 +493,66 @@ namespace Fahrplanauskunft.Test.Objekte
             int actual = haltestellenfahrplaneintraege.Count;
 
             Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeStreckenabschnitte und der Pfad ungültig ist
+        /// </summary>
+        [TestMethod, TestCategory("Objekte"), ExpectedException(typeof(FileNotFoundException))]
+        public void FahrplanauskunftSpeicher_LadeStreckenabschnitte_Datei_nicht_gefunden()
+        {
+            string ordnerPfad = "TestDaten\\UngueltigerOrdner";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeStreckenabschnitte();
+            // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
+
+            Assert.Fail();
+        }
+
+        /// <summary>
+        /// Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeHaltestellen und der Pfad ungültig ist
+        /// </summary>
+        [TestMethod, TestCategory("Objekte"), ExpectedException(typeof(FileNotFoundException))]
+        public void FahrplanauskunftSpeicher_LadeHaltestellen_Datei_nicht_gefunden()
+        {
+            string ordnerPfad = "TestDaten\\UngueltigerOrdner";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellen();
+            // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
+
+            Assert.Fail();
+        }
+
+        /// <summary>
+        /// Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeLinien und der Pfad ungültig ist
+        /// </summary>
+        [TestMethod, TestCategory("Objekte"), ExpectedException(typeof(FileNotFoundException))]
+        public void FahrplanauskunftSpeicher_LadeLinien_Datei_nicht_gefunden()
+        {
+            string ordnerPfad = "TestDaten\\UngueltigerOrdner";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeLinien();
+            // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
+
+            Assert.Fail();
+        }
+
+        /// <summary>
+        /// Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeHaltestellenfahrplaneintraege und der Pfad ungültig ist
+        /// </summary>
+        [TestMethod, TestCategory("Objekte"), ExpectedException(typeof(FileNotFoundException))]
+        public void FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_Datei_nicht_gefunden()
+        {
+            string ordnerPfad = "TestDaten\\UngueltigerOrdner";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
+            // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
+
+            Assert.Fail();
         }
     }
 }
