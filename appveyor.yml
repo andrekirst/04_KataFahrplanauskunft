@@ -65,4 +65,3 @@ notifications:
     auth_token:
       secure: f2CF/z+WaNuT3IOqnTYhJ0LoGAH4ZNKMvo0tLFJU/iuhwP+61rva1f0urpVtATIcVGztyG2lnBYgYpP/YIrs4/UtgfWildJHI+xmlss7lxs=
     channel: builds
-    template: "{message}, {commidId}"
