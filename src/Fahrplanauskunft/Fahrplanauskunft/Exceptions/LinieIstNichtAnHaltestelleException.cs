@@ -7,7 +7,6 @@ namespace Fahrplanauskunft.Exceptions
     /// <summary>
     /// Exception für, dass die Linie nicht an der Haltestelle ist
     /// </summary>
-    [Serializable]
     public class LinieIstNichtAnHaltestelleException : Exception
     {
         /// <summary>
