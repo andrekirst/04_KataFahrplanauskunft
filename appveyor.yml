@@ -54,7 +54,7 @@ build_script:
 test_script:
     - vstest.console /logger:Appveyor "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\%CONFIGURATION%\Fahrplanauskunft.Test.dll"
     - ps: >-
-        $opencoverexe = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\OpenCover.*\tools\OpenCover.Console.ex").ToString()
+        $opencoverexe = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\OpenCover.*\tools\OpenCover.Console.exe").ToString()
 
         $ $opencoverexe -register:user -target:vstest.console.exe "-targetargs:""C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll""" -output:./opencovertests.xml
 
