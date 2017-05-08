@@ -37,6 +37,8 @@ matrix:
 
 environment:
   sonarqubeprefix: ""
+  COVERALLS_REPO_TOKEN:
+    secure: o90DGx/Fmc85k/gMdZ3SzlyUi+a6JCg50LtSqm5zw5k2cbLaIsgKyNjORVGERs0G
 
 before_build:
   - nuget restore C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
@@ -49,6 +51,13 @@ build_script:
     - msbuild C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln
     - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8"
 
-test:
-    assemblies:
-      - Fahrplanauskunft.Test.dll
+test_script:
+    - vstest.console /logger:Appveyor "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\%CONFIGURATION%\Fahrplanauskunft.Test.dll"
+    - ps: >-
+        C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:vstest.console.exe "-targetargs:""C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\%CONFIGURATION%\Fahrplanauskunft.Test.dll"" /noshadow" -output:opencoverCoverage.xml
+
+        $coveralls = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\coveralls.net.*\tools\csmacnz.Coveralls.exe").ToString()
+
+        $env:APPVEYOR_BUILD_NUMBER
+
+        & $coveralls --opencover -i opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobid $env:appveyor_build_version --serviceName appveyor
