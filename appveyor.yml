@@ -37,8 +37,7 @@ matrix:
 
 environment:
   sonarqubeprefix: ""
-  COVERALLS_REPO_TOKEN:
-    secure: aNdWctBWMAu4JPAN5bwsFAiPcqUzJoPJr
+  COVERALLS_REPO_TOKEN: aNdWctBWMAu4JPAN5bwsFAiPcqUzJoPJr
 
 before_build:
   - nuget restore C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
