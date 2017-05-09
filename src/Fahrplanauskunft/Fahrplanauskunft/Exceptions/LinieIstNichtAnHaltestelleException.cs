@@ -28,7 +28,7 @@ namespace Fahrplanauskunft.Exceptions
         /// <param name="info"></param>
         /// <param name="context"></param>
         [ExcludeFromCodeCoverageAttribute]
-        protected LinieIstNichtAnHaltestelleException(SerializationInfo info, StreamingContext context) : base(info, context)
+        public LinieIstNichtAnHaltestelleException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
 

@@ -85,7 +85,7 @@ namespace Fahrplanauskunft.Objekte
         {
             string file = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellenfahrplaneintraege.json");
 
-            if (!File.Exists(file))
+            if(!File.Exists(file))
             {
                 throw new FileNotFoundException("Haltestellenfahrplaneinträge-Datei nicht gefunden", "haltestellenfahrplaneintraege.json");
             }

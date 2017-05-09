@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Fahrplanauskunft.Objekte;
 using Fahrplanauskunft.Exceptions;
 
@@ -137,7 +134,7 @@ namespace Fahrplanauskunft.Funktionen
             List<Haltestelle> sortierteListe = null;
 
             // Durch alle Routen gehen und herausfinden, welche die Ziel-Haltestelle besitzen
-            foreach (int route in sortierteListeTempAlsDictionary.Keys)
+            foreach(int route in sortierteListeTempAlsDictionary.Keys)
             {
                 if(sortierteListeTempAlsDictionary[route].Contains(zielHaltestelle))
                 {
@@ -249,12 +246,12 @@ namespace Fahrplanauskunft.Funktionen
 
             // 2. mache die aktuelle Haltestelle zum Umstiegspunkt(auch die eventuelle Start- oder Endhaltestelle)
             Umstiegspunkt up = new Umstiegspunkt(aktuelleHaltestelle);
-            if (!bereitsGeweseneUmstiegspunkte.Contains(up))
+            if(!bereitsGeweseneUmstiegspunkte.Contains(up))
             {
                 bereitsGeweseneUmstiegspunkte.Add(up);
             }
-            
-            if (max_tiefe > 0)
+
+            if(max_tiefe > 0)
             {
                 max_tiefe--;
 
@@ -263,16 +260,16 @@ namespace Fahrplanauskunft.Funktionen
                                                                                             , bereitsGeweseneUmstiegspunkte
                                                                                             , haltestellen);
                 // 4. merken der gefundenen Umstiegspunkte als schon da gewesene
-                foreach (Umstiegspunkt umstiegspunkt in ups)
+                foreach(Umstiegspunkt umstiegspunkt in ups)
                 {
-                    if (!bereitsGeweseneUmstiegspunkte.Contains(umstiegspunkt))
+                    if(!bereitsGeweseneUmstiegspunkte.Contains(umstiegspunkt))
                     {
                         bereitsGeweseneUmstiegspunkte.Add(umstiegspunkt);
                     }
                 }
 
                 // 5. Suche Rekursiv
-                foreach (Umstiegspunkt umstiegspunkt in ups)
+                foreach(Umstiegspunkt umstiegspunkt in ups)
                 {
                     List<Umstiegspunkt> neuBereitsGeweseneUmstiegspunkte = new List<Umstiegspunkt>();
                     neuBereitsGeweseneUmstiegspunkte.AddRange(bereitsGeweseneUmstiegspunkte);
@@ -311,7 +308,7 @@ namespace Fahrplanauskunft.Funktionen
 
             List<Streckenabschnitt> streckenabschnitteDerLinie = Liefere_Streckenabschnitte_einer_Linie(linie: linie, streckenabschnitte: streckenabschnitte);
 
-            for(int i = 0; i < sortierteListeDerHaltestellen.Count -1; i++)
+            for(int i = 0; i < sortierteListeDerHaltestellen.Count - 1; i++)
             {
                 Haltestelle h1 = sortierteListeDerHaltestellen[i];
                 Haltestelle h2 = sortierteListeDerHaltestellen[i + 1];
