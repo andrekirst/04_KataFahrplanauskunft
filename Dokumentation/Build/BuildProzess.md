@@ -29,7 +29,7 @@ Konfiguriert wird der Prozess mit der Datei [appveyor.yml](/appveyor.yml).
 | **skip_branch_with_pr** | *false* | Es werden Builds erzeugt, wenn es sich um einen Pull Request handelt |
 | **version** | *1.0.{build}* | Die Version entspricht 1.0 und der Buildnummer, die von AppVeyor gesetzt wird |
 
-#### Grober Ablauf des Build
+#### Grober Ablauf des Build-Prozesses
 
 1. Installation des Chocolatey-Packge **msbuild-sonarqube-runner**
 1. Start des SonarQube-Runners
@@ -37,7 +37,7 @@ Konfiguriert wird der Prozess mit der Datei [appveyor.yml](/appveyor.yml).
 1. Ausführen der entstandenen Tests
 1. Ausführen von **OpenCover** zur Ermittlung der Testabdeckung. Entstandene Testabdeckung wird in der Datei `./opencovertests.xml` abgelegt
 1. Übermittlung der Testabdeckung an coveralls mit **coveralls.net**
-1. Beendigung des SonarQube-Runners
+1. Beendigung des SonarQube-Runners und Übermittlung der Ergebniss an das SonarQube-Projekt
 
 ### SonarQube
 
