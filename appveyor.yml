@@ -48,8 +48,8 @@ before_build:
 build_script:
     - choco install "msbuild-sonarqube-runner" -y
     - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:sonarqubeprefix = "dev-" }
-    - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$env:SONARQUBE_TOKEN" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
-    - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$env:SONARQUBE_TOKEN" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
+    - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
+    - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
     - msbuild C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln
     - vstest.console /logger:Appveyor "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\%CONFIGURATION%\Fahrplanauskunft.Test.dll"
     - ps: >-
@@ -60,7 +60,7 @@ build_script:
         $coveralls = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\coveralls.net.*\tools\csmacnz.Coveralls.exe").ToString()
 
         & $coveralls --opencover -i ./opencovertests.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --pullRequest $env:APPVEYOR_PULL_REQUEST_NUMBER --serviceName appveyor
-    - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$env:SONARQUBE_TOKEN"
+    - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$($env:SONARQUBE_TOKEN)"
 
 notifications:
   - provider: Slack
