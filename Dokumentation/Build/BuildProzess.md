@@ -23,6 +23,9 @@ Konfiguriert wird der Prozess mit der Datei [appveyor.yml](/appveyor.yml).
 | **cache** | *...* | Speichert die angegebenen Ordner im Cache. Pfadangaben in der Konfigurationsdatei |
 | **clone_folder** | *c:\projects\04_katafahrplanauskunft* | Der Ablageort, in dem der Aufurf `git clone` das Repository ablegt |
 | **configuration** | *Release* | Es wird die Konfiguration für MSBuild *Release* gewählt |
+| **environment.sonarqubeprefix** | "" | Variable für den Prefix für SonarQube |
+| **environment.COVERALLS_REPO_TOKEN** | *o90DGx/Fmc85k/gMdZ3SzlyUi+a6JCg50LtSqm5zw5k2cbLaIsgKyNjORVGERs0G* | Sicherer Token für Coveralls |
+| **environment.SONARQUBE_TOKEN** | *sFo2TCruCWRcpHbTVAyLc4DZCDBxiGzRpLkv1Cq2oquDiKjo1yuCh73IN8ceKZ65* | Sicherer Token für SonarQube |
 | **image** | *Visual Studio 2015* | Es wird die VM-Vorlage *Visual Studio 2015* verwendet |
 | **matrix:fast_finish** | *true* | Bricht den Build-Prozess sofort ab, wenn ein Fehler auftritt |
 | **platform** | *Any CPU* | Es wird die Plattform für MSBuild *Any CPU* gewählt |
