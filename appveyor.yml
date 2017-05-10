@@ -46,7 +46,7 @@ build_script:
     - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:sonarqubeprefix = "dev-" }
     - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
     - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
-    - msbuild C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln
+    - msbuild C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln /p:RunCodeAnalysis=true
     - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=f546e36450cfe11ff44dc87f1bb25c6767361dc8"
 
 test:
