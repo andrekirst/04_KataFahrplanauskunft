@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Objekte;
+﻿using Fahrplanauskunft.Objekte;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
 namespace Fahrplanauskunft.Test.Objekte
@@ -22,7 +22,6 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreEqual("TestDaten\\TestSatz1", fahrplanauskunftSpeicher.OrdnerPfad);
         }
-
 
         /// <summary>
         /// Test, dass Haltestellen geladen werden und eine Haltestelle als Quelle und im Ziel vorhanden sind

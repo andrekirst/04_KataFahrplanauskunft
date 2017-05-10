@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Objekte
 {
+    /// <summary>
+    /// Eine Verbindungsanfrage ist eine Anfrage an das System, mit der Angabe der Haltestelle von der man starten möchte, der Haltestelle bei der man die Reise beenden möchte, sowie der gewünschten Abfahrtszeit.
+    /// </summary>
     public class Verbindungsanfrage
     {
         /// <summary>
@@ -13,7 +16,6 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         public Verbindungsanfrage()
         {
-
         }
 
         /// <summary>

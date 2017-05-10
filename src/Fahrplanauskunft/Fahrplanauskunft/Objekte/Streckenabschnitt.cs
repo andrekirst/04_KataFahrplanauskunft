@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Objekte
 {
+    /// <summary>
+    /// Ein Streckenabschnitt ist eine Verbindung zwischen zwei Haltestellen, auf der n Linien fahren und eine Zeit x für die Fahrt benötigt wird.
+    /// </summary>
     public class Streckenabschnitt : IEquatable<Streckenabschnitt>
     {
         /// <summary>
@@ -68,18 +71,42 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Gleichheitsoperator für Streckenabschnitt
+        /// </summary>
+        /// <param name="a">Wert vom Typ Streckenabschnitt für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Streckenabschnitt für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Streckenabschnitte gleich sind</returns>
+        public static bool operator ==(Streckenabschnitt a, Streckenabschnitt b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<Streckenabschnitt>(a, b);
+        }
+
+        /// <summary>
+        /// Ungleichheitsoperator für Streckenabschnitt
+        /// </summary>
+        /// <param name="a">Wert vom Typ Streckenabschnitt für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Streckenabschnitt für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Streckenabschnitte ungleich sind</returns>
+        public static bool operator !=(Streckenabschnitt a, Streckenabschnitt b)
+        {
+            return !(a == b);
+        }
+
+        /// <summary>
         /// Vergleicht den Streckenabschnitt mit einem anderen Streckenabschnitt
         /// </summary>
         /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(Streckenabschnitt other)
         {
-            return EqualsHelper.EqualBase<Streckenabschnitt>(other, () =>
-            {
-                return Dauer == other.Dauer &&
-                StartHaltestelle == other.StartHaltestelle &&
-                ZielHaltestelle == other.ZielHaltestelle;
-            });
+            return EqualsHelper.EqualBase<Streckenabschnitt>(
+                other,
+                () =>
+                {
+                    return Dauer == other.Dauer &&
+                    StartHaltestelle == other.StartHaltestelle &&
+                    ZielHaltestelle == other.ZielHaltestelle;
+                });
         }
 
         /// <summary>
@@ -101,38 +128,18 @@ namespace Fahrplanauskunft.Objekte
             unchecked
             {
                 int hash = 17;
+                
                 // Suitable nullity checks etc, of course :)
-                hash = hash * 23 + Dauer.GetHashCode();
-                hash = hash * 23 + StartHaltestelle.GetHashCode();
-                hash = hash * 23 + ZielHaltestelle.GetHashCode();
+                hash = (hash * 23) + Dauer.GetHashCode();
+                hash = (hash * 23) + StartHaltestelle.GetHashCode();
+                hash = (hash * 23) + ZielHaltestelle.GetHashCode();
                 foreach(Linie linie in Linien)
                 {
-                    hash = hash * 23 + linie.GetHashCode();
+                    hash = (hash * 23) + linie.GetHashCode();
                 }
+
                 return hash;
             }
-        }
-
-        /// <summary>
-        /// Gleichheitsoperator für Streckenabschnitt
-        /// </summary>
-        /// <param name="a">Wert vom Typ Streckenabschnitt für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Streckenabschnitt für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Streckenabschnitte gleich sind</returns>
-        public static bool operator ==(Streckenabschnitt a, Streckenabschnitt b)
-        {
-            return EqualsOperatorHelper.EqualsOperatorBase<Streckenabschnitt>(a, b);
-        }
-
-        /// <summary>
-        /// Ungleichheitsoperator für Streckenabschnitt
-        /// </summary>
-        /// <param name="a">Wert vom Typ Streckenabschnitt für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Streckenabschnitt für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Streckenabschnitte ungleich sind</returns>
-        public static bool operator !=(Streckenabschnitt a, Streckenabschnitt b)
-        {
-            return !(a == b);
         }
     }
 }

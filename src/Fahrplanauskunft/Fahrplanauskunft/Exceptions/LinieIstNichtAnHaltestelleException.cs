@@ -20,7 +20,7 @@ namespace Fahrplanauskunft.Exceptions
         /// <summary>
         /// Exception mit der Angabe einer Nachricht
         /// </summary>
-        /// <param name="message"></param>
+        /// <param name="message">Die Nachricht, die der Exception übergben wird</param>
         public LinieIstNichtAnHaltestelleException(string message) : base(message)
         {
         }
@@ -28,8 +28,8 @@ namespace Fahrplanauskunft.Exceptions
         /// <summary>
         /// Konstruktor mit der Linie und Haltestelle
         /// </summary>
-        /// <param name="linie"></param>
-        /// <param name="haltestelle"></param>
+        /// <param name="linie">Die Linie</param>
+        /// <param name="haltestelle">Die Haltestelle</param>
         public LinieIstNichtAnHaltestelleException(Linie linie, Haltestelle haltestelle)
         {
             Linie = linie;

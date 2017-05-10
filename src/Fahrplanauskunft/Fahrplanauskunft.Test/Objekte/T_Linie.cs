@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Objekte;
 
 namespace Fahrplanauskunft.Test.Objekte
 {

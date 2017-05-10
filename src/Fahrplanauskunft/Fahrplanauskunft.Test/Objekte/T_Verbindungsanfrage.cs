@@ -1,8 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Objekte;
-using System.Collections.Generic;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
@@ -20,7 +17,6 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             Haltestelle startHaltestelle = new Haltestelle(name: "StartHaltestelle");
             Haltestelle zielHaltestelle = new Haltestelle(name: "ZielHaltestelle");
-
 
             int wunschAbfahrtszeit = 723;
 

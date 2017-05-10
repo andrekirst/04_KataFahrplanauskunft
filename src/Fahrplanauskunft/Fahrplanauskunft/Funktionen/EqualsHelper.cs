@@ -21,6 +21,7 @@ namespace Fahrplanauskunft.Funktionen
             {
                 return false;
             }
+
             T other = obj as T;
             if (other == null)
             {
@@ -32,6 +33,7 @@ namespace Fahrplanauskunft.Funktionen
                 Func<T, bool> func = custom;
                 return func(other);
             }
+
             return false;
         }
 
@@ -54,6 +56,7 @@ namespace Fahrplanauskunft.Funktionen
                 Func<bool> func = custom;
                 return func();
             }
+
             return false;
         }
     }

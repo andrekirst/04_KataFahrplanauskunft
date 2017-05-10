@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Funktionen
 {
-
     /// <summary>
     /// Funktionalität für das Konvertieren einer Uhrzeit als Ganzzahl in Text sowie anders herum 
     /// </summary>
@@ -26,11 +25,11 @@ namespace Fahrplanauskunft.Funktionen
         /// Konvertiert das Format "hh:mm" in ganzahlige Minuten
         /// </summary>
         /// <param name="zeit">Zeit im Format "hh:mm"</param>
-        /// <returns>ganzzahlige Minuten</returns>
+        /// <returns>Ganzzahlige Minuten</returns>
         internal static int ZuUhrzeitZahl(string zeit)
         {
-            string[] zeitWerte =zeit.Split(new Char[] { ':' });
-            return Convert.ToInt32(zeitWerte[0]) * 60 + Convert.ToInt32(zeitWerte[1]);
+            string[] zeitWerte = zeit.Split(new char[] { ':' });
+            return (Convert.ToInt32(zeitWerte[0]) * 60) + Convert.ToInt32(zeitWerte[1]);
         }
     }
 }

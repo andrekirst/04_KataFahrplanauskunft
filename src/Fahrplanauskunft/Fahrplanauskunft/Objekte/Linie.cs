@@ -33,43 +33,17 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Gibt den Ident der Linie zurück, oder setzt ihn.
         /// </summary>
-        public string Ident { get; set; }
+        public string Ident
+        {
+            get; set;
+        }
 
         /// <summary>
         /// Gibt den Namen der Linie zurück, oder setzt ihn.
         /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Vergleicht die Linie mit einer anderen Linie
-        /// </summary>
-        /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
-        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
-        public bool Equals(Linie other)
+        public string Name
         {
-            return EqualsHelper.EqualBase<Linie>(other, () =>
-            {
-                return this.Name == other.Name && this.Ident == other.Ident;
-            });
-        }
-
-        /// <summary>
-        /// Vergleicht die Linie mit einem anderen Objekt
-        /// </summary>
-        /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
-        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
-        public override bool Equals(object obj)
-        {
-            return this.Equals(obj as Linie);
-        }
-
-        /// <summary>
-        /// Gibt den HashCode zurück
-        /// </summary>
-        /// <returns>Der HashCode</returns>
-        public override int GetHashCode()
-        {
-            return Name.GetHashCode() * 2 + Ident.GetHashCode();
+            get; set;
         }
 
         /// <summary>
@@ -92,6 +66,40 @@ namespace Fahrplanauskunft.Objekte
         public static bool operator !=(Linie a, Linie b)
         {
             return !(a == b);
+        }
+
+        /// <summary>
+        /// Vergleicht die Linie mit einer anderen Linie
+        /// </summary>
+        /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public bool Equals(Linie other)
+        {
+            return EqualsHelper.EqualBase<Linie>(
+                other,
+                () =>
+                {
+                    return this.Name == other.Name && this.Ident == other.Ident;
+                });
+        }
+
+        /// <summary>
+        /// Vergleicht die Linie mit einem anderen Objekt
+        /// </summary>
+        /// <param name="obj">Das andere Objekt, mit dem verglichen werden soll</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Linie);
+        }
+
+        /// <summary>
+        /// Gibt den HashCode zurück
+        /// </summary>
+        /// <returns>Der HashCode</returns>
+        public override int GetHashCode()
+        {
+            return (Name.GetHashCode() * 2) + Ident.GetHashCode();
         }
     }
 }

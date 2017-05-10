@@ -1,15 +1,10 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
+﻿using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Funktionen;
-using Fahrplanauskunft.Objekte;
-using System.Linq;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
     /// <summary>
-    /// Summary description for T_TreeItem
+    /// Testklasse für TreeItem
     /// </summary>
     [TestClass]
     public class T_TreeItem

@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Funktionen;
+﻿using Fahrplanauskunft.Funktionen;
 using Fahrplanauskunft.Objekte;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Funktionen
 {
@@ -106,10 +105,12 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             bool expected = false;
 
-            bool actual = EqualsHelper.EqualBase<Linie>(linie, () =>
-            {
-                return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
-            });
+            bool actual = EqualsHelper.EqualBase<Linie>(
+                linie,
+                () =>
+                {
+                    return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
+                });
 
             Assert.AreEqual(expected, actual);
         }
@@ -125,10 +126,12 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             bool expected = true;
 
-            bool actual = EqualsHelper.EqualBase<Linie>(linie, () =>
-            {
-                return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
-            });
+            bool actual = EqualsHelper.EqualBase<Linie>(
+                linie,
+                () =>
+                {
+                    return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
+                });
 
             Assert.AreEqual(expected, actual);
         }

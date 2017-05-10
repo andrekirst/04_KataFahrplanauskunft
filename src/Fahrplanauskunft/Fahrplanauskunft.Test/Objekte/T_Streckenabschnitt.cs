@@ -1,8 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Objekte;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
@@ -50,7 +49,6 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linien: linien1);
 
-
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle");
 
@@ -60,7 +58,6 @@ namespace Fahrplanauskunft.Test.Objekte
             };
 
             Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linien: linien2);
-
 
             Assert.AreEqual(streckenabschnitt1, streckenabschnitt2);
         }
@@ -80,7 +77,6 @@ namespace Fahrplanauskunft.Test.Objekte
             };
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linien: linien1);
-
 
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle");
@@ -111,7 +107,6 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linien: linien1);
 
-
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle2");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle2");
 
@@ -141,7 +136,6 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linien: linien1);
 
-
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle");
 
@@ -170,7 +164,6 @@ namespace Fahrplanauskunft.Test.Objekte
             };
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linien: linien1);
-
 
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle2");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle2");

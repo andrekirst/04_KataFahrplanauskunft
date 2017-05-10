@@ -30,12 +30,40 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Die Linien, die der Haltestelle zugeordnet sind
         /// </summary>
-        public List<Linie> Linien { get; set; }
+        public List<Linie> Linien
+        {
+            get; set;
+        }
 
         /// <summary>
         /// Gibt den Namen der Haltestelle zurück, oder setzt ihn
         /// </summary>
-        public string Name { get; set; }
+        public string Name
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// Gleichheitsoperator für Haltestelle
+        /// </summary>
+        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellen gleich sind</returns>
+        public static bool operator ==(Haltestelle a, Haltestelle b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<Haltestelle>(a, b);
+        }
+
+        /// <summary>
+        /// Ungleichheitsoperator für Haltestelle
+        /// </summary>
+        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellen ungleich sind</returns>
+        public static bool operator !=(Haltestelle a, Haltestelle b)
+        {
+            return !(a == b);
+        }
 
         /// <summary>
         /// Vergleicht die Haltestelle mit einer anderen Haltestelle
@@ -44,10 +72,12 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(Haltestelle other)
         {
-            return EqualsHelper.EqualBase<Haltestelle>(other, () =>
-            {
-                return this.Name == other.Name;
-            });
+            return EqualsHelper.EqualBase<Haltestelle>(
+                other,
+                () =>
+                {
+                    return this.Name == other.Name;
+                });
         }
 
         /// <summary>
@@ -75,29 +105,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Bsp.: "Name: H4"</returns>
         public override string ToString()
         {
-            return String.Format("Name: {0}", Name);
-        }
-
-        /// <summary>
-        /// Gleichheitsoperator für Haltestelle
-        /// </summary>
-        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Haltestellen gleich sind</returns>
-        public static bool operator ==(Haltestelle a, Haltestelle b)
-        {
-            return EqualsOperatorHelper.EqualsOperatorBase<Haltestelle>(a, b);
-        }
-
-        /// <summary>
-        /// Ungleichheitsoperator für Haltestelle
-        /// </summary>
-        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Haltestellen ungleich sind</returns>
-        public static bool operator !=(Haltestelle a, Haltestelle b)
-        {
-            return !(a == b);
+            return string.Format("Name: {0}", Name);
         }
     }
 }

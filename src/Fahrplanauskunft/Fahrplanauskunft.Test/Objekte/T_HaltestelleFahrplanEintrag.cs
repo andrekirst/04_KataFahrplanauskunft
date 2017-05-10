@@ -1,13 +1,10 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
+﻿using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Objekte;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
     /// <summary>
-    /// Summary description for T_HaltestelleFahrplanEintrag
+    /// Testklasse für HaltestelleFahrplanEintrag
     /// </summary>
     [TestClass]
     public class T_HaltestelleFahrplanEintrag

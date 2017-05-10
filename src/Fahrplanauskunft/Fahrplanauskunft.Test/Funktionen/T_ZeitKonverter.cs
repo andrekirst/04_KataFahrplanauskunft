@@ -68,6 +68,5 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             Assert.AreEqual(expected, actual);
         }
-
     }
 }
