@@ -1,7 +1,7 @@
-﻿using Fahrplanauskunft.Exceptions;
-using Fahrplanauskunft.Objekte;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Fahrplanauskunft.Exceptions;
+using Fahrplanauskunft.Objekte;
 
 namespace Fahrplanauskunft.Funktionen
 {
@@ -61,7 +61,7 @@ namespace Fahrplanauskunft.Funktionen
         {
             // 1. hole alle Linie zu einer Haltestelle
             List<Umstiegspunkt> umstiegspunkte = new List<Umstiegspunkt>();
-            meinHaltestelle.Linien.ForEach(delegate(Linie linie)
+            meinHaltestelle.Linien.ForEach((linie) =>
                 {
                     // 2. hole zu den Linie jeweils die Umstiegspunkte
                     umstiegspunkte.AddRange(Liefere_Umstiegspunkte_fuer_Linie(linie, haltestellen));

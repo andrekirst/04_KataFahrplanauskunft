@@ -1,10 +1,10 @@
-﻿using Fahrplanauskunft.Exceptions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Fahrplanauskunft.Exceptions;
 using Fahrplanauskunft.Funktionen;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Fahrplanauskunft.Test.Funktionen
 {
@@ -18,7 +18,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Liefert Testdaten, für den Test
         /// </summary>
         /// <returns></returns>
-        private List<Haltestelle> Lade_Test_Haltestellen()
+        public List<Haltestelle> Lade_Test_Haltestellen()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
 
@@ -32,7 +32,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Liefert Testdaten an Linien für die Tests
         /// </summary>
         /// <returns></returns>
-        private List<Linie> Lade_Test_Linien()
+        public List<Linie> Lade_Test_Linien()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
 
@@ -46,7 +46,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Liefert Testdaten an Streckenabschnitten für die Tests
         /// </summary>
         /// <returns></returns>
-        private List<Streckenabschnitt> Lade_Test_Streckenabschnitte()
+        public List<Streckenabschnitt> Lade_Test_Streckenabschnitte()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
 
@@ -303,7 +303,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
 
-            Haltestelle aktuelleHaltestelle = haltestellen.Where(x => x.Name == "H1").First();
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H1");
 
             List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(
                 aktuelleHaltestelle,
@@ -333,7 +333,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
 
-            Haltestelle aktuelleHaltestelle = haltestellen.Where(x => x.Name == "H2").First();
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H2");
             List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(
                 aktuelleHaltestelle,
                 new List<Umstiegspunkt>(),
@@ -358,7 +358,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
 
-            Haltestelle aktuelleHaltestelle = haltestellen.Where(x => x.Name == "H2").First();
+            Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H2");
 
             List<Umstiegspunkt> bereitsgewesenenUmstiegspunkte = new List<Umstiegspunkt>
             {

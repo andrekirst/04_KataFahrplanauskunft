@@ -1,9 +1,7 @@
-﻿using Fahrplanauskunft.Funktionen;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.Objekte
 {
@@ -16,7 +14,8 @@ namespace Fahrplanauskunft.Objekte
         /// Konstruktor für die Angabe der Haltstelle
         /// </summary>
         /// <param name="haltestelle">Haltestelle</param>
-        public TreeItem(Haltestelle haltestelle) : this()
+        public TreeItem(Haltestelle haltestelle)
+            : this()
         {
             this.Haltestelle = haltestelle;
         }

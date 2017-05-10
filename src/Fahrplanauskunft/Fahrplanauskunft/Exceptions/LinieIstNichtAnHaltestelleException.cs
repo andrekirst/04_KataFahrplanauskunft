@@ -21,7 +21,8 @@ namespace Fahrplanauskunft.Exceptions
         /// Exception mit der Angabe einer Nachricht
         /// </summary>
         /// <param name="message">Die Nachricht, die der Exception übergben wird</param>
-        public LinieIstNichtAnHaltestelleException(string message) : base(message)
+        public LinieIstNichtAnHaltestelleException(string message)
+            : base(message)
         {
         }
 

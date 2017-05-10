@@ -1,6 +1,6 @@
-﻿using Fahrplanauskunft.Funktionen;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.Objekte
 {

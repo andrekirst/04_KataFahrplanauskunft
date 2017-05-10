@@ -1,10 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Fahrplanauskunft.Objekte
 {
@@ -97,7 +94,7 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Methode für das Laden von Linien aus dem Ordner
         /// </summary>
-        public void LadeLinien()
+        internal void LadeLinien()
         {
             string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\linien.json");
 
@@ -112,7 +109,7 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Methode für das Laden von Haltestellen
         /// </summary>
-        public void LadeHaltestellen()
+        internal void LadeHaltestellen()
         {
             string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellen.json");
 

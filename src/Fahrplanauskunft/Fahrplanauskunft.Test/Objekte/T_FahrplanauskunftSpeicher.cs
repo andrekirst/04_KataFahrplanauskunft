@@ -1,6 +1,6 @@
-﻿using Fahrplanauskunft.Objekte;
+﻿using System.Collections.Generic;
+using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 
 namespace Fahrplanauskunft.Test.Objekte
 {

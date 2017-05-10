@@ -3,6 +3,7 @@
     // Format für bestimmte Dateien
     "files.associations": {
         "*.StyleCop": "xml",
-        "StyleCop.Cache": "xml"
+        "StyleCop.Cache": "xml",
+        "*.ruleset": "xml"
     }
 }
