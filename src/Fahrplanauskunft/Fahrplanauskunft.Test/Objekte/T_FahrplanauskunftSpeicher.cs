@@ -3,6 +3,7 @@
 // </copyright>
 
 using System.Collections.Generic;
+using System.IO;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
