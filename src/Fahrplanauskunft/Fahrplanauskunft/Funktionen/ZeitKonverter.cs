@@ -22,8 +22,8 @@ namespace Fahrplanauskunft.Funktionen
         /// <returns>Formatierte Zeit</returns>
         internal static string ZuUhrzeitText(int minuten)
         {
-             return DateTime.MinValue.AddMinutes(minuten).ToString("hh:mm");
-       }
+            return DateTime.MinValue.AddMinutes(minuten).ToString("hh:mm");
+        }
 
         /// <summary>
         /// Konvertiert das Format "hh:mm" in ganzahlige Minuten

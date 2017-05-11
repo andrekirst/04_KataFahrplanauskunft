@@ -62,6 +62,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Exceptions\T_LinieIstNichtAnHaltestelleException.cs" />
     <Compile Include="Funktionen\T_EqualsOperatorHelper.cs" />
     <Compile Include="Funktionen\T_EqualsHelper.cs" />
     <Compile Include="Funktionen\T_Logik.cs" />

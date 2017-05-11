@@ -113,7 +113,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             // Root
             TreeItem ti_root_Haltestelle = new TreeItem(new Haltestelle() { Name = "H1" });
-            
+
             // 1. Ebene --> Root
             ti_root_Haltestelle.Childs.Add(ti_1_h2_l);
             ti_root_Haltestelle.Childs.Add(ti_1_h4_r);
@@ -236,6 +236,21 @@ namespace Fahrplanauskunft.Test.Objekte
             TreeItem treeItem2 = new TreeItem(new Haltestelle("H2"));
 
             Assert.IsTrue(treeItem1 != treeItem2);
+        }
+
+        /// <summary>
+        /// Testet den HashCode vom TreeItem
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void TreeItem_GetHashCode()
+        {
+            TreeItem treeItem = new TreeItem(new Haltestelle("H1"));
+
+            int expected = "H1".GetHashCode();
+
+            int actual = treeItem.GetHashCode();
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

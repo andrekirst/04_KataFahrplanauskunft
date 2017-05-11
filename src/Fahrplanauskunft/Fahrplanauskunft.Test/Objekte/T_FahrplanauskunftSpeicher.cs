@@ -420,5 +420,141 @@ namespace Fahrplanauskunft.Test.Objekte
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Testet die Methode Laden mit der Überprüfung von Haltestellen
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_Laden_Haltestellen_Anzahl_16()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            List<Haltestelle> haltestellen = fahrplanauskunftSpeicher.Haltestellen;
+
+            int expected = 16;
+            int actual = haltestellen.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testet die Methode Laden mit der Überprüfung von Linien
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_Laden_Linien_Anzahl_8()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            List<Linie> linien = fahrplanauskunftSpeicher.Linien;
+
+            int expected = 8;
+            int actual = linien.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testet die Methode Laden mit der Überprüfung von Streckenabschnitten
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_Laden_Streckenabschnitte_Anzahl_16()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            List<Streckenabschnitt> streckenabschnitte = fahrplanauskunftSpeicher.Streckenabschnitte;
+
+            int expected = 16;
+            int actual = streckenabschnitte.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testet die Methode Laden mit der Überprüfung von Haltestellenfahrplaneinträgen
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void FahrplanauskunftSpeicher_Laden_Haltestellenfahrplaneintraege_Anzahl_16()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.Laden();
+
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = fahrplanauskunftSpeicher.Haltestellenfahrplaneintraege;
+
+            int expected = 768;
+            int actual = haltestellenfahrplaneintraege.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeStreckenabschnitte und der Pfad ungültig ist
+        /// </summary>
+        [TestMethod, TestCategory("Objekte"), ExpectedException(typeof(FileNotFoundException))]
+        public void FahrplanauskunftSpeicher_LadeStreckenabschnitte_Datei_nicht_gefunden()
+        {
+            string ordnerPfad = "TestDaten\\UngueltigerOrdner";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeStreckenabschnitte();
+            // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
+
+            Assert.Fail();
+        }
+
+        /// <summary>
+        /// Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeHaltestellen und der Pfad ungültig ist
+        /// </summary>
+        [TestMethod, TestCategory("Objekte"), ExpectedException(typeof(FileNotFoundException))]
+        public void FahrplanauskunftSpeicher_LadeHaltestellen_Datei_nicht_gefunden()
+        {
+            string ordnerPfad = "TestDaten\\UngueltigerOrdner";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellen();
+            // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
+
+            Assert.Fail();
+        }
+
+        /// <summary>
+        /// Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeLinien und der Pfad ungültig ist
+        /// </summary>
+        [TestMethod, TestCategory("Objekte"), ExpectedException(typeof(FileNotFoundException))]
+        public void FahrplanauskunftSpeicher_LadeLinien_Datei_nicht_gefunden()
+        {
+            string ordnerPfad = "TestDaten\\UngueltigerOrdner";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeLinien();
+            // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
+
+            Assert.Fail();
+        }
+
+        /// <summary>
+        /// Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeHaltestellenfahrplaneintraege und der Pfad ungültig ist
+        /// </summary>
+        [TestMethod, TestCategory("Objekte"), ExpectedException(typeof(FileNotFoundException))]
+        public void FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_Datei_nicht_gefunden()
+        {
+            string ordnerPfad = "TestDaten\\UngueltigerOrdner";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
+            // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
+
+            Assert.Fail();
+        }
     }
 }

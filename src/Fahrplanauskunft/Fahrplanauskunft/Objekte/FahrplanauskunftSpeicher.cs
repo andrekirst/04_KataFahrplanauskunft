@@ -10,17 +10,10 @@ using Newtonsoft.Json;
 namespace Fahrplanauskunft.Objekte
 {
     /// <summary>
-    /// Das Objekt FahrzeugSpeicher dient dazu, die Dateien für Haltestellen, Linien, Haltestellenfahrplaneinträge und Streckenabschnitte aus einem angegeben Ordner zu laden.
+    /// Der FahrplanauskunftSpeicher ist der zentrale Speicher für die Haltestellen, Linien, etc.
     /// </summary>
     public class FahrplanauskunftSpeicher
     {
-        /// <summary>
-        /// Standardkonstruktor
-        /// </summary>
-        public FahrplanauskunftSpeicher()
-        {
-        }
-
         /// <summary>
         /// Konstruktor mit dem Ordner-Pfad, in dem sich die Fahrplanauskunfts-Dateien befinden
         /// </summary>
@@ -78,6 +71,8 @@ namespace Fahrplanauskunft.Objekte
         {
             LadeHaltestellen();
             LadeLinien();
+            LadeStreckenabschnitte();
+            LadeHaltestellenfahrplaneintraege();
         }
 
         /// <summary>

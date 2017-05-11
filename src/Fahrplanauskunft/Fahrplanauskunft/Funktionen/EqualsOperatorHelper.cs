@@ -30,7 +30,7 @@ namespace Fahrplanauskunft.Funktionen
                 return true;
             }
 
-            if (((object)a == null) || ((object)b == null))
+            if(((object)a == null) || ((object)b == null))
             {
                 return false;
             }
