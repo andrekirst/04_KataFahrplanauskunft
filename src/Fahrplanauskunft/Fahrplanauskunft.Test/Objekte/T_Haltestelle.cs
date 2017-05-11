@@ -1,4 +1,8 @@
-﻿using System.Linq;
+﻿// <copyright file="T_Haltestelle.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System.Linq;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

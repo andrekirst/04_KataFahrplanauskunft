@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="Logik.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 using System.Linq;
 using Fahrplanauskunft.Exceptions;
 using Fahrplanauskunft.Objekte;

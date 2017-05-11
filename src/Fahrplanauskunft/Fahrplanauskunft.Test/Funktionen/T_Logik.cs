@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="T_Logik.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Fahrplanauskunft.Exceptions;
@@ -46,7 +50,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Liefert Testdaten an Streckenabschnitten für die Tests
         /// </summary>
         /// <returns></returns>
-        public List<Streckenabschnitt> Lade_Test_Streckenabschnitte()
+        public static List<Streckenabschnitt> Lade_Test_Streckenabschnitte()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
 
@@ -562,7 +566,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             #endregion
 
             #region Das Ergebnis auswerten
-            List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+            Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
                     linie: linien.First(l => l.Ident == "B11"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H1"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),
@@ -591,7 +595,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             #endregion
 
             #region Das Ergebnis auswerten
-            List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
+            Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
                     linie: linien.First(l => l.Ident == "B41"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H1"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),

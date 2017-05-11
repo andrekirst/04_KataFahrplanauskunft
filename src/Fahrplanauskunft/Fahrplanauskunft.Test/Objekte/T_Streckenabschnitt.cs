@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="T_Streckenabschnitt.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 using System.Linq;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

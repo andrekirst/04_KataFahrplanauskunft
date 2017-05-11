@@ -1,4 +1,8 @@
-﻿using Fahrplanauskunft.Objekte;
+﻿// <copyright file="T_Verbindungsanfrage.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Objekte

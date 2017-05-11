@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="T_ZeitKonverter.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Funktionen

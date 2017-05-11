@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="LinieIstNichtAnHaltestelleException.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System;
 using System.Runtime.Serialization;
 using Fahrplanauskunft.Objekte;
 
