@@ -59,7 +59,9 @@ build_script:
 
         $coveralls = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\coveralls.net.*\tools\csmacnz.Coveralls.exe").ToString()
 
-        & $coveralls --opencover -i ./opencovertests.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --pullRequest $env:APPVEYOR_PULL_REQUEST_NUMBER --serviceName appveyor
+        if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { & $coveralls --opencover -i ./opencovertests.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --pullRequest $env:APPVEYOR_PULL_REQUEST_NUMBER --serviceName appveyor }
+        
+        if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & $coveralls --opencover -i ./opencovertests.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --serviceName appveyor }
     - ps: MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$($env:SONARQUBE_TOKEN)"
 
 notifications:
