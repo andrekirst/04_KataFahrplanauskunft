@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Objekte
 {
+    /// <summary>
+    /// eine Verbidungsanfrage ist eine Anfrage an das System mit der Start- und Ziel-Haltestelle, so wie der gewünschten Abfahrtszeit
+    /// </summary>
     public class Verbindungsanfrage
     {
-        /// <summary>
-        /// Standardkonstruktor
-        /// </summary>
-        public Verbindungsanfrage()
-        {
-
-        }
-
         /// <summary>
         /// Konstruktor mit Start- und Ziel-Haltestelle, sowie der gewünschten Abfahrtszeit
         /// </summary>

@@ -32,5 +32,6 @@ Detaillierte Beschreibung
 * [ ] Entwicklungsarbeit
 * [ ] Pull Request erstellt
 * [ ] Dem Issue das Label `pr erstellt` vergeben
-* [ ] Pull Request-Ersteller behebt in der Entwicklung entstandene SonarQube-Einträge *([https://sonarqube.com/dashboard/index/04_KataFahrplanauskunft](https://sonarqube.com/dashboard/index/04_KataFahrplanauskunft))*
-* [ ] Pull Request-Ersteller behebt die vom Code Reviewer bemängelten Stellen bzw. bespricht diese
+* [ ] Der Pull Request-Ersteller behebt in der Entwicklung entstandene SonarQube-Einträge (Bugs, Vulnerabilities, Code Smells, Coverage, Duplications) *([https://sonarqube.com/dashboard/index/04_KataFahrplanauskunft](https://sonarqube.com/dashboard/index/04_KataFahrplanauskunft))*
+* [ ] Der Pull Request-Ersteller behebt in der Entwicklung entstandene Coveralls.io-Einträge (Code Coverage) *([https://coveralls.io/github/andrekirst/04_KataFahrplanauskunft](https://coveralls.io/github/andrekirst/04_KataFahrplanauskunft))*
+* [ ] Der Pull Request-Ersteller behebt die vom Code Reviewer bemängelten Stellen bzw. bespricht diese

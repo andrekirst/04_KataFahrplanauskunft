@@ -71,3 +71,51 @@ Test, dass Haltestellenfahrplaneintraege geladen werden und 10 Haltestellenfahrp
 #### Beschreibung
 
 Test, dass Haltestellenfahrplaneintraege geladen werden und 10 Haltestellenfahrplaneintraege mit 2 verschiedenen Haltestellen und 2 verschiedenen Linien als Quelle und im Ziel vorhanden sind
+
+### FahrplanauskunftSpeicher_Laden_Haltestellen_Anzahl_16
+
+#### Beschreibung
+
+Testet die Methode Laden mit der Überprüfung von Haltestellen
+
+### FahrplanauskunftSpeicher_Laden_Linien_Anzahl_8
+
+#### Beschreibung
+
+Testet die Methode Laden mit der Überprüfung von Linien
+
+### FahrplanauskunftSpeicher_Laden_Streckenabschnitte_Anzahl_16
+
+#### Beschreibung
+
+Testet die Methode Laden mit der Überprüfung von Streckenabschnitten
+
+### FahrplanauskunftSpeicher_Laden_Haltestellenfahrplaneintraege_Anzahl_16
+
+#### Beschreibung
+
+Testet die Methode Laden mit der Überprüfung von Haltestellenfahrplaneinträgen
+
+### FahrplanauskunftSpeicher_LadeStreckenabschnitte_Datei_nicht_gefunden
+
+#### Beschreibung
+
+Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeStreckenabschnitte und der Pfad ungültig ist
+
+### FahrplanauskunftSpeicher_LadeHaltestellen_Datei_nicht_gefunden
+
+#### Beschreibung
+
+Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeHaltestellen und der Pfad ungültig ist
+
+### FahrplanauskunftSpeicher_LadeLinien_Datei_nicht_gefunden
+
+#### Beschreibung
+
+Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeLinien und der Pfad ungültig ist
+
+### FahrplanauskunftSpeicher_LadeHaltestellenfahrplaneintraege_Datei_nicht_gefunden
+
+#### Beschreibung
+
+Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeHaltestellenfahrplaneintraege und der Pfad ungültig ist

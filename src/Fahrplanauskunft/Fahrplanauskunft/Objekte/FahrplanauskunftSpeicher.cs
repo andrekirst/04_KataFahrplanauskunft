@@ -8,15 +8,11 @@ using System.Threading.Tasks;
 
 namespace Fahrplanauskunft.Objekte
 {
+    /// <summary>
+    /// Der FahrplanauskunftSpeicher ist der zentrale Speicher für die Haltestellen, Linien, etc.
+    /// </summary>
     public class FahrplanauskunftSpeicher
     {
-        /// <summary>
-        /// Standardkonstruktor
-        /// </summary>
-        public FahrplanauskunftSpeicher()
-        {
-        }
-
         /// <summary>
         /// Konstruktor mit dem Ordner-Pfad, in dem sich die Fahrplanauskunfts-Dateien befinden
         /// </summary>
@@ -26,10 +22,15 @@ namespace Fahrplanauskunft.Objekte
             OrdnerPfad = ordnerPfad;
         }
 
+        /// <summary>
+        /// Lädt Haltestellen, Linien, Streckenabschnitte und Haltestellenfahrplaneinträge
+        /// </summary>
         public void Laden()
         {
             LadeHaltestellen();
             LadeLinien();
+            LadeStreckenabschnitte();
+            LadeHaltestellenfahrplaneintraege();
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Fahrplanauskunft.Objekte
         {
             string file = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellenfahrplaneintraege.json");
 
-            if (!File.Exists(file))
+            if(!File.Exists(file))
             {
                 throw new FileNotFoundException("Haltestellenfahrplaneinträge-Datei nicht gefunden", "haltestellenfahrplaneintraege.json");
             }
