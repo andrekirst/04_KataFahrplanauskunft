@@ -97,6 +97,8 @@ deploy:
       secure: ZJXcNUgzLbJCnju6m/s11k+apkDJN2UJkzyMyW7WrEQ=
     folder: fahrplanauskunft
     artifact: fahrplanauskunft
+    on:
+      is_not_pr: true
     
     # GitHub - Releae candidat
   - provider: GitHub
