@@ -65,8 +65,8 @@ build_script:
     - ps: MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$($env:SONARQUBE_TOKEN)"
 
 after_build:
-  - ps: rm "$env:clone_folder\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
-  - ps: 7z a fahrplanauskunft.zip "$($env:clone_folder)\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*"
+  - ps: rm "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
+  - ps: 7z a fahrplanauskunft.zip "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*"
 
 artifacts:
   - path: fahrplanauskunft.zip
