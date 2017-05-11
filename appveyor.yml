@@ -75,7 +75,7 @@ after_build:
   - ps: 7z a $env:deploymentfilename "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*"
 
 artifacts:
-  - path: $env:deploymentfilename
+  - path: $(deploymentfilename)
     name: fahrplanauskunft
 
 notifications:
