@@ -66,7 +66,7 @@ build_script:
 
 after_build:
   - ps: rm "$($env:clone_folder)\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
-  - ps: & 7z a fahrplanauskunft.zip "$($env:clone_folder)\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*"
+  - ps: 7z a fahrplanauskunft.zip "$($env:clone_folder)\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*"
 
 artifacts:
   - path: fahrplanauskunft.zip
