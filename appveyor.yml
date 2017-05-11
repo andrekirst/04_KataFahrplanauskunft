@@ -64,8 +64,54 @@ build_script:
         if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & $coveralls --opencover -i ./opencovertests.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --serviceName appveyor }
     - ps: MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$($env:SONARQUBE_TOKEN)"
 
+after_build:
+  - ps: rm "$($env:clone_folder)\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
+  - ps: & 7z a fahrplanauskunft.zip "$($env:clone_folder)\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*"
+
+artifacts:
+  - path: fahrplanauskunft.zip
+    name: fahrplanauskunft
+
 notifications:
   - provider: Slack
     auth_token:
       secure: f2CF/z+WaNuT3IOqnTYhJ0LoGAH4ZNKMvo0tLFJU/iuhwP+61rva1f0urpVtATIcVGztyG2lnBYgYpP/YIrs4/UtgfWildJHI+xmlss7lxs=
     channel: builds
+
+# Deploy-Abschnitt
+deploy:
+    # Deploy on FTP-Server
+  - provider: FTP
+    protocol: sftp
+    host:
+      secure: tp5c67GDLzz96J7IHgjz+O0SXuvihCuXNsOalPgVYJfVXJmRgFLUoqaFOhMv4UHZ
+    username:
+      secure: eEnUiKLHsX2sdYjILhZpWw==
+    password:
+      secure: ZJXcNUgzLbJCnju6m/s11k+apkDJN2UJkzyMyW7WrEQ=
+    folder: fahrplanauskunft
+    artifact: fahrplanauskunft
+    
+    # GitHub - Releae candidat
+  - provider: GitHub
+    draft: false
+    prerelease: true
+    auth_token:
+      secure: hnDjfSoPrEx64I/3s56hGoVwH/vOuZg/WHW+aKzWtkRCyw8pFrz3NzhAyWR12AEq
+    tag: $(appveyor_build_version)-rc
+    release: $(appveyor_build_version)-rc
+    artifact: fahrplanauskunft
+    on:
+      branch: release/*
+
+  # GitHub - Production release
+  - provider: GitHub
+    draft: false
+    prerelease: false
+    auth_token:
+      secure: hnDjfSoPrEx64I/3s56hGoVwH/vOuZg/WHW+aKzWtkRCyw8pFrz3NzhAyWR12AEq
+    tag: $(appveyor_build_version)
+    release: $(appveyor_build_version)
+    artifact: fahrplanauskunft
+    on:
+      branch: master
