@@ -69,6 +69,7 @@ after_build:
   - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-dev.zip" }
   - ps: if ($env:APPVEYOR_REPO_BRANCH -like "release*") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-rc.zip" }
   - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "master") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version).zip" }
+  - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-dev-pr$env:APPVEYOR_PULL_REQUEST_NUMBER.zip" }
   - ps: rm "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
   - ps: 7z a $env:deploymentfilename "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*"
 
