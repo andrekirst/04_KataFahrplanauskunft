@@ -21,7 +21,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <summary>
         /// Liefert Testdaten, für den Test
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Liste von Haltestellen</returns>
         public List<Haltestelle> Lade_Test_Haltestellen()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
@@ -35,7 +35,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <summary>
         /// Liefert Testdaten an Linien für die Tests
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Gibt die Test-Linien zurück</returns>
         public List<Linie> Lade_Test_Linien()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
@@ -49,7 +49,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <summary>
         /// Liefert Testdaten an Streckenabschnitten für die Tests
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Gibt die Test-Streckenabschnitte zurück</returns>
         public static List<Streckenabschnitt> Lade_Test_Streckenabschnitte()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
@@ -111,7 +111,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                     Name = "B2"
                 },
                 haltestellen).Select(x => x.Name).ToList();
-            
+
             // Sortierung wird ignoriert
             CollectionAssert.AreEquivalent(expected, actual);
         }
@@ -572,7 +572,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),
                     haltenstellen: haltenstellen,
                     streckenabschnitte: streckenabschnitte);
-            
+
             // Hier wird eine Exception geworfen, die vom UnitTest als erwartet ausgewertet wird
             #endregion
         }
@@ -601,7 +601,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),
                     haltenstellen: haltenstellen,
                     streckenabschnitte: streckenabschnitte);
-            
+
             // Hier wird eine Exception geworfen, die vom UnitTest als erwartet ausgewertet wird
             #endregion
         }
@@ -1150,7 +1150,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             Streckenabschnitt gefundenerStreckenabschnitt = streckenabschnitte.First(sab => sab.StartHaltestelle == haltestellen.First(h => h.Name == "H1") && sab.ZielHaltestelle == haltestellen.First(h2 => h2.Name == "H2"));
 
-            Haltestelle gefundeneHaltestelle = haltestellen.First(h => h.Name == "H2"); 
+            Haltestelle gefundeneHaltestelle = haltestellen.First(h => h.Name == "H2");
             #endregion
 
             Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte(haltestellenDerLinie, streckenabschnitteDerLinie, sortierteListe, gefundenerStreckenabschnitt, gefundeneHaltestelle);

@@ -67,6 +67,9 @@ namespace Fahrplanauskunft.Objekte
             set;
         }
 
+        /// <summary>
+        /// Läde alle Objekte in den FahrplanauskunftSpeicher
+        /// </summary>
         public void Laden()
         {
             LadeHaltestellen();

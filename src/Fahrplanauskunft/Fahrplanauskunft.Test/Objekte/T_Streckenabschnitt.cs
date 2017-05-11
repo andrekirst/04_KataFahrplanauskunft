@@ -34,7 +34,7 @@ namespace Fahrplanauskunft.Test.Objekte
             Assert.AreEqual(1, streckenabschnitt.Dauer);
             Assert.AreEqual("StartHaltestelle", streckenabschnitt.StartHaltestelle.Name);
             Assert.AreEqual("ZielHaltestelle", streckenabschnitt.ZielHaltestelle.Name);
-            Assert.AreEqual(1, streckenabschnitt.Linien.Count());
+            Assert.AreEqual(1, streckenabschnitt.Linien.Count);
         }
 
         /// <summary>

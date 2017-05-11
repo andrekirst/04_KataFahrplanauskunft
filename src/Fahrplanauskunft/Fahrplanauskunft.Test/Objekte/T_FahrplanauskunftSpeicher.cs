@@ -508,6 +508,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeStreckenabschnitte();
+
             // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
 
             Assert.Fail();
@@ -523,6 +524,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeHaltestellen();
+
             // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
 
             Assert.Fail();
@@ -538,6 +540,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeLinien();
+
             // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
 
             Assert.Fail();
@@ -553,6 +556,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
+
             // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
 
             Assert.Fail();

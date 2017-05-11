@@ -34,7 +34,7 @@ namespace Fahrplanauskunft.Funktionen
         {
             // anhand der Liste von Haltestellen, alle Haltestelle meiner Linie
             List<Haltestelle> haltestellenDerLinie = Liefere_Haltestellen_einer_Linie(linie, haltestellen);
-            
+
             // davon alle Haltestellen mit Umsteigepunkt (also mit mindestens 2 Linien)
             List<Umstiegspunkt> haltestellenMitUmstiegspunkt = haltestellenDerLinie
                 .Where(x => x.Linien.GroupBy(l => l.Name).Count() > 1)
@@ -44,7 +44,7 @@ namespace Fahrplanauskunft.Funktionen
         }
 
         /// <summary>
-        /// Ermittelt die Haltestellen für eine Linie 
+        /// Ermittelt die Haltestellen für eine Linie
         /// </summary>
         /// <param name="linie">Für dies Linie</param>
         /// <param name="haltestellen">Liste von Haltestellen</param>
@@ -91,10 +91,10 @@ namespace Fahrplanauskunft.Funktionen
         /// <param name="zielHaltestelle">Die Ziel-Haltestelle, bei der die Sortierung enden soll</param>
         /// <param name="haltenstellen">Das gesamte Haltestellennetz</param>
         /// <param name="streckenabschnitte">Alle verfügbaren Streckenabschnitte</param>
-        /// <returns></returns>
+        /// <returns>Gibt die sortierte Liste von Haltestellen für eine Linie zurück.</returns>
         internal static List<Haltestelle> Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Haltestelle> haltenstellen, List<Streckenabschnitt> streckenabschnitte)
         {
-            // 1. Überprüfung, ob die Start-Haltestelle zur Linie gehört 
+            // 1. Überprüfung, ob die Start-Haltestelle zur Linie gehört
             Ueberpruefe_Ist_Linie_An_Haltestelle(linie, startHaltestelle);
 
             // 2. Überprüfung, ob die Ziel-Haltestelle zur Linie gehört
@@ -111,7 +111,7 @@ namespace Fahrplanauskunft.Funktionen
 
             // Ein Dictionary für die sortierten Listen von Haltestellen (Routen)
             Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Haltestelle>>();
-            
+
             // Das Dictionary wird mit der Anzahl gefundenener Streckenabschnitte erstellt
             Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle(startHaltestelle, gefundeneStreckenabschnitte, sortierteListeTempAlsDictionary);
 
@@ -205,7 +205,7 @@ namespace Fahrplanauskunft.Funktionen
         /// <param name="linie">Die Linie</param>
         /// <param name="haltestelle">Die Haltestelle</param>
         /// <param name="streckenabschnitte">Die Streckenabschnitte</param>
-        /// <returns></returns>
+        /// <returns>Liste von Streckenabschnitten</returns>
         internal static List<Streckenabschnitt> Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(Linie linie, Haltestelle haltestelle, List<Streckenabschnitt> streckenabschnitte)
         {
             return streckenabschnitte.Where(s =>
@@ -218,7 +218,7 @@ namespace Fahrplanauskunft.Funktionen
         /// </summary>
         /// <param name="linie">Die Linie</param>
         /// <param name="streckenabschnitte">Die Streckenabschnitte</param>
-        /// <returns></returns>
+        /// <returns>Liste von Streckenabschnitten</returns>
         internal static List<Streckenabschnitt> Liefere_Streckenabschnitte_einer_Linie(Linie linie, List<Streckenabschnitt> streckenabschnitte)
         {
             return streckenabschnitte.Where(s => s.Linien.Contains(linie)).ToList();
@@ -229,20 +229,20 @@ namespace Fahrplanauskunft.Funktionen
         /// </summary>
         /// <param name="linie">Die Linie</param>
         /// <param name="haltestelle">Die Haltestelle</param>
-        /// <returns></returns>
+        /// <returns>Gibt true zuürck, wenn die Lnie an der Haltestelle ist, andernfalls false.</returns>
         internal static bool Ist_Linie_An_Haltestelle(Linie linie, Haltestelle haltestelle)
         {
             return haltestelle.Linien.Contains(linie);
         }
 
         /// <summary>
-        /// Liefert eine Hierarchie mit möglichen Umstiegspunkten von einer Haltestelle 
+        /// Liefert eine Hierarchie mit möglichen Umstiegspunkten von einer Haltestelle
         /// </summary>
         /// <param name="aktuelleHaltestelle">Aktuelle Haltestelle, Wurzel der Hierarchie</param>
         /// <param name="bereitsGeweseneUmstiegspunkte">Die Liste von Umstiegspunkten, an denen man bereits gewesen ist</param>
         /// <param name="haltestellen">Liste von Haltestellen</param>
         /// <param name="max_tiefe">Maximale Tiefe bei der Rekursion = maximale Anzahl deer möglichen Umstiegspunkte</param>
-        /// <returns></returns>
+        /// <returns>Gibt ein TreeItem zurück</returns>
         internal static TreeItem Liefere_Hierarchie_Route_von_Haltestelle(Haltestelle aktuelleHaltestelle, List<Umstiegspunkt> bereitsGeweseneUmstiegspunkte, List<Haltestelle> haltestellen, int max_tiefe)
         {
             // 1. aktuelle Haltestelle ist mein Root

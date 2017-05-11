@@ -24,7 +24,7 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle haltestelle = new Haltestelle(name);
 
             Assert.AreEqual("Test", haltestelle.Name);
-            Assert.AreEqual(0, haltestelle.Linien.Count());
+            Assert.AreEqual(0, haltestelle.Linien.Count);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Fahrplanauskunft.Test.Objekte
             haltestelle.Linien.Add(linie);
 
             Assert.AreEqual("Test", haltestelle.Name);
-            Assert.AreEqual(1, haltestelle.Linien.Count());
+            Assert.AreEqual(1, haltestelle.Linien.Count);
             Assert.AreEqual("U1", haltestelle.Linien[0].Name);
             Assert.AreEqual("U1_NORD", haltestelle.Linien[0].Ident);
         }

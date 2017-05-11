@@ -3,9 +3,9 @@
 // </copyright>
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 using Fahrplanauskunft.Objekte;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Fahrplanauskunft.Exceptions
 {
@@ -18,8 +18,8 @@ namespace Fahrplanauskunft.Exceptions
         /// <summary>
         /// Konstruktor mit der Linie und Haltestelle
         /// </summary>
-        /// <param name="linie"></param>
-        /// <param name="haltestelle"></param>
+        /// <param name="linie">Die Linie</param>
+        /// <param name="haltestelle">Die Haltestelle</param>
         public LinieIstNichtAnHaltestelleException(Linie linie, Haltestelle haltestelle)
         {
             Linie = linie;
@@ -29,29 +29,32 @@ namespace Fahrplanauskunft.Exceptions
         /// <summary>
         /// Konstruktor für LinieIstNichtAnHaltestelleException mit SerializationInfo und StreamingContext. (Ausschluss von CodeCoverage, da base aufgerufen wird)
         /// </summary>
-        /// <param name="info"></param>
-        /// <param name="context"></param>
+        /// <param name="info">Die SerializationInfo, die die serialisierten Objektdaten für die ausgelöste Exception enthält.</param>
+        /// <param name="context">Der StreamingContext, der die Kontextinformationen über die Quelle oder das Ziel enthält.</param>
         [ExcludeFromCodeCoverageAttribute]
-        public LinieIstNichtAnHaltestelleException(SerializationInfo info, StreamingContext context) : base(info, context)
+        public LinieIstNichtAnHaltestelleException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
         {
         }
 
         /// <summary>
         /// Konstruktor für LinieIstNichtAnHaltestelleException mit einer message und Exception. (Ausschluss von CodeCoverage, da base aufgerufen wird)
         /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
+        /// <param name="message">Die Fehlermeldung, in der die Ursache der Exception erklärt wird</param>
+        /// <param name="innerException">Die Ausnahme, die die aktuelle Ausnahme verursacht hat, oder null</param>
         [ExcludeFromCodeCoverageAttribute]
-        public LinieIstNichtAnHaltestelleException(string message, Exception innerException) : base(message, innerException)
+        public LinieIstNichtAnHaltestelleException(string message, Exception innerException)
+            : base(message, innerException)
         {
         }
 
         /// <summary>
         /// Konstruktor für LinieIstNichtAnHaltestelleException mit einer message. (Ausschluss von CodeCoverage, da base aufgerufen wird)
         /// </summary>
-        /// <param name="message"></param>
+        /// <param name="message">Die Fehlermeldung, in der die Ursache der Exception erklärt wird</param>
         [ExcludeFromCodeCoverageAttribute]
-        public LinieIstNichtAnHaltestelleException(string message) : base(message)
+        public LinieIstNichtAnHaltestelleException(string message)
+            : base(message)
         {
         }
 
