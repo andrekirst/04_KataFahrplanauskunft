@@ -123,3 +123,16 @@ deploy:
     artifact: fahrplanauskunft
     on:
       branch: master
+
+    # BinTray - Production release
+  - provider: BinTray
+    username: andrekirst
+    subject: andrekirst
+    repo: fahrplanauskunft
+    api_key:
+      secure: ITVW09mNALvMUWScQao1Ermu2Ls5ut8Bfc6SROJkoUdEUxErBHpY0pk++4llAWgh
+    package: fahrplanauskunft
+    version: $(appveyor_build_version)
+    publish: true
+    override: true
+    explode: false
