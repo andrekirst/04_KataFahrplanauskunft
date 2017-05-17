@@ -34,7 +34,7 @@ namespace Fahrplanauskunft.Test.Objekte
         public void Linie_Equals_Name_Test_Ident_TEST()
         {
             Linie actual = new Linie(name: "Test", ident: "TEST");
-            
+
             Linie expected = new Linie(name: "Test", ident: "TEST");
 
             Assert.AreEqual(expected, actual);

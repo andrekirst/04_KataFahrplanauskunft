@@ -129,7 +129,7 @@ namespace Fahrplanauskunft.Objekte
             unchecked
             {
                 int hash = 17;
-                
+
                 // Suitable nullity checks etc, of course :)
                 hash = (hash * 23) + Dauer.GetHashCode();
                 hash = (hash * 23) + StartHaltestelle.GetHashCode();

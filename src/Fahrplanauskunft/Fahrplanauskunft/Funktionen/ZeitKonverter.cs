@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Fahrplanauskunft.Funktionen
 {
     /// <summary>
-    /// Funktionalität für das Konvertieren einer Uhrzeit als Ganzzahl in Text sowie anders herum 
+    /// Funktionalität für das Konvertieren einer Uhrzeit als Ganzzahl in Text sowie anders herum
     /// </summary>
     public static class ZeitKonverter
     {
