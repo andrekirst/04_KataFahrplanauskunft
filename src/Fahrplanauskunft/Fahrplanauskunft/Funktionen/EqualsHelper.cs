@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="EqualsHelper.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System;
 
 namespace Fahrplanauskunft.Funktionen
 {
@@ -13,7 +17,7 @@ namespace Fahrplanauskunft.Funktionen
         /// <typeparam name="T">Der Type, für wen die Equals-Methode gilt</typeparam>
         /// <param name="obj">Die Objektreferenz, die der Equals-Methode übergeben wird</param>
         /// <param name="custom">Die Funktion, die bool zurückgibt und ein Objekt vom Typ T erwartet</param>
-        /// <returns></returns>
+        /// <returns>Gibt false zurück, wenn der Wert in obj null ist, die Funktion custom null ist oder die Funktion custom false zurückgibt. Andernfalls true.</returns>
         public static bool EqualBase<T>(T obj, Func<bool> custom)
         {
             if(obj == null)
@@ -26,6 +30,7 @@ namespace Fahrplanauskunft.Funktionen
                 Func<bool> func = custom;
                 return func();
             }
+
             return false;
         }
     }
