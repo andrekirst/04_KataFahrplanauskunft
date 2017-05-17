@@ -1,15 +1,14 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Funktionen;
+﻿// <copyright file="T_TreeItem.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using Fahrplanauskunft.Objekte;
-using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
     /// <summary>
-    /// Summary description for T_TreeItem
+    /// Testklasse für TreeItem
     /// </summary>
     [TestClass]
     public class T_TreeItem

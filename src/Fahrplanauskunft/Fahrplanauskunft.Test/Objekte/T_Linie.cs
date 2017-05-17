@@ -1,6 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// <copyright file="T_Linie.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using Fahrplanauskunft.Objekte;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
@@ -31,7 +34,7 @@ namespace Fahrplanauskunft.Test.Objekte
         public void Linie_Equals_Name_Test_Ident_TEST()
         {
             Linie actual = new Linie(name: "Test", ident: "TEST");
-            
+
             Linie expected = new Linie(name: "Test", ident: "TEST");
 
             Assert.AreEqual(expected, actual);

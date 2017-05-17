@@ -1,7 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Objekte;
+﻿// <copyright file="T_FahrplanauskunftSpeicher.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using System.Collections.Generic;
 using System.IO;
+using Fahrplanauskunft.Objekte;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
@@ -23,7 +27,6 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreEqual("TestDaten\\TestSatz1", fahrplanauskunftSpeicher.OrdnerPfad);
         }
-
 
         /// <summary>
         /// Test, dass Haltestellen geladen werden und eine Haltestelle als Quelle und im Ziel vorhanden sind
@@ -505,6 +508,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeStreckenabschnitte();
+
             // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
 
             Assert.Fail();
@@ -520,6 +524,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeHaltestellen();
+
             // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
 
             Assert.Fail();
@@ -535,6 +540,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeLinien();
+
             // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
 
             Assert.Fail();
@@ -550,6 +556,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
+
             // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
 
             Assert.Fail();
