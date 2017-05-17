@@ -19,8 +19,8 @@ namespace Fahrplanauskunft.Funktionen
         /// <returns>Formatierte Zeit</returns>
         internal static string ZuUhrzeitText(int minuten)
         {
-             return DateTime.MinValue.AddMinutes(minuten).ToString("hh:mm");
-       }
+            return DateTime.MinValue.AddMinutes(minuten).ToString("hh:mm");
+        }
 
         /// <summary>
         /// Konvertiert das Format "hh:mm" in ganzahlige Minuten
@@ -29,7 +29,7 @@ namespace Fahrplanauskunft.Funktionen
         /// <returns>ganzzahlige Minuten</returns>
         internal static int ZuUhrzeitZahl(string zeit)
         {
-            string[] zeitWerte =zeit.Split(new Char[] { ':' });
+            string[] zeitWerte = zeit.Split(new Char[] { ':' });
             return Convert.ToInt32(zeitWerte[0]) * 60 + Convert.ToInt32(zeitWerte[1]);
         }
     }

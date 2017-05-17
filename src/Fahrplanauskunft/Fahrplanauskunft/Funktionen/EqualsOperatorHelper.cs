@@ -21,12 +21,12 @@ namespace Fahrplanauskunft.Funktionen
         public static bool EqualsOperatorBase<T>(T a, T b)
             where T : class
         {
-            if (System.Object.ReferenceEquals(a, b))
+            if(System.Object.ReferenceEquals(a, b))
             {
                 return true;
             }
 
-            if (((object)a == null) || ((object)b == null))
+            if(((object)a == null) || ((object)b == null))
             {
                 return false;
             }

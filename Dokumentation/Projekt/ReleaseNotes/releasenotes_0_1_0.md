@@ -19,5 +19,7 @@
 * #69 - Vereinheitlichung von Equals `feature`
 * #55 - Berechnung der Gesamtfahrtdauer von einer Haltestelle zu einer anderen Haltestelle `feature`
 * #70 - Vergleichsoperatoren == und != implementieren `feature`
+* #80 - Bericht für Testabdeckung erstellen und in Build-Prozess implementieren `feature`, `umgebung`
+* #86 - Build-Prozess fehlerhaft, wenn es außerhalb eines Pull request stattfindet `bug`, `umgebung`
 
 ## Bugfixes

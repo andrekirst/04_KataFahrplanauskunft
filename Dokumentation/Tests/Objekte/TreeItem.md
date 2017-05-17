@@ -65,3 +65,9 @@ Test des Ungleichheitsoperators mit zwei gleichen TreeItems
 #### Beschreibung
 
 Test des Ungleichheitsoperators mit zwei ungleichen TreeItems
+
+### TreeItem_GetHashCode
+
+#### Beschreibung
+
+Testet den HashCode vom TreeItem
