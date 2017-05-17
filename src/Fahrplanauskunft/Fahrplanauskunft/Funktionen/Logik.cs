@@ -2,6 +2,7 @@
 using System.Linq;
 using Fahrplanauskunft.Objekte;
 using Fahrplanauskunft.Exceptions;
+using System;
 
 namespace Fahrplanauskunft.Funktionen
 {
@@ -318,6 +319,18 @@ namespace Fahrplanauskunft.Funktionen
             }
 
             return dauer;
+        }
+
+        internal static int ErmittleAbfahrtszeit(Haltestelle haltestelle, Linie linie, List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege, int wunschabfahrtszeit)
+        {
+            HaltestelleFahrplanEintrag hfe = haltestellenfahrplaneintraege.First(
+                h => h.Haltestelle == haltestelle &&
+                h.Linie == linie &&
+                    (
+                        h.Uhrzeit >= wunschabfahrtszeit
+                    )
+                );
+            return hfe.Uhrzeit;
         }
     }
 }

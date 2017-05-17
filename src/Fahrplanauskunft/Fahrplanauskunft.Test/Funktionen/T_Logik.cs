@@ -58,6 +58,20 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
+        /// Liefert Testdaten an Haltestellenfahrplaneinträgen für die Tests
+        /// </summary>
+        /// <returns></returns>
+        private List<HaltestelleFahrplanEintrag> Lade_Test_Haltestellenfahrplaneintraege()
+        {
+            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
+            fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
+
+            return fahrplanauskunftSpeicher.Haltestellenfahrplaneintraege;
+        }
+
+        /// <summary>
         /// Linien B1 hat diese Haltestellen H1,H2, H3, H4 und H5
         /// </summary>
         [TestMethod]
@@ -1173,6 +1187,60 @@ namespace Fahrplanauskunft.Test.Funktionen
             int expected = 12;
             int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
 
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 770 (12:50 Uhr). Sollwert 783 (13:03 Uhr)
+        /// </summary>
+        [TestMethod]
+        public void ErmittleAbfahrtszeit_Haltestelle_H2_Linie_B11_Wunsch_770_Soll_783()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = Lade_Test_Haltestellenfahrplaneintraege();
+
+            Haltestelle haltstelleH1 = haltestellen.First(h => h.Name == "H2");
+            Linie linieB11 = linien.First(l => l.Ident == "B11");
+
+            int actual = Logik.ErmittleAbfahrtszeit(haltestelle: haltstelleH1, linie: linieB11, haltestellenfahrplaneintraege: haltestellenfahrplaneintraege, wunschabfahrtszeit: 770);
+            int expected = 783;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 1433 (23:53 Uhr). Sollwert 3 (00:03 Uhr)
+        /// </summary>
+        [TestMethod]
+        public void ErmittleAbfahrtszeit_Haltestelle_H2_Linie_B11_Wunsch_1433_Soll_3()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = Lade_Test_Haltestellenfahrplaneintraege();
+
+            Haltestelle haltstelleH1 = haltestellen.First(h => h.Name == "H2");
+            Linie linieB11 = linien.First(l => l.Ident == "B11");
+
+            int actual = Logik.ErmittleAbfahrtszeit(haltestelle: haltstelleH1, linie: linieB11, haltestellenfahrplaneintraege: haltestellenfahrplaneintraege, wunschabfahrtszeit: 1433);
+            int expected = 3;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 3 (23:53 Uhr). Sollwert 3 (00:03 Uhr)
+        /// </summary>
+        [TestMethod]
+        public void ErmittleAbfahrtszeit_Haltestelle_H2_Linie_B11_Wunsch_3_Soll_3()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = Lade_Test_Haltestellenfahrplaneintraege();
+
+            Haltestelle haltstelleH1 = haltestellen.First(h => h.Name == "H2");
+            Linie linieB11 = linien.First(l => l.Ident == "B11");
+
+            int actual = Logik.ErmittleAbfahrtszeit(haltestelle: haltstelleH1, linie: linieB11, haltestellenfahrplaneintraege: haltestellenfahrplaneintraege, wunschabfahrtszeit: 3);
+            int expected = 3;
             Assert.AreEqual(expected, actual);
         }
     }
