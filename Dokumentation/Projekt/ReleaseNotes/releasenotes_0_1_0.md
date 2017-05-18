@@ -25,3 +25,5 @@
 * #85 - Deployment konfigurieren `feature`, `umgebung`
 
 ## Bugfixes
+
+* #90 - Fehler beim Upload für SFTP, BinTray falscher Branch und falsche Konfiguration `bug`, `umgebung`
