@@ -97,8 +97,6 @@ deploy:
       secure: ZJXcNUgzLbJCnju6m/s11k+apkDJN2UJkzyMyW7WrEQ=
     folder: fahrplanauskunft
     artifact: fahrplanauskunft
-    on:
-      is_not_pr: true
     
     # GitHub - Releae candidat
   - provider: GitHub
@@ -128,7 +126,7 @@ deploy:
   - provider: BinTray
     username: andrekirst
     subject: andrekirst
-    repo: fahrplanauskunft
+    repo:  fahrplanauskunft
     api_key:
       secure: ITVW09mNALvMUWScQao1Ermu2Ls5ut8Bfc6SROJkoUdEUxErBHpY0pk++4llAWgh
     package: fahrplanauskunft
@@ -136,3 +134,5 @@ deploy:
     publish: true
     override: true
     explode: false
+    on:
+      branch: master
