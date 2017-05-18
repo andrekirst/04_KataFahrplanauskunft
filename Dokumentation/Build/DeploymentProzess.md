@@ -22,7 +22,7 @@
 
 ## Deployment über den Build-Prozess
 
-Innerhalb des Build-Prozesses mit Appveyor, wird das Deployment ausgeführt. Die Deployment-Ziele sind im Abschnitt [Übersicht der Deployment-Ziele](#übersicht-der-Deployment-Ziele) hinterlegt.
+Innerhalb des Build-Prozesses mit Appveyor wird das Deployment ausgeführt. Die Deployment-Ziele sind im Abschnitt [Übersicht der Deployment-Ziele](#übersicht-der-deployment-ziele) hinterlegt.
 
 ## Benennung der Deployment-Dateien
 
