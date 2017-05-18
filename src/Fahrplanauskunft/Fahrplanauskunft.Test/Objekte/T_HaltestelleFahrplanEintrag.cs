@@ -1,13 +1,14 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// <copyright file="T_HaltestelleFahrplanEintrag.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using Fahrplanauskunft.Objekte;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
     /// <summary>
-    /// Summary description for T_HaltestelleFahrplanEintrag
+    /// Testklasse für HaltestelleFahrplanEintrag
     /// </summary>
     [TestClass]
     public class T_HaltestelleFahrplanEintrag

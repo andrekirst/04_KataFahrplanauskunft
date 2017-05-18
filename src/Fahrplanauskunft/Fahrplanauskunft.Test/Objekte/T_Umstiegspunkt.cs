@@ -1,7 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// <copyright file="T_Umstiegspunkt.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using Fahrplanauskunft.Objekte;
-using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
@@ -88,6 +90,5 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(umstiegspunkt1 != umstiegspunkt2);
         }
-
     }
 }

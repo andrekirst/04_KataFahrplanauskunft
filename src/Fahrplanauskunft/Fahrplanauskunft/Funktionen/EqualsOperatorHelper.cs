@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="EqualsOperatorHelper.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +25,7 @@ namespace Fahrplanauskunft.Funktionen
         public static bool EqualsOperatorBase<T>(T a, T b)
             where T : class
         {
-            if(System.Object.ReferenceEquals(a, b))
+            if (object.ReferenceEquals(a, b))
             {
                 return true;
             }

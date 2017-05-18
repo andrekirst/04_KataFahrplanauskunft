@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="Logik.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 using System.Linq;
-using Fahrplanauskunft.Objekte;
 using Fahrplanauskunft.Exceptions;
 using System;
+using Fahrplanauskunft.Objekte;
 
 namespace Fahrplanauskunft.Funktionen
 {
@@ -15,7 +19,7 @@ namespace Fahrplanauskunft.Funktionen
         /// Liefert aus einer Liste von Umstiegspunkten eine eindeutige Menge
         /// </summary>
         /// <param name="umstiegspunkte">Liste der Umstiegspunkte</param>
-        /// <returns>eindeutige Liste der Umstiegspunkte</returns>
+        /// <returns>Eindeutige Liste der Umstiegspunkte</returns>
         internal static List<Umstiegspunkt> Liefere_eindeutige_Umstiegspunkte(List<Umstiegspunkt> umstiegspunkte)
         {
             return umstiegspunkte.Distinct().ToList();
@@ -29,19 +33,19 @@ namespace Fahrplanauskunft.Funktionen
         /// <returns>Liste der Umstiegspunkte</returns>
         internal static List<Umstiegspunkt> Liefere_Umstiegspunkte_fuer_Linie(Linie linie, List<Haltestelle> haltestellen)
         {
-            //anhand der Liste von Haltestellen, alle Haltestelle meiner Linie
+            // anhand der Liste von Haltestellen, alle Haltestelle meiner Linie
             List<Haltestelle> haltestellenDerLinie = Liefere_Haltestellen_einer_Linie(linie, haltestellen);
+
             // davon alle Haltestellen mit Umsteigepunkt (also mit mindestens 2 Linien)
             List<Umstiegspunkt> haltestellenMitUmstiegspunkt = haltestellenDerLinie
                 .Where(x => x.Linien.GroupBy(l => l.Name).Count() > 1)
-                .Select(y => new Umstiegspunkt(y)
-               ).ToList();
+                .Select(y => new Umstiegspunkt(y)).ToList();
 
             return haltestellenMitUmstiegspunkt;
         }
 
         /// <summary>
-        /// Ermittelt die Haltestellen für eine Linie 
+        /// Ermittelt die Haltestellen für eine Linie
         /// </summary>
         /// <param name="linie">Für dies Linie</param>
         /// <param name="haltestellen">Liste von Haltestellen</param>
@@ -62,12 +66,11 @@ namespace Fahrplanauskunft.Funktionen
         {
             // 1. hole alle Linie zu einer Haltestelle
             List<Umstiegspunkt> umstiegspunkte = new List<Umstiegspunkt>();
-            meinHaltestelle.Linien.ForEach(delegate (Linie linie)
+            meinHaltestelle.Linien.ForEach((linie) =>
                 {
                     // 2. hole zu den Linie jeweils die Umstiegspunkte
                     umstiegspunkte.AddRange(Liefere_Umstiegspunkte_fuer_Linie(linie, haltestellen));
-                }
-            );
+                });
 
             // 3. Distinkte Menge der Umstiegspunkte bilden
             umstiegspunkte = Liefere_eindeutige_Umstiegspunkte(umstiegspunkte);
@@ -89,10 +92,10 @@ namespace Fahrplanauskunft.Funktionen
         /// <param name="zielHaltestelle">Die Ziel-Haltestelle, bei der die Sortierung enden soll</param>
         /// <param name="haltenstellen">Das gesamte Haltestellennetz</param>
         /// <param name="streckenabschnitte">Alle verfügbaren Streckenabschnitte</param>
-        /// <returns></returns>
+        /// <returns>Gibt die sortierte Liste von Haltestellen für eine Linie zurück.</returns>
         internal static List<Haltestelle> Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Haltestelle> haltenstellen, List<Streckenabschnitt> streckenabschnitte)
         {
-            // 1. Überprüfung, ob die Start-Haltestelle zur Linie gehört 
+            // 1. Überprüfung, ob die Start-Haltestelle zur Linie gehört
             Ueberpruefe_Ist_Linie_An_Haltestelle(linie, startHaltestelle);
 
             // 2. Überprüfung, ob die Ziel-Haltestelle zur Linie gehört
@@ -109,6 +112,7 @@ namespace Fahrplanauskunft.Funktionen
 
             // Ein Dictionary für die sortierten Listen von Haltestellen (Routen)
             Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Haltestelle>>();
+
             // Das Dictionary wird mit der Anzahl gefundenener Streckenabschnitte erstellt
             Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle(startHaltestelle, gefundeneStreckenabschnitte, sortierteListeTempAlsDictionary);
 
@@ -124,6 +128,7 @@ namespace Fahrplanauskunft.Funktionen
                     {
                         break;
                     }
+
                     Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte.First();
 
                     Haltestelle gefundeneHaltestelle = gefundenerStreckenabschnitt.StartHaltestelle == sortierteListeTempAlsDictionary[route].Last() ? gefundenerStreckenabschnitt.ZielHaltestelle : gefundenerStreckenabschnitt.StartHaltestelle;
@@ -152,9 +157,9 @@ namespace Fahrplanauskunft.Funktionen
         /// <summary>
         /// Hilfsmethode für das Initialisieren der Start-Haltestellen für die komplexe Berechnung
         /// </summary>
-        /// <param name="startHaltestelle"></param>
-        /// <param name="gefundeneStreckenabschnitte"></param>
-        /// <param name="sortierteListeTempAlsDictionary"></param>
+        /// <param name="startHaltestelle"> Die Start-Haltestelle</param>
+        /// <param name="gefundeneStreckenabschnitte">Der gefundene Streckenabschnitt</param>
+        /// <param name="sortierteListeTempAlsDictionary">Die sortierte Liste der Haltestellen als Dictionary</param>
         internal static void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle(Haltestelle startHaltestelle, List<Streckenabschnitt> gefundeneStreckenabschnitte, Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary)
         {
             for(int i = 0; i < gefundeneStreckenabschnitte.Count; i++)
@@ -198,16 +203,15 @@ namespace Fahrplanauskunft.Funktionen
         /// <summary>
         /// Liefert die Streckenabschnitte, die an einer Haltestelle dran liegen für eine Linie
         /// </summary>
-        /// <param name="linie"></param>
-        /// <param name="haltestelle"></param>
-        /// <param name="streckenabschnitte"></param>
-        /// <returns></returns>
+        /// <param name="linie">Die Linie</param>
+        /// <param name="haltestelle">Die Haltestelle</param>
+        /// <param name="streckenabschnitte">Die Streckenabschnitte</param>
+        /// <returns>Liste von Streckenabschnitten</returns>
         internal static List<Streckenabschnitt> Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(Linie linie, Haltestelle haltestelle, List<Streckenabschnitt> streckenabschnitte)
         {
             return streckenabschnitte.Where(s =>
                 s.Linien.Contains(linie) &&
-                    (s.StartHaltestelle == haltestelle || s.ZielHaltestelle == haltestelle)
-                ).ToList();
+                    (s.StartHaltestelle == haltestelle || s.ZielHaltestelle == haltestelle)).ToList();
         }
 
         /// <summary>
@@ -215,7 +219,7 @@ namespace Fahrplanauskunft.Funktionen
         /// </summary>
         /// <param name="linie">Die Linie</param>
         /// <param name="streckenabschnitte">Die Streckenabschnitte</param>
-        /// <returns></returns>
+        /// <returns>Liste von Streckenabschnitten</returns>
         internal static List<Streckenabschnitt> Liefere_Streckenabschnitte_einer_Linie(Linie linie, List<Streckenabschnitt> streckenabschnitte)
         {
             return streckenabschnitte.Where(s => s.Linien.Contains(linie)).ToList();
@@ -226,20 +230,20 @@ namespace Fahrplanauskunft.Funktionen
         /// </summary>
         /// <param name="linie">Die Linie</param>
         /// <param name="haltestelle">Die Haltestelle</param>
-        /// <returns></returns>
+        /// <returns>Gibt true zuürck, wenn die Lnie an der Haltestelle ist, andernfalls false.</returns>
         internal static bool Ist_Linie_An_Haltestelle(Linie linie, Haltestelle haltestelle)
         {
             return haltestelle.Linien.Contains(linie);
         }
 
         /// <summary>
-        /// Liefert eine Hierarchie mit möglichen Umstiegspunkten von einer Haltestelle 
+        /// Liefert eine Hierarchie mit möglichen Umstiegspunkten von einer Haltestelle
         /// </summary>
         /// <param name="aktuelleHaltestelle">Aktuelle Haltestelle, Wurzel der Hierarchie</param>
         /// <param name="bereitsGeweseneUmstiegspunkte">Die Liste von Umstiegspunkten, an denen man bereits gewesen ist</param>
         /// <param name="haltestellen">Liste von Haltestellen</param>
         /// <param name="max_tiefe">Maximale Tiefe bei der Rekursion = maximale Anzahl deer möglichen Umstiegspunkte</param>
-        /// <returns></returns>
+        /// <returns>Gibt ein TreeItem zurück</returns>
         internal static TreeItem Liefere_Hierarchie_Route_von_Haltestelle(Haltestelle aktuelleHaltestelle, List<Umstiegspunkt> bereitsGeweseneUmstiegspunkte, List<Haltestelle> haltestellen, int max_tiefe)
         {
             // 1. aktuelle Haltestelle ist mein Root
@@ -257,9 +261,11 @@ namespace Fahrplanauskunft.Funktionen
                 max_tiefe--;
 
                 // 3. Liefere zu einer Haltestelle, die nächsten Umstiegspunkte
-                List<Umstiegspunkt> ups = Liefere_Naechste_Umstiegspunkte_von_Haltestelle(ti_root_Haltestelle.Haltestelle
-                                                                                            , bereitsGeweseneUmstiegspunkte
-                                                                                            , haltestellen);
+                List<Umstiegspunkt> ups = Liefere_Naechste_Umstiegspunkte_von_Haltestelle(
+                    ti_root_Haltestelle.Haltestelle,
+                    bereitsGeweseneUmstiegspunkte,
+                    haltestellen);
+
                 // 4. merken der gefundenen Umstiegspunkte als schon da gewesene
                 foreach(Umstiegspunkt umstiegspunkt in ups)
                 {
@@ -275,10 +281,12 @@ namespace Fahrplanauskunft.Funktionen
                     List<Umstiegspunkt> neuBereitsGeweseneUmstiegspunkte = new List<Umstiegspunkt>();
                     neuBereitsGeweseneUmstiegspunkte.AddRange(bereitsGeweseneUmstiegspunkte);
 
-                    TreeItem ti_child = Liefere_Hierarchie_Route_von_Haltestelle(umstiegspunkt.Haltestelle
-                                                                                , neuBereitsGeweseneUmstiegspunkte
-                                                                                , haltestellen
-                                                                                , max_tiefe);
+                    TreeItem ti_child = Liefere_Hierarchie_Route_von_Haltestelle(
+                        umstiegspunkt.Haltestelle,
+                        neuBereitsGeweseneUmstiegspunkte,
+                        haltestellen,
+                        max_tiefe);
+
                     ti_root_Haltestelle.Childs.Add(ti_child);
                 }
             }
@@ -304,8 +312,7 @@ namespace Fahrplanauskunft.Funktionen
                 startHaltestelle: startHaltestelle,
                 zielHaltestelle: zielHaltestelle,
                 haltenstellen: haltestellen,
-                streckenabschnitte: streckenabschnitte
-                );
+                streckenabschnitte: streckenabschnitte);
 
             List<Streckenabschnitt> streckenabschnitteDerLinie = Liefere_Streckenabschnitte_einer_Linie(linie: linie, streckenabschnitte: streckenabschnitte);
 

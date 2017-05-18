@@ -1,8 +1,9 @@
-﻿using System;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// <copyright file="T_Verbindungsanfrage.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using Fahrplanauskunft.Objekte;
-using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
@@ -20,7 +21,6 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             Haltestelle startHaltestelle = new Haltestelle(name: "StartHaltestelle");
             Haltestelle zielHaltestelle = new Haltestelle(name: "ZielHaltestelle");
-
 
             int wunschAbfahrtszeit = 723;
 
