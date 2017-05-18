@@ -1,7 +1,10 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// <copyright file="T_EqualsHelper.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using Fahrplanauskunft.Funktionen;
 using Fahrplanauskunft.Objekte;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Funktionen
 {
@@ -37,10 +40,12 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             bool expected = false;
 
-            bool actual = EqualsHelper.EqualBase<Linie>(linie, () =>
-            {
-                return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
-            });
+            bool actual = EqualsHelper.EqualBase<Linie>(
+                linie,
+                () =>
+                {
+                    return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
+                });
 
             Assert.AreEqual(expected, actual);
         }
@@ -56,10 +61,12 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             bool expected = true;
 
-            bool actual = EqualsHelper.EqualBase<Linie>(linie, () =>
-            {
-                return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
-            });
+            bool actual = EqualsHelper.EqualBase<Linie>(
+                linie,
+                () =>
+                {
+                    return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
+                });
 
             Assert.AreEqual(expected, actual);
         }

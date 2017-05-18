@@ -1,9 +1,9 @@
-﻿using Fahrplanauskunft.Funktionen;
+﻿// <copyright file="HaltestelleFahrplanEintrag.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.Objekte
 {
@@ -60,18 +60,42 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Gleichheitsoperator für Haltestellenfahrplaneintrag
+        /// </summary>
+        /// <param name="a">Wert vom Typ HaltestelleFahrplanEintrag für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ HaltestelleFahrplanEintrag für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
+        public static bool operator ==(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<HaltestelleFahrplanEintrag>(a, b);
+        }
+
+        /// <summary>
+        /// Ungleichheitsoperator für Haltestellenfahrplaneintrag
+        /// </summary>
+        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
+        public static bool operator !=(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
+        {
+            return !(a == b);
+        }
+
+        /// <summary>
         /// Vergleicht den Haltestellenfahrplaneintrag mit einem anderen Haltestellenfahrplaneintrag
         /// </summary>
         /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(HaltestelleFahrplanEintrag other)
         {
-            return EqualsHelper.EqualBase<HaltestelleFahrplanEintrag>(other, () =>
-            {
-                return Uhrzeit == other.Uhrzeit &&
-                Linie == other.Linie &&
-                Haltestelle == other.Haltestelle;
-            });
+            return EqualsHelper.EqualBase<HaltestelleFahrplanEintrag>(
+                other,
+                () =>
+                {
+                    return Uhrzeit == other.Uhrzeit &&
+                    Linie == other.Linie &&
+                    Haltestelle == other.Haltestelle;
+                });
         }
 
         /// <summary>
@@ -93,34 +117,13 @@ namespace Fahrplanauskunft.Objekte
             unchecked
             {
                 int hash = 17;
+
                 // Suitable nullity checks etc, of course :)
-                hash = hash * 23 + Uhrzeit.GetHashCode();
-                hash = hash * 23 + Linie.GetHashCode();
-                hash = hash * 23 + Haltestelle.GetHashCode();
+                hash = (hash * 23) + Uhrzeit.GetHashCode();
+                hash = (hash * 23) + Linie.GetHashCode();
+                hash = (hash * 23) + Haltestelle.GetHashCode();
                 return hash;
             }
-        }
-
-        /// <summary>
-        /// Gleichheitsoperator für Haltestellenfahrplaneintrag
-        /// </summary>
-        /// <param name="a">Wert vom Typ HaltestelleFahrplanEintrag für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ HaltestelleFahrplanEintrag für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
-        public static bool operator ==(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
-        {
-            return EqualsOperatorHelper.EqualsOperatorBase<HaltestelleFahrplanEintrag>(a, b);
-        }
-
-        /// <summary>
-        /// Ungleichheitsoperator für Haltestellenfahrplaneintrag
-        /// </summary>
-        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
-        public static bool operator !=(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
-        {
-            return !(a == b);
         }
     }
 }

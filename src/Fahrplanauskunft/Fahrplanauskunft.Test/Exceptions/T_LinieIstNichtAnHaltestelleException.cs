@@ -1,7 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// <copyright file="T_LinieIstNichtAnHaltestelleException.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System;
 using Fahrplanauskunft.Exceptions;
 using Fahrplanauskunft.Objekte;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Exceptions
 {
