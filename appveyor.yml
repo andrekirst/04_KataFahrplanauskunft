@@ -37,35 +37,102 @@ matrix:
 
 environment:
   sonarqubeprefix: ""
+  deploymentfilename: ""
   COVERALLS_REPO_TOKEN:
     secure: o90DGx/Fmc85k/gMdZ3SzlyUi+a6JCg50LtSqm5zw5k2cbLaIsgKyNjORVGERs0G
   SONARQUBE_TOKEN:
     secure: sFo2TCruCWRcpHbTVAyLc4DZCDBxiGzRpLkv1Cq2oquDiKjo1yuCh73IN8ceKZ65
 
 before_build:
-  - nuget restore C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
+  - ps: nuget restore $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
 
 build_script:
     - choco install "msbuild-sonarqube-runner" -y
     - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:sonarqubeprefix = "dev-" }
-    - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
-    - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
-    - msbuild C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.sln
-    - vstest.console /logger:Appveyor "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\%CONFIGURATION%\Fahrplanauskunft.Test.dll"
+    - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
+    - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
+    - ps: msbuild $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.sln
+    - ps: vstest.console /logger:Appveyor "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll"
     - ps: >-
-        $opencoverexe = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\OpenCover.*\tools\OpenCover.Console.exe").ToString()
+        $opencoverexe = (Resolve-Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\packages\OpenCover.*\tools\OpenCover.Console.exe").ToString()
 
-        & $opencoverexe -register:user -filter:"+[*]* -[*Fahrplanauskunft.Test*]*" -excludebyattribute:*ExcludeFromCodeCoverage* -target:vstest.console.exe "-targetargs:""C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll""" -output:./opencovertests.xml
+        & $opencoverexe -register:user -filter:"+[*]* -[*Fahrplanauskunft.Test*]*" -excludebyattribute:*ExcludeFromCodeCoverage* -target:vstest.console.exe "-targetargs:""$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll""" -output:./opencovertests.xml
 
-        $coveralls = (Resolve-Path "C:\projects\04_katafahrplanauskunft\src\Fahrplanauskunft\packages\coveralls.net.*\tools\csmacnz.Coveralls.exe").ToString()
+        $coveralls = (Resolve-Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\packages\coveralls.net.*\tools\csmacnz.Coveralls.exe").ToString()
 
         if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { & $coveralls --opencover -i ./opencovertests.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --pullRequest $env:APPVEYOR_PULL_REQUEST_NUMBER --serviceName appveyor }
         
         if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & $coveralls --opencover -i ./opencovertests.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --serviceName appveyor }
     - ps: MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$($env:SONARQUBE_TOKEN)"
 
+after_build:
+  - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-dev.zip" }
+  - ps: if ($env:APPVEYOR_REPO_BRANCH -like "release*") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-rc.zip" }
+  - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "master") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version).zip" }
+  - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-dev-pr$env:APPVEYOR_PULL_REQUEST_NUMBER.zip" }
+  - ps: $env:deploymentfilename
+  - ps: rm "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
+  - ps: 7z a $env:deploymentfilename "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*"
+
+artifacts:
+  - path: $(deploymentfilename)
+    name: fahrplanauskunft
+
 notifications:
   - provider: Slack
     auth_token:
       secure: f2CF/z+WaNuT3IOqnTYhJ0LoGAH4ZNKMvo0tLFJU/iuhwP+61rva1f0urpVtATIcVGztyG2lnBYgYpP/YIrs4/UtgfWildJHI+xmlss7lxs=
     channel: builds
+
+# Deploy-Abschnitt
+deploy:
+    # Deploy on FTP-Server
+  - provider: FTP
+    protocol: sftp
+    host:
+      secure: tp5c67GDLzz96J7IHgjz+O0SXuvihCuXNsOalPgVYJfVXJmRgFLUoqaFOhMv4UHZ
+    username:
+      secure: eEnUiKLHsX2sdYjILhZpWw==
+    password:
+      secure: ZJXcNUgzLbJCnju6m/s11k+apkDJN2UJkzyMyW7WrEQ=
+    folder: fahrplanauskunft
+    artifact: fahrplanauskunft
+    on:
+      is_not_pr: true
+    
+    # GitHub - Releae candidat
+  - provider: GitHub
+    draft: false
+    prerelease: true
+    auth_token:
+      secure: hnDjfSoPrEx64I/3s56hGoVwH/vOuZg/WHW+aKzWtkRCyw8pFrz3NzhAyWR12AEq
+    tag: $(appveyor_build_version)-rc
+    release: $(appveyor_build_version)-rc
+    artifact: fahrplanauskunft
+    on:
+      branch: release/*
+
+  # GitHub - Production release
+  - provider: GitHub
+    draft: false
+    prerelease: false
+    auth_token:
+      secure: hnDjfSoPrEx64I/3s56hGoVwH/vOuZg/WHW+aKzWtkRCyw8pFrz3NzhAyWR12AEq
+    tag: $(appveyor_build_version)
+    release: $(appveyor_build_version)
+    artifact: fahrplanauskunft
+    on:
+      branch: master
+
+    # BinTray - Production release
+  - provider: BinTray
+    username: andrekirst
+    subject: andrekirst
+    repo: fahrplanauskunft
+    api_key:
+      secure: ITVW09mNALvMUWScQao1Ermu2Ls5ut8Bfc6SROJkoUdEUxErBHpY0pk++4llAWgh
+    package: fahrplanauskunft
+    version: $(appveyor_build_version)
+    publish: true
+    override: true
+    explode: false
