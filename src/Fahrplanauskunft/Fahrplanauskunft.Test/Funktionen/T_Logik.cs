@@ -63,8 +63,8 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <summary>
         /// Liefert Testdaten an Haltestellenfahrplaneinträgen für die Tests
         /// </summary>
-        /// <returns></returns>
-        private List<HaltestelleFahrplanEintrag> Lade_Test_Haltestellenfahrplaneintraege()
+        /// <returns>Gibt die Test-Haltestellenfahrplaneinträge zurück</returns>
+        public List<HaltestelleFahrplanEintrag> Lade_Test_Haltestellenfahrplaneintraege()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
 

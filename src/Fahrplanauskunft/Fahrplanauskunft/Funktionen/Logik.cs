@@ -5,7 +5,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Fahrplanauskunft.Exceptions;
-using System;
 using Fahrplanauskunft.Objekte;
 
 namespace Fahrplanauskunft.Funktionen
@@ -328,16 +327,28 @@ namespace Fahrplanauskunft.Funktionen
             return dauer;
         }
 
+        /// <summary>
+        /// Ermittelt die nächste Abfahrtszeit
+        /// </summary>
+        /// <param name="haltestelle">Die Haltestelle</param>
+        /// <param name="linie">Die Linie</param>
+        /// <param name="haltestellenfahrplaneintraege">Die Liste der Haltestellenfahrplaneinträge</param>
+        /// <param name="wunschabfahrtszeit">Die Wunschabfahrtszeit</param>
+        /// <returns>Gibt die Uhrzeit zurück, wann eine Linie an einer Linie nach einer Wunschabfahrtszeit abfährt</returns>
         internal static int ErmittleAbfahrtszeit(Haltestelle haltestelle, Linie linie, List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege, int wunschabfahrtszeit)
         {
-            HaltestelleFahrplanEintrag hfe = haltestellenfahrplaneintraege.First(
-                h => h.Haltestelle == haltestelle &&
-                h.Linie == linie &&
-                    (
-                        h.Uhrzeit >= wunschabfahrtszeit
-                    )
-                );
-            return hfe.Uhrzeit;
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraegeGefiltertNachHaltestelleUndLinie = haltestellenfahrplaneintraege
+                .Where(
+                    p => p.Haltestelle == haltestelle &&
+                    p.Linie == linie)
+                .OrderBy(o => o.Uhrzeit)
+                .ToList();
+
+            int letzteAbfahrtszeit = haltestellenfahrplaneintraegeGefiltertNachHaltestelleUndLinie.Last().Uhrzeit;
+
+            wunschabfahrtszeit = letzteAbfahrtszeit < wunschabfahrtszeit ? 0 : wunschabfahrtszeit;
+
+            return haltestellenfahrplaneintraegeGefiltertNachHaltestelleUndLinie.First(h => h.Uhrzeit >= wunschabfahrtszeit).Uhrzeit;
         }
     }
 }
