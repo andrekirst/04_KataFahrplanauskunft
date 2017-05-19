@@ -9,7 +9,7 @@
 | Fahrplanauskunft.dll | *current* |
 | Fahrplanauskunft.dll.config | |
 | Fahrplanauskunft.dll.RoslynCA.json | |
-| Newtonsoft.Json.dll | 9.0.1.19813 |
+| Newtonsoft.Json.dll | 10.0.2.20802 |
 | Newtonsoft.Json.xml | |
 
 ## Übersicht der Deployment-Ziele
