@@ -1274,7 +1274,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <summary>
         /// Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 770 (12:50 Uhr). Sollwert 783 (13:03 Uhr)
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Logik")]
         public void ErmittleAbfahrtszeit_Haltestelle_H2_Linie_B11_Wunsch_770_Soll_783()
         {
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
@@ -1292,7 +1292,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <summary>
         /// Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 1433 (23:53 Uhr). Sollwert 3 (00:03 Uhr)
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Logik")]
         public void ErmittleAbfahrtszeit_Haltestelle_H2_Linie_B11_Wunsch_1433_Soll_3()
         {
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
@@ -1310,7 +1310,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <summary>
         /// Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 3 (23:53 Uhr). Sollwert 3 (00:03 Uhr)
         /// </summary>
-        [TestMethod]
+        [TestMethod, TestCategory("Logik")]
         public void ErmittleAbfahrtszeit_Haltestelle_H2_Linie_B11_Wunsch_3_Soll_3()
         {
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();

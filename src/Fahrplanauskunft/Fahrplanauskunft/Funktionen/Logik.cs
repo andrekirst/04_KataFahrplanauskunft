@@ -338,8 +338,8 @@ namespace Fahrplanauskunft.Funktionen
         internal static int ErmittleAbfahrtszeit(Haltestelle haltestelle, Linie linie, List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege, int wunschabfahrtszeit)
         {
             List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraegeGefiltertNachHaltestelleUndLinie = haltestellenfahrplaneintraege
-                .Where(
-                    p => p.Haltestelle == haltestelle &&
+                .Where(p =>
+                    p.Haltestelle == haltestelle &&
                     p.Linie == linie)
                 .OrderBy(o => o.Uhrzeit)
                 .ToList();
