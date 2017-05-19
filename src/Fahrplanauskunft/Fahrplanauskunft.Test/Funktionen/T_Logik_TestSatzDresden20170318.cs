@@ -1,25 +1,26 @@
-﻿using System;
-using System.Text;
+﻿// <copyright file="T_Logik_TestSatzDresden20170318.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 using Fahrplanauskunft.Funktionen;
 using Fahrplanauskunft.Objekte;
-using System.Linq;
-using Fahrplanauskunft.Exceptions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Funktionen
 {
     /// <summary>
-    /// Summary description for T_Logik
+    /// Test-Klasse für die Logik-Klasse mit dem Test-Datensatz Dresden20170318
     /// </summary>
     [TestClass]
-    public class T_T_Logik_TestSatzDresden20170318
+    public class T_Logik_TestSatzDresden20170318
     {
         /// <summary>
-        /// Liefert Testdaten, für den Test
+        /// Liefert Testdaten an Haltestellen für die Tests
         /// </summary>
-        /// <returns></returns>
-        private List<Haltestelle> Lade_Test_Haltestellen()
+        /// <returns>Gibt die Test-Daten für die Haltestellen zurück</returns>
+        public List<Haltestelle> Lade_Test_Haltestellen()
         {
             string ordnerPfad = "TestDaten\\TestSatzDresden20170318";
 
@@ -32,8 +33,8 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <summary>
         /// Liefert Testdaten an Linien für die Tests
         /// </summary>
-        /// <returns></returns>
-        private List<Linie> Lade_Test_Linien()
+        /// <returns>Gibt die Test-Daten für die Haltestellen zurück</returns>
+        public List<Linie> Lade_Test_Linien()
         {
             string ordnerPfad = "TestDaten\\TestSatzDresden20170318";
 
@@ -46,8 +47,8 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <summary>
         /// Liefert Testdaten an Streckenabschnitten für die Tests
         /// </summary>
-        /// <returns></returns>
-        private List<Streckenabschnitt> Lade_Test_Streckenabschnitte()
+        /// <returns>Gibt die Test-Daten für die Streckenabschnitte zurück</returns>
+        public List<Streckenabschnitt> Lade_Test_Streckenabschnitte()
         {
             string ordnerPfad = "TestDaten\\TestSatzDresden20170318";
 
