@@ -24,6 +24,7 @@
 * #84 - StyleCop in den Build-Prozess einbinden `feature`, `umgebung`
 * #85 - Deployment konfigurieren `feature`, `umgebung`
 * #82 - Update der NuGet-Packages `umgebung`, `dokumentation`
+* #83 - Ermittlung der nächsten Abfahrtszeit `feature`
 
 ## Bugfixes
 
