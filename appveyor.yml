@@ -75,7 +75,7 @@ after_build:
   - ps: rm "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
   - ps: Copy-Item -Destination "$env:APPVEYOR_BUILD_FOLDER\output\" -Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*" -Recurse
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\"
-  - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BuildProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\BuildProzess.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css"
+  - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BuildProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\BuildProzess.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: 7z a $env:deploymentfilename "$env:APPVEYOR_BUILD_FOLDER\output\*.*" -r
 
 artifacts:
