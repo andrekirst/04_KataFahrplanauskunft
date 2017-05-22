@@ -75,7 +75,7 @@ after_build:
   - ps: rm "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
   - ps: Copy-Item -Destination "$env:APPVEYOR_BUILD_FOLDER\output\" -Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*" -Recurse
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\"
-  - ps: pandoc -s -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BuildProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\BuildProzess.md" -f markdown
+  - ps: pandoc -s -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BuildProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\BuildProzess.md" -f markdown -c https://gist.githubusercontent.com/killercup/5917178/raw/40840de5352083adb2693dc742e9f75dbb18650f/pandoc.css
   - ps: 7z a $env:deploymentfilename "$env:APPVEYOR_BUILD_FOLDER\output\*.*" -r
 
 artifacts:
