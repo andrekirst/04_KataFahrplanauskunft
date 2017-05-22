@@ -211,4 +211,4 @@ Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie
 
 #### Beschreibung
 
-Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 3 (23:53 Uhr). Sollwert 3 (00:03 Uhr)
+Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 3 (00:03 Uhr). Sollwert 3 (00:03 Uhr)
