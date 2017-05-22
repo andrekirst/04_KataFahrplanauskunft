@@ -194,3 +194,21 @@ Berechnung der Fahrtdauer von der Haltestelle H12 zu H16. Die erwartete Fahrtdau
 #### Beschreibung
 
 Berechnung der Fahrtdauer von der Haltestelle H16 zu H12. Die erwartete Fahrtdauer beträgt 12 Minuten
+
+### Funktion: ErmittleAbfahrtszeit_Haltestelle_H2_Linie_B11_Wunsch_770_Soll_783
+
+#### Beschreibung
+
+Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 770 (12:50 Uhr). Sollwert 783 (13:03 Uhr)
+
+### Funktion: ErmittleAbfahrtszeit_Haltestelle_H2_Linie_B11_Wunsch_1433_Soll_3
+
+#### Beschreibung
+
+Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 1433 (23:53 Uhr). Sollwert 3 (00:03 Uhr)
+
+### Funktion: ErmittleAbfahrtszeit_Haltestelle_H2_Linie_B11_Wunsch_3_Soll_3
+
+#### Beschreibung
+
+Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 3 (00:03 Uhr). Sollwert 3 (00:03 Uhr)
