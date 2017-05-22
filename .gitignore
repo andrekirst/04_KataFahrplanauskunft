@@ -253,3 +253,6 @@ paket-files/
 
 # Ignore pdf-files
 *.[Pp][Dd][Ff]
+
+# Ignoriere HTML-Dateien unterhalb von Dokumentation
+/Dokumentation/**/*.html
