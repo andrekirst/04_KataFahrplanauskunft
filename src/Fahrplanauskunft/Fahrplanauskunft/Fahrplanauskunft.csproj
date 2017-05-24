@@ -60,6 +60,7 @@
     <Compile Include="Funktionen\EqualsHelper.cs" />
     <Compile Include="Funktionen\EqualsOperatorHelper.cs" />
     <Compile Include="Funktionen\Logik.cs" />
+    <Compile Include="Objekte\Einzelverbindung.cs" />
     <Compile Include="Objekte\FahrplanauskunftSpeicher.cs" />
     <Compile Include="Objekte\Haltestelle.cs" />
     <Compile Include="Objekte\HaltestelleFahrplanEintrag.cs" />

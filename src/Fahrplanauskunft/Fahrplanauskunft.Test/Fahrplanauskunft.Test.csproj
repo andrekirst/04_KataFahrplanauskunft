@@ -76,6 +76,7 @@
     <Compile Include="Objekte\T_Verbindungsanfrage.cs" />
     <Compile Include="Objekte\T_Streckenabschnitt.cs" />
     <Compile Include="Objekte\T_Linie.cs" />
+    <Compile Include="Objekte\T_Einzelverbindung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

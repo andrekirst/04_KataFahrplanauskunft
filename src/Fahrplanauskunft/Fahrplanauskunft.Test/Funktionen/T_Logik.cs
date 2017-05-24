@@ -1328,6 +1328,11 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod, TestCategory("Logik")]
         public void BerechneVerbindungsauskunft_Start_H1_Ziel_H4_Wunsch_0700()
         {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            List<Linie> linien = Lade_Test_Linien();
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = Lade_Test_Haltestellenfahrplaneintraege();
+
             Assert.Fail();
         }
 

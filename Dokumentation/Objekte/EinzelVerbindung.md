@@ -1,4 +1,4 @@
-# EinzelVerbindung
+# Einzelverbindung
 
 ## Beschreibung
 
