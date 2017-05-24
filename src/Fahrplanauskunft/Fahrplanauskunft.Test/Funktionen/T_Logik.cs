@@ -1324,5 +1324,23 @@ namespace Fahrplanauskunft.Test.Funktionen
             int expected = 3;
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod, TestCategory("Logik")]
+        public void BerechneVerbindungsauskunft_Start_H1_Ziel_H4_Wunsch_0700()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod, TestCategory("Logik")]
+        public void BerechneVerbindungsauskunft_Start_H1_Ziel_H7_Wunsch_0500()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod, TestCategory("Logik")]
+        public void BerechneVerbindungsauskunft_Start_H1_Ziel_H12_Wunsch_0800()
+        {
+            Assert.Fail();
+        }
     }
 }
