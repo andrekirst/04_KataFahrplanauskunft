@@ -16,19 +16,19 @@ namespace Fahrplanauskunft.Funktionen
     public static class ZeitKonverter
     {
         /// <summary>
-        /// Konvertiert ganzahlige Minuten in das Format "hh:mm"
+        /// Konvertiert ganzahlige Minuten in das Format "HH:mm" (24h)
         /// </summary>
         /// <param name="minuten">Zeit in Minuten</param>
         /// <returns>Formatierte Zeit</returns>
         internal static string ZuUhrzeitText(int minuten)
         {
-            return DateTime.MinValue.AddMinutes(minuten).ToString("hh:mm");
+            return DateTime.MinValue.AddMinutes(minuten).ToString("HH:mm");
         }
 
         /// <summary>
-        /// Konvertiert das Format "hh:mm" in ganzahlige Minuten
+        /// Konvertiert das Format "HH:mm" (24h) in ganzahlige Minuten
         /// </summary>
-        /// <param name="zeit">Zeit im Format "hh:mm"</param>
+        /// <param name="zeit">Zeit im Format "HH:mm"</param>
         /// <returns>Ganzzahlige Minuten</returns>
         internal static int ZuUhrzeitZahl(string zeit)
         {
