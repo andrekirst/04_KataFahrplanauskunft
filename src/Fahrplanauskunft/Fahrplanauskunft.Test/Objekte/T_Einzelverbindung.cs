@@ -30,12 +30,7 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Einzelverbindung_Property_Abfahrtszeit()
         {
-            Einzelverbindung einzelverbindung = new Einzelverbindung(
-                abfahrtszeit: 700,
-                ankunftszeit: 800,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+            Einzelverbindung einzelverbindung = TestEinzelverbindung();
 
             Assert.AreEqual(700, einzelverbindung.Abfahrtszeit);
         }
@@ -43,12 +38,7 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Einzelverbindung_Property_Ankunftszeit()
         {
-            Einzelverbindung einzelverbindung = new Einzelverbindung(
-                abfahrtszeit: 700,
-                ankunftszeit: 800,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+            Einzelverbindung einzelverbindung = TestEinzelverbindung();
 
             Assert.AreEqual(800, einzelverbindung.Ankunftszeit);
         }
@@ -56,12 +46,7 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Einzelverbindung_Property_Linie()
         {
-            Einzelverbindung einzelverbindung = new Einzelverbindung(
-                abfahrtszeit: 700,
-                ankunftszeit: 800,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+            Einzelverbindung einzelverbindung = TestEinzelverbindung();
 
             Linie expected = new Linie(name: "Linie 1", ident: "L1");
 
@@ -71,12 +56,7 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Einzelverbindung_Property_StartHaltestelle()
         {
-            Einzelverbindung einzelverbindung = new Einzelverbindung(
-                abfahrtszeit: 700,
-                ankunftszeit: 800,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+            Einzelverbindung einzelverbindung = TestEinzelverbindung();
 
             Haltestelle expected = new Haltestelle(name: "H1");
 
@@ -86,12 +66,7 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Einzelverbindung_Property_ZielHaltestelle()
         {
-            Einzelverbindung einzelverbindung = new Einzelverbindung(
-                abfahrtszeit: 700,
-                ankunftszeit: 800,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+            Einzelverbindung einzelverbindung = TestEinzelverbindung();
 
             Haltestelle expected = new Haltestelle(name: "H2");
 
@@ -101,17 +76,24 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Einzelverbindung_ToString()
         {
-            Einzelverbindung einzelverbindung = new Einzelverbindung(
-                abfahrtszeit: 700,
-                ankunftszeit: 800,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+            Einzelverbindung einzelverbindung = TestEinzelverbindung();
 
             string expected = "Linie 1 : H1 11:40 -> H2 13:20";
             string actual = einzelverbindung.ToString();
 
             Assert.AreEqual(expected, actual);
+        }
+
+        private Einzelverbindung TestEinzelverbindung()
+        {
+            Einzelverbindung einzelverbindung = new Einzelverbindung(
+                   abfahrtszeit: 700,
+                   ankunftszeit: 800,
+                   startHaltestelle: new Haltestelle(name: "H1"),
+                   zielHaltestelle: new Haltestelle(name: "H2"),
+                   linie: new Linie(name: "Linie 1", ident: "L1"));
+
+            return einzelverbindung;
         }
     }
 }

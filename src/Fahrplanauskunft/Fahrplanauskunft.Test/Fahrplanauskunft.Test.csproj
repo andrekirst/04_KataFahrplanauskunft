@@ -67,6 +67,7 @@
     <Compile Include="Funktionen\T_EqualsHelper.cs" />
     <Compile Include="Funktionen\T_Logik.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Objekte\T_Verbindung.cs" />
     <Compile Include="Objekte\T_Umstiegspunkt.cs" />
     <Compile Include="Objekte\T_Haltestelle.cs" />
     <Compile Include="Funktionen\T_ZeitKonverter.cs" />
