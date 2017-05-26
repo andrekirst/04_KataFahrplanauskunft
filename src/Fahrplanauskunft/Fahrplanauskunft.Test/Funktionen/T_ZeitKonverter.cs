@@ -44,6 +44,21 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
+        /// Es soll die Funktion ZuUhrzeitText mit dem Wert 800 aufgerufen werden und die Ausgabe soll "13:20" betragen.
+        /// </summary>
+        [TestMethod]
+        public void ZuUhrzeitText_Ganzzahl_800_Text_1320()
+        {
+            int zeit = 800;
+
+            string expected = "13:20";
+
+            string actual = Fahrplanauskunft.Funktionen.ZeitKonverter.ZuUhrzeitText(zeit);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
         /// Es soll die Funktion ZuUhrzeitZahl mit dem Wert 02:00 aufgerufen werden und die Ausgabe soll 120 betragen.
         /// </summary>
         [TestMethod]
@@ -67,6 +82,21 @@ namespace Fahrplanauskunft.Test.Funktionen
             string zeit = "12:06";
 
             int expected = 726;
+
+            int actual = Fahrplanauskunft.Funktionen.ZeitKonverter.ZuUhrzeitZahl(zeit);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Es soll die Funktion ZuUhrzeitZahl mit dem Wert 13:20 aufgerufen werden und die Ausgabe soll 800 betragen.
+        /// </summary>
+        [TestMethod]
+        public void ZuUhrzeitZahl_Text_1320_Ganzzahl_800()
+        {
+            string zeit = "13:20";
+
+            int expected = 800;
 
             int actual = Fahrplanauskunft.Funktionen.ZeitKonverter.ZuUhrzeitZahl(zeit);
 

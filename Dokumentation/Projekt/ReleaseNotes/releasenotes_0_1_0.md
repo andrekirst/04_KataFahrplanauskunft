@@ -29,3 +29,4 @@
 ## Bugfixes
 
 * #90 - Fehler beim Upload für SFTP, BinTray falscher Branch und falsche Konfiguration `bug`, `umgebung`
+* #98 - Fehler bei der Konvertierung der Zeit von Zahl zu Text, wenn die Zahl den Wert 800 hat `bug`
