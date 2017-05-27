@@ -66,7 +66,7 @@ namespace Fahrplanauskunft.Objekte
                 "{0} {1} -> {2} {3} - Umstiege: {4}",
                 StartHaltestelle.Name,
                 Funktionen.ZeitKonverter.ZuUhrzeitText(Abfahrtszeit),
-                ZielHaltestelle.Name,
+                ZielHaltestelle == null ? "<Unbekannte Ziel-Haltestelle>" : ZielHaltestelle.Name,
                 Funktionen.ZeitKonverter.ZuUhrzeitText(Ankunftszeit),
                 AnzahlUmstiege);
         }

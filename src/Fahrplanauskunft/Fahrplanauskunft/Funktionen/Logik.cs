@@ -2,6 +2,7 @@
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Fahrplanauskunft.Exceptions;
@@ -241,7 +242,7 @@ namespace Fahrplanauskunft.Funktionen
         /// <param name="aktuelleHaltestelle">Aktuelle Haltestelle, Wurzel der Hierarchie</param>
         /// <param name="bereitsGeweseneUmstiegspunkte">Die Liste von Umstiegspunkten, an denen man bereits gewesen ist</param>
         /// <param name="haltestellen">Liste von Haltestellen</param>
-        /// <param name="max_tiefe">Maximale Tiefe bei der Rekursion = maximale Anzahl deer möglichen Umstiegspunkte</param>
+        /// <param name="max_tiefe">Maximale Tiefe bei der Rekursion = maximale Anzahl der möglichen Umstiegspunkte</param>
         /// <returns>Gibt ein TreeItem zurück</returns>
         internal static TreeItem Liefere_Hierarchie_Route_von_Haltestelle(Haltestelle aktuelleHaltestelle, List<Umstiegspunkt> bereitsGeweseneUmstiegspunkte, List<Haltestelle> haltestellen, int max_tiefe)
         {
@@ -349,6 +350,77 @@ namespace Fahrplanauskunft.Funktionen
             wunschabfahrtszeit = letzteAbfahrtszeit < wunschabfahrtszeit ? 0 : wunschabfahrtszeit;
 
             return haltestellenfahrplaneintraegeGefiltertNachHaltestelleUndLinie.First(h => h.Uhrzeit >= wunschabfahrtszeit).Uhrzeit;
+        }
+
+        internal static Verbindung BerechneVerbindungsauskunft(int wunschabfahrtszeit, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Haltestelle> haltestellen, List<Linie> linien, List<Streckenabschnitt> streckenabschnitte, List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege)
+        {
+            int abfahrtszeit = 0;
+            int ankunftszeit = 0;
+            Haltestelle zielHaltestelleIst = null;
+            Dictionary<int, Einzelverbindung> einzelverbindungen = new Dictionary<int, Einzelverbindung>();
+
+            foreach(Linie linie in startHaltestelle.Linien)
+            {
+                if(zielHaltestelleIst != null)
+                {
+                    break;
+                }
+
+                List<Haltestelle> haltestellenDerLinie = Liefere_Haltestellen_einer_Linie(linie: linie, haltestellen: haltestellen);
+                foreach(Haltestelle haltestelle in haltestellenDerLinie)
+                {
+                    if(Ist_Linie_An_Haltestelle(linie: linie, haltestelle: haltestelle) && haltestelle == zielHaltestelle)
+                    {
+                        zielHaltestelleIst = haltestelle;
+
+                        abfahrtszeit = ErmittleAbfahrtszeit(
+                            haltestelle: startHaltestelle,
+                            linie: linie,
+                            haltestellenfahrplaneintraege: haltestellenfahrplaneintraege,
+                            wunschabfahrtszeit: wunschabfahrtszeit);
+
+                        int dauer = Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
+                            linie: linie,
+                            startHaltestelle: startHaltestelle,
+                            zielHaltestelle: zielHaltestelleIst,
+                            streckenabschnitte: streckenabschnitte,
+                            haltestellen: haltestellen);
+
+                        ankunftszeit = abfahrtszeit + dauer;
+
+                        Einzelverbindung einzelverbindung = new Einzelverbindung(
+                            abfahrtszeit: abfahrtszeit,
+                            ankunftszeit: ankunftszeit,
+                            startHaltestelle: startHaltestelle,
+                            zielHaltestelle: zielHaltestelleIst,
+                            linie: linie);
+
+                        einzelverbindungen.Add(1, einzelverbindung);
+
+                        break;
+                    }
+                }
+            }
+
+            if(zielHaltestelleIst == null)
+            {
+                List<Umstiegspunkt> bereitsGeweseneUmstiegspunkte = new List<Objekte.Umstiegspunkt>();
+                TreeItem ti = Liefere_Hierarchie_Route_von_Haltestelle(
+                    aktuelleHaltestelle: startHaltestelle,
+                    bereitsGeweseneUmstiegspunkte: bereitsGeweseneUmstiegspunkte,
+                    haltestellen: haltestellen,
+                    max_tiefe: 5);
+                // TODO
+            }
+
+            Verbindung verbindung = new Objekte.Verbindung(
+                abfahrtszeit: abfahrtszeit,
+                ankunftszeit: ankunftszeit,
+                startHaltestelle: startHaltestelle,
+                zielHaltestelle: zielHaltestelleIst,
+                einzelverbindungen: einzelverbindungen);
+
+            return verbindung;
         }
     }
 }

@@ -157,6 +157,18 @@ namespace Fahrplanauskunft.Test.Objekte
         }
 
         [TestMethod, TestCategory("Objekte")]
+        public void Verbindung_ToString_ZielHaltestelle_Null()
+        {
+            Verbindung verbindung = TestVerbindung();
+            verbindung.ZielHaltestelle = null;
+
+            string expected = "H1 12:00 -> <Unbekannte Ziel-Haltestelle> 12:50 - Umstiege: 0";
+            string actual = verbindung.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod, TestCategory("Objekte")]
         public void Verbindung_AnzahlUmstiege_0()
         {
             Verbindung verbindung = TestVerbindung();
