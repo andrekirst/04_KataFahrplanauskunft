@@ -252,5 +252,20 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Testet den HashCode vom TreeItem
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void TreeItem_ToString_Childs_0()
+        {
+            TreeItem treeItem = new TreeItem(new Haltestelle("H1"));
+
+            string expected = "Name: H1 - Childs: 0";
+
+            string actual = treeItem.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

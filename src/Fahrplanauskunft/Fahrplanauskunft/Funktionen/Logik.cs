@@ -352,7 +352,15 @@ namespace Fahrplanauskunft.Funktionen
             return haltestellenfahrplaneintraegeGefiltertNachHaltestelleUndLinie.First(h => h.Uhrzeit >= wunschabfahrtszeit).Uhrzeit;
         }
 
-        internal static Verbindung BerechneVerbindungsauskunft(int wunschabfahrtszeit, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Haltestelle> haltestellen, List<Linie> linien, List<Streckenabschnitt> streckenabschnitte, List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege)
+        internal static Verbindung BerechneVerbindungsauskunft(
+            int wunschabfahrtszeit,
+            Haltestelle startHaltestelle,
+            Haltestelle zielHaltestelle,
+            List<Haltestelle> haltestellen,
+            List<Linie> linien,
+            List<Streckenabschnitt> streckenabschnitte,
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege,
+            List<Verbindung> gefundeneVerbindungen = null)
         {
             int abfahrtszeit = 0;
             int ankunftszeit = 0;
@@ -410,6 +418,13 @@ namespace Fahrplanauskunft.Funktionen
                     bereitsGeweseneUmstiegspunkte: bereitsGeweseneUmstiegspunkte,
                     haltestellen: haltestellen,
                     max_tiefe: 5);
+
+                List<Haltestelle> hs = new List<Haltestelle>();
+
+                List<Einzelverbindung> ezs = new List<Einzelverbindung>();
+
+                testa(ti.Childs, hs, ezs);
+
                 // TODO
             }
 
@@ -421,6 +436,16 @@ namespace Fahrplanauskunft.Funktionen
                 einzelverbindungen: einzelverbindungen);
 
             return verbindung;
+        }
+
+        private static void testa(List<TreeItem> childs, List<Haltestelle> hs, List<Einzelverbindung> ezs)
+        {
+            //foreach(TreeItem treeItem in childs)
+            //{
+            //    hs.Add(treeItem.Haltestelle);
+            //    //ezs.Add(new Einzelverbindung(0, 0, null, null, null));
+            //    testa(treeItem.Childs, hs, ezs);
+            //}
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         public Haltestelle Haltestelle
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
@@ -111,6 +111,14 @@ namespace Fahrplanauskunft.Objekte
         public override int GetHashCode()
         {
             return Haltestelle.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return string.Format(
+                "Name: {0} - Childs: {1}",
+                Haltestelle.Name,
+                Childs.Count);
         }
     }
 }
