@@ -1416,5 +1416,23 @@ namespace Fahrplanauskunft.Test.Funktionen
         {
             Assert.Fail();
         }
+
+        [TestMethod]
+        public void ErmittleLinien_Von_Haltestelle_Zu_Haltestelle_H1_H2_B11()
+        {
+            List<Linie> linien = Lade_Test_Linien();
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+
+            List<Linie> expected = linien.Where(l => l.Ident == "B11").ToList();
+
+            List<Linie> actual = Logik.ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(
+                startHaltestelle: haltestellen.First(h => h.Name == "H1"),
+                zielHaltestelle: haltestellen.First(h => h.Name == "H2"),
+                haltestellen: haltestellen,
+                streckenabschnitte: streckenabschnitte);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }
