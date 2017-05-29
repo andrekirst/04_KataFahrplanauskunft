@@ -209,7 +209,7 @@ namespace Fahrplanauskunft.Funktionen
         internal static List<Streckenabschnitt> Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(Linie linie, Haltestelle haltestelle, List<Streckenabschnitt> streckenabschnitte)
         {
             return streckenabschnitte.Where(s =>
-                s.Linien.Contains(linie) &&
+                s.Linie == linie &&
                     (s.StartHaltestelle == haltestelle || s.ZielHaltestelle == haltestelle)).ToList();
         }
 
@@ -221,7 +221,7 @@ namespace Fahrplanauskunft.Funktionen
         /// <returns>Liste von Streckenabschnitten</returns>
         internal static List<Streckenabschnitt> Liefere_Streckenabschnitte_einer_Linie(Linie linie, List<Streckenabschnitt> streckenabschnitte)
         {
-            return streckenabschnitte.Where(s => s.Linien.Contains(linie)).ToList();
+            return streckenabschnitte.Where(s => s.Linie == linie).ToList();
         }
 
         /// <summary>
@@ -320,7 +320,7 @@ namespace Fahrplanauskunft.Funktionen
                 Haltestelle h1 = sortierteListeDerHaltestellen[i];
                 Haltestelle h2 = sortierteListeDerHaltestellen[i + 1];
 
-                Streckenabschnitt sab = streckenabschnitteDerLinie.First(s => s.Linien.Contains(linie) && ((s.StartHaltestelle == h1 && s.ZielHaltestelle == h2) || (s.StartHaltestelle == h2 && s.ZielHaltestelle == h1)));
+                Streckenabschnitt sab = streckenabschnitteDerLinie.First(s => s.Linie == linie && ((s.StartHaltestelle == h1 && s.ZielHaltestelle == h2) || (s.StartHaltestelle == h2 && s.ZielHaltestelle == h1)));
                 dauer += sab.Dauer;
             }
 

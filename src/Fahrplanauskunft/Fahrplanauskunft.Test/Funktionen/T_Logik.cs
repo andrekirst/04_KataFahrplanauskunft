@@ -1158,7 +1158,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                 haltestellen.First(h => h.Name == "H5")
             };
 
-            List<Streckenabschnitt> streckenabschnitteDerLinie = streckenabschnitte.Where(sab => sab.Linien.Contains(linien.First(l => l.Ident == "B11"))).ToList();
+            List<Streckenabschnitt> streckenabschnitteDerLinie = streckenabschnitte.Where(sab => sab.Linie == linien.First(l => l.Ident == "B11")).ToList();
 
             List<Haltestelle> sortierteListe = new List<Haltestelle>() { haltestellen.First(h => h.Name == "H1") };
 
@@ -1179,7 +1179,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                 haltestellen.First(h => h.Name == "H5")
             };
 
-            List<Streckenabschnitt> streckenabschnitteDerLinieExpected = streckenabschnitte.Where(sab => sab.Linien.Contains(linien.First(l => l.Ident == "B11"))).Where(sab => sab.StartHaltestelle != haltestellen.First(h => h.Name == "H1")).ToList();
+            List<Streckenabschnitt> streckenabschnitteDerLinieExpected = streckenabschnitte.Where(sab => sab.Linie == linien.First(l => l.Ident == "B11")).Where(sab => sab.StartHaltestelle != haltestellen.First(h => h.Name == "H1")).ToList();
             #endregion
 
             CollectionAssert.AreEqual(sortierteListeExpected, sortierteListe);
