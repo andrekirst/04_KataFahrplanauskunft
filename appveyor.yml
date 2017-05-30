@@ -78,6 +78,7 @@ after_build:
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BuildProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\BuildProzess.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\DeploymentProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\DeploymentProzess.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\FahrplanauskunftSpeicher.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\FahrplanauskunftSpeicher.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
+  - ps: ls "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Objekte\ -Filter *.md | Foreach-Object { pandoc -s --toc -o ("$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\" + $_.BaseName + ".html") ("$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Objekte\" + $_.Name) -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained }
   - ps: 7z a $env:deploymentfilename "$env:APPVEYOR_BUILD_FOLDER\output\*.*" -r
 
 artifacts:
