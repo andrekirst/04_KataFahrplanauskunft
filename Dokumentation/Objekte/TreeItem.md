@@ -2,7 +2,7 @@
 
 ## Beschreibung
 
-Hierarchische Struktur von möglichen Umstiegspunkten von einer Haltestelle.
+Hierarchische Struktur von mÃ¶glichen Umstiegspunkten von einer Haltestelle.
 
 ## Attribute
 
