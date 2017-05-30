@@ -89,10 +89,9 @@ namespace Fahrplanauskunft.Funktionen
         /// <param name="linie">Die Linie, für die sortierung ausgeführt werden soll</param>
         /// <param name="startHaltestelle">Die Start-Haltestelle, bei der die Sortierung beginnen soll</param>
         /// <param name="zielHaltestelle">Die Ziel-Haltestelle, bei der die Sortierung enden soll</param>
-        /// <param name="haltenstellen">Das gesamte Haltestellennetz</param>
         /// <param name="streckenabschnitte">Alle verfügbaren Streckenabschnitte</param>
         /// <returns>Gibt die sortierte Liste von Haltestellen für eine Linie zurück.</returns>
-        internal static List<Haltestelle> Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Haltestelle> haltenstellen, List<Streckenabschnitt> streckenabschnitte)
+        internal static List<Haltestelle> Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Streckenabschnitt> streckenabschnitte)
         {
             // 1. Überprüfung, ob die Start-Haltestelle zur Linie gehört
             Ueberpruefe_Ist_Linie_An_Haltestelle(linie, startHaltestelle);
@@ -100,72 +99,21 @@ namespace Fahrplanauskunft.Funktionen
             // 2. Überprüfung, ob die Ziel-Haltestelle zur Linie gehört
             Ueberpruefe_Ist_Linie_An_Haltestelle(linie, zielHaltestelle);
 
-            // 3. Haltestellen auf die Haltestellen reduzieren, die zur Linie gehören
-            List<Haltestelle> haltestellenDerLinie = Liefere_Haltestellen_einer_Linie(linie: linie, haltestellen: haltenstellen);
-
             // 4. Streckenabschnitte auf die Streckenabschnitte reduzieren, die zur Linie gehören
             List<Streckenabschnitt> streckenabschnitteDerLinie = Liefere_Streckenabschnitte_einer_Linie(linie: linie, streckenabschnitte: streckenabschnitte);
 
-            // Herausfinden, wieviele initiale Streckenabschnitte man erhält
-            List<Streckenabschnitt> gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: startHaltestelle, streckenabschnitte: streckenabschnitteDerLinie);
-
-            // Ein Dictionary für die sortierten Listen von Haltestellen (Routen)
-            Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Haltestelle>>();
-
-            // Das Dictionary wird mit der Anzahl gefundenener Streckenabschnitte erstellt
-            Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle(startHaltestelle, gefundeneStreckenabschnitte, sortierteListeTempAlsDictionary);
-
-            // Durch jede Route gehen
-            foreach(int route in sortierteListeTempAlsDictionary.Keys)
+            List<Haltestelle> sortierteListe = new List<Haltestelle>();
+            sortierteListe.Add(startHaltestelle);
+            Haltestelle aktuelleHaltestelle = startHaltestelle;
+            while(aktuelleHaltestelle != zielHaltestelle)
             {
-                // solange, bis die zuletzt hinzugefügte Haltestelle nicht die Ziel-Haltestelle ist
-                while(sortierteListeTempAlsDictionary[route].Last() != zielHaltestelle)
-                {
-                    gefundeneStreckenabschnitte = Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(linie: linie, haltestelle: sortierteListeTempAlsDictionary[route].Last(), streckenabschnitte: streckenabschnitteDerLinie);
-
-                    if(!gefundeneStreckenabschnitte.Any())
-                    {
-                        break;
-                    }
-
-                    Streckenabschnitt gefundenerStreckenabschnitt = gefundeneStreckenabschnitte.First();
-
-                    Haltestelle gefundeneHaltestelle = gefundenerStreckenabschnitt.StartHaltestelle == sortierteListeTempAlsDictionary[route].Last() ? gefundenerStreckenabschnitt.ZielHaltestelle : gefundenerStreckenabschnitt.StartHaltestelle;
-                    Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte(haltestellenDerLinie, streckenabschnitteDerLinie, sortierteListeTempAlsDictionary[route], gefundenerStreckenabschnitt, gefundeneHaltestelle);
-                }
+                Streckenabschnitt aktuellerStreckenabschnitt = streckenabschnitteDerLinie.First(h => h.StartHaltestelle == aktuelleHaltestelle);
+                aktuelleHaltestelle = aktuellerStreckenabschnitt.ZielHaltestelle;
+                streckenabschnitteDerLinie.Remove(aktuellerStreckenabschnitt);
+                sortierteListe.Add(aktuelleHaltestelle);
             }
 
-            // Die sortierte Liste der Haltestellen, die zurückgegeben werden soll
-            List<Haltestelle> sortierteListe = null;
-
-            // Durch alle Routen gehen und herausfinden, welche die Ziel-Haltestelle besitzen
-            foreach(int route in sortierteListeTempAlsDictionary.Keys)
-            {
-                if(sortierteListeTempAlsDictionary[route].Contains(zielHaltestelle))
-                {
-                    // 8. Ergebnis zurückgeben
-                    sortierteListe = sortierteListeTempAlsDictionary[route];
-                    break;
-                }
-            }
-
-            // Null zurückgeben, wenn keine Route gefunden werden konnte
             return sortierteListe;
-        }
-
-        /// <summary>
-        /// Hilfsmethode für das Initialisieren der Start-Haltestellen für die komplexe Berechnung
-        /// </summary>
-        /// <param name="startHaltestelle"> Die Start-Haltestelle</param>
-        /// <param name="gefundeneStreckenabschnitte">Der gefundene Streckenabschnitt</param>
-        /// <param name="sortierteListeTempAlsDictionary">Die sortierte Liste der Haltestellen als Dictionary</param>
-        internal static void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle(Haltestelle startHaltestelle, List<Streckenabschnitt> gefundeneStreckenabschnitte, Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary)
-        {
-            for(int i = 0; i < gefundeneStreckenabschnitte.Count; i++)
-            {
-                // Die sortierte Liste bekommt als erste Haltestelle die Start-Haltestelle
-                sortierteListeTempAlsDictionary.Add(i, new List<Haltestelle>() { startHaltestelle });
-            }
         }
 
         /// <summary>
@@ -178,24 +126,6 @@ namespace Fahrplanauskunft.Funktionen
             if(!Ist_Linie_An_Haltestelle(linie: linie, haltestelle: haltestelle))
             {
                 throw new LinieIstNichtAnHaltestelleException(linie: linie, haltestelle: haltestelle);
-            }
-        }
-
-        /// <summary>
-        /// Hilsmethode für das Verwalten von Hilfsobjekten für "Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel"
-        /// </summary>
-        /// <param name="haltestellenDerLinie">Die Haltestellen der Linie</param>
-        /// <param name="streckenabschnitteDerLinie">Die Streckenabschnitte der Linie</param>
-        /// <param name="sortierteListe">Die sortierte Liste</param>
-        /// <param name="gefundenerStreckenabschnitt">Der gefundene Streckenabschnitt</param>
-        /// <param name="gefundeneHaltestelle">Die gefundene Haltestelle</param>
-        internal static void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte(List<Haltestelle> haltestellenDerLinie, List<Streckenabschnitt> streckenabschnitteDerLinie, List<Haltestelle> sortierteListe, Streckenabschnitt gefundenerStreckenabschnitt, Haltestelle gefundeneHaltestelle)
-        {
-            if(gefundeneHaltestelle != null)
-            {
-                sortierteListe.Add(gefundeneHaltestelle);
-                haltestellenDerLinie.Remove(gefundeneHaltestelle);
-                streckenabschnitteDerLinie.Remove(gefundenerStreckenabschnitt);
             }
         }
 
@@ -300,28 +230,24 @@ namespace Fahrplanauskunft.Funktionen
         /// <param name="startHaltestelle">Die Start-Haltestelle</param>
         /// <param name="zielHaltestelle">Die Ziel-Haltestelle</param>
         /// <param name="streckenabschnitte">Die Streckenabschnitte</param>
-        /// <param name="haltestellen">Liste von Haltestellen</param>
         /// <returns>Gibt die Dauer in Minuten zurück, die von der Start-Haltestelle zur Ziel-Haltestelle benötigt werden</returns>
-        internal static int Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Streckenabschnitt> streckenabschnitte, List<Haltestelle> haltestellen)
+        internal static int Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(Linie linie, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Streckenabschnitt> streckenabschnitte)
         {
             int dauer = 0;
 
-            List<Haltestelle> sortierteListeDerHaltestellen = Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
-                linie: linie,
-                startHaltestelle: startHaltestelle,
-                zielHaltestelle: zielHaltestelle,
-                haltenstellen: haltestellen,
-                streckenabschnitte: streckenabschnitte);
+            Ueberpruefe_Ist_Linie_An_Haltestelle(linie, startHaltestelle);
+
+            Ueberpruefe_Ist_Linie_An_Haltestelle(linie, zielHaltestelle);
 
             List<Streckenabschnitt> streckenabschnitteDerLinie = Liefere_Streckenabschnitte_einer_Linie(linie: linie, streckenabschnitte: streckenabschnitte);
 
-            for(int i = 0; i < sortierteListeDerHaltestellen.Count - 1; i++)
+            Haltestelle aktuelleHaltestelle = startHaltestelle;
+            while(aktuelleHaltestelle != zielHaltestelle)
             {
-                Haltestelle h1 = sortierteListeDerHaltestellen[i];
-                Haltestelle h2 = sortierteListeDerHaltestellen[i + 1];
-
-                Streckenabschnitt sab = streckenabschnitteDerLinie.First(s => s.Linie == linie && ((s.StartHaltestelle == h1 && s.ZielHaltestelle == h2) || (s.StartHaltestelle == h2 && s.ZielHaltestelle == h1)));
-                dauer += sab.Dauer;
+                Streckenabschnitt aktuellerStreckenabschnitt = streckenabschnitteDerLinie.First(h => h.StartHaltestelle == aktuelleHaltestelle);
+                aktuelleHaltestelle = aktuellerStreckenabschnitt.ZielHaltestelle;
+                streckenabschnitteDerLinie.Remove(aktuellerStreckenabschnitt);
+                dauer += aktuellerStreckenabschnitt.Dauer;
             }
 
             return dauer;

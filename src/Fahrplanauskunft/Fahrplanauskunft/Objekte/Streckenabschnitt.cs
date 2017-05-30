@@ -26,7 +26,7 @@ namespace Fahrplanauskunft.Objekte
         /// <param name="dauer">Die Dauer, wie lange es von der Start-Haltestelle zur Ziel-Haltestelle dauert</param>
         /// <param name="startHaltestelle">Die Start-Haltestelle</param>
         /// <param name="zielHaltestelle">Die Ziel-Haltestelle</param>
-        /// <param name="linien">Die Linien, die auf diesem Streckenabschnitt fahren</param>
+        /// <param name="linie">Die Linie, die auf diesem Streckenabschnitt fährt</param>
         public Streckenabschnitt(int dauer, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, Linie linie)
         {
             Dauer = dauer;
@@ -45,7 +45,7 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Die Linien, die auf diesem Streckenabschnitt fahren
+        /// Die Linie, die auf diesem Streckenabschnitt fährt
         /// </summary>
         public Linie Linie
         {
