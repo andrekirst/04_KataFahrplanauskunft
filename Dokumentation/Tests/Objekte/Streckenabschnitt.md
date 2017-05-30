@@ -12,6 +12,12 @@ Test-Klasse: `T_Streckenabschnitt`
 
 Test, ob der Streckenabschnitt die Dauer von 1 hat, eine Start- und ZielHaltestelle hat, sowie dass eine Linie auf dem Streckebschnitt fährt.
 
+### Streckenabschnitt_Property_Linie
+
+#### Beschreibung
+
+Testet das Objekt Streckenabschnitt, ob die übergebene Linie übereinstimmt
+
 ### Streckenabschnitt_Equals_Name_Test_Ident_TEST
 
 #### Beschreibung

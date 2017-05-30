@@ -33,6 +33,9 @@ namespace Fahrplanauskunft.Test.Objekte
             Assert.AreEqual("ZielHaltestelle", streckenabschnitt.ZielHaltestelle.Name);
         }
 
+        /// <summary>
+        /// Testet das Objekt Streckenabschnitt, ob die übergebene Linie übereinstimmt
+        /// </summary>
         [TestMethod, TestCategory("Objekte")]
         public void Streckenabschnitt_Property_Linie()
         {

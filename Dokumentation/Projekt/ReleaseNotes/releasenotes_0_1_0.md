@@ -25,6 +25,7 @@
 * #85 - Deployment konfigurieren `feature`, `umgebung`
 * #82 - Update der NuGet-Packages `umgebung`, `dokumentation`
 * #83 - Ermittlung der nächsten Abfahrtszeit `feature`
+* #100 - Streckenabschnitte haben nur noch eine Linie `feature`, `Testdaten`
 
 ## Bugfixes
 
