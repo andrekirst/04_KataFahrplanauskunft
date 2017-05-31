@@ -125,8 +125,8 @@ deploy:
     description: $($env:CURRENT_RELEASENOTES)
     auth_token:
       secure: hnDjfSoPrEx64I/3s56hGoVwH/vOuZg/WHW+aKzWtkRCyw8pFrz3NzhAyWR12AEq
-    tag: $(appveyor_build_version)-rc
-    release: $(appveyor_build_version)-rc
+    tag: $($env:appveyor_build_version)-rc
+    release: $($env:appveyor_build_version)-rc
     artifact: fahrplanauskunft
     on:
       branch: release/*
@@ -138,8 +138,8 @@ deploy:
     description: $($env:CURRENT_RELEASENOTES)
     auth_token:
       secure: hnDjfSoPrEx64I/3s56hGoVwH/vOuZg/WHW+aKzWtkRCyw8pFrz3NzhAyWR12AEq
-    tag: $(appveyor_build_version)
-    release: $(appveyor_build_version)
+    tag: $($env:appveyor_build_version)
+    release: $($env:appveyor_build_version)
     artifact: fahrplanauskunft
     on:
       branch: master
@@ -152,7 +152,7 @@ deploy:
     api_key:
       secure: ITVW09mNALvMUWScQao1Ermu2Ls5ut8Bfc6SROJkoUdEUxErBHpY0pk++4llAWgh
     package: fahrplanauskunft
-    version: $(appveyor_build_version)
+    version: $($env:appveyor_build_version)
     publish: true
     override: true
     explode: false
