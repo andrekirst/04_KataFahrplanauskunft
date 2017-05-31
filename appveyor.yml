@@ -25,7 +25,7 @@ cache:
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: "1.0.{build}"
+  assembly_version: "{version}"
   assembly_file_version: "{version}"
   assembly_informational_version: "{version}"
 
@@ -42,6 +42,7 @@ environment:
     secure: o90DGx/Fmc85k/gMdZ3SzlyUi+a6JCg50LtSqm5zw5k2cbLaIsgKyNjORVGERs0G
   SONARQUBE_TOKEN:
     secure: sFo2TCruCWRcpHbTVAyLc4DZCDBxiGzRpLkv1Cq2oquDiKjo1yuCh73IN8ceKZ65
+  CURRENT_RELEASENOTES: ""
 
 before_build:
   - ps: nuget restore $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
@@ -67,6 +68,12 @@ build_script:
     - ps: MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$($env:SONARQUBE_TOKEN)"
 
 after_build:
+  - ps: >-
+      $versionString = $(version);
+      $versionObject = New-Object System.Version($versionString);
+      $versionSearchString = "releasenotes_" + $versionObject.ToString(2).Replace(".", "_") + ".md";
+      $releaseNotesPath = Resolve-Path "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Projekt\ReleaseNotes\$versionSearchString;
+      $(env:CURRENT_RELEASENOTES) = Get-Content $releaseNotesPath;
   - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-dev.zip" }
   - ps: if ($env:APPVEYOR_REPO_BRANCH -like "release*") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-rc.zip" }
   - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "master") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version).zip" }
@@ -82,6 +89,8 @@ after_build:
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\FahrplanauskunftSpeicher.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\FahrplanauskunftSpeicher.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\"
   - ps: ls "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Objekte\" -Filter *.md | Foreach-Object { pandoc -s --toc -o ("$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\" + $_.BaseName + ".html")  $_.FullName -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained }
+  - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Projekt\ReleaseNotes\"
+  - ps: ls "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Projekt\ReleaseNotes\" -Filter *.md -Exclude releasenotes_template.md | Foreach-Object { pandoc -s --toc -o ("$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Projekt\ReleaseNotes\" + $_.BaseName + ".html")  $_.FullName -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained }
   - ps: 7z a $env:deploymentfilename "$env:APPVEYOR_BUILD_FOLDER\output\*.*" -r
 
 artifacts:
@@ -112,6 +121,7 @@ deploy:
   - provider: GitHub
     draft: false
     prerelease: true
+    description: $(env:CURRENT_RELEASENOTES)
     auth_token:
       secure: hnDjfSoPrEx64I/3s56hGoVwH/vOuZg/WHW+aKzWtkRCyw8pFrz3NzhAyWR12AEq
     tag: $(appveyor_build_version)-rc
@@ -124,6 +134,7 @@ deploy:
   - provider: GitHub
     draft: false
     prerelease: false
+    description: $(env:CURRENT_RELEASENOTES)
     auth_token:
       secure: hnDjfSoPrEx64I/3s56hGoVwH/vOuZg/WHW+aKzWtkRCyw8pFrz3NzhAyWR12AEq
     tag: $(appveyor_build_version)
