@@ -72,7 +72,7 @@ after_build:
       $versionString = $(version);
       $versionObject = New-Object System.Version($versionString);
       $versionSearchString = "releasenotes_" + $versionObject.ToString(2).Replace(".", "_") + ".md";
-      $releaseNotesPath = Resolve-Path "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Projekt\ReleaseNotes\$versionSearchString;
+      $releaseNotesPath = Resolve-Path "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Projekt\ReleaseNotes\$versionSearchString";
       $(env:CURRENT_RELEASENOTES) = Get-Content $releaseNotesPath;
   - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-dev.zip" }
   - ps: if ($env:APPVEYOR_REPO_BRANCH -like "release*") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-rc.zip" }
