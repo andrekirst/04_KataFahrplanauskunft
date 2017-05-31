@@ -69,7 +69,7 @@ build_script:
 
 after_build:
   - ps: >-
-      $versionString = "{version}";
+      $versionString = "$env:version";
       $versionString;
       $versionObject = New-Object System.Version($versionString);
       $versionSearchString = "releasenotes_" + $versionObject.ToString(2).Replace(".", "_") + ".md";
