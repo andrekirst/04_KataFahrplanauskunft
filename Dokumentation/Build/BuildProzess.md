@@ -41,6 +41,10 @@ Konfiguriert wird der Prozess mit der Datei [appveyor.yml](/appveyor.yml).
 1. Ausführen von **OpenCover** zur Ermittlung der Testabdeckung. Entstandene Testabdeckung wird in der Datei `./opencovertests.xml` abgelegt
 1. Übermittlung der Testabdeckung an coveralls mit **coveralls.net**
 1. Beendigung des SonarQube-Runners und Übermittlung der Ergebniss an das SonarQube-Projekt
+1. Erstellung des Artifaktes
+    1. Kopieren der Ausgabe aus dem `bin`-Ordner in den Artifakt-Ordner
+    1. Generierung der Dokumentationen von Markdown nach HTML mit `pandoc` und Ausgabe in den Artifakt-Ordner
+    1. Upload des Artifakt
 
 ### SonarQube
 

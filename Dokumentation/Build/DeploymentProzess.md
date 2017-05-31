@@ -12,6 +12,10 @@
 | Newtonsoft.Json.dll | 10.0.2.20802 |
 | Newtonsoft.Json.xml | |
 
+#### Dokumentation
+
+Die im Build-Prozess entstandenen HTML-Dokumente, die aus den Markdown-Dateien erzeugt wurden, werden unterhalb des Ordners `dokumentation` abgelegt und mit veröffentlicht.
+
 ## Übersicht der Deployment-Ziele
 
 | Branch | Ziel |
