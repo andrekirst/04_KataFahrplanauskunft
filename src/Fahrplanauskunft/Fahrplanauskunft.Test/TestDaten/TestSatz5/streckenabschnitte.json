@@ -7,7 +7,7 @@
         },
         "StartHaltestelle": {
             "Name": "H1",
-            "Linien1": [
+            "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD"

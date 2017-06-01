@@ -366,24 +366,18 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Kommend_von_H1_naechster_Umstiegspunkt_von_Haltestelle_H2_ist_H8()
         {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
             List<string> expected = new List<Umstiegspunkt>()
             {
-                new Umstiegspunkt(new Haltestelle()
-                {
-                    Name = "H8"
-                })
+                new Umstiegspunkt(haltestellen.First(h => h.Name == "H8"))
             }.Select(x => x.Name).ToList();
-
-            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
 
             Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H2");
 
             List<Umstiegspunkt> bereitsgewesenenUmstiegspunkte = new List<Umstiegspunkt>
             {
-                new Umstiegspunkt(new Haltestelle()
-                {
-                    Name = "H4"
-                })
+                new Umstiegspunkt(haltestellen.First(h => h.Name == "H4"))
             };
 
             List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(
