@@ -59,3 +59,9 @@ Test des Ungleichheitsoperators mit zwei Haltestellen mit den gleichen Namen
 #### Beschreibung
 
 Test des Ungleichheitsoperators mit zwei Haltestellen mit verschiedenen Namen
+
+### Haltestelle_Equals_H1_Ungleiche_Linien
+
+#### Beschreibung
+
+Test einer Haltestelle, wenn die Linien ungleich sind

@@ -9,6 +9,7 @@
     <Rule Id="CC0015" Action="None" />
     <Rule Id="CC0021" Action="None" />
     <Rule Id="CC0030" Action="None" />
+    <Rule Id="CC0037" Action="Warning" />
     <Rule Id="CC0065" Action="Warning" />
     <Rule Id="CC0091" Action="None" />
     <Rule Id="CC0105" Action="None" />
