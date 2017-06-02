@@ -147,12 +147,6 @@ Hierarchie möglichen Route von Haltestelle H1
 Hierarchie möglichen Route von Haltestelle H2
 Hierarchie möglichen Route von Haltestelle H12
 
-### Funktion: Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle_H1
-
-#### Beschreibung
-
-Test für das Initialisieren der Start-Haltestellen in das sortierte Dictionary
-
 ### Funktion: Ueberpruefe_Ist_Linie_An_Haltestelle_B11_H1
 
 #### Beschreibung
@@ -164,12 +158,6 @@ Test, ob die Linie B11 an der Haltetelle H1 ist
 #### Beschriebung
 
 Test, ob die Exception LinieIstNichtAnHaltestelleException geworfen wird
-
-### Funktion: Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte_1
-
-#### Beschreibung
-
-Test, ob das Hinzufügen und Entfernen aus Listen für das Sortieren einer Liste von Haltestellen funktioniert
 
 ### Funktion: Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H1_zu_H2_Ergebnis_2
 
@@ -212,3 +200,15 @@ Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie
 #### Beschreibung
 
 Test für die Ermittlung der nächsten Abfahrtszeit an der Haltestelle H2, Linie B11 mit der Wunschabfahrtszeit 3 (00:03 Uhr). Sollwert 3 (00:03 Uhr)
+
+### Funktion: Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H16_zu_H1_Erwartet_Exception
+
+#### Beschreibung
+
+Berechnung der Fahrtdauer von der Haltestelle H16 zu H1. Es wird die Exception LinieIstNichtAnHaltestelleException erwartet
+
+### Funktion: Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H1_zu_H12_Erwartet_Exception
+
+#### Beschreibung
+
+Berechnung der Fahrtdauer von der Haltestelle H1 zu H12. Es wird die Exception LinieIstNichtAnHaltestelleException erwartet

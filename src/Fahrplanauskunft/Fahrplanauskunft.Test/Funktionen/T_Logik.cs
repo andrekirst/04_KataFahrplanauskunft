@@ -366,24 +366,18 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod]
         public void Kommend_von_H1_naechster_Umstiegspunkt_von_Haltestelle_H2_ist_H8()
         {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+
             List<string> expected = new List<Umstiegspunkt>()
             {
-                new Umstiegspunkt(new Haltestelle()
-                {
-                    Name = "H8"
-                })
+                new Umstiegspunkt(haltestellen.First(h => h.Name == "H8"))
             }.Select(x => x.Name).ToList();
-
-            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
 
             Haltestelle aktuelleHaltestelle = haltestellen.First(x => x.Name == "H2");
 
             List<Umstiegspunkt> bereitsgewesenenUmstiegspunkte = new List<Umstiegspunkt>
             {
-                new Umstiegspunkt(new Haltestelle()
-                {
-                    Name = "H4"
-                })
+                new Umstiegspunkt(haltestellen.First(h => h.Name == "H4"))
             };
 
             List<string> actual = Logik.Liefere_Naechste_Umstiegspunkte_von_Haltestelle(
@@ -447,7 +441,6 @@ namespace Fahrplanauskunft.Test.Funktionen
                     linie: linien.First(l => l.Ident == "B31"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H10"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H11"),
-                    haltenstellen: haltenstellen,
                     streckenabschnitte: streckenabschnitte);
             #endregion
 
@@ -483,7 +476,6 @@ namespace Fahrplanauskunft.Test.Funktionen
                     linie: linien.First(l => l.Ident == "B32"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H11"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H10"),
-                    haltenstellen: haltenstellen,
                     streckenabschnitte: streckenabschnitte);
             #endregion
 
@@ -518,7 +510,6 @@ namespace Fahrplanauskunft.Test.Funktionen
                     linie: linien.First(l => l.Ident == "B41"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H14"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H15"),
-                    haltenstellen: haltenstellen,
                     streckenabschnitte: streckenabschnitte);
             #endregion
 
@@ -553,7 +544,6 @@ namespace Fahrplanauskunft.Test.Funktionen
                     linie: linien.First(l => l.Ident == "B42"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H15"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H14"),
-                    haltenstellen: haltenstellen,
                     streckenabschnitte: streckenabschnitte);
             #endregion
 
@@ -584,7 +574,6 @@ namespace Fahrplanauskunft.Test.Funktionen
                     linie: linien.First(l => l.Ident == "B11"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H1"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),
-                    haltenstellen: haltenstellen,
                     streckenabschnitte: streckenabschnitte);
 
             // Hier wird eine Exception geworfen, die vom UnitTest als erwartet ausgewertet wird
@@ -613,7 +602,6 @@ namespace Fahrplanauskunft.Test.Funktionen
                     linie: linien.First(l => l.Ident == "B41"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H1"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),
-                    haltenstellen: haltenstellen,
                     streckenabschnitte: streckenabschnitte);
 
             // Hier wird eine Exception geworfen, die vom UnitTest als erwartet ausgewertet wird
@@ -798,7 +786,6 @@ namespace Fahrplanauskunft.Test.Funktionen
                     linie: linien.First(l => l.Ident == "B31"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H10"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H8"),
-                    haltenstellen: haltenstellen,
                     streckenabschnitte: streckenabschnitte);
             #endregion
 
@@ -1080,34 +1067,6 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Test für das Initialisieren der Start-Haltestellen in das sortierte Dictionary
-        /// </summary>
-        [TestMethod]
-        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle_H1()
-        {
-            #region Prepare
-            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H1");
-            List<Streckenabschnitt> gefundeneStreckenabschnitte = Lade_Test_Streckenabschnitte().Where(sab => sab.StartHaltestelle == haltestellen.First(h => h.Name == "H1") && sab.ZielHaltestelle == haltestellen.First(h2 => h2.Name == "H2")).ToList();
-            Dictionary<int, List<Haltestelle>> sortierteListeTempAlsDictionary = new Dictionary<int, List<Haltestelle>>();
-            #endregion
-
-            #region Logik ausführen
-            Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Initialisiere_StartHaltestelle(startHaltestelle, gefundeneStreckenabschnitte, sortierteListeTempAlsDictionary);
-            #endregion
-
-            #region Actual und Expected
-            Dictionary<int, List<Haltestelle>> actual = sortierteListeTempAlsDictionary;
-            Dictionary<int, List<Haltestelle>> expected = new Dictionary<int, List<Haltestelle>>()
-            {
-                { 0, new List<Haltestelle>() { haltestellen.First(h => h.Name == "H1") } }
-            };
-            #endregion
-
-            equalidator.Equalidator.AreEqual(expected, actual);
-        }
-
-        /// <summary>
         /// Test, ob die Linie B11 an der Haltetelle H1 ist
         /// </summary>
         [TestMethod]
@@ -1140,54 +1099,6 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Test, ob das Hinzufügen und Entfernen aus Listen für das Sortieren einer Liste von Haltestellen funktioniert
-        /// </summary>
-        [TestMethod]
-        public void Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte_1()
-        {
-            #region Prepare
-            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
-            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
-            List<Linie> linien = Lade_Test_Linien();
-
-            List<Haltestelle> haltestellenDerLinie = new List<Haltestelle>()
-            {
-                haltestellen.First(h => h.Name == "H2"),
-                haltestellen.First(h => h.Name == "H3"),
-                haltestellen.First(h => h.Name == "H4"),
-                haltestellen.First(h => h.Name == "H5")
-            };
-
-            List<Streckenabschnitt> streckenabschnitteDerLinie = streckenabschnitte.Where(sab => sab.Linien.Contains(linien.First(l => l.Ident == "B11"))).ToList();
-
-            List<Haltestelle> sortierteListe = new List<Haltestelle>() { haltestellen.First(h => h.Name == "H1") };
-
-            Streckenabschnitt gefundenerStreckenabschnitt = streckenabschnitte.First(sab => sab.StartHaltestelle == haltestellen.First(h => h.Name == "H1") && sab.ZielHaltestelle == haltestellen.First(h2 => h2.Name == "H2"));
-
-            Haltestelle gefundeneHaltestelle = haltestellen.First(h => h.Name == "H2");
-            #endregion
-
-            Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel_Verwalte_Hilfsobjekte(haltestellenDerLinie, streckenabschnitteDerLinie, sortierteListe, gefundenerStreckenabschnitt, gefundeneHaltestelle);
-
-            #region Expected
-            List<Haltestelle> sortierteListeExpected = new List<Haltestelle>() { haltestellen.First(h => h.Name == "H1"), haltestellen.First(h => h.Name == "H2") };
-
-            List<Haltestelle> haltestellenDerLinieExpected = new List<Haltestelle>()
-            {
-                haltestellen.First(h => h.Name == "H3"),
-                haltestellen.First(h => h.Name == "H4"),
-                haltestellen.First(h => h.Name == "H5")
-            };
-
-            List<Streckenabschnitt> streckenabschnitteDerLinieExpected = streckenabschnitte.Where(sab => sab.Linien.Contains(linien.First(l => l.Ident == "B11"))).Where(sab => sab.StartHaltestelle != haltestellen.First(h => h.Name == "H1")).ToList();
-            #endregion
-
-            CollectionAssert.AreEqual(sortierteListeExpected, sortierteListe);
-            CollectionAssert.AreEqual(haltestellenDerLinieExpected, haltestellenDerLinie);
-            CollectionAssert.AreEqual(streckenabschnitteDerLinieExpected, streckenabschnitteDerLinie);
-        }
-
-        /// <summary>
         /// Berechnung der Fahrtdauer von der Haltestelle H1 zu H2. Die erwartete Fahrtdauer beträgt 2 Minuten
         /// </summary>
         [TestMethod]
@@ -1203,7 +1114,11 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = linien.First(l => l.Ident == "B11");
 
             int expected = 2;
-            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
+                linie: linie,
+                startHaltestelle: startHaltestelle,
+                zielHaltestelle: zielHaltestelle,
+                streckenabschnitte: streckenabschnitte);
 
             Assert.AreEqual(expected, actual);
         }
@@ -1224,7 +1139,11 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = linien.First(l => l.Ident == "B11");
 
             int expected = 6;
-            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
+                linie: linie,
+                startHaltestelle: startHaltestelle,
+                zielHaltestelle: zielHaltestelle,
+                streckenabschnitte: streckenabschnitte);
 
             Assert.AreEqual(expected, actual);
         }
@@ -1245,7 +1164,11 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = linien.First(l => l.Ident == "B41");
 
             int expected = 12;
-            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
+                linie: linie,
+                startHaltestelle: startHaltestelle,
+                zielHaltestelle: zielHaltestelle,
+                streckenabschnitte: streckenabschnitte);
 
             Assert.AreEqual(expected, actual);
         }
@@ -1266,7 +1189,11 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = linien.First(l => l.Ident == "B42");
 
             int expected = 12;
-            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
+                linie: linie,
+                startHaltestelle: startHaltestelle,
+                zielHaltestelle: zielHaltestelle,
+                streckenabschnitte: streckenabschnitte);
 
             Assert.AreEqual(expected, actual);
         }
@@ -1323,6 +1250,56 @@ namespace Fahrplanauskunft.Test.Funktionen
             int actual = Logik.ErmittleAbfahrtszeit(haltestelle: haltstelleH1, linie: linieB11, haltestellenfahrplaneintraege: haltestellenfahrplaneintraege, wunschabfahrtszeit: 3);
             int expected = 3;
             Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Berechnung der Fahrtdauer von der Haltestelle H16 zu H1. Es wird die Exception LinieIstNichtAnHaltestelleException erwartet
+        /// </summary>
+        [TestMethod, TestCategory("Logik")]
+        [ExpectedException(typeof(LinieIstNichtAnHaltestelleException))]
+        public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H16_zu_H1_Erwartet_Exception()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+
+            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H16");
+            Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H1");
+
+            Linie linie = linien.First(l => l.Ident == "B42");
+
+            Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
+                linie: linie,
+                startHaltestelle: startHaltestelle,
+                zielHaltestelle: zielHaltestelle,
+                streckenabschnitte: streckenabschnitte);
+
+            // Hier wird eine Exception geworfen, die vom UnitTest als erwartet ausgewertet wird
+        }
+
+        /// <summary>
+        /// Berechnung der Fahrtdauer von der Haltestelle H1 zu H12. Es wird die Exception LinieIstNichtAnHaltestelleException erwartet
+        /// </summary>
+        [TestMethod, TestCategory("Logik")]
+        [ExpectedException(typeof(LinieIstNichtAnHaltestelleException))]
+        public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_H1_zu_H12_Erwartet_Exception()
+        {
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Linie> linien = Lade_Test_Linien();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+
+            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H1");
+            Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H12");
+
+            Linie linie = linien.First(l => l.Ident == "B42");
+
+            Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
+                linie: linie,
+                startHaltestelle: startHaltestelle,
+                zielHaltestelle: zielHaltestelle,
+                streckenabschnitte: streckenabschnitte);
+
+            // Hier wird eine Exception geworfen, die vom UnitTest als erwartet ausgewertet wird
         }
     }
 }

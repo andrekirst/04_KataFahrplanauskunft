@@ -26,13 +26,13 @@ namespace Fahrplanauskunft.Objekte
         /// <param name="dauer">Die Dauer, wie lange es von der Start-Haltestelle zur Ziel-Haltestelle dauert</param>
         /// <param name="startHaltestelle">Die Start-Haltestelle</param>
         /// <param name="zielHaltestelle">Die Ziel-Haltestelle</param>
-        /// <param name="linien">Die Linien, die auf diesem Streckenabschnitt fahren</param>
-        public Streckenabschnitt(int dauer, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Linie> linien)
+        /// <param name="linie">Die Linie, die auf diesem Streckenabschnitt fährt</param>
+        public Streckenabschnitt(int dauer, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, Linie linie)
         {
             Dauer = dauer;
             StartHaltestelle = startHaltestelle;
             ZielHaltestelle = zielHaltestelle;
-            Linien = linien;
+            Linie = linie;
         }
 
         /// <summary>
@@ -45,9 +45,9 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Die Linien, die auf diesem Streckenabschnitt fahren
+        /// Die Linie, die auf diesem Streckenabschnitt fährt
         /// </summary>
-        public List<Linie> Linien
+        public Linie Linie
         {
             get;
             set;
@@ -106,7 +106,8 @@ namespace Fahrplanauskunft.Objekte
                 {
                     return Dauer == other.Dauer &&
                     StartHaltestelle == other.StartHaltestelle &&
-                    ZielHaltestelle == other.ZielHaltestelle;
+                    ZielHaltestelle == other.ZielHaltestelle &&
+                    Linie == other.Linie;
                 });
         }
 
@@ -134,10 +135,7 @@ namespace Fahrplanauskunft.Objekte
                 hash = (hash * 23) + Dauer.GetHashCode();
                 hash = (hash * 23) + StartHaltestelle.GetHashCode();
                 hash = (hash * 23) + ZielHaltestelle.GetHashCode();
-                foreach(Linie linie in Linien)
-                {
-                    hash = (hash * 23) + linie.GetHashCode();
-                }
+                hash = (hash * 23) + Linie.GetHashCode();
 
                 return hash;
             }

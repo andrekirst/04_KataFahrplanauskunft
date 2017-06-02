@@ -84,7 +84,7 @@ Testet die Methode Laden mit der Überprüfung von Haltestellen
 
 Testet die Methode Laden mit der Überprüfung von Linien
 
-### FahrplanauskunftSpeicher_Laden_Streckenabschnitte_Anzahl_16
+### FahrplanauskunftSpeicher_Laden_Streckenabschnitte_Anzahl_32
 
 #### Beschreibung
 
