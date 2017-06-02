@@ -2,7 +2,7 @@
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 
-using System.Linq;
+using System.Collections.Generic;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -139,6 +139,32 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle h2 = new Haltestelle(name: "H2");
 
             Assert.IsTrue(h1 != h2);
+        }
+
+        /// <summary>
+        /// Test einer Haltestelle, wenn die Linien ungleich sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Haltestelle_Equals_H1_Ungleiche_Linien()
+        {
+            Haltestelle h1 = new Haltestelle(name: "H1")
+            {
+                Linien = new List<Linie>()
+                {
+                    new Linie(name: "U1", ident: "U1_NORD"),
+                    new Linie(name: "U1", ident: "U1_SUED")
+                }
+            };
+            Haltestelle h2 = new Haltestelle(name: "H2")
+            {
+                Linien = new List<Linie>()
+                {
+                    new Linie(name: "U1", ident: "U1_NORD"),
+                    new Linie(name: "U2", ident: "U2_WEST")
+                }
+            };
+
+            Assert.AreNotEqual(h1, h2);
         }
     }
 }
