@@ -4,6 +4,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -180,7 +181,8 @@ namespace Fahrplanauskunft.Test.Objekte
 
             List<Streckenabschnitt> streckenabschnitte = new List<Streckenabschnitt>()
             {
-                new Streckenabschnitt(1, haltestellen[0], haltestellen[1], linien)
+                new Streckenabschnitt(1, haltestellen[0], haltestellen[1], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[1], haltestellen[0], linien.First(l => l.Ident == "U1_SUED"))
             };
 
             #endregion
@@ -227,16 +229,16 @@ namespace Fahrplanauskunft.Test.Objekte
 
             List<Streckenabschnitt> streckenabschnitte = new List<Streckenabschnitt>()
             {
-                new Streckenabschnitt(1, haltestellen[0], haltestellen[1], linien),
-                new Streckenabschnitt(1, haltestellen[1], haltestellen[2], linien),
-                new Streckenabschnitt(1, haltestellen[2], haltestellen[3], linien),
-                new Streckenabschnitt(1, haltestellen[3], haltestellen[4], linien),
-                new Streckenabschnitt(1, haltestellen[4], haltestellen[5], linien),
-                new Streckenabschnitt(1, haltestellen[5], haltestellen[6], linien),
-                new Streckenabschnitt(1, haltestellen[6], haltestellen[7], linien),
-                new Streckenabschnitt(1, haltestellen[7], haltestellen[8], linien),
-                new Streckenabschnitt(1, haltestellen[8], haltestellen[9], linien),
-                new Streckenabschnitt(1, haltestellen[9], haltestellen[10], linien)
+                new Streckenabschnitt(1, haltestellen[0], haltestellen[1], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[1], haltestellen[2], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[2], haltestellen[3], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[3], haltestellen[4], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[4], haltestellen[5], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[5], haltestellen[6], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[6], haltestellen[7], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[7], haltestellen[8], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[8], haltestellen[9], linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(1, haltestellen[9], haltestellen[10], linien.First(l => l.Ident == "U1_NORD"))
             };
 
             #endregion
@@ -464,7 +466,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Testet die Methode Laden mit der Überprüfung von Streckenabschnitten
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void FahrplanauskunftSpeicher_Laden_Streckenabschnitte_Anzahl_16()
+        public void FahrplanauskunftSpeicher_Laden_Streckenabschnitte_Anzahl_32()
         {
             string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
 
@@ -473,7 +475,7 @@ namespace Fahrplanauskunft.Test.Objekte
 
             List<Streckenabschnitt> streckenabschnitte = fahrplanauskunftSpeicher.Streckenabschnitte;
 
-            int expected = 16;
+            int expected = 32;
             int actual = streckenabschnitte.Count;
 
             Assert.AreEqual(expected, actual);
