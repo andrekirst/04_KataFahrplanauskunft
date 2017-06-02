@@ -26,6 +26,7 @@
 * #92 - Dokumentation als PDF oder HTML erzeugen und im Deployment einschließen `feature`, `umgebung`
 * #93 - Überarbeitung Releasenotes und Einbau in Deployment-Prozess `feature`, `umgebung`
 * #100 - Streckenabschnitte haben nur noch eine Linie `feature`, `Testdaten`
+* #93 - Überarbeitung Releasenotes und Einbau in Deployment-Prozess `feature`, `umgebung`
 
 ## Bugfixes
 
