@@ -1356,7 +1356,6 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Linie> actual = Logik.ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(
                 startHaltestelle: haltestellen.First(h => h.Name == "H1"),
                 zielHaltestelle: haltestellen.First(h => h.Name == "H2"),
-                haltestellen: haltestellen,
                 streckenabschnitte: streckenabschnitte);
 
             CollectionAssert.AreEqual(expected, actual);

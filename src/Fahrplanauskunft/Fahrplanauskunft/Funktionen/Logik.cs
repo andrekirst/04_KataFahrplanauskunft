@@ -376,17 +376,13 @@ namespace Fahrplanauskunft.Funktionen
             }
         }
 
-        internal static List<Linie> ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Haltestelle> haltestellen, List<Streckenabschnitt> streckenabschnitte)
+        internal static List<Linie> ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Streckenabschnitt> streckenabschnitte)
         {
-            List<Linie> linien = new List<Linie>();
-            foreach(Linie linie in startHaltestelle.Linien)
-            {
-                List<Haltestelle> hs = Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte);
-                if(hs.Any())
-                {
-                    linien.Add(linie);
-                }
-            }
+            List<Linie> linienAnDerStartHaltestelle = streckenabschnitte.Where(sab => sab.StartHaltestelle == startHaltestelle).Select(sab2 => sab2.Linie).ToList();
+            List<Linie> linienAnDerZielHaltestelle = streckenabschnitte.Where(sab => sab.ZielHaltestelle == zielHaltestelle).Select(sab2 => sab2.Linie).ToList();
+
+            List<Linie> linien = linienAnDerStartHaltestelle.Intersect(linienAnDerZielHaltestelle).ToList();
+
             return linien;
         }
     }
