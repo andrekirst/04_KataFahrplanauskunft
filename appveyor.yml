@@ -55,10 +55,11 @@ build_script:
     - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
     - ps: msbuild $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.sln
     - ps: vstest.console /logger:Appveyor "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll"
+    - ps: vstest.console /logger:Appveyor "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.UI.WindowsForms.Editor.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.UI.WindowsForms.Editor.Test.dll"
     - ps: >-
         $opencoverexe = (Resolve-Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\packages\OpenCover.*\tools\OpenCover.Console.exe").ToString()
 
-        & $opencoverexe -register:user -filter:"+[*]* -[*Fahrplanauskunft.Test*]*" -excludebyattribute:*ExcludeFromCodeCoverage* -target:vstest.console.exe "-targetargs:""$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll""" -output:./opencovertests.xml
+        & $opencoverexe -register:user -filter:"+[*]* -[*.Test*]*" -excludebyattribute:*ExcludeFromCodeCoverage* -target:vstest.console.exe "-targetargs:""$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.UI.WindowsForms.Editor.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.UI.WindowsForms.Editor.Test.dll""" -output:./opencovertests.xml
 
         $coveralls = (Resolve-Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\packages\coveralls.net.*\tools\csmacnz.Coveralls.exe").ToString()
 
@@ -79,8 +80,8 @@ after_build:
   - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "master") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version).zip" }
   - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-dev-pr$env:APPVEYOR_PULL_REQUEST_NUMBER.zip" }
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\"
-  - ps: rm "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
-  - ps: Copy-Item -Destination "$env:APPVEYOR_BUILD_FOLDER\output\" -Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*" -Recurse
+  - ps: rm "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.UI.WindowsForms.Editor\bin\$env:CONFIGURATION\*.pdb"
+  - ps: Copy-Item -Destination "$env:APPVEYOR_BUILD_FOLDER\output\" -Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.UI.WindowsForms.Editor\bin\$env:CONFIGURATION\*.*" -Recurse
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\"
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BuildProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\BuildProzess.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: pandoc -s -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BranchingGuide.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Projekt\branching_guide.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
