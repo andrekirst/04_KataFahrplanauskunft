@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.Objekte
@@ -80,7 +81,8 @@ namespace Fahrplanauskunft.Objekte
                 other,
                 () =>
                 {
-                    return this.Name == other.Name;
+                    return this.Name == other.Name &&
+                    this.Linien.SequenceEqual(other.Linien);
                 });
         }
 

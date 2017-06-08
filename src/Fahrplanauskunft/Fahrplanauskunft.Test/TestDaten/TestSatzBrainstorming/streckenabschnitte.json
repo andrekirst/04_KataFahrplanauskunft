@@ -1,16 +1,10 @@
 [
     {
         "Dauer": 2,
-        "Linien": [
-            {
-                "Name": "B1",
-                "Ident": "B11"
-            },
-            {
-                "Name": "B1",
-                "Ident": "B12"
-            }
-        ],
+        "Linie": {
+            "Name": "B1",
+            "Ident": "B11"
+        },
         "StartHaltestelle": {
             "Name": "H1",
             "Linien": [
@@ -48,16 +42,10 @@
     },
     {
         "Dauer": 2,
-        "Linien": [
-            {
-                "Name": "B1",
-                "Ident": "B11"
-            },
-            {
-                "Name": "B1",
-                "Ident": "B12"
-            }
-        ],
+        "Linie": {
+            "Name": "B1",
+            "Ident": "B11"
+        },
         "StartHaltestelle": {
             "Name": "H2",
             "Linien": [
@@ -95,16 +83,10 @@
     },
     {
         "Dauer": 2,
-        "Linien": [
-            {
-                "Name": "B1",
-                "Ident": "B11"
-            },
-            {
-                "Name": "B1",
-                "Ident": "B12"
-            }
-        ],
+        "Linie": {
+            "Name": "B1",
+            "Ident": "B11"
+        },
         "StartHaltestelle": {
             "Name": "H3",
             "Linien": [
@@ -142,16 +124,10 @@
     },
     {
         "Dauer": 2,
-        "Linien": [
-            {
-                "Name": "B1",
-                "Ident": "B11"
-            },
-            {
-                "Name": "B1",
-                "Ident": "B12"
-            }
-        ],
+        "Linie": {
+            "Name": "B1",
+            "Ident": "B11"
+        },
         "StartHaltestelle": {
             "Name": "H4",
             "Linien": [
@@ -189,16 +165,10 @@
     },
     {
         "Dauer": 1,
-        "Linien": [
-            {
-                "Name": "B2",
-                "Ident": "B21"
-            },
-            {
-                "Name": "B2",
-                "Ident": "B22"
-            }
-        ],
+        "Linie": {
+            "Name": "B2",
+            "Ident": "B21"
+        },
         "StartHaltestelle": {
             "Name": "H6",
             "Linien": [
@@ -236,16 +206,10 @@
     },
     {
         "Dauer": 2,
-        "Linien": [
-            {
-                "Name": "B2",
-                "Ident": "B21"
-            },
-            {
-                "Name": "B2",
-                "Ident": "B22"
-            }
-        ],
+        "Linie": {
+            "Name": "B2",
+            "Ident": "B21"
+        },
         "StartHaltestelle": {
             "Name": "H4",
             "Linien": [
@@ -283,16 +247,10 @@
     },
     {
         "Dauer": 1,
-        "Linien": [
-            {
-                "Name": "B2",
-                "Ident": "B21"
-            },
-            {
-                "Name": "B2",
-                "Ident": "B22"
-            }
-        ],
+        "Linie": {
+            "Name": "B2",
+            "Ident": "B21"
+        },
         "StartHaltestelle": {
             "Name": "H7",
             "Linien": [
@@ -338,16 +296,10 @@
     },
     {
         "Dauer": 2,
-        "Linien": [
-            {
-                "Name": "B2",
-                "Ident": "B21"
-            },
-            {
-                "Name": "B2",
-                "Ident": "B22"
-            }
-        ],
+        "Linie": {
+            "Name": "B2",
+            "Ident": "B21"
+        },
         "StartHaltestelle": {
             "Name": "H8",
             "Linien": [
@@ -393,16 +345,10 @@
     },
     {
         "Dauer": 1,
-        "Linien": [
-            {
-                "Name": "B3",
-                "Ident": "B31"
-            },
-            {
-                "Name": "B3",
-                "Ident": "B32"
-            }
-        ],
+        "Linie": {
+            "Name": "B3",
+            "Ident": "B31"
+        },
         "StartHaltestelle": {
             "Name": "H10",
             "Linien": [
@@ -440,16 +386,10 @@
     },
     {
         "Dauer": 1,
-        "Linien": [
-            {
-                "Name": "B3",
-                "Ident": "B31"
-            },
-            {
-                "Name": "B3",
-                "Ident": "B32"
-            }
-        ],
+        "Linie": {
+            "Name": "B3",
+            "Ident": "B31"
+        },
         "StartHaltestelle": {
             "Name": "H2",
             "Linien": [
@@ -503,16 +443,10 @@
     },
     {
         "Dauer": 1,
-        "Linien": [
-            {
-                "Name": "B3",
-                "Ident": "B31"
-            },
-            {
-                "Name": "B3",
-                "Ident": "B32"
-            }
-        ],
+        "Linie": {
+            "Name": "B3",
+            "Ident": "B31"
+        },
         "StartHaltestelle": {
             "Name": "H8",
             "Linien": [
@@ -558,16 +492,10 @@
     },
     {
         "Dauer": 2,
-        "Linien": [
-            {
-                "Name": "B4",
-                "Ident": "B41"
-            },
-            {
-                "Name": "B4",
-                "Ident": "B42"
-            }
-        ],
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B41"
+        },
         "StartHaltestelle": {
             "Name": "H12",
             "Linien": [
@@ -597,16 +525,10 @@
     },
     {
         "Dauer": 2,
-        "Linien": [
-            {
-                "Name": "B4",
-                "Ident": "B41"
-            },
-            {
-                "Name": "B4",
-                "Ident": "B42"
-            }
-        ],
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B41"
+        },
         "StartHaltestelle": {
             "Name": "H13",
             "Linien": [
@@ -636,16 +558,10 @@
     },
     {
         "Dauer": 3,
-        "Linien": [
-            {
-                "Name": "B4",
-                "Ident": "B41"
-            },
-            {
-                "Name": "B4",
-                "Ident": "B42"
-            }
-        ],
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B41"
+        },
         "StartHaltestelle": {
             "Name": "H14",
             "Linien": [
@@ -691,16 +607,10 @@
     },
     {
         "Dauer": 3,
-        "Linien": [
-            {
-                "Name": "B4",
-                "Ident": "B41"
-            },
-            {
-                "Name": "B4",
-                "Ident": "B42"
-            }
-        ],
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B41"
+        },
         "StartHaltestelle": {
             "Name": "H8",
             "Linien": [
@@ -746,16 +656,10 @@
     },
     {
         "Dauer": 2,
-        "Linien": [
-            {
-                "Name": "B4",
-                "Ident": "B41"
-            },
-            {
-                "Name": "B4",
-                "Ident": "B42"
-            }
-        ],
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B41"
+        },
         "StartHaltestelle": {
             "Name": "H15",
             "Linien": [
@@ -770,6 +674,694 @@
             ]
         },
         "ZielHaltestelle": {
+            "Name": "H16",
+            "Linien": [
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 2,
+        "Linie": {
+            "Name": "B1",
+            "Ident": "B12"
+        },
+        "ZielHaltestelle": {
+            "Name": "H1",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H2",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 2,
+        "Linie": {
+            "Name": "B1",
+            "Ident": "B12"
+        },
+        "ZielHaltestelle": {
+            "Name": "H2",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H3",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 2,
+        "Linie": {
+            "Name": "B1",
+            "Ident": "B12"
+        },
+        "ZielHaltestelle": {
+            "Name": "H3",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H4",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 2,
+        "Linie": {
+            "Name": "B1",
+            "Ident": "B12"
+        },
+        "ZielHaltestelle": {
+            "Name": "H4",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H5",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 1,
+        "Linie": {
+            "Name": "B2",
+            "Ident": "B22"
+        },
+        "ZielHaltestelle": {
+            "Name": "H6",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H4",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 2,
+        "Linie": {
+            "Name": "B2",
+            "Ident": "B22"
+        },
+        "ZielHaltestelle": {
+            "Name": "H4",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H7",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 1,
+        "Linie": {
+            "Name": "B2",
+            "Ident": "B22"
+        },
+        "ZielHaltestelle": {
+            "Name": "H7",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H8",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 2,
+        "Linie": {
+            "Name": "B2",
+            "Ident": "B22"
+        },
+        "ZielHaltestelle": {
+            "Name": "H8",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H9",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 1,
+        "Linie": {
+            "Name": "B3",
+            "Ident": "B32"
+        },
+        "ZielHaltestelle": {
+            "Name": "H10",
+            "Linien": [
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H2",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 1,
+        "Linie": {
+            "Name": "B3",
+            "Ident": "B32"
+        },
+        "ZielHaltestelle": {
+            "Name": "H2",
+            "Linien": [
+                {
+                    "Name": "B1",
+                    "Ident": "B11"
+                },
+                {
+                    "Name": "B1",
+                    "Ident": "B12"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H8",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 1,
+        "Linie": {
+            "Name": "B3",
+            "Ident": "B32"
+        },
+        "ZielHaltestelle": {
+            "Name": "H8",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H11",
+            "Linien": [
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 2,
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B42"
+        },
+        "ZielHaltestelle": {
+            "Name": "H12",
+            "Linien": [
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H13",
+            "Linien": [
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 2,
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B42"
+        },
+        "ZielHaltestelle": {
+            "Name": "H13",
+            "Linien": [
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H14",
+            "Linien": [
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 3,
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B42"
+        },
+        "ZielHaltestelle": {
+            "Name": "H14",
+            "Linien": [
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H8",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 3,
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B42"
+        },
+        "ZielHaltestelle": {
+            "Name": "H8",
+            "Linien": [
+                {
+                    "Name": "B2",
+                    "Ident": "B21"
+                },
+                {
+                    "Name": "B2",
+                    "Ident": "B22"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B31"
+                },
+                {
+                    "Name": "B3",
+                    "Ident": "B32"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        },
+        "StartHaltestelle": {
+            "Name": "H15",
+            "Linien": [
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        }
+    },
+    {
+        "Dauer": 2,
+        "Linie": {
+            "Name": "B4",
+            "Ident": "B42"
+        },
+        "ZielHaltestelle": {
+            "Name": "H15",
+            "Linien": [
+                {
+                    "Name": "B4",
+                    "Ident": "B41"
+                },
+                {
+                    "Name": "B4",
+                    "Ident": "B42"
+                }
+            ]
+        },
+        "StartHaltestelle": {
             "Name": "H16",
             "Linien": [
                 {
