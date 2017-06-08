@@ -24,7 +24,8 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>Fahrplanauskunft.UI.WindowsForms.Editor.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Debug\Fahrplanauskunft.UI.WindowsForms.Editor.XML</DocumentationFile>
-    <NoWarn>S110</NoWarn>
+    <NoWarn>
+    </NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
