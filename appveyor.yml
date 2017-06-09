@@ -95,9 +95,8 @@ after_build:
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\FahrplanauskunftSpeicher.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\FahrplanauskunftSpeicher.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: >-
       $pdflatex = Resolve-Path "C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe";
-      $pdflatex;
-      $proc = Start-Process -NoNewWindow -FilePath $pdflatex -ArgumentList "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.tex";
-      $proc.WaitForExit();
+
+      & $pdflatex "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.tex";
   - ps: Copy-Item -Path "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.pdf" -Destination "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Handbuch.pdf"
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\"
   - ps: ls "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Objekte\" -Filter *.md | Foreach-Object { pandoc -s --toc -o ("$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\" + $_.BaseName + ".html")  $_.FullName -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained }
