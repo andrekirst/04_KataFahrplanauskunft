@@ -94,7 +94,7 @@ after_build:
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Bibliotheken.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\Bibliotheken.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\FahrplanauskunftSpeicher.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\FahrplanauskunftSpeicher.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: >-
-      $pdflatex = Resolve-Path "C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex"
+      $pdflatex = Resolve-Path "C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe"
       & pdflatex "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.tex"
   - ps: Copy-Item -Path "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.pdf" -Destination "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Handbuch.pdf"
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\"
