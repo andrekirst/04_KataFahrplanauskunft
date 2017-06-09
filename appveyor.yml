@@ -22,6 +22,7 @@ cache:
   - packages -> **\packages.config
   - C:\ProgramData\chocolatey\bin -> appveyor.yml
   - C:\ProgramData\chocolatey\lib -> appveyor.yml
+  - C:\miktex -> appveyor.yml
 
 # AssemblyInfo-Dateien mit den Versionen versehen
 assembly_info:
@@ -92,7 +93,8 @@ after_build:
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\DeploymentProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\DeploymentProzess.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Bibliotheken.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\Bibliotheken.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\FahrplanauskunftSpeicher.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\FahrplanauskunftSpeicher.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
-  - ps: pandoc "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.tex" -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Handbuch.pdf" -s -t latex --latex-engine='C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe'
+  - ps: pdflatex "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.tex"
+  - ps: Copy-Item -Path "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.pdf" -Destination "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Handbuch.pdf"
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\"
   - ps: ls "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Objekte\" -Filter *.md | Foreach-Object { pandoc -s --toc -o ("$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\" + $_.BaseName + ".html")  $_.FullName -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained }
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Projekt\"
