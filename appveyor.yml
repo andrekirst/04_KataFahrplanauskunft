@@ -23,7 +23,6 @@ cache:
   - C:\ProgramData\chocolatey\bin -> appveyor.yml
   - C:\ProgramData\chocolatey\lib -> appveyor.yml
   - C:\miktex -> appveyor.yml
-  - C:\projects\patadata-pdf\miktex-portable.exe
 
 # AssemblyInfo-Dateien mit den Versionen versehen
 assembly_info:
@@ -54,9 +53,7 @@ before_build:
 build_script:
     - choco install "msbuild-sonarqube-runner" -y
     - choco install pandoc -y
-    - ps: "If (!(Test-Path miktex-portable.exe)){wget http://mirrors.ctan.org/systems/win32/miktex/setup/miktex-portable-2.9.6361.exe -OutFile ./miktex-portable.exe}"
-    - "7z x miktex-portable.exe * -aot -omiktex > nul"
-    - cmd: set PATH=%PATH%;C:\projects\patadata-pdf\miktex\miktex\bin
+    - choco install miktex -y
     - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:sonarqubeprefix = "dev-" }
     - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.exclusions=**/AssemblyInfo.cs" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
     - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.exclusions=**/AssemblyInfo.cs" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
@@ -97,7 +94,9 @@ after_build:
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Bibliotheken.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\Bibliotheken.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\FahrplanauskunftSpeicher.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\FahrplanauskunftSpeicher.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: >-
-      pdflatex.exe -halt-on-error -output-directory "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.tex";
+      $pdflatex = Resolve-Path "C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe";
+
+      & $pdflatex -halt-on-error -output-directory "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.tex";
   - ps: Copy-Item -Path "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.pdf" -Destination "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Handbuch.pdf"
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\"
   - ps: ls "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Objekte\" -Filter *.md | Foreach-Object { pandoc -s --toc -o ("$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\" + $_.BaseName + ".html")  $_.FullName -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained }
