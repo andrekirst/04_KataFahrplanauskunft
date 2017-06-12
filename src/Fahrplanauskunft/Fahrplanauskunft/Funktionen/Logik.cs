@@ -348,7 +348,7 @@ namespace Fahrplanauskunft.Funktionen
 
                 List<Einzelverbindung> ezs = new List<Einzelverbindung>();
 
-                testa(startHaltestelle, ti.Childs, hs, ezs, wunschabfahrtszeit);
+                testa(startHaltestelle, ti.Childs, hs, ezs, wunschabfahrtszeit, streckenabschnitte);
 
                 // TODO
             }
@@ -363,16 +363,20 @@ namespace Fahrplanauskunft.Funktionen
             return verbindung;
         }
 
-        private static void testa(Haltestelle startHaltestelle, List<TreeItem> childs, List<Haltestelle> hs, List<Einzelverbindung> ezs, int abfahrtszeit)
+        private static void testa(Haltestelle startHaltestelle, List<TreeItem> childs, List<Haltestelle> hs, List<Einzelverbindung> ezs, int abfahrtszeit, List<Streckenabschnitt> streckenabschnitte)
         {
             foreach(TreeItem treeItem in childs)
             {
                 //List<Linie> linien = ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(startHaltestelle, treeItem.Haltestelle);
-                Einzelverbindung einzel = new Einzelverbindung(0, 0, startHaltestelle, treeItem.Haltestelle, new Linie(name: "Bsp", ident: "BSP"));
-                ezs.Add(einzel);
+                List<Linie> linien = ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(startHaltestelle, treeItem.Haltestelle, streckenabschnitte);
+                foreach(Linie linie in linien)
+                {
+                    Einzelverbindung einzel = new Einzelverbindung(0, 0, startHaltestelle, treeItem.Haltestelle, linie);
+                    ezs.Add(einzel);
+                }
                 hs.Add(treeItem.Haltestelle);
                 //ezs.Add(new Einzelverbindung(0, 0, null, null, null));
-                testa(treeItem.Haltestelle, treeItem.Childs, hs, ezs, 0);
+                testa(treeItem.Haltestelle, treeItem.Childs, hs, ezs, 0, streckenabschnitte);
             }
         }
 
