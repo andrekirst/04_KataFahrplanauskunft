@@ -41,3 +41,9 @@ Test des Ungleichheitsoperators mit zwei Linien mit den gleichen Namen
 #### Beschreibung
 
 Test des Ungleichheitsoperators mit zwei Linien mit verschiedenen Namen
+
+### Linie_ToString_B1_B11
+
+#### Beschreibung
+
+Testet die Methode ToString. Erwartet "B1 - B11"
