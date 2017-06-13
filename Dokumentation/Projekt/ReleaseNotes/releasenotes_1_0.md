@@ -27,6 +27,7 @@
 * #100 - Streckenabschnitte haben nur noch eine Linie `feature`, `Testdaten`
 * #93 - Überarbeitung Releasenotes und Einbau in Deployment-Prozess `feature`, `umgebung`
 * #103 - Entfernen der Vergleiche von strings, anstatt des richtigen Objektes `überarbeiten`
+* #107 - ToString-Methode für Objekte Linie `feature`
 
 ## Bugfixes
 

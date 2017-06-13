@@ -105,5 +105,14 @@ namespace Fahrplanauskunft.Objekte
         {
             return (Name.GetHashCode() * 2) + Ident.GetHashCode();
         }
+
+        /// <summary>
+        /// Gibt die überschriebene ToString-Methode zurück. Bsp.: "B1 - B11"
+        /// </summary>
+        /// <returns>Bsp.: "B1 - B11"</returns>
+        public override string ToString()
+        {
+            return $"{Name} - {Ident}";
+        }
     }
 }
