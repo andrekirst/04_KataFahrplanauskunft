@@ -367,15 +367,14 @@ namespace Fahrplanauskunft.Funktionen
         {
             foreach(TreeItem treeItem in childs)
             {
-                //List<Linie> linien = ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(startHaltestelle, treeItem.Haltestelle);
                 List<Linie> linien = ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(startHaltestelle, treeItem.Haltestelle, streckenabschnitte);
                 foreach(Linie linie in linien)
                 {
                     Einzelverbindung einzel = new Einzelverbindung(0, 0, startHaltestelle, treeItem.Haltestelle, linie);
                     ezs.Add(einzel);
                 }
+
                 hs.Add(treeItem.Haltestelle);
-                //ezs.Add(new Einzelverbindung(0, 0, null, null, null));
                 testa(treeItem.Haltestelle, treeItem.Childs, hs, ezs, 0, streckenabschnitte);
             }
         }
