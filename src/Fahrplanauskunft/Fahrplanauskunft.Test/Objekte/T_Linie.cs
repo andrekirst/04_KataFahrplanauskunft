@@ -87,5 +87,19 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(actual != expected);
         }
+
+        /// <summary>
+        /// Testet die Methode ToString. Erwartet "B1 - B11"
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Linie_ToString_B1_B11()
+        {
+            string expected = "B1 - B11";
+
+            Linie linie = new Linie(name: "B1", ident: "B11");
+            string actual = linie.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
