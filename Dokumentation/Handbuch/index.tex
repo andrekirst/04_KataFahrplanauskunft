@@ -1,0 +1,37 @@
+\documentclass[12pt,a4paper]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman, num]{isodate}
+\usepackage[ngerman]{datetime}
+\usepackage{refcount}
+
+\begin{document}
+
+\begin{titlepage}
+
+\title{Fahrplanauskunft}
+\author{André Kirst, Ulf Lempart}
+\date{\today}
+\maketitle
+
+\end{titlepage}
+
+\clearpage
+\tableofcontents
+\newpage
+\newpage
+
+\include{Fahrplanauskunft.UI.WindowsForms.Editor/index}
+
+\clearpage
+\label{listoftables}
+\listoftables
+\addtocontents{toc}{\protect\contentsline{chapter}{\listtablename}{\getpagerefnumber{listoftables}}}
+
+\clearpage
+\label{listoffigures}
+\listoffigures
+\addtocontents{toc}{\protect\contentsline{chapter}{\listfigurename}{\getpagerefnumber{listoffigures}}}
+
+\end{document}

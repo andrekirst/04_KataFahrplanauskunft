@@ -7,7 +7,8 @@
 | Datei | Version |
 |---|---:|
 | Fahrplanauskunft.dll | *current* |
-| Fahrplanauskunft.dll.config | |
+| Fahrplanauskunft.UI.WindowsForms.Editor.exe | *current* |
+| Fahrplanauskunft.UI.WindowsForms.Editor.exe.config | |
 | Fahrplanauskunft.dll.RoslynCA.json | |
 | Newtonsoft.Json.dll | 10.0.2.20802 |
 | Newtonsoft.Json.xml | |

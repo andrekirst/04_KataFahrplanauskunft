@@ -6,13 +6,14 @@ Detaillierte Beschreibung
 
 * [ ] Fahrplanauskunft
 * [ ] Fahrplanauskunft.Test
+* [ ] Fahrplanauskunft.UI.WindowsForms.Editor
+* [ ] Fahrplanauskunft.UI.WindowsForms.Editor.Test
 
 ## Dokumentationsanpassungen
 
 * [ ] Beschreibungs-Dokumentationen
   * [ ] Architektur-Handbuch
   * [ ] Online-Handbuch
-  * [ ] Kontext-Hilfe
   * [ ] Sicherheits-Handbuch
 * [ ] Deployment-Handbuch
 * [ ] Build-Prozess
@@ -21,9 +22,10 @@ Detaillierte Beschreibung
 
 ## Testfälle
 
-* [ ] **Komponente 1**
+* [ ] **Komponente.Test**
   * [ ] *Testfall 1* - Testfallbeschreibung
   * [ ] *Testfall 2* - Testfallbeschreibung
+  * [ ] **Testfälle weiterhin grün**
 
 ## Ablauf beim Entwickeln und Code Review
 
