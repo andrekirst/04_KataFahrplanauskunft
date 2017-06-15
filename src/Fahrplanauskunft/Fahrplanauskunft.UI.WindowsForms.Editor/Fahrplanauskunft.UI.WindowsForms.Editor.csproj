@@ -4,17 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59333DC7-72E0-43CE-8915-5F7E3C79192E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{E48C287B-9A37-4AC5-8037-FAF061BC1B18}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fahrplanauskunft</RootNamespace>
-    <AssemblyName>Fahrplanauskunft</AssemblyName>
+    <RootNamespace>Fahrplanauskunft.UI.WindowsForms.Editor</RootNamespace>
+    <AssemblyName>Fahrplanauskunft.UI.WindowsForms.Editor</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -25,8 +22,10 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>Fahrplanauskunft.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Debug\Fahrplanauskunft.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>Fahrplanauskunft.UI.WindowsForms.Editor.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\Fahrplanauskunft.UI.WindowsForms.Editor.XML</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,47 +35,53 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>Fahrplanauskunft.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
+    <CodeAnalysisRuleSet>Fahrplanauskunft.UI.WindowsForms.Editor.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\LinieIstNichtAnHaltestelleException.cs" />
-    <Compile Include="Funktionen\EqualsHelper.cs" />
-    <Compile Include="Funktionen\EqualsOperatorHelper.cs" />
-    <Compile Include="Funktionen\Logik.cs" />
-    <Compile Include="Objekte\Einzelverbindung.cs" />
-    <Compile Include="Objekte\FahrplanauskunftSpeicher.cs" />
-    <Compile Include="Objekte\Haltestelle.cs" />
-    <Compile Include="Objekte\HaltestelleFahrplanEintrag.cs" />
-    <Compile Include="Objekte\Linie.cs" />
-    <Compile Include="Objekte\Streckenabschnitt.cs" />
-    <Compile Include="Objekte\TreeItem.cs" />
-    <Compile Include="Objekte\Umstiegspunkt.cs" />
-    <Compile Include="Objekte\Verbindung.cs" />
-    <Compile Include="Objekte\Verbindungsanfrage.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Funktionen\ZeitKonverter.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Fahrplanauskunft.UI.WindowsForms.Editor.ruleset" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Fahrplanauskunft.ruleset" />
-    <None Include="packages.config" />
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +98,12 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
     <Analyzer Include="..\packages\System.Runtime.Analyzers.1.1.0\analyzers\dotnet\cs\System.Runtime.Analyzers.dll" />
     <Analyzer Include="..\packages\System.Runtime.Analyzers.1.1.0\analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fahrplanauskunft\Fahrplanauskunft.csproj">
+      <Project>{59333dc7-72e0-43ce-8915-5f7e3c79192e}</Project>
+      <Name>Fahrplanauskunft</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

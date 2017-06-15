@@ -20,6 +20,9 @@ image: Visual Studio 2015
 cache:
   - '%LocalAppData%\NuGet\Cache'
   - packages -> **\packages.config
+  - C:\ProgramData\chocolatey\bin -> appveyor.yml
+  - C:\ProgramData\chocolatey\lib -> appveyor.yml
+  - C:\miktex -> appveyor.yml
 
 # AssemblyInfo-Dateien mit den Versionen versehen
 assembly_info:
@@ -50,15 +53,17 @@ before_build:
 build_script:
     - choco install "msbuild-sonarqube-runner" -y
     - choco install pandoc -y
+    - choco install miktex -y
     - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:sonarqubeprefix = "dev-" }
-    - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
-    - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
+    - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.exclusions=**/AssemblyInfo.cs" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
+    - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.exclusions=**/AssemblyInfo.cs" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
     - ps: msbuild $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.sln
     - ps: vstest.console /logger:Appveyor "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll"
+    - ps: vstest.console /logger:Appveyor "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.UI.WindowsForms.Editor.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.UI.WindowsForms.Editor.Test.dll"
     - ps: >-
         $opencoverexe = (Resolve-Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\packages\OpenCover.*\tools\OpenCover.Console.exe").ToString()
 
-        & $opencoverexe -register:user -filter:"+[*]* -[*Fahrplanauskunft.Test*]*" -excludebyattribute:*ExcludeFromCodeCoverage* -target:vstest.console.exe "-targetargs:""$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll""" -output:./opencovertests.xml
+        & $opencoverexe -register:user -filter:"+[*]* -[*.Test*]*" -excludebyattribute:*ExcludeFromCodeCoverage* -target:vstest.console.exe "-targetargs:""$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.UI.WindowsForms.Editor.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.UI.WindowsForms.Editor.Test.dll""" -output:./opencovertests.xml
 
         $coveralls = (Resolve-Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\packages\coveralls.net.*\tools\csmacnz.Coveralls.exe").ToString()
 
@@ -79,14 +84,21 @@ after_build:
   - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "master") { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version).zip" }
   - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { $env:deploymentfilename = "fahrplanauskunft-$($env:appveyor_build_version)-dev-pr$env:APPVEYOR_PULL_REQUEST_NUMBER.zip" }
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\"
-  - ps: rm "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.pdb"
-  - ps: Copy-Item -Destination "$env:APPVEYOR_BUILD_FOLDER\output\" -Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft\bin\$env:CONFIGURATION\*.*" -Recurse
+  - ps: rm "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.UI.WindowsForms.Editor\bin\$env:CONFIGURATION\*.pdb"
+  - ps: Copy-Item -Destination "$env:APPVEYOR_BUILD_FOLDER\output\" -Path "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.UI.WindowsForms.Editor\bin\$env:CONFIGURATION\*.*" -Recurse
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\"
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BuildProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\BuildProzess.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: pandoc -s -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BranchingGuide.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Projekt\branching_guide.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: (Get-Content "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BranchingGuide.html") -replace 'branching_guide.md', 'BranchingGuide.html' | Set-Content "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\BranchingGuide.html"
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\DeploymentProzess.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\DeploymentProzess.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
+  - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Bibliotheken.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\Bibliotheken.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
   - ps: pandoc -s --toc -o "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\FahrplanauskunftSpeicher.html" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Architektur\FahrplanauskunftSpeicher.md" -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained
+  - ps: >-
+      $pdflatex = Resolve-Path "C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe";
+
+      & $pdflatex -halt-on-error -output-directory "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.tex";
+      & $pdflatex -halt-on-error -output-directory "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\" "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.tex";
+  - ps: Copy-Item -Path "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Handbuch\index.pdf" -Destination "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Handbuch.pdf"
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\"
   - ps: ls "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Objekte\" -Filter *.md | Foreach-Object { pandoc -s --toc -o ("$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Objekte\" + $_.BaseName + ".html")  $_.FullName -c "$env:APPVEYOR_BUILD_FOLDER\Dokumentation\Build\style.css" --self-contained }
   - ps: New-Item -Type Directory -Path "$env:APPVEYOR_BUILD_FOLDER\output\dokumentation\Projekt\"
