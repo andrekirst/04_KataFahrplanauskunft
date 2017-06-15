@@ -1,0 +1,71 @@
+﻿// <copyright file="T_InteraktorSucheLinie.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System;
+using System.Collections.Generic;
+using Fahrplanauskunft.Objekte;
+using Fahrplanauskunft.UI.WindowsForms.Editor.Objekte.Linie;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Fahrplanauskunft.UI.WindowsForms.Editor.Test.Suche
+{
+    /// <summary>
+    /// Testklasse für den Interaktor für die Suche von Linien
+    /// </summary>
+    [TestClass]
+    public class T_InteraktorSucheLinie
+    {
+        /// <summary>
+        /// Test, wenn nach dem Wert "B11" gesucht wird
+        /// </summary>
+        [TestMethod, TestCategory("UI.WindowsformsEditor.Linie.Suche")]
+        public void UI_Linie_Suche_Linie_mit_Suchtext_B11()
+        {
+            List<Linie> linien = new List<Linie>()
+            {
+                new Linie(name: "B1", ident: "B11"),
+                new Linie(name: "B1", ident: "B12")
+            };
+
+            string suchtext = "B11";
+
+            List<Linie> expected = new List<Linie>()
+            {
+                new Linie(name: "B1", ident: "B11")
+            };
+
+            InteraktorSucheLinie interaktor = new InteraktorSucheLinie();
+
+            List<Linie> actual = interaktor.Suche_Linie(suchtext: suchtext, linien: linien);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test, wenn nach dem Wert "b11" gesucht wird
+        /// </summary>
+        [TestMethod, TestCategory("UI.WindowsformsEditor.Linie.Suche")]
+        public void UI_Linie_Suche_Linie_mit_Suchtext_b11()
+        {
+            List<Linie> linien = new List<Linie>()
+            {
+                new Linie(name: "B1", ident: "B11"),
+                new Linie(name: "B1", ident: "B12")
+            };
+
+            string suchtext = "b11";
+
+            List<Linie> expected = new List<Linie>()
+            {
+                new Linie(name: "B1", ident: "B11")
+            };
+
+            InteraktorSucheLinie interaktor = new InteraktorSucheLinie();
+
+            List<Linie> actual = interaktor.Suche_Linie(suchtext: suchtext, linien: linien);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+    }
+}

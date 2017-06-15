@@ -9,6 +9,7 @@
     <Rule Id="CC0015" Action="None" />
     <Rule Id="CC0021" Action="None" />
     <Rule Id="CC0065" Action="Warning" />
+    <Rule Id="CC0091" Action="None" />
     <Rule Id="CC0105" Action="None" />
   </Rules>
   <Rules AnalyzerId="Microsoft.AnalyzerPowerPack.Common" RuleNamespace="Microsoft.AnalyzerPowerPack.Common">
@@ -78,6 +79,7 @@
     <Rule Id="CA2242" Action="Warning" />
   </Rules>
   <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
+    <Rule Id="S110" Action="None" />
     <Rule Id="S1116" Action="Warning" />
     <Rule Id="S1125" Action="Warning" />
     <Rule Id="S1144" Action="Warning" />
@@ -87,6 +89,7 @@
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA0000" Action="Error" />
     <Rule Id="SA1000" Action="None" />
+    <Rule Id="SA1003" Action="None" />
     <Rule Id="SA1028" Action="None" />
     <Rule Id="SA1101" Action="None" />
     <Rule Id="SA1123" Action="None" />
