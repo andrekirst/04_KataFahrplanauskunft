@@ -4,14 +4,17 @@
 
 ### fahrplanauskunft.zip
 
-| Datei | Version |
-|---|---:|
-| Fahrplanauskunft.dll | *current* |
-| Fahrplanauskunft.UI.WindowsForms.Editor.exe | *current* |
-| Fahrplanauskunft.UI.WindowsForms.Editor.exe.config | |
-| Fahrplanauskunft.dll.RoslynCA.json | |
-| Newtonsoft.Json.dll | 10.0.2.20802 |
-| Newtonsoft.Json.xml | |
+| Datei | Version | Beschreibung |
+|---|---:|---|
+| Fahrplanauskunft.dll | *current* | Bibliothek für die Fahrplanauskunft |
+| Fahrplanauskunft.UI.WindowsForms.Editor.exe | *current* | Der Bearbeitungseditor für die Fahrplanauskunft |
+| Fahrplanauskunft.UI.WindowsForms.Editor.exe.config | | Konfig-Datei für den Bearbeitungseditor |
+| Fahrplanauskunft.dll.RoslynCA.json | | |
+| MetroFramework.Design.dll | 1.4.0.0 | NuGet-Paket von MetroModernUI |
+| MetroFramework.dll | 1.4.0.0 | NuGet-Paket von MetroModernUI |
+| MetroFramework.Fonts.dll | 1.4.0.0 | NuGet-Paket von MetroModernUI |
+| Newtonsoft.Json.dll | 10.0.2.20802 | NuGet-Paket von Newotonsoft.Json |
+| Newtonsoft.Json.xml | | |
 
 #### Dokumentation
 

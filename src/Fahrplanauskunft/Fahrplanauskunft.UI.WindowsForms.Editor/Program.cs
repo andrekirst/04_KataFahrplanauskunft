@@ -20,7 +20,7 @@ namespace Fahrplanauskunft.UI.WindowsForms.Editor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using(Form1 form1 = new Form1())
+            using(FahrplanauskunftMainWindow form1 = new FahrplanauskunftMainWindow())
             {
                 Application.Run(form1);
             }
