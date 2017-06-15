@@ -27,6 +27,8 @@
 * #100 - Streckenabschnitte haben nur noch eine Linie `feature`, `Testdaten`
 * #93 - Überarbeitung Releasenotes und Einbau in Deployment-Prozess `feature`, `umgebung`
 * #103 - Entfernen der Vergleiche von strings, anstatt des richtigen Objektes `überarbeiten`
+* #107 - ToString-Methode für Objekte Linie `feature`
+* #105 - Erstellung von Projekten (Implementierung, Test) für einen WindowsForms-Editor für die Bearbeitung der Objekte `feature`, `ui-windowsforms-editor`
 
 ## Bugfixes
 
