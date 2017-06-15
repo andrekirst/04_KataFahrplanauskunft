@@ -24,6 +24,11 @@ namespace Fahrplanauskunft.UI.WindowsForms.Editor.Objekte.Linie
         /// <returns>Gibt die gefilterte Liste von Linien zurück, die anhand des suchtext-Parameters gefiltert wurde</returns>
         public List<Fahrplanauskunft.Objekte.Linie> Suche_Linie(string suchtext, List<Fahrplanauskunft.Objekte.Linie> linien)
         {
+            if(suchtext == null)
+            {
+                return linien;
+            }
+
             suchtext = suchtext.ToLower();
 
             return linien.Where(l => l.Name.ToLower().Contains(suchtext) || l.Ident.ToLower().Contains(suchtext)).ToList();
