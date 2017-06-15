@@ -17,12 +17,12 @@ namespace Fahrplanauskunft.UI.WindowsForms.Editor
     /// <summary>
     /// Standardform (wird demnächst entfernt)
     /// </summary>
-    public partial class Form1 : Form
+    public partial class FahrplanauskunftMainWindow : Form
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
-        public Form1()
+        public FahrplanauskunftMainWindow()
         {
             InitializeComponent();
         }
