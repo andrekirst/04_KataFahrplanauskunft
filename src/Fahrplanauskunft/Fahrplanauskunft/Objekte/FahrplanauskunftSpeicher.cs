@@ -68,7 +68,7 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Läde alle Objekte in den FahrplanauskunftSpeicher
+        /// Lädt alle Objekte in den FahrplanauskunftSpeicher
         /// </summary>
         public void Laden()
         {
@@ -79,11 +79,31 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Speichert das Objekt Linie aus dem FahrplanauskunftSpeicher in den Ordner
+        /// </summary>
+        internal void SpeicherLinien()
+        {
+            string file = string.Concat(OrdnerPfad, @"\linien.json");
+
+            File.WriteAllText(file, JsonConvert.SerializeObject(Linien));
+        }
+
+        /// <summary>
+        /// Speichert das Objekt Haltestelle aus dem FahrplanauskunftSpeicher in den Ordner
+        /// </summary>
+        internal void SpeicherHaltestellen()
+        {
+            string file = string.Concat(OrdnerPfad, @"\haltestellen.json");
+
+            File.WriteAllText(file, JsonConvert.SerializeObject(Linien));
+        }
+
+        /// <summary>
         /// Methode für das Laden der Streckenabschnitte aus dem Order
         /// </summary>
         internal void LadeStreckenabschnitte()
         {
-            string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\streckenabschnitte.json");
+            string file = string.Concat(OrdnerPfad, @"\streckenabschnitte.json");
 
             if(!File.Exists(file))
             {
@@ -98,7 +118,7 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         internal void LadeLinien()
         {
-            string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\linien.json");
+            string file = string.Concat(OrdnerPfad, @"\linien.json");
 
             if(!File.Exists(file))
             {
@@ -113,7 +133,7 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         internal void LadeHaltestellen()
         {
-            string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellen.json");
+            string file = string.Concat(OrdnerPfad, @"\haltestellen.json");
 
             if(!File.Exists(file))
             {
@@ -128,7 +148,7 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         internal void LadeHaltestellenfahrplaneintraege()
         {
-            string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellenfahrplaneintraege.json");
+            string file = string.Concat(OrdnerPfad, @"\haltestellenfahrplaneintraege.json");
 
             if(!File.Exists(file))
             {

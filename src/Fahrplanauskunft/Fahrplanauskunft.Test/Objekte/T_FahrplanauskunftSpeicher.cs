@@ -563,5 +563,70 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.Fail();
         }
+
+        /// <summary>
+        /// Test für das Speichern der Linien aus dem FahrplanauskunftSpeicher
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_SpeicherLinien()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = new FahrplanauskunftSpeicher(ordnerPfad: testFolder)
+            {
+                Linien = new List<Linie>()
+                {
+                    new Linie(name: "B1", ident: "B11")
+                }
+            };
+
+            fahrplanauskunftSpeicherSpeichern.SpeicherLinien();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.LadeLinien();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Linien, fahrplanauskunftSpeicherLaden.Linien);
+
+            Directory.Delete(testFolder, true);
+        }
+
+        /// <summary>
+        /// Test für das Speichern der Haltestellen aus dem FahrplanauskunftSpeicher
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_SpeicherHaltestellen()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = new FahrplanauskunftSpeicher(ordnerPfad: testFolder)
+            {
+                Haltestellen = new List<Haltestelle>()
+                {
+                    new Haltestelle(name: "H1")
+                    {
+                        Linien = new List<Linie>()
+                        {
+                            new Linie(name: "B1", ident: "B11"),
+                            new Linie(name: "B1", ident: "B12")
+                        }
+                    }
+                }
+            };
+
+            fahrplanauskunftSpeicherSpeichern.SpeicherHaltestellen();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.LadeHaltestellen();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Linien, fahrplanauskunftSpeicherLaden.Linien);
+
+            Directory.Delete(testFolder, true);
+        }
     }
 }
