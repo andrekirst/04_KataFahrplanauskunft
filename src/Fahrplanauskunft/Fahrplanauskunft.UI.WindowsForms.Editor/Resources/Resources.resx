@@ -129,4 +129,8 @@
     <value>&lt;Zurücksetzen&gt;</value>
     <comment>Anzeigetext für das Zurücksetzen</comment>
   </data>
+  <data name="tabPageTextLinie" xml:space="preserve">
+    <value>&lt;Linie&gt;</value>
+    <comment>Anzeigetext Linie für TabPageLinie</comment>
+  </data>
 </root>

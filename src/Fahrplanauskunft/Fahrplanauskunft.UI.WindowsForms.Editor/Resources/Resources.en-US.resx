@@ -129,4 +129,8 @@
     <value>Reset</value>
     <comment>Displaytext for reset</comment>
   </data>
+  <data name="tabPageTextLinie" xml:space="preserve">
+    <value>Line</value>
+    <comment>Displaytext Line TabPageLinie</comment>
+  </data>
 </root>

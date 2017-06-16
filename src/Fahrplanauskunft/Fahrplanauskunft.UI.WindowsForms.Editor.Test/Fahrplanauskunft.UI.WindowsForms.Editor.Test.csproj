@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -58,6 +59,7 @@
     <Compile Include="Helper\T_ResourceHelper.cs" />
     <Compile Include="Suche\T_InteraktorSucheLinie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T_FahrplanauskunftMainWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Fahrplanauskunft.UI.WindowsForms.Editor.Test.ruleset" />

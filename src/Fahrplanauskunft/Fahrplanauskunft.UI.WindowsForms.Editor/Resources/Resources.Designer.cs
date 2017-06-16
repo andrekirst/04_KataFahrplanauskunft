@@ -86,5 +86,14 @@ namespace Fahrplanauskunft.UI.WindowsForms.Editor.Resources {
                 return ResourceManager.GetString("ButtonTextZuruecksetzen", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Linie&gt;.
+        /// </summary>
+        internal static string tabPageTextLinie {
+            get {
+                return ResourceManager.GetString("tabPageTextLinie", resourceCulture);
+            }
+        }
     }
 }

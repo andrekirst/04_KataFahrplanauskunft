@@ -2,7 +2,9 @@
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 
+using System;
 using System.Windows.Forms;
+using Fahrplanauskunft.UI.WindowsForms.Editor.Helper;
 
 namespace Fahrplanauskunft.UI.WindowsForms.Editor
 {
@@ -17,6 +19,46 @@ namespace Fahrplanauskunft.UI.WindowsForms.Editor
         public FahrplanauskunftMainWindow()
         {
             InitializeComponent();
+
+            ResourceHelper = new ResourceHelper();
+
+            SetzeRessourcen();
+        }
+
+        /// <summary>
+        /// Eigenschaft für den ResourceHelper
+        /// </summary>
+        public ResourceHelper ResourceHelper
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Methode für das Setzen der Ressourcen
+        /// </summary>
+        internal void SetzeRessourcen()
+        {
+            tabPageLinie.Text = ResourceHelper.RessourcenTextFuerIdent("tabPageTextLinie");
+        }
+
+        /// <summary>
+        /// Gibt den DockStyle des Controls tabControlObjekte zurück
+        /// </summary>
+        internal DockStyle DockStyleTabControlObjekte
+        {
+            get
+            {
+                return tabControlObjekte.Dock;
+            }
+        }
+
+        internal string NameTabPageLinie
+        {
+            get
+            {
+                return tabPageLinie.Text;
+            }
         }
     }
 }
