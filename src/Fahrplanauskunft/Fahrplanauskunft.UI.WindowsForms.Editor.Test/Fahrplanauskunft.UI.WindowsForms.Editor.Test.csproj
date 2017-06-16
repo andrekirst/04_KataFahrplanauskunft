@@ -55,6 +55,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helper\T_ResourceHelper.cs" />
     <Compile Include="Suche\T_InteraktorSucheLinie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

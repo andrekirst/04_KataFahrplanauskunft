@@ -69,6 +69,7 @@
     <Compile Include="FahrplanauskunftMainWindow.Designer.cs">
       <DependentUpon>FahrplanauskunftMainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ResourceHelper.cs" />
     <Compile Include="Objekte\Linie\InteraktorSucheLinie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
