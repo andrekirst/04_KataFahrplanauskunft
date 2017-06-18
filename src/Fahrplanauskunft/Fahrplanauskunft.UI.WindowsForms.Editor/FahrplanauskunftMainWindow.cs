@@ -35,14 +35,6 @@ namespace Fahrplanauskunft.UI.WindowsForms.Editor
         }
 
         /// <summary>
-        /// Methode für das Setzen der Ressourcen
-        /// </summary>
-        internal void SetzeRessourcen()
-        {
-            tabPageLinie.Text = ResourceHelper.RessourcenTextFuerIdent("tabPageTextLinie");
-        }
-
-        /// <summary>
         /// Gibt den DockStyle des Controls tabControlObjekte zurück
         /// </summary>
         internal DockStyle DockStyleTabControlObjekte
@@ -53,12 +45,23 @@ namespace Fahrplanauskunft.UI.WindowsForms.Editor
             }
         }
 
-        internal string NameTabPageLinie
+        /// <summary>
+        /// Text des TabPage-Control tabPageLinie
+        /// </summary>
+        internal string TabPageLinieText
         {
             get
             {
                 return tabPageLinie.Text;
             }
+        }
+
+        /// <summary>
+        /// Methode für das Setzen der Ressourcen
+        /// </summary>
+        internal void SetzeRessourcen()
+        {
+            tabPageLinie.Text = ResourceHelper.RessourcenTextFuerIdent("tabPageTextLinie");
         }
     }
 }
