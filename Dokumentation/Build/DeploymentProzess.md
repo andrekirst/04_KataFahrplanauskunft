@@ -7,8 +7,8 @@
 | Datei | Version | Beschreibung |
 |---|---:|---|
 | Fahrplanauskunft.dll | *current* | Bibliothek für die Fahrplanauskunft |
-| Fahrplanauskunft.UI.WindowsForms.Editor.exe | *current* | Der Bearbeitungseditor für die Fahrplanauskunft |
-| Fahrplanauskunft.UI.WindowsForms.Editor.exe.config | | Konfig-Datei für den Bearbeitungseditor |
+| Fahrplanauskunft.UI.Windows.Editor.exe | *current* | Der Bearbeitungseditor für die Fahrplanauskunft |
+| Fahrplanauskunft.UI.Windows.Editor.exe.config | | Konfig-Datei für den Bearbeitungseditor |
 | Fahrplanauskunft.dll.RoslynCA.json | | |
 | MetroFramework.Design.dll | 1.4.0.0 | NuGet-Paket von MetroModernUI |
 | MetroFramework.dll | 1.4.0.0 | NuGet-Paket von MetroModernUI |

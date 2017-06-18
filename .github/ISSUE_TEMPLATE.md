@@ -6,8 +6,8 @@ Detaillierte Beschreibung
 
 * [ ] Fahrplanauskunft
 * [ ] Fahrplanauskunft.Test
-* [ ] Fahrplanauskunft.UI.WindowsForms.Editor
-* [ ] Fahrplanauskunft.UI.WindowsForms.Editor.Test
+* [ ] Fahrplanauskunft.UI.Windows.Editor
+* [ ] Fahrplanauskunft.UI.Windows.Editor.Test
 
 ## Dokumentationsanpassungen
 

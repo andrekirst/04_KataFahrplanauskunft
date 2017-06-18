@@ -8,4 +8,4 @@
 
 | Anwendung | Benötigt |
 |---|---|
-| Fahrplanauskunft.UI.WindowsForms.Editor.exe | Fahrplanauskunft.dll |
+| Fahrplanauskunft.UI.Windows.Editor.exe | Fahrplanauskunft.dll |
