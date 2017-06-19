@@ -2,8 +2,9 @@
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 
+using System;
+using System.Threading;
 using System.Windows;
-using Fahrplanauskunft.UI.Windows.Editor.Helper;
 
 namespace Fahrplanauskunft.UI.Windows.Editor
 {
@@ -19,18 +20,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor
         {
             InitializeComponent();
 
-            ResourceHelper = new ResourceHelper();
-
             SetzeRessourcen();
-        }
-
-        /// <summary>
-        /// Eigenschaft für den ResourceHelper
-        /// </summary>
-        public ResourceHelper ResourceHelper
-        {
-            get;
-            set;
         }
 
         /// <summary>
@@ -49,7 +39,32 @@ namespace Fahrplanauskunft.UI.Windows.Editor
         /// </summary>
         internal void SetzeRessourcen()
         {
-             tabItemLinie.Header = ResourceHelper.RessourcenTextFuerIdent("tabPageTextLinie");
+            ResourceDictionary dict = new ResourceDictionary();
+
+            const string uriTemplate = "pack://application:,,,/Fahrplanauskunft.UI.Windows.Editor;component/Resources/Resources{0}.xaml";
+
+            switch(Thread.CurrentThread.CurrentUICulture.ToString())
+            {
+                case "en-US":
+                    {
+                        dict.Source = new Uri(string.Format(uriTemplate, ".en-US"), UriKind.Absolute);
+                        break;
+                    }
+
+                case "de-DE":
+                    {
+                        dict.Source = new Uri(string.Format(uriTemplate, ".de-DE"), UriKind.Absolute);
+                        break;
+                    }
+
+                default:
+                    {
+                        dict.Source = new Uri(string.Format(uriTemplate, string.Empty), UriKind.Absolute);
+                        break;
+                    }
+            }
+
+            this.Resources.MergedDictionaries.Add(dict);
         }
     }
 }

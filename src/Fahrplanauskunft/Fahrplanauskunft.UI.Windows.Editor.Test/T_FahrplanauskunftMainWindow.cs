@@ -15,16 +15,6 @@ namespace Fahrplanauskunft.UI.Windows.Editor.Test
     public class T_FahrplanauskunftMainWindow
     {
         /// <summary>
-        /// Test, ob der ResourceHelper initiiert ist
-        /// </summary>
-        [TestMethod]
-        public void FahrplanauskunftMainWindow_ResourceManager_ist_gesetzt()
-        {
-            FahrplanauskunftMainWindow window = new FahrplanauskunftMainWindow();
-            Assert.IsNotNull(window.ResourceHelper);
-        }
-
-        /// <summary>
         /// Test, ob die Resource auf dem TabPage-Control tabPageLinie mit englischer Ressource gesetzt ist
         /// </summary>
         [TestMethod]

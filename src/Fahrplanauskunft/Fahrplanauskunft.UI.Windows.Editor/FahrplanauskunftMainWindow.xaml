@@ -11,7 +11,7 @@
     <Grid>
         <TabControl Name="tabControlObjekte">
             <TabControl.Items>
-                <TabItem Name="tabItemLinie" Header="Linie" />
+                <TabItem Name="tabItemLinie" Header="{DynamicResource tabPageTextLinie}" />
             </TabControl.Items>
         </TabControl>
     </Grid>
