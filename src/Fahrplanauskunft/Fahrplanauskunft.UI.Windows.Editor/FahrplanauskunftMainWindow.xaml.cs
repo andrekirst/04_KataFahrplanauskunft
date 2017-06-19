@@ -34,11 +34,22 @@ namespace Fahrplanauskunft.UI.Windows.Editor
         }
 
         /// <summary>
+        /// Gibt den Text des TabPage-Control tabPageLinie zurück
+        /// </summary>
+        public string TabItemLinieText
+        {
+            get
+            {
+                return tabItemLinie.Header as string;
+            }
+        }
+
+        /// <summary>
         /// Methode für das Setzen der Ressourcen
         /// </summary>
         internal void SetzeRessourcen()
         {
-            // tabPageLinie.Text = ResourceHelper.RessourcenTextFuerIdent("tabPageTextLinie");
+             tabItemLinie.Header = ResourceHelper.RessourcenTextFuerIdent("tabPageTextLinie");
         }
     }
 }

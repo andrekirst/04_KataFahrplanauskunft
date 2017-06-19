@@ -4,7 +4,6 @@
 
 using System.Globalization;
 using System.Threading;
-using System.Windows.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.UI.Windows.Editor.Test
@@ -25,26 +24,25 @@ namespace Fahrplanauskunft.UI.Windows.Editor.Test
             Assert.IsNotNull(window.ResourceHelper);
         }
 
-        ///// <summary>
-        ///// Test, ob die Resource auf dem TabPage-Control tabPageLinie mit englischer Ressource gesetzt ist
-        ///// </summary>
-        //[TestMethod]
-        //public void FahrplanauskunftMainWindow_SetzeRessourcen_en_US_TabPageLinie()
-        //{
-        //    const string expected = "Line";
+        /// <summary>
+        /// Test, ob die Resource auf dem TabPage-Control tabPageLinie mit englischer Ressource gesetzt ist
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftMainWindow_SetzeRessourcen_en_US_TabItemLinie()
+        {
+            const string expected = "Line";
 
-        //    CultureInfo currentCultureInfo = new CultureInfo(Thread.CurrentThread.CurrentUICulture.LCID);
+            CultureInfo currentCultureInfo = new CultureInfo(Thread.CurrentThread.CurrentUICulture.LCID);
 
-        //    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
 
-        //    using(FahrplanauskunftMainWindow window = new FahrplanauskunftMainWindow())
-        //    {
-        //        string actual = window.TabPageLinieText;
+            FahrplanauskunftMainWindow window = new FahrplanauskunftMainWindow();
 
-        //        Thread.CurrentThread.CurrentUICulture = currentCultureInfo;
+            string actual = window.TabItemLinieText;
 
-        //        Assert.AreEqual(expected, actual);
-        //    }
-        //}
+            Thread.CurrentThread.CurrentUICulture = currentCultureInfo;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
