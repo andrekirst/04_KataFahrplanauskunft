@@ -7,4 +7,5 @@
     <system:String x:Key="ButtonTextSpeichern">Save</system:String>
     <system:String x:Key="ButtonTextZuruecksetzen">Reset</system:String>
     <system:String x:Key="tabPageTextLinie">Line</system:String>
+    <system:String x:Key="FentsterTitelFahrplanauskunft">Timetable</system:String>
 </ResourceDictionary>

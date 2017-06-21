@@ -7,7 +7,8 @@
         xmlns:extwpfdg="http://schemas.xceed.com/wpf/xaml/datagrid"
         xmlns:extwpf="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="FahrplanauskunftMainWindow" Height="350" Width="525">
+        Title="{DynamicResource FentsterTitelFahrplanauskunft}" Height="700" Width="1050"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl Name="tabControlObjekte">
             <TabControl.Items>

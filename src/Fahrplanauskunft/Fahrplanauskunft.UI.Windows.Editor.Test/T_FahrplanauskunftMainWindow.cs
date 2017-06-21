@@ -5,6 +5,7 @@
 using System.Globalization;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Windows;
 
 namespace Fahrplanauskunft.UI.Windows.Editor.Test
 {
@@ -31,6 +32,21 @@ namespace Fahrplanauskunft.UI.Windows.Editor.Test
             string actual = window.TabItemLinieText;
 
             Thread.CurrentThread.CurrentUICulture = currentCultureInfo;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test, dass die Eigenschaft WindowStartupLocation den Wert "CenterScreen" hat
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftMainWindow_WindowStartupLocation_CenterScreen()
+        {
+            WindowStartupLocation expected = WindowStartupLocation.CenterScreen;
+
+            FahrplanauskunftMainWindow window = new FahrplanauskunftMainWindow();
+
+            WindowStartupLocation actual = window.WindowStartupLocation;
 
             Assert.AreEqual(expected, actual);
         }

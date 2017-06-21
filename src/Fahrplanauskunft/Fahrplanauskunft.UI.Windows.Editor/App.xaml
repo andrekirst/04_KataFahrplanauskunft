@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Fahrplanauskunft.UI.Windows.Editor"
              StartupUri="FahrplanauskunftMainWindow.xaml">
     <Application.Resources>
-         
+            <ResourceDictionary Source="Resources\Resources.xaml" />
     </Application.Resources>
 </Application>
