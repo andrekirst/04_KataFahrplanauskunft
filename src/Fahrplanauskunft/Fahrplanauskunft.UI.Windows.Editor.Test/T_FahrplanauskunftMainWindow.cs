@@ -4,8 +4,8 @@
 
 using System.Globalization;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Windows;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.UI.Windows.Editor.Test
 {
@@ -42,7 +42,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor.Test
         [TestMethod]
         public void FahrplanauskunftMainWindow_WindowStartupLocation_CenterScreen()
         {
-            WindowStartupLocation expected = WindowStartupLocation.CenterScreen;
+            const WindowStartupLocation expected = WindowStartupLocation.CenterScreen;
 
             FahrplanauskunftMainWindow window = new FahrplanauskunftMainWindow();
 
