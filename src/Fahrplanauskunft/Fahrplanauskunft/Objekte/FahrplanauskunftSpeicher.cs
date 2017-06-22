@@ -14,6 +14,11 @@ namespace Fahrplanauskunft.Objekte
     /// </summary>
     public class FahrplanauskunftSpeicher
     {
+        private const string LinienDateiName = "linien.json";
+        private const string HaltestellenDateiName = "haltestellen.json";
+        private const string StreckenabschnitteDateiName = "streckenabschnitte.json";
+        private const string HaltestellenfahrplaneintraegeDateiName = "haltestellenfahrplaneintraege.json";
+
         /// <summary>
         /// Konstruktor mit dem Ordner-Pfad, in dem sich die Fahrplanauskunfts-Dateien befinden
         /// </summary>
@@ -68,7 +73,18 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Läde alle Objekte in den FahrplanauskunftSpeicher
+        /// Speichert alle Objekte aus dem FahrplanauskunftSpeicher in den Ordner
+        /// </summary>
+        public void Speichern()
+        {
+            SpeicherHaltestellen();
+            SpeicherLinien();
+            SpeicherStreckenabschnitte();
+            SpeicherHaltestellenfahrplaneintraege();
+        }
+
+        /// <summary>
+        /// Lädt alle Objekte in den FahrplanauskunftSpeicher
         /// </summary>
         public void Laden()
         {
@@ -79,15 +95,55 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Speichert die Linien aus dem FahrplanauskunftSpeicher in den Ordner
+        /// </summary>
+        internal void SpeicherLinien()
+        {
+            string file = string.Concat(OrdnerPfad, @"\", LinienDateiName);
+
+            File.WriteAllText(file, JsonConvert.SerializeObject(Linien));
+        }
+
+        /// <summary>
+        /// Speichert die Haltestellen aus dem FahrplanauskunftSpeicher in den Ordner
+        /// </summary>
+        internal void SpeicherHaltestellen()
+        {
+            string file = string.Concat(OrdnerPfad, @"\", HaltestellenDateiName);
+
+            File.WriteAllText(file, JsonConvert.SerializeObject(Haltestellen));
+        }
+
+        /// <summary>
+        /// Speichert die Haltestellenfahrplaneintraege aus dem FahrplanauskunftSpeicher in den Ordner
+        /// </summary>
+        internal void SpeicherHaltestellenfahrplaneintraege()
+        {
+            string file = string.Concat(OrdnerPfad, @"\", HaltestellenfahrplaneintraegeDateiName);
+
+            File.WriteAllText(file, JsonConvert.SerializeObject(Haltestellenfahrplaneintraege));
+        }
+
+        /// <summary>
+        /// Speichert die Streckenabschnitte aus dem FahrplanauskunftSpeicher in den Ordner
+        /// </summary>
+        internal void SpeicherStreckenabschnitte()
+        {
+            string file = string.Concat(OrdnerPfad, @"\", StreckenabschnitteDateiName);
+
+            File.WriteAllText(file, JsonConvert.SerializeObject(Streckenabschnitte));
+        }
+
+        /// <summary>
         /// Methode für das Laden der Streckenabschnitte aus dem Order
         /// </summary>
         internal void LadeStreckenabschnitte()
         {
-            string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\streckenabschnitte.json");
+            string file = string.Concat(OrdnerPfad, @"\", StreckenabschnitteDateiName);
 
             if(!File.Exists(file))
             {
-                throw new FileNotFoundException("Streckenabschnitte-Datei nicht gefunden", "streckenabschnitte.json");
+                throw new FileNotFoundException("Streckenabschnitte-Datei nicht gefunden", StreckenabschnitteDateiName);
             }
 
             Streckenabschnitte = JsonConvert.DeserializeObject<List<Streckenabschnitt>>(File.ReadAllText(file));
@@ -98,11 +154,11 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         internal void LadeLinien()
         {
-            string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\linien.json");
+            string file = string.Concat(OrdnerPfad, @"\", LinienDateiName);
 
             if(!File.Exists(file))
             {
-                throw new FileNotFoundException("Linien-Datei nicht gefunden", "linien.json");
+                throw new FileNotFoundException("Linien-Datei nicht gefunden", LinienDateiName);
             }
 
             Linien = JsonConvert.DeserializeObject<List<Linie>>(File.ReadAllText(file));
@@ -113,11 +169,11 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         internal void LadeHaltestellen()
         {
-            string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellen.json");
+            string file = string.Concat(OrdnerPfad, @"\", HaltestellenDateiName);
 
             if(!File.Exists(file))
             {
-                throw new FileNotFoundException("Haltestellen-Datei nicht gefunden", "haltestellen.json");
+                throw new FileNotFoundException("Haltestellen-Datei nicht gefunden", HaltestellenDateiName);
             }
 
             Haltestellen = JsonConvert.DeserializeObject<List<Haltestelle>>(File.ReadAllText(file));
@@ -128,11 +184,11 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         internal void LadeHaltestellenfahrplaneintraege()
         {
-            string file = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\", OrdnerPfad, "\\haltestellenfahrplaneintraege.json");
+            string file = string.Concat(OrdnerPfad, @"\", HaltestellenfahrplaneintraegeDateiName);
 
             if(!File.Exists(file))
             {
-                throw new FileNotFoundException("Haltestellenfahrplaneinträge-Datei nicht gefunden", "haltestellenfahrplaneintraege.json");
+                throw new FileNotFoundException("Haltestellenfahrplaneinträge-Datei nicht gefunden", HaltestellenfahrplaneintraegeDateiName);
             }
 
             Haltestellenfahrplaneintraege = JsonConvert.DeserializeObject<List<HaltestelleFahrplanEintrag>>(File.ReadAllText(file));
