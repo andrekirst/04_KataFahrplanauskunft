@@ -95,7 +95,7 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Speichert das Objekt Linie aus dem FahrplanauskunftSpeicher in den Ordner
+        /// Speichert die Linien aus dem FahrplanauskunftSpeicher in den Ordner
         /// </summary>
         internal void SpeicherLinien()
         {
@@ -105,7 +105,7 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Speichert das Objekt Haltestelle aus dem FahrplanauskunftSpeicher in den Ordner
+        /// Speichert die Haltestellen aus dem FahrplanauskunftSpeicher in den Ordner
         /// </summary>
         internal void SpeicherHaltestellen()
         {
@@ -115,7 +115,7 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Speichert das Objekt Haltestellenfahrplaneintraege aus dem FahrplanauskunftSpeicher in den Ordner
+        /// Speichert die Haltestellenfahrplaneintraege aus dem FahrplanauskunftSpeicher in den Ordner
         /// </summary>
         internal void SpeicherHaltestellenfahrplaneintraege()
         {
@@ -125,7 +125,7 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Speichert das Objekt Streckenabschnitt aus dem FahrplanauskunftSpeicher in den Ordner
+        /// Speichert die Streckenabschnitte aus dem FahrplanauskunftSpeicher in den Ordner
         /// </summary>
         internal void SpeicherStreckenabschnitte()
         {
