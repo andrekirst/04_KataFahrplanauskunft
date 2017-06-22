@@ -24,7 +24,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <returns>Liste von Haltestellen</returns>
         public List<Haltestelle> Lade_Test_Haltestellen()
         {
-            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+            string ordnerPfad = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\TestDaten\\TestSatzBrainstorming");
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeHaltestellen();
@@ -38,7 +38,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <returns>Gibt die Test-Linien zurück</returns>
         public List<Linie> Lade_Test_Linien()
         {
-            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+            string ordnerPfad = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\TestDaten\\TestSatzBrainstorming");
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeLinien();
@@ -52,7 +52,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <returns>Gibt die Test-Streckenabschnitte zurück</returns>
         public static List<Streckenabschnitt> Lade_Test_Streckenabschnitte()
         {
-            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+            string ordnerPfad = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\TestDaten\\TestSatzBrainstorming");
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeStreckenabschnitte();
@@ -66,7 +66,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// <returns>Gibt die Test-Haltestellenfahrplaneinträge zurück</returns>
         public List<HaltestelleFahrplanEintrag> Lade_Test_Haltestellenfahrplaneintraege()
         {
-            string ordnerPfad = "TestDaten\\TestSatzBrainstorming";
+            string ordnerPfad = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\TestDaten\\TestSatzBrainstorming");
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(ordnerPfad: ordnerPfad);
             fahrplanauskunftSpeicher.LadeHaltestellenfahrplaneintraege();
