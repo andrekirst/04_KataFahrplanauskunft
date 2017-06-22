@@ -17,6 +17,75 @@ namespace Fahrplanauskunft.Test.Objekte
     public class T_FahrplanauskunftSpeicher
     {
         /// <summary>
+        /// Test-Fahrplanauskunftspeicher für die Tests
+        /// </summary>
+        /// <param name="testFolder">Der Ordner des Tests</param>
+        /// <returns>Gibt einen Test-Fahrplanauskunftspeicher zurück</returns>
+        public FahrplanauskunftSpeicher TestFahrplanauskunftSpeicher(string testFolder)
+        {
+            return new FahrplanauskunftSpeicher(ordnerPfad: testFolder)
+            {
+                Linien = new List<Linie>()
+                {
+                    new Linie(name: "B1", ident: "B11")
+                },
+                Haltestellen = new List<Haltestelle>()
+                {
+                    new Haltestelle(name: "H1")
+                    {
+                        Linien = new List<Linie>()
+                        {
+                            new Linie(name: "B1", ident: "B11"),
+                            new Linie(name: "B1", ident: "B12")
+                        }
+                    }
+                },
+                Haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
+                {
+                    new HaltestelleFahrplanEintrag()
+                    {
+                        Haltestelle = new Haltestelle(name: "H1")
+                        {
+                            Linien = new List<Linie>()
+                            {
+                                new Linie(name: "B1", ident: "B11"),
+                                new Linie(name: "B1", ident: "B12")
+                            }
+                        },
+                        Uhrzeit = 720,
+                        Linie = new Linie(name: "B1", ident: "B11")
+                    }
+                },
+                Streckenabschnitte = new List<Streckenabschnitt>()
+                {
+                    new Streckenabschnitt()
+                    {
+                        Dauer = 1,
+                        Linie = new Linie(name: "B1", ident: "B11"),
+                        StartHaltestelle = new Haltestelle(name: "H1")
+                        {
+                            Linien = new List<Linie>()
+                            {
+                                new Linie(name: "B1", ident: "B11"),
+                                new Linie(name: "B1", ident: "B12")
+                            }
+                        },
+                        ZielHaltestelle = new Haltestelle(name: "H2")
+                        {
+                            Linien = new List<Linie>()
+                            {
+                                new Linie(name: "B1", ident: "B11"),
+                                new Linie(name: "B1", ident: "B12"),
+                                new Linie(name: "B3", ident: "B31"),
+                                new Linie(name: "B3", ident: "B32")
+                            }
+                        }
+                    }
+                }
+            };
+        }
+
+        /// <summary>
         /// Test, ob der FahrplanauskunftSpeicher die Dateien im Ordner lädt
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
@@ -562,6 +631,196 @@ namespace Fahrplanauskunft.Test.Objekte
             // Hier wird der Test gültig, weil die Exception FileNotFoundException erwartet wird
 
             Assert.Fail();
+        }
+
+        /// <summary>
+        /// Test für das Speichern der Linien aus dem FahrplanauskunftSpeicher
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_SpeicherLinien()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = new FahrplanauskunftSpeicher(ordnerPfad: testFolder)
+            {
+                Linien = new List<Linie>()
+                {
+                    new Linie(name: "B1", ident: "B11")
+                }
+            };
+
+            fahrplanauskunftSpeicherSpeichern.SpeicherLinien();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.LadeLinien();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Linien, fahrplanauskunftSpeicherLaden.Linien);
+
+            Directory.Delete(testFolder, true);
+        }
+
+        /// <summary>
+        /// Test für das Speichern der Haltestellen aus dem FahrplanauskunftSpeicher
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_SpeicherHaltestellen()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = TestFahrplanauskunftSpeicher(testFolder);
+
+            fahrplanauskunftSpeicherSpeichern.SpeicherHaltestellen();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.LadeHaltestellen();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Haltestellen, fahrplanauskunftSpeicherLaden.Haltestellen);
+
+            Directory.Delete(testFolder, true);
+        }
+
+        /// <summary>
+        /// Test für das Speichern der Haltestellenfahrplaneintraege aus dem FahrplanauskunftSpeicher
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_SpeicherHaltestellenfahrplaneintraege()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = TestFahrplanauskunftSpeicher(testFolder);
+
+            fahrplanauskunftSpeicherSpeichern.SpeicherHaltestellenfahrplaneintraege();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.LadeHaltestellenfahrplaneintraege();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Haltestellenfahrplaneintraege, fahrplanauskunftSpeicherLaden.Haltestellenfahrplaneintraege);
+
+            Directory.Delete(testFolder, true);
+        }
+
+        /// <summary>
+        /// Test für das Speichern der Streckenabschnitte aus dem FahrplanauskunftSpeicher
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_SpeicherStreckenabschnitte()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = TestFahrplanauskunftSpeicher(testFolder);
+
+            fahrplanauskunftSpeicherSpeichern.SpeicherStreckenabschnitte();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.LadeStreckenabschnitte();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Streckenabschnitte, fahrplanauskunftSpeicherLaden.Streckenabschnitte);
+
+            Directory.Delete(testFolder, true);
+        }
+
+        /// <summary>
+        /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Linien
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Linien()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = TestFahrplanauskunftSpeicher(testFolder);
+
+            fahrplanauskunftSpeicherSpeichern.Speichern();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.Laden();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Linien, fahrplanauskunftSpeicherLaden.Linien);
+
+            Directory.Delete(testFolder, true);
+        }
+
+        /// <summary>
+        /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Haltestellen
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Haltestellen()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = TestFahrplanauskunftSpeicher(testFolder);
+
+            fahrplanauskunftSpeicherSpeichern.Speichern();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.Laden();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Haltestellen, fahrplanauskunftSpeicherLaden.Haltestellen);
+
+            Directory.Delete(testFolder, true);
+        }
+
+        /// <summary>
+        /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Haltestellenfahrplaneintraege
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Haltestellenfahrplaneintraege()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = TestFahrplanauskunftSpeicher(testFolder);
+
+            fahrplanauskunftSpeicherSpeichern.Speichern();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.Laden();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Haltestellenfahrplaneintraege, fahrplanauskunftSpeicherLaden.Haltestellenfahrplaneintraege);
+
+            Directory.Delete(testFolder, true);
+        }
+
+        /// <summary>
+        /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Streckenabschnitte
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Streckenabschnitte()
+        {
+            string testFolder = "test";
+
+            Directory.CreateDirectory(testFolder);
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherSpeichern = TestFahrplanauskunftSpeicher(testFolder);
+
+            fahrplanauskunftSpeicherSpeichern.Speichern();
+
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicherLaden = new FahrplanauskunftSpeicher(ordnerPfad: testFolder);
+
+            fahrplanauskunftSpeicherLaden.Laden();
+
+            CollectionAssert.AreEqual(fahrplanauskunftSpeicherSpeichern.Streckenabschnitte, fahrplanauskunftSpeicherLaden.Streckenabschnitte);
+
+            Directory.Delete(testFolder, true);
         }
     }
 }

@@ -119,3 +119,51 @@ Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeLinie
 #### Beschreibung
 
 Testet, dass die FileNotFoundException geworfen wird, wenn die Methode LadeHaltestellenfahrplaneintraege und der Pfad ungültig ist
+
+### FahrplanauskunftSpeicher_SpeicherLinien
+
+#### Beschreibung
+
+Test für das Speichern der Linien aus dem FahrplanauskunftSpeicher
+
+### FahrplanauskunftSpeicher_SpeicherHaltestellen
+
+#### Beschreibung
+
+Test für das Speichern der Haltestellen aus dem FahrplanauskunftSpeicher
+
+### FahrplanauskunftSpeicher_SpeicherHaltestellenfahrplaneintraege
+
+#### Beschreibung
+
+Test für das Speichern der Haltestellenfahrplaneintraege aus dem FahrplanauskunftSpeicher
+
+### FahrplanauskunftSpeicher_SpeicherStreckenabschnitte
+
+### Beschreibung
+
+Test für das Speichern der Streckenabschnitte aus dem FahrplanauskunftSpeicher
+
+### FahrplanauskunftSpeicher_Speichern_Eigenschaft_Linien
+
+#### Beschreibung
+
+Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Linien
+
+### FahrplanauskunftSpeicher_Speichern_Eigenschaft_Haltestellen
+
+#### Beschreibung
+
+Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Haltestellen
+
+### FahrplanauskunftSpeicher_Speichern_Eigenschaft_Haltestellenfahrplaneintraege
+
+#### Beschreibung
+
+Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Haltestellenfahrplaneintraege
+
+### FahrplanauskunftSpeicher_Speichern_Eigenschaft_Streckenabschnitte
+
+#### Beschreibung
+
+Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Streckenabschnitte
