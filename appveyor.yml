@@ -20,8 +20,6 @@ image: Visual Studio 2015
 cache:
   - '%LocalAppData%\NuGet\Cache'
   - packages -> **\packages.config
-  - C:\ProgramData\chocolatey\bin -> appveyor.yml
-  - C:\ProgramData\chocolatey\lib -> appveyor.yml
   - C:\miktex -> appveyor.yml
 
 # AssemblyInfo-Dateien mit den Versionen versehen
@@ -51,9 +49,9 @@ before_build:
   - ps: nuget restore $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.sln -verbosity detailed
 
 build_script:
-    - choco install "msbuild-sonarqube-runner" -y
-    - choco install pandoc -y
-    - choco install miktex -y
+    - choco install "msbuild-sonarqube-runner" -y --force
+    - choco install pandoc -y --force
+    - choco install miktex -y --force
     - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:sonarqubeprefix = "dev-" }
     - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.exclusions=**/AssemblyInfo.cs" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
     - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.exclusions=**/AssemblyInfo.cs" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
