@@ -18,6 +18,7 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         /// Testet das ViewModel ViewModelLinie, ob die Eigenschaft Name sich verändert
         /// </summary>
         [TestMethod]
+        [TestCategory(@"ViewModelBase")]
         public void ViewModel_TModel_Linie_Eigenschaft_Name_wurde_veraendert()
         {
             Linie linie = new Linie(name: "B1", ident: "B11");
@@ -35,6 +36,7 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         /// Testet das ViewModel ViewModelLinie, ob das Event PropertyChanged aufgerufen wurde
         /// </summary>
         [TestMethod]
+        [TestCategory(@"ViewModelBase")]
         public void ViewModel_TModel_Linie_Eigenschaft_Name_wurde_veraendert_Event_PropertyChanged_1_mal_aufgerufen()
         {
             List<string> aufgerufeneEvents = new List<string>();
@@ -59,6 +61,7 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         /// Testet das ViewModel ViewModelLinie, ob das Event PropertyChanged die Eigenschaft Name hat
         /// </summary>
         [TestMethod]
+        [TestCategory(@"ViewModelBase")]
         public void ViewModel_TModel_Linie_Eigenschaft_Name_wurde_veraendert_Event_PropertyChanged_PropertyName_Name()
         {
             List<string> aufgerufeneEvents = new List<string>();
