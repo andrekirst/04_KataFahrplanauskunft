@@ -4,20 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59333DC7-72E0-43CE-8915-5F7E3C79192E}</ProjectGuid>
+    <ProjectGuid>{D653AFDC-CAF3-4A27-9F75-F711D3D64966}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fahrplanauskunft</RootNamespace>
-    <AssemblyName>Fahrplanauskunft</AssemblyName>
+    <RootNamespace>Fahrplanauskunft.ViewModelBase</RootNamespace>
+    <AssemblyName>Fahrplanauskunft.ViewModelBase</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,27 +21,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>Fahrplanauskunft.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Debug\Fahrplanauskunft.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>Fahrplanauskunft.ViewModelBase.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\Fahrplanauskunft.ViewModelBase.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>Fahrplanauskunft.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
+    <CodeAnalysisRuleSet>Fahrplanauskunft.ViewModelBase.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,24 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\LinieIstNichtAnHaltestelleException.cs" />
-    <Compile Include="Funktionen\EqualsHelper.cs" />
-    <Compile Include="Funktionen\EqualsOperatorHelper.cs" />
-    <Compile Include="Funktionen\Logik.cs" />
-    <Compile Include="Objekte\FahrplanauskunftSpeicher.cs" />
-    <Compile Include="Objekte\Haltestelle.cs" />
-    <Compile Include="Objekte\HaltestelleFahrplanEintrag.cs" />
-    <Compile Include="Objekte\Linie.cs" />
-    <Compile Include="Objekte\Streckenabschnitt.cs" />
-    <Compile Include="Objekte\TreeItem.cs" />
-    <Compile Include="Objekte\Umstiegspunkt.cs" />
-    <Compile Include="Objekte\Verbindungsanfrage.cs" />
+    <Compile Include="IViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Funktionen\ZeitKonverter.cs" />
+    <Compile Include="ViewModel.cs" />
+    <Compile Include="ViewModel_TModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="Fahrplanauskunft.ruleset" />
+    <None Include="Fahrplanauskunft.ViewModelBase.ruleset" />
     <None Include="packages.config" />
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
@@ -91,6 +68,12 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
     <Analyzer Include="..\packages\System.Runtime.Analyzers.1.1.0\analyzers\dotnet\cs\System.Runtime.Analyzers.dll" />
     <Analyzer Include="..\packages\System.Runtime.Analyzers.1.1.0\analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fahrplanauskunft\Fahrplanauskunft.csproj">
+      <Project>{59333DC7-72E0-43CE-8915-5F7E3C79192E}</Project>
+      <Name>Fahrplanauskunft</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

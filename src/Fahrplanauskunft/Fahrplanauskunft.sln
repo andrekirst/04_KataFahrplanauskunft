@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.UI.Windows
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.UI.Windows.Editor", "Fahrplanauskunft.UI.Windows.Editor\Fahrplanauskunft.UI.Windows.Editor.csproj", "{5F03A0E4-9FDA-4091-9729-EEE7C4B3FBCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.ViewModelBase", "Fahrplanauskunft.ViewModelBase\Fahrplanauskunft.ViewModelBase.csproj", "{D653AFDC-CAF3-4A27-9F75-F711D3D64966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.ViewModelBase.Test", "Fahrplanauskunft.ViewModelBase.Test\Fahrplanauskunft.ViewModelBase.Test.csproj", "{924584DA-9E40-4D65-80F8-CB7B9F943027}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{5F03A0E4-9FDA-4091-9729-EEE7C4B3FBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F03A0E4-9FDA-4091-9729-EEE7C4B3FBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F03A0E4-9FDA-4091-9729-EEE7C4B3FBCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D653AFDC-CAF3-4A27-9F75-F711D3D64966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D653AFDC-CAF3-4A27-9F75-F711D3D64966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D653AFDC-CAF3-4A27-9F75-F711D3D64966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D653AFDC-CAF3-4A27-9F75-F711D3D64966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924584DA-9E40-4D65-80F8-CB7B9F943027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924584DA-9E40-4D65-80F8-CB7B9F943027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924584DA-9E40-4D65-80F8-CB7B9F943027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924584DA-9E40-4D65-80F8-CB7B9F943027}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

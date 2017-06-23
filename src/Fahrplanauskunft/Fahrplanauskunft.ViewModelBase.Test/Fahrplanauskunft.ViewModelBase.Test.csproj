@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1D6AF57-90C8-4311-8B2B-9439BED2230F}</ProjectGuid>
+    <ProjectGuid>{924584DA-9E40-4D65-80F8-CB7B9F943027}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fahrplanauskunft.Test</RootNamespace>
-    <AssemblyName>Fahrplanauskunft.Test</AssemblyName>
+    <RootNamespace>Fahrplanauskunft.ViewModelBase.Test</RootNamespace>
+    <AssemblyName>Fahrplanauskunft.ViewModelBase.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -17,8 +17,6 @@
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
     <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,8 +26,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>Fahrplanauskunft.Test.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Debug\Fahrplanauskunft.Test.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>Fahrplanauskunft.ViewModelBase.Test.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\Fahrplanauskunft.ViewModelBase.Test.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,13 +36,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>Fahrplanauskunft.Test.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Fahrplanauskunft.ViewModelBase.Test.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="equalidator, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\equalidator.1.0.15.0\lib\net40\equalidator.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -62,74 +56,24 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Exceptions\T_LinieIstNichtAnHaltestelleException.cs" />
-    <Compile Include="Funktionen\T_EqualsOperatorHelper.cs" />
-    <Compile Include="Funktionen\T_EqualsHelper.cs" />
-    <Compile Include="Funktionen\T_Logik.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Objekte\T_Umstiegspunkt.cs" />
-    <Compile Include="Objekte\T_Haltestelle.cs" />
-    <Compile Include="Funktionen\T_ZeitKonverter.cs" />
-    <Compile Include="Objekte\T_HaltestelleFahrplanEintrag.cs" />
-    <Compile Include="Objekte\T_FahrplanauskunftSpeicher.cs" />
-    <Compile Include="Objekte\T_TreeItem.cs" />
-    <Compile Include="Objekte\T_Verbindungsanfrage.cs" />
-    <Compile Include="Objekte\T_Streckenabschnitt.cs" />
-    <Compile Include="Objekte\T_Linie.cs" />
+    <Compile Include="LinieViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T_ViewModel_TModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fahrplanauskunft.ViewModelBase\Fahrplanauskunft.ViewModelBase.csproj">
+      <Project>{d653afdc-caf3-4a27-9f75-f711d3d64966}</Project>
+      <Name>Fahrplanauskunft.ViewModelBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fahrplanauskunft\Fahrplanauskunft.csproj">
       <Project>{59333dc7-72e0-43ce-8915-5f7e3c79192e}</Project>
       <Name>Fahrplanauskunft</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Fahrplanauskunft.Test.ruleset" />
+    <None Include="Fahrplanauskunft.ViewModelBase.Test.ruleset" />
     <None Include="packages.config" />
     <AdditionalFiles Include="stylecop.json" />
-    <None Include="TestDaten\TestSatz10\haltestellenfahrplaneintraege.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatz1\haltestellen.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatz2\haltestellen.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatz3\linien.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatz4\linien.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatz5\streckenabschnitte.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatz6\streckenabschnitte.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatz7\haltestellenfahrplaneintraege.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatz8\haltestellenfahrplaneintraege.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatz9\haltestellenfahrplaneintraege.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatzBrainstorming\haltestellen.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatzBrainstorming\haltestellenfahrplaneintraege.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatzBrainstorming\linien.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestDaten\TestSatzBrainstorming\streckenabschnitte.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\codecracker.CSharp.1.0.3\analyzers\dotnet\cs\CodeCracker.Common.dll" />
@@ -166,7 +110,6 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <ProjectExtensions />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
