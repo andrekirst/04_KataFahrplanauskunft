@@ -47,7 +47,7 @@
     <Compile Include="IViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel.cs" />
-    <Compile Include="ViewModel_TModel.cs" />
+    <Compile Include="ViewModel{TModel}.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Fahrplanauskunft.ViewModelBase.ruleset" />

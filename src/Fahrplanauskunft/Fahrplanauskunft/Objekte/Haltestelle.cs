@@ -111,7 +111,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Bsp.: "Name: H4"</returns>
         public override string ToString()
         {
-            return string.Format("Name: {0}", Name);
+            return $"Name: {Name}";
         }
     }
 }

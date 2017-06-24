@@ -1,20 +1,20 @@
-﻿// <copyright file="ViewModel_TModel.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+﻿// <copyright file="ViewModel{TModel}.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 // Vorlage: http://www.cocktailsandcode.de/2012/04/mvvm-tutorial-part-3-viewmodelbase-und-relaycommand/
 
+using System;
 using System.ComponentModel;
 using System.Linq;
 using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.ViewModelBase
 {
-
     /// <summary>
     /// Abstrakte Klasse für ViewModel mit dem generischen Parameter für das Model
     /// </summary>
     /// <typeparam name="TModel">Das Model</typeparam>
-    public abstract class ViewModel<TModel> : ViewModel, IViewModel<TModel>
+    public abstract class ViewModel<TModel> : ViewModel, IViewModel<TModel>, IEquatable<ViewModel<TModel>>
         where TModel : class
     {
         private TModel model;
@@ -100,6 +100,16 @@ namespace Fahrplanauskunft.ViewModelBase
                 {
                     return this.Model == other.Model;
                 });
+        }
+
+        /// <summary>
+        /// Implementation von IEquatable
+        /// </summary>
+        /// <param name="other">Die zu vergleichende ViewModel-Instanz</param>
+        /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
+        public bool Equals(ViewModel<TModel> other)
+        {
+            return Equals(other as IViewModel<TModel>);
         }
     }
 }

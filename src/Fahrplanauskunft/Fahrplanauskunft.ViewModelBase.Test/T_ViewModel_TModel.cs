@@ -27,7 +27,7 @@ namespace Fahrplanauskunft.ViewModelBase.Test
 
             lvm.Name = "B12";
 
-            string expected = "B12";
+            const string expected = "B12";
             string actual = lvm.Name;
             Assert.AreEqual(expected, actual);
         }
