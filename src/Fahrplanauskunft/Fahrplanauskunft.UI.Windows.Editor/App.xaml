@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Fahrplanauskunft.UI.Windows.Editor"
              StartupUri="FahrplanauskunftMainWindow.xaml">
     <Application.Resources>
-            <ResourceDictionary Source="Resources\Resources.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="Resource" Source="Resources\Resources.xaml" />
+                <ResourceDictionary x:Name="Theme" Source="Themes\Default\Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

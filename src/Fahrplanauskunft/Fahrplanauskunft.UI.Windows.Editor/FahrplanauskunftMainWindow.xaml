@@ -7,10 +7,34 @@
         xmlns:extwpfdg="http://schemas.xceed.com/wpf/xaml/datagrid"
         xmlns:extwpf="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="{DynamicResource FentsterTitelFahrplanauskunft}" Height="700" Width="1050"
+        Title="{DynamicResource FensterTitelFahrplanauskunft}" Height="700" Width="1050"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <TabControl Name="tabControlObjekte">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Column="0">
+            <Menu.Items>
+                <MenuItem Header="{DynamicResource MenuItemDateiHeader}">
+                    <MenuItem.Items>
+                        <MenuItem Header="{DynamicResource MenuItemOrdnerOeffnenHeader}"
+                                  InputGestureText="{DynamicResource MenuItemOrdnerOeffnenInputGestureText}" />
+                        <MenuItem Header="{DynamicResource MenuItemOrdnerSpeichernHeader}"
+                                  InputGestureText="{DynamicResource MenuItemOrdnerSpeichernInputGestureText}" />
+                        <Separator />
+                        <MenuItem Header="{DynamicResource MenuItemBeendenHeader}"
+                                  InputGestureText="{DynamicResource MenuItemBeendenInputGestureText}" />
+                    </MenuItem.Items>
+                </MenuItem>
+            </Menu.Items>
+        </Menu>
+        
+        <TabControl Grid.Column="0" Grid.Row="1" Name="tabControlObjekte">
             <TabControl.Items>
                 <TabItem Name="tabItemLinie" Header="{DynamicResource tabPageTextLinie}" />
             </TabControl.Items>

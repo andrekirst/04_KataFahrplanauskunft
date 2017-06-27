@@ -6,5 +6,13 @@
     <system:String x:Key="ButtonTextSpeichern">&lt;Speichern&gt;</system:String>
     <system:String x:Key="ButtonTextZuruecksetzen">&lt;Zurücksetzen&gt;</system:String>
     <system:String x:Key="tabPageTextLinie">&lt;Linie&gt;</system:String>
-    <system:String x:Key="FentsterTitelFahrplanauskunft">&lt;Fahrplanauskunft&gt;</system:String>
+    <system:String x:Key="FensterTitelFahrplanauskunft">&lt;Fahrplanauskunft&gt;</system:String>
+    <system:String x:Key="MenuItemDateiHeader">&lt;Datei&gt;</system:String>
+    <system:String x:Key="MenuItemBeendenHeader">&lt;Beenden&gt;</system:String>
+    <system:String x:Key="MenuItemOrdnerOeffnenHeader">&lt;Ordner öffnen&gt;</system:String>
+    <system:String x:Key="MenuItemOrdnerSpeichernHeader">&lt;Ordner speichern&gt;</system:String>
+
+    <system:String x:Key="MenuItemBeendenInputGestureText">&lt;Alt+F4&gt;</system:String>
+    <system:String x:Key="MenuItemOrdnerOeffnenInputGestureText">&lt;Strg+O&gt;</system:String>
+    <system:String x:Key="MenuItemOrdnerSpeichernInputGestureText">&lt;Strg+S&gt;</system:String>
 </ResourceDictionary>

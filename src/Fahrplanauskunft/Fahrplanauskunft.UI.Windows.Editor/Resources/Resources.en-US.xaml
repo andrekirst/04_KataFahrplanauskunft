@@ -7,5 +7,13 @@
     <system:String x:Key="ButtonTextSpeichern">Save</system:String>
     <system:String x:Key="ButtonTextZuruecksetzen">Reset</system:String>
     <system:String x:Key="tabPageTextLinie">Line</system:String>
-    <system:String x:Key="FentsterTitelFahrplanauskunft">Timetable</system:String>
+    <system:String x:Key="FensterTitelFahrplanauskunft">Timetable</system:String>
+    <system:String x:Key="MenuItemDateiHeader">&lt;File&gt;</system:String>
+    <system:String x:Key="MenuItemBeendenHeader">&lt;Exit&gt;</system:String>
+    <system:String x:Key="MenuItemOrdnerOeffnenHeader">&lt;Open Folder&gt;</system:String>
+    <system:String x:Key="MenuItemOrdnerSpeichernHeader">&lt;Save Folder&gt;</system:String>
+
+    <system:String x:Key="MenuItemBeendenInputGestureText">Alt+F4</system:String>
+    <system:String x:Key="MenuItemOrdnerOeffnenInputGestureText">&lt;Ctrl+O&gt;</system:String>
+    <system:String x:Key="MenuItemOrdnerSpeichernInputGestureText">&lt;Ctrl+S&gt;</system:String>
 </ResourceDictionary>
