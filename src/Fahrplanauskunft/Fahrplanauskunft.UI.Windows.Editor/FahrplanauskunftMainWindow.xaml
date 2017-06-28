@@ -33,7 +33,7 @@
                 </MenuItem>
             </Menu.Items>
         </Menu>
-        
+
         <TabControl Grid.Column="0" Grid.Row="1" Name="tabControlObjekte">
             <TabControl.Items>
                 <TabItem Name="tabItemLinie" Background="#FFDAB9" Margin="0" Padding="0" BorderBrush="#FFDAB9">
@@ -43,7 +43,33 @@
                         </Grid>
                     </TabItem.Header>
                     <TabItem.Content>
-                        <Grid Background="#FFDAB9" Margin="0">
+                        <Grid Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="75" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <ListBox x:Name="listBoxLinien" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Height="50" HorizontalAlignment="Stretch">
+                                            <Canvas>
+                                                <Border Canvas.Left="2" Canvas.Top="4" BorderBrush="{x:Null}">
+                                                    <TextBlock Padding="0,4,0,0" TextAlignment="Center" Background="#2F4F4F" Width="40" Height="40" VerticalAlignment="Center" Text="{Binding Name}" Foreground="White" FontSize="20" />
+                                                </Border>
+                                                <TextBlock Canvas.Left="50" Margin="0" Padding="0" Canvas.Top="0" FontSize="13" Text="{Binding Ident}" />
+                                                <StackPanel Orientation="Horizontal">
+                                                </StackPanel>
+                                            </Canvas>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
                         </Grid>
                     </TabItem.Content>
                 </TabItem>

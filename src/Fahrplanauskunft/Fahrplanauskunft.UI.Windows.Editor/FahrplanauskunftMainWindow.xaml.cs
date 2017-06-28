@@ -2,7 +2,10 @@
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 
+using Fahrplanauskunft.Objekte;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 
@@ -21,6 +24,28 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             InitializeComponent();
 
             SetzeRessourcen();
+
+            // TODO
+            PrototypTest();
+        }
+
+        private void PrototypTest()
+        {
+            List<Linie> linien = new List<Linie>();
+            linien.Add(new Linie(name: "B1", ident: "B11"));
+            linien.Add(new Linie(name: "B1", ident: "B12"));
+
+            var items = from linie in linien
+                        select new
+                        {
+                            Name = linie.Name,
+                            Ident = linie.Ident,
+                            AnzahlHaltestellen = 20,
+                            AnzahlStreckenabschnitte = 20,
+                            AnzahlHaltestellenfahrplaneintraege = 1450
+                        };
+
+            listBoxLinien.ItemsSource = items;
         }
 
         /// <summary>
