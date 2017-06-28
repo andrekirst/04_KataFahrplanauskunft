@@ -36,7 +36,17 @@
         
         <TabControl Grid.Column="0" Grid.Row="1" Name="tabControlObjekte">
             <TabControl.Items>
-                <TabItem Name="tabItemLinie" Header="{DynamicResource tabPageTextLinie}" />
+                <TabItem Name="tabItemLinie" Background="#FFDAB9" Margin="0" Padding="0" BorderBrush="#FFDAB9">
+                    <TabItem.Header>
+                        <Grid Background="#FFDAB9" Height="50" Width="100">
+                            <TextBlock Text="{DynamicResource tabPageTextLinie}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Grid>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <Grid Background="#FFDAB9" Margin="0">
+                        </Grid>
+                    </TabItem.Content>
+                </TabItem>
             </TabControl.Items>
         </TabControl>
     </Grid>
