@@ -7,7 +7,7 @@
     <system:String x:Key="ButtonTextSpeichern">Speichern</system:String>
     <system:String x:Key="ButtonTextZuruecksetzen">Zurücksetzen</system:String>
     <system:String x:Key="tabPageTextLinie">Linie</system:String>
-    <system:String x:Key="FensterTitelFahrplanauskunft">Fahrplanauskunft</system:String>
+    <system:String x:Key="FensterTitelFahrplanauskunft">Fahrplanauskunft.Editor</system:String>
     <system:String x:Key="MenuItemDateiHeader">Datei</system:String>
     <system:String x:Key="MenuItemBeendenHeader">Beenden</system:String>
     <system:String x:Key="MenuItemOrdnerOeffnenHeader">Ordner öffnen</system:String>

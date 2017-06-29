@@ -7,7 +7,7 @@
     <system:String x:Key="ButtonTextSpeichern">Save</system:String>
     <system:String x:Key="ButtonTextZuruecksetzen">Reset</system:String>
     <system:String x:Key="tabPageTextLinie">Line</system:String>
-    <system:String x:Key="FensterTitelFahrplanauskunft">Timetable</system:String>
+    <system:String x:Key="FensterTitelFahrplanauskunft">Timetable.Editor</system:String>
     <system:String x:Key="MenuItemDateiHeader">&lt;File&gt;</system:String>
     <system:String x:Key="MenuItemBeendenHeader">&lt;Exit&gt;</system:String>
     <system:String x:Key="MenuItemOrdnerOeffnenHeader">&lt;Open Folder&gt;</system:String>
