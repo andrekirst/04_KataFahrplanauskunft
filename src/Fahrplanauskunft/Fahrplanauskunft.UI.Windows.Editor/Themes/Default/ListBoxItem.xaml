@@ -9,8 +9,8 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="true">
-                            <Setter Property="Background" TargetName="listboxitem_border" Value="#00BFFF" />
-                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" />
+                            <Setter Property="Background" TargetName="listboxitem_border" Value="#DCdCdC" />
+                            <Setter Property="Foreground" Value="Black" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

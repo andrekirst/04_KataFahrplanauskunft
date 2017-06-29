@@ -9,6 +9,7 @@ using System.Threading;
 using System.Windows;
 using Fahrplanauskunft.Objekte;
 using System.Text.RegularExpressions;
+using System.Windows.Media;
 
 namespace Fahrplanauskunft.UI.Windows.Editor
 {
@@ -33,6 +34,12 @@ namespace Fahrplanauskunft.UI.Windows.Editor
         private void PrototypTest()
         {
             string[] colors = new string[] { "#FF4500", "#FFDAB9", "#66CDAA", "#FFD700", "#6B8E23", "#32CD32" };
+            string[] fg = new string[colors.Length];
+            for(int i = 0; i < colors.Length; i++)
+            {
+                Color color = (Color)ColorConverter.ConvertFromString(colors[i]);
+                fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
+            }
 
             List<Linie> linien = new List<Linie>();
             linien.Add(new Linie(name: "B1", ident: "B11"));
@@ -57,7 +64,8 @@ namespace Fahrplanauskunft.UI.Windows.Editor
                             AnzahlHaltestellen = new Random().Next(10, 20),
                             AnzahlStreckenabschnitte = new Random().Next(10, 20),
                             AnzahlHaltestellenfahrplaneintraege = new Random().Next(1000, 1500),
-                            Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
+                            Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
+                            Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
                         };
 
             listBoxLinien.ItemsSource = items;
