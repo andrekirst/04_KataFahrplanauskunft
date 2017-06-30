@@ -28,10 +28,12 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         /// <param name="name">Der Name der Linie (für Hin- und Gegenrichtung)</param>
         /// <param name="ident">Der Identifizierer der Linie (nur eine Richtung)</param>
-        public Linie(string name, string ident)
+        /// <param name="farbe">Die Farbe für die Linie</param>
+        public Linie(string name, string ident, string farbe)
         {
-            this.Name = name;
-            this.Ident = ident;
+            Name = name;
+            Ident = ident;
+            Farbe = farbe;
         }
 
         /// <summary>
@@ -48,6 +50,15 @@ namespace Fahrplanauskunft.Objekte
         public string Name
         {
             get; set;
+        }
+
+        /// <summary>
+        /// Gibt die Farbe der Linie zurück, oder setzt diese.
+        /// </summary>
+        public string Farbe
+        {
+            get;
+            set;
         }
 
         /// <summary>
@@ -103,7 +114,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return (Name.GetHashCode() * 2) + Ident.GetHashCode();
+            return (Name.GetHashCode() * 3) + (Ident.GetHashCode() * 2) + Farbe.GetHashCode();
         }
 
         /// <summary>
@@ -112,7 +123,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Bsp.: "B1 - B11"</returns>
         public override string ToString()
         {
-            return $"{Name} - {Ident}";
+            return $"{Name} - {Ident} : Farbe: {Farbe}";
         }
     }
 }
