@@ -53,6 +53,16 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
 
+                            <Grid Grid.Column="0" Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="25" />
+                                </Grid.RowDefinitions>
+                                <TextBox Grid.Column="0" Grid.Row="1" x:Name="textBoxsucheingabeLinie" Template="{DynamicResource TextBoxSucheingabe}" VerticalContentAlignment="Center" TextChanged="textBoxsucheingabeLinie_TextChanged" />
+                            </Grid>
                             
                             <!-- ListBox für das Objekt Linie -->
                             <ListBox x:Name="listBoxLinien" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding}" BorderBrush="White" BorderThickness="0">

@@ -5,11 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows;
-using Fahrplanauskunft.Objekte;
-using System.Text.RegularExpressions;
 using System.Windows.Media;
+using Fahrplanauskunft.Objekte;
+using Fahrplanauskunft.UI.Windows.Editor.Objekte.Linie;
 
 namespace Fahrplanauskunft.UI.Windows.Editor
 {
@@ -41,6 +42,25 @@ namespace Fahrplanauskunft.UI.Windows.Editor
                 fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
             }
 
+            List<Linie> linien = HoleTestLinien();
+
+            var items = from linie in linien
+                        select new
+                        {
+                            Name = linie.Name,
+                            Ident = linie.Ident,
+                            AnzahlHaltestellen = 20,
+                            AnzahlStreckenabschnitte = 20,
+                            AnzahlHaltestellenfahrplaneintraege = 1000,
+                            Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
+                            Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
+                        };
+
+            listBoxLinien.ItemsSource = items;
+        }
+
+        private List<Linie> HoleTestLinien()
+        {
             List<Linie> linien = new List<Linie>();
             linien.Add(new Linie(name: "B1", ident: "B11"));
             linien.Add(new Linie(name: "B1", ident: "B12"));
@@ -55,20 +75,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             linien.Add(new Linie(name: "B5", ident: "B52"));
             linien.Add(new Linie(name: "B6", ident: "B61"));
             linien.Add(new Linie(name: "B6", ident: "B62"));
-
-            var items = from linie in linien
-                        select new
-                        {
-                            Name = linie.Name,
-                            Ident = linie.Ident,
-                            AnzahlHaltestellen = new Random().Next(10, 20),
-                            AnzahlStreckenabschnitte = new Random().Next(10, 20),
-                            AnzahlHaltestellenfahrplaneintraege = new Random().Next(1000, 1500),
-                            Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
-                            Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
-                        };
-
-            listBoxLinien.ItemsSource = items;
+            return linien;
         }
 
         /// <summary>
@@ -113,6 +120,33 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             }
 
             this.Resources.MergedDictionaries.Add(dict);
+        }
+
+        private void textBoxsucheingabeLinie_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            string[] colors = new string[] { "#FF4500", "#FFDAB9", "#66CDAA", "#FFD700", "#6B8E23", "#32CD32" };
+            string[] fg = new string[colors.Length];
+            for(int i = 0; i < colors.Length; i++)
+            {
+                Color color = (Color)ColorConverter.ConvertFromString(colors[i]);
+                fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
+            }
+
+            List<Linie> linien = new InteraktorSucheLinie().Suche_Linie(textBoxsucheingabeLinie.Text, HoleTestLinien());
+
+            var items = from linie in linien
+                        select new
+                        {
+                            Name = linie.Name,
+                            Ident = linie.Ident,
+                            AnzahlHaltestellen = 20,
+                            AnzahlStreckenabschnitte = 20,
+                            AnzahlHaltestellenfahrplaneintraege = 1000,
+                            Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
+                            Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
+                        };
+
+            listBoxLinien.ItemsSource = items;
         }
     }
 }
