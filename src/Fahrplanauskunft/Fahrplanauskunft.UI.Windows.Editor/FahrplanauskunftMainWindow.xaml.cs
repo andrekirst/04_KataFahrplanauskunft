@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using Fahrplanauskunft.Objekte;
 using Fahrplanauskunft.UI.Windows.Editor.Objekte.Linie;
@@ -56,25 +57,25 @@ namespace Fahrplanauskunft.UI.Windows.Editor
                             Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
                         };
 
-            listBoxLinien.ItemsSource = items;
+            ListBoxLinien.ItemsSource = items;
         }
 
         private List<Linie> HoleTestLinien()
         {
             List<Linie> linien = new List<Linie>();
-            linien.Add(new Linie(name: "B1", ident: "B11"));
-            linien.Add(new Linie(name: "B1", ident: "B12"));
-            linien.Add(new Linie(name: "B2", ident: "B21"));
-            linien.Add(new Linie(name: "B2", ident: "B22"));
-            linien.Add(new Linie(name: "B3", ident: "B31"));
-            linien.Add(new Linie(name: "B3", ident: "B32"));
+            linien.Add(new Linie(name: "1", ident: "B11"));
+            linien.Add(new Linie(name: "1", ident: "B12"));
+            linien.Add(new Linie(name: "2", ident: "B21"));
+            linien.Add(new Linie(name: "2", ident: "B22"));
+            linien.Add(new Linie(name: "3", ident: "B31"));
+            linien.Add(new Linie(name: "3", ident: "B32"));
 
-            linien.Add(new Linie(name: "B4", ident: "B41"));
-            linien.Add(new Linie(name: "B4", ident: "B42"));
-            linien.Add(new Linie(name: "B5", ident: "B51"));
-            linien.Add(new Linie(name: "B5", ident: "B52"));
-            linien.Add(new Linie(name: "B6", ident: "B61"));
-            linien.Add(new Linie(name: "B6", ident: "B62"));
+            linien.Add(new Linie(name: "4", ident: "B41"));
+            linien.Add(new Linie(name: "4", ident: "B42"));
+            linien.Add(new Linie(name: "5", ident: "B51"));
+            linien.Add(new Linie(name: "5", ident: "B52"));
+            linien.Add(new Linie(name: "6", ident: "B61"));
+            linien.Add(new Linie(name: "6", ident: "B62"));
             return linien;
         }
 
@@ -85,7 +86,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor
         {
             get
             {
-                return tabItemLinie.Header as string;
+                return ((TabItemLinie.Header as Grid).Children[0] as TextBlock).Text;
             }
         }
 
@@ -122,7 +123,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             this.Resources.MergedDictionaries.Add(dict);
         }
 
-        private void textBoxsucheingabeLinie_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void TextBoxsucheingabeLinie_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             string[] colors = new string[] { "#FF4500", "#FFDAB9", "#66CDAA", "#FFD700", "#6B8E23", "#32CD32" };
             string[] fg = new string[colors.Length];
@@ -132,7 +133,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor
                 fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
             }
 
-            List<Linie> linien = new InteraktorSucheLinie().Suche_Linie(textBoxsucheingabeLinie.Text, HoleTestLinien());
+            List<Linie> linien = new InteraktorSucheLinie().Suche_Linie(TextBoxsucheingabeLinie.Text, HoleTestLinien());
 
             var items = from linie in linien
                         select new
@@ -146,7 +147,18 @@ namespace Fahrplanauskunft.UI.Windows.Editor
                             Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
                         };
 
-            listBoxLinien.ItemsSource = items;
+            ListBoxLinien.ItemsSource = items;
+        }
+
+        private void ListBoxLinien_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Type type = e.AddedItems[0].GetType();
+            string ident = (string)type.GetProperty("Ident").GetValue(e.AddedItems[0], null);
+            string name = (string)type.GetProperty("Name").GetValue(e.AddedItems[0], null);
+
+            Linie linie = new Linie(ident: ident, name: name);
+
+            Grid_Bearbeitungsmaske.DataContext = linie;
         }
     }
 }
