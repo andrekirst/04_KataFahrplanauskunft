@@ -116,5 +116,14 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Linie_Name_und_Ident_gleich_Farbe_unterschiedlich()
+        {
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4501");
+
+            Assert.IsTrue(actual != expected);
+        }
     }
 }

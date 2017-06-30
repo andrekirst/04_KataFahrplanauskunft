@@ -94,7 +94,7 @@ namespace Fahrplanauskunft.Objekte
                 other,
                 () =>
                 {
-                    return this.Name == other.Name && this.Ident == other.Ident;
+                    return this.Name == other.Name && this.Ident == other.Ident && this.Farbe == other.Farbe;
                 });
         }
 
