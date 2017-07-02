@@ -117,6 +117,9 @@ namespace Fahrplanauskunft.Test.Objekte
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Test, dass das Attribut Farbe mit unterschiedlichen Werten verglichen wird
+        /// </summary>
         [TestMethod]
         public void Linie_Name_und_Ident_gleich_Farbe_unterschiedlich()
         {
