@@ -7,6 +7,7 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 using Fahrplanauskunft.Funktionen;
+using Fahrplanauskunft.Objekte;
 
 namespace Fahrplanauskunft.ViewModelBase
 {
@@ -22,9 +23,10 @@ namespace Fahrplanauskunft.ViewModelBase
         /// <summary>
         /// Initialisert eine neue Instanz der Klasse ViewModel mit einem Model
         /// </summary>
+        /// <param name="fahrplanauskunftSpeicher">Der FahrplanauskunftSpeicher</param>
         /// <param name="model">Das Model</param>
-        protected ViewModel(TModel model)
-            : base()
+        protected ViewModel(TModel model, FahrplanauskunftSpeicher fahrplanauskunftSpeicher = null)
+            : base(fahrplanauskunftSpeicher)
         {
             this.model = model;
         }

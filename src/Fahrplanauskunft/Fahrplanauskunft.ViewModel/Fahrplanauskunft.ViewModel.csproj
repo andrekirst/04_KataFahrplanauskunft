@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{414E8DE7-32CD-41A0-B85A-C3BC3B05A5EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fahrplanauskunft.ViewModel</RootNamespace>
+    <AssemblyName>Fahrplanauskunft.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Linie\LinieListViewModel.cs" />
+    <Compile Include="Linie\LinieViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fahrplanauskunft.ViewModelBase\Fahrplanauskunft.ViewModelBase.csproj">
+      <Project>{d653afdc-caf3-4a27-9f75-f711d3d64966}</Project>
+      <Name>Fahrplanauskunft.ViewModelBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fahrplanauskunft\Fahrplanauskunft.csproj">
+      <Project>{59333dc7-72e0-43ce-8915-5f7e3c79192e}</Project>
+      <Name>Fahrplanauskunft</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\codecracker.CSharp.1.0.3\analyzers\dotnet\cs\CodeCracker.Common.dll" />
+    <Analyzer Include="..\packages\codecracker.CSharp.1.0.3\analyzers\dotnet\cs\CodeCracker.CSharp.dll" />
+    <Analyzer Include="..\packages\Microsoft.AnalyzerPowerPack.1.1.0\analyzers\dotnet\cs\Microsoft.AnalyzerPowerPack.Common.dll" />
+    <Analyzer Include="..\packages\Microsoft.AnalyzerPowerPack.1.1.0\analyzers\dotnet\cs\Microsoft.AnalyzerPowerPack.CSharp.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.0.0.2033\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.0.0.2033\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.0.0.2033\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Runtime.Analyzers.1.1.0\analyzers\dotnet\cs\System.Runtime.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Runtime.Analyzers.1.1.0\analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

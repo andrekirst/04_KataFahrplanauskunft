@@ -12,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using Fahrplanauskunft.Objekte;
 using Fahrplanauskunft.UI.Windows.Editor.Objekte.Linie;
+using Fahrplanauskunft.ViewModel.Linie;
 
 namespace Fahrplanauskunft.UI.Windows.Editor
 {
@@ -20,6 +21,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor
     /// </summary>
     public partial class FahrplanauskunftMainWindow : Window
     {
+        FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("");
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
@@ -35,29 +37,34 @@ namespace Fahrplanauskunft.UI.Windows.Editor
 
         private void PrototypTest()
         {
-            string[] colors = new string[] { "#FF4500", "#FFDAB9", "#66CDAA", "#FFD700", "#6B8E23", "#32CD32" };
-            string[] fg = new string[colors.Length];
-            for(int i = 0; i < colors.Length; i++)
-            {
-                Color color = (Color)ColorConverter.ConvertFromString(colors[i]);
-                fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
-            }
+            speicher.Linien = HoleTestLinien();
 
-            List<Linie> linien = HoleTestLinien();
+            var viewModel = new LinieListViewModel(speicher);
+            linieListView.DataContext = viewModel;
 
-            var items = from linie in linien
-                        select new
-                        {
-                            Name = linie.Name,
-                            Ident = linie.Ident,
-                            AnzahlHaltestellen = 20,
-                            AnzahlStreckenabschnitte = 20,
-                            AnzahlHaltestellenfahrplaneintraege = 1000,
-                            Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
-                            Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
-                        };
+            //string[] colors = new string[] { "#FF4500", "#FFDAB9", "#66CDAA", "#FFD700", "#6B8E23", "#32CD32" };
+            //string[] fg = new string[colors.Length];
+            //for(int i = 0; i < colors.Length; i++)
+            //{
+            //    Color color = (Color)ColorConverter.ConvertFromString(colors[i]);
+            //    fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
+            //}
 
-            ListBoxLinien.ItemsSource = items;
+            //List<Linie> linien = HoleTestLinien();
+
+            //var items = from linie in linien
+            //            select new
+            //            {
+            //                Name = linie.Name,
+            //                Ident = linie.Ident,
+            //                AnzahlHaltestellen = 20,
+            //                AnzahlStreckenabschnitte = 20,
+            //                AnzahlHaltestellenfahrplaneintraege = 1000,
+            //                Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
+            //                Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
+            //            };
+
+            //ListBoxLinien.ItemsSource = items;
         }
 
         private List<Linie> HoleTestLinien()
@@ -125,29 +132,29 @@ namespace Fahrplanauskunft.UI.Windows.Editor
 
         private void TextBoxsucheingabeLinie_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            string[] colors = new string[] { "#FF4500", "#FFDAB9", "#66CDAA", "#FFD700", "#6B8E23", "#32CD32" };
-            string[] fg = new string[colors.Length];
-            for(int i = 0; i < colors.Length; i++)
-            {
-                Color color = (Color)ColorConverter.ConvertFromString(colors[i]);
-                fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
-            }
+            //string[] colors = new string[] { "#FF4500", "#FFDAB9", "#66CDAA", "#FFD700", "#6B8E23", "#32CD32" };
+            //string[] fg = new string[colors.Length];
+            //for(int i = 0; i < colors.Length; i++)
+            //{
+            //    Color color = (Color)ColorConverter.ConvertFromString(colors[i]);
+            //    fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
+            //}
 
-            List<Linie> linien = new InteraktorSucheLinie().Suche_Linie(TextBoxsucheingabeLinie.Text, HoleTestLinien());
+            //List<Linie> linien = new InteraktorSucheLinie().Suche_Linie(TextBoxsucheingabeLinie.Text, HoleTestLinien());
 
-            var items = from linie in linien
-                        select new
-                        {
-                            Name = linie.Name,
-                            Ident = linie.Ident,
-                            AnzahlHaltestellen = 20,
-                            AnzahlStreckenabschnitte = 20,
-                            AnzahlHaltestellenfahrplaneintraege = 1000,
-                            Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
-                            Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
-                        };
+            //var items = from linie in linien
+            //            select new
+            //            {
+            //                Name = linie.Name,
+            //                Ident = linie.Ident,
+            //                AnzahlHaltestellen = 20,
+            //                AnzahlStreckenabschnitte = 20,
+            //                AnzahlHaltestellenfahrplaneintraege = 1000,
+            //                Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
+            //                Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
+            //            };
 
-            ListBoxLinien.ItemsSource = items;
+            //ListBoxLinien.ItemsSource = items;
         }
 
         private void ListBoxLinien_SelectionChanged(object sender, SelectionChangedEventArgs e)

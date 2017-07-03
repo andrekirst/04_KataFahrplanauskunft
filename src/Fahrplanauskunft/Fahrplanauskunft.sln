@@ -15,6 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.ViewModelB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.ViewModelBase.Test", "Fahrplanauskunft.ViewModelBase.Test\Fahrplanauskunft.ViewModelBase.Test.csproj", "{924584DA-9E40-4D65-80F8-CB7B9F943027}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.ViewModel", "Fahrplanauskunft.ViewModel\Fahrplanauskunft.ViewModel.csproj", "{414E8DE7-32CD-41A0-B85A-C3BC3B05A5EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.ViewModel.Test", "Fahrplanauskunft.ViewModel.Test\Fahrplanauskunft.ViewModel.Test.csproj", "{5DB8E3D8-F850-4BB9-98A5-060C6D6A7FE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.UI.Windows.View", "Fahrplanauskunft.UI.Windows.View\Fahrplanauskunft.UI.Windows.View.csproj", "{4ACDEC3E-9CB4-4256-AA15-FFF819C13930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplanauskunft.UI.Windows.View.Test", "Fahrplanauskunft.UI.Windows.View.Test\Fahrplanauskunft.UI.Windows.View.Test.csproj", "{A6A6A4EF-500A-43E8-B1FF-3FA76A3FB41D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +53,22 @@ Global
 		{924584DA-9E40-4D65-80F8-CB7B9F943027}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{924584DA-9E40-4D65-80F8-CB7B9F943027}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{924584DA-9E40-4D65-80F8-CB7B9F943027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{414E8DE7-32CD-41A0-B85A-C3BC3B05A5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414E8DE7-32CD-41A0-B85A-C3BC3B05A5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414E8DE7-32CD-41A0-B85A-C3BC3B05A5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414E8DE7-32CD-41A0-B85A-C3BC3B05A5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB8E3D8-F850-4BB9-98A5-060C6D6A7FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB8E3D8-F850-4BB9-98A5-060C6D6A7FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB8E3D8-F850-4BB9-98A5-060C6D6A7FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB8E3D8-F850-4BB9-98A5-060C6D6A7FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ACDEC3E-9CB4-4256-AA15-FFF819C13930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ACDEC3E-9CB4-4256-AA15-FFF819C13930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ACDEC3E-9CB4-4256-AA15-FFF819C13930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ACDEC3E-9CB4-4256-AA15-FFF819C13930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A6A4EF-500A-43E8-B1FF-3FA76A3FB41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A6A4EF-500A-43E8-B1FF-3FA76A3FB41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A6A4EF-500A-43E8-B1FF-3FA76A3FB41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A6A4EF-500A-43E8-B1FF-3FA76A3FB41D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -186,6 +186,14 @@
     <Analyzer Include="..\packages\System.Runtime.Analyzers.1.1.0\analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fahrplanauskunft.UI.Windows.View\Fahrplanauskunft.UI.Windows.View.csproj">
+      <Project>{4acdec3e-9cb4-4256-aa15-fff819c13930}</Project>
+      <Name>Fahrplanauskunft.UI.Windows.View</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fahrplanauskunft.ViewModel\Fahrplanauskunft.ViewModel.csproj">
+      <Project>{414E8DE7-32CD-41A0-B85A-C3BC3B05A5EE}</Project>
+      <Name>Fahrplanauskunft.ViewModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fahrplanauskunft\Fahrplanauskunft.csproj">
       <Project>{59333dc7-72e0-43ce-8915-5f7e3c79192e}</Project>
       <Name>Fahrplanauskunft</Name>

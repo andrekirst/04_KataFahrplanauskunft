@@ -3,6 +3,7 @@
 // </copyright>
 // Vorlage: http://www.cocktailsandcode.de/2012/04/mvvm-tutorial-part-3-viewmodelbase-und-relaycommand/
 
+using Fahrplanauskunft.Objekte;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,8 +22,10 @@ namespace Fahrplanauskunft.ViewModelBase
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
-        protected ViewModel()
+        /// <param name="fahrplanauskunftSpeicher">Der FahrplanauskunftSpeicher</param>
+        protected ViewModel(FahrplanauskunftSpeicher fahrplanauskunftSpeicher)
         {
+            FahrplanauskunftSpeicher = fahrplanauskunftSpeicher;
             Task initializationTask = new Task(() => Initialize());
             initializationTask.ContinueWith(result => InitializationCompletedCallback(result));
             initializationTask.Start();
@@ -37,6 +40,15 @@ namespace Fahrplanauskunft.ViewModelBase
         /// Wird aufgerufen, wenn die Initiaisierung abgeschlossen ist
         /// </summary>
         public event AsyncCompletedEventHandler InitializationCompleted;
+
+        /// <summary>
+        /// Gibt den FahrplanauskunftSpeicher zurück
+        /// </summary>
+        public FahrplanauskunftSpeicher FahrplanauskunftSpeicher
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Initiailisiert die Instanz
