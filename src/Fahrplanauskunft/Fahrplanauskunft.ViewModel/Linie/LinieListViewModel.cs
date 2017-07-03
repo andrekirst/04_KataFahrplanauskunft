@@ -13,25 +13,26 @@ namespace Fahrplanauskunft.ViewModel.Linie
 {
     public class LinieListViewModel : ViewModelBase.ViewModel
     {
+
+        private string filterLinieParameter;
         private ObservableCollection<LinieViewModel> linien;
 
-        public ObservableCollection<LinieViewModel> Linien
+        private ICommand neueLinieCommand;
+
+        public LinieListViewModel(FahrplanauskunftSpeicher fahrplanauskunftSpeicher)
+            : base(fahrplanauskunftSpeicher)
+        {
+            linien = new ObservableCollection<LinieViewModel>(FahrplanauskunftSpeicher.Linien.Select(p => new LinieViewModel(p)));
+            linien.CollectionChanged += Linien_CollectionChanged;
+        }
+
+        public ObservableCollection<LinieViewModel> FilteredList
         {
             get
             {
-                return linien;
-            }
-            set
-            {
-                if(Linien != value)
-                {
-                    linien = value;
-                    OnPropertyChanged(nameof(Linien));
-                }
+                return GetFilteredList(Linien);
             }
         }
-
-        private string filterLinieParameter;
 
         public string FilterLinieParameter
         {
@@ -51,12 +52,46 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
-        public ObservableCollection<LinieViewModel> FilteredList
+        public ObservableCollection<LinieViewModel> Linien
         {
             get
             {
-                return GetFilteredList(Linien);
+                return linien;
             }
+            set
+            {
+                if(Linien != value)
+                {
+                    linien = value;
+                    OnPropertyChanged(nameof(Linien));
+                }
+            }
+        }
+
+        public ICommand NeueLinieCommand
+        {
+            get
+            {
+                if(neueLinieCommand == null)
+                {
+                    neueLinieCommand = new RelayCommand(p => ExecuteNeueLinieCommand());
+                }
+                return neueLinieCommand;
+            }
+        }
+
+        public static bool FilterLinie(Objekte.Linie linie, string filter)
+        {
+            if(String.IsNullOrEmpty(filter))
+            {
+                return true;
+            }
+            return linie.Name.ToLower().Contains(filter) || linie.Ident.ToLower().Contains(filter);
+        }
+
+        public void ExecuteNeueLinieCommand()
+        {
+            Linien.Add(new LinieViewModel(new Objekte.Linie()));
         }
 
         private ObservableCollection<LinieViewModel> GetFilteredList(ObservableCollection<LinieViewModel> original)
@@ -73,37 +108,6 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
 
             return filteredList;
-        }
-
-        public static bool FilterLinie(Objekte.Linie linie, string filter)
-        {
-            return linie.Name.ToLower().Contains(filter) || linie.Ident.ToLower().Contains(filter);
-        }
-
-        private ICommand neueLinieCommand;
-
-        public ICommand NeueLinieCommand
-        {
-            get
-            {
-                if(neueLinieCommand == null)
-                {
-                    neueLinieCommand = new RelayCommand(p => ExecuteNeueLinieCommand());
-                }
-                return neueLinieCommand;
-            }
-        }
-
-        public void ExecuteNeueLinieCommand()
-        {
-            Linien.Add(new LinieViewModel(new Objekte.Linie()));
-        }
-
-        public LinieListViewModel(FahrplanauskunftSpeicher fahrplanauskunftSpeicher)
-            : base(fahrplanauskunftSpeicher)
-        {
-            linien = new ObservableCollection<LinieViewModel>(FahrplanauskunftSpeicher.Linien.Select(p => new LinieViewModel(p)));
-            linien.CollectionChanged += Linien_CollectionChanged;
         }
 
         private void Linien_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)

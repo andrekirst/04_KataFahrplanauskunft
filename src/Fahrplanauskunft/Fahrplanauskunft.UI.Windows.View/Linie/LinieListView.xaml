@@ -7,7 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <ListBox x:Name="ListBoxLinien" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Linien}" BorderBrush="White" BorderThickness="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0" Text="{Binding Path=FilterLinieParameter,UpdateSourceTrigger=PropertyChanged}" />
+
+        <ListBox x:Name="ListBoxLinien" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding FilteredList,UpdateSourceTrigger=PropertyChanged}" BorderBrush="White" BorderThickness="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50" HorizontalAlignment="Stretch">

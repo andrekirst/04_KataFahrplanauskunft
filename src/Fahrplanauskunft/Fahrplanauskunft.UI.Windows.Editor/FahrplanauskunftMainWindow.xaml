@@ -62,7 +62,6 @@
                                     <RowDefinition Height="*" />
                                     <RowDefinition Height="25" />
                                 </Grid.RowDefinitions>
-                                <TextBox Grid.Column="0" Grid.Row="1" x:Name="TextBoxsucheingabeLinie" Template="{DynamicResource TextBoxSucheingabe}" VerticalContentAlignment="Center" TextChanged="TextBoxsucheingabeLinie_TextChanged" />
                             </Grid>
                             
                             <!-- ListBox für das Objekt Linie -->
