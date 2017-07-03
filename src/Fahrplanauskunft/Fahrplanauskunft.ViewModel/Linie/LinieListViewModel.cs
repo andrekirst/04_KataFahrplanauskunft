@@ -31,6 +31,55 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
+        private string filterLinieParameter;
+
+        public string FilterLinieParameter
+        {
+            get
+            {
+                return filterLinieParameter;
+            }
+
+            set
+            {
+                if(filterLinieParameter != value)
+                {
+                    filterLinieParameter = value;
+                    OnPropertyChanged(nameof(FilterLinie));
+                    OnPropertyChanged("FilteredList");
+                }
+            }
+        }
+
+        public ObservableCollection<LinieViewModel> FilteredList
+        {
+            get
+            {
+                return GetFilteredList(Linien);
+            }
+        }
+
+        private ObservableCollection<LinieViewModel> GetFilteredList(ObservableCollection<LinieViewModel> original)
+        {
+            ObservableCollection<LinieViewModel> filteredList = new ObservableCollection<LinieViewModel>();
+
+            var x = from p in original
+                    where FilterLinie(p.Model, this.FilterLinieParameter)
+                    select p;
+
+            foreach(var u in x)
+            {
+                filteredList.Add(u);
+            }
+
+            return filteredList;
+        }
+
+        public static bool FilterLinie(Objekte.Linie linie, string filter)
+        {
+            return linie.Name.ToLower().Contains(filter) || linie.Ident.ToLower().Contains(filter);
+        }
+
         private ICommand neueLinieCommand;
 
         public ICommand NeueLinieCommand
