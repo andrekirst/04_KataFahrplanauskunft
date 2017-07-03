@@ -3,18 +3,21 @@
         "Dauer": 1,
         "Linie": {
             "Name": "U1",
-            "Ident": "U1_NORD"
+            "Ident": "U1_NORD",
+            "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H1",
             "Linien": [
                 {
                     "Name": "U1",
-                    "Ident": "U1_NORD"
+                    "Ident": "U1_NORD",
+                    "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
-                    "Ident": "U1_SUED"
+                    "Ident": "U1_SUED",
+                    "Farbe": "#FF4500"
                 }
             ]
         },
@@ -23,11 +26,13 @@
             "Linien": [
                 {
                     "Name": "U1",
-                    "Ident": "U1_NORD"
+                    "Ident": "U1_NORD",
+                    "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
-                    "Ident": "U1_SUED"
+                    "Ident": "U1_SUED",
+                    "Farbe": "#FF4500"
                 }
             ]
         }
@@ -36,18 +41,21 @@
         "Dauer": 1,
         "Linie": {
             "Name": "U1",
-            "Ident": "U1_SUED"
+            "Ident": "U1_SUED",
+            "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H2",
             "Linien": [
                 {
                     "Name": "U1",
-                    "Ident": "U1_NORD"
+                    "Ident": "U1_NORD",
+                    "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
-                    "Ident": "U1_SUED"
+                    "Ident": "U1_SUED",
+                    "Farbe": "#FF4500"
                 }
             ]
         },
@@ -56,11 +64,13 @@
             "Linien": [
                 {
                     "Name": "U1",
-                    "Ident": "U1_NORD"
+                    "Ident": "U1_NORD",
+                    "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
-                    "Ident": "U1_SUED"
+                    "Ident": "U1_SUED",
+                    "Farbe": "#FF4500"
                 }
             ]
         }

@@ -10,12 +10,15 @@ Eine Linie kann mit dem Namen öfters vorkommen, aber dafür muss der Ident unte
 
 * Name : *string*
 * Ident : *string*
+* Farbe : *string*
 
 ## Beispiele
 
 * Linie "U1"
   * Name: "U1"
   * Ident: "U1_NORD"
+  * Farbe: "#FF4500"
 * Linie "U1"
   * Name: "U1"
   * Ident: "UI_SUED"
+  * Farbe: "#FF4500"

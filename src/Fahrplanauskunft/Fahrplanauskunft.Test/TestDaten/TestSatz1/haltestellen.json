@@ -1,15 +1,17 @@
 [
-  {
-    "Name": "H1",
-    "Linien": [
-      {
-        "Name": "U1",
-        "Ident": "U1_NORD"
-      },
-      {
-        "Name": "U1",
-        "Ident": "U1_SUED"
-      }
-    ]
-  }
+    {
+        "Name": "H1",
+        "Linien": [
+            {
+                "Name": "U1",
+                "Ident": "U1_NORD",
+                "Farbe": "#FF4500"
+            },
+            {
+                "Name": "U1",
+                "Ident": "U1_SUED",
+                "Farbe": "#FF4500"
+            }
+        ]
+    }
 ]
