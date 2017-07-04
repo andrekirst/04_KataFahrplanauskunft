@@ -21,7 +21,7 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         [TestCategory(@"ViewModelBase")]
         public void ViewModel_TModel_Linie_Eigenschaft_Name_wurde_veraendert()
         {
-            Linie linie = new Linie(name: "B1", ident: "B11");
+            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500");
 
             LinieViewModel lvm = new LinieViewModel(model: linie);
 
@@ -41,7 +41,7 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         {
             List<string> aufgerufeneEvents = new List<string>();
 
-            Linie linie = new Linie(name: "B1", ident: "B11");
+            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500");
 
             LinieViewModel lvm = new LinieViewModel(model: linie);
 
@@ -66,7 +66,7 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         {
             List<string> aufgerufeneEvents = new List<string>();
 
-            Linie linie = new Linie(name: "B1", ident: "B11");
+            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500");
 
             LinieViewModel lvm = new LinieViewModel(model: linie);
 

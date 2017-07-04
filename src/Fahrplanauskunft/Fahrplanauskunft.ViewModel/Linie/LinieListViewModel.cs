@@ -58,6 +58,7 @@ namespace Fahrplanauskunft.ViewModel.Linie
             {
                 return linien;
             }
+
             set
             {
                 if(Linien != value)
@@ -86,6 +87,7 @@ namespace Fahrplanauskunft.ViewModel.Linie
             {
                 return true;
             }
+            filter = filter.ToLower();
             return linie.Name.ToLower().Contains(filter) || linie.Ident.ToLower().Contains(filter);
         }
 

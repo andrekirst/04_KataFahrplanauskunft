@@ -48,5 +48,22 @@ namespace Fahrplanauskunft.ViewModel.Linie
                 }
             }
         }
+
+        public string Farbe
+        {
+            get
+            {
+                return Model.Farbe;
+            }
+
+            set
+            {
+                if(Farbe != value)
+                {
+                    Model.Farbe = value;
+                    this.OnPropertyChanged(nameof(Farbe));
+                }
+            }
+        }
     }
 }

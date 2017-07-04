@@ -11,7 +11,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Fahrplanauskunft.Objekte;
-using Fahrplanauskunft.UI.Windows.Editor.Objekte.Linie;
 using Fahrplanauskunft.ViewModel.Linie;
 
 namespace Fahrplanauskunft.UI.Windows.Editor
@@ -70,19 +69,19 @@ namespace Fahrplanauskunft.UI.Windows.Editor
         private List<Linie> HoleTestLinien()
         {
             List<Linie> linien = new List<Linie>();
-            linien.Add(new Linie(name: "1", ident: "B11"));
-            linien.Add(new Linie(name: "1", ident: "B12"));
-            linien.Add(new Linie(name: "2", ident: "B21"));
-            linien.Add(new Linie(name: "2", ident: "B22"));
-            linien.Add(new Linie(name: "3", ident: "B31"));
-            linien.Add(new Linie(name: "3", ident: "B32"));
+            linien.Add(new Linie(name: "1", ident: "B11", farbe: "#FF4500"));
+            linien.Add(new Linie(name: "1", ident: "B12", farbe: "#FF4500"));
+            linien.Add(new Linie(name: "2", ident: "B21", farbe: "#FFDAB9"));
+            linien.Add(new Linie(name: "2", ident: "B22", farbe: "#FFDAB9"));
+            linien.Add(new Linie(name: "3", ident: "B31", farbe: "#66CDAA"));
+            linien.Add(new Linie(name: "3", ident: "B32", farbe: "#66CDAA"));
 
-            linien.Add(new Linie(name: "4", ident: "B41"));
-            linien.Add(new Linie(name: "4", ident: "B42"));
-            linien.Add(new Linie(name: "5", ident: "B51"));
-            linien.Add(new Linie(name: "5", ident: "B52"));
-            linien.Add(new Linie(name: "6", ident: "B61"));
-            linien.Add(new Linie(name: "6", ident: "B62"));
+            linien.Add(new Linie(name: "4", ident: "B41", farbe: "#FFD700"));
+            linien.Add(new Linie(name: "4", ident: "B42", farbe: "#FFD700"));
+            linien.Add(new Linie(name: "5", ident: "B51", farbe: "#6B8E23"));
+            linien.Add(new Linie(name: "5", ident: "B52", farbe: "#6B8E23"));
+            linien.Add(new Linie(name: "6", ident: "B61", farbe: "#32CD32"));
+            linien.Add(new Linie(name: "6", ident: "B62", farbe: "#32CD32"));
             return linien;
         }
 
@@ -159,13 +158,13 @@ namespace Fahrplanauskunft.UI.Windows.Editor
 
         private void ListBoxLinien_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Type type = e.AddedItems[0].GetType();
-            string ident = (string)type.GetProperty("Ident").GetValue(e.AddedItems[0], null);
-            string name = (string)type.GetProperty("Name").GetValue(e.AddedItems[0], null);
+            //Type type = e.AddedItems[0].GetType();
+            //string ident = (string)type.GetProperty("Ident").GetValue(e.AddedItems[0], null);
+            //string name = (string)type.GetProperty("Name").GetValue(e.AddedItems[0], null);
 
-            Linie linie = new Linie(ident: ident, name: name);
+            //Linie linie = new Linie(ident: ident, name: name);
 
-            Grid_Bearbeitungsmaske.DataContext = linie;
+            //Grid_Bearbeitungsmaske.DataContext = linie;
         }
     }
 }
