@@ -21,7 +21,8 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             string name = "Test";
             string ident = "TEST";
-            Linie linie = new Linie(name, ident);
+            string farbe = "#FF4500";
+            Linie linie = new Linie(name, ident, farbe: farbe);
 
             Assert.AreEqual("Test", linie.Name);
             Assert.AreEqual("TEST", linie.Ident);
@@ -33,9 +34,9 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Equals_Name_Test_Ident_TEST()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
 
-            Linie expected = new Linie(name: "Test", ident: "TEST");
+            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
 
             Assert.AreEqual(expected, actual);
         }
@@ -46,8 +47,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Gleichheitsoperator_Gleicher_Linienname()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST");
-            Linie expected = new Linie(name: "Test", ident: "TEST");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
 
             Assert.IsTrue(actual == expected);
         }
@@ -58,8 +59,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Gleichheitsoperator_Verschiedene_Linienname()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST");
-            Linie expected = new Linie(name: "Test2", ident: "TEST2");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie expected = new Linie(name: "Test2", ident: "TEST2", farbe: "#FF4501");
 
             Assert.IsFalse(actual == expected);
         }
@@ -70,8 +71,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Ungleichheitsoperator_Gleicher_Linienname()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST");
-            Linie expected = new Linie(name: "Test", ident: "TEST");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
 
             Assert.IsFalse(actual != expected);
         }
@@ -82,8 +83,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Ungleichheitsoperator_Verschiedene_Linienname()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST");
-            Linie expected = new Linie(name: "Test2", ident: "TEST2");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie expected = new Linie(name: "Test2", ident: "TEST2", farbe: "#FF4501");
 
             Assert.IsTrue(actual != expected);
         }
@@ -94,12 +95,38 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_ToString_B1_B11()
         {
-            string expected = "B1 - B11";
+            string expected = "B1 - B11 : Farbe: #FF4500";
 
-            Linie linie = new Linie(name: "B1", ident: "B11");
+            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500");
             string actual = linie.ToString();
 
             Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testet, ob die Eigenschaft Farbe den Wert aus dem Konstruktor übernimmt
+        /// </summary>
+        [TestMethod]
+        public void Linie_Farbe_RauteFF4500()
+        {
+            Linie linie = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+
+            string actual = linie.Farbe;
+            string expected = "#FF4500";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test, dass das Attribut Farbe mit unterschiedlichen Werten verglichen wird
+        /// </summary>
+        [TestMethod]
+        public void Linie_Name_und_Ident_gleich_Farbe_unterschiedlich()
+        {
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4501");
+
+            Assert.IsTrue(actual != expected);
         }
     }
 }
