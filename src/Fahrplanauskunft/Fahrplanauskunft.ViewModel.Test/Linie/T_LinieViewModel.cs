@@ -1,7 +1,10 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.ViewModel.Linie;
+﻿// <copyright file="T_LinieViewModel.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using System.Collections.Generic;
+using Fahrplanauskunft.ViewModel.Linie;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.ViewModel.Test.Linie
 {

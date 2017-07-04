@@ -63,10 +63,10 @@
                                     <RowDefinition Height="25" />
                                 </Grid.RowDefinitions>
                             </Grid>
-                            
+
                             <!-- ListBox für das Objekt Linie -->
                             <Linie:LinieListView Grid.Column="0" Grid.Row="1" Name="linieListView" />
-                            
+
                             <!-- Content für die Bearbeitungsmaske -->
                             <Grid x:Name="Grid_Bearbeitungsmaske" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataContext="{Binding}">
                                 <Grid.ColumnDefinitions>
@@ -76,6 +76,9 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="50" />
+                                    <RowDefinition Height="10" />
+                                    <RowDefinition Height="25" />
+                                    <RowDefinition Height="25" />
                                     <RowDefinition Height="10" />
                                     <RowDefinition Height="25" />
                                     <RowDefinition Height="25" />
@@ -93,10 +96,16 @@
                                 </Canvas>
 
                                 <Label Grid.Column="1" Grid.Row="2" Content="Ident" />
-                                <TextBox Grid.Column="1" Grid.Row="3" BorderThickness="1.5" Text="{Binding Ident, Mode=TwoWay}" Margin="3,0,0,0" VerticalContentAlignment="Center" />
-                                
+                                <TextBox Grid.Column="1" Grid.Row="3" BorderThickness="1.5" Text="{Binding Ident, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3,0,0,0" VerticalContentAlignment="Center" />
+
                                 <Label Grid.Column="1" Grid.Row="5" Content="Name" />
-                                <TextBox Grid.Column="1" Grid.Row="6" BorderThickness="1.5" Text="{Binding Name, Mode=TwoWay}" Margin="3,0,0,0" VerticalContentAlignment="Center" />
+                                <TextBox Grid.Column="1" Grid.Row="6" BorderThickness="1.5" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3,0,0,0" VerticalContentAlignment="Center" Width="30" HorizontalAlignment="Left" />
+
+                                <Label Grid.Column="1" Grid.Row="8" Content="Farbe" />
+                                <StackPanel Grid.Column="1" Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <TextBox BorderThickness="1.5" Text="{Binding Farbe, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3,0,0,0" VerticalContentAlignment="Center" Width="75" />
+                                    <Canvas Background="{Binding Farbe}" Width="25" Height="25" />
+                                </StackPanel>
                             </Grid>
                         </Grid>
                     </TabItem.Content>

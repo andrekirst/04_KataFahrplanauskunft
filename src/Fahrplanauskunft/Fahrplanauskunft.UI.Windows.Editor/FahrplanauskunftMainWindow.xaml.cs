@@ -20,7 +20,8 @@ namespace Fahrplanauskunft.UI.Windows.Editor
     /// </summary>
     public partial class FahrplanauskunftMainWindow : Window
     {
-        FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("");
+        private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher(string.Empty);
+
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
@@ -38,32 +39,17 @@ namespace Fahrplanauskunft.UI.Windows.Editor
         {
             speicher.Linien = HoleTestLinien();
 
+            speicher.Haltestellen = new List<Haltestelle>();
+            Haltestelle haltestelle = new Haltestelle(name: "H1");
+            haltestelle.Linien = new List<Linie>() { speicher.Linien.First(l => l.Ident == "B11") };
+            speicher.Haltestellen.Add(haltestelle);
+
+            LinieViewModel lvm = new LinieViewModel(speicher.Linien[0]);
+
+            Grid_Bearbeitungsmaske.DataContext = lvm;
+
             var viewModel = new LinieListViewModel(speicher);
             linieListView.DataContext = viewModel;
-
-            //string[] colors = new string[] { "#FF4500", "#FFDAB9", "#66CDAA", "#FFD700", "#6B8E23", "#32CD32" };
-            //string[] fg = new string[colors.Length];
-            //for(int i = 0; i < colors.Length; i++)
-            //{
-            //    Color color = (Color)ColorConverter.ConvertFromString(colors[i]);
-            //    fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
-            //}
-
-            //List<Linie> linien = HoleTestLinien();
-
-            //var items = from linie in linien
-            //            select new
-            //            {
-            //                Name = linie.Name,
-            //                Ident = linie.Ident,
-            //                AnzahlHaltestellen = 20,
-            //                AnzahlStreckenabschnitte = 20,
-            //                AnzahlHaltestellenfahrplaneintraege = 1000,
-            //                Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
-            //                Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
-            //            };
-
-            //ListBoxLinien.ItemsSource = items;
         }
 
         private List<Linie> HoleTestLinien()
@@ -127,44 +113,6 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             }
 
             this.Resources.MergedDictionaries.Add(dict);
-        }
-
-        private void TextBoxsucheingabeLinie_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            //string[] colors = new string[] { "#FF4500", "#FFDAB9", "#66CDAA", "#FFD700", "#6B8E23", "#32CD32" };
-            //string[] fg = new string[colors.Length];
-            //for(int i = 0; i < colors.Length; i++)
-            //{
-            //    Color color = (Color)ColorConverter.ConvertFromString(colors[i]);
-            //    fg[i] = Color.FromArgb((byte)255, (byte)~color.R, (byte)~color.G, (byte)~color.B).ToString();
-            //}
-
-            //List<Linie> linien = new InteraktorSucheLinie().Suche_Linie(TextBoxsucheingabeLinie.Text, HoleTestLinien());
-
-            //var items = from linie in linien
-            //            select new
-            //            {
-            //                Name = linie.Name,
-            //                Ident = linie.Ident,
-            //                AnzahlHaltestellen = 20,
-            //                AnzahlStreckenabschnitte = 20,
-            //                AnzahlHaltestellenfahrplaneintraege = 1000,
-            //                Farbe = colors[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1],
-            //                Schriftfarbe = fg[int.Parse(new Regex("[^0-9 -]").Replace(linie.Name, string.Empty)) - 1]
-            //            };
-
-            //ListBoxLinien.ItemsSource = items;
-        }
-
-        private void ListBoxLinien_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //Type type = e.AddedItems[0].GetType();
-            //string ident = (string)type.GetProperty("Ident").GetValue(e.AddedItems[0], null);
-            //string name = (string)type.GetProperty("Name").GetValue(e.AddedItems[0], null);
-
-            //Linie linie = new Linie(ident: ident, name: name);
-
-            //Grid_Bearbeitungsmaske.DataContext = linie;
         }
     }
 }

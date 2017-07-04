@@ -1,10 +1,8 @@
-﻿using Fahrplanauskunft.ViewModelBase;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Fahrplanauskunft.Objekte;
+﻿// <copyright file="LinieViewModel.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using Fahrplanauskunft.ViewModelBase;
 
 namespace Fahrplanauskunft.ViewModel.Linie
 {
@@ -65,5 +63,7 @@ namespace Fahrplanauskunft.ViewModel.Linie
                 }
             }
         }
+
+        public int AnzahlHaltestellen { get; set; }
     }
 }
