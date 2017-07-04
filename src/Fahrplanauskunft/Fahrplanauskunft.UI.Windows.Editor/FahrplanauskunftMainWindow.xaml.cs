@@ -20,7 +20,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor
     /// </summary>
     public partial class FahrplanauskunftMainWindow : Window
     {
-        private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher(string.Empty);
+        private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("../../../Fahrplanauskunft.Test/bin/Debug/TestDaten/TestSatzBrainstorming");
 
         /// <summary>
         /// Standardkonstruktor
@@ -37,12 +37,13 @@ namespace Fahrplanauskunft.UI.Windows.Editor
 
         private void PrototypTest()
         {
-            speicher.Linien = HoleTestLinien();
+            //speicher.Linien = HoleTestLinien();
 
-            speicher.Haltestellen = new List<Haltestelle>();
-            Haltestelle haltestelle = new Haltestelle(name: "H1");
-            haltestelle.Linien = new List<Linie>() { speicher.Linien.First(l => l.Ident == "B11") };
-            speicher.Haltestellen.Add(haltestelle);
+            //speicher.Haltestellen = new List<Haltestelle>();
+            //Haltestelle haltestelle = new Haltestelle(name: "H1");
+            //haltestelle.Linien = new List<Linie>() { speicher.Linien.First(l => l.Ident == "B11") };
+            //speicher.Haltestellen.Add(haltestelle);
+            speicher.Laden();
 
             LinieViewModel lvm = new LinieViewModel(speicher.Linien[0]);
 

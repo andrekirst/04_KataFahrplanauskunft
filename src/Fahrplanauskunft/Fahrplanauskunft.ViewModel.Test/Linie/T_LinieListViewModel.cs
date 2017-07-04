@@ -4,6 +4,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Fahrplanauskunft.Objekte;
 using Fahrplanauskunft.ViewModel.Linie;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -38,6 +39,10 @@ namespace Fahrplanauskunft.ViewModel.Test.Linie
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(string.Empty);
 
             fahrplanauskunftSpeicher.Linien = HoleTestDaten();
+            fahrplanauskunftSpeicher.Haltestellen = new List<Haltestelle>();
+            Haltestelle h = new Haltestelle(name: "H1");
+            h.Linien = fahrplanauskunftSpeicher.Linien.Where(l => l.Ident == "H1").ToList();
+            fahrplanauskunftSpeicher.Haltestellen.Add(h);
 
             LinieListViewModel llvm = new LinieListViewModel(fahrplanauskunftSpeicher);
             llvm.FilterLinieParameter = "B1";
