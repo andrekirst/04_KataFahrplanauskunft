@@ -12,6 +12,8 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using Fahrplanauskunft.Objekte;
 using Fahrplanauskunft.ViewModel.Linie;
+using System.ComponentModel;
+using System.Windows.Data;
 
 namespace Fahrplanauskunft.UI.Windows.Editor
 {
