@@ -6,13 +6,23 @@ using Fahrplanauskunft.ViewModelBase;
 
 namespace Fahrplanauskunft.ViewModel.Linie
 {
+    /// <summary>
+    /// ViewModel-Klasse für Objekt Linie
+    /// </summary>
     public class LinieViewModel : ViewModel<Objekte.Linie>
     {
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// <param name="model">Das dazugehörige Model</param>
         public LinieViewModel(Objekte.Linie model)
             : base(model)
         {
         }
 
+        /// <summary>
+        /// Gibt den Namen der Linie zurück, oder setzt diesen
+        /// </summary>
         public string Name
         {
             get
@@ -30,6 +40,9 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
+        /// <summary>
+        /// Gibt den Ident der Linie zurück, oder setzt diesen
+        /// </summary>
         public string Ident
         {
             get
@@ -47,6 +60,9 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
+        /// <summary>
+        /// Gibt die Farbe der Linie zurück, oder setzt diesen
+        /// </summary>
         public string Farbe
         {
             get
@@ -64,6 +80,9 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
+        /// <summary>
+        /// Gibt die Anzahl der Haltestellen, die der Linie zugeordnet sind, zurück, oder setzt diese
+        /// </summary>
         public int AnzahlHaltestellen { get; set; }
     }
 }

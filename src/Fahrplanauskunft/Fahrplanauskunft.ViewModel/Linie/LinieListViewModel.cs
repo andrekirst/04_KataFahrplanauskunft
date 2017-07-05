@@ -11,6 +11,9 @@ using Fahrplanauskunft.ViewModelBase;
 
 namespace Fahrplanauskunft.ViewModel.Linie
 {
+    /// <summary>
+    /// ViewModel für eine Liste des VideModel <see cref="LinieViewModel"/>
+    /// </summary>
     public class LinieListViewModel : ViewModelBase.ViewModel
     {
         private string filterLinieParameter;
@@ -18,6 +21,10 @@ namespace Fahrplanauskunft.ViewModel.Linie
 
         private ICommand neueLinieCommand;
 
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// <param name="fahrplanauskunftSpeicher">Der FahrplanauskunftSpeicher</param>
         public LinieListViewModel(FahrplanauskunftSpeicher fahrplanauskunftSpeicher)
             : base(fahrplanauskunftSpeicher)
         {
@@ -29,6 +36,9 @@ namespace Fahrplanauskunft.ViewModel.Linie
             linien.CollectionChanged += Linien_CollectionChanged;
         }
 
+        /// <summary>
+        /// gibt die gefilterte Liste anhand der FilterParameter zurück
+        /// </summary>
         public ObservableCollection<LinieViewModel> FilteredList
         {
             get
@@ -37,6 +47,9 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
+        /// <summary>
+        /// Gibt den Der Filterparameter für die Suche nach den Linien zurück, oder setzt diesen
+        /// </summary>
         public string FilterLinieParameter
         {
             get
@@ -55,6 +68,9 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
+        /// <summary>
+        /// Die Orignalliste der Linien
+        /// </summary>
         public ObservableCollection<LinieViewModel> Linien
         {
             get
@@ -72,6 +88,9 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
+        /// <summary>
+        /// Das Kommando für eine neue Linie
+        /// </summary>
         public ICommand NeueLinieCommand
         {
             get
@@ -85,7 +104,23 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
-        public static bool FilterLinie(Objekte.Linie linie, string filter)
+        /// <summary>
+        /// Führt die Aktion aus, wenn das Kommando <see cref="NeueLinieCommand"/> aufgerufen wird
+        /// </summary>
+        public void ExecuteNeueLinieCommand()
+        {
+            Linien.Add(new LinieViewModel(new Objekte.Linie()));
+        }
+
+        /// <summary>
+        /// Der angewandte Filter für die Suche nach Linien für eine einzelne <see cref="Objekte.Linie"/>
+        /// Wenn der Parameter <paramref name="filter"/> null oder leer ist, wird true zurückgegeben.
+        /// Der Parameter <paramref name="filter"/> wird vor dem Vergleich mit den Attributen <see cref="Objekte.Linie.Ident"/> und <see cref="Objekte.Linie.Name"/> auf Kleinbuchstaben transformiert. Danach werden diese jeweils mit Kleinbuchstaben verglichen, wenn der Text innerhalb der Attribute mittels <see cref="string.Contains(string)"/> verglichen.
+        /// </summary>
+        /// <param name="linie">Die aktuelle <see cref="Objekte.Linie"/>, die überprüft wird</param>
+        /// <param name="filter">Der angeandte Filte</param>
+        /// <returns>Gibt true zurück, wenn der Filter übereinstimmt. Andernfalls false</returns>
+        internal static bool FilterLinie(Objekte.Linie linie, string filter)
         {
             if(string.IsNullOrEmpty(filter))
             {
@@ -96,11 +131,11 @@ namespace Fahrplanauskunft.ViewModel.Linie
             return linie.Name.ToLower().Contains(filter) || linie.Ident.ToLower().Contains(filter);
         }
 
-        public void ExecuteNeueLinieCommand()
-        {
-            Linien.Add(new LinieViewModel(new Objekte.Linie()));
-        }
-
+        /// <summary>
+        /// Hilfsfunktion für das Bereitstellen der gefilterten Liste
+        /// </summary>
+        /// <param name="original">Die Original-Liste</param>
+        /// <returns>gibt die gefilterte Menge anhand der Parameter zurück</returns>
         private ObservableCollection<LinieViewModel> GetFilteredList(ObservableCollection<LinieViewModel> original)
         {
             ObservableCollection<LinieViewModel> filteredList = new ObservableCollection<LinieViewModel>();
@@ -117,6 +152,11 @@ namespace Fahrplanauskunft.ViewModel.Linie
             return filteredList;
         }
 
+        /// <summary>
+        /// Die Implementierung, wenn die ObservableCollection geändert wurde
+        /// </summary>
+        /// <param name="sender">Das Objekt, dass das Event aufgerufen hat</param>
+        /// <param name="e">Die Ereignisargumente</param>
         private void Linien_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if(e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)

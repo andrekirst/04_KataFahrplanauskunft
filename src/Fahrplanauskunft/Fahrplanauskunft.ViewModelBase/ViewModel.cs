@@ -3,14 +3,10 @@
 // </copyright>
 // Vorlage: http://www.cocktailsandcode.de/2012/04/mvvm-tutorial-part-3-viewmodelbase-und-relaycommand/
 
-using Fahrplanauskunft.Objekte;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Fahrplanauskunft.Objekte;
 
 namespace Fahrplanauskunft.ViewModelBase
 {
@@ -32,7 +28,7 @@ namespace Fahrplanauskunft.ViewModelBase
         }
 
         /// <summary>
-        /// Wird aufgerufen, wenn sich eine eigenschaft ändert
+        /// Wird aufgerufen, wenn sich eine Eigenschaft ändert
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 

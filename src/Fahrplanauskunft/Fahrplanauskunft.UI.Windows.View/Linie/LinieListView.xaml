@@ -12,7 +12,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBox Grid.Row="0" Text="{Binding Path=FilterLinieParameter,UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Row="0" Text="{Binding Path=FilterLinieParameter,UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" />
 
         <ListBox x:Name="ListBoxLinien" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding FilteredList,UpdateSourceTrigger=PropertyChanged}" BorderBrush="White" BorderThickness="0">
             <ListBox.ItemTemplate>

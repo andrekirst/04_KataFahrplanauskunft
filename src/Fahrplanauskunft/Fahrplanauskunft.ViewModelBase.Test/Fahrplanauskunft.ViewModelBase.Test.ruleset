@@ -5,6 +5,7 @@
     <Rule Id="CC0008" Action="None" />
     <Rule Id="CC0015" Action="None" />
     <Rule Id="CC0021" Action="None" />
+    <Rule Id="CC0091" Action="None" />
   </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA1000" Action="None" />

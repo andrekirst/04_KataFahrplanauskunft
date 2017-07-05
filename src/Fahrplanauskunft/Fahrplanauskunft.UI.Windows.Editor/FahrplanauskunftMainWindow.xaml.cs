@@ -20,7 +20,8 @@ namespace Fahrplanauskunft.UI.Windows.Editor
     /// </summary>
     public partial class FahrplanauskunftMainWindow : Window
     {
-        private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("../../../Fahrplanauskunft.Test/bin/Debug/TestDaten/TestSatzBrainstorming");
+        //private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("../../../Fahrplanauskunft.Test/bin/Debug/TestDaten/TestSatz3");
+        private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("");
 
         /// <summary>
         /// Standardkonstruktor
@@ -37,13 +38,14 @@ namespace Fahrplanauskunft.UI.Windows.Editor
 
         private void PrototypTest()
         {
-            //speicher.Linien = HoleTestLinien();
+            speicher.Linien = HoleTestLinien();
 
-            //speicher.Haltestellen = new List<Haltestelle>();
-            //Haltestelle haltestelle = new Haltestelle(name: "H1");
-            //haltestelle.Linien = new List<Linie>() { speicher.Linien.First(l => l.Ident == "B11") };
-            //speicher.Haltestellen.Add(haltestelle);
-            speicher.Laden();
+            speicher.Haltestellen = new List<Haltestelle>();
+            Haltestelle haltestelle = new Haltestelle(name: "H1");
+            haltestelle.Linien = speicher.Linien.Where(l => l.Ident.StartsWith("B1")).ToList();
+            speicher.Haltestellen.Add(haltestelle);
+
+            //speicher.Laden();
 
             LinieViewModel lvm = new LinieViewModel(speicher.Linien[0]);
 
@@ -62,13 +64,8 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             linien.Add(new Linie(name: "2", ident: "B22", farbe: "#FFDAB9"));
             linien.Add(new Linie(name: "3", ident: "B31", farbe: "#66CDAA"));
             linien.Add(new Linie(name: "3", ident: "B32", farbe: "#66CDAA"));
-
             linien.Add(new Linie(name: "4", ident: "B41", farbe: "#FFD700"));
             linien.Add(new Linie(name: "4", ident: "B42", farbe: "#FFD700"));
-            linien.Add(new Linie(name: "5", ident: "B51", farbe: "#6B8E23"));
-            linien.Add(new Linie(name: "5", ident: "B52", farbe: "#6B8E23"));
-            linien.Add(new Linie(name: "6", ident: "B61", farbe: "#32CD32"));
-            linien.Add(new Linie(name: "6", ident: "B62", farbe: "#32CD32"));
             return linien;
         }
 
