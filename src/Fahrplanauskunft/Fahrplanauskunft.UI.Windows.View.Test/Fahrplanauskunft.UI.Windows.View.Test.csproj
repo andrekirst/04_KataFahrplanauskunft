@@ -56,7 +56,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Linie\T_LinieListView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +77,23 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
     <Analyzer Include="..\packages\System.Runtime.Analyzers.1.1.0\analyzers\dotnet\cs\System.Runtime.Analyzers.dll" />
     <Analyzer Include="..\packages\System.Runtime.Analyzers.1.1.0\analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fahrplanauskunft.UI.Windows.View\Fahrplanauskunft.UI.Windows.View.csproj">
+      <Project>{4ACDEC3E-9CB4-4256-AA15-FFF819C13930}</Project>
+      <Name>Fahrplanauskunft.UI.Windows.View</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fahrplanauskunft.ViewModelBase\Fahrplanauskunft.ViewModelBase.csproj">
+      <Project>{d653afdc-caf3-4a27-9f75-f711d3d64966}</Project>
+      <Name>Fahrplanauskunft.ViewModelBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fahrplanauskunft.ViewModel\Fahrplanauskunft.ViewModel.csproj">
+      <Project>{414e8de7-32cd-41a0-b85a-c3bc3b05a5ee}</Project>
+      <Name>Fahrplanauskunft.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Linie\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

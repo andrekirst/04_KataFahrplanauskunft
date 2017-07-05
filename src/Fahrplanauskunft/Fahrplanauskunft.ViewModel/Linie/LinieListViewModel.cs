@@ -20,6 +20,7 @@ namespace Fahrplanauskunft.ViewModel.Linie
         private ObservableCollection<LinieViewModel> linien;
 
         private ICommand neueLinieCommand;
+        private ICommand escapeInputCommand;
 
         /// <summary>
         /// Konstruktor
@@ -104,12 +105,30 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
         }
 
+        public ICommand EscapeInputCommand
+        {
+            get
+            {
+                if(escapeInputCommand == null)
+                {
+                    escapeInputCommand = new RelayCommand(p => ExecuteEscapeInputCommand());
+                }
+
+                return escapeInputCommand;
+            }
+        }
+
         /// <summary>
         /// Führt die Aktion aus, wenn das Kommando <see cref="NeueLinieCommand"/> aufgerufen wird
         /// </summary>
         public void ExecuteNeueLinieCommand()
         {
             Linien.Add(new LinieViewModel(new Objekte.Linie()));
+        }
+
+        public void ExecuteEscapeInputCommand()
+        {
+            FilterLinieParameter = string.Empty;
         }
 
         /// <summary>
