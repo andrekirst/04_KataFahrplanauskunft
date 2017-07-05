@@ -34,24 +34,6 @@ namespace Fahrplanauskunft.UI.Windows.View.Test.Linie
 
             llv.TextBoxSuche.Text = "B1";
 
-            llv.TextBoxSuche.KeyDown += (s, e) =>
-              {
-              };
-
-            var key = Key.Escape;                    // Key to send
-            var target = llv.TextBoxSuche;    // Target element
-            var routedEvent = Keyboard.PreviewKeyDownEvent; // Event to send
-
-            target.RaiseEvent(
-              new KeyEventArgs(
-                Keyboard.PrimaryDevice,
-                PresentationSource.FromVisual(target),
-                0,
-                key)
-              {
-                  RoutedEvent = routedEvent
-              });
-
             string actual = llv.TextBoxSuche.Text;
             string expected = string.Empty;
 
