@@ -77,5 +77,27 @@ namespace Fahrplanauskunft.ViewModel.Test.Linie
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void LinieListViewModel_EscapeInputCommand_Escape_Eingabe_FilterParameter_Gleich_Empty()
+        {
+            FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(string.Empty);
+
+            fahrplanauskunftSpeicher.Linien = HoleTestDaten();
+            fahrplanauskunftSpeicher.Haltestellen = new List<Haltestelle>();
+            Haltestelle h = new Haltestelle(name: "H1");
+            h.Linien = fahrplanauskunftSpeicher.Linien.Where(l => l.Ident == "H1").ToList();
+            fahrplanauskunftSpeicher.Haltestellen.Add(h);
+
+            LinieListViewModel llvm = new LinieListViewModel(fahrplanauskunftSpeicher);
+            llvm.FilterLinieParameter = "B1";
+
+            llvm.ExecuteEscapeInputCommand();
+
+            string expected = string.Empty;
+            string actual = llvm.FilterLinieParameter;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

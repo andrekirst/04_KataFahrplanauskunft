@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Input;
 using Fahrplanauskunft.Objekte;
 using Fahrplanauskunft.ViewModelBase;
+using System.Windows.Controls;
 
 namespace Fahrplanauskunft.ViewModel.Linie
 {
@@ -111,7 +112,7 @@ namespace Fahrplanauskunft.ViewModel.Linie
             {
                 if(escapeInputCommand == null)
                 {
-                    escapeInputCommand = new RelayCommand(p => ExecuteEscapeInputCommand());
+                    escapeInputCommand = new RelayCommand(p => ExecuteEscapeInputCommand(p));
                 }
 
                 return escapeInputCommand;
@@ -126,8 +127,13 @@ namespace Fahrplanauskunft.ViewModel.Linie
             Linien.Add(new LinieViewModel(new Objekte.Linie()));
         }
 
-        public void ExecuteEscapeInputCommand()
+        public void ExecuteEscapeInputCommand(object parameter = null)
         {
+            if(parameter != null && parameter is TextBox)
+            {
+                (parameter as TextBox).Text = string.Empty;
+            }
+
             FilterLinieParameter = string.Empty;
         }
 

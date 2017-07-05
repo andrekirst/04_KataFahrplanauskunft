@@ -14,5 +14,10 @@ namespace Fahrplanauskunft.UI.Windows.View.Linie
         {
             InitializeComponent();
         }
+
+        private void KeyBinding_Changed(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
