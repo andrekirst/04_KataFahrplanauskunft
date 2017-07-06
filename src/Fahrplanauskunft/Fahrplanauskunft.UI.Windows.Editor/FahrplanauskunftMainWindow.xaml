@@ -13,18 +13,22 @@
         Height="700"
         Width="1050"
         WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <RoutedUICommand x:Key="ResOeffneFahrplanauskunftSpeicherDialogCommand" Text="ResOeffneFahrplanauskunftSpeicherDialogCommand" />
+        <RoutedUICommand x:Key="ResSchliesseAnwendungCommand" Text="ResSchliesseAnwendungCommand" />
+    </Window.Resources>
     <Window.InputBindings>
-        <KeyBinding Command="{x:Static current:FahrplanauskunftMainWindow.OeffneFahrplanauskunftSpeicherDialogCommand}"
+        <KeyBinding Command="{StaticResource ResOeffneFahrplanauskunftSpeicherDialogCommand}"
                     Key="O"
                     Modifiers="Ctrl" />
-        <KeyBinding Command="{x:Static current:FahrplanauskunftMainWindow.SchliesseAnwendungCommand}"
+        <KeyBinding Command="{StaticResource ResSchliesseAnwendungCommand}"
                     Key="F4"
                     Modifiers="Alt" />
     </Window.InputBindings>
     <Window.CommandBindings>
-        <CommandBinding Command="{x:Static current:FahrplanauskunftMainWindow.OeffneFahrplanauskunftSpeicherDialogCommand}"
+        <CommandBinding Command="{StaticResource ResOeffneFahrplanauskunftSpeicherDialogCommand}"
                         Executed="ExecuteOeffneFahrplanauskunftSpeicherDialogCommand" />
-        <CommandBinding Command="{x:Static current:FahrplanauskunftMainWindow.SchliesseAnwendungCommand}"
+        <CommandBinding Command="{StaticResource ResSchliesseAnwendungCommand}"
                         Executed="ExecuteSchliesseAnwendungCommand" />
     </Window.CommandBindings>
     <Grid>
@@ -42,11 +46,7 @@
                     <MenuItem.Items>
                         <MenuItem Header="{DynamicResource MenuItemOrdnerOeffnenHeader}"
                                   InputGestureText="{DynamicResource MenuItemOrdnerOeffnenInputGestureText}"
-                                  Command="{x:Static current:FahrplanauskunftMainWindow.OeffneFahrplanauskunftSpeicherDialogCommand}">
-                            <MenuItem.CommandBindings>
-                                <CommandBinding Executed="ExecuteOeffneFahrplanauskunftSpeicherDialogCommand"
-                                                Command="{x:Static current:FahrplanauskunftMainWindow.OeffneFahrplanauskunftSpeicherDialogCommand}"/>
-                            </MenuItem.CommandBindings>
+                                  Command="{StaticResource ResOeffneFahrplanauskunftSpeicherDialogCommand}">
                             <MenuItem.InputBindings>
                                 <KeyBinding Key="O" Modifiers="Ctrl" />
                             </MenuItem.InputBindings>
@@ -60,7 +60,7 @@
                         <Separator />
                         <MenuItem Header="{DynamicResource MenuItemBeendenHeader}"
                                   InputGestureText="{DynamicResource MenuItemBeendenInputGestureText}"
-                                  Command="{Binding SchliesseAnwendungCommand}">
+                                  Command="{StaticResource ResSchliesseAnwendungCommand}">
                             <MenuItem.InputBindings>
                                 <KeyBinding Key="F4"
                                             Modifiers="Alt" />

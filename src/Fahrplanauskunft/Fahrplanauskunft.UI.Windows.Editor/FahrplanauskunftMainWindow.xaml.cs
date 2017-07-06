@@ -100,7 +100,8 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             {
                 if(oeffneFahrplanauskunftSpeicherDialogCommand == null)
                 {
-                    oeffneFahrplanauskunftSpeicherDialogCommand = new RoutedCommand(
+                    oeffneFahrplanauskunftSpeicherDialogCommand = new RoutedUICommand(
+                        nameof(OeffneFahrplanauskunftSpeicherDialogCommand),
                         nameof(OeffneFahrplanauskunftSpeicherDialogCommand),
                         typeof(FahrplanauskunftMainWindow),
                         new InputGestureCollection()
@@ -119,7 +120,8 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             {
                 if(schliesseAnwendungCommand == null)
                 {
-                    schliesseAnwendungCommand = new RoutedCommand(
+                    schliesseAnwendungCommand = new RoutedUICommand(
+                        nameof(SchliesseAnwendungCommand),
                         nameof(SchliesseAnwendungCommand),
                         typeof(FahrplanauskunftMainWindow),
                         new InputGestureCollection()
