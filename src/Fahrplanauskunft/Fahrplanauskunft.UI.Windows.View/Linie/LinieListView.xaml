@@ -14,7 +14,7 @@
 
         <TextBox x:Name="TextBoxSuche" Grid.Row="0" Text="{Binding FilterLinieParameter, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center">
             <TextBox.InputBindings>
-                <KeyBinding Changed="KeyBinding_Changed" Key="Esc" Command="{Binding EscapeInputCommand}" CommandParameter="{Binding ElementName=TextBoxSuche}" />
+                <KeyBinding Key="Esc" Command="{Binding EscapeInputCommand}" CommandParameter="{Binding ElementName=TextBoxSuche}" CommandTarget="{Binding ElementName=TextBoxSuche}" />
             </TextBox.InputBindings>
         </TextBox>
 

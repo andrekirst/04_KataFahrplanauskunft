@@ -5,4 +5,8 @@
     <Rule Id="CC0008" Action="None" />
     <Rule Id="CC0088" Action="None" />
   </Rules>
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA1101" Action="None" />
+    <Rule Id="SX1101" Action="Warning" />
+  </Rules>
 </RuleSet>

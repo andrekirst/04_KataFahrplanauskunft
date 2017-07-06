@@ -96,6 +96,10 @@
       <Project>{414e8de7-32cd-41a0-b85a-c3bc3b05a5ee}</Project>
       <Name>Fahrplanauskunft.ViewModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Fahrplanauskunft\Fahrplanauskunft.csproj">
+      <Project>{59333DC7-72E0-43CE-8915-5F7E3C79192E}</Project>
+      <Name>Fahrplanauskunft</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Choose>
