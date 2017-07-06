@@ -161,5 +161,19 @@ namespace Fahrplanauskunft.Test.Objekte
             int expected = -1428343006;
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Test, wenn alle Attribute null sind, dass der HashCode 206839 ist
+        /// </summary>
+        [TestMethod]
+        public void HaltestellenFahrplanEintrag_GetHashCode_Attribute_null_Erwartet_206839()
+        {
+            HaltestelleFahrplanEintrag haltestelleFahrplanEintrag = new HaltestelleFahrplanEintrag();
+
+            int expected = 206839;
+            int actual = haltestelleFahrplanEintrag.GetHashCode();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

@@ -133,9 +133,9 @@ namespace Fahrplanauskunft.Objekte
 
                 // Suitable nullity checks etc, of course :)
                 hash = (hash * 23) + Dauer.GetHashCode();
-                hash = (hash * 23) + StartHaltestelle.GetHashCode();
-                hash = (hash * 23) + ZielHaltestelle.GetHashCode();
-                hash = (hash * 23) + Linie.GetHashCode();
+                hash = (hash * 23) + (StartHaltestelle == null ? 0 : StartHaltestelle.GetHashCode());
+                hash = (hash * 23) + (ZielHaltestelle == null ? 0 : ZielHaltestelle.GetHashCode());
+                hash = (hash * 23) + (Linie == null ? 0 : Linie.GetHashCode());
 
                 return hash;
             }

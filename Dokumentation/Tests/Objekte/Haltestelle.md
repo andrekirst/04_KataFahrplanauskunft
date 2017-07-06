@@ -65,3 +65,9 @@ Test des Ungleichheitsoperators mit zwei Haltestellen mit verschiedenen Namen
 #### Beschreibung
 
 Test einer Haltestelle, wenn die Linien ungleich sind
+
+### Haltestelle_GetHashCode_Attribute_null_Erwartet_0
+
+#### Beschreibung
+
+Test, wenn alle Attribute null sind, dass der HashCode 0 ist

@@ -167,5 +167,19 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.AreNotEqual(h1, h2);
         }
+
+        /// <summary>
+        /// Test, wenn alle Attribute null sind, dass der HashCode 0 ist
+        /// </summary>
+        [TestMethod]
+        public void Haltestelle_GetHashCode_Attribute_null_Erwartet_0()
+        {
+            Haltestelle haltestelle = new Haltestelle();
+
+            int expected = 0;
+            int actual = haltestelle.GetHashCode();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

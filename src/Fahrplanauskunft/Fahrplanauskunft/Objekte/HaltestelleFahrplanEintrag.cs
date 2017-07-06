@@ -120,8 +120,8 @@ namespace Fahrplanauskunft.Objekte
 
                 // Suitable nullity checks etc, of course :)
                 hash = (hash * 23) + Uhrzeit.GetHashCode();
-                hash = (hash * 23) + Linie.GetHashCode();
-                hash = (hash * 23) + Haltestelle.GetHashCode();
+                hash = (hash * 23) + (Linie == null ? 0 : Linie.GetHashCode());
+                hash = (hash * 23) + (Haltestelle == null ? 0 : Haltestelle.GetHashCode());
                 return hash;
             }
         }
