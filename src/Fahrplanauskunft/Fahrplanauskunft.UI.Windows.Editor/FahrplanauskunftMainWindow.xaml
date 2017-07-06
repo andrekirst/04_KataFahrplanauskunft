@@ -14,8 +14,10 @@
         Width="1050"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
-        <RoutedUICommand x:Key="ResOeffneFahrplanauskunftSpeicherDialogCommand" Text="ResOeffneFahrplanauskunftSpeicherDialogCommand" />
-        <RoutedUICommand x:Key="ResSchliesseAnwendungCommand" Text="ResSchliesseAnwendungCommand" />
+        <RoutedUICommand x:Key="ResOeffneFahrplanauskunftSpeicherDialogCommand"
+                         Text="ResOeffneFahrplanauskunftSpeicherDialogCommand" />
+        <RoutedUICommand x:Key="ResSchliesseAnwendungCommand"
+                         Text="ResSchliesseAnwendungCommand" />
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Command="{StaticResource ResOeffneFahrplanauskunftSpeicherDialogCommand}"
