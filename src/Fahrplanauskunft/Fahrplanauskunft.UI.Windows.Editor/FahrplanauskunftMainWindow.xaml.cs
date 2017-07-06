@@ -56,7 +56,9 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             haltestelle.Linien = speicher.Linien.Where(l => l.Ident.StartsWith("B1")).ToList();
             speicher.Haltestellen.Add(haltestelle);
 
-            LinieViewModel lvm = new LinieViewModel(speicher.Linien[0]);
+            Linie linie = new Linie();
+
+            LinieViewModel lvm = new LinieViewModel(linie);
 
             Grid_Bearbeitungsmaske.DataContext = lvm;
 

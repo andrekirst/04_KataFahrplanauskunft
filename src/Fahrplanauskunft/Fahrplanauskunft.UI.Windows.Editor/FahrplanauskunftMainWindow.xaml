@@ -114,11 +114,18 @@
                                                    FontSize="40"
                                                    HorizontalAlignment="Center"
                                                    Margin="10"/>
-                                        <!--<TextBlock Text="Linien" Foreground="White" FontSize="20" HorizontalAlignment="Center" />-->
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Margin="5" Text="Linien" Foreground="White" VerticalAlignment="Center" FontSize="20" />
-                                        <TextBlock Margin="0,-10,0,0" Text="+" FontSize="50" Foreground="White" VerticalAlignment="Center" />
+                                        <TextBlock Margin="5"
+                                                   Text="Linien"
+                                                   Foreground="White"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="28" />
+                                        <TextBlock Margin="0,-10,0,0"
+                                                   Text="+"
+                                                   FontSize="50"
+                                                   Foreground="White"
+                                                   VerticalAlignment="Center" />
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
