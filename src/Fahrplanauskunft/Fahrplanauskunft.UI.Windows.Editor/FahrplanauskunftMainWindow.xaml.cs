@@ -14,6 +14,8 @@ using Fahrplanauskunft.Objekte;
 using Fahrplanauskunft.ViewModel.Linie;
 using System.ComponentModel;
 using System.Windows.Data;
+using System.Windows.Input;
+using Fahrplanauskunft.ViewModelBase;
 
 namespace Fahrplanauskunft.UI.Windows.Editor
 {
@@ -38,6 +40,18 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             PrototypTest();
         }
 
+        private static ICommand schliesseAnwendungCommand;
+        private static ICommand oeffneFahrplanauskunftSpeicherDialogCommand;
+
+        private void ExecuteOeffneFahrplanauskunftSpeicherDialogCommand(object sender, ExecutedRoutedEventArgs args)
+        {
+        }
+
+        public void ExecuteSchliesseAnwendungCommand(object sender, ExecutedRoutedEventArgs args)
+        {
+            this.Close();
+        }
+
         private void PrototypTest()
         {
             speicher.Linien = HoleTestLinien();
@@ -46,8 +60,6 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             Haltestelle haltestelle = new Haltestelle(name: "H1");
             haltestelle.Linien = speicher.Linien.Where(l => l.Ident.StartsWith("B1")).ToList();
             speicher.Haltestellen.Add(haltestelle);
-
-            //speicher.Laden();
 
             LinieViewModel lvm = new LinieViewModel(speicher.Linien[0]);
 
@@ -79,6 +91,44 @@ namespace Fahrplanauskunft.UI.Windows.Editor
             get
             {
                 return ((TabItemLinie.Header as Grid).Children[0] as TextBlock).Text;
+            }
+        }
+
+        public static ICommand OeffneFahrplanauskunftSpeicherDialogCommand
+        {
+            get
+            {
+                if(oeffneFahrplanauskunftSpeicherDialogCommand == null)
+                {
+                    oeffneFahrplanauskunftSpeicherDialogCommand = new RoutedCommand(
+                        nameof(OeffneFahrplanauskunftSpeicherDialogCommand),
+                        typeof(FahrplanauskunftMainWindow),
+                        new InputGestureCollection()
+                        {
+                            new KeyGesture(Key.O, ModifierKeys.Control)
+                        });
+                }
+
+                return oeffneFahrplanauskunftSpeicherDialogCommand;
+            }
+        }
+
+        public static ICommand SchliesseAnwendungCommand
+        {
+            get
+            {
+                if(schliesseAnwendungCommand == null)
+                {
+                    schliesseAnwendungCommand = new RoutedCommand(
+                        nameof(SchliesseAnwendungCommand),
+                        typeof(FahrplanauskunftMainWindow),
+                        new InputGestureCollection()
+                        {
+                            new KeyGesture(Key.F4, ModifierKeys.Alt)
+                        });
+                }
+
+                return schliesseAnwendungCommand;
             }
         }
 

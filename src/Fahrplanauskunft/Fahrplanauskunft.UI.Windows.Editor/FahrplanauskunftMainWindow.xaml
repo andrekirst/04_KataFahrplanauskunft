@@ -7,9 +7,26 @@
         xmlns:local="clr-namespace:Fahrplanauskunft.UI.Windows.Editor"
         xmlns:extwpfdg="http://schemas.xceed.com/wpf/xaml/datagrid"
         xmlns:extwpf="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:current="clr-namespace:Fahrplanauskunft.UI.Windows.Editor"
         mc:Ignorable="d"
-        Title="{DynamicResource FensterTitelFahrplanauskunft}" Height="700" Width="1050"
+        Title="{DynamicResource FensterTitelFahrplanauskunft}"
+        Height="700"
+        Width="1050"
         WindowStartupLocation="CenterScreen">
+    <Window.InputBindings>
+        <KeyBinding Command="{x:Static current:FahrplanauskunftMainWindow.OeffneFahrplanauskunftSpeicherDialogCommand}"
+                    Key="O"
+                    Modifiers="Ctrl" />
+        <KeyBinding Command="{x:Static current:FahrplanauskunftMainWindow.SchliesseAnwendungCommand}"
+                    Key="F4"
+                    Modifiers="Alt" />
+    </Window.InputBindings>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static current:FahrplanauskunftMainWindow.OeffneFahrplanauskunftSpeicherDialogCommand}"
+                        Executed="ExecuteOeffneFahrplanauskunftSpeicherDialogCommand" />
+        <CommandBinding Command="{x:Static current:FahrplanauskunftMainWindow.SchliesseAnwendungCommand}"
+                        Executed="ExecuteSchliesseAnwendungCommand" />
+    </Window.CommandBindings>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -24,12 +41,31 @@
                 <MenuItem Header="{DynamicResource MenuItemDateiHeader}">
                     <MenuItem.Items>
                         <MenuItem Header="{DynamicResource MenuItemOrdnerOeffnenHeader}"
-                                  InputGestureText="{DynamicResource MenuItemOrdnerOeffnenInputGestureText}" />
+                                  InputGestureText="{DynamicResource MenuItemOrdnerOeffnenInputGestureText}"
+                                  Command="{x:Static current:FahrplanauskunftMainWindow.OeffneFahrplanauskunftSpeicherDialogCommand}">
+                            <MenuItem.CommandBindings>
+                                <CommandBinding Executed="ExecuteOeffneFahrplanauskunftSpeicherDialogCommand"
+                                                Command="{x:Static current:FahrplanauskunftMainWindow.OeffneFahrplanauskunftSpeicherDialogCommand}"/>
+                            </MenuItem.CommandBindings>
+                            <MenuItem.InputBindings>
+                                <KeyBinding Key="O" Modifiers="Ctrl" />
+                            </MenuItem.InputBindings>
+                        </MenuItem>
                         <MenuItem Header="{DynamicResource MenuItemOrdnerSpeichernHeader}"
-                                  InputGestureText="{DynamicResource MenuItemOrdnerSpeichernInputGestureText}" />
+                                  InputGestureText="{DynamicResource MenuItemOrdnerSpeichernInputGestureText}">
+                            <MenuItem.InputBindings>
+                                <KeyBinding Key="S" Modifiers="Ctrl" />
+                            </MenuItem.InputBindings>
+                        </MenuItem>
                         <Separator />
                         <MenuItem Header="{DynamicResource MenuItemBeendenHeader}"
-                                  InputGestureText="{DynamicResource MenuItemBeendenInputGestureText}" />
+                                  InputGestureText="{DynamicResource MenuItemBeendenInputGestureText}"
+                                  Command="{Binding SchliesseAnwendungCommand}">
+                            <MenuItem.InputBindings>
+                                <KeyBinding Key="F4"
+                                            Modifiers="Alt" />
+                            </MenuItem.InputBindings>
+                        </MenuItem>
                     </MenuItem.Items>
                 </MenuItem>
             </Menu.Items>
