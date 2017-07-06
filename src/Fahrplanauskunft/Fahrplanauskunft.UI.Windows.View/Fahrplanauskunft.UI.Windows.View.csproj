@@ -48,6 +48,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Linie\LinieListView.xaml.cs">
       <DependentUpon>LinieListView.xaml</DependentUpon>
     </Compile>
