@@ -18,7 +18,14 @@
             </TextBox.InputBindings>
         </TextBox>
 
-        <ListBox x:Name="ListBoxLinien" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding FilteredList, UpdateSourceTrigger=PropertyChanged}" BorderBrush="White" BorderThickness="0">
+        <ListBox x:Name="ListBoxLinien"
+                 Grid.Column="0"
+                 Grid.Row="1"
+                 ItemsSource="{Binding FilteredList, UpdateSourceTrigger=PropertyChanged}"
+                 BorderBrush="LightGray"
+                 BorderThickness="0,0,2,0"
+                 Margin="0"
+                 Padding="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50" HorizontalAlignment="Stretch">

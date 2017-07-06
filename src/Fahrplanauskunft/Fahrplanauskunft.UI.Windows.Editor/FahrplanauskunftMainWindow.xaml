@@ -16,7 +16,7 @@
     <Window.Resources>
         <RoutedUICommand x:Key="ResOeffneFahrplanauskunftSpeicherDialogCommand"
                          Text="ResOeffneFahrplanauskunftSpeicherDialogCommand" />
-        
+
         <RoutedUICommand x:Key="ResSchliesseAnwendungCommand"
                          Text="ResSchliesseAnwendungCommand" />
     </Window.Resources>
@@ -71,8 +71,12 @@
             <TabControl.Items>
                 <TabItem Name="TabItemLinie" Background="#FFDAB9" Margin="0" Padding="0" BorderBrush="#FFDAB9">
                     <TabItem.Header>
-                        <Grid Background="#FFDAB9" Height="50" Width="100">
-                            <TextBlock Text="{DynamicResource tabPageTextLinie}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Grid Height="50" Width="100" Background="#B22222">
+                            <TextBlock Text="{DynamicResource tabPageTextLinie}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Foreground="White"
+                                       FontSize="20" />
                         </Grid>
                     </TabItem.Header>
                     <TabItem.Content>
@@ -95,6 +99,42 @@
                                     <RowDefinition Height="25" />
                                 </Grid.RowDefinitions>
                             </Grid>
+
+                            <Border Grid.Column="0"
+                                    Grid.Row="0"
+                                    BorderThickness="1"
+                                    BorderBrush="White">
+                                <StackPanel  Orientation="Horizontal"
+                                             Background="#212121">
+                                    <StackPanel Width="75"
+                                            Orientation="Vertical"
+                                            Background="#B22222">
+                                        <TextBlock Text="8"
+                                                   Foreground="White"
+                                                   FontSize="40"
+                                                   HorizontalAlignment="Center"
+                                                   Margin="10"/>
+                                        <!--<TextBlock Text="Linien" Foreground="White" FontSize="20" HorizontalAlignment="Center" />-->
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="5" Text="Linien" Foreground="White" VerticalAlignment="Center" FontSize="20" />
+                                        <TextBlock Margin="0,-10,0,0" Text="+" FontSize="50" Foreground="White" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Column="1"
+                                    Grid.Row="0"
+                                    BorderThickness="1"
+                                    BorderBrush="White">
+                                <StackPanel>
+                                    <StackPanel.Background>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1, 0.5">
+                                            <GradientStop Color="#212121" />
+                                            <GradientStop Color="#303030" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </StackPanel.Background>
+                                </StackPanel>
+                            </Border>
 
                             <!-- ListBox für das Objekt Linie -->
                             <Linie:LinieListView Grid.Column="0" Grid.Row="1" Name="linieListView" />
@@ -120,7 +160,7 @@
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
 
-                                <Canvas Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+                                <Canvas Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0">
                                     <Border Canvas.Left="4" Canvas.Top="4" BorderBrush="{x:Null}">
                                         <TextBlock Padding="0,4,0,0" TextAlignment="Center" Background="{Binding Farbe, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="40" VerticalAlignment="Center" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Foreground="White" FontSize="20" />
                                     </Border>
