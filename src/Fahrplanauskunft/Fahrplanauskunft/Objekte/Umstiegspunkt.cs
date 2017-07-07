@@ -98,7 +98,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return string.IsNullOrEmpty(Name) ? 0 : Name.GetHashCode();
+            return Name == null ? 0 : Name.GetHashCode();
         }
 
         /// <summary>
