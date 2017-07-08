@@ -128,5 +128,19 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(actual != expected);
         }
+
+        /// <summary>
+        /// Test, wenn alle Attribute null sind, dass der HashCode 0 ist
+        /// </summary>
+        [TestMethod]
+        public void Linie_GetHashCode_Attribute_null_Erwartet_0()
+        {
+            Linie linie = new Linie();
+
+            int expected = 0;
+            int actual = linie.GetHashCode();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

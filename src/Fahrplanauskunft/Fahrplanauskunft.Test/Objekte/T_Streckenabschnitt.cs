@@ -185,5 +185,19 @@ namespace Fahrplanauskunft.Test.Objekte
             int expected = 1826950849;
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Test, wenn alle Attribute null sind, dass der HashCode 4757297 ist
+        /// </summary>
+        [TestMethod]
+        public void Streckenabschnitt_GetHashCode_Attribute_null_Erwartet_4757297()
+        {
+            Streckenabschnitt streckenabschnitt = new Streckenabschnitt();
+
+            int expected = 4757297;
+            int actual = streckenabschnitt.GetHashCode();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

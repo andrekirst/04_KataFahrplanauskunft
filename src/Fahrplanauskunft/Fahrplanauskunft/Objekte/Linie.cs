@@ -114,7 +114,10 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return (Name.GetHashCode() * 3) + (Ident.GetHashCode() * 2) + Farbe.GetHashCode();
+            return
+                (Name == null ? 0 : Name.GetHashCode() * 3) +
+                (Ident == null ? 0 : Ident.GetHashCode() * 2) +
+                (Farbe == null ? 0 : Farbe.GetHashCode());
         }
 
         /// <summary>
