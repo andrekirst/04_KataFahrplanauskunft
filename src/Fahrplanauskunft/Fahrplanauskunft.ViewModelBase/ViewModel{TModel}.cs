@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using Fahrplanauskunft.Funktionen;
 using Fahrplanauskunft.Objekte;
+using System.Diagnostics;
 
 namespace Fahrplanauskunft.ViewModelBase
 {
@@ -76,6 +77,8 @@ namespace Fahrplanauskunft.ViewModelBase
         /// <returns>Der Hashwert des Models</returns>
         public override int GetHashCode()
         {
+            string debugMessage = $"{DateTime.Now} - {Model.ToString()} - {Model.GetHashCode()}";
+            Debug.WriteLine(debugMessage);
             return Model.GetHashCode();
         }
 

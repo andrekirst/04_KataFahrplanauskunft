@@ -49,6 +49,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\NullImageConverter.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Linie\LinieListView.xaml.cs">
       <DependentUpon>LinieListView.xaml</DependentUpon>

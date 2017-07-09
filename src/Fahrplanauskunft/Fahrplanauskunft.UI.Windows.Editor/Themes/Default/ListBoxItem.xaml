@@ -9,7 +9,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="true">
-                            <Setter Property="Background" TargetName="Listboxitem_border" Value="{Binding Farbe,UpdateSourceTrigger=PropertyChanged}" />
+                            <Setter Property="Background" TargetName="Listboxitem_border" Value="{Binding Farbe, UpdateSourceTrigger=PropertyChanged}" />
                             <Setter Property="Foreground" Value="Black" />
                         </Trigger>
                         <MultiTrigger>

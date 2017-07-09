@@ -19,6 +19,7 @@ namespace Fahrplanauskunft.ViewModel.Linie
     {
         private string filterLinieParameter;
         private ObservableCollection<LinieViewModel> linien;
+        private LinieViewModel selectedLinie;
 
         private ICommand neueLinieCommand;
         private ICommand escapeInputCommand;
@@ -33,7 +34,9 @@ namespace Fahrplanauskunft.ViewModel.Linie
             linien = new ObservableCollection<LinieViewModel>(FahrplanauskunftSpeicher.Linien.Select(p =>
                 new LinieViewModel(p)
                 {
-                    AnzahlHaltestellen = fahrplanauskunftSpeicher.Haltestellen.Count(h => h.Linien.Contains(p))
+                    AnzahlHaltestellen = fahrplanauskunftSpeicher.Haltestellen.Count(h => h.Linien.Contains(p)),
+                    AnzahlStreckenabschnitte = fahrplanauskunftSpeicher.Streckenabschnitte.Count(sab => sab.Linie == p),
+                    AnzahlHaltestellenfahrplaneintraege = fahrplanauskunftSpeicher.Haltestellenfahrplaneintraege.Count(hfe => hfe.Linie == p)
                 }));
             linien.CollectionChanged += Linien_CollectionChanged;
         }
@@ -86,6 +89,23 @@ namespace Fahrplanauskunft.ViewModel.Linie
                 {
                     linien = value;
                     OnPropertyChanged(nameof(Linien));
+                }
+            }
+        }
+
+        public LinieViewModel SelectedLinie
+        {
+            get
+            {
+                return selectedLinie;
+            }
+
+            set
+            {
+                if(SelectedLinie != value)
+                {
+                    selectedLinie = value;
+                    OnPropertyChanged(nameof(SelectedLinie));
                 }
             }
         }

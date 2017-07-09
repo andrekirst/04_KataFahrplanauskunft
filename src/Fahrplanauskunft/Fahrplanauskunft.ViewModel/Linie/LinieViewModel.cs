@@ -83,6 +83,22 @@ namespace Fahrplanauskunft.ViewModel.Linie
         /// <summary>
         /// Gibt die Anzahl der Haltestellen, die der Linie zugeordnet sind, zurück, oder setzt diese
         /// </summary>
-        public int AnzahlHaltestellen { get; set; }
+        public int AnzahlHaltestellen
+        {
+            get;
+            set;
+        }
+
+        public int AnzahlStreckenabschnitte
+        {
+            get;
+            set;
+        }
+
+        public int AnzahlHaltestellenfahrplaneintraege
+        {
+            get;
+            set;
+        }
     }
 }

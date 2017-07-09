@@ -7,6 +7,7 @@ using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using Fahrplanauskunft.Objekte;
+using System.Diagnostics;
 
 namespace Fahrplanauskunft.ViewModelBase
 {
@@ -59,6 +60,8 @@ namespace Fahrplanauskunft.ViewModelBase
         /// <param name="propertyName">Der Name der Eigenschaft</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
+            string debugMessage = $"{DateTime.Now} - {propertyName}";
+            Debug.WriteLine(debugMessage);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 

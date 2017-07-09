@@ -19,8 +19,8 @@ namespace Fahrplanauskunft.UI.Windows.Editor
     /// </summary>
     public partial class FahrplanauskunftMainWindow : Window
     {
-        //private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("../../../Fahrplanauskunft.Test/bin/Debug/TestDaten/TestSatz3");
-        private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("");
+        private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("../../../Fahrplanauskunft.Test/bin/Debug/TestDaten/TestSatzBrainstorming");
+        //private FahrplanauskunftSpeicher speicher = new FahrplanauskunftSpeicher("");
 
         /// <summary>
         /// Standardkonstruktor
@@ -49,35 +49,20 @@ namespace Fahrplanauskunft.UI.Windows.Editor
 
         private void PrototypTest()
         {
-            speicher.Linien = HoleTestLinien();
+            // TODO
+            speicher.Laden();
 
-            speicher.Haltestellen = new List<Haltestelle>();
-            Haltestelle haltestelle = new Haltestelle(name: "H1");
-            haltestelle.Linien = speicher.Linien.Where(l => l.Ident.StartsWith("B1")).ToList();
-            speicher.Haltestellen.Add(haltestelle);
-
-            Linie linie = new Linie();
-
-            LinieViewModel lvm = new LinieViewModel(linie);
-
-            Grid_Bearbeitungsmaske.DataContext = lvm;
+            //var viewModel = new LinieListViewModel(speicher);
+            //linieListView.DataContext = viewModel;
 
             var viewModel = new LinieListViewModel(speicher);
-            linieListView.DataContext = viewModel;
-        }
+            //this.DataContext = viewModel;
+            TabItemLinie.DataContext = viewModel;
 
-        private List<Linie> HoleTestLinien()
-        {
-            List<Linie> linien = new List<Linie>();
-            linien.Add(new Linie(name: "1", ident: "B11", farbe: "#FF4500"));
-            linien.Add(new Linie(name: "1", ident: "B12", farbe: "#FF4500"));
-            linien.Add(new Linie(name: "2", ident: "B21", farbe: "#FFDAB9"));
-            linien.Add(new Linie(name: "2", ident: "B22", farbe: "#FFDAB9"));
-            linien.Add(new Linie(name: "3", ident: "B31", farbe: "#66CDAA"));
-            linien.Add(new Linie(name: "3", ident: "B32", farbe: "#66CDAA"));
-            linien.Add(new Linie(name: "4", ident: "B41", farbe: "#FFD700"));
-            linien.Add(new Linie(name: "4", ident: "B42", farbe: "#FFD700"));
-            return linien;
+            //Linie linie = new Linie();
+            //LinieViewModel lvm = new LinieViewModel(linie);
+
+            //Grid_Bearbeitungsmaske.DataContext = viewModel.SelectedLinie;
         }
 
         /// <summary>
@@ -101,10 +86,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor
                         nameof(OeffneFahrplanauskunftSpeicherDialogCommand),
                         nameof(OeffneFahrplanauskunftSpeicherDialogCommand),
                         typeof(FahrplanauskunftMainWindow),
-                        new InputGestureCollection()
-                        {
-                            new KeyGesture(Key.O, ModifierKeys.Control)
-                        });
+                        new InputGestureCollection() { new KeyGesture(Key.O, ModifierKeys.Control) });
                 }
 
                 return oeffneFahrplanauskunftSpeicherDialogCommand;
@@ -121,10 +103,7 @@ namespace Fahrplanauskunft.UI.Windows.Editor
                         nameof(SchliesseAnwendungCommand),
                         nameof(SchliesseAnwendungCommand),
                         typeof(FahrplanauskunftMainWindow),
-                        new InputGestureCollection()
-                        {
-                            new KeyGesture(Key.F4, ModifierKeys.Alt)
-                        });
+                        new InputGestureCollection() { new KeyGesture(Key.F4, ModifierKeys.Alt) });
                 }
 
                 return schliesseAnwendungCommand;
