@@ -12,7 +12,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Eine Haltestelle ist ein Punkt, an denen ein- und ausgestiegen werden kann.
     /// </summary>
-    public class Haltestelle : FahrplanauskunftObjektBase, IEquatable<Haltestelle>
+    public sealed class Haltestelle : FahrplanauskunftObjektBase, IEquatable<Haltestelle>
     {
         /// <summary>
         /// Standardkonstruktor

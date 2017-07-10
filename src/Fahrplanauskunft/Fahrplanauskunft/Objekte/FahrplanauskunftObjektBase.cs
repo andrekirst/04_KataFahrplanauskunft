@@ -4,13 +4,14 @@
 
 using System;
 using Fahrplanauskunft.Funktionen;
+using System.Collections.Generic;
 
 namespace Fahrplanauskunft.Objekte
 {
     /// <summary>
     /// Abstrakte Basisklasse für die Fahrplanauskunft-Objekte
     /// </summary>
-    public abstract class FahrplanauskunftObjektBase : IEquatable<FahrplanauskunftObjektBase>
+    public abstract class FahrplanauskunftObjektBase : IEquatable<FahrplanauskunftObjektBase>, IEqualityComparer<FahrplanauskunftObjektBase>
     {
         /// <summary>
         /// Privates Feld für die ID des Objektes
@@ -77,12 +78,33 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Vergleicht zwei Instanzen von <see cref="FahrplanauskunftObjektBase"/>
+        /// </summary>
+        /// <param name="x">Das linke Vergleichsobjekt</param>
+        /// <param name="y">Das rechte Vergleichsobjekt</param>
+        /// <returns>Gibt true zurück, wenn beide Objekte gleich sind</returns>
+        public bool Equals(FahrplanauskunftObjektBase x, FahrplanauskunftObjektBase y)
+        {
+            return x == y;
+        }
+
+        /// <summary>
         /// Gibt den Hashwert anhand des Attributes <see cref="ID"/> zurück
         /// </summary>
         /// <returns>Der Hashwert</returns>
         public override int GetHashCode()
         {
             return ID.GetHashCode();
+        }
+
+        /// <summary>
+        /// Gibt den Hashcode das angegeben Objektes zurück
+        /// </summary>
+        /// <param name="obj">Das Objekt</param>
+        /// <returns>Der Hashwert</returns>
+        public int GetHashCode(FahrplanauskunftObjektBase obj)
+        {
+            return obj.GetHashCode();
         }
     }
 }

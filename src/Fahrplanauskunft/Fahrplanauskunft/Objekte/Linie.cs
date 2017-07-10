@@ -10,7 +10,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Eine Linie ist eine Sammlung von Haltestellen, die das jeweilige Transportsystem, wie eine Linie, abfährt.
     /// </summary>
-    public class Linie : FahrplanauskunftObjektBase, IEquatable<Linie>
+    public sealed class Linie : FahrplanauskunftObjektBase, IEquatable<Linie>
     {
         /// <summary>
         /// Standardkonstruktor

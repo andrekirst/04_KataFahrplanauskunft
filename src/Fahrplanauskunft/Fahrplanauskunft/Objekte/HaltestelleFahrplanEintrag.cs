@@ -10,7 +10,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein HaltestelleFahrplanEintrag beinhaltet die Information, wann, wo und mit welche Linie abfährt
     /// </summary>
-    public class HaltestelleFahrplanEintrag : FahrplanauskunftObjektBase, IEquatable<HaltestelleFahrplanEintrag>
+    public sealed class HaltestelleFahrplanEintrag : FahrplanauskunftObjektBase, IEquatable<HaltestelleFahrplanEintrag>
     {
         /// <summary>
         /// Standardkonstruktor

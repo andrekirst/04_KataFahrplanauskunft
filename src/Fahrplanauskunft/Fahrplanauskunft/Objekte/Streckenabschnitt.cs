@@ -11,7 +11,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein Streckenabschnitt ist eine Verbindung zwischen zwei Haltestellen, auf der n Linien fahren und eine Zeit x für die Fahrt benötigt wird.
     /// </summary>
-    public class Streckenabschnitt : FahrplanauskunftObjektBase, IEquatable<Streckenabschnitt>
+    public sealed class Streckenabschnitt : FahrplanauskunftObjektBase, IEquatable<Streckenabschnitt>
     {
         /// <summary>
         /// Standardkonstruktor

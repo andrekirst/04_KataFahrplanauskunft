@@ -10,7 +10,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein Umstiegspunkt ist eine Haltestelle mit mindensten 2 verschiedenen Linien
     /// </summary>
-    public class Umstiegspunkt : FahrplanauskunftObjektBase, IEquatable<Umstiegspunkt>
+    public sealed class Umstiegspunkt : FahrplanauskunftObjektBase, IEquatable<Umstiegspunkt>
     {
         /// <summary>
         /// Standardkonstruktor
