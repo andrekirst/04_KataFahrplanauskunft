@@ -637,6 +637,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern der Linien aus dem FahrplanauskunftSpeicher
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_SpeicherLinien()
         {
             string testFolder = "test";
@@ -666,6 +667,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern der Haltestellen aus dem FahrplanauskunftSpeicher
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_SpeicherHaltestellen()
         {
             string testFolder = "test";
@@ -689,6 +691,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern der Haltestellenfahrplaneintraege aus dem FahrplanauskunftSpeicher
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_SpeicherHaltestellenfahrplaneintraege()
         {
             string testFolder = "test";
@@ -712,6 +715,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern der Streckenabschnitte aus dem FahrplanauskunftSpeicher
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_SpeicherStreckenabschnitte()
         {
             string testFolder = "test";
@@ -735,6 +739,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Linien
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Linien()
         {
             string testFolder = "test";
@@ -758,6 +763,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Haltestellen
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Haltestellen()
         {
             string testFolder = "test";
@@ -781,6 +787,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Haltestellenfahrplaneintraege
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Haltestellenfahrplaneintraege()
         {
             string testFolder = "test";
@@ -804,6 +811,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Streckenabschnitte
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Streckenabschnitte()
         {
             string testFolder = "test";

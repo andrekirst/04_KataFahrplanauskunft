@@ -107,6 +107,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Testet, ob die Eigenschaft Farbe den Wert aus dem Konstruktor übernimmt
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void Linie_Farbe_RauteFF4500()
         {
             Linie linie = new Linie(id: "TEST", name: "Test", ident: "TEST", farbe: "#FF4500");
@@ -121,6 +122,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test, dass das Attribut Farbe mit unterschiedlichen Werten verglichen wird
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void Linie_Name_und_Ident_gleich_Farbe_unterschiedlich()
         {
             Linie actual = new Linie(id: "TEST", name: "Test", ident: "TEST", farbe: "#FF4500");

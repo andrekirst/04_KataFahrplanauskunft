@@ -59,17 +59,17 @@ namespace Fahrplanauskunft.Exceptions
         }
 
         /// <summary>
-        /// Die Linie
+        /// Die Haltestelle
         /// </summary>
-        public Linie Linie
+        public Haltestelle Haltestelle
         {
             get; set;
         }
 
         /// <summary>
-        /// Die Haltestelle
+        /// Die Linie
         /// </summary>
-        public Haltestelle Haltestelle
+        public Linie Linie
         {
             get; set;
         }

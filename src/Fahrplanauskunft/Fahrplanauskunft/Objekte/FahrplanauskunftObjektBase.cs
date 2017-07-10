@@ -3,8 +3,8 @@
 // </copyright>
 
 using System;
-using Fahrplanauskunft.Funktionen;
 using System.Collections.Generic;
+using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.Objekte
 {

@@ -27,6 +27,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test der Equals-Methode, dass zwei TreeItem mit jeweils einer Haltestelle Name: "H1" gleich sind
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void TreeItem_Equal_1()
         {
             // expected             actual
@@ -43,6 +44,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test der Equals-Methode, dass zwei TreeItem mit jeweils einer Haltestelle Name: "H1" bzw. "H2" nicht gleich sind
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void TreeItem_Not_Equal_1()
         {
             // expected             actual
@@ -59,6 +61,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test der Equals-Methode, dass zwei TreeItem mit jeweils einer Haltestelle Name: "H1" und Childs "H2","H4" bzw. Childs "H4","H2" gleich sind
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void TreeItem_Equal_2()
         {
             // expected             actual
@@ -81,6 +84,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test der Equals-Methode, dass zwei TreeItem mit einer Haltestelle Name: "H1" und Childs "H2","H4" sowie "H2","H5" nicht gleich sind
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void TreeItem_Not_Equal_2()
         {
             // expected             actual
@@ -103,6 +107,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test der Equals-Methode, dass zwei TreeItem mit jeweils einer Haltestelle Name: "H1", Childs "H2","H4" bzw. Childs "H4","H2" und weitere Grandchildren "H8" gleich sind
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void TreeItem_Equal_3()
         {
             #region Vorbereitung
@@ -143,6 +148,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test der Equals-Methode, dass zwei TreeItem mit einer Haltestelle Name: "H1" , Childs "H2","H4" und einmal ein weiteres Grandchildren "H8"  sowie einmal ein weiteres Grandchildren "H10" sind nicht gleich
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void TreeItem_Not_Equal_3()
         {
             #region Vorbereitung

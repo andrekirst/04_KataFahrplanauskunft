@@ -49,17 +49,6 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Gleichheitsoperator für TreeItem
-        /// </summary>
-        /// <param name="a">Wert vom Typ TreeItem für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ TreeItem für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die TreeItems gleich sind</returns>
-        public static bool operator ==(TreeItem a, TreeItem b)
-        {
-            return EqualsOperatorHelper.EqualsOperatorBase<TreeItem>(a, b);
-        }
-
-        /// <summary>
         /// Ungleichheitsoperator für TreeItem
         /// </summary>
         /// <param name="a">Wert vom Typ TreeItem für den linken Vergleich</param>
@@ -68,6 +57,17 @@ namespace Fahrplanauskunft.Objekte
         public static bool operator !=(TreeItem a, TreeItem b)
         {
             return !(a == b);
+        }
+
+        /// <summary>
+        /// Gleichheitsoperator für TreeItem
+        /// </summary>
+        /// <param name="a">Wert vom Typ TreeItem für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ TreeItem für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die TreeItems gleich sind</returns>
+        public static bool operator ==(TreeItem a, TreeItem b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<TreeItem>(a, b);
         }
 
         /// <summary>

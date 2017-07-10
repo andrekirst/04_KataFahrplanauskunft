@@ -19,6 +19,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test, ob der Konstruktor die Eigenschaft ID setzt
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftObjektBase_Konstruktor_Eigenschaft_ID()
         {
             TestKlasseFahrplanauskunftObjektBase testklasse = new TestKlasseFahrplanauskunftObjektBase(id: "123");
@@ -33,6 +34,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test, wenn der Konstruktor den Parameter automatisch eine ID per <see cref="Guid.NewGuid()"/> vergibt, wenn der Wert NULL ist
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftObjektBase_Konstruktor_Eigenschaft_ID_Null_AutoGenerateGuid()
         {
             TestKlasseFahrplanauskunftObjektBase testklasse = new TestKlasseFahrplanauskunftObjektBase(id: null);
@@ -48,6 +50,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test, wenn der Konstruktor den Parameter automatisch eine ID per <see cref="Guid.NewGuid()"/> vergibt, wenn der Wert <see cref="string.Empty"/> ist
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftObjektBase_Konstruktor_Eigenschaft_ID_Empty_AutoGenerateGuid()
         {
             TestKlasseFahrplanauskunftObjektBase testklasse = new TestKlasseFahrplanauskunftObjektBase(id: string.Empty);
@@ -63,6 +66,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test, wenn die ID den Wert "1" hat, dass der berechnete Hashwert den Wert -842352753 zurück gibt
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftObjektBase_GetHashCode_ID_1_Erwarte__842352753()
         {
             TestKlasseFahrplanauskunftObjektBase testklasse = new TestKlasseFahrplanauskunftObjektBase(id: "1");
@@ -78,6 +82,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Testet, ob zwei Objekte mit jeweils der ID "1" beim Vergleich mit <see cref="FahrplanauskunftObjektBase.Equals(object)"/> true zurück gibt
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftObjektBase_Equals_ID_1_Vergleich_ID_1_Gleich()
         {
             TestKlasseFahrplanauskunftObjektBase testklasse1 = new TestKlasseFahrplanauskunftObjektBase(id: "1");
@@ -90,6 +95,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Testet, ob zwei Objekte mit der ID "1" bzw. ID "2" beim Vergleich mit <see cref="FahrplanauskunftObjektBase.Equals(object)"/> false zurück gibt
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftObjektBase_Equals_ID_1_Vergleich_ID_2_Ungleich()
         {
             TestKlasseFahrplanauskunftObjektBase testklasse1 = new TestKlasseFahrplanauskunftObjektBase(id: "1");
