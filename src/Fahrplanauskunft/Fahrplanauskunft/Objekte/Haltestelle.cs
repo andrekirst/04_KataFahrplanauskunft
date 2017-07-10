@@ -52,17 +52,6 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Gleichheitsoperator für Haltestelle
-        /// </summary>
-        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Haltestellen gleich sind</returns>
-        public static bool operator ==(Haltestelle a, Haltestelle b)
-        {
-            return EqualsOperatorHelper.EqualsOperatorBase<Haltestelle>(a, b);
-        }
-
-        /// <summary>
         /// Ungleichheitsoperator für Haltestelle
         /// </summary>
         /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
@@ -71,6 +60,17 @@ namespace Fahrplanauskunft.Objekte
         public static bool operator !=(Haltestelle a, Haltestelle b)
         {
             return !(a == b);
+        }
+
+        /// <summary>
+        /// Gleichheitsoperator für Haltestelle
+        /// </summary>
+        /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Haltestelle für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellen gleich sind</returns>
+        public static bool operator ==(Haltestelle a, Haltestelle b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<Haltestelle>(a, b);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Bsp.: "Name: H4"</returns>
         public override string ToString()
         {
-            return string.Format("Name: {0}", Name);
+            return $"Name: {Name}";
         }
     }
 }

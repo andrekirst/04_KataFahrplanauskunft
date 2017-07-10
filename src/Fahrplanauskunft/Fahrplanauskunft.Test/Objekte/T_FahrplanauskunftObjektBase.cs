@@ -3,9 +3,9 @@
 // </copyright>
 
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fahrplanauskunft.Objekte;
 using System.Text.RegularExpressions;
+using Fahrplanauskunft.Objekte;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Fahrplanauskunft.Test.Objekte
 {

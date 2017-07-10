@@ -2,25 +2,24 @@
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 
-using Fahrplanauskunft.Funktionen;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.Objekte
 {
     /// <summary>
     /// Abstrakte Basisklasse für die Fahrplanauskunft-Objekte
     /// </summary>
-    public abstract class FahrplanauskunftObjektBase
+    public abstract class FahrplanauskunftObjektBase : IEquatable<FahrplanauskunftObjektBase>
     {
         /// <summary>
         /// Privates Feld für die ID des Objektes
         /// </summary>
         private string id;
 
+        /// <summary>
+        /// Standardkonstruktor
+        /// </summary>
         protected FahrplanauskunftObjektBase()
         {
             ID = null;
@@ -48,24 +47,8 @@ namespace Fahrplanauskunft.Objekte
 
             set
             {
-                if(string.IsNullOrEmpty(value))
-                {
-                    id = Guid.NewGuid().ToString();
-                }
-                else
-                {
-                    id = value;
-                }
+                id = string.IsNullOrEmpty(value) ? Guid.NewGuid().ToString() : value;
             }
-        }
-
-        /// <summary>
-        /// Gibt den Hashwert anhand des Attributes <see cref="ID"/> zurück
-        /// </summary>
-        /// <returns>Der Hashwert</returns>
-        public override int GetHashCode()
-        {
-            return ID.GetHashCode();
         }
 
         /// <summary>
@@ -91,6 +74,15 @@ namespace Fahrplanauskunft.Objekte
                 {
                     return this.ID == other.ID;
                 });
+        }
+
+        /// <summary>
+        /// Gibt den Hashwert anhand des Attributes <see cref="ID"/> zurück
+        /// </summary>
+        /// <returns>Der Hashwert</returns>
+        public override int GetHashCode()
+        {
+            return ID.GetHashCode();
         }
     }
 }

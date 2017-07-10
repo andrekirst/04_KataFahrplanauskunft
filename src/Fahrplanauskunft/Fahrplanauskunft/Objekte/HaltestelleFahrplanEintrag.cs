@@ -63,17 +63,6 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Gleichheitsoperator für Haltestellenfahrplaneintrag
-        /// </summary>
-        /// <param name="a">Wert vom Typ HaltestelleFahrplanEintrag für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ HaltestelleFahrplanEintrag für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
-        public static bool operator ==(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
-        {
-            return EqualsOperatorHelper.EqualsOperatorBase<HaltestelleFahrplanEintrag>(a, b);
-        }
-
-        /// <summary>
         /// Ungleichheitsoperator für Haltestellenfahrplaneintrag
         /// </summary>
         /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
@@ -82,6 +71,17 @@ namespace Fahrplanauskunft.Objekte
         public static bool operator !=(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
         {
             return !(a == b);
+        }
+
+        /// <summary>
+        /// Gleichheitsoperator für Haltestellenfahrplaneintrag
+        /// </summary>
+        /// <param name="a">Wert vom Typ HaltestelleFahrplanEintrag für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ HaltestelleFahrplanEintrag für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
+        public static bool operator ==(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase<HaltestelleFahrplanEintrag>(a, b);
         }
 
         /// <summary>

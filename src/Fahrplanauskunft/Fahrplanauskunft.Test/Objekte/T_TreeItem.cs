@@ -13,7 +13,11 @@ namespace Fahrplanauskunft.Test.Objekte
     [TestClass]
     public class T_TreeItem
     {
-
+        /// <summary>
+        /// Hilfsmethode für das Erstellen von virtuellen Haltestellen anhand einer ID
+        /// </summary>
+        /// <param name="id">Die ID der Haltestelle</param>
+        /// <returns>Gibt ein Objekt vom Typ <see cref="Haltestelle"/> zurück</returns>
         public Haltestelle TestHaltestelleByID(string id)
         {
             return new Haltestelle(id: id, name: id);

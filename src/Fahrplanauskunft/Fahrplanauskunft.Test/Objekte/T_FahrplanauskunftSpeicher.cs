@@ -16,15 +16,15 @@ namespace Fahrplanauskunft.Test.Objekte
     [TestClass]
     public class T_FahrplanauskunftSpeicher
     {
-        private static Linie LinieB11 = new Linie(id: "B11", name: "B1", ident: "B11", farbe: "#FF4500");
+        private static readonly Linie LinieB11 = new Linie(id: "B11", name: "B1", ident: "B11", farbe: "#FF4500");
 
-        private static Linie LinieB12 = new Linie(id: "B12", name: "B1", ident: "B12", farbe: "#FF4500");
+        private static readonly Linie LinieB12 = new Linie(id: "B12", name: "B1", ident: "B12", farbe: "#FF4500");
 
-        private static Linie LinieB31 = new Linie(id: "B31", name: "B3", ident: "B31", farbe: "#AA4500");
+        private static readonly Linie LinieB31 = new Linie(id: "B31", name: "B3", ident: "B31", farbe: "#AA4500");
 
-        private static Linie LinieB32 = new Linie(id: "B32", name: "B3", ident: "B32", farbe: "#AA4500");
+        private static readonly Linie LinieB32 = new Linie(id: "B32", name: "B3", ident: "B32", farbe: "#AA4500");
 
-        private static Haltestelle HaltestelleH1 = new Haltestelle(id: "H1", name: "H1")
+        private static readonly Haltestelle HaltestelleH1 = new Haltestelle(id: "H1", name: "H1")
         {
             Linien = new List<Linie>()
             {
@@ -33,7 +33,7 @@ namespace Fahrplanauskunft.Test.Objekte
             }
         };
 
-        private static Haltestelle HaltestelleH2 = new Haltestelle(id: "H2", name: "H2")
+        private static readonly Haltestelle HaltestelleH2 = new Haltestelle(id: "H2", name: "H2")
         {
             Linien = new List<Linie>()
             {

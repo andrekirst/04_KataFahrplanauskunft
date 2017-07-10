@@ -1,5 +1,7 @@
 # Streckenabschnitt
 
+Basisklasse: `FahrplanauskunftObjektBase`
+
 ## Beschreibung
 
 Ein Streckenabschnitt ist eine Verbindung zwischen zwei Haltestellen, auf der eine Linie fährt und eine Zeit x für die Fahrt benötigt wird.

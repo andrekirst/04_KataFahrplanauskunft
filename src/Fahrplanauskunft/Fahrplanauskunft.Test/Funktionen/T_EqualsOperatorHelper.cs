@@ -14,7 +14,7 @@ namespace Fahrplanauskunft.Test.Funktionen
     [TestClass]
     public class T_EqualsOperatorHelper
     {
-        private static Linie LinieL1 = new Linie(id: "L1", name: "Linie 1", ident: "L1", farbe: "#FF4500");
+        private static readonly Linie LinieL1 = new Linie(id: "L1", name: "Linie 1", ident: "L1", farbe: "#FF4500");
 
         /// <summary>
         /// Wenn beide Objekte Null sind, dann true zurückgeben

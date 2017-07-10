@@ -36,6 +36,15 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Gibt die Farbe der Linie zurück, oder setzt diese.
+        /// </summary>
+        public string Farbe
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gibt den Ident der Linie zurück, oder setzt ihn.
         /// </summary>
         public string Ident
@@ -52,12 +61,14 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Gibt die Farbe der Linie zurück, oder setzt diese.
+        /// Ungleichheitsoperator für Linie
         /// </summary>
-        public string Farbe
+        /// <param name="a">Wert vom Typ Linie für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Linie für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Linien ungleich sind</returns>
+        public static bool operator !=(Linie a, Linie b)
         {
-            get;
-            set;
+            return !(a == b);
         }
 
         /// <summary>
@@ -69,17 +80,6 @@ namespace Fahrplanauskunft.Objekte
         public static bool operator ==(Linie a, Linie b)
         {
             return EqualsOperatorHelper.EqualsOperatorBase<Linie>(a, b);
-        }
-
-        /// <summary>
-        /// Ungleichheitsoperator für Linie
-        /// </summary>
-        /// <param name="a">Wert vom Typ Linie für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Linie für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Linien ungleich sind</returns>
-        public static bool operator !=(Linie a, Linie b)
-        {
-            return !(a == b);
         }
 
         /// <summary>

@@ -4,7 +4,6 @@
 
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
