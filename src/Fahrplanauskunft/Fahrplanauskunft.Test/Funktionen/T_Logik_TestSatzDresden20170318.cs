@@ -59,7 +59,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         }
 
         /// <summary>
-        /// Berechnung der Fahrtdauer von der Haltestelle H16 zu H12. Die erwartete Fahrtdauer beträgt 12 Minuten
+        /// Berechnung der Fahrtdauer von der Haltestelle Leutewitz zu Prohlis Gleisschleife. Die erwartete Fahrtdauer beträgt 47 Minuten
         /// </summary>
         [TestMethod]
         public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_Leutewitz_zu_Prohlis_Linie1_PROHLIS_Ergebnis_47()
@@ -74,13 +74,13 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = linien.First(l => l.Ident == "1_PROHLIS");
 
             int expected = 47;
-            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte);
 
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Berechnung der Fahrtdauer von der Haltestelle H16 zu H12. Die erwartete Fahrtdauer beträgt 12 Minuten
+        /// Berechnung der Fahrtdauer von der Haltestelle Freystraße zu Postplatz. Die erwartete Fahrtdauer beträgt 30 Minuten
         /// </summary>
         [TestMethod]
         public void Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle_von_Freystrasse_zu_Postplatz_Linie2_Ergebnis_30()
@@ -95,7 +95,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Linie linie = linien.First(l => l.Ident == "2_BETRIEBSHOF_GORBITZ");
 
             int expected = 30;
-            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte, haltestellen: haltestellen);
+            int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(linie: linie, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, streckenabschnitte: streckenabschnitte);
 
             Assert.AreEqual(expected, actual);
         }

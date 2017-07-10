@@ -1,1 +1,943 @@
-[{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Leutewitz"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Gottfried-Keller-Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Cossebauder Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Flügelweg"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Bremer Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Hamburger Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Waltherstraße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Manitiusstraße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Koreanischer Platz"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Bahnhof Mitte"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Schweriner Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Postplatz"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Altmarkt"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Pirnaischer Platz"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Dt. Hygiene-Museum"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Straßburger Platz"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Comeniusplatz"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Lipsiusstraße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Karcherallee"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Zwinglistraße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Liebstädter Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Rauensteinstraße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Rennplatzstraße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Marienberger Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Prof.-Ricker-Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Lassallestraße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"},{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Abzweig nach Reick"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Breitscheidstraße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Hp. Dobritz"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Mügelner Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Albert-Wolf-Platz"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Jacob-Winter-Platz"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Georg-Palitzsch-Straße"},{"Linien":[{"Ident":"1_PROHLIS","Name":"1"},{"Ident":"1_LEUTEWITZ","Name":"1"}],"Name":"Prohlis Gleisschleife"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Freystraße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Meußlitzer Straße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Heckenweg"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Berthold-Haupt-Straße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Altleuben"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Rottwerndorfer Straße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Cottaer Straße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Semmelweisstraße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Burgkstraße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Pennricher Straße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Chamissostraße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Hebbelplatz"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Coventrystraße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Dahlienweg"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Amalie-Dietrich-Platz"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Merianplatz"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Kirschenstraße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Schlehenstraße"},{"Linien":[{"Ident":"2_FREYSTRASSE","Name":"2"},{"Ident":"2_BETRIEBSHOF_GORBITZ","Name":"2"}],"Name":"Betriebshof Gorbitz"},{"Linien":[],"Name":"Coschütz"},{"Linien":[],"Name":"Achtbeeteweg"},{"Linien":[],"Name":"Saarstraße"},{"Linien":[],"Name":"Kotteweg"},{"Linien":[],"Name":"Cämmerswalder Straße"},{"Linien":[],"Name":"Plauen, Nöthn.Straße"},{"Linien":[],"Name":"Münchner Platz"},{"Linien":[],"Name":"Nürnberger Platz"},{"Linien":[],"Name":"Reichenbachstraße"},{"Linien":[],"Name":"Hauptbahnhof"},{"Linien":[],"Name":"Hauptbahnhof Nord"},{"Linien":[],"Name":"Walpurgisstraße"},{"Linien":[],"Name":"Synagoge"},{"Linien":[],"Name":"Carolaplatz"},{"Linien":[],"Name":"Albertplatz"},{"Linien":[],"Name":"Bahnhof Neustadt"},{"Linien":[],"Name":"Bf. Neust.(Hansastraße)"},{"Linien":[],"Name":"Lößnitzstraße"},{"Linien":[],"Name":"Großenhainer Platz"},{"Linien":[],"Name":"Liststraße"},{"Linien":[],"Name":"Zeithainer Straße"},{"Linien":[],"Name":"Trachenberger Platz"},{"Linien":[],"Name":"Hubertusplatz"},{"Linien":[],"Name":"D.-Erxleben-Straße"},{"Linien":[],"Name":"Wilder Mann"}]
+[
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Leutewitz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Gottfried-Keller-Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Cossebauder Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Flügelweg"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Bremer Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Hamburger Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Waltherstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Manitiusstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Koreanischer Platz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Bahnhof Mitte"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Schweriner Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Postplatz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Altmarkt"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Pirnaischer Platz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Dt. Hygiene-Museum"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Straßburger Platz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Comeniusplatz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Lipsiusstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Karcherallee"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Zwinglistraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Liebstädter Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Rauensteinstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Rennplatzstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Marienberger Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Prof.-Ricker-Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Lassallestraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            },
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Abzweig nach Reick"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Breitscheidstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Hp. Dobritz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Mügelner Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Albert-Wolf-Platz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Jacob-Winter-Platz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Georg-Palitzsch-Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "1_PROHLIS",
+                "Name": "1"
+            },
+            {
+                "Ident": "1_LEUTEWITZ",
+                "Name": "1"
+            }
+        ],
+        "Name": "Prohlis Gleisschleife"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Freystraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Meußlitzer Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Heckenweg"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Berthold-Haupt-Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Altleuben"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Rottwerndorfer Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Cottaer Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Semmelweisstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Burgkstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Pennricher Straße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Chamissostraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Hebbelplatz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Coventrystraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Dahlienweg"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Amalie-Dietrich-Platz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Merianplatz"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Kirschenstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Schlehenstraße"
+    },
+    {
+        "Linien": [
+            {
+                "Ident": "2_FREYSTRASSE",
+                "Name": "2"
+            },
+            {
+                "Ident": "2_BETRIEBSHOF_GORBITZ",
+                "Name": "2"
+            }
+        ],
+        "Name": "Betriebshof Gorbitz"
+    },
+    {
+        "Linien": [],
+        "Name": "Coschütz"
+    },
+    {
+        "Linien": [],
+        "Name": "Achtbeeteweg"
+    },
+    {
+        "Linien": [],
+        "Name": "Saarstraße"
+    },
+    {
+        "Linien": [],
+        "Name": "Kotteweg"
+    },
+    {
+        "Linien": [],
+        "Name": "Cämmerswalder Straße"
+    },
+    {
+        "Linien": [],
+        "Name": "Plauen, Nöthn.Straße"
+    },
+    {
+        "Linien": [],
+        "Name": "Münchner Platz"
+    },
+    {
+        "Linien": [],
+        "Name": "Nürnberger Platz"
+    },
+    {
+        "Linien": [],
+        "Name": "Reichenbachstraße"
+    },
+    {
+        "Linien": [],
+        "Name": "Hauptbahnhof"
+    },
+    {
+        "Linien": [],
+        "Name": "Hauptbahnhof Nord"
+    },
+    {
+        "Linien": [],
+        "Name": "Walpurgisstraße"
+    },
+    {
+        "Linien": [],
+        "Name": "Synagoge"
+    },
+    {
+        "Linien": [],
+        "Name": "Carolaplatz"
+    },
+    {
+        "Linien": [],
+        "Name": "Albertplatz"
+    },
+    {
+        "Linien": [],
+        "Name": "Bahnhof Neustadt"
+    },
+    {
+        "Linien": [],
+        "Name": "Bf. Neust.(Hansastraße)"
+    },
+    {
+        "Linien": [],
+        "Name": "Lößnitzstraße"
+    },
+    {
+        "Linien": [],
+        "Name": "Großenhainer Platz"
+    },
+    {
+        "Linien": [],
+        "Name": "Liststraße"
+    },
+    {
+        "Linien": [],
+        "Name": "Zeithainer Straße"
+    },
+    {
+        "Linien": [],
+        "Name": "Trachenberger Platz"
+    },
+    {
+        "Linien": [],
+        "Name": "Hubertusplatz"
+    },
+    {
+        "Linien": [],
+        "Name": "D.-Erxleben-Straße"
+    },
+    {
+        "Linien": [],
+        "Name": "Wilder Mann"
+    }
+]
