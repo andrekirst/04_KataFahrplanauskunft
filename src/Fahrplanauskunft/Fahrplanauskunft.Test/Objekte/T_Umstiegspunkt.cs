@@ -90,5 +90,19 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(umstiegspunkt1 != umstiegspunkt2);
         }
+
+        /// <summary>
+        /// Test, wenn alle Attribute null sind, dass der HashCode 0 ist
+        /// </summary>
+        [TestMethod]
+        public void Umstiegspunkt_GetHashCode_Attribute_null_Erwartet_0()
+        {
+            Umstiegspunkt umstiegspunkt = new Umstiegspunkt();
+
+            int expected = 0;
+            int actual = umstiegspunkt.GetHashCode();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

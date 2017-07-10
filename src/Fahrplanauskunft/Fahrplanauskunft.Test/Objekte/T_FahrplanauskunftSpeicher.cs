@@ -27,7 +27,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "B1", ident: "B11")
+                    new Linie(name: "B1", ident: "B11", farbe: "#FF4500")
                 },
                 Haltestellen = new List<Haltestelle>()
                 {
@@ -35,8 +35,8 @@ namespace Fahrplanauskunft.Test.Objekte
                     {
                         Linien = new List<Linie>()
                         {
-                            new Linie(name: "B1", ident: "B11"),
-                            new Linie(name: "B1", ident: "B12")
+                            new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
+                            new Linie(name: "B1", ident: "B12", farbe: "#FF4500")
                         }
                     }
                 },
@@ -48,12 +48,12 @@ namespace Fahrplanauskunft.Test.Objekte
                         {
                             Linien = new List<Linie>()
                             {
-                                new Linie(name: "B1", ident: "B11"),
-                                new Linie(name: "B1", ident: "B12")
+                                new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
+                                new Linie(name: "B1", ident: "B12", farbe: "#FF4500")
                             }
                         },
                         Uhrzeit = 720,
-                        Linie = new Linie(name: "B1", ident: "B11")
+                        Linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500")
                     }
                 },
                 Streckenabschnitte = new List<Streckenabschnitt>()
@@ -61,23 +61,23 @@ namespace Fahrplanauskunft.Test.Objekte
                     new Streckenabschnitt()
                     {
                         Dauer = 1,
-                        Linie = new Linie(name: "B1", ident: "B11"),
+                        Linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
                         StartHaltestelle = new Haltestelle(name: "H1")
                         {
                             Linien = new List<Linie>()
                             {
-                                new Linie(name: "B1", ident: "B11"),
-                                new Linie(name: "B1", ident: "B12")
+                                new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
+                                new Linie(name: "B1", ident: "B12", farbe: "#FF4500")
                             }
                         },
                         ZielHaltestelle = new Haltestelle(name: "H2")
                         {
                             Linien = new List<Linie>()
                             {
-                                new Linie(name: "B1", ident: "B11"),
-                                new Linie(name: "B1", ident: "B12"),
-                                new Linie(name: "B3", ident: "B31"),
-                                new Linie(name: "B3", ident: "B32")
+                                new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
+                                new Linie(name: "B1", ident: "B12", farbe: "#FF4500"),
+                                new Linie(name: "B3", ident: "B31", farbe: "#AA4500"),
+                                new Linie(name: "B3", ident: "B32", farbe: "#AA4500")
                             }
                         }
                     }
@@ -112,8 +112,8 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD"),
-                new Linie(name: "U1", ident: "U1_SUED")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
             };
 
             List<Haltestelle> expected = new List<Haltestelle>()
@@ -139,8 +139,8 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD"),
-                new Linie(name: "U1", ident: "U1_SUED")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
@@ -179,7 +179,7 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
             #endregion
 
@@ -204,16 +204,16 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD"),
-                new Linie(name: "U1", ident: "U1_SUED"),
-                new Linie(name: "U2", ident: "U2_A"),
-                new Linie(name: "U2", ident: "U2_B"),
-                new Linie(name: "U3", ident: "U3_A"),
-                new Linie(name: "U3", ident: "U3_B"),
-                new Linie(name: "U4", ident: "U4_A"),
-                new Linie(name: "U4", ident: "U4_B"),
-                new Linie(name: "U5", ident: "U5_A"),
-                new Linie(name: "U5", ident: "U5_B")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500"),
+                new Linie(name: "U2", ident: "U2_A", farbe: "#EE4500"),
+                new Linie(name: "U2", ident: "U2_B", farbe: "#EE4500"),
+                new Linie(name: "U3", ident: "U3_A", farbe: "#DD4500"),
+                new Linie(name: "U3", ident: "U3_B", farbe: "#DD4500"),
+                new Linie(name: "U4", ident: "U4_A", farbe: "#CC4500"),
+                new Linie(name: "U4", ident: "U4_B", farbe: "#CC4500"),
+                new Linie(name: "U5", ident: "U5_A", farbe: "#BB4500"),
+                new Linie(name: "U5", ident: "U5_B", farbe: "#BB4500")
             };
             #endregion
 
@@ -238,8 +238,8 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD"),
-                new Linie(name: "U1", ident: "U1_SUED")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
@@ -277,8 +277,8 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD"),
-                new Linie(name: "U1", ident: "U1_SUED")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
@@ -333,7 +333,7 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
@@ -369,7 +369,7 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
@@ -414,7 +414,7 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
@@ -460,8 +460,8 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD"),
-                new Linie(name: "U1", ident: "U1_SUED")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
@@ -647,7 +647,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "B1", ident: "B11")
+                    new Linie(name: "B1", ident: "B11", farbe: "#FF4500")
                 }
             };
 

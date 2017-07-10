@@ -38,8 +38,9 @@ namespace Fahrplanauskunft.Test.Objekte
 
             string linieName = "U1";
             string linieIdent = "U1_NORD";
+            string farbe = "#FF4500";
 
-            Linie linie = new Linie(name: linieName, ident: linieIdent);
+            Linie linie = new Linie(name: linieName, ident: linieIdent, farbe: farbe);
 
             haltestelle.Linien.Add(linie);
 
@@ -88,7 +89,7 @@ namespace Fahrplanauskunft.Test.Objekte
             string name = "Test";
             Haltestelle haltestelle = new Haltestelle(name);
 
-            Linie linie = new Linie("Test", "TEST");
+            Linie linie = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
 
             Assert.AreNotEqual(haltestelle, linie);
         }
@@ -151,20 +152,34 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "U1", ident: "U1_NORD"),
-                    new Linie(name: "U1", ident: "U1_SUED")
+                    new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                    new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
                 }
             };
             Haltestelle h2 = new Haltestelle(name: "H2")
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "U1", ident: "U1_NORD"),
-                    new Linie(name: "U2", ident: "U2_WEST")
+                    new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                    new Linie(name: "U2", ident: "U2_WEST", farbe: "#FF4500")
                 }
             };
 
             Assert.AreNotEqual(h1, h2);
+        }
+
+        /// <summary>
+        /// Test, wenn alle Attribute null sind, dass der HashCode 0 ist
+        /// </summary>
+        [TestMethod]
+        public void Haltestelle_GetHashCode_Attribute_null_Erwartet_0()
+        {
+            Haltestelle haltestelle = new Haltestelle();
+
+            int expected = 0;
+            int actual = haltestelle.GetHashCode();
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

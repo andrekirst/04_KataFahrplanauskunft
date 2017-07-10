@@ -20,7 +20,7 @@ namespace Fahrplanauskunft.Test.Objekte
         public void Konstruktor_Haltestelle_NICHT_NULL_Uhrzeit_750_Linie_NICHT_NULL()
         {
             Haltestelle haltestelle = new Haltestelle(name: "Haltestelle1");
-            Linie linie = new Linie(name: "U1", ident: "U1_NORD");
+            Linie linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
 
             HaltestelleFahrplanEintrag haltestelleFahrplanEintrag = new HaltestelleFahrplanEintrag(haltestelle: haltestelle, uhrzeit: 750, linie: linie);
 
@@ -39,14 +39,14 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             HaltestelleFahrplanEintrag hfe2 = new HaltestelleFahrplanEintrag()
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             Assert.IsTrue(hfe1.Equals(hfe2));
@@ -62,14 +62,14 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             HaltestelleFahrplanEintrag hfe2 = new HaltestelleFahrplanEintrag()
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             Assert.IsTrue(hfe1 == hfe2);
@@ -85,14 +85,14 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             HaltestelleFahrplanEintrag hfe2 = new HaltestelleFahrplanEintrag()
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H2"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             Assert.IsFalse(hfe1 == hfe2);
@@ -108,14 +108,14 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             HaltestelleFahrplanEintrag hfe2 = new HaltestelleFahrplanEintrag()
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             Assert.IsFalse(hfe1 != hfe2);
@@ -131,14 +131,14 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             HaltestelleFahrplanEintrag hfe2 = new HaltestelleFahrplanEintrag()
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H2"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             Assert.IsTrue(hfe1 != hfe2);
@@ -154,11 +154,25 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD")
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             int actual = hfe1.GetHashCode();
-            int expected = -245967416;
+            int expected = -1428343006;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test, wenn alle Attribute null sind, dass der HashCode 206839 ist
+        /// </summary>
+        [TestMethod]
+        public void HaltestellenFahrplanEintrag_GetHashCode_Attribute_null_Erwartet_206839()
+        {
+            HaltestelleFahrplanEintrag haltestelleFahrplanEintrag = new HaltestelleFahrplanEintrag();
+
+            int expected = 206839;
+            int actual = haltestelleFahrplanEintrag.GetHashCode();
+
             Assert.AreEqual(expected, actual);
         }
     }
