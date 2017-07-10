@@ -22,7 +22,7 @@ namespace Fahrplanauskunft.Test.Objekte
             string name = "Test";
             string ident = "TEST";
             string farbe = "#FF4500";
-            Linie linie = new Linie(name, ident, farbe: farbe, id: "1");
+            Linie linie = new Linie(id: "1", name: name, ident: ident, farbe: farbe);
 
             Assert.AreEqual("Test", linie.Name);
             Assert.AreEqual("TEST", linie.Ident);
@@ -109,7 +109,7 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod]
         public void Linie_Farbe_RauteFF4500()
         {
-            Linie linie = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie linie = new Linie(id: "TEST", name: "Test", ident: "TEST", farbe: "#FF4500");
 
             string actual = linie.Farbe;
             string expected = "#FF4500";
@@ -123,8 +123,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod]
         public void Linie_Name_und_Ident_gleich_Farbe_unterschiedlich()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
-            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4501");
+            Linie actual = new Linie(id: "TEST", name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie expected = new Linie(id: "TEST", name: "Test", ident: "TEST", farbe: "#FF4501");
 
             Assert.IsTrue(actual != expected);
         }
