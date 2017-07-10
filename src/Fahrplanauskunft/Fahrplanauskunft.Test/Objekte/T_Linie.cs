@@ -22,7 +22,7 @@ namespace Fahrplanauskunft.Test.Objekte
             string name = "Test";
             string ident = "TEST";
             string farbe = "#FF4500";
-            Linie linie = new Linie(name, ident, farbe: farbe);
+            Linie linie = new Linie(name, ident, farbe: farbe, id: "1");
 
             Assert.AreEqual("Test", linie.Name);
             Assert.AreEqual("TEST", linie.Ident);
@@ -34,9 +34,9 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Equals_Name_Test_Ident_TEST()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "TEST");
 
-            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "TEST");
 
             Assert.AreEqual(expected, actual);
         }
@@ -47,8 +47,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Gleichheitsoperator_Gleicher_Linienname()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
-            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "TEST");
+            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "TEST");
 
             Assert.IsTrue(actual == expected);
         }
@@ -59,8 +59,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Gleichheitsoperator_Verschiedene_Linienname()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
-            Linie expected = new Linie(name: "Test2", ident: "TEST2", farbe: "#FF4501");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "TEST");
+            Linie expected = new Linie(name: "Test2", ident: "TEST2", farbe: "#FF4501", id: "TEST2");
 
             Assert.IsFalse(actual == expected);
         }
@@ -71,8 +71,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Ungleichheitsoperator_Gleicher_Linienname()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
-            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "TEST");
+            Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "TEST");
 
             Assert.IsFalse(actual != expected);
         }
@@ -83,8 +83,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Linie_Ungleichheitsoperator_Verschiedene_Linienname()
         {
-            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
-            Linie expected = new Linie(name: "Test2", ident: "TEST2", farbe: "#FF4501");
+            Linie actual = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "TEST");
+            Linie expected = new Linie(name: "Test2", ident: "TEST2", farbe: "#FF4501", id: "TEST2");
 
             Assert.IsTrue(actual != expected);
         }
@@ -97,7 +97,7 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             string expected = "B1 - B11 : Farbe: #FF4500";
 
-            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500");
+            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500", id: "B11");
             string actual = linie.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -127,20 +127,6 @@ namespace Fahrplanauskunft.Test.Objekte
             Linie expected = new Linie(name: "Test", ident: "TEST", farbe: "#FF4501");
 
             Assert.IsTrue(actual != expected);
-        }
-
-        /// <summary>
-        /// Test, wenn alle Attribute null sind, dass der HashCode 0 ist
-        /// </summary>
-        [TestMethod]
-        public void Linie_GetHashCode_Attribute_null_Erwartet_0()
-        {
-            Linie linie = new Linie();
-
-            int expected = 0;
-            int actual = linie.GetHashCode();
-
-            Assert.AreEqual(expected, actual);
         }
     }
 }

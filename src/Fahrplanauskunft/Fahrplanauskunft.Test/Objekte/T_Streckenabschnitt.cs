@@ -21,8 +21,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Streckenabschnitt_Konstruktor_Dauer_1_StartHaltestelle_Nicht_NULL_ZielHaltestelle_Nicht_NULL_Linien_1()
         {
-            Haltestelle startHaltestelle = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle = new Haltestelle(id: "StartHaltestelle", name: "StartHaltestelle");
+            Haltestelle zielHaltestelle = new Haltestelle(id: "ZielHaltestelle", name: "ZielHaltestelle");
 
             Linie linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
 
@@ -39,8 +39,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Streckenabschnitt_Property_Linie()
         {
-            Haltestelle startHaltestelle = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle = new Haltestelle(id: "StartHaltestelle", name: "StartHaltestelle");
+            Haltestelle zielHaltestelle = new Haltestelle(id: "ZielHaltestelle", name: "ZielHaltestelle");
             Linie linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
 
             Streckenabschnitt streckenabschnitt = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, linie: linie);
@@ -58,19 +58,19 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Streckenabschnitt_Equals_Name_Test_Ident_TEST()
         {
-            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
+            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1);
+            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
-            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle", id: "1");
+            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie2 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie2 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2);
+            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "1");
 
             Assert.AreEqual(streckenabschnitt1, streckenabschnitt2);
         }
@@ -81,19 +81,19 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Streckenabschnitt_Gleichheitsoperator_Gleicher_Streckenabschnitt()
         {
-            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
+            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1);
+            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
-            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle", id: "1");
+            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie2 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie2 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2);
+            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "1");
 
             Assert.IsTrue(streckenabschnitt1 == streckenabschnitt2);
         }
@@ -104,19 +104,19 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Streckenabschnitt_Gleichheitsoperator_Verschiedene_Streckenabschnitte()
         {
-            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
+            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1);
+            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
-            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle2");
-            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle2");
+            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle2", id: "3");
+            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle2", id: "4");
 
-            Linie linie2 = new Linie(name: "U12", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie2 = new Linie(name: "U12", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2);
+            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "2");
 
             Assert.IsFalse(streckenabschnitt1 == streckenabschnitt2);
         }
@@ -127,19 +127,19 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Streckenabschnitt_Ungleichheitsoperator_Gleicher_Streckenabschnitt()
         {
-            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
+            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1);
+            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
-            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle", id: "1");
+            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie2 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie2 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2);
+            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "1");
 
             Assert.IsFalse(streckenabschnitt1 != streckenabschnitt2);
         }
@@ -150,54 +150,21 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Streckenabschnitt_Ungleichheitsoperator_Verschiedene_Streckenabschnitte()
         {
-            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
+            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1);
+            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
-            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle2");
-            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle2");
+            Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle2", id: "3");
+            Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle2", id: "4");
 
-            Linie linie2 = new Linie(name: "U12", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie2 = new Linie(name: "U12", ident: "U1_NORD", farbe: "#FF4500", id: "1");
 
-            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2);
+            Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "2");
 
             Assert.IsTrue(streckenabschnitt1 != streckenabschnitt2);
-        }
-
-        /// <summary>
-        /// Testet den Hashcode, der durch die Dauer, die zwei Haltestellen und die Linien erzeugt wird
-        /// </summary>
-        [TestMethod, TestCategory("Objekte")]
-        public void Streckenabschnitt_GetHashCode()
-        {
-            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle");
-
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
-
-            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1);
-
-            int actual = streckenabschnitt1.GetHashCode();
-
-            int expected = 1826950849;
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// Test, wenn alle Attribute null sind, dass der HashCode 4757297 ist
-        /// </summary>
-        [TestMethod]
-        public void Streckenabschnitt_GetHashCode_Attribute_null_Erwartet_4757297()
-        {
-            Streckenabschnitt streckenabschnitt = new Streckenabschnitt();
-
-            int expected = 4757297;
-            int actual = streckenabschnitt.GetHashCode();
-
-            Assert.AreEqual(expected, actual);
         }
     }
 }

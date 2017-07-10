@@ -10,12 +10,13 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein Umstiegspunkt ist eine Haltestelle mit mindensten 2 verschiedenen Linien
     /// </summary>
-    public class Umstiegspunkt : IEquatable<Umstiegspunkt>
+    public class Umstiegspunkt : FahrplanauskunftObjektBase, IEquatable<Umstiegspunkt>
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
         public Umstiegspunkt()
+            : base()
         {
         }
 
@@ -24,6 +25,7 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         /// <param name="haltestelle">Ein Haltestelleobjekt</param>
         public Umstiegspunkt(Haltestelle haltestelle)
+            : base(id: haltestelle.ID)
         {
             Haltestelle = haltestelle;
             Name = haltestelle.Name;
@@ -78,7 +80,7 @@ namespace Fahrplanauskunft.Objekte
                 other,
                 () =>
                 {
-                    return Name == other.Name && Haltestelle == other.Haltestelle;
+                    return base.Equals(other) && Name == other.Name && Haltestelle == other.Haltestelle;
                 });
         }
 
@@ -98,7 +100,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return Name == null ? 0 : Name.GetHashCode();
+            return base.GetHashCode();
         }
 
         /// <summary>

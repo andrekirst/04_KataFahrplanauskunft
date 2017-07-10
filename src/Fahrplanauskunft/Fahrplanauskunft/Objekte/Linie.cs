@@ -3,10 +3,6 @@
 // </copyright>
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.Objekte
@@ -14,12 +10,13 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Eine Linie ist eine Sammlung von Haltestellen, die das jeweilige Transportsystem, wie eine Linie, abfährt.
     /// </summary>
-    public class Linie : IEquatable<Linie>
+    public class Linie : FahrplanauskunftObjektBase, IEquatable<Linie>
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
         public Linie()
+            : base()
         {
         }
 
@@ -29,7 +26,9 @@ namespace Fahrplanauskunft.Objekte
         /// <param name="name">Der Name der Linie (für Hin- und Gegenrichtung)</param>
         /// <param name="ident">Der Identifizierer der Linie (nur eine Richtung)</param>
         /// <param name="farbe">Die Farbe für die Linie</param>
-        public Linie(string name, string ident, string farbe)
+        /// <param name="id">Die ID der Linie</param>
+        public Linie(string id, string name, string ident, string farbe)
+            : base(id: id)
         {
             Name = name;
             Ident = ident;
@@ -94,7 +93,7 @@ namespace Fahrplanauskunft.Objekte
                 other,
                 () =>
                 {
-                    return this.Name == other.Name && this.Ident == other.Ident && this.Farbe == other.Farbe;
+                    return base.Equals(other) && Name == other.Name && Ident == other.Ident && Farbe == other.Farbe;
                 });
         }
 
@@ -105,7 +104,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Linie);
+            return Equals(obj as Linie);
         }
 
         /// <summary>
@@ -114,10 +113,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return
-                (Name == null ? 0 : Name.GetHashCode() * 3) +
-                (Ident == null ? 0 : Ident.GetHashCode() * 2) +
-                (Farbe == null ? 0 : Farbe.GetHashCode());
+            return base.GetHashCode();
         }
 
         /// <summary>

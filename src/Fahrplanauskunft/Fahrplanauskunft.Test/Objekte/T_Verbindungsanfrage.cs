@@ -19,8 +19,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Verbindungsanfrage_Konstruktor_StartHaltestelle_Nicht_NULL_ZielHaltestelle_Nicht_NULL_WunschAbfahrtszeit_723()
         {
-            Haltestelle startHaltestelle = new Haltestelle(name: "StartHaltestelle");
-            Haltestelle zielHaltestelle = new Haltestelle(name: "ZielHaltestelle");
+            Haltestelle startHaltestelle = new Haltestelle(id: "1", name: "StartHaltestelle");
+            Haltestelle zielHaltestelle = new Haltestelle(id: "2", name: "ZielHaltestelle");
 
             int wunschAbfahrtszeit = 723;
 

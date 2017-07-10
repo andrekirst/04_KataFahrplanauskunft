@@ -12,12 +12,13 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Eine Haltestelle ist ein Punkt, an denen ein- und ausgestiegen werden kann.
     /// </summary>
-    public class Haltestelle : IEquatable<Haltestelle>
+    public class Haltestelle : FahrplanauskunftObjektBase, IEquatable<Haltestelle>
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
         public Haltestelle()
+            : base()
         {
             Linien = new List<Linie>();
         }
@@ -26,10 +27,12 @@ namespace Fahrplanauskunft.Objekte
         /// Konstruktor mit dem Namen der Haltestelle
         /// </summary>
         /// <param name="name">Der Name der Haltestelle</param>
-        public Haltestelle(string name)
-            : this()
+        /// <param name="id">Die ID der Haltestelle</param>
+        public Haltestelle(string id, string name)
+            : base(id: id)
         {
             Name = name;
+            Linien = new List<Objekte.Linie>();
         }
 
         /// <summary>
@@ -81,8 +84,10 @@ namespace Fahrplanauskunft.Objekte
                 other,
                 () =>
                 {
-                    return this.Name == other.Name &&
-                    this.Linien.SequenceEqual(other.Linien);
+                    return
+                        base.Equals(other) &&
+                        Name == other.Name &&
+                        Linien.SequenceEqual(other.Linien);
                 });
         }
 
@@ -102,7 +107,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return Name == null ? 0 : Name.GetHashCode();
+            return base.GetHashCode();
         }
 
         /// <summary>

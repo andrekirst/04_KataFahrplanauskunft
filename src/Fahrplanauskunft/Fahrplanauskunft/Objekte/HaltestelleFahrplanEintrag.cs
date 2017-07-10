@@ -10,12 +10,13 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein HaltestelleFahrplanEintrag beinhaltet die Information, wann, wo und mit welche Linie abfährt
     /// </summary>
-    public class HaltestelleFahrplanEintrag : IEquatable<HaltestelleFahrplanEintrag>
+    public class HaltestelleFahrplanEintrag : FahrplanauskunftObjektBase, IEquatable<HaltestelleFahrplanEintrag>
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
         public HaltestelleFahrplanEintrag()
+            : base()
         {
         }
 
@@ -25,7 +26,9 @@ namespace Fahrplanauskunft.Objekte
         /// <param name="haltestelle">Eine Haltestelle</param>
         /// <param name="uhrzeit">Die Uhrzeit, wann abgefahren wird</param>
         /// <param name="linie">Die Linie, die an der Haltestelle los fährt</param>
-        public HaltestelleFahrplanEintrag(Haltestelle haltestelle, int uhrzeit, Linie linie)
+        /// <param name="id">Die ID des Haltestellenfahrplaneintrages</param>
+        public HaltestelleFahrplanEintrag(string id, Haltestelle haltestelle, int uhrzeit, Linie linie)
+            : base(id: id)
         {
             Haltestelle = haltestelle;
             Uhrzeit = uhrzeit;
@@ -92,9 +95,11 @@ namespace Fahrplanauskunft.Objekte
                 other,
                 () =>
                 {
-                    return Uhrzeit == other.Uhrzeit &&
-                    Linie == other.Linie &&
-                    Haltestelle == other.Haltestelle;
+                    return
+                        base.Equals(other) &&
+                        Uhrzeit == other.Uhrzeit &&
+                        Linie == other.Linie &&
+                        Haltestelle == other.Haltestelle;
                 });
         }
 
@@ -114,16 +119,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der Hashcode</returns>
         public override int GetHashCode()
         {
-            unchecked
-            {
-                int hash = 17;
-
-                // Suitable nullity checks etc, of course :)
-                hash = (hash * 23) + Uhrzeit.GetHashCode();
-                hash = (hash * 23) + (Linie == null ? 0 : Linie.GetHashCode());
-                hash = (hash * 23) + (Haltestelle == null ? 0 : Haltestelle.GetHashCode());
-                return hash;
-            }
+            return base.GetHashCode();
         }
     }
 }

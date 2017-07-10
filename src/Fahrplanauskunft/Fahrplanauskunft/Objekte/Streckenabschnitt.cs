@@ -11,12 +11,13 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein Streckenabschnitt ist eine Verbindung zwischen zwei Haltestellen, auf der n Linien fahren und eine Zeit x für die Fahrt benötigt wird.
     /// </summary>
-    public class Streckenabschnitt : IEquatable<Streckenabschnitt>
+    public class Streckenabschnitt : FahrplanauskunftObjektBase, IEquatable<Streckenabschnitt>
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
         public Streckenabschnitt()
+            : base()
         {
         }
 
@@ -27,7 +28,9 @@ namespace Fahrplanauskunft.Objekte
         /// <param name="startHaltestelle">Die Start-Haltestelle</param>
         /// <param name="zielHaltestelle">Die Ziel-Haltestelle</param>
         /// <param name="linie">Die Linie, die auf diesem Streckenabschnitt fährt</param>
-        public Streckenabschnitt(int dauer, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, Linie linie)
+        /// <param name="id">Die ID des Streckenabschnittes</param>
+        public Streckenabschnitt(string id, int dauer, Haltestelle startHaltestelle, Haltestelle zielHaltestelle, Linie linie)
+            : base(id: id)
         {
             Dauer = dauer;
             StartHaltestelle = startHaltestelle;
@@ -104,7 +107,9 @@ namespace Fahrplanauskunft.Objekte
                 other,
                 () =>
                 {
-                    return Dauer == other.Dauer &&
+                    return
+                    base.Equals(other) &&
+                    Dauer == other.Dauer &&
                     StartHaltestelle == other.StartHaltestelle &&
                     ZielHaltestelle == other.ZielHaltestelle &&
                     Linie == other.Linie;
@@ -127,18 +132,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der Hashcode</returns>
         public override int GetHashCode()
         {
-            unchecked
-            {
-                int hash = 17;
-
-                // Suitable nullity checks etc, of course :)
-                hash = (hash * 23) + Dauer.GetHashCode();
-                hash = (hash * 23) + (StartHaltestelle == null ? 0 : StartHaltestelle.GetHashCode());
-                hash = (hash * 23) + (ZielHaltestelle == null ? 0 : ZielHaltestelle.GetHashCode());
-                hash = (hash * 23) + (Linie == null ? 0 : Linie.GetHashCode());
-
-                return hash;
-            }
+            return base.GetHashCode();
         }
     }
 }
