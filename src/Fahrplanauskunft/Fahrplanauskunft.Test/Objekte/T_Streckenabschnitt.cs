@@ -24,9 +24,9 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle startHaltestelle = new Haltestelle(id: "StartHaltestelle", name: "StartHaltestelle");
             Haltestelle zielHaltestelle = new Haltestelle(id: "ZielHaltestelle", name: "ZielHaltestelle");
 
-            Linie linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie = new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500");
 
-            Streckenabschnitt streckenabschnitt = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, linie: linie);
+            Streckenabschnitt streckenabschnitt = new Streckenabschnitt(id: "SAB1", dauer: 1, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, linie: linie);
 
             Assert.AreEqual(1, streckenabschnitt.Dauer);
             Assert.AreEqual("StartHaltestelle", streckenabschnitt.StartHaltestelle.Name);
@@ -41,11 +41,11 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             Haltestelle startHaltestelle = new Haltestelle(id: "StartHaltestelle", name: "StartHaltestelle");
             Haltestelle zielHaltestelle = new Haltestelle(id: "ZielHaltestelle", name: "ZielHaltestelle");
-            Linie linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie = new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500");
 
-            Streckenabschnitt streckenabschnitt = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, linie: linie);
+            Streckenabschnitt streckenabschnitt = new Streckenabschnitt(id: "SAB1", dauer: 1, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, linie: linie);
 
-            Linie expected = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie expected = new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500");
 
             Linie actual = streckenabschnitt.Linie;
 

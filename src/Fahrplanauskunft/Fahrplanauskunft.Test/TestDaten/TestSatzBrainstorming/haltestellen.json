@@ -3,240 +3,296 @@
         "Linien": [
             {
                 "Ident": "B11",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B11"
             },
             {
                 "Ident": "B12",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B12"
             }
         ],
-        "Name": "H1"
+        "Name": "H1",
+        "ID": "H1"
     },
     {
         "Linien": [
             {
                 "Ident": "B11",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B11"
             },
             {
                 "Ident": "B12",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B12"
             },
             {
                 "Ident": "B31",
-                "Name": "B3"
+                "Name": "B3",
+                "ID": "B31"
             },
             {
                 "Ident": "B32",
-                "Name": "B3"
+                "Name": "B3",
+                "ID": "B32"
             }
         ],
-        "Name": "H2"
+        "Name": "H2",
+        "ID": "H2"
     },
     {
         "Linien": [
             {
                 "Ident": "B11",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B11"
             },
             {
                 "Ident": "B12",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B12"
             }
         ],
-        "Name": "H3"
+        "Name": "H3",
+        "ID": "H3"
     },
     {
         "Linien": [
             {
                 "Ident": "B11",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B11"
             },
             {
                 "Ident": "B12",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B12"
             },
             {
                 "Ident": "B21",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B21"
             },
             {
                 "Ident": "B22",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B22"
             }
         ],
-        "Name": "H4"
+        "Name": "H4",
+        "ID": "H4"
     },
     {
         "Linien": [
             {
                 "Ident": "B11",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B11"
             },
             {
                 "Ident": "B12",
-                "Name": "B1"
+                "Name": "B1",
+                "ID": "B12"
             }
         ],
-        "Name": "H5"
+        "Name": "H5",
+        "ID": "H5"
     },
     {
         "Linien": [
             {
                 "Ident": "B21",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B21"
             },
             {
                 "Ident": "B22",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B22"
             }
         ],
-        "Name": "H6"
+        "Name": "H6",
+        "ID": "H6"
     },
     {
         "Linien": [
             {
                 "Ident": "B21",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B21"
             },
             {
                 "Ident": "B22",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B22"
             }
         ],
-        "Name": "H7"
+        "Name": "H7",
+        "ID": "H7"
     },
     {
         "Linien": [
             {
                 "Ident": "B21",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B21"
             },
             {
                 "Ident": "B22",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B22"
             },
             {
                 "Ident": "B31",
-                "Name": "B3"
+                "Name": "B3",
+                "ID": "B31"
             },
             {
                 "Ident": "B32",
-                "Name": "B3"
+                "Name": "B3",
+                "ID": "B32"
             },
             {
                 "Ident": "B41",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B41"
             },
             {
                 "Ident": "B42",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B42"
             }
         ],
-        "Name": "H8"
+        "Name": "H8",
+        "ID": "H8"
     },
     {
         "Linien": [
             {
                 "Ident": "B21",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B21"
             },
             {
                 "Ident": "B22",
-                "Name": "B2"
+                "Name": "B2",
+                "ID": "B22"
             }
         ],
-        "Name": "H9"
+        "Name": "H9",
+        "ID": "H9"
     },
     {
         "Linien": [
             {
                 "Ident": "B31",
-                "Name": "B3"
+                "Name": "B3",
+                "ID": "B31"
             },
             {
                 "Ident": "B32",
-                "Name": "B3"
+                "Name": "B3",
+                "ID": "B32"
             }
         ],
-        "Name": "H10"
+        "Name": "H10",
+        "ID": "H10"
     },
     {
         "Linien": [
             {
                 "Ident": "B31",
-                "Name": "B3"
+                "Name": "B3",
+                "ID": "B31"
             },
             {
                 "Ident": "B32",
-                "Name": "B3"
+                "Name": "B3",
+                "ID": "B32"
             }
         ],
-        "Name": "H11"
+        "Name": "H11",
+        "ID": "H11"
     },
     {
         "Linien": [
             {
                 "Ident": "B41",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B41"
             },
             {
                 "Ident": "B42",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B42"
             }
         ],
-        "Name": "H12"
+        "Name": "H12",
+        "ID": "H12"
     },
     {
         "Linien": [
             {
                 "Ident": "B41",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B41"
             },
             {
                 "Ident": "B42",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B42"
             }
         ],
-        "Name": "H13"
+        "Name": "H13",
+        "ID": "H13"
     },
     {
         "Linien": [
             {
                 "Ident": "B41",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B41"
             },
             {
                 "Ident": "B42",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B42"
             }
         ],
-        "Name": "H14"
+        "Name": "H14",
+        "ID": "H14"
     },
     {
         "Linien": [
             {
                 "Ident": "B41",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B41"
             },
             {
                 "Ident": "B42",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B42"
             }
         ],
-        "Name": "H15"
+        "Name": "H15",
+        "ID": "H15"
     },
     {
         "Linien": [
             {
                 "Ident": "B41",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B41"
             },
             {
                 "Ident": "B42",
-                "Name": "B4"
+                "Name": "B4",
+                "ID": "B42"
             }
         ],
-        "Name": "H16"
+        "Name": "H16",
+        "ID": "H16"
     }
 ]
