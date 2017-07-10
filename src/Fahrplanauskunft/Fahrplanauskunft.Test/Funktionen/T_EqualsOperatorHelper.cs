@@ -32,7 +32,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod, TestCategory("EqualsOperatorHelper")]
         public void EqualsOperatorHelper_Parameter_a_Ist_Null_b_Nicht_Null()
         {
-            Linie linie = new Linie(name: "Linie 1", ident: "L1");
+            Linie linie = new Linie(name: "Linie 1", ident: "L1", farbe: "#FF4500");
 
             bool expected = false;
             bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(linie, null);
@@ -46,7 +46,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod, TestCategory("EqualsOperatorHelper")]
         public void EqualsOperatorHelper_Parameter_a_Ist_Nicht_Null_b_ist_Null()
         {
-            Linie linie = new Linie(name: "Linie 1", ident: "L1");
+            Linie linie = new Linie(name: "Linie 1", ident: "L1", farbe: "#FF4500");
 
             bool expected = false;
             bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(null, linie);
@@ -60,7 +60,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod, TestCategory("EqualsOperatorHelper")]
         public void EqualsOperatorHelper_Beide_Parameter_gleiche_Instanz()
         {
-            Linie linie = new Linie(name: "Linie 1", ident: "L1");
+            Linie linie = new Linie(name: "Linie 1", ident: "L1", farbe: "#FF4500");
 
             bool expected = true;
             bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(linie, linie);
@@ -74,8 +74,8 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod, TestCategory("EqualsOperatorHelper")]
         public void EqualsOperatorHelper_Unterschiedliche_Instanzen_Unterschiedliche_Werte()
         {
-            Linie linie1 = new Linie(name: "Linie 1", ident: "L1");
-            Linie linie2 = new Linie(name: "Linie 2", ident: "L2");
+            Linie linie1 = new Linie(name: "Linie 1", ident: "L1", farbe: "#FF4500");
+            Linie linie2 = new Linie(name: "Linie 2", ident: "L2", farbe: "#FF4501");
 
             bool expected = false;
             bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(linie1, linie2);
@@ -89,8 +89,8 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod, TestCategory("EqualsOperatorHelper")]
         public void EqualsOperatorHelper_Unterschiedliche_Instanzen_gleiche_Werte()
         {
-            Linie linie1 = new Linie(name: "Linie 1", ident: "L1");
-            Linie linie2 = new Linie(name: "Linie 1", ident: "L1");
+            Linie linie1 = new Linie(name: "Linie 1", ident: "L1", farbe: "#FF4500");
+            Linie linie2 = new Linie(name: "Linie 1", ident: "L1", farbe: "#FF4500");
 
             bool expected = true;
             bool actual = EqualsOperatorHelper.EqualsOperatorBase<Linie>(linie1, linie2);

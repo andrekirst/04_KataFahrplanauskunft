@@ -53,3 +53,9 @@ Test des Ungleichheitsoperators mit zwei ungleichen Streckenabschnitten
 #### Beschreibung
 
 Testet den Hashcode, der durch die Dauer, die zwei Haltestellen und die Linien erzeugt wird
+
+### Streckenabschnitt_GetHashCode_Attribute_null_Erwartet_4757297
+
+#### Beschreibung
+
+Test, wenn alle Attribute null sind, dass der HashCode 4757297 ist

@@ -47,3 +47,21 @@ Test des Ungleichheitsoperators mit zwei Linien mit verschiedenen Namen
 #### Beschreibung
 
 Testet die Methode ToString. Erwartet "B1 - B11"
+
+### Linie_Farbe_RauteFF4500
+
+#### Beschreibung
+
+Testet, ob die Eigenschaft Farbe den Wert aus dem Konstruktor übernimmt
+
+### Linie_Name_und_Ident_gleich_Farbe_unterschiedlich
+
+#### Beschreibung
+
+Test, dass das Attribut Farbe mit unterschiedlichen Werten verglichen wird
+
+### Linie_GetHashCode_Attribute_null_Erwartet_0
+
+#### Beschreibung
+
+Test, wenn alle Attribute null sind, dass der HashCode 0 ist

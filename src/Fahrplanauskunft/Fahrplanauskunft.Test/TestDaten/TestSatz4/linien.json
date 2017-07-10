@@ -1,1 +1,52 @@
-[{"Name":"U1","Ident":"U1_NORD"},{"Name":"U1","Ident":"U1_SUED"},{"Name":"U2","Ident":"U2_A"},{"Name":"U2","Ident":"U2_B"},{"Name":"U3","Ident":"U3_A"},{"Name":"U3","Ident":"U3_B"},{"Name":"U4","Ident":"U4_A"},{"Name":"U4","Ident":"U4_B"},{"Name":"U5","Ident":"U5_A"},{"Name":"U5","Ident":"U5_B"}]
+[
+    {
+        "Name": "U1",
+        "Ident": "U1_NORD",
+        "Farbe": "#FF4500"
+    },
+    {
+        "Name": "U1",
+        "Ident": "U1_SUED",
+        "Farbe": "#FF4500"
+    },
+    {
+        "Name": "U2",
+        "Ident": "U2_A",
+        "Farbe": "#EE4500"
+    },
+    {
+        "Name": "U2",
+        "Ident": "U2_B",
+        "Farbe": "#EE4500"
+    },
+    {
+        "Name": "U3",
+        "Ident": "U3_A",
+        "Farbe": "#DD4500"
+    },
+    {
+        "Name": "U3",
+        "Ident": "U3_B",
+        "Farbe": "#DD4500"
+    },
+    {
+        "Name": "U4",
+        "Ident": "U4_A",
+        "Farbe": "#CC4500"
+    },
+    {
+        "Name": "U4",
+        "Ident": "U4_B",
+        "Farbe": "#CC4500"
+    },
+    {
+        "Name": "U5",
+        "Ident": "U5_A",
+        "Farbe": "#BB4500"
+    },
+    {
+        "Name": "U5",
+        "Ident": "U5_B",
+        "Farbe": "#BB4500"
+    }
+]

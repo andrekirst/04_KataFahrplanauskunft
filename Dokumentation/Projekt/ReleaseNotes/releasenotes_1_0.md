@@ -30,6 +30,7 @@
 * #107 - ToString-Methode für Objekte Linie `feature`
 * #105 - Erstellung von Projekten (Implementierung, Test) für einen WindowsForms-Editor für die Bearbeitung der Objekte `feature`, `ui-windowsforms-editor`
 * #110 - Speichern des FahrplanauskunftSpeicher `feature`
+* #112 - Neues Attribut Farbe für das Objekt Linie `feature`
 
 ## Bugfixes
 
@@ -37,3 +38,4 @@
 * #86 - Build-Prozess fehlerhaft, wenn es außerhalb eines Pull request stattfindet `bug`, `umgebung`
 * #90 - Fehler beim Upload für SFTP, BinTray falscher Branch und falsche Konfiguration `bug`, `umgebung`
 * #98 - Fehler bei der Konvertierung der Zeit von Zahl zu Text, wenn die Zahl den Wert 800 hat `bug`
+* #114 - Fehler in der Methode GetHashCode, wenn die Attribute null sind `bug`
