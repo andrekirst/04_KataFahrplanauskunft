@@ -94,6 +94,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Haltestelle> actual = Logik.Liefere_Haltestellen_einer_Linie(
                 new Linie()
                 {
+                    ID = "B11",
                     Ident = "B11",
                     Name = "B1"
                 },
@@ -122,6 +123,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Haltestelle> actual = Logik.Liefere_Haltestellen_einer_Linie(
                 new Linie()
                 {
+                    ID = "B21",
                     Ident = "B21",
                     Name = "B2"
                 },
@@ -148,6 +150,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> actual = Logik.Liefere_Umstiegspunkte_fuer_Linie(
                 new Linie()
                 {
+                    ID = "B11",
                     Ident = "B11",
                     Name = "B1"
                 },
@@ -173,6 +176,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> actual = Logik.Liefere_Umstiegspunkte_fuer_Linie(
                 new Linie()
                 {
+                    ID = "B31",
                     Ident = "B31",
                     Name = "B3"
                 },
@@ -197,6 +201,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> actual = Logik.Liefere_Umstiegspunkte_fuer_Linie(
                 new Linie()
                 {
+                    ID = "B41",
                     Ident = "B41",
                     Name = "B4"
                 },
@@ -215,8 +220,8 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>()
             {
-                new Umstiegspunkt { Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
-                new Umstiegspunkt { Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
+                new Umstiegspunkt { ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
+                new Umstiegspunkt { ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
             };
 
             List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umstiegspunkte(
@@ -224,11 +229,13 @@ namespace Fahrplanauskunft.Test.Funktionen
                 {
                     new Umstiegspunkt()
                     {
+                        ID = "Up1",
                         Name = "Up1",
                         Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
                     },
                     new Umstiegspunkt()
                     {
+                        ID = "Up3",
                         Name = "Up3",
                         Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
                     }
@@ -247,16 +254,16 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>()
             {
-                new Umstiegspunkt { Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
-                new Umstiegspunkt { Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
+                new Umstiegspunkt { ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
+                new Umstiegspunkt { ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
             };
 
             List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umstiegspunkte(
                 new List<Umstiegspunkt>()
                 {
-                    new Umstiegspunkt { Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
-                    new Umstiegspunkt { Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") },
-                    new Umstiegspunkt { Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
+                    new Umstiegspunkt { ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
+                    new Umstiegspunkt { ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") },
+                    new Umstiegspunkt { ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
                 });
 
             CollectionAssert.AreEqual(expected, actual);
@@ -274,15 +281,15 @@ namespace Fahrplanauskunft.Test.Funktionen
             {
                 new Umstiegspunkt()
                 {
-                    Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
+                    ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
                 },
                 new Umstiegspunkt()
                 {
-                    Name = "Up2", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H4")
+                    ID = "Up2", Name = "Up2", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H4")
                 },
                 new Umstiegspunkt()
                 {
-                    Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
+                    ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
                 }
             };
 
@@ -291,19 +298,19 @@ namespace Fahrplanauskunft.Test.Funktionen
                 {
                     new Umstiegspunkt()
                     {
-                        Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
+                        ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
                     },
                     new Umstiegspunkt()
                     {
-                        Name = "Up2", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H4")
+                        ID = "Up2", Name = "Up2", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H4")
                     },
                     new Umstiegspunkt()
                     {
-                        Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
+                        ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
                     },
                     new Umstiegspunkt()
                     {
-                        Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
+                        ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
                     }
             });
 
