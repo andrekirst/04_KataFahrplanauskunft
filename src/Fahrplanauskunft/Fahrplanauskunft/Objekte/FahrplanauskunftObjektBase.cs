@@ -11,7 +11,7 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Abstrakte Basisklasse für die Fahrplanauskunft-Objekte
     /// </summary>
-    public abstract class FahrplanauskunftObjektBase : IEquatable<FahrplanauskunftObjektBase>
+    public abstract class FahrplanauskunftObjektBase
     {
         /// <summary>
         /// Privates Feld für die ID des Objektes
@@ -59,7 +59,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as FahrplanauskunftObjektBase);
+            return Equals(obj as FahrplanauskunftObjektBase);
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Fahrplanauskunft.Objekte
                 other,
                 () =>
                 {
-                    return this.ID == other.ID;
+                    return ID == other.ID;
                 });
         }
 
