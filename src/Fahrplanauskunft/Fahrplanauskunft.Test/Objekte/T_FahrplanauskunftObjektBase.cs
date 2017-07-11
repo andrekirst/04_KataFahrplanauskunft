@@ -104,6 +104,18 @@ namespace Fahrplanauskunft.Test.Objekte
             Assert.IsFalse(testklasse1.Equals(testklasse2));
         }
 
+        /// <summary>
+        /// Test, ob <see cref="FahrplanauskunftObjektBase.Equals(object)"/> aufgerufen wird und true bei Gleichheit zurückgibt
+        /// </summary>
+        [TestMethod]
+        public void FahrplanauskunftObjektBase_Equals_Object()
+        {
+            object testklasse1 = new TestKlasseFahrplanauskunftObjektBase(id: "1");
+            object testklasse2 = new TestKlasseFahrplanauskunftObjektBase(id: "1");
+
+            Assert.IsTrue(testklasse1.Equals(testklasse2));
+        }
+
         private class TestKlasseFahrplanauskunftObjektBase : FahrplanauskunftObjektBase
         {
             public TestKlasseFahrplanauskunftObjektBase(string id)
