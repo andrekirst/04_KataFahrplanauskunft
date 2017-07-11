@@ -6,6 +6,16 @@ Test-Klasse: `T_FahrplanauskunftObjektBase`
 
 Test-Objekt-Klasse: `TestKlasseFahrplanauskunftObjektBase`
 
+```csharp
+private class TestKlasseFahrplanauskunftObjektBase : FahrplanauskunftObjektBase
+{
+    public TestKlasseFahrplanauskunftObjektBase(string id)
+        : base(id)
+    {
+    }
+}
+```
+
 ## Testfälle
 
 ### FahrplanauskunftObjektBase_Konstruktor_Eigenschaft_ID
@@ -43,3 +53,9 @@ Testet, ob zwei Objekte mit jeweils der ID "1" beim Vergleich mit `Fahrplanausku
 #### Beschreibung
 
 Testet, ob zwei Objekte mit der ID "1" bzw. ID "2" beim Vergleich mit `FahrplanauskunftObjektBase.Equals(object)` false zurück gibt
+
+### FahrplanauskunftObjektBase_Equals_Object
+
+#### Beschreibung
+
+Test, ob `FahrplanauskunftObjektBase.Equals(object)` aufgerufen wird und true bei Gleichheit zurückgibt
