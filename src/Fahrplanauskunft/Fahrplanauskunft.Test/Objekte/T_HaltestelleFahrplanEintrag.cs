@@ -153,5 +153,27 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(hfe1 != hfe2);
         }
+
+        /// <summary>
+        /// Test, wenn die ID den Wert "1" hat, dass der berechnete Hashwert den Wert -842352753 zurück gibt
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Objekte")]
+        public void HaltestellenFahrplanEintrage_GetHashCode_ID_1_Erwarte__842352753()
+        {
+            HaltestelleFahrplanEintrag hfe1 = new HaltestelleFahrplanEintrag()
+            {
+                Uhrzeit = 720,
+                Haltestelle = new Haltestelle(name: "H1", id: "1"),
+                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                ID = "1"
+            };
+
+            int actual = hfe1.GetHashCode();
+
+            int expected = -842352753;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

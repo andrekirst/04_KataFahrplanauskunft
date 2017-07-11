@@ -130,5 +130,21 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(actual != expected);
         }
+
+        /// <summary>
+        /// Test, wenn die ID den Wert "1" hat, dass der berechnete Hashwert den Wert -842352753 zurück gibt
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Objekte")]
+        public void FahrplanauskunftObjektBase_GetHashCode_ID_1_Erwarte__842352753()
+        {
+            Linie linie = new Linie(id: "1", name: "Test", ident: "TEST", farbe: "#FF4500");
+
+            int actual = linie.GetHashCode();
+
+            int expected = -842352753;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

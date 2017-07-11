@@ -166,5 +166,25 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Assert.IsTrue(streckenabschnitt1 != streckenabschnitt2);
         }
+
+        /// <summary>
+        /// Test, wenn die ID den Wert "1" hat, dass der berechnete Hashwert den Wert -842352753 zurück gibt
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Objekte")]
+        public void Streckenabschnitt_GetHashCode_ID_1_Erwarte__842352753()
+        {
+            Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
+            Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
+
+            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+
+            Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(id: "1", dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1);
+
+            int actual = streckenabschnitt1.GetHashCode();
+            int expected = -842352753;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
