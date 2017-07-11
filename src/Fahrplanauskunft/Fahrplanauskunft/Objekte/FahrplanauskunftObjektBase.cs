@@ -59,22 +59,8 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return Equals(obj as FahrplanauskunftObjektBase);
-        }
-
-        /// <summary>
-        /// Vergleicht die aktuelle Instanz mit einer anderen Instanz vom Typ <see cref="FahrplanauskunftObjektBase"/>
-        /// </summary>
-        /// <param name="other">Die andere Instanz vom Typ <see cref="FahrplanauskunftObjektBase"/></param>
-        /// <returns>Gibt true zurück, wenn die <see cref="ID"/> der jeweiligen Instanzen gleich sind</returns>
-        public bool Equals(FahrplanauskunftObjektBase other)
-        {
-            return EqualsHelper.EqualBase<FahrplanauskunftObjektBase>(
-                other,
-                () =>
-                {
-                    return ID == other.ID;
-                });
+            FahrplanauskunftObjektBase other = obj as FahrplanauskunftObjektBase;
+            return EqualsHelper.EqualBase<FahrplanauskunftObjektBase>(other, () => ID == other.ID);
         }
 
         /// <summary>

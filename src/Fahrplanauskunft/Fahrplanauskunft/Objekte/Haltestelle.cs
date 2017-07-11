@@ -98,7 +98,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Haltestelle);
+            return Equals(obj as Haltestelle);
         }
 
         /// <summary>
