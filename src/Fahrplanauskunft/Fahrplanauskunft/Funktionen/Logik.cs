@@ -209,11 +209,9 @@ namespace Fahrplanauskunft.Funktionen
                 // 5. Suche Rekursiv
                 foreach(Umstiegspunkt umstiegspunkt in ups)
                 {
-                    List<Umstiegspunkt> neuBereitsGeweseneUmstiegspunkte = new List<Umstiegspunkt>(bereitsGeweseneUmstiegspunkte);
-
                     TreeItem ti_child = Liefere_Hierarchie_Route_von_Haltestelle(
                         umstiegspunkt.Haltestelle,
-                        neuBereitsGeweseneUmstiegspunkte,
+                        new List<Umstiegspunkt>(bereitsGeweseneUmstiegspunkte),
                         haltestellen,
                         max_tiefe);
 
