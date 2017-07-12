@@ -2,6 +2,7 @@
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Fahrplanauskunft.Exceptions;
@@ -178,12 +179,16 @@ namespace Fahrplanauskunft.Funktionen
             // 1. aktuelle Haltestelle ist mein Root
             TreeItem ti_root_Haltestelle = new TreeItem(aktuelleHaltestelle);
 
+            Action<Umstiegspunkt> umstiegspunkthinzufuegen = (o) =>
+                {
+                    if(!bereitsGeweseneUmstiegspunkte.Contains(o))
+                    {
+                        bereitsGeweseneUmstiegspunkte.Add(o);
+                    }
+                };
+
             // 2. mache die aktuelle Haltestelle zum Umstiegspunkt(auch die eventuelle Start- oder Endhaltestelle)
-            Umstiegspunkt up = new Umstiegspunkt(aktuelleHaltestelle);
-            if(!bereitsGeweseneUmstiegspunkte.Contains(up))
-            {
-                bereitsGeweseneUmstiegspunkte.Add(up);
-            }
+            umstiegspunkthinzufuegen(new Umstiegspunkt(aktuelleHaltestelle));
 
             if(max_tiefe > 0)
             {
@@ -198,17 +203,13 @@ namespace Fahrplanauskunft.Funktionen
                 // 4. merken der gefundenen Umstiegspunkte als schon da gewesene
                 foreach(Umstiegspunkt umstiegspunkt in ups)
                 {
-                    if(!bereitsGeweseneUmstiegspunkte.Contains(umstiegspunkt))
-                    {
-                        bereitsGeweseneUmstiegspunkte.Add(umstiegspunkt);
-                    }
+                    umstiegspunkthinzufuegen(umstiegspunkt);
                 }
 
                 // 5. Suche Rekursiv
                 foreach(Umstiegspunkt umstiegspunkt in ups)
                 {
-                    List<Umstiegspunkt> neuBereitsGeweseneUmstiegspunkte = new List<Umstiegspunkt>();
-                    neuBereitsGeweseneUmstiegspunkte.AddRange(bereitsGeweseneUmstiegspunkte);
+                    List<Umstiegspunkt> neuBereitsGeweseneUmstiegspunkte = new List<Umstiegspunkt>(bereitsGeweseneUmstiegspunkte);
 
                     TreeItem ti_child = Liefere_Hierarchie_Route_von_Haltestelle(
                         umstiegspunkt.Haltestelle,
