@@ -66,7 +66,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn die Umstiegspunkte gleich sind</returns>
         public static bool operator ==(Umstiegspunkt a, Umstiegspunkt b)
         {
-            return EqualsOperatorHelper.EqualsOperatorBase<Umstiegspunkt>(a, b);
+            return EqualsOperatorHelper.EqualsOperatorBase(a, b);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(Umstiegspunkt other)
         {
-            return EqualsHelper.EqualBase<Umstiegspunkt>(
+            return EqualsHelper.EqualBase(
                 other,
                 () =>
                 {
@@ -91,7 +91,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Umstiegspunkt);
+            return Equals(obj as Umstiegspunkt);
         }
 
         /// <summary>

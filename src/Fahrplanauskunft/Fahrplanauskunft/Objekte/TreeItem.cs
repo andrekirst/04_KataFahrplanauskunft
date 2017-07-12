@@ -21,7 +21,7 @@ namespace Fahrplanauskunft.Objekte
         public TreeItem(Haltestelle haltestelle)
             : this()
         {
-            this.Haltestelle = haltestelle;
+            Haltestelle = haltestelle;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn die TreeItems gleich sind</returns>
         public static bool operator ==(TreeItem a, TreeItem b)
         {
-            return EqualsOperatorHelper.EqualsOperatorBase<TreeItem>(a, b);
+            return EqualsOperatorHelper.EqualsOperatorBase(a, b);
         }
 
         /// <summary>
@@ -77,17 +77,17 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(TreeItem other)
         {
-            return EqualsHelper.EqualBase<TreeItem>(
+            return EqualsHelper.EqualBase(
                 other,
                 () =>
                 {
                     bool equal = true;
 
-                    equal = equal == (this.Haltestelle == other.Haltestelle);
-                    if(this.Childs.Count != 0 || other.Childs.Count != 0)
+                    equal = equal == (Haltestelle == other.Haltestelle);
+                    if(Childs.Count != 0 || other.Childs.Count != 0)
                     {
                         // Reihefolge spielt keine Rolle, wir sortieren vorher
-                        equal = equal == this.Childs.OrderBy(x => x.Haltestelle.Name).SequenceEqual(other.Childs.OrderBy(x => x.Haltestelle.Name));
+                        equal = equal == Childs.OrderBy(x => x.Haltestelle.Name).SequenceEqual(other.Childs.OrderBy(x => x.Haltestelle.Name));
                     }
 
                     return equal;
@@ -101,7 +101,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as TreeItem);
+            return Equals(obj as TreeItem);
         }
 
         /// <summary>

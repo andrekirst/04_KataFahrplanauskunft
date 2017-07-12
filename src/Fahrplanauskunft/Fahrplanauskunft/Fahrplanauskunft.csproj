@@ -62,6 +62,7 @@
     <Compile Include="Funktionen\EqualsHelper.cs" />
     <Compile Include="Funktionen\EqualsOperatorHelper.cs" />
     <Compile Include="Funktionen\Logik.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Objekte\FahrplanauskunftObjektBase.cs" />
     <Compile Include="Objekte\FahrplanauskunftSpeicher.cs" />
     <Compile Include="Objekte\Haltestelle.cs" />

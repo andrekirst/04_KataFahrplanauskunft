@@ -32,7 +32,7 @@ namespace Fahrplanauskunft.Objekte
             : base(id: id)
         {
             Name = name;
-            Linien = new List<Objekte.Linie>();
+            Linien = new List<Linie>();
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn die Haltestellen gleich sind</returns>
         public static bool operator ==(Haltestelle a, Haltestelle b)
         {
-            return EqualsOperatorHelper.EqualsOperatorBase<Haltestelle>(a, b);
+            return EqualsOperatorHelper.EqualsOperatorBase(a, b);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(Haltestelle other)
         {
-            return EqualsHelper.EqualBase<Haltestelle>(
+            return EqualsHelper.EqualBase(
                 other,
                 () =>
                 {

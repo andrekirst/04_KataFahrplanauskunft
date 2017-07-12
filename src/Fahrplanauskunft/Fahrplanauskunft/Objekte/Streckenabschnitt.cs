@@ -93,7 +93,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn die Streckenabschnitte gleich sind</returns>
         public static bool operator ==(Streckenabschnitt a, Streckenabschnitt b)
         {
-            return EqualsOperatorHelper.EqualsOperatorBase<Streckenabschnitt>(a, b);
+            return EqualsOperatorHelper.EqualsOperatorBase(a, b);
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(Streckenabschnitt other)
         {
-            return EqualsHelper.EqualBase<Streckenabschnitt>(
+            return EqualsHelper.EqualBase(
                 other,
                 () =>
                 {
@@ -123,7 +123,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Streckenabschnitt);
+            return Equals(obj as Streckenabschnitt);
         }
 
         /// <summary>

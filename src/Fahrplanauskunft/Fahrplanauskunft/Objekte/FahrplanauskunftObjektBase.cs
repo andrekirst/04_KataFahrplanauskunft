@@ -60,7 +60,7 @@ namespace Fahrplanauskunft.Objekte
         public override bool Equals(object obj)
         {
             FahrplanauskunftObjektBase other = obj as FahrplanauskunftObjektBase;
-            return EqualsHelper.EqualBase<FahrplanauskunftObjektBase>(other, () => ID == other.ID);
+            return EqualsHelper.EqualBase(other, () => ID == other.ID);
         }
 
         /// <summary>

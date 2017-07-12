@@ -79,7 +79,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn die Linien gleich sind</returns>
         public static bool operator ==(Linie a, Linie b)
         {
-            return EqualsOperatorHelper.EqualsOperatorBase<Linie>(a, b);
+            return EqualsOperatorHelper.EqualsOperatorBase(a, b);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(Linie other)
         {
-            return EqualsHelper.EqualBase<Linie>(
+            return EqualsHelper.EqualBase(
                 other,
                 () =>
                 {

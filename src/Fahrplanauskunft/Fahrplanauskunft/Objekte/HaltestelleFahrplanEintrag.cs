@@ -81,7 +81,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
         public static bool operator ==(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
         {
-            return EqualsOperatorHelper.EqualsOperatorBase<HaltestelleFahrplanEintrag>(a, b);
+            return EqualsOperatorHelper.EqualsOperatorBase(a, b);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(HaltestelleFahrplanEintrag other)
         {
-            return EqualsHelper.EqualBase<HaltestelleFahrplanEintrag>(
+            return EqualsHelper.EqualBase(
                 other,
                 () =>
                 {
@@ -110,7 +110,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as HaltestelleFahrplanEintrag);
+            return Equals(obj as HaltestelleFahrplanEintrag);
         }
 
         /// <summary>
