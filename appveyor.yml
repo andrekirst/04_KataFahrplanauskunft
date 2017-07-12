@@ -69,7 +69,7 @@ build_script:
     - ps: MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$($env:SONARQUBE_TOKEN)"
 
 after_build:
-  - ps: ->
+  - ps: >-
       if ((Get-Command "pandoc.exe" -ErrorAction SilentlyContinue) -eq $null) { choco install pandoc -y --force } else { choco install pandoc -y }
   - ps: >-
       if((Test-Path "C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe") -eq $false) { choco install miktex -y --force } else { choco install miktex -y }
