@@ -40,6 +40,7 @@ Konfiguriert wird der Prozess mit der Datei [appveyor.yml](/appveyor.yml).
 1. Ausführen der entstandenen Tests
 1. Ausführen von **OpenCover** zur Ermittlung der Testabdeckung. Entstandene Testabdeckung wird in der Datei `./opencovertests.xml` abgelegt
 1. Übermittlung der Testabdeckung an coveralls mit **coveralls.net**
+1. Übermittlung der Testabdeckung an codecov.io mit **codecov**
 1. Beendigung des SonarQube-Runners und Übermittlung der Ergebniss an das SonarQube-Projekt
 1. Erstellung des Artifaktes
     1. Kopieren der Ausgabe aus dem `bin`-Ordner in den Artifakt-Ordner
@@ -67,14 +68,28 @@ Die Versionen in Sonarqube werden folgendermaßen gebildet:
 | develop | dev-1.0.101 | Ist nach einem Pull request nach **develop** erstellt |
 | *Pull request* | pr-1.0.101-#55 | Wenn ein Pull request erstellt ist. Als Suffix die Nummer des Pull request mit einer Raute (`#`) davor |
 
-### Coveralls
+### Testabdeckung
+
+#### Coveralls
 
 [Coveralls](https://coveralls.io/) ist ein Webdienst, um die Testabdeckung des implementierten Codes über einene Zeitraum zu verfolgen und anzuzeigen.
 
-#### Coveralls-Konfiguration
+##### Coveralls-Konfiguration
 
-Damit Coveralls das Projekt übernehmen kann, muss ein Token erstellt werden. Dieser wird im Abschnitt `environemnt` in der Datei `appveyor.yml` als *secure* abgelegt.
+Damit Coveralls das Projekt übernehmen kann, muss ein Token erstellt werden. Dieser wird im Abschnitt `environemnt` in der Datei `appveyor.yml` als *secure* in der Variable `COVERALLS_REPO_TOKEN` abgelegt.
 
-##### Coveralls im Build
+###### Coveralls im Build
 
 Im Abschnitt `build_script` in der Datei `appveyor.yml` wird das NuGet-Package [coveralls.net](https://www.nuget.org/packages/coveralls.net/) benutzt, um die entstandene Datei `./opencovertests.xml` an coveralls.io zu senden.
+
+#### Codecov
+
+[Codecov](https://codecov.io/) ist ein Webdienst, um die Testabdeckung des implementierten Codes über einene Zeitraum zu verfolgen und anzuzeigen.
+
+##### Codecov-Konfiguration
+
+Damit Codecov das Projekt übernehmen kann, muss ein Token erstellt werden. Dieser wird im Abschnitt `environemnt` in der Datei `appveyor.yml` als *secure* in der Variable `CODECOV_TOKEN` abgelegt.
+
+###### Codecov im Build
+
+Im Abschnitt `build_script` in der Datei `appveyor.yml` wird das Chocolatey-Package [codecov](https://chocolatey.org/packages/codecov) benutzt, um die entstandene Datei `./opencovertests.xml` an codecov.io zu senden.

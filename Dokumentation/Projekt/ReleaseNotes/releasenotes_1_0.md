@@ -31,6 +31,7 @@
 * #105 - Erstellung von Projekten (Implementierung, Test) für einen WindowsForms-Editor für die Bearbeitung der Objekte `feature`, `ui-windowsforms-editor`
 * #110 - Speichern des FahrplanauskunftSpeicher `feature`
 * #112 - Neues Attribut Farbe für das Objekt Linie `feature`
+* #118 - Codecov in den Build-Prozess einbauen `feature`, `umgebung`
 
 ## Bugfixes
 
