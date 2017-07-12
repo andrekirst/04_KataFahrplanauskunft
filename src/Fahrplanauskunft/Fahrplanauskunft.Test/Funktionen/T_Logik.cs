@@ -22,7 +22,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Liefert Testdaten, für den Test
         /// </summary>
         /// <returns>Liste von Haltestellen</returns>
-        public List<Haltestelle> Lade_Test_Haltestellen()
+        public static List<Haltestelle> Lade_Test_Haltestellen()
         {
             string ordnerPfad = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\TestDaten\\TestSatzBrainstorming");
 
@@ -36,7 +36,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Liefert Testdaten an Linien für die Tests
         /// </summary>
         /// <returns>Gibt die Test-Linien zurück</returns>
-        public List<Linie> Lade_Test_Linien()
+        public static List<Linie> Lade_Test_Linien()
         {
             string ordnerPfad = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\TestDaten\\TestSatzBrainstorming");
 
