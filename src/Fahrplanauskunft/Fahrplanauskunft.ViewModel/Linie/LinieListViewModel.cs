@@ -160,7 +160,7 @@ namespace Fahrplanauskunft.ViewModel.Linie
         /// <summary>
         /// Der angewandte Filter für die Suche nach Linien für eine einzelne <see cref="Objekte.Linie"/>
         /// Wenn der Parameter <paramref name="filter"/> null oder leer ist, wird true zurückgegeben.
-        /// Der Parameter <paramref name="filter"/> wird vor dem Vergleich mit den Attributen <see cref="Objekte.Linie.Ident"/> und <see cref="Objekte.Linie.Name"/> auf Kleinbuchstaben transformiert. Danach werden diese jeweils mit Kleinbuchstaben verglichen, wenn der Text innerhalb der Attribute mittels <see cref="string.Contains(string)"/> verglichen.
+        /// Der Parameter <paramref name="filter"/> wird vor dem Vergleich mit den Attributen <see cref="Objekte.Linie.Lauf"/> und <see cref="Objekte.Linie.Nummer"/> auf Kleinbuchstaben transformiert. Danach werden diese jeweils mit Kleinbuchstaben verglichen, wenn der Text innerhalb der Attribute mittels <see cref="string.Contains(string)"/> verglichen.
         /// </summary>
         /// <param name="linie">Die aktuelle <see cref="Objekte.Linie"/>, die überprüft wird</param>
         /// <param name="filter">Der angeandte Filte</param>
@@ -173,7 +173,7 @@ namespace Fahrplanauskunft.ViewModel.Linie
             }
 
             filter = filter.ToLower();
-            return linie.Name.ToLower().Contains(filter) || linie.Ident.ToLower().Contains(filter);
+            return linie.Nummer.ToLower().Contains(filter) || linie.Lauf.ToLower().Contains(filter);
         }
 
         /// <summary>

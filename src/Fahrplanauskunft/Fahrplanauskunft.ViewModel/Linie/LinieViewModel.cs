@@ -23,19 +23,19 @@ namespace Fahrplanauskunft.ViewModel.Linie
         /// <summary>
         /// Gibt den Namen der Linie zurück, oder setzt diesen
         /// </summary>
-        public string Name
+        public string Nummer
         {
             get
             {
-                return Model.Name;
+                return Model.Nummer;
             }
 
             set
             {
-                if(Name != value)
+                if(Nummer != value)
                 {
-                    Model.Name = value;
-                    this.OnPropertyChanged(nameof(Name));
+                    Model.Nummer = value;
+                    this.OnPropertyChanged(nameof(Nummer));
                 }
             }
         }
@@ -43,19 +43,19 @@ namespace Fahrplanauskunft.ViewModel.Linie
         /// <summary>
         /// Gibt den Ident der Linie zurück, oder setzt diesen
         /// </summary>
-        public string Ident
+        public string Lauf
         {
             get
             {
-                return Model.Ident;
+                return Model.Lauf;
             }
 
             set
             {
-                if(Ident != value)
+                if(Lauf != value)
                 {
-                    Model.Ident = value;
-                    this.OnPropertyChanged(nameof(Ident));
+                    Model.Lauf = value;
+                    this.OnPropertyChanged(nameof(Lauf));
                 }
             }
         }

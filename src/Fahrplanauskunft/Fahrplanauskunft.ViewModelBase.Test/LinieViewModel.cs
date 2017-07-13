@@ -21,21 +21,21 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         }
 
         /// <summary>
-        /// Gibt den Namen der Linie zurück bzw. setzt diesen
+        /// Gibt die Nummer der Linie zurück bzw. setzt diesen
         /// </summary>
-        public string Name
+        public string Nummer
         {
             get
             {
-                return Model.Name;
+                return Model.Nummer;
             }
 
             set
             {
-                if(Name != value)
+                if(Nummer != value)
                 {
-                    Model.Name = value;
-                    OnPropertyChanged(nameof(Name));
+                    Model.Nummer = value;
+                    OnPropertyChanged(nameof(Nummer));
                 }
             }
         }

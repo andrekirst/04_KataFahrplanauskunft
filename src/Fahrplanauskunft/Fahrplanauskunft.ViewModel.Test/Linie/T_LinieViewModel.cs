@@ -11,11 +11,12 @@ namespace Fahrplanauskunft.ViewModel.Test.Linie
     [TestClass]
     public class T_LinieViewModel
     {
+        private static readonly Objekte.Linie LinieB11 = new Objekte.Linie(id: "B11", nummer: "B1", lauf: "B11", farbe: "#FF4500");
+
         [TestMethod]
         public void LinieViewModel_Eigenschaft_Get_Farbe()
         {
-            Objekte.Linie linie = new Objekte.Linie(name: "B1", ident: "B11", farbe: "#FF4500");
-            LinieViewModel lvm = new LinieViewModel(linie);
+            LinieViewModel lvm = new LinieViewModel(LinieB11);
 
             string expected = "#FF4500";
 
@@ -27,12 +28,11 @@ namespace Fahrplanauskunft.ViewModel.Test.Linie
         [TestMethod]
         public void LinieViewModel_Eigenschaft_Get_Name()
         {
-            Objekte.Linie linie = new Objekte.Linie(name: "B1", ident: "B11", farbe: "#FF4500");
-            LinieViewModel lvm = new LinieViewModel(linie);
+            LinieViewModel lvm = new LinieViewModel(LinieB11);
 
             string expected = "B1";
 
-            string actual = lvm.Name;
+            string actual = lvm.Nummer;
 
             Assert.AreEqual(expected, actual);
         }
@@ -40,54 +40,49 @@ namespace Fahrplanauskunft.ViewModel.Test.Linie
         [TestMethod]
         public void LinieViewModel_Eigenschaft_Get_Ident()
         {
-            Objekte.Linie linie = new Objekte.Linie(name: "B1", ident: "B11", farbe: "#FF4500");
-            LinieViewModel lvm = new LinieViewModel(linie);
+            LinieViewModel lvm = new LinieViewModel(LinieB11);
 
             string expected = "B11";
 
-            string actual = lvm.Ident;
+            string actual = lvm.Lauf;
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void LinieViewModel_Eigenschaft_Set_Ident()
+        public void LinieViewModel_Eigenschaft_Set_Lauf()
         {
             List<string> aufgerufeneEvents = new List<string>();
 
-            Objekte.Linie linie = new Objekte.Linie(name: "B1", ident: "B11", farbe: "#FF4500");
-
-            LinieViewModel lvm = new LinieViewModel(model: linie);
+            LinieViewModel lvm = new LinieViewModel(model: LinieB11);
 
             lvm.PropertyChanged += (sender, args) =>
             {
                 aufgerufeneEvents.Add(args.PropertyName);
             };
 
-            lvm.Ident = "B12";
+            lvm.Lauf = "B12";
 
-            const string expected = "Ident";
+            const string expected = "Lauf";
             string actual = aufgerufeneEvents[0];
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void LinieViewModel_Eigenschaft_Set_Name()
+        public void LinieViewModel_Eigenschaft_Set_Nummer()
         {
             List<string> aufgerufeneEvents = new List<string>();
 
-            Objekte.Linie linie = new Objekte.Linie(name: "B1", ident: "B11", farbe: "#FF4500");
-
-            LinieViewModel lvm = new LinieViewModel(model: linie);
+            LinieViewModel lvm = new LinieViewModel(model: LinieB11);
 
             lvm.PropertyChanged += (sender, args) =>
             {
                 aufgerufeneEvents.Add(args.PropertyName);
             };
 
-            lvm.Name = "B2";
+            lvm.Nummer = "B2";
 
-            const string expected = "Name";
+            const string expected = "Nummer";
             string actual = aufgerufeneEvents[0];
             Assert.AreEqual(expected, actual);
         }
@@ -97,9 +92,7 @@ namespace Fahrplanauskunft.ViewModel.Test.Linie
         {
             List<string> aufgerufeneEvents = new List<string>();
 
-            Objekte.Linie linie = new Objekte.Linie(name: "B1", ident: "B11", farbe: "#FF4500");
-
-            LinieViewModel lvm = new LinieViewModel(model: linie);
+            LinieViewModel lvm = new LinieViewModel(model: LinieB11);
 
             lvm.PropertyChanged += (sender, args) =>
             {

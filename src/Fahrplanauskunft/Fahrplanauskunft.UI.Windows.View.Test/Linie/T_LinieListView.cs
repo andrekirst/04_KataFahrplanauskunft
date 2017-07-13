@@ -28,14 +28,14 @@ namespace Fahrplanauskunft.UI.Windows.View.Test.Linie
         private List<Objekte.Linie> HoleTestLinien()
         {
             List<Objekte.Linie> linien = new List<Objekte.Linie>();
-            linien.Add(new Objekte.Linie(name: "1", ident: "B11", farbe: "#FF4500"));
-            linien.Add(new Objekte.Linie(name: "1", ident: "B12", farbe: "#FF4500"));
-            linien.Add(new Objekte.Linie(name: "2", ident: "B21", farbe: "#FFDAB9"));
-            linien.Add(new Objekte.Linie(name: "2", ident: "B22", farbe: "#FFDAB9"));
-            linien.Add(new Objekte.Linie(name: "3", ident: "B31", farbe: "#66CDAA"));
-            linien.Add(new Objekte.Linie(name: "3", ident: "B32", farbe: "#66CDAA"));
-            linien.Add(new Objekte.Linie(name: "4", ident: "B41", farbe: "#FFD700"));
-            linien.Add(new Objekte.Linie(name: "4", ident: "B42", farbe: "#FFD700"));
+            linien.Add(new Objekte.Linie(id: "B11", nummer: "1", lauf: "B11", farbe: "#FF4500"));
+            linien.Add(new Objekte.Linie(id: "B12", nummer: "1", lauf: "B12", farbe: "#FF4500"));
+            linien.Add(new Objekte.Linie(id: "B21", nummer: "2", lauf: "B21", farbe: "#FFDAB9"));
+            linien.Add(new Objekte.Linie(id: "B22", nummer: "2", lauf: "B22", farbe: "#FFDAB9"));
+            linien.Add(new Objekte.Linie(id: "B31", nummer: "3", lauf: "B31", farbe: "#66CDAA"));
+            linien.Add(new Objekte.Linie(id: "B32", nummer: "3", lauf: "B32", farbe: "#66CDAA"));
+            linien.Add(new Objekte.Linie(id: "B41", nummer: "4", lauf: "B41", farbe: "#FFD700"));
+            linien.Add(new Objekte.Linie(id: "B42", nummer: "4", lauf: "B42", farbe: "#FFD700"));
             return linien;
         }
 
@@ -47,10 +47,12 @@ namespace Fahrplanauskunft.UI.Windows.View.Test.Linie
 
             FahrplanauskunftSpeicher fahrplanauskunftSpeicher = new FahrplanauskunftSpeicher(string.Empty);
             fahrplanauskunftSpeicher.Linien = HoleTestLinien();
+            fahrplanauskunftSpeicher.Haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>();
+            fahrplanauskunftSpeicher.Streckenabschnitte = new List<Streckenabschnitt>();
 
             fahrplanauskunftSpeicher.Haltestellen = new List<Haltestelle>();
-            Haltestelle haltestelle = new Haltestelle(name: "H1");
-            haltestelle.Linien = fahrplanauskunftSpeicher.Linien.Where(l => l.Ident.StartsWith("B1")).ToList();
+            Haltestelle haltestelle = new Haltestelle(id: "H1", name: "H1");
+            haltestelle.Linien = fahrplanauskunftSpeicher.Linien.Where(l => l.Lauf.StartsWith("B1")).ToList();
             fahrplanauskunftSpeicher.Haltestellen.Add(haltestelle);
 
             LinieListViewModel llvm = new LinieListViewModel(fahrplanauskunftSpeicher);

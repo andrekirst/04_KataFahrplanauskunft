@@ -5,6 +5,7 @@
 using System.Collections.Generic;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
 
 namespace Fahrplanauskunft.ViewModelBase.Test
 {
@@ -21,14 +22,12 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         [TestCategory(@"ViewModelBase")]
         public void ViewModel_TModel_Linie_Eigenschaft_Name_wurde_veraendert()
         {
-            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500");
+            LinieViewModel lvm = new LinieViewModel(model: new Objekte.Linie(id: "B11", nummer: "B1", lauf: "B11", farbe: "#FF4500"));
 
-            LinieViewModel lvm = new LinieViewModel(model: linie);
-
-            lvm.Name = "B12";
+            lvm.Nummer = "B12";
 
             const string expected = "B12";
-            string actual = lvm.Name;
+            string actual = lvm.Nummer;
             Assert.AreEqual(expected, actual);
         }
 
@@ -37,20 +36,18 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         /// </summary>
         [TestMethod]
         [TestCategory(@"ViewModelBase")]
-        public void ViewModel_TModel_Linie_Eigenschaft_Name_wurde_veraendert_Event_PropertyChanged_1_mal_aufgerufen()
+        public void ViewModel_TModel_Linie_Eigenschaft_Nummer_wurde_veraendert_Event_PropertyChanged_1_mal_aufgerufen()
         {
             List<string> aufgerufeneEvents = new List<string>();
 
-            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500");
-
-            LinieViewModel lvm = new LinieViewModel(model: linie);
+            LinieViewModel lvm = new LinieViewModel(model: new Objekte.Linie(id: "B11", nummer: "B1", lauf: "B11", farbe: "#FF4500"));
 
             lvm.PropertyChanged += (sender, args) =>
             {
                 aufgerufeneEvents.Add(args.PropertyName);
             };
 
-            lvm.Name = "B12";
+            lvm.Nummer = "B12";
 
             const int expected = 1;
             var actual = aufgerufeneEvents.Count;
@@ -62,22 +59,20 @@ namespace Fahrplanauskunft.ViewModelBase.Test
         /// </summary>
         [TestMethod]
         [TestCategory(@"ViewModelBase")]
-        public void ViewModel_TModel_Linie_Eigenschaft_Name_wurde_veraendert_Event_PropertyChanged_PropertyName_Name()
+        public void ViewModel_TModel_Linie_Eigenschaft_Nummer_wurde_veraendert_Event_PropertyChanged_PropertyName_Name()
         {
             List<string> aufgerufeneEvents = new List<string>();
 
-            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500");
-
-            LinieViewModel lvm = new LinieViewModel(model: linie);
+            LinieViewModel lvm = new LinieViewModel(model: new Objekte.Linie(id: "B11", nummer: "B1", lauf: "B11", farbe: "#FF4500"));
 
             lvm.PropertyChanged += (sender, args) =>
             {
                 aufgerufeneEvents.Add(args.PropertyName);
             };
 
-            lvm.Name = "B12";
+            lvm.Nummer = "B12";
 
-            const string expected = "Name";
+            const string expected = "Nummer";
             string actual = aufgerufeneEvents[0];
             Assert.AreEqual(expected, actual);
         }
