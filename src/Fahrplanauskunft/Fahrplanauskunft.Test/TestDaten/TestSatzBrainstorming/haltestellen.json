@@ -2,13 +2,13 @@
     {
         "Linien": [
             {
-                "Ident": "B11",
-                "Name": "B1",
+                "Lauf": "B11",
+                "Nummer": "B1",
                 "ID": "B11"
             },
             {
-                "Ident": "B12",
-                "Name": "B1",
+                "Lauf": "B12",
+                "Nummer": "B1",
                 "ID": "B12"
             }
         ],
@@ -18,23 +18,23 @@
     {
         "Linien": [
             {
-                "Ident": "B11",
-                "Name": "B1",
+                "Lauf": "B11",
+                "Nummer": "B1",
                 "ID": "B11"
             },
             {
-                "Ident": "B12",
-                "Name": "B1",
+                "Lauf": "B12",
+                "Nummer": "B1",
                 "ID": "B12"
             },
             {
-                "Ident": "B31",
-                "Name": "B3",
+                "Lauf": "B31",
+                "Nummer": "B3",
                 "ID": "B31"
             },
             {
-                "Ident": "B32",
-                "Name": "B3",
+                "Lauf": "B32",
+                "Nummer": "B3",
                 "ID": "B32"
             }
         ],
@@ -44,13 +44,13 @@
     {
         "Linien": [
             {
-                "Ident": "B11",
-                "Name": "B1",
+                "Lauf": "B11",
+                "Nummer": "B1",
                 "ID": "B11"
             },
             {
-                "Ident": "B12",
-                "Name": "B1",
+                "Lauf": "B12",
+                "Nummer": "B1",
                 "ID": "B12"
             }
         ],
@@ -60,23 +60,23 @@
     {
         "Linien": [
             {
-                "Ident": "B11",
-                "Name": "B1",
+                "Lauf": "B11",
+                "Nummer": "B1",
                 "ID": "B11"
             },
             {
-                "Ident": "B12",
-                "Name": "B1",
+                "Lauf": "B12",
+                "Nummer": "B1",
                 "ID": "B12"
             },
             {
-                "Ident": "B21",
-                "Name": "B2",
+                "Lauf": "B21",
+                "Nummer": "B2",
                 "ID": "B21"
             },
             {
-                "Ident": "B22",
-                "Name": "B2",
+                "Lauf": "B22",
+                "Nummer": "B2",
                 "ID": "B22"
             }
         ],
@@ -86,13 +86,13 @@
     {
         "Linien": [
             {
-                "Ident": "B11",
-                "Name": "B1",
+                "Lauf": "B11",
+                "Nummer": "B1",
                 "ID": "B11"
             },
             {
-                "Ident": "B12",
-                "Name": "B1",
+                "Lauf": "B12",
+                "Nummer": "B1",
                 "ID": "B12"
             }
         ],
@@ -102,13 +102,13 @@
     {
         "Linien": [
             {
-                "Ident": "B21",
-                "Name": "B2",
+                "Lauf": "B21",
+                "Nummer": "B2",
                 "ID": "B21"
             },
             {
-                "Ident": "B22",
-                "Name": "B2",
+                "Lauf": "B22",
+                "Nummer": "B2",
                 "ID": "B22"
             }
         ],
@@ -118,13 +118,13 @@
     {
         "Linien": [
             {
-                "Ident": "B21",
-                "Name": "B2",
+                "Lauf": "B21",
+                "Nummer": "B2",
                 "ID": "B21"
             },
             {
-                "Ident": "B22",
-                "Name": "B2",
+                "Lauf": "B22",
+                "Nummer": "B2",
                 "ID": "B22"
             }
         ],
@@ -134,33 +134,33 @@
     {
         "Linien": [
             {
-                "Ident": "B21",
-                "Name": "B2",
+                "Lauf": "B21",
+                "Nummer": "B2",
                 "ID": "B21"
             },
             {
-                "Ident": "B22",
-                "Name": "B2",
+                "Lauf": "B22",
+                "Nummer": "B2",
                 "ID": "B22"
             },
             {
-                "Ident": "B31",
-                "Name": "B3",
+                "Lauf": "B31",
+                "Nummer": "B3",
                 "ID": "B31"
             },
             {
-                "Ident": "B32",
-                "Name": "B3",
+                "Lauf": "B32",
+                "Nummer": "B3",
                 "ID": "B32"
             },
             {
-                "Ident": "B41",
-                "Name": "B4",
+                "Lauf": "B41",
+                "Nummer": "B4",
                 "ID": "B41"
             },
             {
-                "Ident": "B42",
-                "Name": "B4",
+                "Lauf": "B42",
+                "Nummer": "B4",
                 "ID": "B42"
             }
         ],
@@ -170,13 +170,13 @@
     {
         "Linien": [
             {
-                "Ident": "B21",
-                "Name": "B2",
+                "Lauf": "B21",
+                "Nummer": "B2",
                 "ID": "B21"
             },
             {
-                "Ident": "B22",
-                "Name": "B2",
+                "Lauf": "B22",
+                "Nummer": "B2",
                 "ID": "B22"
             }
         ],
@@ -186,13 +186,13 @@
     {
         "Linien": [
             {
-                "Ident": "B31",
-                "Name": "B3",
+                "Lauf": "B31",
+                "Nummer": "B3",
                 "ID": "B31"
             },
             {
-                "Ident": "B32",
-                "Name": "B3",
+                "Lauf": "B32",
+                "Nummer": "B3",
                 "ID": "B32"
             }
         ],
@@ -202,13 +202,13 @@
     {
         "Linien": [
             {
-                "Ident": "B31",
-                "Name": "B3",
+                "Lauf": "B31",
+                "Nummer": "B3",
                 "ID": "B31"
             },
             {
-                "Ident": "B32",
-                "Name": "B3",
+                "Lauf": "B32",
+                "Nummer": "B3",
                 "ID": "B32"
             }
         ],
@@ -218,13 +218,13 @@
     {
         "Linien": [
             {
-                "Ident": "B41",
-                "Name": "B4",
+                "Lauf": "B41",
+                "Nummer": "B4",
                 "ID": "B41"
             },
             {
-                "Ident": "B42",
-                "Name": "B4",
+                "Lauf": "B42",
+                "Nummer": "B4",
                 "ID": "B42"
             }
         ],
@@ -234,13 +234,13 @@
     {
         "Linien": [
             {
-                "Ident": "B41",
-                "Name": "B4",
+                "Lauf": "B41",
+                "Nummer": "B4",
                 "ID": "B41"
             },
             {
-                "Ident": "B42",
-                "Name": "B4",
+                "Lauf": "B42",
+                "Nummer": "B4",
                 "ID": "B42"
             }
         ],
@@ -250,13 +250,13 @@
     {
         "Linien": [
             {
-                "Ident": "B41",
-                "Name": "B4",
+                "Lauf": "B41",
+                "Nummer": "B4",
                 "ID": "B41"
             },
             {
-                "Ident": "B42",
-                "Name": "B4",
+                "Lauf": "B42",
+                "Nummer": "B4",
                 "ID": "B42"
             }
         ],
@@ -266,13 +266,13 @@
     {
         "Linien": [
             {
-                "Ident": "B41",
-                "Name": "B4",
+                "Lauf": "B41",
+                "Nummer": "B4",
                 "ID": "B41"
             },
             {
-                "Ident": "B42",
-                "Name": "B4",
+                "Lauf": "B42",
+                "Nummer": "B4",
                 "ID": "B42"
             }
         ],
@@ -282,13 +282,13 @@
     {
         "Linien": [
             {
-                "Ident": "B41",
-                "Name": "B4",
+                "Lauf": "B41",
+                "Nummer": "B4",
                 "ID": "B41"
             },
             {
-                "Ident": "B42",
-                "Name": "B4",
+                "Lauf": "B42",
+                "Nummer": "B4",
                 "ID": "B42"
             }
         ],

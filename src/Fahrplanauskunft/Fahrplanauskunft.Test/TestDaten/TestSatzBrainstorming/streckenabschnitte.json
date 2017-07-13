@@ -2,8 +2,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B1",
-            "Ident": "B11",
+            "Nummer": "B1",
+            "Lauf": "B11",
             "ID": "B11"
         },
         "StartHaltestelle": {
@@ -11,13 +11,13 @@
             "ID": "H1",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 }
             ]
@@ -27,23 +27,23 @@
             "ID": "H2",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -52,8 +52,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B1",
-            "Ident": "B11",
+            "Nummer": "B1",
+            "Lauf": "B11",
             "ID": "B11"
         },
         "StartHaltestelle": {
@@ -61,23 +61,23 @@
             "ID": "H2",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -87,13 +87,13 @@
             "ID": "H3",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 }
             ]
@@ -102,8 +102,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B1",
-            "Ident": "B11",
+            "Nummer": "B1",
+            "Lauf": "B11",
             "ID": "B11"
         },
         "StartHaltestelle": {
@@ -111,13 +111,13 @@
             "ID": "H3",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 }
             ]
@@ -127,23 +127,23 @@
             "ID": "H4",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -152,8 +152,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B1",
-            "Ident": "B11",
+            "Nummer": "B1",
+            "Lauf": "B11",
             "ID": "B11"
         },
         "StartHaltestelle": {
@@ -161,23 +161,23 @@
             "ID": "H4",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -187,13 +187,13 @@
             "ID": "H5",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 }
             ]
@@ -202,8 +202,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B2",
-            "Ident": "B21",
+            "Nummer": "B2",
+            "Lauf": "B21",
             "ID": "B21"
         },
         "StartHaltestelle": {
@@ -211,13 +211,13 @@
             "ID": "H6",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -227,23 +227,23 @@
             "ID": "H4",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -252,8 +252,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B2",
-            "Ident": "B21",
+            "Nummer": "B2",
+            "Lauf": "B21",
             "ID": "B21"
         },
         "StartHaltestelle": {
@@ -261,23 +261,23 @@
             "ID": "H4",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -287,13 +287,13 @@
             "ID": "H7",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -302,8 +302,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B2",
-            "Ident": "B21",
+            "Nummer": "B2",
+            "Lauf": "B21",
             "ID": "B21"
         },
         "StartHaltestelle": {
@@ -311,13 +311,13 @@
             "ID": "H7",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -327,33 +327,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -362,8 +362,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B2",
-            "Ident": "B21",
+            "Nummer": "B2",
+            "Lauf": "B21",
             "ID": "B21"
         },
         "StartHaltestelle": {
@@ -371,33 +371,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -407,13 +407,13 @@
             "ID": "H9",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -422,8 +422,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B3",
-            "Ident": "B31",
+            "Nummer": "B3",
+            "Lauf": "B31",
             "ID": "B31"
         },
         "StartHaltestelle": {
@@ -431,13 +431,13 @@
             "ID": "H10",
             "Linien": [
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -447,23 +447,23 @@
             "ID": "H2",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -472,8 +472,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B3",
-            "Ident": "B31",
+            "Nummer": "B3",
+            "Lauf": "B31",
             "ID": "B31"
         },
         "StartHaltestelle": {
@@ -481,23 +481,23 @@
             "ID": "H2",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -507,33 +507,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -542,8 +542,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B3",
-            "Ident": "B31",
+            "Nummer": "B3",
+            "Lauf": "B31",
             "ID": "B31"
         },
         "StartHaltestelle": {
@@ -551,33 +551,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -587,13 +587,13 @@
             "ID": "H11",
             "Linien": [
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -602,8 +602,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B41",
+            "Nummer": "B4",
+            "Lauf": "B41",
             "ID": "B41"
         },
         "StartHaltestelle": {
@@ -611,13 +611,13 @@
             "ID": "H12",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -627,13 +627,13 @@
             "ID": "H13",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -642,8 +642,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B41",
+            "Nummer": "B4",
+            "Lauf": "B41",
             "ID": "B41"
         },
         "StartHaltestelle": {
@@ -651,13 +651,13 @@
             "ID": "H13",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -667,13 +667,13 @@
             "ID": "H14",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -682,8 +682,8 @@
     {
         "Dauer": 3,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B41",
+            "Nummer": "B4",
+            "Lauf": "B41",
             "ID": "B41"
         },
         "StartHaltestelle": {
@@ -691,13 +691,13 @@
             "ID": "H14",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -707,33 +707,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -742,8 +742,8 @@
     {
         "Dauer": 3,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B41",
+            "Nummer": "B4",
+            "Lauf": "B41",
             "ID": "B41"
         },
         "StartHaltestelle": {
@@ -751,33 +751,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -787,13 +787,13 @@
             "ID": "H15",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -802,8 +802,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B41",
+            "Nummer": "B4",
+            "Lauf": "B41",
             "ID": "B41"
         },
         "StartHaltestelle": {
@@ -811,13 +811,13 @@
             "ID": "H15",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -827,13 +827,13 @@
             "ID": "H16",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -842,8 +842,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B1",
-            "Ident": "B12",
+            "Nummer": "B1",
+            "Lauf": "B12",
             "ID": "B12"
         },
         "ZielHaltestelle": {
@@ -851,13 +851,13 @@
             "ID": "H1",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 }
             ]
@@ -867,23 +867,23 @@
             "ID": "H2",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -892,8 +892,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B1",
-            "Ident": "B12",
+            "Nummer": "B1",
+            "Lauf": "B12",
             "ID": "B12"
         },
         "ZielHaltestelle": {
@@ -901,23 +901,23 @@
             "ID": "H2",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -927,13 +927,13 @@
             "ID": "H3",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 }
             ]
@@ -942,8 +942,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B1",
-            "Ident": "B12",
+            "Nummer": "B1",
+            "Lauf": "B12",
             "ID": "B12"
         },
         "ZielHaltestelle": {
@@ -951,13 +951,13 @@
             "ID": "H3",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 }
             ]
@@ -967,23 +967,23 @@
             "ID": "H4",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -992,8 +992,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B1",
-            "Ident": "B12",
+            "Nummer": "B1",
+            "Lauf": "B12",
             "ID": "B12"
         },
         "ZielHaltestelle": {
@@ -1001,23 +1001,23 @@
             "ID": "H4",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -1027,13 +1027,13 @@
             "ID": "H5",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 }
             ]
@@ -1042,8 +1042,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B2",
-            "Ident": "B22",
+            "Nummer": "B2",
+            "Lauf": "B22",
             "ID": "B22"
         },
         "ZielHaltestelle": {
@@ -1051,13 +1051,13 @@
             "ID": "H6",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -1067,23 +1067,23 @@
             "ID": "H4",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -1092,8 +1092,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B2",
-            "Ident": "B22",
+            "Nummer": "B2",
+            "Lauf": "B22",
             "ID": "B22"
         },
         "ZielHaltestelle": {
@@ -1101,23 +1101,23 @@
             "ID": "H4",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -1127,13 +1127,13 @@
             "ID": "H7",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -1142,8 +1142,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B2",
-            "Ident": "B22",
+            "Nummer": "B2",
+            "Lauf": "B22",
             "ID": "B22"
         },
         "ZielHaltestelle": {
@@ -1151,13 +1151,13 @@
             "ID": "H7",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -1167,33 +1167,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1202,8 +1202,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B2",
-            "Ident": "B22",
+            "Nummer": "B2",
+            "Lauf": "B22",
             "ID": "B22"
         },
         "ZielHaltestelle": {
@@ -1211,33 +1211,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1247,13 +1247,13 @@
             "ID": "H9",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 }
             ]
@@ -1262,8 +1262,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B3",
-            "Ident": "B32",
+            "Nummer": "B3",
+            "Lauf": "B32",
             "ID": "B32"
         },
         "ZielHaltestelle": {
@@ -1271,13 +1271,13 @@
             "ID": "H10",
             "Linien": [
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -1287,23 +1287,23 @@
             "ID": "H2",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -1312,8 +1312,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B3",
-            "Ident": "B32",
+            "Nummer": "B3",
+            "Lauf": "B32",
             "ID": "B32"
         },
         "ZielHaltestelle": {
@@ -1321,23 +1321,23 @@
             "ID": "H2",
             "Linien": [
                 {
-                    "Name": "B1",
-                    "Ident": "B11",
+                    "Nummer": "B1",
+                    "Lauf": "B11",
                     "ID": "B11"
                 },
                 {
-                    "Name": "B1",
-                    "Ident": "B12",
+                    "Nummer": "B1",
+                    "Lauf": "B12",
                     "ID": "B12"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -1347,33 +1347,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1382,8 +1382,8 @@
     {
         "Dauer": 1,
         "Linie": {
-            "Name": "B3",
-            "Ident": "B32",
+            "Nummer": "B3",
+            "Lauf": "B32",
             "ID": "B32"
         },
         "ZielHaltestelle": {
@@ -1391,33 +1391,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1427,13 +1427,13 @@
             "ID": "H11",
             "Linien": [
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 }
             ]
@@ -1442,8 +1442,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B42",
+            "Nummer": "B4",
+            "Lauf": "B42",
             "ID": "B42"
         },
         "ZielHaltestelle": {
@@ -1451,13 +1451,13 @@
             "ID": "H12",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1467,13 +1467,13 @@
             "ID": "H13",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1482,8 +1482,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B42",
+            "Nummer": "B4",
+            "Lauf": "B42",
             "ID": "B42"
         },
         "ZielHaltestelle": {
@@ -1491,13 +1491,13 @@
             "ID": "H13",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1507,13 +1507,13 @@
             "ID": "H14",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1522,8 +1522,8 @@
     {
         "Dauer": 3,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B42",
+            "Nummer": "B4",
+            "Lauf": "B42",
             "ID": "B42"
         },
         "ZielHaltestelle": {
@@ -1531,13 +1531,13 @@
             "ID": "H14",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1547,33 +1547,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1582,8 +1582,8 @@
     {
         "Dauer": 3,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B42",
+            "Nummer": "B4",
+            "Lauf": "B42",
             "ID": "B42"
         },
         "ZielHaltestelle": {
@@ -1591,33 +1591,33 @@
             "ID": "H8",
             "Linien": [
                 {
-                    "Name": "B2",
-                    "Ident": "B21",
+                    "Nummer": "B2",
+                    "Lauf": "B21",
                     "ID": "B21"
                 },
                 {
-                    "Name": "B2",
-                    "Ident": "B22",
+                    "Nummer": "B2",
+                    "Lauf": "B22",
                     "ID": "B22"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B31",
+                    "Nummer": "B3",
+                    "Lauf": "B31",
                     "ID": "B31"
                 },
                 {
-                    "Name": "B3",
-                    "Ident": "B32",
+                    "Nummer": "B3",
+                    "Lauf": "B32",
                     "ID": "B32"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1627,13 +1627,13 @@
             "ID": "H15",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1642,8 +1642,8 @@
     {
         "Dauer": 2,
         "Linie": {
-            "Name": "B4",
-            "Ident": "B42",
+            "Nummer": "B4",
+            "Lauf": "B42",
             "ID": "B42"
         },
         "ZielHaltestelle": {
@@ -1651,13 +1651,13 @@
             "ID": "H15",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
@@ -1667,13 +1667,13 @@
             "ID": "H16",
             "Linien": [
                 {
-                    "Name": "B4",
-                    "Ident": "B41",
+                    "Nummer": "B4",
+                    "Lauf": "B41",
                     "ID": "B41"
                 },
                 {
-                    "Name": "B4",
-                    "Ident": "B42",
+                    "Nummer": "B4",
+                    "Lauf": "B42",
                     "ID": "B42"
                 }
             ]
