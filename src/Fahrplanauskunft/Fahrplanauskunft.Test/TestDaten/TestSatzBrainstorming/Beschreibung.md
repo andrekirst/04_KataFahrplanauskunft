@@ -12,7 +12,7 @@ Die Daten wurden anhand des [Brainstorming vom 02.01.2017](/Dokumentation/Brains
 
 ### Linien
 
-| Name | Ident |
+| Nummer | Lauf |
 | --- | --- |
 | B1 | B11 |
 | B1 | B12 |

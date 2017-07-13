@@ -4,14 +4,14 @@
         "ID": "H1",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }
@@ -22,14 +22,14 @@
         "ID": "H2",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }
@@ -40,14 +40,14 @@
         "ID": "H3",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }
@@ -58,14 +58,14 @@
         "ID": "H4",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }
@@ -76,14 +76,14 @@
         "ID": "H5",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }
@@ -94,14 +94,14 @@
         "ID": "H6",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }
@@ -112,14 +112,14 @@
         "ID": "H7",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }
@@ -130,14 +130,14 @@
         "ID": "H8",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }
@@ -148,14 +148,14 @@
         "ID": "H9",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }
@@ -166,14 +166,14 @@
         "ID": "H10",
         "Linien": [
             {
-                "Name": "U1",
-                "Ident": "U1_NORD",
+                "Nummer": "U1",
+                "Lauf": "U1_NORD",
                 "Farbe": "#FF4500",
                 "ID": "U1_NORD"
             },
             {
-                "Name": "U1",
-                "Ident": "U1_SUED",
+                "Nummer": "U1",
+                "Lauf": "U1_SUED",
                 "Farbe": "#FF4500",
                 "ID": "U1_SUED"
             }

@@ -20,7 +20,7 @@ namespace Fahrplanauskunft.Test.Objekte
         public void Konstruktor_Haltestelle_NICHT_NULL_Uhrzeit_750_Linie_NICHT_NULL()
         {
             Haltestelle haltestelle = new Haltestelle(name: "Haltestelle1", id: "1");
-            Linie linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             HaltestelleFahrplanEintrag haltestelleFahrplanEintrag = new HaltestelleFahrplanEintrag(haltestelle: haltestelle, uhrzeit: 750, linie: linie, id: "1");
 
@@ -39,7 +39,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1", id: "1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 
@@ -47,7 +47,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1", id: "1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 
@@ -64,7 +64,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1", id: "1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 
@@ -72,7 +72,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1", id: "1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 
@@ -89,7 +89,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1", id: "1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 
@@ -97,7 +97,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H2", id: "2"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "2"
             };
 
@@ -114,7 +114,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1", id: "1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 
@@ -122,7 +122,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1", id: "1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 
@@ -139,7 +139,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1", id: "1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 
@@ -147,7 +147,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H2", id: "2"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 
@@ -165,7 +165,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Uhrzeit = 720,
                 Haltestelle = new Haltestelle(name: "H1", id: "1"),
-                Linie = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                Linie = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
                 ID = "1"
             };
 

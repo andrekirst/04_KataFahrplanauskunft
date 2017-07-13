@@ -21,17 +21,17 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Konstruktor für die Angabe von Name und Ident
+        /// Konstruktor für die Angabe von Nummer, Lauf und Farbe
         /// </summary>
-        /// <param name="name">Der Name der Linie (für Hin- und Gegenrichtung)</param>
-        /// <param name="ident">Der Identifizierer der Linie (nur eine Richtung)</param>
+        /// <param name="nummer">Die Nummer der Linie (für Hin- und Gegenrichtung)</param>
+        /// <param name="lauf">Der Lauf der Linie (nur eine Richtung)</param>
         /// <param name="farbe">Die Farbe für die Linie</param>
         /// <param name="id">Die ID der Linie</param>
-        public Linie(string id, string name, string ident, string farbe)
+        public Linie(string id, string nummer, string lauf, string farbe)
             : base(id: id)
         {
-            Name = name;
-            Ident = ident;
+            Nummer = nummer;
+            Lauf = lauf;
             Farbe = farbe;
         }
 
@@ -45,17 +45,17 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Gibt den Ident der Linie zurück, oder setzt ihn.
+        /// Gibt den Lauf der Linie zurück, oder setzt ihn.
         /// </summary>
-        public string Ident
+        public string Lauf
         {
             get; set;
         }
 
         /// <summary>
-        /// Gibt den Namen der Linie zurück, oder setzt ihn.
+        /// Gibt die Nummer der Linie zurück, oder setzt ihn.
         /// </summary>
-        public string Name
+        public string Nummer
         {
             get; set;
         }
@@ -93,7 +93,7 @@ namespace Fahrplanauskunft.Objekte
                 other,
                 () =>
                 {
-                    return base.Equals(other) && Name == other.Name && Ident == other.Ident && Farbe == other.Farbe;
+                    return base.Equals(other) && Nummer == other.Nummer && Lauf == other.Lauf && Farbe == other.Farbe;
                 });
         }
 
@@ -122,7 +122,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Bsp.: "B1 - B11"</returns>
         public override string ToString()
         {
-            return $"{Name} - {Ident} : Farbe: {Farbe}";
+            return $"{Nummer} - {Lauf} : Farbe: {Farbe}";
         }
     }
 }

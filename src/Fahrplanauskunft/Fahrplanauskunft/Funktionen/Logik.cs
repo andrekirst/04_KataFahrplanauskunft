@@ -38,7 +38,7 @@ namespace Fahrplanauskunft.Funktionen
 
             // davon alle Haltestellen mit Umsteigepunkt (also mit mindestens 2 Linien)
             List<Umstiegspunkt> haltestellenMitUmstiegspunkt = haltestellenDerLinie
-                .Where(x => x.Linien.GroupBy(l => l.Name).Count() > 1)
+                .Where(x => x.Linien.GroupBy(l => l.Nummer).Count() > 1)
                 .Select(y => new Umstiegspunkt(y)).ToList();
 
             return haltestellenMitUmstiegspunkt;
