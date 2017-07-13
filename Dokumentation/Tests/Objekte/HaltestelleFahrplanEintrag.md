@@ -41,15 +41,3 @@ Test des Ungleichheitsoperators mit zwei gleichen Haltestellenfahrplaneinträgen
 #### Beschreibung
 
 Test des Ungleichheitsoperators mit zwei ungleichen Haltestellenfahrplaneinträgen
-
-### HaltestellenFahrplanEintrage_GetHashCode
-
-#### Beschreibung
-
-Testet den Hashcode, der durch die Uhrzeit, die Linie und die Haltestelle erzeugt wird
-
-### HaltestellenFahrplanEintrag_GetHashCode_Attribute_null_Erwartet_206839
-
-#### Beschreibung
-
-Test, wenn alle Attribute null sind, dass der HashCode 206839 ist

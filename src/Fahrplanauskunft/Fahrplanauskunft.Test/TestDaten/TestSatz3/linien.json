@@ -2,6 +2,7 @@
     {
         "Name": "U1",
         "Ident": "U1_NORD",
-        "Farbe": "#FF4500"
+        "Farbe": "#FF4500",
+        "ID": "U1_NORD"
     }
 ]

@@ -53,12 +53,10 @@ before_build:
 build_script:
     - choco install "msbuild-sonarqube-runner" -y --force
     - choco install codecov -y --force
-    - choco install pandoc -y --force
-    - choco install miktex -y --force
     - ps: if ($env:APPVEYOR_REPO_BRANCH -eq "develop") { $env:sonarqubeprefix = "dev-" }
     - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.exclusions=**/AssemblyInfo.cs" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"pr-$($env:appveyor_build_version)-#$($env:APPVEYOR_PULL_REQUEST_NUMBER)" }
     - ps: if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { MSBuild.SonarQube.Runner.exe begin /k:"04_KataFahrplanauskunft" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=$($env:SONARQUBE_TOKEN)" /d:"sonar.exclusions=**/AssemblyInfo.cs" /d:"sonar.dotnet.visualstudio.testProjectPattern=*.Test" /d:sonar.cs.opencover.reportsPaths="./opencovertests.xml" /d:sonar.cs.vstest.reportsPath="$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\bin\$env:CONFIGURATION\TestResults*.trx" /v:"$($env:sonarqubeprefix)$($env:appveyor_build_version)" }
-    - ps: msbuild $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.sln
+    - ps: msbuild $env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.sln /t:Rebuild /p:RunCodeAnalysis=true
     - ps: vstest.console /logger:Appveyor "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.Test.dll"
     - ps: vstest.console /logger:Appveyor "$env:APPVEYOR_BUILD_FOLDER\src\Fahrplanauskunft\Fahrplanauskunft.UI.WindowsForms.Editor.Test\bin\$env:CONFIGURATION\Fahrplanauskunft.UI.WindowsForms.Editor.Test.dll"
     - ps: >-
@@ -76,6 +74,10 @@ build_script:
     - ps: MSBuild.SonarQube.Runner.exe end /d:"sonar.login=$($env:SONARQUBE_TOKEN)"
 
 after_build:
+  - ps: >-
+      if ((Get-Command "pandoc.exe" -ErrorAction SilentlyContinue) -eq $null) { choco install pandoc -y --force } else { choco install pandoc -y }
+  - ps: >-
+      if((Test-Path "C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe") -eq $false) { choco install miktex -y --force } else { choco install miktex -y }
   - ps: >-
       $versionString = $($env:appveyor_build_version);
       $versionObject = New-Object System.Version($versionString);

@@ -1,5 +1,7 @@
 # HaltestelleFahrplanEintrag
 
+Basisklasse: `FahrplanauskunftObjektBase`
+
 ## Beschreibung
 
 Ein HaltestelleFahrplanEintrag beinhaltet die Information, wann, wo und mit welche Linie abfährt.

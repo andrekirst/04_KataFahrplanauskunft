@@ -1,34 +1,42 @@
 [
     {
         "Ident": "B11",
-        "Name": "B1"
+        "Name": "B1",
+        "ID": "B11"
     },
     {
         "Ident": "B12",
-        "Name": "B1"
+        "Name": "B1",
+        "ID": "B12"
     },
     {
         "Ident": "B21",
-        "Name": "B2"
+        "Name": "B2",
+        "ID": "B21"
     },
     {
         "Ident": "B22",
-        "Name": "B2"
+        "Name": "B2",
+        "ID": "B22"
     },
     {
         "Ident": "B31",
-        "Name": "B3"
+        "Name": "B3",
+        "ID": "B31"
     },
     {
         "Ident": "B32",
-        "Name": "B3"
+        "Name": "B3",
+        "ID": "B32"
     },
     {
         "Ident": "B41",
-        "Name": "B4"
+        "Name": "B4",
+        "ID": "B41"
     },
     {
         "Ident": "B42",
-        "Name": "B4"
+        "Name": "B4",
+        "ID": "B42"
     }
 ]

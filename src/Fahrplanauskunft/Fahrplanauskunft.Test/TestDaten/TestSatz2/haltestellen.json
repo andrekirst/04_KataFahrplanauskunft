@@ -1,151 +1,181 @@
 [
     {
         "Name": "H1",
+        "ID": "H1",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     },
     {
         "Name": "H2",
+        "ID": "H2",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     },
     {
         "Name": "H3",
+        "ID": "H3",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     },
     {
         "Name": "H4",
+        "ID": "H4",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     },
     {
         "Name": "H5",
+        "ID": "H5",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     },
     {
         "Name": "H6",
+        "ID": "H6",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     },
     {
         "Name": "H7",
+        "ID": "H7",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     },
     {
         "Name": "H8",
+        "ID": "H8",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     },
     {
         "Name": "H9",
+        "ID": "H9",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     },
     {
         "Name": "H10",
+        "ID": "H10",
         "Linien": [
             {
                 "Name": "U1",
                 "Ident": "U1_NORD",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_NORD"
             },
             {
                 "Name": "U1",
                 "Ident": "U1_SUED",
-                "Farbe": "#FF4500"
+                "Farbe": "#FF4500",
+                "ID": "U1_SUED"
             }
         ]
     }

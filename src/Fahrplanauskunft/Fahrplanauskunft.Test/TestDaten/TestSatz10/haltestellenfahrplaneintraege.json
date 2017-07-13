@@ -4,229 +4,279 @@
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 720
+        "Uhrzeit": 720,
+        "ID": "HFE1"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
             "Ident": "U1_SUED",
+            "ID": "U1_SUED",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 730
+        "Uhrzeit": 730,
+        "ID": "HFE2"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 740
+        "Uhrzeit": 740,
+        "ID": "HFE3"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
             "Ident": "U1_SUED",
+            "ID": "U1_SUED",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 750
+        "Uhrzeit": 750,
+        "ID": "HFE4"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 760
+        "Uhrzeit": 760,
+        "ID": "HFE5"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H2"
+            "Name": "H2",
+            "ID": "H2"
         },
         "Linie": {
             "Ident": "U1_SUED",
+            "ID": "U1_SUED",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 725
+        "Uhrzeit": 725,
+        "ID": "HFE6"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H2"
+            "Name": "H2",
+            "ID": "H2"
         },
         "Linie": {
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 735
+        "Uhrzeit": 735,
+        "ID": "HFE7"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H2"
+            "Name": "H2",
+            "ID": "H2"
         },
         "Linie": {
             "Ident": "U1_SUED",
+            "ID": "U1_SUED",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 745
+        "Uhrzeit": 745,
+        "ID": "HFE8"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H2"
+            "Name": "H2",
+            "ID": "H2"
         },
         "Linie": {
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 755
+        "Uhrzeit": 755,
+        "ID": "HFE9"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Name": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H2"
+            "Name": "H2",
+            "ID": "H2"
         },
         "Linie": {
             "Ident": "U1_SUED",
+            "ID": "U1_SUED",
             "Name": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 805
+        "Uhrzeit": 805,
+        "ID": "HFE10"
     }
 ]

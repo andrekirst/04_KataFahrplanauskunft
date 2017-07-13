@@ -21,8 +21,8 @@ namespace Fahrplanauskunft.Test.Exceptions
         [TestMethod, TestCategory("Exceptions")]
         public void LinieIstNichtAnHaltestelleException_Property_Linie()
         {
-            Linie linie = new Linie("Linie 1", "L1", farbe: "#FF4500");
-            Haltestelle haltestelle = new Haltestelle("H1");
+            Linie linie = new Linie(id: "L1", name: "Linie 1", ident: "L1", farbe: "#FF4500");
+            Haltestelle haltestelle = new Haltestelle(id: "1", name: "H1");
             LinieIstNichtAnHaltestelleException exception = new LinieIstNichtAnHaltestelleException(linie, haltestelle);
 
             string expected = "L1";
@@ -37,8 +37,8 @@ namespace Fahrplanauskunft.Test.Exceptions
         [TestMethod, TestCategory("Exceptions")]
         public void LinieIstNichtAnHaltestelleException_Property_Haltestelle()
         {
-            Linie linie = new Linie("Linie 1", "L1", farbe: "#FF4500");
-            Haltestelle haltestelle = new Haltestelle("H1");
+            Linie linie = new Linie(id: "L1", name: "Linie 1", ident: "L1", farbe: "#FF4500");
+            Haltestelle haltestelle = new Haltestelle(id: "1", name: "H1");
             LinieIstNichtAnHaltestelleException exception = new LinieIstNichtAnHaltestelleException(linie, haltestelle);
 
             string expected = "H1";
