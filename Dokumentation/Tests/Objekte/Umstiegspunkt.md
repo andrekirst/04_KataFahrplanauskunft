@@ -41,9 +41,3 @@ Test des Ungleichheitsoperators mit zwei gleichen Umstiegspunkten
 #### Beschreibung
 
 Test des Ungleichheitsoperators mit zwei ungleichen Umstiegspunkten
-
-### Umstiegspunkt_GetHashCode_Attribute_null_Erwartet_0
-
-#### Beschreibung
-
-Test, wenn alle Attribute null sind, dass der HashCode 0 ist

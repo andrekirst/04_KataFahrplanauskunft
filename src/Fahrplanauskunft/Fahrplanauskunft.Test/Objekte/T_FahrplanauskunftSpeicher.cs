@@ -16,6 +16,34 @@ namespace Fahrplanauskunft.Test.Objekte
     [TestClass]
     public class T_FahrplanauskunftSpeicher
     {
+        private static readonly Linie LinieB11 = new Linie(id: "B11", name: "B1", ident: "B11", farbe: "#FF4500");
+
+        private static readonly Linie LinieB12 = new Linie(id: "B12", name: "B1", ident: "B12", farbe: "#FF4500");
+
+        private static readonly Linie LinieB31 = new Linie(id: "B31", name: "B3", ident: "B31", farbe: "#AA4500");
+
+        private static readonly Linie LinieB32 = new Linie(id: "B32", name: "B3", ident: "B32", farbe: "#AA4500");
+
+        private static readonly Haltestelle HaltestelleH1 = new Haltestelle(id: "H1", name: "H1")
+        {
+            Linien = new List<Linie>()
+            {
+                LinieB11,
+                LinieB12
+            }
+        };
+
+        private static readonly Haltestelle HaltestelleH2 = new Haltestelle(id: "H2", name: "H2")
+        {
+            Linien = new List<Linie>()
+            {
+                LinieB11,
+                LinieB12,
+                LinieB31,
+                LinieB32
+            }
+        };
+
         /// <summary>
         /// Test-Fahrplanauskunftspeicher für die Tests
         /// </summary>
@@ -27,59 +55,31 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "B1", ident: "B11", farbe: "#FF4500")
+                    LinieB11
                 },
                 Haltestellen = new List<Haltestelle>()
                 {
-                    new Haltestelle(name: "H1")
-                    {
-                        Linien = new List<Linie>()
-                        {
-                            new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
-                            new Linie(name: "B1", ident: "B12", farbe: "#FF4500")
-                        }
-                    }
+                    HaltestelleH1
                 },
                 Haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
                 {
                     new HaltestelleFahrplanEintrag()
                     {
-                        Haltestelle = new Haltestelle(name: "H1")
-                        {
-                            Linien = new List<Linie>()
-                            {
-                                new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
-                                new Linie(name: "B1", ident: "B12", farbe: "#FF4500")
-                            }
-                        },
+                        ID = "HFE1",
+                        Haltestelle = HaltestelleH1,
                         Uhrzeit = 720,
-                        Linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500")
+                        Linie = LinieB11
                     }
                 },
                 Streckenabschnitte = new List<Streckenabschnitt>()
                 {
                     new Streckenabschnitt()
                     {
+                        ID = "SAB1",
                         Dauer = 1,
-                        Linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
-                        StartHaltestelle = new Haltestelle(name: "H1")
-                        {
-                            Linien = new List<Linie>()
-                            {
-                                new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
-                                new Linie(name: "B1", ident: "B12", farbe: "#FF4500")
-                            }
-                        },
-                        ZielHaltestelle = new Haltestelle(name: "H2")
-                        {
-                            Linien = new List<Linie>()
-                            {
-                                new Linie(name: "B1", ident: "B11", farbe: "#FF4500"),
-                                new Linie(name: "B1", ident: "B12", farbe: "#FF4500"),
-                                new Linie(name: "B3", ident: "B31", farbe: "#AA4500"),
-                                new Linie(name: "B3", ident: "B32", farbe: "#AA4500")
-                            }
-                        }
+                        Linie = LinieB11,
+                        StartHaltestelle = HaltestelleH1,
+                        ZielHaltestelle = HaltestelleH2
                     }
                 }
             };
@@ -112,13 +112,13 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
-                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "U1_NORD"),
+                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500", id: "U1_SUED")
             };
 
             List<Haltestelle> expected = new List<Haltestelle>()
             {
-                new Haltestelle(name: "H1") { Linien = linien }
+                new Haltestelle(name: "H1", id: "H1") { Linien = linien }
             };
             #endregion
 
@@ -139,22 +139,22 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
-                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "U1_NORD"),
+                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500", id: "U1_SUED")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
             {
-                new Haltestelle(name: "H1") { Linien = linien },
-                new Haltestelle(name: "H2") { Linien = linien },
-                new Haltestelle(name: "H3") { Linien = linien },
-                new Haltestelle(name: "H4") { Linien = linien },
-                new Haltestelle(name: "H5") { Linien = linien },
-                new Haltestelle(name: "H6") { Linien = linien },
-                new Haltestelle(name: "H7") { Linien = linien },
-                new Haltestelle(name: "H8") { Linien = linien },
-                new Haltestelle(name: "H9") { Linien = linien },
-                new Haltestelle(name: "H10") { Linien = linien }
+                new Haltestelle(name: "H1", id: "H1") { Linien = linien },
+                new Haltestelle(name: "H2", id: "H2") { Linien = linien },
+                new Haltestelle(name: "H3", id: "H3") { Linien = linien },
+                new Haltestelle(name: "H4", id: "H4") { Linien = linien },
+                new Haltestelle(name: "H5", id: "H5") { Linien = linien },
+                new Haltestelle(name: "H6", id: "H6") { Linien = linien },
+                new Haltestelle(name: "H7", id: "H7") { Linien = linien },
+                new Haltestelle(name: "H8", id: "H8") { Linien = linien },
+                new Haltestelle(name: "H9", id: "H9") { Linien = linien },
+                new Haltestelle(name: "H10", id: "H10") { Linien = linien }
             };
             #endregion
 
@@ -179,7 +179,7 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "U1_NORD")
             };
             #endregion
 
@@ -204,16 +204,16 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
-                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500"),
-                new Linie(name: "U2", ident: "U2_A", farbe: "#EE4500"),
-                new Linie(name: "U2", ident: "U2_B", farbe: "#EE4500"),
-                new Linie(name: "U3", ident: "U3_A", farbe: "#DD4500"),
-                new Linie(name: "U3", ident: "U3_B", farbe: "#DD4500"),
-                new Linie(name: "U4", ident: "U4_A", farbe: "#CC4500"),
-                new Linie(name: "U4", ident: "U4_B", farbe: "#CC4500"),
-                new Linie(name: "U5", ident: "U5_A", farbe: "#BB4500"),
-                new Linie(name: "U5", ident: "U5_B", farbe: "#BB4500")
+                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "U1_NORD"),
+                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500", id: "U1_SUED"),
+                new Linie(name: "U2", ident: "U2_A", farbe: "#EE4500", id: "U2_A"),
+                new Linie(name: "U2", ident: "U2_B", farbe: "#EE4500", id: "U2_B"),
+                new Linie(name: "U3", ident: "U3_A", farbe: "#DD4500", id: "U3_A"),
+                new Linie(name: "U3", ident: "U3_B", farbe: "#DD4500", id: "U3_B"),
+                new Linie(name: "U4", ident: "U4_A", farbe: "#CC4500", id: "U4_A"),
+                new Linie(name: "U4", ident: "U4_B", farbe: "#CC4500", id: "U4_B"),
+                new Linie(name: "U5", ident: "U5_A", farbe: "#BB4500", id: "U5_A"),
+                new Linie(name: "U5", ident: "U5_B", farbe: "#BB4500", id: "U5_B")
             };
             #endregion
 
@@ -238,20 +238,20 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
-                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
+                new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                new Linie(id: "U1_SUED", name: "U1", ident: "U1_SUED", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
             {
-                new Haltestelle(name: "H1") { Linien = linien },
-                new Haltestelle(name: "H2") { Linien = linien }
+                new Haltestelle(id: "H1", name: "H1") { Linien = linien },
+                new Haltestelle(id: "H2", name: "H2") { Linien = linien }
             };
 
             List<Streckenabschnitt> streckenabschnitte = new List<Streckenabschnitt>()
             {
-                new Streckenabschnitt(1, haltestellen[0], haltestellen[1], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[1], haltestellen[0], linien.First(l => l.Ident == "U1_SUED"))
+                new Streckenabschnitt(id: "SAB1", dauer: 1, startHaltestelle: haltestellen[0], zielHaltestelle: haltestellen[1], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB2", dauer: 1, startHaltestelle: haltestellen[1], zielHaltestelle: haltestellen[0], linie: linien.First(l => l.Ident == "U1_SUED"))
             };
 
             #endregion
@@ -277,37 +277,37 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
-                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
+                new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                new Linie(id: "U1_SUED", name: "U1", ident: "U1_SUED", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
             {
-                new Haltestelle(name: "H1") { Linien = linien },
-                new Haltestelle(name: "H2") { Linien = linien },
-                new Haltestelle(name: "H3") { Linien = linien },
-                new Haltestelle(name: "H4") { Linien = linien },
-                new Haltestelle(name: "H5") { Linien = linien },
-                new Haltestelle(name: "H6") { Linien = linien },
-                new Haltestelle(name: "H7") { Linien = linien },
-                new Haltestelle(name: "H8") { Linien = linien },
-                new Haltestelle(name: "H9") { Linien = linien },
-                new Haltestelle(name: "H10") { Linien = linien },
-                new Haltestelle(name: "H11") { Linien = linien }
+                new Haltestelle(id: "H1", name: "H1") { Linien = linien },
+                new Haltestelle(id: "H2", name: "H2") { Linien = linien },
+                new Haltestelle(id: "H3", name: "H3") { Linien = linien },
+                new Haltestelle(id: "H4", name: "H4") { Linien = linien },
+                new Haltestelle(id: "H5", name: "H5") { Linien = linien },
+                new Haltestelle(id: "H6", name: "H6") { Linien = linien },
+                new Haltestelle(id: "H7", name: "H7") { Linien = linien },
+                new Haltestelle(id: "H8", name: "H8") { Linien = linien },
+                new Haltestelle(id: "H9", name: "H9") { Linien = linien },
+                new Haltestelle(id: "H10", name: "H10") { Linien = linien },
+                new Haltestelle(id: "H11", name: "H11") { Linien = linien }
             };
 
             List<Streckenabschnitt> streckenabschnitte = new List<Streckenabschnitt>()
             {
-                new Streckenabschnitt(1, haltestellen[0], haltestellen[1], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[1], haltestellen[2], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[2], haltestellen[3], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[3], haltestellen[4], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[4], haltestellen[5], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[5], haltestellen[6], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[6], haltestellen[7], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[7], haltestellen[8], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[8], haltestellen[9], linien.First(l => l.Ident == "U1_NORD")),
-                new Streckenabschnitt(1, haltestellen[9], haltestellen[10], linien.First(l => l.Ident == "U1_NORD"))
+                new Streckenabschnitt(id: "SAB1", dauer: 1, startHaltestelle: haltestellen[0], zielHaltestelle: haltestellen[1], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB2", dauer: 1, startHaltestelle: haltestellen[1], zielHaltestelle: haltestellen[2], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB3", dauer: 1, startHaltestelle: haltestellen[2], zielHaltestelle: haltestellen[3], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB4", dauer: 1, startHaltestelle: haltestellen[3], zielHaltestelle: haltestellen[4], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB5", dauer: 1, startHaltestelle: haltestellen[4], zielHaltestelle: haltestellen[5], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB6", dauer: 1, startHaltestelle: haltestellen[5], zielHaltestelle: haltestellen[6], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB7", dauer: 1, startHaltestelle: haltestellen[6], zielHaltestelle: haltestellen[7], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB8", dauer: 1, startHaltestelle: haltestellen[7], zielHaltestelle: haltestellen[8], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB9", dauer: 1, startHaltestelle: haltestellen[8], zielHaltestelle: haltestellen[9], linie: linien.First(l => l.Ident == "U1_NORD")),
+                new Streckenabschnitt(id: "SAB10", dauer: 1, startHaltestelle: haltestellen[9], zielHaltestelle: haltestellen[10], linie: linien.First(l => l.Ident == "U1_NORD"))
             };
 
             #endregion
@@ -333,17 +333,17 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
+                new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
             {
-                new Haltestelle(name: "H1") { Linien = linien }
+                new Haltestelle(id: "H1", name: "H1") { Linien = linien }
             };
 
             List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
             {
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0])
+                new HaltestelleFahrplanEintrag(id: "HFE1", haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0])
             };
 
             #endregion
@@ -369,26 +369,26 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
+                new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
             {
-                new Haltestelle(name: "H1") { Linien = linien }
+                new Haltestelle(id: "H1", name: "H1") { Linien = linien }
             };
 
             List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
             {
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 730, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 740, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 750, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 760, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 770, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 780, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 790, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 800, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 810, linie: linien[0])
+                new HaltestelleFahrplanEintrag(id: "HFE1", haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE2", haltestelle: haltestellen[0], uhrzeit: 730, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE3", haltestelle: haltestellen[0], uhrzeit: 740, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE4", haltestelle: haltestellen[0], uhrzeit: 750, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE5", haltestelle: haltestellen[0], uhrzeit: 760, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE6", haltestelle: haltestellen[0], uhrzeit: 770, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE7", haltestelle: haltestellen[0], uhrzeit: 780, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE8", haltestelle: haltestellen[0], uhrzeit: 790, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE9", haltestelle: haltestellen[0], uhrzeit: 800, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE10", haltestelle: haltestellen[0], uhrzeit: 810, linie: linien[0])
             };
 
             #endregion
@@ -414,27 +414,27 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500")
+                new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
             {
-                new Haltestelle(name: "H1") { Linien = linien },
-                new Haltestelle(name: "H2") { Linien = linien }
+                new Haltestelle(id: "H1", name: "H1") { Linien = linien },
+                new Haltestelle(id: "H2", name: "H2") { Linien = linien }
             };
 
             List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
             {
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 730, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 740, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 750, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 760, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 725, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 735, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 745, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 755, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 805, linie: linien[0])
+                new HaltestelleFahrplanEintrag(id: "HFE1", haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE2", haltestelle: haltestellen[0], uhrzeit: 730, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE3", haltestelle: haltestellen[0], uhrzeit: 740, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE4", haltestelle: haltestellen[0], uhrzeit: 750, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE5", haltestelle: haltestellen[0], uhrzeit: 760, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE6", haltestelle: haltestellen[1], uhrzeit: 725, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE7", haltestelle: haltestellen[1], uhrzeit: 735, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE8", haltestelle: haltestellen[1], uhrzeit: 745, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE9", haltestelle: haltestellen[1], uhrzeit: 755, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE10", haltestelle: haltestellen[1], uhrzeit: 805, linie: linien[0])
             };
 
             #endregion
@@ -460,28 +460,28 @@ namespace Fahrplanauskunft.Test.Objekte
             #region Erstellung des zu erwartendem Wertes
             List<Linie> linien = new List<Linie>()
             {
-                new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
-                new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
+                new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
+                new Linie(id: "U1_SUED", name: "U1", ident: "U1_SUED", farbe: "#FF4500")
             };
 
             List<Haltestelle> haltestellen = new List<Haltestelle>()
             {
-                new Haltestelle(name: "H1") { Linien = linien },
-                new Haltestelle(name: "H2") { Linien = linien }
+                new Haltestelle(id: "H1", name: "H1") { Linien = linien },
+                new Haltestelle(id: "H2", name: "H2") { Linien = linien }
             };
 
             List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = new List<HaltestelleFahrplanEintrag>()
             {
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 730, linie: linien[1]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 740, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 750, linie: linien[1]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[0], uhrzeit: 760, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 725, linie: linien[1]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 735, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 745, linie: linien[1]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 755, linie: linien[0]),
-                new HaltestelleFahrplanEintrag(haltestelle: haltestellen[1], uhrzeit: 805, linie: linien[1])
+                new HaltestelleFahrplanEintrag(id: "HFE1", haltestelle: haltestellen[0], uhrzeit: 720, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE2", haltestelle: haltestellen[0], uhrzeit: 730, linie: linien[1]),
+                new HaltestelleFahrplanEintrag(id: "HFE3", haltestelle: haltestellen[0], uhrzeit: 740, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE4", haltestelle: haltestellen[0], uhrzeit: 750, linie: linien[1]),
+                new HaltestelleFahrplanEintrag(id: "HFE5", haltestelle: haltestellen[0], uhrzeit: 760, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE6", haltestelle: haltestellen[1], uhrzeit: 725, linie: linien[1]),
+                new HaltestelleFahrplanEintrag(id: "HFE7", haltestelle: haltestellen[1], uhrzeit: 735, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE8", haltestelle: haltestellen[1], uhrzeit: 745, linie: linien[1]),
+                new HaltestelleFahrplanEintrag(id: "HFE9", haltestelle: haltestellen[1], uhrzeit: 755, linie: linien[0]),
+                new HaltestelleFahrplanEintrag(id: "HFE10", haltestelle: haltestellen[1], uhrzeit: 805, linie: linien[1])
             };
 
             #endregion
@@ -637,6 +637,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern der Linien aus dem FahrplanauskunftSpeicher
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_SpeicherLinien()
         {
             string testFolder = "test";
@@ -647,7 +648,7 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "B1", ident: "B11", farbe: "#FF4500")
+                    new Linie(id: "B11", name: "B1", ident: "B11", farbe: "#FF4500")
                 }
             };
 
@@ -666,6 +667,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern der Haltestellen aus dem FahrplanauskunftSpeicher
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_SpeicherHaltestellen()
         {
             string testFolder = "test";
@@ -689,6 +691,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern der Haltestellenfahrplaneintraege aus dem FahrplanauskunftSpeicher
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_SpeicherHaltestellenfahrplaneintraege()
         {
             string testFolder = "test";
@@ -712,6 +715,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern der Streckenabschnitte aus dem FahrplanauskunftSpeicher
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_SpeicherStreckenabschnitte()
         {
             string testFolder = "test";
@@ -735,6 +739,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Linien
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Linien()
         {
             string testFolder = "test";
@@ -758,6 +763,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Haltestellen
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Haltestellen()
         {
             string testFolder = "test";
@@ -781,6 +787,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Haltestellenfahrplaneintraege
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Haltestellenfahrplaneintraege()
         {
             string testFolder = "test";
@@ -804,6 +811,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// Test für das Speichern aller Objekte aus dem FahrplanauskunftSpeicher. Explizites Testen der Eigenschaft Streckenabschnitte
         /// </summary>
         [TestMethod]
+        [TestCategory("Objekte")]
         public void FahrplanauskunftSpeicher_Speichern_Eigenschaft_Streckenabschnitte()
         {
             string testFolder = "test";

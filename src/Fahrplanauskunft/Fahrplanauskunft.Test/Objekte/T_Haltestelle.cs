@@ -21,7 +21,7 @@ namespace Fahrplanauskunft.Test.Objekte
         public void Haltestelle_Name_Test_Linien_0()
         {
             string name = "Test";
-            Haltestelle haltestelle = new Haltestelle(name);
+            Haltestelle haltestelle = new Haltestelle(name: name, id: "1");
 
             Assert.AreEqual("Test", haltestelle.Name);
             Assert.AreEqual(0, haltestelle.Linien.Count);
@@ -34,13 +34,13 @@ namespace Fahrplanauskunft.Test.Objekte
         public void Haltestelle_Name_Test_Linien_1()
         {
             string name = "Test";
-            Haltestelle haltestelle = new Haltestelle(name);
+            Haltestelle haltestelle = new Haltestelle(id: "1", name: name);
 
             string linieName = "U1";
             string linieIdent = "U1_NORD";
             string farbe = "#FF4500";
 
-            Linie linie = new Linie(name: linieName, ident: linieIdent, farbe: farbe);
+            Linie linie = new Linie(name: linieName, ident: linieIdent, farbe: farbe, id: "1");
 
             haltestelle.Linien.Add(linie);
 
@@ -57,10 +57,10 @@ namespace Fahrplanauskunft.Test.Objekte
         public void Haltestelle_Equals_Name_Test()
         {
             string name = "Test";
-            Haltestelle actual = new Haltestelle(name);
+            Haltestelle actual = new Haltestelle(id: "1", name: name);
 
             string name2 = "Test";
-            Haltestelle expected = new Haltestelle(name2);
+            Haltestelle expected = new Haltestelle(id: "1", name: name2);
 
             Assert.AreEqual(expected, actual);
         }
@@ -71,7 +71,7 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_ToString()
         {
-            Haltestelle haltestelle = new Haltestelle(name: "H4");
+            Haltestelle haltestelle = new Haltestelle(id: "1", name: "H4");
 
             string expected = "Name: H4";
 
@@ -87,9 +87,9 @@ namespace Fahrplanauskunft.Test.Objekte
         public void Haltestelle_Equals_Anderes_Vergleichsobjekt_Linie()
         {
             string name = "Test";
-            Haltestelle haltestelle = new Haltestelle(name);
+            Haltestelle haltestelle = new Haltestelle(id: "1", name: name);
 
-            Linie linie = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie linie = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "1");
 
             Assert.AreNotEqual(haltestelle, linie);
         }
@@ -100,8 +100,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Gleichheitsoperator_Gleicher_Haltestellenname()
         {
-            Haltestelle h1 = new Haltestelle(name: "H1");
-            Haltestelle h2 = new Haltestelle(name: "H1");
+            Haltestelle h1 = new Haltestelle(name: "H1", id: "1");
+            Haltestelle h2 = new Haltestelle(name: "H1", id: "1");
 
             Assert.IsTrue(h1 == h2);
         }
@@ -112,8 +112,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Gleichheitsoperator_Verschiedene_Haltestellenname()
         {
-            Haltestelle h1 = new Haltestelle(name: "H1");
-            Haltestelle h2 = new Haltestelle(name: "H2");
+            Haltestelle h1 = new Haltestelle(name: "H1", id: "1");
+            Haltestelle h2 = new Haltestelle(name: "H2", id: "1");
 
             Assert.IsFalse(h1 == h2);
         }
@@ -124,8 +124,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Ungleichheitsoperator_Gleicher_Haltestellenname()
         {
-            Haltestelle h1 = new Haltestelle(name: "H1");
-            Haltestelle h2 = new Haltestelle(name: "H1");
+            Haltestelle h1 = new Haltestelle(name: "H1", id: "1");
+            Haltestelle h2 = new Haltestelle(name: "H1", id: "1");
 
             Assert.IsFalse(h1 != h2);
         }
@@ -136,8 +136,8 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Ungleichheitsoperator_Verschiedene_Haltestellenname()
         {
-            Haltestelle h1 = new Haltestelle(name: "H1");
-            Haltestelle h2 = new Haltestelle(name: "H2");
+            Haltestelle h1 = new Haltestelle(name: "H1", id: "1");
+            Haltestelle h2 = new Haltestelle(name: "H2", id: "1");
 
             Assert.IsTrue(h1 != h2);
         }
@@ -148,38 +148,24 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Equals_H1_Ungleiche_Linien()
         {
-            Haltestelle h1 = new Haltestelle(name: "H1")
+            Haltestelle h1 = new Haltestelle(name: "H1", id: "1")
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
-                    new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500")
+                    new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                    new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500", id: "2")
                 }
             };
-            Haltestelle h2 = new Haltestelle(name: "H2")
+            Haltestelle h2 = new Haltestelle(id: "2", name: "H2")
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500"),
-                    new Linie(name: "U2", ident: "U2_WEST", farbe: "#FF4500")
+                    new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
+                    new Linie(name: "U2", ident: "U2_WEST", farbe: "#FF4500", id: "3")
                 }
             };
 
             Assert.AreNotEqual(h1, h2);
-        }
-
-        /// <summary>
-        /// Test, wenn alle Attribute null sind, dass der HashCode 0 ist
-        /// </summary>
-        [TestMethod]
-        public void Haltestelle_GetHashCode_Attribute_null_Erwartet_0()
-        {
-            Haltestelle haltestelle = new Haltestelle();
-
-            int expected = 0;
-            int actual = haltestelle.GetHashCode();
-
-            Assert.AreEqual(expected, actual);
         }
     }
 }

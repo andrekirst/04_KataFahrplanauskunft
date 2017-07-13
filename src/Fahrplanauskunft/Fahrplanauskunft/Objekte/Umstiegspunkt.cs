@@ -10,12 +10,13 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein Umstiegspunkt ist eine Haltestelle mit mindensten 2 verschiedenen Linien
     /// </summary>
-    public class Umstiegspunkt : IEquatable<Umstiegspunkt>
+    public sealed class Umstiegspunkt : FahrplanauskunftObjektBase, IEquatable<Umstiegspunkt>
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
         public Umstiegspunkt()
+            : base()
         {
         }
 
@@ -24,6 +25,7 @@ namespace Fahrplanauskunft.Objekte
         /// </summary>
         /// <param name="haltestelle">Ein Haltestelleobjekt</param>
         public Umstiegspunkt(Haltestelle haltestelle)
+            : base(id: haltestelle.ID)
         {
             Haltestelle = haltestelle;
             Name = haltestelle.Name;
@@ -46,17 +48,6 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Gleichheitsoperator für Umstiegspunkt
-        /// </summary>
-        /// <param name="a">Wert vom Typ Umstiegspunkt für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Umstiegspunkt für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Umstiegspunkte gleich sind</returns>
-        public static bool operator ==(Umstiegspunkt a, Umstiegspunkt b)
-        {
-            return EqualsOperatorHelper.EqualsOperatorBase<Umstiegspunkt>(a, b);
-        }
-
-        /// <summary>
         /// Ungleichheitsoperator für Umstiegspunkt
         /// </summary>
         /// <param name="a">Wert vom Typ Umstiegspunkt für den linken Vergleich</param>
@@ -68,17 +59,28 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Gleichheitsoperator für Umstiegspunkt
+        /// </summary>
+        /// <param name="a">Wert vom Typ Umstiegspunkt für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Umstiegspunkt für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Umstiegspunkte gleich sind</returns>
+        public static bool operator ==(Umstiegspunkt a, Umstiegspunkt b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase(a, b);
+        }
+
+        /// <summary>
         /// Vergleicht die Haltestelle mit einem anderen Umstiegspunkt
         /// </summary>
         /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(Umstiegspunkt other)
         {
-            return EqualsHelper.EqualBase<Umstiegspunkt>(
+            return EqualsHelper.EqualBase(
                 other,
                 () =>
                 {
-                    return Name == other.Name && Haltestelle == other.Haltestelle;
+                    return base.Equals(other) && Name == other.Name && Haltestelle == other.Haltestelle;
                 });
         }
 
@@ -89,7 +91,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Umstiegspunkt);
+            return Equals(obj as Umstiegspunkt);
         }
 
         /// <summary>
@@ -98,7 +100,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return Name == null ? 0 : Name.GetHashCode();
+            return base.GetHashCode();
         }
 
         /// <summary>
@@ -107,7 +109,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Bsp.: "Name: H4"</returns>
         public override string ToString()
         {
-            return string.Format("Name: {0}", Name);
+            return $"Name: {Name}";
         }
     }
 }

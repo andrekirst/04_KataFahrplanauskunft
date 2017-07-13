@@ -1,5 +1,7 @@
 # Linie
 
+Basisklasse: `FahrplanauskunftObjektBase`
+
 ## Beschreibung
 
 Eine Linie ist eine Sammlung von Haltestellen, die das jeweilige Transportsystem, wie eine Linie, abfährt.

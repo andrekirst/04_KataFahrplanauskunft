@@ -1,37 +1,45 @@
 [
     {
         "Dauer": 1,
+        "ID": "SAB1",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H1",
+            "ID": "H1",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H2",
+            "ID": "H2",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
@@ -39,37 +47,45 @@
     },
     {
         "Dauer": 1,
+        "ID": "SAB2",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H2",
+            "ID": "H2",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H3",
+            "ID": "H3",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
@@ -77,37 +93,45 @@
     },
     {
         "Dauer": 1,
+        "ID": "SAB3",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H3",
+            "ID": "H3",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H4",
+            "ID": "H4",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
@@ -115,37 +139,45 @@
     },
     {
         "Dauer": 1,
+        "ID": "SAB4",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H4",
+            "ID": "H4",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H5",
+            "ID": "H5",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
@@ -153,37 +185,45 @@
     },
     {
         "Dauer": 1,
+        "ID": "SAB5",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H5",
+            "ID": "H5",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H6",
+            "ID": "H6",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
@@ -191,37 +231,45 @@
     },
     {
         "Dauer": 1,
+        "ID": "SAB6",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H6",
+            "ID": "H6",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H7",
+            "ID": "H7",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
@@ -229,37 +277,45 @@
     },
     {
         "Dauer": 1,
+        "ID": "SAB7",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H7",
+            "ID": "H7",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H8",
+            "ID": "H8",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
@@ -267,37 +323,45 @@
     },
     {
         "Dauer": 1,
+        "ID": "SAB8",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H8",
+            "ID": "H8",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H9",
+            "ID": "H9",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
@@ -305,37 +369,45 @@
     },
     {
         "Dauer": 1,
+        "ID": "SAB9",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H9",
+            "ID": "H9",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H10",
+            "ID": "H10",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
@@ -343,37 +415,45 @@
     },
     {
         "Dauer": 1,
+        "ID": "SAB10",
         "Linie": {
             "Name": "U1",
             "Ident": "U1_NORD",
+            "ID": "U1_NORD",
             "Farbe": "#FF4500"
         },
         "StartHaltestelle": {
             "Name": "H10",
+            "ID": "H10",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]
         },
         "ZielHaltestelle": {
             "Name": "H11",
+            "ID": "H11",
             "Linien": [
                 {
                     "Name": "U1",
                     "Ident": "U1_NORD",
+                    "ID": "U1_NORD",
                     "Farbe": "#FF4500"
                 },
                 {
                     "Name": "U1",
                     "Ident": "U1_SUED",
+                    "ID": "U1_SUED",
                     "Farbe": "#FF4500"
                 }
             ]

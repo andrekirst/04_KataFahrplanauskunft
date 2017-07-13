@@ -17,5 +17,7 @@
 | Tool | master | develop |
 |---|---|---|
 | Coveralls.io | [![Coverage Status](https://coveralls.io/repos/github/andrekirst/04_KataFahrplanauskunft/badge.svg?branch=master)](https://coveralls.io/github/andrekirst/04_KataFahrplanauskunft?branch=master) | [![Coverage Status](https://coveralls.io/repos/github/andrekirst/04_KataFahrplanauskunft/badge.svg?branch=develop)](https://coveralls.io/github/andrekirst/04_KataFahrplanauskunft?branch=develop) |
+| Codecov.io | [![codecov](https://codecov.io/gh/andrekirst/04_KataFahrplanauskunft/branch/master/graph/badge.svg)](https://codecov.io/gh/andrekirst/04_KataFahrplanauskunft) | [![codecov](https://codecov.io/gh/andrekirst/04_KataFahrplanauskunft/branch/develop/graph/badge.svg)](https://codecov.io/gh/andrekirst/04_KataFahrplanauskunft) |
 
 * *Link zum Coveralls.io-Projekt [https://coveralls.io/github/andrekirst/04_KataFahrplanauskunft](https://coveralls.io/github/andrekirst/04_KataFahrplanauskunft)*
+* *Link zum Codecov.io-Projekt [https://codecov.io/gh/andrekirst/04_KataFahrplanauskunft](https://codecov.io/gh/andrekirst/04_KataFahrplanauskunft)*

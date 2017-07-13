@@ -1,5 +1,7 @@
 # Umstiegspunkt
 
+Basisklasse: `FahrplanauskunftObjektBase`
+
 ## Beschreibung
 
 Umstiegspunkt ist von Haltestelle abgeleitet.

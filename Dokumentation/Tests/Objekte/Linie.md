@@ -59,9 +59,3 @@ Testet, ob die Eigenschaft Farbe den Wert aus dem Konstruktor übernimmt
 #### Beschreibung
 
 Test, dass das Attribut Farbe mit unterschiedlichen Werten verglichen wird
-
-### Linie_GetHashCode_Attribute_null_Erwartet_0
-
-#### Beschreibung
-
-Test, wenn alle Attribute null sind, dass der HashCode 0 ist

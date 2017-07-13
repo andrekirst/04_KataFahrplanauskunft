@@ -5,6 +5,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
+using System.Security.Permissions;
 using Fahrplanauskunft.Objekte;
 
 namespace Fahrplanauskunft.Exceptions
@@ -31,7 +32,7 @@ namespace Fahrplanauskunft.Exceptions
         /// </summary>
         /// <param name="info">Die SerializationInfo, die die serialisierten Objektdaten für die ausgelöste Exception enthält.</param>
         /// <param name="context">Der StreamingContext, der die Kontextinformationen über die Quelle oder das Ziel enthält.</param>
-        [ExcludeFromCodeCoverageAttribute]
+        [ExcludeFromCodeCoverage]
         public LinieIstNichtAnHaltestelleException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
@@ -42,7 +43,7 @@ namespace Fahrplanauskunft.Exceptions
         /// </summary>
         /// <param name="message">Die Fehlermeldung, in der die Ursache der Exception erklärt wird</param>
         /// <param name="innerException">Die Ausnahme, die die aktuelle Ausnahme verursacht hat, oder null</param>
-        [ExcludeFromCodeCoverageAttribute]
+        [ExcludeFromCodeCoverage]
         public LinieIstNichtAnHaltestelleException(string message, Exception innerException)
             : base(message, innerException)
         {
@@ -52,10 +53,18 @@ namespace Fahrplanauskunft.Exceptions
         /// Konstruktor für LinieIstNichtAnHaltestelleException mit einer message. (Ausschluss von CodeCoverage, da base aufgerufen wird)
         /// </summary>
         /// <param name="message">Die Fehlermeldung, in der die Ursache der Exception erklärt wird</param>
-        [ExcludeFromCodeCoverageAttribute]
+        [ExcludeFromCodeCoverage]
         public LinieIstNichtAnHaltestelleException(string message)
             : base(message)
         {
+        }
+
+        /// <summary>
+        /// Die Haltestelle
+        /// </summary>
+        public Haltestelle Haltestelle
+        {
+            get; set;
         }
 
         /// <summary>
@@ -67,11 +76,15 @@ namespace Fahrplanauskunft.Exceptions
         }
 
         /// <summary>
-        /// Die Haltestelle
+        /// Überschreibt die Methode <see cref="Exception.GetObjectData(SerializationInfo, StreamingContext)"/> aus der Basisklasse
         /// </summary>
-        public Haltestelle Haltestelle
+        /// <param name="info">Die SerializationInfo</param>
+        /// <param name="context">Der StreamingContext</param>
+        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
+        [ExcludeFromCodeCoverage]
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            get; set;
+            base.GetObjectData(info, context);
         }
     }
 }
