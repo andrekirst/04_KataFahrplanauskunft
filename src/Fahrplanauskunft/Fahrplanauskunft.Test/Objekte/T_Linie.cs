@@ -136,7 +136,7 @@ namespace Fahrplanauskunft.Test.Objekte
         /// </summary>
         [TestMethod]
         [TestCategory("Objekte")]
-        public void FahrplanauskunftObjektBase_GetHashCode_ID_1_Erwarte__842352753()
+        public void Linie_GetHashCode_ID_1_Erwarte__842352753()
         {
             Linie linie = new Linie(id: "1", nummer: "Test", lauf: "TEST", farbe: "#FF4500");
 

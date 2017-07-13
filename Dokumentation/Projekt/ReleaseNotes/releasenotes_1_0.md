@@ -32,6 +32,7 @@
 * #110 - Speichern des FahrplanauskunftSpeicher `feature`
 * #112 - Neues Attribut Farbe für das Objekt Linie `feature`
 * #118 - Codecov in den Build-Prozess einbauen `feature`, `umgebung`
+* #120 - Überarbeitung der Attribute für das Objekt Linie `feature`, `umgebung`
 
 ## Bugfixes
 
