@@ -24,7 +24,7 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle startHaltestelle = new Haltestelle(id: "StartHaltestelle", name: "StartHaltestelle");
             Haltestelle zielHaltestelle = new Haltestelle(id: "ZielHaltestelle", name: "ZielHaltestelle");
 
-            Linie linie = new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie = new Linie(id: "U1_NORD", nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500");
 
             Streckenabschnitt streckenabschnitt = new Streckenabschnitt(id: "SAB1", dauer: 1, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, linie: linie);
 
@@ -41,11 +41,11 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             Haltestelle startHaltestelle = new Haltestelle(id: "StartHaltestelle", name: "StartHaltestelle");
             Haltestelle zielHaltestelle = new Haltestelle(id: "ZielHaltestelle", name: "ZielHaltestelle");
-            Linie linie = new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie linie = new Linie(id: "U1_NORD", nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500");
 
             Streckenabschnitt streckenabschnitt = new Streckenabschnitt(id: "SAB1", dauer: 1, startHaltestelle: startHaltestelle, zielHaltestelle: zielHaltestelle, linie: linie);
 
-            Linie expected = new Linie(id: "U1_NORD", name: "U1", ident: "U1_NORD", farbe: "#FF4500");
+            Linie expected = new Linie(id: "U1_NORD", nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500");
 
             Linie actual = streckenabschnitt.Linie;
 
@@ -61,14 +61,14 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie1 = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle", id: "1");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie2 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie2 = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "1");
 
@@ -84,14 +84,14 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie1 = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle", id: "1");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie2 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie2 = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "1");
 
@@ -107,14 +107,14 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie1 = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle2", id: "3");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle2", id: "4");
 
-            Linie linie2 = new Linie(name: "U12", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie2 = new Linie(nummer: "U12", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "2");
 
@@ -130,14 +130,14 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie1 = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle", id: "1");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie2 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie2 = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "1");
 
@@ -153,14 +153,14 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie1 = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1, id: "1");
 
             Haltestelle startHaltestelle2 = new Haltestelle(name: "StartHaltestelle2", id: "3");
             Haltestelle zielHaltestelle2 = new Haltestelle(name: "ZielHaltestelle2", id: "4");
 
-            Linie linie2 = new Linie(name: "U12", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie2 = new Linie(nummer: "U12", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt2 = new Streckenabschnitt(dauer: 1, startHaltestelle: startHaltestelle2, zielHaltestelle: zielHaltestelle2, linie: linie2, id: "2");
 
@@ -177,7 +177,7 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle startHaltestelle1 = new Haltestelle(name: "StartHaltestelle", id: "1");
             Haltestelle zielHaltestelle1 = new Haltestelle(name: "ZielHaltestelle", id: "2");
 
-            Linie linie1 = new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1");
+            Linie linie1 = new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1");
 
             Streckenabschnitt streckenabschnitt1 = new Streckenabschnitt(id: "1", dauer: 1, startHaltestelle: startHaltestelle1, zielHaltestelle: zielHaltestelle1, linie: linie1);
 

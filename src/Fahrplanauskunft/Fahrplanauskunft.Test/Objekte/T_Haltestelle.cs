@@ -28,7 +28,7 @@ namespace Fahrplanauskunft.Test.Objekte
         }
 
         /// <summary>
-        /// Test einer Haltestelle mit dem Namen "Test" und einer Linie (Name: "U1", Ident: "U1_NORD")
+        /// Test einer Haltestelle mit dem Namen "Test" und einer Linie (Nummer: "U1", Lauf: "U1_NORD")
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
         public void Haltestelle_Name_Test_Linien_1()
@@ -36,18 +36,18 @@ namespace Fahrplanauskunft.Test.Objekte
             string name = "Test";
             Haltestelle haltestelle = new Haltestelle(id: "1", name: name);
 
-            string linieName = "U1";
-            string linieIdent = "U1_NORD";
+            string linieNummer = "U1";
+            string linieLauf = "U1_NORD";
             string farbe = "#FF4500";
 
-            Linie linie = new Linie(name: linieName, ident: linieIdent, farbe: farbe, id: "1");
+            Linie linie = new Linie(nummer: linieNummer, lauf: linieLauf, farbe: farbe, id: "1");
 
             haltestelle.Linien.Add(linie);
 
             Assert.AreEqual("Test", haltestelle.Name);
             Assert.AreEqual(1, haltestelle.Linien.Count);
-            Assert.AreEqual("U1", haltestelle.Linien[0].Name);
-            Assert.AreEqual("U1_NORD", haltestelle.Linien[0].Ident);
+            Assert.AreEqual("U1", haltestelle.Linien[0].Nummer);
+            Assert.AreEqual("U1_NORD", haltestelle.Linien[0].Lauf);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Fahrplanauskunft.Test.Objekte
             string name = "Test";
             Haltestelle haltestelle = new Haltestelle(id: "1", name: name);
 
-            Linie linie = new Linie(name: "Test", ident: "TEST", farbe: "#FF4500", id: "1");
+            Linie linie = new Linie(nummer: "Test", lauf: "TEST", farbe: "#FF4500", id: "1");
 
             Assert.AreNotEqual(haltestelle, linie);
         }
@@ -152,16 +152,16 @@ namespace Fahrplanauskunft.Test.Objekte
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
-                    new Linie(name: "U1", ident: "U1_SUED", farbe: "#FF4500", id: "2")
+                    new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
+                    new Linie(nummer: "U1", lauf: "U1_SUED", farbe: "#FF4500", id: "2")
                 }
             };
             Haltestelle h2 = new Haltestelle(id: "2", name: "H2")
             {
                 Linien = new List<Linie>()
                 {
-                    new Linie(name: "U1", ident: "U1_NORD", farbe: "#FF4500", id: "1"),
-                    new Linie(name: "U2", ident: "U2_WEST", farbe: "#FF4500", id: "3")
+                    new Linie(nummer: "U1", lauf: "U1_NORD", farbe: "#FF4500", id: "1"),
+                    new Linie(nummer: "U2", lauf: "U2_WEST", farbe: "#FF4500", id: "3")
                 }
             };
 

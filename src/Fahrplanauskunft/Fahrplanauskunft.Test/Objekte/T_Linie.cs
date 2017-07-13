@@ -13,26 +13,26 @@ namespace Fahrplanauskunft.Test.Objekte
     [TestClass]
     public class T_Linie
     {
-        private static readonly Linie LinieTest = new Linie(id: "TEST", name: "Test", ident: "TEST", farbe: "#FF4500");
-        private static readonly Linie LinieTest2 = new Linie(id: "TEST2", name: "Test2", ident: "TEST2", farbe: "#FF4501");
+        private static readonly Linie LinieTest = new Linie(id: "TEST", nummer: "Test", lauf: "TEST", farbe: "#FF4500");
+        private static readonly Linie LinieTest2 = new Linie(id: "TEST2", nummer: "Test2", lauf: "TEST2", farbe: "#FF4501");
 
         /// <summary>
-        /// Test, ob der Name den Wert "Test" beinhaltet und der Ident den Wert "TEST" beinhaltet.
+        /// Test, ob die Nummer den Wert "Test" beinhaltet und der Lauf den Wert "TEST" beinhaltet.
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Linie_Konstruktor_Name_Test_Ident_TEST()
+        public void Linie_Konstruktor_Nummer_Test_Lauf_TEST()
         {
             Linie linie = LinieTest;
 
-            Assert.AreEqual("Test", linie.Name);
-            Assert.AreEqual("TEST", linie.Ident);
+            Assert.AreEqual("Test", linie.Nummer);
+            Assert.AreEqual("TEST", linie.Lauf);
         }
 
         /// <summary>
-        /// Test der Equals-Methode, dass zwei Linien gleich sind. Name: "Test", Ident: "TEST"
+        /// Test der Equals-Methode, dass zwei Linien gleich sind. Nummer: "Test", Lauf: "TEST"
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Linie_Equals_Name_Test_Ident_TEST()
+        public void Linie_Equals_Nummer_Test_Lauf_TEST()
         {
             Linie actual = LinieTest;
 
@@ -42,10 +42,10 @@ namespace Fahrplanauskunft.Test.Objekte
         }
 
         /// <summary>
-        /// Test des Gleichheitsoperators mit zwei Linien mit den gleichen Namen
+        /// Test des Gleichheitsoperators mit zwei Linien mit der gleichen Nummer
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Linie_Gleichheitsoperator_Gleicher_Linienname()
+        public void Linie_Gleichheitsoperator_Gleiche_Liniennummer()
         {
             Linie actual = LinieTest;
             Linie expected = LinieTest;
@@ -54,10 +54,10 @@ namespace Fahrplanauskunft.Test.Objekte
         }
 
         /// <summary>
-        /// Test des Gleichheitsoperators mit zwei Linien mit verschiedenen Namen
+        /// Test des Gleichheitsoperators mit zwei Linien mit verschiedenen Nummern
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Linie_Gleichheitsoperator_Verschiedene_Linienname()
+        public void Linie_Gleichheitsoperator_Verschiedene_Liniennummern()
         {
             Linie actual = LinieTest;
             Linie expected = LinieTest2;
@@ -66,10 +66,10 @@ namespace Fahrplanauskunft.Test.Objekte
         }
 
         /// <summary>
-        /// Test des Ungleichheitsoperators mit zwei Linien mit den gleichen Namen
+        /// Test des Ungleichheitsoperators mit zwei Linien mit den gleichen Nummern
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Linie_Ungleichheitsoperator_Gleicher_Linienname()
+        public void Linie_Ungleichheitsoperator_Gleiche_Liniennummern()
         {
             Linie actual = LinieTest;
             Linie expected = LinieTest;
@@ -78,10 +78,10 @@ namespace Fahrplanauskunft.Test.Objekte
         }
 
         /// <summary>
-        /// Test des Ungleichheitsoperators mit zwei Linien mit verschiedenen Namen
+        /// Test des Ungleichheitsoperators mit zwei Linien mit verschiedenen Nummern
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Linie_Ungleichheitsoperator_Verschiedene_Linienname()
+        public void Linie_Ungleichheitsoperator_Verschiedene_Liniennummern()
         {
             Linie actual = LinieTest;
             Linie expected = LinieTest2;
@@ -97,7 +97,7 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             string expected = "B1 - B11 : Farbe: #FF4500";
 
-            Linie linie = new Linie(name: "B1", ident: "B11", farbe: "#FF4500", id: "B11");
+            Linie linie = new Linie(nummer: "B1", lauf: "B11", farbe: "#FF4500", id: "B11");
             string actual = linie.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -110,7 +110,7 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestCategory("Objekte")]
         public void Linie_Farbe_RauteFF4500()
         {
-            Linie linie = new Linie(id: "TEST", name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie linie = new Linie(id: "TEST", nummer: "Test", lauf: "TEST", farbe: "#FF4500");
 
             string actual = linie.Farbe;
             string expected = "#FF4500";
@@ -123,10 +123,10 @@ namespace Fahrplanauskunft.Test.Objekte
         /// </summary>
         [TestMethod]
         [TestCategory("Objekte")]
-        public void Linie_Name_und_Ident_gleich_Farbe_unterschiedlich()
+        public void Linie_Nummer_und_Lauf_gleich_Farbe_unterschiedlich()
         {
             Linie actual = LinieTest;
-            Linie expected = new Linie(id: "TEST", name: "Test", ident: "TEST", farbe: "#FF4501");
+            Linie expected = new Linie(id: "TEST", nummer: "Test", lauf: "TEST", farbe: "#FF4501");
 
             Assert.IsTrue(actual != expected);
         }
@@ -138,7 +138,7 @@ namespace Fahrplanauskunft.Test.Objekte
         [TestCategory("Objekte")]
         public void FahrplanauskunftObjektBase_GetHashCode_ID_1_Erwarte__842352753()
         {
-            Linie linie = new Linie(id: "1", name: "Test", ident: "TEST", farbe: "#FF4500");
+            Linie linie = new Linie(id: "1", nummer: "Test", lauf: "TEST", farbe: "#FF4500");
 
             int actual = linie.GetHashCode();
 

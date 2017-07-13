@@ -35,8 +35,8 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod, TestCategory("EqualsHelper")]
         public void EqualsHelper_Equatable_Ungleich()
         {
-            Linie linie = new Linie(id: "L1", name: "Linie 1", ident: "L1", farbe: "#FF4500");
-            Linie linie2 = new Linie(id: "L2", name: "Linie 2", ident: "L2", farbe: "#FF4501");
+            Linie linie = new Linie(id: "L1", nummer: "Linie 1", lauf: "L1", farbe: "#FF4500");
+            Linie linie2 = new Linie(id: "L2", nummer: "Linie 2", lauf: "L2", farbe: "#FF4501");
 
             bool expected = false;
 
@@ -44,7 +44,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                 linie,
                 () =>
                 {
-                    return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
+                    return linie.Lauf == linie2.Lauf && linie.Nummer == linie2.Nummer;
                 });
 
             Assert.AreEqual(expected, actual);
@@ -56,8 +56,8 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod, TestCategory("EqualsHelper")]
         public void EqualsHelper_Equatable_Gleich()
         {
-            Linie linie = new Linie(id: "L1", name: "Linie 1", ident: "L1", farbe: "#FF4500");
-            Linie linie2 = new Linie(id: "L2", name: "Linie 1", ident: "L1", farbe: "#FF4500");
+            Linie linie = new Linie(id: "L1", nummer: "Linie 1", lauf: "L1", farbe: "#FF4500");
+            Linie linie2 = new Linie(id: "L2", nummer: "Linie 1", lauf: "L1", farbe: "#FF4500");
 
             bool expected = true;
 
@@ -65,7 +65,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                 linie,
                 () =>
                 {
-                    return linie.Ident == linie2.Ident && linie.Name == linie2.Name;
+                    return linie.Lauf == linie2.Lauf && linie.Nummer == linie2.Nummer;
                 });
 
             Assert.AreEqual(expected, actual);
