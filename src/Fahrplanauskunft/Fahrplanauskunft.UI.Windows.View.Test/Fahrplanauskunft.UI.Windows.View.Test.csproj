@@ -60,6 +60,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helper\T_FarbeHelper.cs" />
     <Compile Include="Linie\T_LinieListView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
