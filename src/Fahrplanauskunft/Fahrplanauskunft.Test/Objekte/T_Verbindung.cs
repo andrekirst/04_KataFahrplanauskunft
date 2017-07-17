@@ -8,6 +8,12 @@ namespace Fahrplanauskunft.Test.Objekte
     [TestClass]
     public class T_Verbindung
     {
+        private static readonly Linie LinieL1 = new Linie(id: "L1", nummer: "Linie 1", lauf: "L1", farbe: "#000000");
+        private static readonly Linie LinieL2 = new Linie(id: "L2", nummer: "Linie 2", lauf: "L2", farbe: "#0000FF");
+
+        private static readonly Haltestelle HaltestelleH1 = new Haltestelle(id: "H1", name: "H1");
+        private static readonly Haltestelle HaltestelleH2 = new Haltestelle(id: "H2", name: "H2");
+        private static readonly Haltestelle HaltestelleH3 = new Haltestelle(id: "H3", name: "H3");
 
         [TestMethod, TestCategory("Objekte")]
         public void Verbindung_Property_Abfahrtszeit()
@@ -30,7 +36,7 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             Verbindung verbindung = TestVerbindung();
 
-            Haltestelle expected = new Haltestelle(name: "H1");
+            Haltestelle expected = HaltestelleH1;
 
             Assert.AreEqual(expected, verbindung.StartHaltestelle);
         }
@@ -40,7 +46,7 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             Verbindung verbindung = TestVerbindung();
 
-            Haltestelle expected = new Haltestelle(name: "H2");
+            Haltestelle expected = HaltestelleH2;
 
             Assert.AreEqual(expected, verbindung.ZielHaltestelle);
         }
@@ -54,9 +60,9 @@ namespace Fahrplanauskunft.Test.Objekte
             Einzelverbindung einzelverbindung = new Einzelverbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL1);
 
             expected.Add(1, einzelverbindung);
 
@@ -72,34 +78,34 @@ namespace Fahrplanauskunft.Test.Objekte
             Einzelverbindung einzelverbindung1 = new Einzelverbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL1);
 
             einzelverbindungen1.Add(1, einzelverbindung1);
 
             Verbindung verbindung1 = new Verbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
                 einzelverbindungen: einzelverbindungen1);
 
             Dictionary<int, Einzelverbindung> einzelverbindungen2 = new Dictionary<int, Einzelverbindung>();
             Einzelverbindung einzelverbindung2 = new Einzelverbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL1);
 
             einzelverbindungen2.Add(1, einzelverbindung2);
 
             Verbindung verbindung2 = new Verbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
                 einzelverbindungen: einzelverbindungen2);
 
             Assert.AreEqual(verbindung1, verbindung2);
@@ -112,34 +118,34 @@ namespace Fahrplanauskunft.Test.Objekte
             Einzelverbindung einzelverbindung1 = new Einzelverbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL1);
 
             einzelverbindungen1.Add(1, einzelverbindung1);
 
             Verbindung verbindung1 = new Verbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
                 einzelverbindungen: einzelverbindungen1);
 
             Dictionary<int, Einzelverbindung> einzelverbindungen2 = new Dictionary<int, Einzelverbindung>();
             Einzelverbindung einzelverbindung2 = new Einzelverbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 2", ident: "L2"));
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL2);
 
             einzelverbindungen2.Add(1, einzelverbindung2);
 
             Verbindung verbindung2 = new Verbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
                 einzelverbindungen: einzelverbindungen2);
 
             Assert.AreNotEqual(verbindung1, verbindung2);
@@ -196,17 +202,17 @@ namespace Fahrplanauskunft.Test.Objekte
             Einzelverbindung einzelverbindung = new Einzelverbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL1);
 
             einzelverbindungen.Add(1, einzelverbindung);
 
             Verbindung verbindung = new Verbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
                 einzelverbindungen: einzelverbindungen);
             return verbindung;
         }
@@ -217,26 +223,26 @@ namespace Fahrplanauskunft.Test.Objekte
             Einzelverbindung einzelverbindung = new Einzelverbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL1);
 
             einzelverbindungen.Add(1, einzelverbindung);
 
             Einzelverbindung einzelverbindung2 = new Einzelverbindung(
                 abfahrtszeit: 780,
                 ankunftszeit: 810,
-                startHaltestelle: new Haltestelle(name: "H2"),
-                zielHaltestelle: new Haltestelle(name: "H3"),
-                linie: new Linie(name: "Linie 2", ident: "L2"));
+                startHaltestelle: HaltestelleH2,
+                zielHaltestelle: HaltestelleH3,
+                linie: LinieL2);
 
             einzelverbindungen.Add(2, einzelverbindung2);
 
             Verbindung verbindung = new Verbindung(
                 abfahrtszeit: 720,
                 ankunftszeit: 770,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
                 einzelverbindungen: einzelverbindungen);
             return verbindung;
         }

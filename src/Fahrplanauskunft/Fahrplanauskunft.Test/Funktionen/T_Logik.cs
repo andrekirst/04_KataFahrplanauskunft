@@ -22,7 +22,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Liefert Testdaten, für den Test
         /// </summary>
         /// <returns>Liste von Haltestellen</returns>
-        public List<Haltestelle> Lade_Test_Haltestellen()
+        public static List<Haltestelle> Lade_Test_Haltestellen()
         {
             string ordnerPfad = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\TestDaten\\TestSatzBrainstorming");
 
@@ -36,7 +36,7 @@ namespace Fahrplanauskunft.Test.Funktionen
         /// Liefert Testdaten an Linien für die Tests
         /// </summary>
         /// <returns>Gibt die Test-Linien zurück</returns>
-        public List<Linie> Lade_Test_Linien()
+        public static List<Linie> Lade_Test_Linien()
         {
             string ordnerPfad = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\TestDaten\\TestSatzBrainstorming");
 
@@ -94,8 +94,9 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Haltestelle> actual = Logik.Liefere_Haltestellen_einer_Linie(
                 new Linie()
                 {
-                    Ident = "B11",
-                    Name = "B1"
+                    ID = "B11",
+                    Lauf = "B11",
+                    Nummer = "B1"
                 },
                 haltestellen);
 
@@ -122,8 +123,9 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Haltestelle> actual = Logik.Liefere_Haltestellen_einer_Linie(
                 new Linie()
                 {
-                    Ident = "B21",
-                    Name = "B2"
+                    ID = "B21",
+                    Lauf = "B21",
+                    Nummer = "B2"
                 },
                 haltestellen);
 
@@ -148,8 +150,9 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> actual = Logik.Liefere_Umstiegspunkte_fuer_Linie(
                 new Linie()
                 {
-                    Ident = "B11",
-                    Name = "B1"
+                    ID = "B11",
+                    Lauf = "B11",
+                    Nummer = "B1"
                 },
                 haltestellen);
 
@@ -173,8 +176,9 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> actual = Logik.Liefere_Umstiegspunkte_fuer_Linie(
                 new Linie()
                 {
-                    Ident = "B31",
-                    Name = "B3"
+                    ID = "B31",
+                    Lauf = "B31",
+                    Nummer = "B3"
                 },
                 haltestellen);
 
@@ -197,8 +201,9 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Umstiegspunkt> actual = Logik.Liefere_Umstiegspunkte_fuer_Linie(
                 new Linie()
                 {
-                    Ident = "B41",
-                    Name = "B4"
+                    ID = "B41",
+                    Lauf = "B41",
+                    Nummer = "B4"
                 },
                 haltestellen);
 
@@ -215,8 +220,8 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>()
             {
-                new Umstiegspunkt { Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
-                new Umstiegspunkt { Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
+                new Umstiegspunkt { ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
+                new Umstiegspunkt { ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
             };
 
             List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umstiegspunkte(
@@ -224,11 +229,13 @@ namespace Fahrplanauskunft.Test.Funktionen
                 {
                     new Umstiegspunkt()
                     {
+                        ID = "Up1",
                         Name = "Up1",
                         Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
                     },
                     new Umstiegspunkt()
                     {
+                        ID = "Up3",
                         Name = "Up3",
                         Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
                     }
@@ -247,16 +254,16 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             List<Umstiegspunkt> expected = new List<Umstiegspunkt>()
             {
-                new Umstiegspunkt { Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
-                new Umstiegspunkt { Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
+                new Umstiegspunkt { ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
+                new Umstiegspunkt { ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
             };
 
             List<Umstiegspunkt> actual = Logik.Liefere_eindeutige_Umstiegspunkte(
                 new List<Umstiegspunkt>()
                 {
-                    new Umstiegspunkt { Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
-                    new Umstiegspunkt { Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") },
-                    new Umstiegspunkt { Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
+                    new Umstiegspunkt { ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2") },
+                    new Umstiegspunkt { ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") },
+                    new Umstiegspunkt { ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8") }
                 });
 
             CollectionAssert.AreEqual(expected, actual);
@@ -274,15 +281,15 @@ namespace Fahrplanauskunft.Test.Funktionen
             {
                 new Umstiegspunkt()
                 {
-                    Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
+                    ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
                 },
                 new Umstiegspunkt()
                 {
-                    Name = "Up2", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H4")
+                    ID = "Up2", Name = "Up2", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H4")
                 },
                 new Umstiegspunkt()
                 {
-                    Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
+                    ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
                 }
             };
 
@@ -291,19 +298,19 @@ namespace Fahrplanauskunft.Test.Funktionen
                 {
                     new Umstiegspunkt()
                     {
-                        Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
+                        ID = "Up1", Name = "Up1", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H2")
                     },
                     new Umstiegspunkt()
                     {
-                        Name = "Up2", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H4")
+                        ID = "Up2", Name = "Up2", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H4")
                     },
                     new Umstiegspunkt()
                     {
-                        Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
+                        ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
                     },
                     new Umstiegspunkt()
                     {
-                        Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
+                        ID = "Up3", Name = "Up3", Haltestelle = haltestellen.FirstOrDefault(h => h.Name == "H8")
                     }
             });
 
@@ -435,7 +442,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
-                    linie: linien.First(l => l.Ident == "B31"),
+                    linie: linien.First(l => l.Lauf == "B31"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H10"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H11"),
                     streckenabschnitte: streckenabschnitte);
@@ -470,7 +477,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
-                    linie: linien.First(l => l.Ident == "B32"),
+                    linie: linien.First(l => l.Lauf == "B32"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H11"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H10"),
                     streckenabschnitte: streckenabschnitte);
@@ -504,7 +511,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
-                    linie: linien.First(l => l.Ident == "B41"),
+                    linie: linien.First(l => l.Lauf == "B41"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H14"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H15"),
                     streckenabschnitte: streckenabschnitte);
@@ -538,7 +545,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
-                    linie: linien.First(l => l.Ident == "B42"),
+                    linie: linien.First(l => l.Lauf == "B42"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H15"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H14"),
                     streckenabschnitte: streckenabschnitte);
@@ -568,7 +575,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
-                    linie: linien.First(l => l.Ident == "B11"),
+                    linie: linien.First(l => l.Lauf == "B11"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H1"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),
                     streckenabschnitte: streckenabschnitte);
@@ -596,7 +603,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
-                    linie: linien.First(l => l.Ident == "B41"),
+                    linie: linien.First(l => l.Lauf == "B41"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H1"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H12"),
                     streckenabschnitte: streckenabschnitte);
@@ -623,7 +630,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             bool actual = Logik.Ist_Linie_An_Haltestelle(
-                linie: linien.First(l => l.Ident == "B11"),
+                linie: linien.First(l => l.Lauf == "B11"),
                 haltestelle: haltenstellen.First(h => h.Name == "H1"));
             #endregion
 
@@ -650,7 +657,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             bool actual = Logik.Ist_Linie_An_Haltestelle(
-                linie: linien.First(l => l.Ident == "B41"),
+                linie: linien.First(l => l.Lauf == "B41"),
                 haltestelle: haltenstellen.First(h => h.Name == "H1"));
             #endregion
 
@@ -683,7 +690,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             List<Streckenabschnitt> actual = Logik.Liefere_Streckenabschnitte_einer_Linie(
-                linie: linien.First(l => l.Ident == "B11"),
+                linie: linien.First(l => l.Lauf == "B11"),
                 streckenabschnitte: streckenabschnitte);
             #endregion
 
@@ -714,7 +721,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             List<Streckenabschnitt> actual = Logik.Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(
-                linie: linien.First(l => l.Ident == "B11"),
+                linie: linien.First(l => l.Lauf == "B11"),
                 haltestelle: haltestellen.First(h => h.Name == "H1"),
                 streckenabschnitte: streckenabschnitte);
             #endregion
@@ -747,7 +754,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             List<Streckenabschnitt> actual = Logik.Liefere_Streckenabschnitte_einer_Haltestelle_einer_Linie(
-                linie: linien.First(l => l.Ident == "B11"),
+                linie: linien.First(l => l.Lauf == "B11"),
                 haltestelle: haltestellen.First(h => h.Name == "H2"),
                 streckenabschnitte: streckenabschnitte);
             #endregion
@@ -780,7 +787,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #region Das Ergebnis auswerten
             List<Haltestelle> actual = Logik.Sortiere_Liste_von_Haltestellen_von_Start_nach_Ziel(
-                    linie: linien.First(l => l.Ident == "B31"),
+                    linie: linien.First(l => l.Lauf == "B31"),
                     startHaltestelle: haltenstellen.First(h => h.Name == "H10"),
                     zielHaltestelle: haltenstellen.First(h => h.Name == "H8"),
                     streckenabschnitte: streckenabschnitte);
@@ -1074,7 +1081,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             try
             {
-                Logik.Ueberpruefe_Ist_Linie_An_Haltestelle(linien.First(l => l.Ident == "B11"), haltestellen.First(h => h.Name == "H1"));
+                Logik.Ueberpruefe_Ist_Linie_An_Haltestelle(linien.First(l => l.Lauf == "B11"), haltestellen.First(h => h.Name == "H1"));
             }
             catch(Exception)
             {
@@ -1092,7 +1099,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Linie> linien = Lade_Test_Linien();
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
 
-            Logik.Ueberpruefe_Ist_Linie_An_Haltestelle(linien.First(l => l.Ident == "B12"), haltestellen.First(h => h.Name == "H12"));
+            Logik.Ueberpruefe_Ist_Linie_An_Haltestelle(linien.First(l => l.Lauf == "B12"), haltestellen.First(h => h.Name == "H12"));
         }
 
         /// <summary>
@@ -1108,7 +1115,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H1");
             Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H2");
 
-            Linie linie = linien.First(l => l.Ident == "B11");
+            Linie linie = linien.First(l => l.Lauf == "B11");
 
             int expected = 2;
             int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
@@ -1133,7 +1140,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H1");
             Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H4");
 
-            Linie linie = linien.First(l => l.Ident == "B11");
+            Linie linie = linien.First(l => l.Lauf == "B11");
 
             int expected = 6;
             int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
@@ -1158,7 +1165,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H12");
             Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H16");
 
-            Linie linie = linien.First(l => l.Ident == "B41");
+            Linie linie = linien.First(l => l.Lauf == "B41");
 
             int expected = 12;
             int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
@@ -1183,7 +1190,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H16");
             Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H12");
 
-            Linie linie = linien.First(l => l.Ident == "B42");
+            Linie linie = linien.First(l => l.Lauf == "B42");
 
             int expected = 12;
             int actual = Logik.Berechne_Fahrtdauer_von_Haltestelle_zu_Haltestelle(
@@ -1206,7 +1213,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = Lade_Test_Haltestellenfahrplaneintraege();
 
             Haltestelle haltstelleH1 = haltestellen.First(h => h.Name == "H2");
-            Linie linieB11 = linien.First(l => l.Ident == "B11");
+            Linie linieB11 = linien.First(l => l.Lauf == "B11");
 
             int actual = Logik.ErmittleAbfahrtszeit(haltestelle: haltstelleH1, linie: linieB11, haltestellenfahrplaneintraege: haltestellenfahrplaneintraege, wunschabfahrtszeit: 770);
             int expected = 783;
@@ -1224,7 +1231,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = Lade_Test_Haltestellenfahrplaneintraege();
 
             Haltestelle haltstelleH1 = haltestellen.First(h => h.Name == "H2");
-            Linie linieB11 = linien.First(l => l.Ident == "B11");
+            Linie linieB11 = linien.First(l => l.Lauf == "B11");
 
             int actual = Logik.ErmittleAbfahrtszeit(haltestelle: haltstelleH1, linie: linieB11, haltestellenfahrplaneintraege: haltestellenfahrplaneintraege, wunschabfahrtszeit: 1433);
             int expected = 3;
@@ -1242,7 +1249,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = Lade_Test_Haltestellenfahrplaneintraege();
 
             Haltestelle haltstelleH1 = haltestellen.First(h => h.Name == "H2");
-            Linie linieB11 = linien.First(l => l.Ident == "B11");
+            Linie linieB11 = linien.First(l => l.Lauf == "B11");
 
             int actual = Logik.ErmittleAbfahrtszeit(haltestelle: haltstelleH1, linie: linieB11, haltestellenfahrplaneintraege: haltestellenfahrplaneintraege, wunschabfahrtszeit: 3);
             int expected = 3;
@@ -1264,7 +1271,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                 ankunftszeit: 726,
                 startHaltestelle: haltestellen.First(h => h.Name == "H1"),
                 zielHaltestelle: haltestellen.First(h => h.Name == "H4"),
-                linie: linien.First(l => l.Ident == "B11"));
+                linie: linien.First(l => l.Lauf == "B11"));
             einzelverbindungen.Add(1, einzelverbindung);
 
             Verbindung expected = new Verbindung(
@@ -1303,7 +1310,7 @@ namespace Fahrplanauskunft.Test.Funktionen
                 ankunftszeit: 546,
                 startHaltestelle: haltestellen.First(h => h.Name == "H1"),
                 zielHaltestelle: haltestellen.First(h => h.Name == "H4"),
-                linie: linien.First(l => l.Ident == "B11"));
+                linie: linien.First(l => l.Lauf == "B11"));
             einzelverbindungen.Add(1, einzelverbindung1);
 
             Einzelverbindung einzelverbindung2 = new Einzelverbindung(
@@ -1311,9 +1318,10 @@ namespace Fahrplanauskunft.Test.Funktionen
                 ankunftszeit: 557,
                 startHaltestelle: haltestellen.First(h => h.Name == "H4"),
                 zielHaltestelle: haltestellen.First(h => h.Name == "H7"),
-                linie: linien.First(l => l.Ident == "B21"));
+                linie: linien.First(l => l.Lauf == "B21"));
             einzelverbindungen.Add(2, einzelverbindung2);
 
+            Linie linie = linien.First(l => l.Lauf == "B42");
             Verbindung expected = new Verbindung(
                 abfahrtszeit: 540,
                 ankunftszeit: 557,
@@ -1348,7 +1356,11 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
 
-            List<Linie> expected = linien.Where(l => l.Ident == "B11").ToList();
+            Haltestelle startHaltestelle = haltestellen.First(h => h.Name == "H1");
+            Haltestelle zielHaltestelle = haltestellen.First(h => h.Name == "H12");
+
+            Linie linie = linien.First(l => l.Lauf == "B42");
+            List<Linie> expected = linien.Where(l => l.Lauf == "B11").ToList();
 
             List<Linie> actual = Logik.ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(
                 startHaltestelle: haltestellen.First(h => h.Name == "H1"),

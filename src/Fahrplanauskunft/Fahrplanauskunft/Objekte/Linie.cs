@@ -3,10 +3,6 @@
 // </copyright>
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.Objekte
@@ -14,42 +10,29 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Eine Linie ist eine Sammlung von Haltestellen, die das jeweilige Transportsystem, wie eine Linie, abfährt.
     /// </summary>
-    public class Linie : IEquatable<Linie>
+    public sealed class Linie : FahrplanauskunftObjektBase, IEquatable<Linie>
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
         public Linie()
+            : base()
         {
         }
 
         /// <summary>
-        /// Konstruktor für die Angabe von Name und Ident
+        /// Konstruktor für die Angabe von Nummer, Lauf und Farbe
         /// </summary>
-        /// <param name="name">Der Name der Linie (für Hin- und Gegenrichtung)</param>
-        /// <param name="ident">Der Identifizierer der Linie (nur eine Richtung)</param>
+        /// <param name="nummer">Die Nummer der Linie (für Hin- und Gegenrichtung)</param>
+        /// <param name="lauf">Der Lauf der Linie (nur eine Richtung)</param>
         /// <param name="farbe">Die Farbe für die Linie</param>
-        public Linie(string name, string ident, string farbe)
+        /// <param name="id">Die ID der Linie</param>
+        public Linie(string id, string nummer, string lauf, string farbe)
+            : base(id: id)
         {
-            Name = name;
-            Ident = ident;
+            Nummer = nummer;
+            Lauf = lauf;
             Farbe = farbe;
-        }
-
-        /// <summary>
-        /// Gibt den Ident der Linie zurück, oder setzt ihn.
-        /// </summary>
-        public string Ident
-        {
-            get; set;
-        }
-
-        /// <summary>
-        /// Gibt den Namen der Linie zurück, oder setzt ihn.
-        /// </summary>
-        public string Name
-        {
-            get; set;
         }
 
         /// <summary>
@@ -62,14 +45,19 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Gleichheitsoperator für Linie
+        /// Gibt den Lauf der Linie zurück, oder setzt ihn.
         /// </summary>
-        /// <param name="a">Wert vom Typ Linie für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ Linie für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Linien gleich sind</returns>
-        public static bool operator ==(Linie a, Linie b)
+        public string Lauf
         {
-            return EqualsOperatorHelper.EqualsOperatorBase<Linie>(a, b);
+            get; set;
+        }
+
+        /// <summary>
+        /// Gibt die Nummer der Linie zurück, oder setzt ihn.
+        /// </summary>
+        public string Nummer
+        {
+            get; set;
         }
 
         /// <summary>
@@ -84,17 +72,28 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Gleichheitsoperator für Linie
+        /// </summary>
+        /// <param name="a">Wert vom Typ Linie für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ Linie für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Linien gleich sind</returns>
+        public static bool operator ==(Linie a, Linie b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase(a, b);
+        }
+
+        /// <summary>
         /// Vergleicht die Linie mit einer anderen Linie
         /// </summary>
         /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(Linie other)
         {
-            return EqualsHelper.EqualBase<Linie>(
+            return EqualsHelper.EqualBase(
                 other,
                 () =>
                 {
-                    return this.Name == other.Name && this.Ident == other.Ident && this.Farbe == other.Farbe;
+                    return base.Equals(other) && Nummer == other.Nummer && Lauf == other.Lauf && Farbe == other.Farbe;
                 });
         }
 
@@ -105,7 +104,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Linie);
+            return Equals(obj as Linie);
         }
 
         /// <summary>
@@ -114,10 +113,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der HashCode</returns>
         public override int GetHashCode()
         {
-            return
-                (Name == null ? 0 : Name.GetHashCode() * 3) +
-                (Ident == null ? 0 : Ident.GetHashCode() * 2) +
-                (Farbe == null ? 0 : Farbe.GetHashCode());
+            return base.GetHashCode();
         }
 
         /// <summary>
@@ -126,7 +122,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Bsp.: "B1 - B11"</returns>
         public override string ToString()
         {
-            return $"{Name} - {Ident} : Farbe: {Farbe}";
+            return $"{Nummer} - {Lauf} : Farbe: {Farbe}";
         }
     }
 }

@@ -31,6 +31,9 @@
 * #105 - Erstellung von Projekten (Implementierung, Test) für einen WindowsForms-Editor für die Bearbeitung der Objekte `feature`, `ui-windowsforms-editor`
 * #110 - Speichern des FahrplanauskunftSpeicher `feature`
 * #112 - Neues Attribut Farbe für das Objekt Linie `feature`
+* #118 - Codecov in den Build-Prozess einbauen `feature`, `umgebung`
+* #120 - Überarbeitung der Attribute für das Objekt Linie `feature`, `umgebung`
+* #122 - Logik für die Überprüfung auf eine gültige Farbe `feature`
 
 ## Bugfixes
 
@@ -39,3 +42,4 @@
 * #90 - Fehler beim Upload für SFTP, BinTray falscher Branch und falsche Konfiguration `bug`, `umgebung`
 * #98 - Fehler bei der Konvertierung der Zeit von Zahl zu Text, wenn die Zahl den Wert 800 hat `bug`
 * #114 - Fehler in der Methode GetHashCode, wenn die Attribute null sind `bug`
+* #116 - Überarbeitung von GetHashCode und Erstellung einer Basisklasse `bug`, `überarbeiten`

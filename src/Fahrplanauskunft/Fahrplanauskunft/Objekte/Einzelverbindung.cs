@@ -54,13 +54,7 @@ namespace Fahrplanauskunft.Objekte
 
         public override string ToString()
         {
-            return string.Format(
-                "{0} : {1} {2} -> {3} {4}",
-                Linie.Name,
-                StartHaltestelle.Name,
-                Funktionen.ZeitKonverter.ZuUhrzeitText(Abfahrtszeit),
-                ZielHaltestelle.Name,
-                Funktionen.ZeitKonverter.ZuUhrzeitText(Ankunftszeit));
+            return $"{Linie.Nummer} : {StartHaltestelle.Name} {Funktionen.ZeitKonverter.ZuUhrzeitText(Abfahrtszeit)} -> {ZielHaltestelle.Name} {Funktionen.ZeitKonverter.ZuUhrzeitText(Ankunftszeit)}";
         }
     }
 }

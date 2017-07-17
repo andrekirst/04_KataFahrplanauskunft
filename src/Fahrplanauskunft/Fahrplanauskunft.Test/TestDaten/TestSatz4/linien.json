@@ -1,52 +1,62 @@
 [
     {
-        "Name": "U1",
-        "Ident": "U1_NORD",
-        "Farbe": "#FF4500"
+        "Nummer": "U1",
+        "Lauf": "U1_NORD",
+        "Farbe": "#FF4500",
+        "ID": "U1_NORD"
     },
     {
-        "Name": "U1",
-        "Ident": "U1_SUED",
-        "Farbe": "#FF4500"
+        "Nummer": "U1",
+        "Lauf": "U1_SUED",
+        "Farbe": "#FF4500",
+        "ID": "U1_SUED"
     },
     {
-        "Name": "U2",
-        "Ident": "U2_A",
-        "Farbe": "#EE4500"
+        "Nummer": "U2",
+        "Lauf": "U2_A",
+        "Farbe": "#EE4500",
+        "ID": "U2_A"
     },
     {
-        "Name": "U2",
-        "Ident": "U2_B",
-        "Farbe": "#EE4500"
+        "Nummer": "U2",
+        "Lauf": "U2_B",
+        "Farbe": "#EE4500",
+        "ID": "U2_B"
     },
     {
-        "Name": "U3",
-        "Ident": "U3_A",
-        "Farbe": "#DD4500"
+        "Nummer": "U3",
+        "Lauf": "U3_A",
+        "Farbe": "#DD4500",
+        "ID": "U3_A"
     },
     {
-        "Name": "U3",
-        "Ident": "U3_B",
-        "Farbe": "#DD4500"
+        "Nummer": "U3",
+        "Lauf": "U3_B",
+        "Farbe": "#DD4500",
+        "ID": "U3_B"
     },
     {
-        "Name": "U4",
-        "Ident": "U4_A",
-        "Farbe": "#CC4500"
+        "Nummer": "U4",
+        "Lauf": "U4_A",
+        "Farbe": "#CC4500",
+        "ID": "U4_A"
     },
     {
-        "Name": "U4",
-        "Ident": "U4_B",
-        "Farbe": "#CC4500"
+        "Nummer": "U4",
+        "Lauf": "U4_B",
+        "Farbe": "#CC4500",
+        "ID": "U4_B"
     },
     {
-        "Name": "U5",
-        "Ident": "U5_A",
-        "Farbe": "#BB4500"
+        "Nummer": "U5",
+        "Lauf": "U5_A",
+        "Farbe": "#BB4500",
+        "ID": "U5_A"
     },
     {
-        "Name": "U5",
-        "Ident": "U5_B",
-        "Farbe": "#BB4500"
+        "Nummer": "U5",
+        "Lauf": "U5_B",
+        "Farbe": "#BB4500",
+        "ID": "U5_B"
     }
 ]

@@ -62,13 +62,7 @@ namespace Fahrplanauskunft.Objekte
 
         public override string ToString()
         {
-            return String.Format(
-                "{0} {1} -> {2} {3} - Umstiege: {4}",
-                StartHaltestelle.Name,
-                Funktionen.ZeitKonverter.ZuUhrzeitText(Abfahrtszeit),
-                ZielHaltestelle == null ? "<Unbekannte Ziel-Haltestelle>" : ZielHaltestelle.Name,
-                Funktionen.ZeitKonverter.ZuUhrzeitText(Ankunftszeit),
-                AnzahlUmstiege);
+            return $"{StartHaltestelle.Name} {Funktionen.ZeitKonverter.ZuUhrzeitText(Abfahrtszeit)} -> {(ZielHaltestelle == null ? "<Unbekannte Ziel-Haltestelle>" : ZielHaltestelle.Name)} {Funktionen.ZeitKonverter.ZuUhrzeitText(Ankunftszeit)} - Umstiege: {AnzahlUmstiege}";
         }
 
         public bool Equals(Verbindung other)

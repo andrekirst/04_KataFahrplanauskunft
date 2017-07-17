@@ -10,12 +10,13 @@ namespace Fahrplanauskunft.Objekte
     /// <summary>
     /// Ein HaltestelleFahrplanEintrag beinhaltet die Information, wann, wo und mit welche Linie abfährt
     /// </summary>
-    public class HaltestelleFahrplanEintrag : IEquatable<HaltestelleFahrplanEintrag>
+    public sealed class HaltestelleFahrplanEintrag : FahrplanauskunftObjektBase, IEquatable<HaltestelleFahrplanEintrag>
     {
         /// <summary>
         /// Standardkonstruktor
         /// </summary>
         public HaltestelleFahrplanEintrag()
+            : base()
         {
         }
 
@@ -25,7 +26,9 @@ namespace Fahrplanauskunft.Objekte
         /// <param name="haltestelle">Eine Haltestelle</param>
         /// <param name="uhrzeit">Die Uhrzeit, wann abgefahren wird</param>
         /// <param name="linie">Die Linie, die an der Haltestelle los fährt</param>
-        public HaltestelleFahrplanEintrag(Haltestelle haltestelle, int uhrzeit, Linie linie)
+        /// <param name="id">Die ID des Haltestellenfahrplaneintrages</param>
+        public HaltestelleFahrplanEintrag(string id, Haltestelle haltestelle, int uhrzeit, Linie linie)
+            : base(id: id)
         {
             Haltestelle = haltestelle;
             Uhrzeit = uhrzeit;
@@ -60,17 +63,6 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Gleichheitsoperator für Haltestellenfahrplaneintrag
-        /// </summary>
-        /// <param name="a">Wert vom Typ HaltestelleFahrplanEintrag für den linken Vergleich</param>
-        /// <param name="b">Wert vom Typ HaltestelleFahrplanEintrag für den rechten Vergleich</param>
-        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
-        public static bool operator ==(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
-        {
-            return EqualsOperatorHelper.EqualsOperatorBase<HaltestelleFahrplanEintrag>(a, b);
-        }
-
-        /// <summary>
         /// Ungleichheitsoperator für Haltestellenfahrplaneintrag
         /// </summary>
         /// <param name="a">Wert vom Typ Haltestelle für den linken Vergleich</param>
@@ -82,19 +74,32 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
+        /// Gleichheitsoperator für Haltestellenfahrplaneintrag
+        /// </summary>
+        /// <param name="a">Wert vom Typ HaltestelleFahrplanEintrag für den linken Vergleich</param>
+        /// <param name="b">Wert vom Typ HaltestelleFahrplanEintrag für den rechten Vergleich</param>
+        /// <returns>Gibt true zurück, wenn die Haltestellenfahrplaneinträge gleich sind</returns>
+        public static bool operator ==(HaltestelleFahrplanEintrag a, HaltestelleFahrplanEintrag b)
+        {
+            return EqualsOperatorHelper.EqualsOperatorBase(a, b);
+        }
+
+        /// <summary>
         /// Vergleicht den Haltestellenfahrplaneintrag mit einem anderen Haltestellenfahrplaneintrag
         /// </summary>
         /// <param name="other">Das andere Objekt, mit dem verglichen werden soll</param>
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public bool Equals(HaltestelleFahrplanEintrag other)
         {
-            return EqualsHelper.EqualBase<HaltestelleFahrplanEintrag>(
+            return EqualsHelper.EqualBase(
                 other,
                 () =>
                 {
-                    return Uhrzeit == other.Uhrzeit &&
-                    Linie == other.Linie &&
-                    Haltestelle == other.Haltestelle;
+                    return
+                        base.Equals(other) &&
+                        Uhrzeit == other.Uhrzeit &&
+                        Linie == other.Linie &&
+                        Haltestelle == other.Haltestelle;
                 });
         }
 
@@ -105,7 +110,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Gibt true zurück, wenn sie gleich sind, andernfalls false</returns>
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as HaltestelleFahrplanEintrag);
+            return Equals(obj as HaltestelleFahrplanEintrag);
         }
 
         /// <summary>
@@ -114,16 +119,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Der Hashcode</returns>
         public override int GetHashCode()
         {
-            unchecked
-            {
-                int hash = 17;
-
-                // Suitable nullity checks etc, of course :)
-                hash = (hash * 23) + Uhrzeit.GetHashCode();
-                hash = (hash * 23) + (Linie == null ? 0 : Linie.GetHashCode());
-                hash = (hash * 23) + (Haltestelle == null ? 0 : Haltestelle.GetHashCode());
-                return hash;
-            }
+            return base.GetHashCode();
         }
     }
 }

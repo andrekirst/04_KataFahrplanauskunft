@@ -13,16 +13,16 @@ namespace Fahrplanauskunft.Test.Objekte
             Einzelverbindung einzelverbindung1 = new Einzelverbindung(
                 abfahrtszeit: 700,
                 ankunftszeit: 800,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+                startHaltestelle: new Haltestelle(id: "H1", name: "H1"),
+                zielHaltestelle: new Haltestelle(id: "H2", name: "H2"),
+                linie: new Linie(id: "L1", nummer: "Linie 1", lauf: "L1", farbe: "#000000"));
 
             Einzelverbindung einzelverbindung2 = new Einzelverbindung(
                 abfahrtszeit: 700,
                 ankunftszeit: 800,
-                startHaltestelle: new Haltestelle(name: "H1"),
-                zielHaltestelle: new Haltestelle(name: "H2"),
-                linie: new Linie(name: "Linie 1", ident: "L1"));
+                startHaltestelle: new Haltestelle(id: "H1", name: "H1"),
+                zielHaltestelle: new Haltestelle(id: "H2", name: "H2"),
+                linie: new Linie(id: "L1", nummer: "Linie 1", lauf: "L1", farbe: "#000000"));
 
             Assert.AreEqual(einzelverbindung1, einzelverbindung2);
         }
@@ -48,7 +48,7 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             Einzelverbindung einzelverbindung = TestEinzelverbindung();
 
-            Linie expected = new Linie(name: "Linie 1", ident: "L1");
+            Linie expected = new Linie(id: "L1", nummer: "Linie 1", lauf: "L1", farbe: "#000000");
 
             Assert.AreEqual(expected, einzelverbindung.Linie);
         }
@@ -58,7 +58,7 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             Einzelverbindung einzelverbindung = TestEinzelverbindung();
 
-            Haltestelle expected = new Haltestelle(name: "H1");
+            Haltestelle expected = new Haltestelle(id: "H1", name: "H1");
 
             Assert.AreEqual(expected, einzelverbindung.StartHaltestelle);
         }
@@ -68,7 +68,7 @@ namespace Fahrplanauskunft.Test.Objekte
         {
             Einzelverbindung einzelverbindung = TestEinzelverbindung();
 
-            Haltestelle expected = new Haltestelle(name: "H2");
+            Haltestelle expected = new Haltestelle(id: "H2", name: "H2");
 
             Assert.AreEqual(expected, einzelverbindung.ZielHaltestelle);
         }
@@ -89,9 +89,9 @@ namespace Fahrplanauskunft.Test.Objekte
             Einzelverbindung einzelverbindung = new Einzelverbindung(
                    abfahrtszeit: 700,
                    ankunftszeit: 800,
-                   startHaltestelle: new Haltestelle(name: "H1"),
-                   zielHaltestelle: new Haltestelle(name: "H2"),
-                   linie: new Linie(name: "Linie 1", ident: "L1"));
+                   startHaltestelle: new Haltestelle(id: "H1", name: "H1"),
+                   zielHaltestelle: new Haltestelle(id: "H2", name: "H2"),
+                   linie: new Linie(id: "L1", nummer: "Linie 1", lauf: "L1", farbe: "#000000"));
 
             return einzelverbindung;
         }

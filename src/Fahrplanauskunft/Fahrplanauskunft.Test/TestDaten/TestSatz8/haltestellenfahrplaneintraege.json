@@ -3,180 +3,220 @@
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 720
+        "Uhrzeit": 720,
+        "ID": "HFE1"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 730
+        "Uhrzeit": 730,
+        "ID": "HFE2"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 740
+        "Uhrzeit": 740,
+        "ID": "HFE3"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 750
+        "Uhrzeit": 750,
+        "ID": "HFE4"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 760
+        "Uhrzeit": 760,
+        "ID": "HFE5"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 770
+        "Uhrzeit": 770,
+        "ID": "HFE6"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 780
+        "Uhrzeit": 780,
+        "ID": "HFE7"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 790
+        "Uhrzeit": 790,
+        "ID": "HFE8"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 800
+        "Uhrzeit": 800,
+        "ID": "HFE9"
     },
     {
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
+                    "Lauf": "U1_NORD",
+                    "ID": "U1_NORD",
+                    "Nummer": "U1",
                     "Farbe": "#FF4500"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
+            "Lauf": "U1_NORD",
+            "ID": "U1_NORD",
+            "Nummer": "U1",
             "Farbe": "#FF4500"
         },
-        "Uhrzeit": 810
+        "Uhrzeit": 810,
+        "ID": "HFE10"
     }
 ]

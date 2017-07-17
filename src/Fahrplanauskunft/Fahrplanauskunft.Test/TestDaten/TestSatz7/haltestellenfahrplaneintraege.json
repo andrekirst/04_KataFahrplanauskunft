@@ -3,18 +3,22 @@
         "Haltestelle": {
             "Linien": [
                 {
-                    "Ident": "U1_NORD",
-                    "Name": "U1",
-                    "Farbe": "#FF4500"
+                    "Lauf": "U1_NORD",
+                    "Nummer": "U1",
+                    "Farbe": "#FF4500",
+                    "ID": "U1_NORD"
                 }
             ],
-            "Name": "H1"
+            "Name": "H1",
+            "ID": "H1"
         },
         "Linie": {
-            "Ident": "U1_NORD",
-            "Name": "U1",
-            "Farbe": "#FF4500"
+            "Lauf": "U1_NORD",
+            "Nummer": "U1",
+            "Farbe": "#FF4500",
+            "ID": "U1_NORD"
         },
-        "Uhrzeit": 720
+        "Uhrzeit": 720,
+        "ID": "HFE1"
     }
 ]
