@@ -9,6 +9,7 @@
         xmlns:extwpf="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:current="clr-namespace:Fahrplanauskunft.UI.Windows.Editor"
         xmlns:conv="clr-namespace:Fahrplanauskunft.UI.Windows.View.Converters;assembly=Fahrplanauskunft.UI.Windows.View"
+        xmlns:val="clr-namespace:Fahrplanauskunft.UI.Windows.Editor.ValidationRules"
         mc:Ignorable="d"
         Title="{DynamicResource FensterTitelFahrplanauskunft}"
         Height="700"
@@ -187,14 +188,65 @@
                                 </Canvas>
 
                                 <Label Grid.Column="1" Grid.Row="2" Content="Ident" />
-                                <TextBox Grid.Column="1" Grid.Row="3" BorderThickness="1.5" Text="{Binding Lauf, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="3,0,0,0" VerticalContentAlignment="Center" />
+                                <TextBox Grid.Column="1"
+                                         Grid.Row="3"
+                                         BorderThickness="1.5"
+                                         Text="{Binding Lauf, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                         Margin="3,0,0,0"
+                                         VerticalContentAlignment="Center">
+                                    <Validation.ErrorTemplate>
+                                        <ControlTemplate>
+                                            <StackPanel>
+                                                <AdornedElementPlaceholder x:Name="textBox" />
+                                                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" />
+                                            </StackPanel>
+                                        </ControlTemplate>
+                                    </Validation.ErrorTemplate>
+                                </TextBox>
 
                                 <Label Grid.Column="1" Grid.Row="5" Content="Name" />
-                                <TextBox Grid.Column="1" Grid.Row="6" BorderThickness="1.5" Text="{Binding Nummer, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="3,0,0,0" VerticalContentAlignment="Center" Width="30" HorizontalAlignment="Left" />
+                                <TextBox Grid.Column="1"
+                                         Grid.Row="6"
+                                         BorderThickness="1.5"
+                                         Text="{Binding Nummer, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                         Margin="3,0,0,0"
+                                         VerticalContentAlignment="Center"
+                                         Width="30"
+                                         HorizontalAlignment="Left">
+                                    <Validation.ErrorTemplate>
+                                        <ControlTemplate>
+                                            <StackPanel>
+                                                <AdornedElementPlaceholder x:Name="textBox" />
+                                                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" />
+                                            </StackPanel>
+                                        </ControlTemplate>
+                                    </Validation.ErrorTemplate>
+                                </TextBox>
 
                                 <Label Grid.Column="1" Grid.Row="8" Content="Farbe" />
                                 <StackPanel Grid.Column="1" Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <TextBox BorderThickness="1.5" Text="{Binding Farbe, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="3,0,0,0" VerticalContentAlignment="Center" Width="75" />
+                                    <TextBox BorderThickness="1.5"
+                                             
+                                             Margin="3,0,0,0"
+                                             VerticalContentAlignment="Center"
+                                             Width="75">
+                                        <TextBox.Text>
+                                            <!-- Text="{Binding Farbe, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" -->
+                                            <Binding Path="Farbe" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                                                <Binding.ValidationRules>
+                                                    <val:IstHexRGBColorValidationRule ValidationStep="RawProposedValue" />
+                                                </Binding.ValidationRules>
+                                            </Binding>
+                                        </TextBox.Text>
+                                        <Validation.ErrorTemplate>
+                                            <ControlTemplate>
+                                                <StackPanel>
+                                                    <AdornedElementPlaceholder x:Name="textBox" />
+                                                    <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" />
+                                                </StackPanel>
+                                            </ControlTemplate>
+                                        </Validation.ErrorTemplate>
+                                    </TextBox>
                                     <Border BorderBrush="LightGray" BorderThickness="0.5" Margin="2,0,0,0" CornerRadius="3">
                                         <Canvas Background="{Binding Farbe, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource nullImageConverter}}" Width="24" Height="24" />
                                     </Border>
