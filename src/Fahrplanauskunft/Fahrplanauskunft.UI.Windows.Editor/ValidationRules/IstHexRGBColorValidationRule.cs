@@ -2,13 +2,9 @@
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
+using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.UI.Windows.Editor.ValidationRules
 {
@@ -16,7 +12,9 @@ namespace Fahrplanauskunft.UI.Windows.Editor.ValidationRules
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            throw new NotImplementedException();
+            // TODO
+            // Ressource für Fehlermeldung
+            return new ValidationResult(FarbeHelper.IstFarbeGueltig(value as string), "Keine gültige Farbe");
         }
     }
 }
