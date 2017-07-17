@@ -5,6 +5,7 @@
 using System.Collections.Generic;
 using Fahrplanauskunft.Objekte;
 using static Fahrplanauskunft.Funktionen.Logik;
+using System.Linq;
 
 namespace Fahrplanauskunft.Funktionen
 {
@@ -99,7 +100,7 @@ namespace Fahrplanauskunft.Funktionen
         {
             foreach(TreeItem treeItem in childs)
             {
-                List<Linie> linien = ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(startHaltestelle, treeItem.Haltestelle, streckenabschnitte);
+                IEnumerable<Linie> linien = ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(startHaltestelle, treeItem.Haltestelle, streckenabschnitte);
                 foreach(Linie linie in linien)
                 {
                     Einzelverbindung einzel = new Einzelverbindung(0, 0, startHaltestelle, treeItem.Haltestelle, linie);
@@ -109,6 +110,21 @@ namespace Fahrplanauskunft.Funktionen
                 hs.Add(treeItem.Haltestelle);
                 testa(treeItem.Haltestelle, treeItem.Childs, hs, ezs, 0, streckenabschnitte);
             }
+        }
+
+        internal static IEnumerable<Linie> ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Streckenabschnitt> streckenabschnitte)
+        {
+            IEnumerable<Linie> linienAnDerStartHaltestelle = streckenabschnitte
+                .Where(sab => sab.StartHaltestelle == startHaltestelle)
+                .Select(sab2 => sab2.Linie);
+
+            IEnumerable<Linie> linienAnDerZielHaltestelle = streckenabschnitte
+                .Where(sab => sab.ZielHaltestelle == zielHaltestelle)
+                .Select(sab2 => sab2.Linie);
+
+            IEnumerable<Linie> linien = linienAnDerStartHaltestelle.Intersect(linienAnDerZielHaltestelle);
+
+            return linien;
         }
     }
 }

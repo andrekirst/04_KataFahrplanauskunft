@@ -275,15 +275,5 @@ namespace Fahrplanauskunft.Funktionen
 
             return haltestellenfahrplaneintraegeGefiltertNachHaltestelleUndLinie.First(h => h.Uhrzeit >= wunschabfahrtszeit).Uhrzeit;
         }
-
-        internal static List<Linie> ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<Streckenabschnitt> streckenabschnitte)
-        {
-            List<Linie> linienAnDerStartHaltestelle = streckenabschnitte.Where(sab => sab.StartHaltestelle == startHaltestelle).Select(sab2 => sab2.Linie).ToList();
-            List<Linie> linienAnDerZielHaltestelle = streckenabschnitte.Where(sab => sab.ZielHaltestelle == zielHaltestelle).Select(sab2 => sab2.Linie).ToList();
-
-            List<Linie> linien = linienAnDerStartHaltestelle.Intersect(linienAnDerZielHaltestelle).ToList();
-
-            return linien;
-        }
     }
 }

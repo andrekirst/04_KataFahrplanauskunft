@@ -69,6 +69,7 @@
     <Compile Include="Funktionen\T_EqualsHelper.cs" />
     <Compile Include="Funktionen\T_Logik.cs" />
     <Compile Include="Funktionen\T_FarbeHelper.cs" />
+    <Compile Include="Funktionen\T_LogikBerechneVerbindungsauskunft.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Objekte\T_Verbindung.cs" />
     <Compile Include="Objekte\T_Umstiegspunkt.cs" />
