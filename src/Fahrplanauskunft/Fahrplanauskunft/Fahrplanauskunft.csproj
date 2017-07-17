@@ -63,6 +63,7 @@
     <Compile Include="Funktionen\EqualsOperatorHelper.cs" />
     <Compile Include="Funktionen\FarbeHelper.cs" />
     <Compile Include="Funktionen\Logik.cs" />
+    <Compile Include="Funktionen\LogikBerechneVerbindungsauskunft.cs" />
     <Compile Include="Objekte\Einzelverbindung.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Objekte\FahrplanauskunftObjektBase.cs" />

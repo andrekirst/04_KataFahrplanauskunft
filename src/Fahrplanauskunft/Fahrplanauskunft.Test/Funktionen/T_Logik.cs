@@ -1283,7 +1283,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #endregion
 
-            Verbindung actual = Logik.BerechneVerbindungsauskunft(
+            Verbindung actual = LogikBerechneVerbindungsauskunft.BerechneVerbindungsauskunft(
                 wunschabfahrtszeit: 700,
                 startHaltestelle: haltestellen.First(h => h.Name == "H1"),
                 zielHaltestelle: haltestellen.First(h => h.Name == "H4"),
@@ -1331,7 +1331,7 @@ namespace Fahrplanauskunft.Test.Funktionen
 
             #endregion
 
-            Verbindung actual = Logik.BerechneVerbindungsauskunft(
+            Verbindung actual = LogikBerechneVerbindungsauskunft.BerechneVerbindungsauskunft(
                 wunschabfahrtszeit: 500,
                 startHaltestelle: haltestellen.First(h => h.Name == "H1"),
                 zielHaltestelle: haltestellen.First(h => h.Name == "H7"),
