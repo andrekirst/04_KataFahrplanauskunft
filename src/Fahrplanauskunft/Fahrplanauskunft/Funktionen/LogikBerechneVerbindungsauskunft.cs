@@ -11,7 +11,7 @@ namespace Fahrplanauskunft.Funktionen
 {
     internal static class LogikBerechneVerbindungsauskunft
     {
-        internal static Verbindung BerechneVerbindungsauskunft(
+        internal static List<Verbindung> BerechneVerbindungsauskunft(
                int wunschabfahrtszeit,
                Haltestelle startHaltestelle,
                Haltestelle zielHaltestelle,
@@ -93,7 +93,7 @@ namespace Fahrplanauskunft.Funktionen
                 zielHaltestelle: zielHaltestelleIst,
                 einzelverbindungen: einzelverbindungen);
 
-            return verbindung;
+            return new List<Verbindung>() { verbindung };
         }
 
         private static void testa(Haltestelle startHaltestelle, List<TreeItem> childs, List<Haltestelle> hs, List<Einzelverbindung> ezs, int abfahrtszeit, List<Streckenabschnitt> streckenabschnitte)
