@@ -9,7 +9,7 @@ using static Fahrplanauskunft.Funktionen.Logik;
 
 namespace Fahrplanauskunft.Funktionen
 {
-    internal static class LogikBerechneVerbindungsauskunft
+    public static class LogikBerechneVerbindungsauskunft
     {
         internal static List<Verbindung> BerechneVerbindungsauskunft(
                int wunschabfahrtszeit,

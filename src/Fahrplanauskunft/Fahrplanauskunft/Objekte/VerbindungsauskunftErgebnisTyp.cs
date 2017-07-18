@@ -15,21 +15,21 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Das Ergebnis hat ist noch keinem Typ zugewiesen
         /// </summary>
-        NichtZugewiesen = 1,
+        NichtZugewiesen = 0,
 
         /// <summary>
         /// Ein Ergbnis mit der geringsten Reisedauer
         /// </summary>
-        GeringsteReisedauer = 2,
+        GeringsteReisedauer = 1,
 
         /// <summary>
         /// Ein Ergebnis, bei dem der abfahrtstermin am nähesten zum Wunschtermin ist
         /// </summary>
-        NaeheZumAbfahrtstermin = 4,
+        NaeheZumAbfahrtstermin = 2,
 
         /// <summary>
         /// Ein Ergebnis mit der geringsten Anzahl an Umstiegen
         /// </summary>
-        GeringsteAnzahlUmstiege = 8
+        GeringsteAnzahlUmstiege = 4
     }
 }

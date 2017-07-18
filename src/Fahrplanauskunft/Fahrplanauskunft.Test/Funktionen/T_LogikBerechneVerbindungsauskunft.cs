@@ -39,7 +39,7 @@ namespace Fahrplanauskunft.Test.Funktionen
             einzelverbindungen.Add(1, einzelverbindung);
 
             List<Verbindung> expected = new List<Verbindung>()
-                {
+            {
                     new Verbindung(
                     abfahrtszeit: 720,
                     ankunftszeit: 726,
