@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="T_Einzelverbindung.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

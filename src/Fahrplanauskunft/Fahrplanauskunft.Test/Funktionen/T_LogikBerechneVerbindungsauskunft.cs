@@ -1,15 +1,12 @@
-﻿/*
- Copyright: André Kirst
- Datei: T_LogikBerechneVerbindungsauskunft.cs
-*/
+﻿// <copyright file="T_LogikBerechneVerbindungsauskunft.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
+using System.Linq;
 using Fahrplanauskunft.Funktionen;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Fahrplanauskunft.Test.Funktionen.T_Logik;
 
 namespace Fahrplanauskunft.Test.Funktionen
@@ -40,14 +37,17 @@ namespace Fahrplanauskunft.Test.Funktionen
                 ankunftszeit: 726,
                 startHaltestelle: haltestellen.First(h => h.Name == "H1"),
                 zielHaltestelle: haltestellen.First(h => h.Name == "H4"),
-                einzelverbindungen: einzelverbindungen);
+                einzelverbindungen: einzelverbindungen)
+            {
+                VerbindungsauskunftErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege
+            };
 
             #endregion
 
             Verbindung actual = LogikBerechneVerbindungsauskunft.BerechneVerbindungsauskunft(
                 wunschabfahrtszeit: 700,
-                startHaltestelle: haltestellen.First(h => h.Name == "H1"),
-                zielHaltestelle: haltestellen.First(h => h.Name == "H4"),
+                startHaltestelle: haltestellen.First(h => h.ID == "H1"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H4"),
                 haltestellen: haltestellen,
                 linien: linien,
                 streckenabschnitte: streckenabschnitte,
@@ -69,8 +69,8 @@ namespace Fahrplanauskunft.Test.Funktionen
             Einzelverbindung einzelverbindung1 = new Einzelverbindung(
                 abfahrtszeit: 540,
                 ankunftszeit: 546,
-                startHaltestelle: haltestellen.First(h => h.Name == "H1"),
-                zielHaltestelle: haltestellen.First(h => h.Name == "H4"),
+                startHaltestelle: haltestellen.First(h => h.ID == "H1"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H4"),
                 linie: linien.First(l => l.Lauf == "B11"));
             einzelverbindungen.Add(1, einzelverbindung1);
 
@@ -82,20 +82,19 @@ namespace Fahrplanauskunft.Test.Funktionen
                 linie: linien.First(l => l.Lauf == "B21"));
             einzelverbindungen.Add(2, einzelverbindung2);
 
-            Linie linie = linien.First(l => l.Lauf == "B42");
             Verbindung expected = new Verbindung(
                 abfahrtszeit: 540,
                 ankunftszeit: 557,
-                startHaltestelle: haltestellen.First(h => h.Name == "H1"),
-                zielHaltestelle: haltestellen.First(h => h.Name == "H7"),
+                startHaltestelle: haltestellen.First(h => h.ID == "H1"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H7"),
                 einzelverbindungen: einzelverbindungen);
 
             #endregion
 
             Verbindung actual = LogikBerechneVerbindungsauskunft.BerechneVerbindungsauskunft(
                 wunschabfahrtszeit: 500,
-                startHaltestelle: haltestellen.First(h => h.Name == "H1"),
-                zielHaltestelle: haltestellen.First(h => h.Name == "H7"),
+                startHaltestelle: haltestellen.First(h => h.ID == "H1"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H7"),
                 haltestellen: haltestellen,
                 linien: linien,
                 streckenabschnitte: streckenabschnitte,
@@ -117,7 +116,6 @@ namespace Fahrplanauskunft.Test.Funktionen
             List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
             List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
 
-            Linie linie = linien.First(l => l.Lauf == "B42");
             List<Linie> expected = linien.Where(l => l.Lauf == "B11").ToList();
 
             List<Linie> actual = LogikBerechneVerbindungsauskunft.ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(

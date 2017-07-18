@@ -1,13 +1,10 @@
-﻿/*
- Copyright: André Kirst
- Datei: Verbindung.cs
-*/
-using Fahrplanauskunft.Funktionen;
-using System;
+﻿// <copyright file="Verbindung.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Fahrplanauskunft.Funktionen;
 
 namespace Fahrplanauskunft.Objekte
 {
@@ -60,6 +57,12 @@ namespace Fahrplanauskunft.Objekte
             set;
         }
 
+        public VerbindungsauskunftErgebnisTyp VerbindungsauskunftErgebnisTyp
+        {
+            get;
+            set;
+        }
+
         public override string ToString()
         {
             return $"{StartHaltestelle.Name} {Funktionen.ZeitKonverter.ZuUhrzeitText(Abfahrtszeit)} -> {(ZielHaltestelle == null ? "<Unbekannte Ziel-Haltestelle>" : ZielHaltestelle.Name)} {Funktionen.ZeitKonverter.ZuUhrzeitText(Ankunftszeit)} - Umstiege: {AnzahlUmstiege}";
@@ -72,17 +75,18 @@ namespace Fahrplanauskunft.Objekte
                 () =>
                 {
                     return
-                        this.Abfahrtszeit == other.Abfahrtszeit &&
-                        this.Ankunftszeit == other.Ankunftszeit &&
-                        this.StartHaltestelle == other.StartHaltestelle &&
-                        this.ZielHaltestelle == other.ZielHaltestelle &&
-                        this.Einzelverbindungen.SequenceEqual(other.Einzelverbindungen);
+                        Abfahrtszeit == other.Abfahrtszeit &&
+                        Ankunftszeit == other.Ankunftszeit &&
+                        StartHaltestelle == other.StartHaltestelle &&
+                        ZielHaltestelle == other.ZielHaltestelle &&
+                        Einzelverbindungen.SequenceEqual(other.Einzelverbindungen) &&
+                        VerbindungsauskunftErgebnisTyp == other.VerbindungsauskunftErgebnisTyp;
                 });
         }
 
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Verbindung);
+            return Equals(obj as Verbindung);
         }
     }
 }

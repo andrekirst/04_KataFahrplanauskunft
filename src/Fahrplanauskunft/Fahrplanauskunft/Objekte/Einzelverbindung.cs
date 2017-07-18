@@ -39,17 +39,17 @@ namespace Fahrplanauskunft.Objekte
                 () =>
                 {
                     return
-                        this.Abfahrtszeit == other.Abfahrtszeit &&
-                        this.Ankunftszeit == other.Ankunftszeit &&
-                        this.StartHaltestelle == other.StartHaltestelle &&
-                        this.ZielHaltestelle == other.ZielHaltestelle &&
-                        this.Linie == other.Linie;
+                        Abfahrtszeit == other.Abfahrtszeit &&
+                        Ankunftszeit == other.Ankunftszeit &&
+                        StartHaltestelle == other.StartHaltestelle &&
+                        ZielHaltestelle == other.ZielHaltestelle &&
+                        Linie == other.Linie;
                 });
         }
 
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Einzelverbindung);
+            return Equals(obj as Einzelverbindung);
         }
 
         public override string ToString()

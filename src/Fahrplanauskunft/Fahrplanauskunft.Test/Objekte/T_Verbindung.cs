@@ -1,7 +1,10 @@
-﻿using System;
+﻿// <copyright file="T_Verbindung.cs" company="github.com/andrekirst/04_KataFahrplanauskunft">
+// Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 using Fahrplanauskunft.Objekte;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 
 namespace Fahrplanauskunft.Test.Objekte
 {
@@ -49,6 +52,27 @@ namespace Fahrplanauskunft.Test.Objekte
             Haltestelle expected = HaltestelleH2;
 
             Assert.AreEqual(expected, verbindung.ZielHaltestelle);
+        }
+
+        [TestMethod, TestCategory("Objekte")]
+        public void Verbindung_Property_VerbindungsauskunftErgebnisTyp_Im_Konstruktor_nicht_angegeben()
+        {
+            Verbindung verbindung = TestVerbindung();
+
+            VerbindungsauskunftErgebnisTyp expected = VerbindungsauskunftErgebnisTyp.NichtZugewiesen;
+
+            Assert.AreEqual(expected, verbindung.VerbindungsauskunftErgebnisTyp);
+        }
+
+        [TestMethod, TestCategory("Objekte")]
+        public void Verbindung_Property_VerbindungsauskunftErgebnisTyp_Eigenschaft_veraendert_auf_GeringsteReisedauer()
+        {
+            Verbindung verbindung = TestVerbindung();
+            verbindung.VerbindungsauskunftErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteReisedauer;
+
+            VerbindungsauskunftErgebnisTyp expected = VerbindungsauskunftErgebnisTyp.GeringsteReisedauer;
+
+            Assert.AreEqual(expected, verbindung.VerbindungsauskunftErgebnisTyp);
         }
 
         [TestMethod, TestCategory("Objekte")]
@@ -147,6 +171,52 @@ namespace Fahrplanauskunft.Test.Objekte
                 startHaltestelle: HaltestelleH1,
                 zielHaltestelle: HaltestelleH2,
                 einzelverbindungen: einzelverbindungen2);
+
+            Assert.AreNotEqual(verbindung1, verbindung2);
+        }
+
+        [TestMethod, TestCategory("Objekte")]
+        public void Verbindung_NotEquals_VerbindungsauskunftErgebnisTyp()
+        {
+            Dictionary<int, Einzelverbindung> einzelverbindungen1 = new Dictionary<int, Einzelverbindung>();
+            Einzelverbindung einzelverbindung1 = new Einzelverbindung(
+                abfahrtszeit: 720,
+                ankunftszeit: 770,
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL1);
+
+            einzelverbindungen1.Add(1, einzelverbindung1);
+
+            Verbindung verbindung1 = new Verbindung(
+                abfahrtszeit: 720,
+                ankunftszeit: 770,
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                einzelverbindungen: einzelverbindungen1)
+            {
+                VerbindungsauskunftErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteReisedauer
+            };
+
+            Dictionary<int, Einzelverbindung> einzelverbindungen2 = new Dictionary<int, Einzelverbindung>();
+            Einzelverbindung einzelverbindung2 = new Einzelverbindung(
+                abfahrtszeit: 720,
+                ankunftszeit: 770,
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL1);
+
+            einzelverbindungen2.Add(1, einzelverbindung2);
+
+            Verbindung verbindung2 = new Verbindung(
+                abfahrtszeit: 720,
+                ankunftszeit: 770,
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                einzelverbindungen: einzelverbindungen2)
+            {
+                VerbindungsauskunftErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege
+            };
 
             Assert.AreNotEqual(verbindung1, verbindung2);
         }
