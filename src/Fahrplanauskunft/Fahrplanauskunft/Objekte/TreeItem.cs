@@ -41,7 +41,7 @@ namespace Fahrplanauskunft.Objekte
         }
 
         /// <summary>
-        /// Verweis auf die Hallstelle (Wurzel)
+        /// Verweis auf die Haltestelle (Wurzel)
         /// </summary>
         public Haltestelle Haltestelle
         {
@@ -113,6 +113,10 @@ namespace Fahrplanauskunft.Objekte
             return Haltestelle.GetHashCode();
         }
 
+        /// <summary>
+        /// Gibt die überschriebene ToString-Methode zurück. Bsp.: "Name: H4 - Childs: 2"
+        /// </summary>
+        /// <returns>Bsp.: "Name: H4 - Childs: 2"</returns>
         public override string ToString()
         {
             return string.Format(
