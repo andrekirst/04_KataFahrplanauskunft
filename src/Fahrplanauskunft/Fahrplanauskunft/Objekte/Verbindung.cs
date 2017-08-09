@@ -57,11 +57,11 @@ namespace Fahrplanauskunft.Objekte
             set;
         }
 
-        public VerbindungsauskunftErgebnisTyp VerbindungsauskunftErgebnisTyp
-        {
-            get;
-            set;
-        }
+        //public VerbindungsauskunftErgebnisTyp VerbindungsauskunftErgebnisTyp
+        //{
+        //    get;
+        //    set;
+        //}
 
         public override string ToString()
         {
@@ -79,8 +79,9 @@ namespace Fahrplanauskunft.Objekte
                         Ankunftszeit == other.Ankunftszeit &&
                         StartHaltestelle == other.StartHaltestelle &&
                         ZielHaltestelle == other.ZielHaltestelle &&
-                        Einzelverbindungen.SequenceEqual(other.Einzelverbindungen) &&
-                        VerbindungsauskunftErgebnisTyp == other.VerbindungsauskunftErgebnisTyp;
+                        Einzelverbindungen.SequenceEqual(other.Einzelverbindungen)// &&
+                        //VerbindungsauskunftErgebnisTyp == other.VerbindungsauskunftErgebnisTyp
+                        ;
                 });
         }
 

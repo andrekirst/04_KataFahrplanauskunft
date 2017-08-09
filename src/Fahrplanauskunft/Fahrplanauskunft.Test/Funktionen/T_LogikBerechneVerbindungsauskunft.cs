@@ -46,9 +46,9 @@ namespace Fahrplanauskunft.Test.Funktionen
                     startHaltestelle: haltestellen.First(h => h.ID == "H1"),
                     zielHaltestelle: haltestellen.First(h => h.ID == "H4"),
                     einzelverbindungen: einzelverbindungen)
-                {
-                    VerbindungsauskunftErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege | VerbindungsauskunftErgebnisTyp.GeringsteReisedauer | VerbindungsauskunftErgebnisTyp.NaeheZumAbfahrtstermin
-                }
+                //{
+                //    VerbindungsauskunftErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege | VerbindungsauskunftErgebnisTyp.GeringsteReisedauer | VerbindungsauskunftErgebnisTyp.NaeheZumAbfahrtstermin
+                //}
             };
 
             #endregion

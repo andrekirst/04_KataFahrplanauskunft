@@ -7,7 +7,7 @@ using System;
 namespace Fahrplanauskunft.Objekte
 {
     /// <summary>
-    /// Enumeration für den Typ des Ergegnisses einer Verbindungsauskunft
+    /// Enumeration für den Typ des Ergebnisses einer Verbindungsauskunft
     /// </summary>
     [Flags]
     public enum VerbindungsauskunftErgebnisTyp

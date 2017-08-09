@@ -74,6 +74,7 @@
     <Compile Include="Objekte\Streckenabschnitt.cs" />
     <Compile Include="Objekte\TreeItem.cs" />
     <Compile Include="Objekte\Umstiegspunkt.cs" />
+    <Compile Include="Objekte\Verbindungsauskunft.cs" />
     <Compile Include="Objekte\Verbindung.cs" />
     <Compile Include="Objekte\Verbindungsanfrage.cs" />
     <Compile Include="Objekte\VerbindungsauskunftErgebnisTyp.cs" />

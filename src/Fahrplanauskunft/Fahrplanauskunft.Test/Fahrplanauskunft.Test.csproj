@@ -83,6 +83,7 @@
     <Compile Include="Objekte\T_Linie.cs" />
     <Compile Include="Objekte\T_Einzelverbindung.cs" />
     <Compile Include="Objekte\T_FahrplanauskunftObjektBase.cs" />
+    <Compile Include="Objekte\T_Verbindungsauskunft.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
