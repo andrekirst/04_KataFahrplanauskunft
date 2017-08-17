@@ -57,12 +57,6 @@ namespace Fahrplanauskunft.Objekte
             set;
         }
 
-        //public VerbindungsauskunftErgebnisTyp VerbindungsauskunftErgebnisTyp
-        //{
-        //    get;
-        //    set;
-        //}
-
         public override string ToString()
         {
             return $"{StartHaltestelle.Name} {Funktionen.ZeitKonverter.ZuUhrzeitText(Abfahrtszeit)} -> {(ZielHaltestelle == null ? "<Unbekannte Ziel-Haltestelle>" : ZielHaltestelle.Name)} {Funktionen.ZeitKonverter.ZuUhrzeitText(Ankunftszeit)} - Umstiege: {AnzahlUmstiege}";
@@ -79,8 +73,7 @@ namespace Fahrplanauskunft.Objekte
                         Ankunftszeit == other.Ankunftszeit &&
                         StartHaltestelle == other.StartHaltestelle &&
                         ZielHaltestelle == other.ZielHaltestelle &&
-                        Einzelverbindungen.SequenceEqual(other.Einzelverbindungen)// &&
-                        //VerbindungsauskunftErgebnisTyp == other.VerbindungsauskunftErgebnisTyp
+                        Einzelverbindungen.SequenceEqual(other.Einzelverbindungen)
                         ;
                 });
         }

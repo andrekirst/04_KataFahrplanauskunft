@@ -18,12 +18,12 @@ namespace Fahrplanauskunft.Objekte
         NichtZugewiesen = 0,
 
         /// <summary>
-        /// Ein Ergbnis mit der geringsten Reisedauer
+        /// Ein Ergebnis mit der geringsten Reisedauer
         /// </summary>
         GeringsteReisedauer = 1,
 
         /// <summary>
-        /// Ein Ergebnis, bei dem der abfahrtstermin am nähesten zum Wunschtermin ist
+        /// Ein Ergebnis, bei dem der Abfahrtstermin am nähesten zum Wunschtermin ist
         /// </summary>
         NaeheZumAbfahrtstermin = 2,
 

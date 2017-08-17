@@ -54,27 +54,6 @@ namespace Fahrplanauskunft.Test.Objekte
             Assert.AreEqual(expected, verbindung.ZielHaltestelle);
         }
 
-        //[TestMethod, TestCategory("Objekte")]
-        //public void Verbindung_Property_VerbindungsauskunftErgebnisTyp_Im_Konstruktor_nicht_angegeben()
-        //{
-        //    Verbindung verbindung = TestVerbindung();
-
-        //    VerbindungsauskunftErgebnisTyp expected = VerbindungsauskunftErgebnisTyp.NichtZugewiesen;
-
-        //    Assert.AreEqual(expected, verbindung.VerbindungsauskunftErgebnisTyp);
-        //}
-
-        //[TestMethod, TestCategory("Objekte")]
-        //public void Verbindung_Property_VerbindungsauskunftErgebnisTyp_Eigenschaft_veraendert_auf_GeringsteReisedauer()
-        //{
-        //    Verbindung verbindung = TestVerbindung();
-        //    verbindung.VerbindungsauskunftErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteReisedauer;
-
-        //    VerbindungsauskunftErgebnisTyp expected = VerbindungsauskunftErgebnisTyp.GeringsteReisedauer;
-
-        //    Assert.AreEqual(expected, verbindung.VerbindungsauskunftErgebnisTyp);
-        //}
-
         [TestMethod, TestCategory("Objekte")]
         public void Verbindung_Property_Einzelverbindungen()
         {

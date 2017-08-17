@@ -2,7 +2,7 @@
 
 ## Beschreibung
 
-Eine Verbindung ist das Ergebnis einer Verbindungsanfrage. Diese beinhaltet die tatsächliche Abfahrts- und Ankunftszeit. Desweiteren wird die Sart- und Haltestelle ausgegeben und die einzelnen Umstiege (Einzelverbindungen).
+Eine Verbindung ist das Ergebnis einer Verbindungsanfrage. Diese beinhaltet die tatsächliche Abfahrts- und Ankunftszeit. Desweiteren werden die Start- und Zielhaltestelle sowie die einzelnen Umstiege (Einzelverbindungen) ausgegeben.
 
 ## Attribute
 

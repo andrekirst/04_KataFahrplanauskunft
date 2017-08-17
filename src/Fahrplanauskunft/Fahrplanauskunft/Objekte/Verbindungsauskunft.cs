@@ -34,13 +34,11 @@ namespace Fahrplanauskunft.Objekte
         /// <summary>
         /// Typ des Ergebnisses einer Verbindungsauskunft
         /// </summary>
-        public VerbindungsauskunftErgebnisTyp VerbindungsauskunftErgebnisTyp
+        public VerbindungsauskunftErgebnisTyp ErgebnisTyp
         {
             get;
             set;
         }
-
-        
 
         /// <summary>
         /// Vergleicht das Verbindungsauskunft mit einem anderen Verbindungsauskunft
@@ -55,7 +53,7 @@ namespace Fahrplanauskunft.Objekte
                 {
                     return
                         Verbindung == other.Verbindung &&
-                        VerbindungsauskunftErgebnisTyp == other.VerbindungsauskunftErgebnisTyp;
+                        ErgebnisTyp == other.ErgebnisTyp;
                 });
         }
 
@@ -69,22 +67,22 @@ namespace Fahrplanauskunft.Objekte
             return Equals(obj as Verbindungsauskunft);
         }
 
-        ///// <summary>
-        ///// Gibt den HashCode zurück
-        ///// </summary>
-        ///// <returns>Der HashCode</returns>
-        //public override int GetHashCode()
-        //{
-        //    return base.GetHashCode();
-        //}
+        /// <summary>
+        /// Gibt den HashCode zurück
+        /// </summary>
+        /// <returns>Der HashCode</returns>
+        public override int GetHashCode()
+        {
+            return Verbindung.GetHashCode();
+        }
 
         /// <summary>
-        /// Gibt dieüberschriebene ToString-Methode von Verbindung und VerbindungsauskunftErgebnisTyp zurück. Bsp.: "{Verbindung.ToString() - VerbindungsauskunftErgebnisTyp..ToString()"
+        /// Gibt dieüberschriebene ToString-Methode von Verbindung und ErgebnisTyp zurück. Bsp.: "{Verbindung.ToString() - ErgebnisTyp..ToString()"
         /// </summary>
         /// <returns>Bsp.: "B1 - B11"</returns>
         public override string ToString()
         {
-            return $"{Verbindung.ToString()} - {VerbindungsauskunftErgebnisTyp.ToString()}";
+            return $"{Verbindung.ToString()} - {ErgebnisTyp.ToString()}";
         }
     }
 }

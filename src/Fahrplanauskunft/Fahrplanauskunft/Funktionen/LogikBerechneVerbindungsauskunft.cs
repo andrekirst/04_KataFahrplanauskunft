@@ -2,6 +2,7 @@
 // Copyright (c) github.com/andrekirst/04_KataFahrplanauskunft. All rights reserved.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Fahrplanauskunft.Objekte;
@@ -125,6 +126,16 @@ namespace Fahrplanauskunft.Funktionen
             IEnumerable<Linie> linien = linienAnDerStartHaltestelle.Intersect(linienAnDerZielHaltestelle);
 
             return linien;
+        }
+
+        internal static List<Verbindungsauskunft> Ermittle_GeringsteAnzahlUmstiege(List<Verbindung> verbindungen)
+        {
+            int minAnzahlUmstiege = verbindungen.Min(x => x.AnzahlUmstiege);
+            return verbindungen.Where(x => x.AnzahlUmstiege == minAnzahlUmstiege)
+                    .Select(x => new Verbindungsauskunft(verbindung: x)
+                                    { ErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege })
+                    .ToList<Verbindungsauskunft>();
+
         }
     }
 }

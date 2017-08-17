@@ -43,15 +43,18 @@ namespace Fahrplanauskunft.Test.Objekte
 
             Verbindungsauskunft expected = new Verbindungsauskunft(verbindung)
             {
-                VerbindungsauskunftErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege
+                ErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege
             };
 
             Verbindungsauskunft actual = new Verbindungsauskunft(verbindung)
             {
-                VerbindungsauskunftErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege
+                ErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege
             };
 
             Assert.AreNotEqual(expected, actual);
         }
+
+        
+
     }
 }
