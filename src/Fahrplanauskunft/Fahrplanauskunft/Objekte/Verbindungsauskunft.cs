@@ -52,7 +52,7 @@ namespace Fahrplanauskunft.Objekte
                 () =>
                 {
                     return
-                        Verbindung == other.Verbindung &&
+                        Verbindung.Equals(other.Verbindung) &&
                         ErgebnisTyp == other.ErgebnisTyp;
                 });
         }
