@@ -17,7 +17,97 @@ namespace Fahrplanauskunft.Test.Funktionen
         [TestMethod, TestCategory("Logik")]
         public void BerechneVerbindungsauskunft_Start_H1_Ziel_H12_Wunsch_0800()
         {
-            Assert.Fail();
+            List<Haltestelle> haltestellen = Lade_Test_Haltestellen();
+            List<Streckenabschnitt> streckenabschnitte = Lade_Test_Streckenabschnitte();
+            List<Linie> linien = Lade_Test_Linien();
+            List<HaltestelleFahrplanEintrag> haltestellenfahrplaneintraege = Lade_Test_Haltestellenfahrplaneintraege();
+
+            #region expected
+            #region Route 1
+            Dictionary<int, Einzelverbindung> einzelverbindungen1 = new Dictionary<int, Einzelverbindung>();
+            Einzelverbindung einzelverbindung11 = new Einzelverbindung(
+                abfahrtszeit: 720,
+                ankunftszeit: 726,
+                startHaltestelle: haltestellen.First(h => h.ID == "H1"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H4"),
+                linie: linien.First(l => l.Lauf == "B11"));
+            einzelverbindungen1.Add(1, einzelverbindung11);
+
+            Einzelverbindung einzelverbindung12 = new Einzelverbindung(
+                abfahrtszeit: 726, // Zeit noch falsch
+                ankunftszeit: 729, // Zeit noch falsch
+                startHaltestelle: haltestellen.First(h => h.ID == "H4"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H8"),
+                linie: linien.First(l => l.Lauf == "B21"));
+            einzelverbindungen1.Add(2, einzelverbindung12);
+
+            Einzelverbindung einzelverbindung13 = new Einzelverbindung(
+                abfahrtszeit: 729, // Zeit noch falsch
+                ankunftszeit: 736, // Zeit noch falsch
+                startHaltestelle: haltestellen.First(h => h.ID == "H8"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H12"),
+                linie: linien.First(l => l.Lauf == "B42"));
+            einzelverbindungen1.Add(3, einzelverbindung13);
+
+            Verbindung verbindung1 = new Verbindung(
+                    abfahrtszeit: 720,
+                    ankunftszeit: 736, // Zeit noch falsch
+                    startHaltestelle: haltestellen.First(h => h.ID == "H1"),
+                    zielHaltestelle: haltestellen.First(h => h.ID == "H12"),
+                    einzelverbindungen: einzelverbindungen1);
+
+            #endregion
+
+            #region Route 2
+            Dictionary<int, Einzelverbindung> einzelverbindungen2 = new Dictionary<int, Einzelverbindung>();
+            Einzelverbindung einzelverbindung21 = new Einzelverbindung(
+                abfahrtszeit: 720,
+                ankunftszeit: 722,
+                startHaltestelle: haltestellen.First(h => h.ID == "H1"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H2"),
+                linie: linien.First(l => l.Lauf == "B11"));
+            einzelverbindungen2.Add(1, einzelverbindung21);
+
+            Einzelverbindung einzelverbindung22 = new Einzelverbindung(
+                abfahrtszeit: 722, // Zeit noch falsch
+                ankunftszeit: 723, // Zeit noch falsch
+                startHaltestelle: haltestellen.First(h => h.ID == "H2"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H8"),
+                linie: linien.First(l => l.Lauf == "B21"));
+            einzelverbindungen2.Add(2, einzelverbindung22);
+
+            Einzelverbindung einzelverbindung23 = new Einzelverbindung(
+                abfahrtszeit: 723, // Zeit noch falsch
+                ankunftszeit: 730, // Zeit noch falsch
+                startHaltestelle: haltestellen.First(h => h.ID == "H8"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H12"),
+                linie: linien.First(l => l.Lauf == "B42"));
+            einzelverbindungen2.Add(3, einzelverbindung23);
+
+            Verbindung verbindung2 = new Verbindung(
+                    abfahrtszeit: 720,
+                    ankunftszeit: 730, // Zeit noch falsch
+                    startHaltestelle: haltestellen.First(h => h.ID == "H1"),
+                    zielHaltestelle: haltestellen.First(h => h.ID == "H12"),
+                    einzelverbindungen: einzelverbindungen2);
+
+            #endregion
+
+            List<Verbindung> expected = new List<Verbindung>()
+                { verbindung1, verbindung2 };
+
+            #endregion
+
+            List<Verbindung> actual = LogikBerechneVerbindungsauskunft.BerechneVerbindungsauskunft(
+                wunschabfahrtszeit: 700,
+                startHaltestelle: haltestellen.First(h => h.ID == "H1"),
+                zielHaltestelle: haltestellen.First(h => h.ID == "H12"),
+                haltestellen: haltestellen,
+                linien: linien,
+                streckenabschnitte: streckenabschnitte,
+                haltestellenfahrplaneintraege: haltestellenfahrplaneintraege);
+
+            CollectionAssert.AreEqual(expected, actual);
         }
 
         [TestMethod, TestCategory("Logik")]
