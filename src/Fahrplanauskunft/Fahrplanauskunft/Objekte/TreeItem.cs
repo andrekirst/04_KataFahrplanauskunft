@@ -119,10 +119,7 @@ namespace Fahrplanauskunft.Objekte
         /// <returns>Bsp.: "Name: H4 - Childs: 2"</returns>
         public override string ToString()
         {
-            return string.Format(
-                "Name: {0} - Childs: {1}",
-                Haltestelle.Name,
-                Childs.Count);
+            return $"Name: {Haltestelle.Name} - Childs: {Childs.Count}";
         }
     }
 }
