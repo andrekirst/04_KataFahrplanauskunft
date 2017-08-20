@@ -27,10 +27,13 @@ namespace Fahrplanauskunft.Funktionen
             Haltestelle zielHaltestelleIst = null;
             Dictionary<int, Einzelverbindung> einzelverbindungen = new Dictionary<int, Einzelverbindung>();
 
-            foreach(Linie linie in startHaltestelle.Linien)
+            #region Prüft, ob Start- und Zielhaltestelle auf einer Linie
+            // Prüft, ob Start- und Zielhaltestelle auf einer Linie
+            foreach (Linie linie in startHaltestelle.Linien)
             {
                 if(zielHaltestelleIst != null)
                 {
+                    // gefunden, dann Ausstieg
                     break;
                 }
 
@@ -39,6 +42,7 @@ namespace Fahrplanauskunft.Funktionen
                 {
                     if(Ist_Linie_An_Haltestelle(linie: linie, haltestelle: haltestelle) && haltestelle == zielHaltestelle)
                     {
+                        // Treffer
                         zielHaltestelleIst = haltestelle;
 
                         abfahrtszeit = ErmittleAbfahrtszeit(
@@ -68,9 +72,11 @@ namespace Fahrplanauskunft.Funktionen
                     }
                 }
             }
+            #endregion
 
-            if(zielHaltestelleIst == null)
+            if (zielHaltestelleIst == null)
             {
+                #region Start- und Zielhaltestelle nicht auf verschiedenen Linien
                 List<Umstiegspunkt> bereitsGeweseneUmstiegspunkte = new List<Objekte.Umstiegspunkt>();
                 TreeItem ti = Liefere_Hierarchie_Route_von_Haltestelle(
                     aktuelleHaltestelle: startHaltestelle,
@@ -82,7 +88,9 @@ namespace Fahrplanauskunft.Funktionen
 
                 List<Einzelverbindung> ezs = new List<Einzelverbindung>();
 
-                testa(startHaltestelle, ti.Childs, hs, ezs, wunschabfahrtszeit, streckenabschnitte);
+                testa(startHaltestelle, zielHaltestelle, ti.Childs, hs, ezs, wunschabfahrtszeit, streckenabschnitte);
+
+                #endregion
 
                 // TODO
             }
@@ -97,19 +105,33 @@ namespace Fahrplanauskunft.Funktionen
             return new List<Verbindung>() { verbindung };
         }
 
-        private static void testa(Haltestelle startHaltestelle, List<TreeItem> childs, List<Haltestelle> hs, List<Einzelverbindung> ezs, int abfahrtszeit, List<Streckenabschnitt> streckenabschnitte)
+        private static void testa(Haltestelle startHaltestelle, Haltestelle zielHaltestelle, List<TreeItem> childs, List<Haltestelle> hs, List<Einzelverbindung> ezs, int abfahrtszeit, List<Streckenabschnitt> streckenabschnitte)
         {
-            foreach(TreeItem treeItem in childs)
+            if (childs.Count > 0)
             {
-                IEnumerable<Linie> linien = ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(startHaltestelle, treeItem.Haltestelle, streckenabschnitte);
-                foreach(Linie linie in linien)
+                foreach (TreeItem treeItem in childs)
                 {
-                    Einzelverbindung einzel = new Einzelverbindung(0, 0, startHaltestelle, treeItem.Haltestelle, linie);
+                    IEnumerable<Linie> linien = ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(startHaltestelle, treeItem.Haltestelle, streckenabschnitte);
+                    foreach (Linie linie in linien)
+                    {
+                        Einzelverbindung einzel = new Einzelverbindung(0, 0, startHaltestelle, treeItem.Haltestelle, linie);
+                        ezs.Add(einzel);
+                    }
+
+                    hs.Add(treeItem.Haltestelle);
+                    testa(treeItem.Haltestelle, zielHaltestelle, treeItem.Childs, hs, ezs, 0, streckenabschnitte);
+                }
+            }
+            else
+            {
+                // hier wird die Linie vom letzten Umstiegspunkt zur Zielhaltstelle ermittelt
+                IEnumerable<Linie> linien = ErmittleLinien_Von_Haltestelle_Zu_Haltestelle(startHaltestelle, zielHaltestelle, streckenabschnitte);
+                foreach (Linie linie in linien)
+                {
+                    Einzelverbindung einzel = new Einzelverbindung(0, 0, startHaltestelle, zielHaltestelle, linie);
                     ezs.Add(einzel);
                 }
-
-                hs.Add(treeItem.Haltestelle);
-                testa(treeItem.Haltestelle, treeItem.Childs, hs, ezs, 0, streckenabschnitte);
+                hs.Add(zielHaltestelle);
             }
         }
 
