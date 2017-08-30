@@ -19,10 +19,10 @@ namespace Fahrplanauskunft.Test.Objekte
         private static readonly Haltestelle HaltestelleH2 = new Haltestelle(id: "H2", name: "H2");
 
         /// <summary>
-        /// Test der Equals-Methode, dass zwei _Verbindungsauskunft mit jeweils der gleichen Verbindung, aber unterschiedlicherVerbindungsauskunftErgebnisTyp : "GeringsteAnzahlUmstiege" bzw. "GeringsteAnzahlUmstiege" nicht gleich sind
+        /// Test der Equals-Methode, dass zwei Verbindungsauskünfte mit jeweils der gleichen Verbindung und dem gleichen Verbindungsauskunftergebnistyp gleich sind
         /// </summary>
         [TestMethod, TestCategory("Objekte")]
-        public void Verbindungsauskunft_NotEquals_VerbindungsauskunftErgebnisTyp()
+        public void Verbindungsauskunft_Equals_VerbindungsauskunftErgebnisTyp()
         {
             Dictionary<int, Einzelverbindung> einzelverbindungen1 = new Dictionary<int, Einzelverbindung>();
             Einzelverbindung einzelverbindung1 = new Einzelverbindung(
@@ -51,10 +51,43 @@ namespace Fahrplanauskunft.Test.Objekte
                 ErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege
             };
 
-            Assert.AreNotEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
         }
 
-        
+        /// <summary>
+        /// Test der Equals-Methode, dass zwei Verbindungsauskünfte mit jeweils der gleichen Verbindung, aber unterschiedlicher Verbindungsauskunftergebnistypen : "GeringsteAnzahlUmstiege" bzw. "GeringsteReisedauer" nicht gleich sind
+        /// </summary>
+        [TestMethod, TestCategory("Objekte")]
+        public void Verbindungsauskunft_NotEquals_VerbindungsauskunftErgebnisTyp()
+        {
+            Dictionary<int, Einzelverbindung> einzelverbindungen1 = new Dictionary<int, Einzelverbindung>();
+            Einzelverbindung einzelverbindung1 = new Einzelverbindung(
+                abfahrtszeit: 720,
+                ankunftszeit: 770,
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                linie: LinieL1);
 
+            einzelverbindungen1.Add(1, einzelverbindung1);
+
+            Verbindung verbindung = new Verbindung(
+                abfahrtszeit: 720,
+                ankunftszeit: 770,
+                startHaltestelle: HaltestelleH1,
+                zielHaltestelle: HaltestelleH2,
+                einzelverbindungen: einzelverbindungen1);
+
+            Verbindungsauskunft expected = new Verbindungsauskunft(verbindung)
+            {
+                ErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteAnzahlUmstiege
+            };
+
+            Verbindungsauskunft actual = new Verbindungsauskunft(verbindung)
+            {
+                ErgebnisTyp = VerbindungsauskunftErgebnisTyp.GeringsteReisedauer
+            };
+
+            Assert.AreNotEqual(expected, actual);
+        }
     }
 }
