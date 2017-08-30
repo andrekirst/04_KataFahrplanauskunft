@@ -134,5 +134,14 @@ namespace Fahrplanauskunft.Objekte
         {
             return base.GetHashCode();
         }
+
+        /// <summary>
+        /// Gibt die überschriebene ToString-Methode zurück. Bsp.: "Name: H4"
+        /// </summary>
+        /// <returns>Bsp.: "Name: H4"</returns>
+        public override string ToString()
+        {
+            return $"Linie: {Linie.ToString()} Start: {StartHaltestelle.ToString()} Ziel: {ZielHaltestelle} Dauer: {Dauer.ToString()}";
+        }
     }
 }
