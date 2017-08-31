@@ -147,7 +147,40 @@ namespace Fahrplanauskunft.Funktionen
 
             IEnumerable<Linie> linien = linienAnDerStartHaltestelle.Intersect(linienAnDerZielHaltestelle);
 
+            // hier ist der Ansatz für die Route
+            var x = streckenabschnitte.Where(sab => sab.Linie == linien.ToList()[0]).ToList();
+            var a = x.Where(sab => sab.StartHaltestelle == startHaltestelle).FirstOrDefault();
+
+            // neue rekursive Funktion
+            List<Streckenabschnitt> route = Hole_Streckenabschnitte(a, x, new List<Streckenabschnitt>(), zielHaltestelle);
+
+            // es gibt ja mehrere Linien
+            if (linien.ToList().Count > 1)
+            {
+                var y = streckenabschnitte.Where(sab => sab.Linie == linien.ToList()[1]);
+            }
+            // Ende
+
             return linien;
+        }
+
+        internal static List<Streckenabschnitt> Hole_Streckenabschnitte(Streckenabschnitt aktuellerStreckenabschnitt, List<Streckenabschnitt> streckenabschnitteDerLinie, List<Streckenabschnitt> aktuelleStreckenabschnitte, Haltestelle zielHaltestelle)
+        {
+            if (aktuellerStreckenabschnitt == null)
+            {
+                return aktuelleStreckenabschnitte;
+            }
+
+            aktuelleStreckenabschnitte.Add(aktuellerStreckenabschnitt);
+
+            if (aktuellerStreckenabschnitt.ZielHaltestelle == zielHaltestelle)
+            {
+                return aktuelleStreckenabschnitte;
+            }
+            Streckenabschnitt nächsterSAb = streckenabschnitteDerLinie.Where(sab => sab.StartHaltestelle == aktuellerStreckenabschnitt.ZielHaltestelle).FirstOrDefault();
+
+            return Hole_Streckenabschnitte(nächsterSAb, streckenabschnitteDerLinie, aktuelleStreckenabschnitte, zielHaltestelle);
+
         }
 
         internal static List<Verbindungsauskunft> Ermittle_GeringsteAnzahlUmstiege(List<Verbindung> verbindungen)
