@@ -27,6 +27,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>Fahrplanauskunft.UI.Windows.Editor.Test.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Debug\Fahrplanauskunft.UI.Windows.Editor.Test.XML</DocumentationFile>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,6 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>Fahrplanauskunft.UI.Windows.Editor.Test.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />

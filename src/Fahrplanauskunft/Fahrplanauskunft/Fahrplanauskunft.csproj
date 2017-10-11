@@ -27,7 +27,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>Fahrplanauskunft.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Debug\Fahrplanauskunft.XML</DocumentationFile>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
